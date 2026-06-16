@@ -1,0 +1,195 @@
+{
+  "version": "10.0",
+  "last_updated": "2026-03-08",
+  "architecture": "Ticket-First Decision Engine",
+  "tool_hierarchy": "get_active_tickets → add_ticket_note → submit_ticket",
+  "technical_incident_keywords": ["Licht", "Strom", "Sicherung", "Kurzschluss", "Steckdose", "Wasser", "Rohr", "Leck", "tropft", "Überschwemmung", "feucht", "Heizung", "Heizkörper", "Warmwasser", "kalt", "friert", "Wand", "Decke", "Boden", "Fenster", "Tür", "Schimmel", "Riss"],
+  "tools": [
+    {
+      "name": "get_active_tickets",
+      "description": "ERSTES TOOL — muss aufgerufen werden, BEVOR ein neues Ticket erstellt oder eine Diagnose-Frage gestellt wird. Aufrufen sobald der Mieter ein technisches Problem beschreibt (PLUMBING, HEATING, ELECTRICAL, BUILDING) — auch wenn die Kategorie noch nicht bestimmt ist. Ohne Ankündigung, ohne vorherige Diagnosefragen. Parameter: phone_number={{caller_phone}}, address={{address}}, unit={{unit}}. Response enthält: id, ticket_code, issue_summary, status, category, urgency, contractor_assigned (bool), contractor_name (string|null).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "phone_number": {
+            "type": "string",
+            "description": "Verwende IMMER {{caller_phone}} — die vom System verifizierte E.164-Nummer. Niemals eine im Gespräch gehörte Nummer."
+          },
+          "address": {
+            "type": "string",
+            "description": "{{address}} — Fallback wenn Nummer nicht matcht"
+          },
+          "unit": {
+            "type": "string",
+            "description": "{{unit}} — Wohneinheit für präziseren Adress-Fallback"
+          }
+        },
+        "required": ["phone_number"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST"
+      }
+    },
+    {
+      "name": "add_ticket_note",
+      "description": "ZWEITES TOOL — bevorzugtes Tool wenn get_active_tickets ein semantisch passendes Ticket gefunden hat. Fügt eine Notiz hinzu ohne neues Ticket anzulegen und ohne Urgency zu ändern. Vor dem Aufruf sagen: 'Ich vermerke Ihre Rückmeldung direkt im bestehenden Vorgang.' Danach: kein SMS-Hinweis, kein Ticketcode, kein submit_ticket.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string",
+            "description": "UUID des Tickets aus dem get_active_tickets-Ergebnis"
+          },
+          "note": {
+            "type": "string",
+            "description": "Neue Information des Mieters als vollständiger sachlicher Satz. Keine Urgency-Wertung."
+          },
+          "caller_phone": {
+            "type": "string",
+            "description": "{{caller_phone}} — für das Protokoll"
+          }
+        },
+        "required": ["ticket_id", "note"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/add-ticket-note",
+        "method": "POST",
+        "headers": {
+          "x-vapi-secret": "{{VAPI_WEBHOOK_SECRET}}"
+        }
+      }
+    },
+    {
+      "name": "submit_ticket",
+      "description": "LETZTES RESORT — erstellt ein neues Ticket. NUR aufrufen wenn: (A) get_active_tickets kein Ticket fand, ODER (B) das Problem klar anders ist als alle offenen Tickets. NIEMALS aufrufen wenn add_ticket_note bereits verwendet wurde. NIEMALS aufrufen ohne vorherigen get_active_tickets-Aufruf (außer bei BILLING/NOISE_COMPLAINT/OTHER). Ankündigung: 'Ich lege ein neues Ticket für Sie an.' SMS-Hinweis NUR bei PLUMBING/HEATING/ELECTRICAL/BUILDING.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "urgency": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH", "EMERGENCY"],
+            "description": "Basiert AUSSCHLIESSLICH auf tatsächlichem Schaden — NIEMALS wegen Folgeanruf erhöhen"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH", "URGENT"],
+            "description": "Alternativ-Feld für Priorität"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["PLUMBING", "HEATING", "ELECTRICAL", "BUILDING", "COMMERCIAL", "BILLING", "UTILITIES", "NOISE_COMPLAINT", "OTHER"]
+          },
+          "sentiment": {
+            "type": "string",
+            "enum": ["CALM", "STRESSED", "ANGRY", "UNKNOWN"]
+          },
+          "caller": {
+            "type": "object",
+            "properties": { "name": { "type": "string" } }
+          },
+          "location": {
+            "type": "object",
+            "properties": { "address": { "type": "string" }, "unit": { "type": "string" } }
+          },
+          "issue": {
+            "type": "object",
+            "properties": {
+              "summary": {
+                "type": "string",
+                "description": "Mit [RÜCKFRAGE]-Präfix wenn Signalwort vorhanden war, aber kein Ticket gefunden wurde"
+              },
+              "details": { "type": "string" }
+            }
+          }
+        },
+        "required": ["urgency", "category", "caller", "location", "issue"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST"
+      }
+    },
+    {
+      "name": "request_onboarding_link",
+      "description": "Sende dem Mieter einen SMS-Link zur Registrierung (mode=register) oder zum Foto-Upload (mode=photo). Nutze dieses Tool, wenn der Mieter KEINEN neuen Schaden meldet, sondern nur 'den Link', 'die Nachricht' oder 'die Registrierung' per SMS anfordert. Das System erkennt automatisch ob der Mieter bekannt ist oder nicht.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "phone_number": {
+            "type": "string",
+            "description": "Verwende IMMER {{caller_phone}}"
+          }
+        },
+        "required": ["phone_number"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST"
+      }
+    },
+    {
+      "name": "end_call_tool",
+      "description": "Beendet das Gespräch sauber. IMMER als allerletzter Schritt — nach dem gesprochenen Abschluss.",
+      "parameters": {
+        "type": "object",
+        "properties": {}
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST"
+      }
+    }
+  ],
+  "conversation_flow": {
+    "mandatory_lookup_categories": ["PLUMBING", "HEATING", "ELECTRICAL", "BUILDING"],
+    "optional_lookup_categories": ["BILLING", "NOISE_COMPLAINT", "UTILITIES", "COMMERCIAL", "OTHER"],
+    "ticket_result_handling": {
+      "count_0": "Kein Ticket → Diagnose → submit_ticket",
+      "count_1_no_contractor": "Ticket nennen → gleich oder anders? → add_ticket_note ODER submit_ticket",
+      "count_1_with_contractor": "'[contractor_name] ist bereits beauftragt für [summary]. Neue Infos?' → add_ticket_note ODER submit_ticket",
+      "count_2": "Beide nennen (inkl. contractor-Status) → welches? → add_ticket_note ODER submit_ticket",
+      "count_3_plus": "Ticketnummer fragen → add_ticket_note ODER submit_ticket"
+    },
+    "semantic_match_rules": {
+      "add_ticket_note_when": [
+        "gleiche Kategorie + gleiches Objekt (z.B. Küchenlicht → Elektrisches Problem Küche)",
+        "gleicher Raum + gleiche Kategorie (z.B. Heizung Schlafzimmer kalt → Heizung Schlafzimmer defekt)"
+      ],
+      "submit_ticket_when": [
+        "anderer Raum + gleiche Kategorie (z.B. Heizung Bad → offenes Ticket Heizung Schlafzimmer)",
+        "andere Kategorie (z.B. Strom → offenes Ticket Rohrbruch)",
+        "kein offenes Ticket vorhanden"
+      ]
+    },
+    "sms_announcement_rule": {
+      "show_for": ["PLUMBING", "HEATING", "ELECTRICAL", "BUILDING"],
+      "suppress_for": ["NOISE_COMPLAINT", "BILLING", "UTILITIES", "COMMERCIAL", "OTHER"],
+      "text": "Sie erhalten gleich einen sicheren SMS-Link, um Fotos oder ein Video hochzuladen."
+    },
+    "closing_variants": {
+      "add_ticket_note": "Ich habe das vermerkt. Unsere Kollegen sehen das sofort. Auf Wiederhören.",
+      "submit_ticket": "Ticketnummer Ziffer für Ziffer + Vielen Dank. Wir kümmern uns darum. Auf Wiederhören."
+    },
+    "fairness_rule": "urgency basiert AUSSCHLIESSLICH auf tatsächlichem Schaden. Folgeanruf erhöht urgency NIEMALS.",
+    "example_dialogues": {
+      "technical_lookup_trigger": {
+        "tenant": "Das Licht in der Küche geht nicht.",
+        "assistant_thought": "ELECTRICAL → get_active_tickets aufrufen",
+        "assistant_says": "Oje, das klingt ärgerlich. [ruft get_active_tickets auf]"
+      },
+      "ticket_found_same_issue": {
+        "existing": "Elektrisches Problem Küche",
+        "tenant": "Das Küchenlicht geht immer noch nicht.",
+        "action": "add_ticket_note",
+        "assistant_says": "Ich sehe einen offenen Vorgang: Elektrisches Problem Küche. Ich vermerke Ihre Rückmeldung direkt im bestehenden Vorgang."
+      },
+      "ticket_found_different_issue": {
+        "existing": "Heizung Schlafzimmer defekt",
+        "tenant": "Jetzt ist auch die Heizung im Bad ausgefallen.",
+        "action": "submit_ticket",
+        "assistant_says": "Ich sehe einen offenen Vorgang: Heizung Schlafzimmer. Das klingt wie ein anderes Problem. Ich lege ein separates Ticket an."
+      }
+    }
+  }
+}

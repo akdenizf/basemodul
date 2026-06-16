@@ -1,0 +1,86 @@
+{
+  "tools": [
+    {
+      "name": "get_caller_context",
+      "async": false,
+      "description": "Master-Lookup: Erkennt Mieter, offene Tickets und Organisations-Kontext via Telefonnummer.",
+      "messages": [
+        {
+          "type": "request-start",
+          "content": "Einen kleinen Augenblick bitte, ich schaue sofort für Sie nach."
+        }
+      ],
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST",
+        "timeoutSeconds": 20
+      }
+    },
+    {
+      "name": "add_ticket_note",
+      "async": false,
+      "description": "Fügt einem bestehenden Ticket eine wichtige Information oder eine Statusabfrage hinzu.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "ticket_id": {
+            "type": "string",
+            "description": "Die UUID des Tickets aus get_caller_context"
+          },
+          "note": {
+            "type": "string",
+            "description": "Die neue Information oder die Status-Rückfrage des Mieters"
+          }
+        },
+        "required": ["ticket_id", "note"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST"
+      }
+    },
+    {
+      "name": "submit_ticket",
+      "async": false,
+      "description": "Erstellt ein neues Service-Ticket in der Datenbank.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "urgency": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH", "EMERGENCY"]
+          },
+          "category": {
+            "type": "string",
+            "enum": ["PLUMBING", "HEATING", "ELECTRICAL", "BUILDING", "ADMIN", "OTHER"]
+          },
+          "caller_name": {
+            "type": "string",
+            "description": "Vollständiger Name (falls isKnown=false)"
+          },
+          "address": {
+            "type": "string",
+            "description": "Straße und Hausnummer"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Wohneinheit/Stockwerk"
+          },
+          "issue_summary": {
+            "type": "string",
+            "description": "Technische Kurz-Zusammenfassung"
+          },
+          "issue_details": {
+            "type": "string",
+            "description": "Vollständige Diagnose-Details"
+          }
+        },
+        "required": ["urgency", "category", "issue_summary"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+Last Updated: 2026-05-17
+
+CALLFOLIO — PRODUKT-FACTSHEET
+
+PRODUKTNAME: Callfolio
+TAGLINE: Die Telefonzentrale, die niemals schläft.
+KATEGORIE: Voice-AI SaaS für Immobilienverwaltung
+GRÜNDUNGSJAHR: 2025
+STANDORT: München, Deutschland
+GRÜNDER: Fatih Akdeniz
+WEBSITE: callfolio.io
+
+KERNFUNKTIONEN:
+- 24/7 KI-Telefonzentrale für Hausverwaltungen
+- Automatische Anrufer-Erkennung (Mieter wird namentlich begrüßt)
+- Schadenserfassung mit automatischem SMS-Foto-Upload
+- Intelligente Duplikaterkennung bei Folgeanrufen
+- Handwerker-Beauftragung in einem Klick
+- Vollständiger Audit-Trail für Compliance
+
+TECH-STACK (für technisch interessierte Entscheider):
+- Voice Engine: Vapi (Ultra-Low Latency)
+- LLM: OpenAI GPT-4o
+- Telefonie: Twilio (Deutsche Nummern + SMS)
+- Backend: Next.js + Supabase (PostgreSQL)
+- Hosting: Vercel (Edge — keine Serverkosten)
+
+ZIELGRUPPE:
+- Hausverwaltungen mit 200 bis 5.000 verwalteten Einheiten
+- Entscheider: Geschäftsführer, Teamleiter Objektbetreuung
+- Region Phase 1: München und Umgebung
+
+MARKTPOSITION:
+- Günstigste vollwertige Voice-AI Lösung am Markt (89 EUR/Monat)
+- Einzige Lösung mit SMS-Foto-Upload (Visual Context)
+- Einzige Lösung mit namentlicher Anrufer-Erkennung
+- Keine Minutentaktung (einziger Anbieter ohne)
+- DSGVO-konform: keine Aufzeichnungen, EU-Server, kein EU AI Act Verstoß

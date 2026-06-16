@@ -1,0 +1,55 @@
+Last Updated: 2026-05-17
+
+CALLFOLIO — WETTBEWERBER-ANALYSE
+
+HINWEIS: Diese Datei ist nur für internen Agent-Kontext.
+Wettbewerber niemals in Kaltakquise-Mails namentlich erwähnen.
+
+---
+
+PROP-AI
+Preis: ca. 300 EUR/Monat
+Stärke: Bekannter Name, gutes Marketing
+Schwäche: Minutentaktung, kein Visual Context (kein Foto-Upload)
+Unser Vorteil: Günstiger (89 vs 300 EUR), kein Foto-Upload beim Wettbewerb
+
+---
+
+CASAVI
+Preis: ca. 500 EUR/Monat
+Stärke: Etablierte Plattform, viele Integrationen
+Schwäche: Kein Voice-AI, nur digitales Ticketsystem, kein 24/7 Anruf-Handling
+Unser Vorteil: Voice-AI ist der Kern — Mieter rufen an, tippen keine Tickets
+
+---
+
+AAREON
+Preis: Enterprise (5.000+ EUR/Monat)
+Stärke: Marktführer, volle ERP-Integration
+Schwäche: Overengineered, 6+ Monate Onboarding, kein Voice-AI
+Unser Vorteil: 2-3 Tage Setup, Starter ab 89 EUR/Monat — sofort produktiv
+
+---
+
+IDWELL
+Preis: ca. 200 EUR/Monat
+Stärke: Mieter-App, gutes UX
+Schwäche: Kein 24/7 Voice-AI, nur Chat/App (Mieter müssen App installieren)
+Unser Vorteil: Kein App-Download nötig — Mieter rufen einfach an
+
+---
+
+ALLGEMEINE POSITIONIERUNG:
+Callfolio ist das einzige System am Markt, das:
+1. 24/7 Anrufe entgegennimmt (Voice-AI)
+2. Fotos per SMS anfordert und ins Ticket verknüpft (Visual Context)
+3. Mieter namentlich begrüßt (Pre-Call Identity)
+4. Keine Minutentaktung hat
+5. Unter 100 EUR/Monat kostet
+
+PREISMATRIX (Einstiegspreise):
+Callfolio:  89 EUR/Monat
+iDWELL:    200 EUR/Monat
+PROP-AI:   300 EUR/Monat
+Casavi:    500 EUR/Monat
+Aareon:    Enterprise

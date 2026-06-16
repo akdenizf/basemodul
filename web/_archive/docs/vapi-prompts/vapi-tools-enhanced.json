@@ -1,0 +1,231 @@
+{
+  "tools": [
+    {
+      "name": "check_existing_ticket",
+      "description": "Prüft zu Beginn des Anrufs, ob der Kunde bereits ein offenes Ticket hat und ermöglicht Verifikation",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "caller_phone": {
+            "type": "string",
+            "description": "Telefonnummer des Anrufers (E.164 Format empfohlen, z.B. +491701234567)"
+          },
+          "ticket_code": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "description": "6-stelliger numerischer Ticket-Code zur Verifikation (optional, z.B. '123456')"
+          },
+          "address": {
+            "type": "string",
+            "description": "Adresse der Immobilie für Fallback-Verifikation (optional)"
+          },
+          "unit": {
+            "type": "string",
+            "description": "Wohnungsbezeichnung für Fallback-Verifikation (optional, z.B. '3. OG links')"
+          }
+        },
+        "required": ["caller_phone"]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/check-ticket",
+        "method": "POST",
+        "headers": {
+          "x-vapi-secret": "callfolio_secret_2026"
+        }
+      }
+    },
+    {
+      "name": "submit_ticket",
+      "description": "Erstellt ein neues Ticket oder aktualisiert ein bestehendes. Erkennt automatisch Notfälle und Duplikate.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "call_id": {
+            "type": "string",
+            "description": "Eindeutige ID des Anrufs von Vapi"
+          },
+          "urgency": {
+            "type": "string",
+            "enum": ["LOW", "MEDIUM", "HIGH", "EMERGENCY"],
+            "description": "Dringlichkeitsstufe - wird automatisch auf EMERGENCY gesetzt bei Notfall-Keywords"
+          },
+          "category": {
+            "type": "string",
+            "enum": ["PLUMBING", "HEATING", "ELECTRICAL", "BUILDING", "ADMIN", "OTHER"],
+            "description": "Kategorie des Problems"
+          },
+          "sentiment": {
+            "type": "string",
+            "enum": ["CALM", "STRESSED", "ANGRY", "UNKNOWN"],
+            "description": "Eingeschätzte Stimmung des Anrufers"
+          },
+          "caller": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Vollständiger Name des Anrufers"
+              },
+              "phone": {
+                "type": "string",
+                "description": "Telefonnummer des Anrufers (E.164 Format)"
+              }
+            },
+            "required": ["name", "phone"]
+          },
+          "location": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string",
+                "description": "Vollständige Adresse der Immobilie (Straße, Hausnummer, PLZ, Stadt)"
+              },
+              "unit": {
+                "type": "string",
+                "description": "Wohnungsbezeichnung (z.B. '3. OG links', 'Whg. 12', 'EG rechts')"
+              }
+            },
+            "required": ["address", "unit"]
+          },
+          "issue": {
+            "type": "object",
+            "properties": {
+              "summary": {
+                "type": "string",
+                "description": "Kurze, prägnante Zusammenfassung des Problems (max. 100 Zeichen)"
+              },
+              "details": {
+                "type": "string",
+                "description": "Detaillierte Beschreibung des Problems mit allen relevanten Informationen"
+              }
+            },
+            "required": ["summary"]
+          },
+          "escalation": {
+            "type": "object",
+            "properties": {
+              "is_emergency": {
+                "type": "boolean",
+                "description": "Handelt es sich um einen Notfall? (wird automatisch bei Keywords gesetzt)"
+              },
+              "reason": {
+                "type": "string",
+                "description": "Begründung für Notfall-Einstufung oder automatisch erkannte Keywords"
+              }
+            },
+            "required": ["is_emergency"]
+          },
+          "confidence": {
+            "type": "object",
+            "properties": {
+              "data_complete": {
+                "type": "boolean",
+                "description": "Sind alle erforderlichen Informationen vollständig erfasst?"
+              },
+              "ai_confidence_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "KI-Konfidenz-Score für die Datenqualität (0.0 - 1.0)"
+              }
+            },
+            "required": ["data_complete"]
+          },
+          "vapi_cost": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Kosten des Vapi-Anrufs in USD (wird automatisch von Vapi gesetzt)"
+          },
+          "existing_ticket_id": {
+            "type": "string",
+            "description": "Human-readable ID des bestehenden Tickets für Updates (z.B. 'HV-26-000123')"
+          },
+          "existing_ticket_code": {
+            "type": "string",
+            "pattern": "^[0-9]{6}$",
+            "description": "6-stelliger Code des bestehenden Tickets für Updates (z.B. '123456')"
+          },
+          "followup_note": {
+            "type": "string",
+            "description": "Strukturierte Notiz für Ticket-Updates (wird mit Timestamp versehen)"
+          }
+        },
+        "required": [
+          "call_id",
+          "urgency", 
+          "category",
+          "sentiment",
+          "caller",
+          "location",
+          "issue",
+          "escalation",
+          "confidence"
+        ]
+      },
+      "server": {
+        "url": "https://callfolio.io/api/vapi/webhook",
+        "method": "POST",
+        "headers": {
+          "x-vapi-secret": "callfolio_secret_2026"
+        }
+      }
+    }
+  ],
+  "conversation_flow": {
+    "enhanced_start_flow": [
+      "1. Begrüßung: 'Guten Tag, hier ist die Hausverwaltung. Wie kann ich Ihnen helfen?'",
+      "2. Telefonnummer erfassen (für check_existing_ticket)",
+      "3. check_existing_ticket(caller_phone) aufrufen",
+      "4. WENN has_existing = true:",
+      "   a) WENN verified = true (Code oder Adresse stimmt):",
+      "      - 'Ich sehe, Sie haben bereits Ticket {ticket_code} zu \"{summary}\" vom {created_at}.'",
+      "      - 'Möchten Sie zusätzliche Informationen zu diesem Ticket geben (1) oder ein neues Problem melden (2)?'",
+      "   b) WENN verified = false (nur Telefonnummer):",
+      "      - 'Ich sehe eine offene Meldung von Ihrer Nummer. Haben Sie Ihren 6-stelligen Ticket-Code?'",
+      "      - Bei Code: check_existing_ticket(caller_phone, ticket_code) erneut aufrufen",
+      "      - Ohne Code: Nach Adresse fragen für Fallback-Verifikation",
+      "5. SONST (has_existing = false):",
+      "   - 'Gerne nehme ich Ihre neue Meldung auf. Um was geht es?'"
+    ],
+    "update_flow": [
+      "1. Bei bestätigtem Update: 'Was möchten Sie zu Ihrem bestehenden Ticket ergänzen?'",
+      "2. followup_note erfassen",
+      "3. submit_ticket(..., existing_ticket_code: code, followup_note: note)",
+      "4. Bestätigung: 'Vielen Dank, ich habe Ihr Ticket {ticket_code} aktualisiert.'"
+    ],
+    "new_ticket_flow": [
+      "1. Vollständige Datenerfassung (caller, location, issue, etc.)",
+      "2. Automatische Notfall-Erkennung bei Keywords",
+      "3. submit_ticket(...) ohne existing_ticket_*",
+      "4. Bestätigung mit neuem Ticket-Code: 'Ihr Ticket wurde erstellt. Ihre Ticket-Nummer ist {ticket_code}.'"
+    ],
+    "emergency_handling": [
+      "1. Bei Notfall-Keywords (112, Feuer, Gas, etc.): Sofortige Eskalation",
+      "2. 'Das klingt nach einem Notfall. Haben Sie bereits den Notruf 112 kontaktiert?'",
+      "3. 'Ich erstelle sofort ein Notfall-Ticket und informiere unseren Bereitschaftsdienst.'",
+      "4. Minimale Datenerfassung, schnelle Ticket-Erstellung",
+      "5. urgency wird automatisch auf EMERGENCY gesetzt"
+    ]
+  },
+  "response_examples": {
+    "verified_existing": "Guten Tag! Ich sehe, Sie haben bereits Ticket 123456 zu \"Heizung defekt\" vom 22.01.2026. Möchten Sie zusätzliche Informationen zu diesem Problem geben - sagen Sie \"1\" - oder ein völlig neues Problem melden - sagen Sie \"2\"?",
+    "unverified_existing": "Ich sehe eine offene Meldung von Ihrer Telefonnummer. Haben Sie Ihren 6-stelligen Ticket-Code zur Hand? Das hilft mir, Ihr Anliegen schneller zu bearbeiten.",
+    "no_existing": "Gerne nehme ich Ihre neue Meldung auf. Um welches Problem geht es denn?",
+    "emergency_detected": "Das klingt nach einem Notfall! Haben Sie bereits den Notruf 112 kontaktiert? Ich erstelle sofort ein Notfall-Ticket mit der Nummer {ticket_code} und informiere unseren Bereitschaftsdienst.",
+    "duplicate_detected": "Ich habe ein ähnliches Ticket für diese Adresse gefunden. Möglicherweise handelt es sich um dasselbe Problem. Soll ich ein neues Ticket erstellen oder das bestehende aktualisieren?",
+    "ticket_created": "Vielen Dank! Ihr Ticket wurde erfolgreich erstellt. Ihre Ticket-Nummer ist {ticket_code}. Bitte notieren Sie sich diese Nummer für Rückfragen.",
+    "ticket_updated": "Perfekt! Ich habe Ihr Ticket {ticket_code} mit den zusätzlichen Informationen aktualisiert. Sie erhalten eine Bestätigung per E-Mail."
+  },
+  "error_handling": {
+    "system_error": "Es tut mir leid, es gab ein technisches Problem. Lassen Sie mich Ihre Daten trotzdem aufnehmen.",
+    "verification_failed": "Ich konnte Ihr Ticket nicht eindeutig zuordnen. Lassen Sie uns ein neues Ticket erstellen.",
+    "incomplete_data": "Mir fehlen noch einige wichtige Informationen. Können Sie mir bitte noch {missing_fields} mitteilen?"
+  },
+  "configuration_notes": {
+    "webhook_secret": "Setzen Sie VAPI_WEBHOOK_SECRET in beiden Tools auf denselben Wert",
+    "domain_replacement": "Domain ist https://callfolio.io (Custom Domain mit Vercel Redirect)",
+    "tenant_mapping": "Konfigurieren Sie TENANT_MAPPING in den Umgebungsvariablen",
+    "emergency_keywords": "Keywords sind in der Datenbank konfigurierbar (emergency_keywords Tabelle)",
+    "duplicate_detection": "Läuft automatisch basierend auf Adresse/Einheit in den letzten 24h"
+  }
+}

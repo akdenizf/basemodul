@@ -1,0 +1,45 @@
+Last Updated: 2026-05-17
+
+CALLFOLIO — PREISSTRUKTUR
+
+SETUP-GEBÜHR: 990 EUR einmalig
+- Individuelle KI-Konfiguration auf Objekte des Kunden
+- Datenimport (bestehende Mieterliste)
+- Onboarding-Call (1 Stunde, persönlich in München möglich)
+- Kein Self-Service — qualifiziert Kunden, verhindert Churn
+
+MONATLICHE PAKETE:
+
+STARTER — 89 EUR/Monat
+- 100 inkludierte Anrufe
+- Keine Minutentaktung
+- Overage: 0,80 EUR pro Anruf über 100
+- Geeignet für: 200-500 verwaltete Einheiten
+
+PRO — 199 EUR/Monat
+- 300 inkludierte Anrufe
+- Keine Minutentaktung
+- Overage: 0,80 EUR pro Anruf über 300
+- Geeignet für: 500-2000 verwaltete Einheiten
+
+ENTERPRISE — Auf Anfrage
+- Unbegrenzte Anrufe
+- Individuelle SLA
+- Dedicated Support
+- Geeignet für: 2000+ verwaltete Einheiten
+
+KERNARGUMENT GEGEN MINUTENTAKTUNG:
+"Bei uns zahlen Sie pro Anruf, nicht pro Minute. Ob das Gespräch 30 Sekunden
+oder 8 Minuten dauert — der Preis bleibt gleich. Ihre Mieter können in Ruhe
+erklären, was los ist. Und Sie wissen genau, was Sie jeden Monat zahlen."
+
+VERGLEICH MIT ALTERNATIVEN:
+- Teilzeit-Sekretärin: ca. 1.800 EUR/Monat, nicht 24/7 erreichbar
+- Anrufbeantworter: kostenlos, aber kein Schadensbericht, keine Priorisierung
+- Callcenter: ca. 300-800 EUR/Monat, Minutentaktung, kein System-Zugriff
+
+INTERNE KALKULATION (NICHT AN LEADS KOMMUNIZIEREN):
+- Kosten pro Anruf: ca. 0,28 EUR (Vapi + OpenAI + Twilio)
+- Marge Starter: ca. 64 Prozent bei 100 Anrufen
+- Marge Pro: ca. 56 Prozent bei 300 Anrufen
+- Break-even: 54 EUR/Monat bei 100 Anrufen

@@ -1,0 +1,75 @@
+Last Updated: 2026-05-17
+
+CALLFOLIO — EINWANDBEHANDLUNG (FAQ)
+
+FORMAT: Einwand → Antwort (direkt, max. 3 Sätze)
+REGEL: Niemals defensiv. Einwand bestätigen, dann umlenken.
+
+---
+
+EINWAND: "Wir haben schon eine Telefonzentrale / Sekretärin."
+ANTWORT: Callfolio ersetzt niemanden — es nimmt die Anrufe an, die sonst
+verloren gehen: abends, am Wochenende, in der Mittagspause. Ihre Mitarbeiterin
+kann sich auf die komplexen Fälle konzentrieren, die echte Menschlichkeit brauchen.
+Die KI übernimmt die erste Erfassung.
+
+---
+
+EINWAND: "KI am Telefon — das mögen unsere Mieter nicht."
+ANTWORT: Die KI stellt sich transparent als digitaler Assistent vor (EU AI Act
+konform). In der Praxis zeigen Mieter hohe Akzeptanz, weil sie endlich jemanden
+erreichen — statt ewig in der Warteschleife zu hängen. Frustrierte Mieter mögen
+keine KI, aber sie mögen auch keine Warteschleife.
+
+---
+
+EINWAND: "Das ist zu teuer."
+ANTWORT: 89 EUR/Monat für 100 Anrufe — das sind 89 Cent pro Anruf, ohne
+Minutentaktung. Eine Teilzeit-Sekretärin kostet ca. 1.800 EUR/Monat und ist
+trotzdem nicht 24/7 erreichbar. Für den Preis eines Abendessens pro Monat
+nimmt die KI jeden Anruf an.
+
+---
+
+EINWAND: "Wir verwalten nur 200 Einheiten — lohnt sich das?"
+ANTWORT: Gerade dann. Bei 200 Einheiten klingelt das Telefon geschätzt 30-50
+Mal im Monat. Jeder verpasste Anruf ist ein frustrierter Mieter und eine
+potenzielle Eskalation. Das Starter-Paket (89 EUR) ist exakt dafür gemacht.
+
+---
+
+EINWAND: "Was ist mit Datenschutz / DSGVO?"
+ANTWORT: Callfolio zeichnet keine Telefonate auf. Alle Daten liegen auf
+EU-Servern (Supabase/Frankfurt). Die KI gibt sich zu Beginn jedes Anrufs als
+digitaler Assistent zu erkennen (EU AI Act Pflicht). Keine Sprachdaten,
+keine Aufzeichnungen — nur strukturierte Textzusammenfassungen.
+
+---
+
+EINWAND: "Was passiert bei einem echten Notfall?"
+ANTWORT: Die KI erkennt Notfall-Keywords (Wasserrohrbruch, Gasgeruch,
+Stromausfall), priorisiert das Ticket automatisch als EMERGENCY und benachrichtigt
+die Hausverwaltung sofort per E-Mail. Optional kann ein SMS-Alert an den
+Bereitschaftsdienst konfiguriert werden.
+
+---
+
+EINWAND: "Können wir das erst testen?"
+ANTWORT: Ja — callfolio.io/demo — einfach die Demo-Nummer anrufen und in
+2 Minuten die KI live erleben. Kein Termin, kein Login. Danach besprechen
+wir, ob es für Ihre Verwaltung passt.
+
+---
+
+EINWAND: "Wir sind gerade mitten in einer anderen Einführung."
+ANTWORT: Das kenne ich. Setup dauert bei uns 2-3 Tage — kein monatelanges
+Projekt. Wir konfigurieren alles, Sie müssen nichts installieren. Wann wäre
+ein guter Zeitpunkt nach Ihrer aktuellen Einführung?
+
+---
+
+EINWAND: "Wir arbeiten schon mit [Wettbewerber X]."
+ANTWORT: Das ist eine gute Ausgangslage. Was nutzen Sie davon am meisten?
+[Zuhören] — der Unterschied zu Callfolio ist konkret: keine Minutentaktung,
+SMS-Foto-Upload und namentliche Anrufer-Erkennung. Wäre ein Vergleich
+interessant, bevor Ihr Vertrag verlängert wird?

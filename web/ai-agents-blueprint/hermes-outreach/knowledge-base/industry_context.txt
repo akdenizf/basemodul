@@ -1,0 +1,71 @@
+Last Updated: 2026-05-17
+
+CALLFOLIO — BRANCHEN-KONTEXT DEUTSCHE HAUSVERWALTUNGEN
+
+MARKTGRÖSSE DEUTSCHLAND:
+- ca. 25.000 Hausverwaltungen in Deutschland
+- ca. 3.500 in Bayern
+- ca. 1.200 im Großraum München
+- Ø verwaltete Einheiten pro Firma: 500-2.000
+- Ø Anrufvolumen pro 1.000 Einheiten: ca. 150 Anrufe/Monat
+
+WARUM MÜNCHEN ZUERST (Phase 1 Strategie):
+- Höchste Mieterdichte in Deutschland → maximaler Schmerz bei Erreichbarkeit
+- Callfolio-Gründer in München ansässig → "Wir sitzen um die Ecke" = Trust-Signal
+- Persönliches Demo-Meeting vor Ort möglich (Closing-Vorteil)
+- Landing Page referenziert bereits München/Schwabing als Use Case
+
+TOP-5 SCHMERZPUNKTE DEUTSCHER HAUSVERWALTUNGEN:
+1. Telefonische Erreichbarkeit: #1 Beschwerde in Google Reviews (40% aller 1-Stern-Bewertungen)
+2. Personalknappheit: Fachkräftemangel trifft Hausverwaltungen besonders hart
+3. Schadensdokumentation: Mündliche Beschreibungen führen zu Informationsverlust
+4. Mieter-Erwartungen steigen: "Amazon-Mentalität" — sofortige Reaktion wird erwartet
+5. Handwerker-Koordination: Endlose Telefon-Ketten zwischen HV, Mieter und Handwerker
+
+TRIGGER-KEYWORDS AUS GOOGLE REVIEWS (Erreichbarkeit):
+"nie erreichbar"
+"niemand geht ran"
+"ewig in der Warteschleife"
+"Rückruf nie gekommen"
+"tagelang keine Antwort"
+"Telefon klingelt ins Leere"
+"Anrufbeantworter"
+"katastrophaler Service"
+"unmöglich zu erreichen"
+"Schadensmeldung versickert"
+"keine Reaktion auf Anruf"
+
+QUALIFICATION SCORING (Lead-Priorität):
++30 Punkte: Google Rating unter oder gleich 3.0
++25 Punkte: Review enthält Erreichbarkeits-Keyword
++20 Punkte: 500 oder mehr verwaltete Einheiten
++15 Punkte: Entscheider-E-Mail direkt gefunden
++10 Punkte: Website ohne erkennbare digitale Tools
++20 Punkte: München (Phase-1-Bonus)
+-10 Punkte: Bestandskunde bei bekanntem Wettbewerber erkennbar
+SCHWELLENWERT: 60+ Punkte → aktiver Lead → Outreach starten
+
+REGULATORIK:
+EU AI Act: KI muss sich als KI zu erkennen geben (Callfolio tut das bei jedem Anruf)
+DSGVO: Keine Aufzeichnungen, Daten auf EU-Servern (Frankfurt), Löschfunktion vorhanden
+WEG-Reform 2020: Digitale Dokumentation und Transparenz wird von Eigentümern erwartet
+UWG / CAN-SPAM: Max. 4 Touchpoints pro Lead, sofort stoppen bei "kein Interesse"
+
+OUTREACH-CADENCE:
+Tag 0:  Hook-E-Mail (A, B oder C — je nach stärkstem Trigger)
+Tag 3:  Follow-up: "Kurze Nachfrage zu meiner Mail" (1 Satz)
+Tag 5:  LinkedIn Connection Request + persönliche Nachricht
+Tag 8:  Breakup-Mail: "Kein Interesse? Kein Problem." + Demo-Link
+Tag 14: Nurture: Branchen-Insight teilen (Kein Verkauf, nur Wert)
+
+MAXIMALE OUTREACH-VOLUMEN:
+- Max. 30 Leads recherchiert pro Woche
+- Max. 20 E-Mails gesendet pro Woche (Qualität vor Quantität)
+- Max. 4 Touchpoints pro Lead total
+
+ZIEL-METRIKEN PHASE 1 (Monat 1-3):
+Open Rate Ziel:      45% oder höher
+Reply Rate Ziel:     12% oder höher
+Demo-Termine/Monat:  8
+Abschlüsse/Monat:    2-3
+MRR-Ziel:            2.500 EUR

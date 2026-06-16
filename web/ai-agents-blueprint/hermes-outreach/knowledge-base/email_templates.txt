@@ -1,0 +1,136 @@
+Last Updated: 2026-05-17
+
+CALLFOLIO — OUTREACH E-MAIL TEMPLATES
+
+REGEL: Jede E-Mail referenziert ein konkretes Google-Review-Zitat des Leads.
+TONALITÄT: Direkt, sachlich, kein Verkaufsdruck. Kollege-zu-Kollege Stil.
+LÄNGE: Max. 150 Wörter pro E-Mail. Kein Scroll-Bedarf.
+
+---
+
+HOOK A — "Ihre Mieter sprechen für uns" (Review-Referenz)
+EINSATZ: Wenn Google-Review-Zitat zu Erreichbarkeit vorhanden
+
+Betreff: Ihre Mieter wünschen sich bessere Erreichbarkeit, Herr {nachname}
+
+Guten Tag Herr {nachname},
+
+ich habe die Google-Bewertungen von {company} gelesen. Ein Mieter schreibt:
+"{trigger_review_quote}"
+
+Das ist kein Vorwurf — ich weiß, wie dünn die Personaldecke in der
+Hausverwaltung ist. Genau dafür haben wir Callfolio entwickelt:
+
+Eine KI-Telefonzentrale, die jeden Anruf annimmt — 24/7.
+Keine Warteschleife, keine verpassten Schadensmeldungen.
+
+Wasserrohrbruch um 23 Uhr? Wird sofort erfasst und priorisiert.
+Mieter schickt Fotos per SMS direkt ins Dashboard.
+Ab 89 EUR/Monat. Keine Minutentaktung.
+
+Wir sitzen in München und konfigurieren das System persönlich auf Ihre
+Objekte. Hätten Sie nächste Woche 15 Minuten für eine kurze Demo?
+
+Beste Grüße
+Fatih Akdeniz
+Gründer, Callfolio
++49 [NUMMER]
+callfolio.io
+
+---
+
+HOOK B — "Das Telefon ist blind" (Visual Context USP)
+EINSATZ: Wenn kein starkes Review-Zitat, aber Schadensdokumentation Thema ist
+
+Betreff: Was Ihre Telefonzentrale nicht sehen kann
+
+Guten Tag Herr {nachname},
+
+wenn ein Mieter "Wasserschaden" sagt, weiß niemand:
+Tropft es? Oder steht die Wohnung unter Wasser?
+
+Callfolio fragt per KI nach, schickt dem Mieter automatisch eine SMS
+und bekommt Fotos — noch während des Anrufs. Ihr Handwerker sieht
+den Schaden, bevor er losfährt.
+
+{company} verwaltet ca. {estimated_units} Einheiten —
+das sind geschätzt {estimated_monthly_calls} Anrufe pro Monat,
+die aktuell manuell bearbeitet werden.
+
+Setup: 990 EUR einmalig. Danach ab 89 EUR/Monat.
+Keine Vertragsbindung. Keine Minutentaktung.
+
+Kann ich Ihnen in 15 Minuten zeigen, wie das bei einer
+Münchner Verwaltung ähnlicher Größe funktioniert?
+
+Beste Grüße
+Fatih Akdeniz
+
+---
+
+HOOK C — "Nachts um 3" (24/7 USP, DSGVO-konform)
+EINSATZ: Für konservative Entscheider, Datenschutz-Bedenken erwartet
+
+Betreff: Was passiert bei {company}, wenn nachts das Rohr platzt?
+
+Guten Tag Frau {nachname},
+
+Rohrbruch, Sonntag, 3 Uhr morgens. Der Mieter ruft an.
+Niemand geht ran. Die Frustration wächst — und landet als
+1-Stern-Bewertung bei Google.
+
+Callfolio nimmt den Anruf an: Die KI erkennt den Notfall,
+priorisiert das Ticket und benachrichtigt automatisch den
+Bereitschaftsdienst. Alles DSGVO-konform — keine
+Aufzeichnungen, volle Transparenz.
+
+Ich zeige Ihnen gern in einem kurzen Call, wie das funktioniert.
+Wann passt es Ihnen diese Woche?
+
+Beste Grüße
+Fatih Akdeniz
+
+---
+
+FOLLOW-UP TAG 3 (nach Hook-Mail, kein Rücklauf)
+
+Betreff: Re: [Original-Betreff]
+
+Guten Tag Herr {nachname},
+
+kurze Nachfrage zu meiner Mail von {datum}.
+
+Passt das Thema gerade nicht, oder soll ich in einem anderen Format
+(kurzes Video, Daten-PDF) schicken?
+
+Beste Grüße
+Fatih
+
+---
+
+BREAKUP-MAIL TAG 8 (letzter Kontaktversuch)
+
+Betreff: Letzte Frage, Herr {nachname}
+
+Guten Tag Herr {nachname},
+
+ich melde mich ein letztes Mal. Falls das Thema KI-Telefonassistent
+gerade keine Priorität hat — völlig verständlich.
+
+Falls Sie irgendwann doch schauen möchten, wie das funktioniert:
+→ callfolio.io/demo — 2-Minuten-Selbsttest, kein Termin nötig.
+
+Ich wünsche Ihnen eine gute Verwaltungssaison.
+
+Beste Grüße
+Fatih Akdeniz
+
+---
+
+VARIABLEN-GLOSSAR:
+{nachname}              = Nachname des Entscheiders
+{company}               = Firmenname der Hausverwaltung
+{trigger_review_quote}  = Konkretes Google-Review-Zitat (max. 1 Satz)
+{estimated_units}       = Geschätzte verwaltete Einheiten (aus Website/Scraper)
+{estimated_monthly_calls} = estimated_units * 0.15 (Faustformel)
+{datum}                 = Datum der ersten Mail (z.B. "12. Mai")

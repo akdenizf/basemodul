@@ -1,0 +1,38 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+package-lock.json
+
+# ── Build output ──────────────────────────────────────────────────────────────
+.next/
+tsconfig.tsbuildinfo
+
+# ── Git internals ─────────────────────────────────────────────────────────────
+.git/
+
+# ── macOS artifacts ───────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+
+# ── Deployment & IDE configs ──────────────────────────────────────────────────
+.vercel/
+.cursor/
+
+# ── Archive (per CLAUDE.md: vollständig ignorieren) ───────────────────────────
+_archive/
+
+# ── Scratch / temp ────────────────────────────────────────────────────────────
+scratch/
+
+# ── Superseded Vapi system prompts (aktuell: v15.2) ──────────────────────────
+docs/vapi-system-prompt-v12.7.1.md
+docs/vapi-system-prompt-v14.4.md
+docs/vapi-system-prompt-v14.5.md
+docs/vapi-tools-v14.5.json
+
+# ── Statische Assets (Binärdateien, kein Code-Kontext) ────────────────────────
+public/*.png
+public/*.svg
+public/*.csv
+
+# ── Andere KI-Assistenten-Configs ─────────────────────────────────────────────
+GEMINI.md
