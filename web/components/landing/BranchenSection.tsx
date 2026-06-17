@@ -58,7 +58,7 @@ export function BranchenSection() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <motion.div variants={itemVariants} className="mx-auto mb-20 max-w-3xl text-center">
-          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#19e66f]/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#12b355]">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-[#0369A1]/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#0369A1]">
             Für Ihren Betrieb
           </span>
           <h2 className="text-balance text-4xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
@@ -78,7 +78,7 @@ export function BranchenSection() {
               whileHover={{ y: -4 }}
               className="group flex h-full flex-col rounded-2xl border border-slate-200/60 bg-white p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:shadow-lg"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#19e66f]/10 text-[#12b355]">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0369A1]/10 text-[#0369A1]">
                 <b.Icon size={28} />
               </div>
               <h3 className="mb-3 text-2xl font-bold text-slate-900">{b.title}</h3>
@@ -86,8 +86,8 @@ export function BranchenSection() {
               <ul className="flex flex-col gap-3">
                 {b.points.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-[15px] text-slate-600">
-                    <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#19e66f]/15">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#19e66f]" />
+                    <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-[#0369A1]/15">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#0369A1]" />
                     </span>
                     {p}
                   </li>
@@ -95,7 +95,7 @@ export function BranchenSection() {
               </ul>
               <a
                 href="#cta"
-                className="mt-8 inline-flex items-center gap-1.5 border-t border-slate-100 pt-6 text-sm font-bold text-slate-900 transition-colors group-hover:text-[#12b355]"
+                className="mt-8 inline-flex items-center gap-1.5 border-t border-slate-100 pt-6 text-sm font-bold text-slate-900 transition-colors group-hover:text-[#0369A1]"
               >
                 Pilotplatz für diese Branche
                 <ArrowUpRight size={16} />

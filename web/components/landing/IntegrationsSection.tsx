@@ -36,7 +36,7 @@ export function IntegrationsSection() {
           {/* ── LEFT: copy + CTA ──────────────────────────────────── */}
           <motion.div variants={item} className="flex flex-col gap-8">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
                 Integrationen · Auf Anfrage
               </p>
               <h2 className="font-display max-w-xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]">
@@ -48,7 +48,7 @@ export function IntegrationsSection() {
               </p>
             </div>
 
-            <div className="rounded-2xl border border-slate-100 bg-[#fafaf8] px-5 py-4 text-[14px] leading-relaxed text-slate-500">
+            <div className="rounded-2xl border border-slate-100 bg-[#F8FAFC] px-5 py-4 text-[14px] leading-relaxed text-slate-500">
               Keine eigene Schnittstelle vorhanden? Dann reicht eine einfache E-Mail-Weiterleitung —
               Sie nennen uns Ihr System, wir klären die Anbindung.
             </div>
@@ -56,7 +56,7 @@ export function IntegrationsSection() {
             <div>
               <a
                 href="#cta"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-[#0f1714] py-2 pl-8 pr-2 text-[15px] font-bold text-white shadow-[0_8px_30px_rgba(15,23,20,0.2)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(15,23,20,0.3)]"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-[#0F172A] py-2 pl-8 pr-2 text-[15px] font-bold text-white shadow-[0_8px_30px_rgba(15,23,20,0.2)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(15,23,20,0.3)]"
               >
                 <span>Anbindung anfragen</span>
                 <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 group-hover:translate-x-1">
@@ -73,7 +73,7 @@ export function IntegrationsSection() {
               {/* Header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-5">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#19e66f]/20 bg-[#19e66f]/10 text-[#12b355]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#0369A1]/20 bg-[#0369A1]/10 text-[#0369A1]">
                     <Plug className="h-[18px] w-[18px]" />
                   </div>
                   <div>
@@ -81,7 +81,7 @@ export function IntegrationsSection() {
                     <p className="text-[12px] font-medium text-slate-500">Flexibel kombinierbar</p>
                   </div>
                 </div>
-                <span className="rounded-full bg-[#19e66f]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#12b355]">
+                <span className="rounded-full bg-[#0369A1]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#0369A1]">
                   Auf Anfrage
                 </span>
               </div>
@@ -95,7 +95,7 @@ export function IntegrationsSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3 + i * 0.14, type: "spring", stiffness: 220, damping: 22 }}
-                    className="flex items-center gap-3.5 rounded-xl border border-slate-100 bg-[#fafafa] px-3.5 py-3"
+                    className="flex items-center gap-3.5 rounded-xl border border-slate-100 bg-[#F8FAFC] px-3.5 py-3"
                   >
                     <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-slate-200 bg-white text-slate-600">
                       <c.icon className="h-[18px] w-[18px]" />

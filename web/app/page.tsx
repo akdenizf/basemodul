@@ -17,12 +17,12 @@ import { FloatingCta } from "@/components/landing/FloatingCta";
 
 const LiveDemoSection = dynamic(
   () => import("@/components/landing/LiveDemoSection").then((m) => ({ default: m.LiveDemoSection })),
-  { ssr: false, loading: () => <div className="py-24 sm:py-32 bg-[#FAFAFA]" /> }
+  { ssr: false, loading: () => <div className="py-24 sm:py-32 bg-[#F8FAFC]" /> }
 );
 
 export default function LandingPage() {
   return (
-    <div className="flex min-h-[100dvh] flex-col overflow-x-hidden bg-[#fafaf8] text-slate-900 selection:bg-[#19e66f]/30">
+    <div className="flex min-h-[100dvh] flex-col overflow-x-hidden bg-[#F8FAFC] text-slate-900 selection:bg-[#0369A1]/30">
       <Navbar />
       <main className="flex-1">
         <HeroSection />

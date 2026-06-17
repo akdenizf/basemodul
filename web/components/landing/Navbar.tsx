@@ -45,7 +45,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <span
-              className="font-display text-xl font-bold tracking-tight text-[#19e66f]"
+              className="font-display text-xl font-bold tracking-tight text-[#0369A1]"
             >
               AGENTEQ
             </span>
@@ -68,7 +68,7 @@ export function Navbar() {
           <div className="flex items-center gap-4">
             <a
               href="#cta"
-              className="group hidden sm:flex items-center gap-2 rounded-full bg-[#19e66f] pl-5 pr-1.5 py-1.5 text-[14px] font-bold text-[#0f1714] shadow-sm transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:bg-[#15d163]"
+              className="group hidden sm:flex items-center gap-2 rounded-full bg-[#0369A1] pl-5 pr-1.5 py-1.5 text-[14px] font-bold text-white shadow-sm transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:bg-[#075985]"
             >
               <span>Pilotplatz anfragen</span>
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/30 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:translate-x-0.5">
@@ -121,7 +121,7 @@ export function Navbar() {
                 <a
                   href="#cta"
                   onClick={() => setMobileOpen(false)}
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#19e66f] py-4 text-lg font-bold text-[#0f1714]"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-[#0369A1] py-4 text-lg font-bold text-white"
                 >
                   Pilotplatz anfragen
                 </a>

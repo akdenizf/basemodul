@@ -25,7 +25,7 @@ export function TrustSection() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
               className="flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-[16px] text-[#19e66f]">{b.icon}</span>
+              <span className="material-symbols-outlined text-[16px] text-[#0369A1]">{b.icon}</span>
               <span className="text-[13px] font-medium text-slate-500">{b.label}</span>
               {i < BADGES.length - 1 && (
                 <span className="ml-10 hidden h-3.5 w-px bg-slate-200 sm:block" />

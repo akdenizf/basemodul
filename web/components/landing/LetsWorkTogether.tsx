@@ -16,10 +16,10 @@ export function LetsWorkTogether() {
         
         {/* Double Bezel Container */}
         <div className="relative rounded-[3rem] border border-slate-100 bg-slate-50 p-3 shadow-sm sm:p-4">
-          <div className="relative overflow-hidden rounded-[calc(3rem-1rem)] border border-slate-200/50 bg-[#fafaf8] px-6 py-20 shadow-[inset_0_1px_1px_rgba(255,255,255,1)] sm:px-12 sm:py-24 lg:px-20">
+          <div className="relative overflow-hidden rounded-[calc(3rem-1rem)] border border-slate-200/50 bg-[#F8FAFC] px-6 py-20 shadow-[inset_0_1px_1px_rgba(255,255,255,1)] sm:px-12 sm:py-24 lg:px-20">
             
             {/* Background Glow inside the card */}
-            <div className="absolute right-0 top-0 h-[400px] w-[400px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[#19e66f]/10 blur-[100px]" />
+            <div className="absolute right-0 top-0 h-[400px] w-[400px] -translate-y-1/2 translate-x-1/3 rounded-full bg-[#0369A1]/10 blur-[100px]" />
             <div className="absolute bottom-0 left-0 h-[300px] w-[300px] -translate-x-1/3 translate-y-1/3 rounded-full bg-blue-100/40 blur-[80px]" />
 
             <div className="relative z-10 grid items-center gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
@@ -45,7 +45,7 @@ export function LetsWorkTogether() {
                   </h2>
                 </div>
 
-                <blockquote className="border-l-4 border-[#19e66f] pl-6">
+                <blockquote className="border-l-4 border-[#0369A1] pl-6">
                   <p className="text-[18px] font-medium italic leading-[1.6] text-slate-600 md:text-[20px]">
                     &bdquo;Wir schauen uns kurz an, wo bei Ihnen Anfragen verloren gehen - und ob ein schlanker Pilot mit AGENTEQ Sinn ergibt.&ldquo;
                   </p>
@@ -56,7 +56,7 @@ export function LetsWorkTogether() {
                     onClick={() => window.open(CAL_LINK, "_blank")}
                     onMouseEnter={() => setHovered(true)}
                     onMouseLeave={() => setHovered(false)}
-                    className="group relative inline-flex w-fit items-center gap-2 rounded-full bg-[#19e66f] py-2 pl-8 pr-2 text-[16px] font-bold text-[#0f1714] shadow-[0_8px_30px_rgba(25,230,111,0.25)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(25,230,111,0.35)]"
+                    className="group relative inline-flex w-fit items-center gap-2 rounded-full bg-[#0369A1] py-2 pl-8 pr-2 text-[16px] font-bold text-white shadow-[0_8px_30px_rgba(3, 105, 161,0.25)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(3, 105, 161,0.35)]"
                   >
                     <span>Termin buchen</span>
                     <div className="ml-4 flex h-12 w-12 items-center justify-center rounded-full bg-white/30 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 group-hover:translate-x-1">
@@ -94,7 +94,7 @@ export function LetsWorkTogether() {
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/80 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-8">
                       <p className="font-display text-2xl font-bold text-white">Fatih Akdeniz</p>
-                      <p className="mt-1 text-sm font-medium text-[#19e66f]">CEO & Gründer, AGENTEQ</p>
+                      <p className="mt-1 text-sm font-medium text-[#0369A1]">CEO & Gründer, AGENTEQ</p>
                     </div>
                   </div>
                 </div>
@@ -107,7 +107,7 @@ export function LetsWorkTogether() {
                   style={{ transform: "rotate(-2deg)" }}
                 >
                   <div className="flex items-center gap-3 rounded-[1rem] border border-slate-100 bg-slate-50 px-5 py-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#19e66f]/15 text-[#12b355]">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0369A1]/15 text-[#0369A1]">
                       <span className="material-symbols-outlined text-[20px]">bolt</span>
                     </span>
                     <div>

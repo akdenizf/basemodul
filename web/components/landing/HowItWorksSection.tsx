@@ -52,7 +52,7 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <motion.div variants={item} className="mb-20 text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
             Der Prozess
           </p>
           <h2
@@ -76,9 +76,9 @@ export function HowItWorksSection() {
               className="group relative flex flex-col gap-5"
             >
               {/* Icon circle */}
-              <div className="relative z-10 flex h-[104px] w-[104px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:border-[#19e66f]/40 group-hover:shadow-[0_4px_24px_rgba(25,230,111,0.15)]">
+              <div className="relative z-10 flex h-[104px] w-[104px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:border-[#0369A1]/40 group-hover:shadow-[0_4px_24px_rgba(3, 105, 161,0.15)]">
                 <span
-                  className="font-display text-xs font-bold tracking-widest text-[#19e66f]"
+                  className="font-display text-xs font-bold tracking-widest text-[#0369A1]"
                 >
                   {step.number}
                 </span>

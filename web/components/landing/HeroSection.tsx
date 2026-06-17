@@ -50,10 +50,10 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-[#fafaf8] px-4 pb-24 pt-32 lg:px-8">
+    <section className="relative flex min-h-[100dvh] flex-col justify-center overflow-hidden bg-[#F8FAFC] px-4 pb-24 pt-32 lg:px-8">
       {/* Soft Ambient Glows */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[20%] top-[20%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#19e66f]/15 blur-[120px]" />
+        <div className="absolute left-[20%] top-[20%] h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0369A1]/15 blur-[120px]" />
         <div className="absolute right-[10%] top-[40%] h-[500px] w-[500px] rounded-full bg-blue-100/40 blur-[120px]" />
       </div>
 
@@ -71,8 +71,8 @@ export function HeroSection() {
             <motion.div variants={fadeUp}>
               <div className="inline-flex items-center gap-3 rounded-full border border-slate-200/60 bg-white/60 px-4 py-2 shadow-sm backdrop-blur-md">
                 <span className="relative flex h-2.5 w-2.5">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#19e66f] opacity-60" />
-                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#19e66f]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0369A1] opacity-60" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#0369A1]" />
                 </span>
                 <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Live · Anfrage-Assistent
@@ -83,11 +83,11 @@ export function HeroSection() {
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="font-display text-[48px] font-bold leading-[1.05] tracking-[-0.02em] text-[#0f1714] sm:text-[72px] lg:text-[84px] xl:text-[96px]"
+              className="font-display text-[48px] font-bold leading-[1.05] tracking-[-0.02em] text-[#0F172A] sm:text-[72px] lg:text-[84px] xl:text-[96px]"
             >
               Kein Anruf geht
               <br />
-              <span className="text-[#19e66f]"> mehr verloren.</span>
+              <span className="text-[#0369A1]"> mehr verloren.</span>
             </motion.h1>
 
             {/* Sub */}
@@ -104,7 +104,7 @@ export function HeroSection() {
             <motion.div variants={fadeUp} className="mt-4 flex flex-wrap items-center gap-6">
               <a
                 href="#cta"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-[#19e66f] py-2 pl-8 pr-2 text-[15px] font-bold text-[#0c0f0c] shadow-[0_8px_30px_rgba(25,230,111,0.25)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(25,230,111,0.35)]"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-[#0369A1] py-2 pl-8 pr-2 text-[15px] font-bold text-[#FFFFFF] shadow-[0_8px_30px_rgba(3, 105, 161,0.25)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(3, 105, 161,0.35)]"
               >
                 <span>Pilotplatz anfragen</span>
                 <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/30 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 group-hover:translate-x-1">
@@ -114,7 +114,7 @@ export function HeroSection() {
 
               <a
                 href="#livedemo"
-                className="group relative inline-flex items-center gap-2 rounded-full bg-[#0f1714] py-2 pl-8 pr-2 text-[15px] font-bold text-white shadow-[0_8px_30px_rgba(15,23,20,0.2)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(15,23,20,0.3)]"
+                className="group relative inline-flex items-center gap-2 rounded-full bg-[#0F172A] py-2 pl-8 pr-2 text-[15px] font-bold text-white shadow-[0_8px_30px_rgba(15,23,20,0.2)] transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(15,23,20,0.3)]"
               >
                 <span>Demo ansehen</span>
                 <div className="ml-4 flex h-10 w-10 items-center justify-center rounded-full bg-white/15 transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] group-hover:scale-105 group-hover:translate-x-1">
@@ -134,7 +134,7 @@ export function HeroSection() {
                 { value: "100%", label: "DSGVO" },
               ].map((stat) => (
                 <div key={stat.value} className="flex flex-col gap-1">
-                  <p className="font-display text-3xl font-bold tracking-tight text-[#0f1714]">
+                  <p className="font-display text-3xl font-bold tracking-tight text-[#0F172A]">
                     {stat.value}
                   </p>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-400">
@@ -160,8 +160,8 @@ export function HeroSection() {
                 <div className="border-b border-slate-100 bg-slate-50/50 px-6 py-5">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#19e66f]/20 bg-[#19e66f]/10 shadow-sm">
-                        <PhoneCall size={18} className="text-[#12b355]" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[#0369A1]/20 bg-[#0369A1]/10 shadow-sm">
+                        <PhoneCall size={18} className="text-[#0369A1]" />
                       </div>
                       <div>
                         <p className="text-[14px] font-bold text-slate-900">Eingehender Anruf</p>
@@ -170,8 +170,8 @@ export function HeroSection() {
                     </div>
                     <div className="text-right">
                       <p className="font-mono text-[13px] font-bold text-slate-700">{formatTime(elapsed)}</p>
-                      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#12b355]">
-                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#12b355]"></span>
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#0369A1]">
+                        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#0369A1]"></span>
                         Aktiv
                       </span>
                     </div>
@@ -199,9 +199,9 @@ export function HeroSection() {
                         <div
                           className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] transition-all duration-500 ${
                             isActive
-                              ? "bg-[#19e66f] text-[#0f1714] shadow-[0_8px_20px_rgba(25,230,111,0.3)]"
+                              ? "bg-[#0369A1] text-white shadow-[0_8px_20px_rgba(3, 105, 161,0.3)]"
                               : isDone
-                              ? "bg-slate-100 text-[#12b355]"
+                              ? "bg-slate-100 text-[#0369A1]"
                               : "border border-slate-100 bg-slate-50 text-slate-400"
                           }`}
                         >
@@ -229,7 +229,7 @@ export function HeroSection() {
                 {/* Footer */}
                 <div className="flex items-center justify-between border-t border-slate-100 bg-slate-50/50 px-6 py-4">
                   <span className="font-mono text-[11px] font-medium text-slate-400">agenteq.de/engine</span>
-                  <span className="rounded-full border border-[#19e66f]/20 bg-[#19e66f]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#12b355]">
+                  <span className="rounded-full border border-[#0369A1]/20 bg-[#0369A1]/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#0369A1]">
                     In Bearbeitung
                   </span>
                 </div>
@@ -243,7 +243,7 @@ export function HeroSection() {
               className="absolute -right-8 bottom-12 z-20 hidden rounded-[1.25rem] border border-white bg-white/80 p-1.5 shadow-[0_20px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl lg:block"
             >
               <div className="flex items-center gap-3 rounded-[1rem] border border-slate-100 bg-white px-5 py-3 shadow-sm">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#19e66f]/15 text-[#12b355]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0369A1]/15 text-[#0369A1]">
                   <span className="material-symbols-outlined text-[16px]">verified_user</span>
                 </span>
                 <div>

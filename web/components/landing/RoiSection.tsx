@@ -74,7 +74,7 @@ export function RoiSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <motion.div variants={item} className="mb-16 text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
             Der Unterschied
           </p>
           <h2 className="font-display mx-auto max-w-2xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]">
@@ -90,7 +90,7 @@ export function RoiSection() {
               variants={item}
               className="rounded-2xl border border-slate-200/60 bg-white p-6 md:p-8 text-center shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-[#19e66f]/20 bg-[#19e66f]/10 text-[#12b355]">
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-xl border border-[#0369A1]/20 bg-[#0369A1]/10 text-[#0369A1]">
                 <stat.icon size={26} />
               </div>
               <p className="font-display text-3xl font-bold tracking-tight text-slate-900 lg:text-4xl">
@@ -124,14 +124,14 @@ export function RoiSection() {
           </div>
 
           {/* With */}
-          <div className="rounded-2xl border border-[#19e66f]/25 bg-white p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div className="rounded-2xl border border-[#0369A1]/25 bg-white p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
             <h3 className="mb-6 text-xl font-bold tracking-tight text-slate-900 border-b border-slate-100 pb-4">
               Mit AGENTEQ
             </h3>
             <ul className="flex flex-col gap-5">
               {withItems.map((text, i) => (
                 <li key={i} className="flex items-center gap-4">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#19e66f]/10 text-[#12b355]">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0369A1]/10 text-[#0369A1]">
                     <span className="material-symbols-outlined text-[16px]">check</span>
                   </span>
                   <span className="text-base font-medium text-slate-600">{text}</span>

@@ -45,7 +45,7 @@ export function SelfOnboardingSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden bg-[#fafaf8] py-28 lg:py-36"
+      className="relative overflow-hidden bg-[#F8FAFC] py-28 lg:py-36"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
@@ -53,7 +53,7 @@ export function SelfOnboardingSection() {
           {/* ── LEFT: copy + benefits ─────────────────────────────── */}
           <motion.div variants={item} className="flex flex-col gap-8">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
                 Self-Onboarding
               </p>
               <h2 className="font-display max-w-xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]">
@@ -68,7 +68,7 @@ export function SelfOnboardingSection() {
             <div className="flex flex-col gap-5">
               {BENEFITS.map((b) => (
                 <div key={b.title} className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-slate-200 bg-white text-[#12b355] shadow-sm">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-slate-200 bg-white text-[#0369A1] shadow-sm">
                     <b.icon className="h-5 w-5" />
                   </div>
                   <div>
@@ -87,7 +87,7 @@ export function SelfOnboardingSection() {
               {/* Incoming-call header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-5">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#19e66f]/20 bg-[#19e66f]/10 text-[#12b355]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#0369A1]/20 bg-[#0369A1]/10 text-[#0369A1]">
                     <PhoneIncoming className="h-[18px] w-[18px]" />
                   </div>
                   <div>
@@ -102,7 +102,7 @@ export function SelfOnboardingSection() {
 
               {/* Outgoing SMS bubble */}
               <div className="mt-5 flex justify-end">
-                <div className="max-w-[85%] rounded-[1.25rem] rounded-tr-sm bg-[#19e66f] px-4 py-3 text-[13px] font-medium leading-relaxed text-[#0f1714] shadow-sm">
+                <div className="max-w-[85%] rounded-[1.25rem] rounded-tr-sm bg-[#0369A1] px-4 py-3 text-[13px] font-medium leading-relaxed text-white shadow-sm">
                   Guten Tag! Damit wir Ihr Anliegen zuordnen können, bestätigen Sie bitte kurz Ihre Daten:
                   <span className="mt-2 block font-mono text-[12px] font-bold underline underline-offset-2">
                     agenteq.de/r/8f2a
@@ -111,7 +111,7 @@ export function SelfOnboardingSection() {
               </div>
 
               {/* Self-registration card filling in */}
-              <div className="mt-5 rounded-2xl border border-slate-100 bg-[#fafafa] p-4">
+              <div className="mt-5 rounded-2xl border border-slate-100 bg-[#F8FAFC] p-4">
                 <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-slate-400">
                   Selbst-Registrierung
                 </p>
@@ -129,8 +129,8 @@ export function SelfOnboardingSection() {
                         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{f.label}</p>
                         <p className="truncate text-[13px] font-semibold text-slate-700">{f.value}</p>
                       </div>
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#19e66f]/15">
-                        <Check className="h-3 w-3 text-[#12b355]" strokeWidth={3} />
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0369A1]/15">
+                        <Check className="h-3 w-3 text-[#0369A1]" strokeWidth={3} />
                       </span>
                     </motion.div>
                   ))}
@@ -141,9 +141,9 @@ export function SelfOnboardingSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1.1, type: "spring", stiffness: 220, damping: 22 }}
-                  className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[#0f1714] py-2.5 text-[12px] font-bold text-white"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[#0F172A] py-2.5 text-[12px] font-bold text-white"
                 >
-                  <ShieldCheck className="h-4 w-4 text-[#19e66f]" />
+                  <ShieldCheck className="h-4 w-4 text-[#0369A1]" />
                   Verifiziert &amp; im Dashboard erfasst
                 </motion.div>
               </div>

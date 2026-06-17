@@ -21,7 +21,7 @@ export function VisualContextSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden bg-[#fafaf8] py-28 lg:py-36"
+      className="relative overflow-hidden bg-[#F8FAFC] py-28 lg:py-36"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
@@ -29,7 +29,7 @@ export function VisualContextSection() {
           {/* Left: copy */}
           <div className="flex flex-col gap-8">
             <motion.div variants={item}>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
                 Visueller Kontext
               </p>
               <h2
@@ -54,8 +54,8 @@ export function VisualContextSection() {
                 { icon: "verified", text: "Rechtssichere Dokumentation" },
               ].map((point) => (
                 <li key={point.text} className="flex items-center gap-3.5">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#19e66f]/10">
-                    <span className="material-symbols-outlined text-[17px] text-[#19e66f]">{point.icon}</span>
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#0369A1]/10">
+                    <span className="material-symbols-outlined text-[17px] text-[#0369A1]">{point.icon}</span>
                   </span>
                   <span className="text-[15px] font-medium text-slate-700">{point.text}</span>
                 </li>
@@ -91,8 +91,8 @@ export function VisualContextSection() {
                 </div>
                 <span className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
                   <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#19e66f] opacity-60" />
-                    <span className="relative h-2 w-2 rounded-full bg-[#19e66f]" />
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0369A1] opacity-60" />
+                    <span className="relative h-2 w-2 rounded-full bg-[#0369A1]" />
                   </span>
                   Live
                 </span>
@@ -162,7 +162,7 @@ export function VisualContextSection() {
               className="absolute -bottom-6 -left-8 hidden rounded-[1.25rem] border border-slate-100 bg-white p-1.5 shadow-[0_20px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl lg:block"
             >
               <div className="rounded-[1rem] bg-slate-50 px-5 py-3 border border-slate-100 flex items-center gap-3">
-                <span className="material-symbols-outlined text-[16px] text-[#19e66f]">bolt</span>
+                <span className="material-symbols-outlined text-[16px] text-[#0369A1]">bolt</span>
                 <div>
                   <p className="text-[12px] font-bold text-slate-900">Ø 241ms</p>
                   <p className="text-[10px] text-slate-400">Antwortzeit</p>

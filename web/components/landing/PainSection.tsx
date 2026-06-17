@@ -40,13 +40,13 @@ export function PainSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden bg-[#fafaf8] py-28 lg:py-36"
+      className="relative overflow-hidden bg-[#F8FAFC] py-28 lg:py-36"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <motion.div variants={item} className="mb-20 grid gap-6 lg:grid-cols-[1fr_auto]">
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
               Das Problem
             </p>
             <h2
@@ -72,7 +72,7 @@ export function PainSection() {
             >
               {/* Number */}
               <span
-                className="font-display text-[42px] font-bold leading-none tracking-tight text-slate-200 transition-colors duration-300 group-hover:text-[#19e66f]/40 lg:text-[48px]"
+                className="font-display text-[42px] font-bold leading-none tracking-tight text-slate-200 transition-colors duration-300 group-hover:text-[#0369A1]/40 lg:text-[48px]"
               >
                 {pain.num}
               </span>

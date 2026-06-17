@@ -244,13 +244,13 @@ export function LiveDemoSection() {
   }, [isPlaying, isComplete, currentSpeaker]);
 
   return (
-    <section id="livedemo" className="relative overflow-hidden bg-[#FAFAFA] py-24 sm:py-32 font-display">
+    <section id="livedemo" className="relative overflow-hidden bg-[#F8FAFC] py-24 sm:py-32 font-display">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center mb-20">
           <h2 className="font-display tracking-tighter text-[42px] font-bold leading-[1.05] text-slate-900 sm:text-[52px]">
-            So natürlich klingt <span className="text-[#19E66F]">echte Entlastung</span>.
+            So natürlich klingt <span className="text-[#0369A1]">echte Entlastung</span>.
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto">
             Wählen Sie ein typisches Szenario aus dem Betriebsalltag. Hören Sie live, wie AGENTEQ Anrufe entgegennimmt, Störungen qualifiziert und als fertiges Ticket dokumentiert.
@@ -309,8 +309,8 @@ export function LiveDemoSection() {
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-3">
                     <div className="relative flex h-2.5 w-2.5">
-                      {isPlaying && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#19E66F] opacity-60" />}
-                      <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${isPlaying ? "bg-[#19E66F]" : "bg-slate-300"}`} />
+                      {isPlaying && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0369A1] opacity-60" />}
+                      <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${isPlaying ? "bg-[#0369A1]" : "bg-slate-300"}`} />
                     </div>
                     <span className="text-[12px] font-bold tracking-widest text-slate-400 uppercase">Live Engine</span>
                   </div>
@@ -335,7 +335,7 @@ export function LiveDemoSection() {
                       <motion.div
                         animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0, 0.5] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute inset-0 rounded-full bg-[#19E66F]"
+                        className="absolute inset-0 rounded-full bg-[#0369A1]"
                       />
                     )}
                     <motion.button
@@ -344,7 +344,7 @@ export function LiveDemoSection() {
                       className={`relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full shadow-lg transition-colors ${
                         isPlaying 
                           ? "bg-slate-800 text-white hover:bg-slate-900" 
-                          : "bg-[#19E66F] text-[#0f1714] shadow-[#19E66F]/30 hover:bg-[#15cc61]"
+                          : "bg-[#0369A1] text-white shadow-[#0369A1]/30 hover:bg-[#075985]"
                       }`}
                     >
                       {isPlaying ? <Pause className="h-5 w-5 fill-current" /> : <Play className="h-5 w-5 fill-current ml-1" />}
@@ -355,7 +355,7 @@ export function LiveDemoSection() {
 
               {/* Transcript Area */}
               <div 
-                className="relative flex-1 overflow-hidden bg-[#FAFAFA]"
+                className="relative flex-1 overflow-hidden bg-[#F8FAFC]"
               >
                 <div 
                   ref={scrollRef}
@@ -377,7 +377,7 @@ export function LiveDemoSection() {
                               ? 'bg-white border border-gray-100 text-slate-800 rounded-tl-sm' 
                               : 'bg-slate-800 border border-slate-700 text-white rounded-tr-sm'
                             }
-                            ${isPlaying && idx === visibleMessages.length - 1 && msg.speaker === 'assistant' ? 'ring-1 ring-[#19E66F] shadow-[0_0_20px_rgba(25,230,111,0.1)]' : ''}
+                            ${isPlaying && idx === visibleMessages.length - 1 && msg.speaker === 'assistant' ? 'ring-1 ring-[#0369A1] shadow-[0_0_20px_rgba(3, 105, 161,0.1)]' : ''}
                           `}
                         >
                           <span className={`block text-[10px] font-bold uppercase tracking-widest mb-1.5 ${msg.speaker === 'assistant' ? 'text-slate-400' : 'text-slate-400'}`}>
@@ -421,8 +421,8 @@ export function LiveDemoSection() {
                     >
                       <div className="bg-white rounded-[1.5rem] p-6 border border-gray-100 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]">
                         <div className="flex items-start gap-4">
-                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#19E66F]/10">
-                            <CheckCircle2 className="h-5 w-5 text-[#19E66F]" />
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#0369A1]/10">
+                            <CheckCircle2 className="h-5 w-5 text-[#0369A1]" />
                           </div>
                           <div>
                             <div className="flex items-center gap-3 mb-1">
@@ -437,7 +437,7 @@ export function LiveDemoSection() {
                             
                             <div className="flex items-center gap-2">
                               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-slate-100">
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#19E66F]"></span>
+                                <span className="h-1.5 w-1.5 rounded-full bg-[#0369A1]"></span>
                               </span>
                               <span className="text-[12px] font-bold text-slate-500">{scenario.finalResult.action}</span>
                             </div>
@@ -449,7 +449,7 @@ export function LiveDemoSection() {
                 </AnimatePresence>
 
                 {/* Fade Out Gradient at bottom */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAFA] to-transparent pointer-events-none z-20" />
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F8FAFC] to-transparent pointer-events-none z-20" />
               </div>
 
             </div>

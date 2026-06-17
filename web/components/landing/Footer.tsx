@@ -35,7 +35,7 @@ export function Footer() {
                 height={32}
                 className="h-8 w-8 object-contain"
               />
-              <span className="font-display text-2xl font-bold tracking-tight text-[#19e66f]">
+              <span className="font-display text-2xl font-bold tracking-tight text-[#0369A1]">
                 AGENTEQ
               </span>
             </Link>

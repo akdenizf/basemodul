@@ -69,7 +69,7 @@ export function BarVisualizer({
             className="rounded-full"
             style={{
               width: "3px",
-              backgroundColor: "#19E66F",
+              backgroundColor: "#0369A1",
               minHeight: `${minH}%`,
             }}
             animate={{

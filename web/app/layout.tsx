@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Outfit, Fira_Code, Space_Grotesk } from "next/font/google";
+import { Inter, JetBrains_Mono, Calistoga } from "next/font/google";
 
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
-const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" });
+// AGENTEQ "Professional Navy" type system:
+// Body = Inter, Display/Headings = Calistoga (serif), Mono = JetBrains Mono.
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
+const calistoga = Calistoga({ subsets: ["latin"], weight: "400", variable: "--font-calistoga" });
 
 // ============================================================
-// CALLFOLIO ROOT LAYOUT
+// AGENTEQ ROOT LAYOUT
 // ============================================================
 // Shared root layout for all routes.
 // Route groups add their own providers (e.g., ThemeProvider for app).
@@ -34,7 +36,7 @@ export default function RootLayout({
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
       </head>
-      <body className={`min-h-screen font-sans ${outfit.variable} ${firaCode.variable} ${spaceGrotesk.variable} ${outfit.className} bg-neutral-100 text-neutral-900`}>
+      <body className={`min-h-screen font-sans ${inter.variable} ${jetbrainsMono.variable} ${calistoga.variable} ${inter.className} bg-neutral-100 text-neutral-900`}>
         {/* SVG Noise Overlay */}
         <div className="pointer-events-none fixed inset-0 z-[9999] opacity-[0.03] mix-blend-overlay">
           <svg className="absolute inset-0 h-full w-full">

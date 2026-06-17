@@ -93,7 +93,7 @@ export function PricingSection() {
             aria-checked={annual}
             role="switch"
             className={`relative inline-flex h-8 w-14 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-300 ${
-              annual ? "bg-[#19e66f]" : "bg-slate-200"
+              annual ? "bg-[#0369A1]" : "bg-slate-200"
             }`}
           >
             <span
@@ -106,7 +106,7 @@ export function PricingSection() {
             <span className={`text-[15px] font-bold ${annual ? "text-slate-900" : "text-slate-400"}`}>
               Jährlich
             </span>
-            <span className="rounded-full bg-[#19e66f]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#12b355]">
+            <span className="rounded-full bg-[#0369A1]/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-[#0369A1]">
               2 Monate gespart
             </span>
           </div>
@@ -120,7 +120,7 @@ export function PricingSection() {
               variants={item}
               className={`relative flex flex-col justify-between rounded-[2.5rem] p-2 transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
                 tier.highlighted
-                  ? "z-10 border border-[#19e66f]/40 bg-[#19e66f]/5 shadow-[0_20px_60px_rgba(25,230,111,0.15)] lg:-translate-y-2"
+                  ? "z-10 border border-[#0369A1]/40 bg-[#0369A1]/5 shadow-[0_20px_60px_rgba(3, 105, 161,0.15)] lg:-translate-y-2"
                   : "border border-slate-100 bg-slate-50 shadow-sm"
               }`}
             >
@@ -130,7 +130,7 @@ export function PricingSection() {
                 
                 {tier.highlighted && (
                   <div className="absolute -top-1 left-1/2 -translate-x-1/2">
-                    <span className="rounded-b-xl bg-[#19e66f] px-5 py-2 text-[11px] font-bold uppercase tracking-wider text-[#0f1714] shadow-sm">
+                    <span className="rounded-b-xl bg-[#0369A1] px-5 py-2 text-[11px] font-bold uppercase tracking-wider text-white shadow-sm">
                       Beliebteste Wahl
                     </span>
                   </div>
@@ -154,7 +154,7 @@ export function PricingSection() {
                             <span className="text-[13px] font-bold text-slate-300 line-through">
                               {tier.monthly}€
                             </span>
-                            <span className="text-[11px] font-bold uppercase tracking-wider text-[#12b355]">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-[#0369A1]">
                               (jährliche Zahlung)
                             </span>
                           </div>
@@ -170,8 +170,8 @@ export function PricingSection() {
                   <ul className="mt-10 flex flex-col gap-4">
                     {tier.features.map((feat, j) => (
                       <li key={j} className="flex items-start gap-3 text-[14px] font-medium text-slate-600">
-                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#19e66f]/15">
-                          <Check size={12} strokeWidth={3} className="text-[#12b355]" />
+                        <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0369A1]/15">
+                          <Check size={12} strokeWidth={3} className="text-[#0369A1]" />
                         </div>
                         {feat}
                       </li>
@@ -183,7 +183,7 @@ export function PricingSection() {
                   href="#cta"
                   className={`mt-12 block w-full rounded-full px-6 py-4 text-center text-[15px] font-bold transition-all duration-300 ${
                     tier.highlighted
-                      ? "bg-[#19e66f] text-[#0f1714] shadow-[0_8px_30px_rgba(25,230,111,0.25)] hover:bg-[#15d163] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(25,230,111,0.35)]"
+                      ? "bg-[#0369A1] text-white shadow-[0_8px_30px_rgba(3, 105, 161,0.25)] hover:bg-[#075985] hover:scale-[0.98] hover:shadow-[0_12px_40px_rgba(3, 105, 161,0.35)]"
                       : "bg-slate-100 text-slate-900 shadow-sm hover:scale-[0.98] hover:bg-slate-200"
                   }`}
                 >
@@ -203,13 +203,13 @@ export function PricingSection() {
             <div className="relative flex flex-col items-center gap-12 overflow-hidden rounded-[calc(3rem-0.5rem)] bg-white px-8 py-12 shadow-[0_30px_80px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,1)] md:p-12 lg:flex-row">
 
               {/* Background Accent */}
-              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#19e66f] to-emerald-300 opacity-80" />
-              <div className="pointer-events-none absolute -mr-16 -mt-16 right-0 top-0 h-80 w-80 rounded-full bg-[#19e66f]/5 blur-[100px] transition-colors group-hover:bg-[#19e66f]/10" />
+              <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-[#0369A1] to-emerald-300 opacity-80" />
+              <div className="pointer-events-none absolute -mr-16 -mt-16 right-0 top-0 h-80 w-80 rounded-full bg-[#0369A1]/5 blur-[100px] transition-colors group-hover:bg-[#0369A1]/10" />
 
               {/* Left Column: Content */}
               <div className="relative z-10 w-full flex-1">
                 <div className="mb-8 flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#19e66f]/20 bg-[#19e66f]/10 text-[#12b355] shadow-sm">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[#0369A1]/20 bg-[#0369A1]/10 text-[#0369A1] shadow-sm">
                     <Rocket size={26} strokeWidth={2} />
                   </div>
                   <h3 className="font-display text-3xl font-bold tracking-tight text-slate-900">
@@ -230,7 +230,7 @@ export function PricingSection() {
                   ].map((text) => (
                     <div key={text} className="flex items-center gap-3">
                       <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100">
-                        <span className="h-2 w-2 rounded-full bg-[#19e66f] shadow-sm"></span>
+                        <span className="h-2 w-2 rounded-full bg-[#0369A1] shadow-sm"></span>
                       </span>
                       <span className="text-[14px] font-bold text-slate-700">{text}</span>
                     </div>

@@ -56,10 +56,10 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       onClick={() => setOpen(!open)}
     >
       <div className="flex items-center justify-between gap-4">
-        <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#12b355] transition-colors sm:text-base">{q}</h3>
+        <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#0369A1] transition-colors sm:text-base">{q}</h3>
         <ChevronDown
           size={18}
-          className={`shrink-0 text-slate-400 group-hover:text-[#12b355] transition-all duration-300 ${open ? "rotate-180 text-[#12b355]" : ""}`}
+          className={`shrink-0 text-slate-400 group-hover:text-[#0369A1] transition-all duration-300 ${open ? "rotate-180 text-[#0369A1]" : ""}`}
         />
       </div>
       <AnimatePresence>
@@ -91,7 +91,7 @@ export function FaqSection() {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <motion.div variants={item} className="mb-16 text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#19e66f]">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
             FAQ
           </p>
           <h2 className="font-display mx-auto max-w-2xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]">
