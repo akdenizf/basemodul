@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Impressum | AGENTEQ',
-    description: 'Impressum der AGENTEQ KI-Telefonzentrale.',
+    description: 'Impressum des AGENTEQ Anfrage-Assistenten.',
 };
 
 export default function ImpressumPage() {

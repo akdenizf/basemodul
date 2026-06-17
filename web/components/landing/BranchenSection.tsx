@@ -27,9 +27,9 @@ const branchen = [
   {
     title: "Hausverwaltung",
     Icon: Building2,
-    pitch: "Schadenmeldungen und Mieteranfragen vorqualifiziert statt Telefonchaos.",
+    pitch: "Schadenmeldungen und Bewohneranfragen vorqualifiziert statt Telefonchaos.",
     points: [
-      "Objekt, Mieter und Schadensart werden erfasst",
+      "Objekt, Kontakt und Schadensart werden erfasst",
       "Foto-Upload per Link zum Vorgang",
       "Technische Meldungen vorsortiert an die Verwaltung",
     ],

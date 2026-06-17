@@ -213,8 +213,8 @@ export async function logTenantAssignment(
     admin_email: adminEmail,
     activity_type: 'assigned',
     description: tenantData.manual
-      ? `Mieter manuell zugeordnet: ${tenantData.tenant_name}`
-      : `Mieter automatisch zugeordnet: ${tenantData.tenant_name} (${Math.round((tenantData.confidence || 0) * 100)}%)`,
+      ? `Kontakt manuell zugeordnet: ${tenantData.tenant_name}`
+      : `Kontakt automatisch zugeordnet: ${tenantData.tenant_name} (${Math.round((tenantData.confidence || 0) * 100)}%)`,
     new_value: {
       tenant_id: tenantData.tenant_id,
       tenant_name: tenantData.tenant_name,
@@ -280,7 +280,7 @@ export function formatActivityDescription(activity: TicketActivity): string {
   const baseDescription = activity.description;
 
   // Add admin context if not system-generated
-  if (activity.admin_email && activity.admin_email !== 'system@callfolio.io') {
+  if (activity.admin_email && activity.admin_email !== 'system@agenteq.de') {
     const adminName = activity.admin_email.split('@')[0];
     return `${baseDescription} (von ${adminName})`;
   }
@@ -361,7 +361,7 @@ export async function logSystemError(
 ): Promise<void> {
   await logActivity({
     ticket_id: ticketId,
-    admin_email: 'system@callfolio.io',
+    admin_email: 'system@agenteq.de',
     activity_type: 'system_error',
     description: `⚠️ ${errorData.context}: ${errorData.error}`,
     metadata: {

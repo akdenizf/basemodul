@@ -93,7 +93,7 @@ export const ROW_VALIDATION_TESTS = {
         tenant_id: 'test-verwaltung',
         phone: '0170 123 4567',
         email: 'max@example.com',
-        notes: 'VIP Mieter'
+        notes: 'VIP Kunde'
       },
       expected_errors: [],
       expected_phone: '+491701234567'

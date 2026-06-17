@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: 'Datenschutz | AGENTEQ',
-    description: 'Datenschutzerklärung der AGENTEQ KI-Telefonzentrale.',
+    description: 'Datenschutzerklärung des AGENTEQ Anfrage-Assistenten.',
 };
 
 export default function DatenschutzPage() {
@@ -162,7 +162,7 @@ export default function DatenschutzPage() {
                             <section>
                                 <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-4">§ 8 Verarbeitung von Audiodaten</h2>
                                 <p className="mb-3">
-                                    Im Rahmen der KI-gestützten Telefonzentrale werden eingehende Anrufe automatisiert entgegengenommen und verarbeitet. Dabei gilt:
+                                    Im Rahmen des KI-gestützten Anfrage-Assistenten werden eingehende Anrufe automatisiert entgegengenommen und verarbeitet. Dabei gilt:
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 ml-2 mb-4">
                                     <li>Anrufer werden zu Beginn des Gesprächs darauf hingewiesen, dass sie mit einem digitalen KI-Assistenten sprechen (Transparenzpflicht gemäß EU AI Act).</li>
@@ -179,7 +179,7 @@ export default function DatenschutzPage() {
                             <section>
                                 <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-4">§ 9 Kontaktaufnahme und Kommunikation</h2>
                                 <p className="mb-3">
-                                    Wenn Endkunden über die AGENTEQ-Telefonzentrale Kontakt aufnehmen, werden folgende Daten verarbeitet: Telefonnummer (automatische Anruferkennung), Name und Adresse (soweit vom Anrufer genannt), Beschreibung des Anliegens sowie die automatisierte Zusammenfassung.
+                                    Wenn Endkunden über den AGENTEQ Anfrage-Assistenten Kontakt aufnehmen, werden folgende Daten verarbeitet: Telefonnummer (automatische Anruferkennung), Name und Adresse (soweit vom Anrufer genannt), Beschreibung des Anliegens sowie die automatisierte Zusammenfassung.
                                 </p>
                                 <p>
                                     Sofern Endkunden im Rahmen der &quot;Visual Context&quot;-Funktion per SMS aufgefordert werden, Fotos hochzuladen, werden deren Mobilfunknummer und die hochgeladenen Bilddateien verarbeitet. Die Fotos werden in einem sicheren Cloud-Speicher (Supabase Storage, Server Frankfurt) abgelegt und ausschließlich dem zugehörigen Ticket zugeordnet.

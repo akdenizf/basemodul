@@ -13,7 +13,7 @@ interface Scenario {
   audioSrc: string;
   transcript: {
     time: number;
-    speaker: "assistant" | "tenant";
+    speaker: "assistant" | "caller";
     text: string;
   }[];
   finalResult: {
@@ -52,11 +52,11 @@ const SCENARIOS: Scenario[] = [
     audioSrc: "/demo.mp3",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist der digitale Anfrage-Assistent. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen behilflich sein?" },
-      { time: 7.1, speaker: "tenant", text: "Hallo, hier ist Müller aus der Hauptstraße 12. Bei mir tropft der Siphon im Bad." },
+      { time: 7.1, speaker: "caller", text: "Hallo, hier ist Müller aus der Hauptstraße 12. Bei uns tropft der Siphon im Bad." },
       { time: 13.4, speaker: "assistant", text: "Guten Tag Herr Müller. Ich habe Ihr Profil gefunden. Hauptstraße 12, Erdgeschoss. Steht schon ein Eimer darunter?" },
-      { time: 20.5, speaker: "tenant", text: "Ja, Eimer steht drunter, aber es ist schon ziemlich nass." },
+      { time: 20.5, speaker: "caller", text: "Ja, Eimer steht drunter, aber es ist schon ziemlich nass." },
       { time: 23.9, speaker: "assistant", text: "Alles klar. Ich lege sofort ein Ticket für Sie an und informiere unseren Sanitär-Partner. Sie erhalten gleich eine SMS mit einem Link, um ein kurzes Foto hochzuladen." },
-      { time: 36.1, speaker: "tenant", text: "Super, mache ich. Danke!" },
+      { time: 36.1, speaker: "caller", text: "Super, mache ich. Danke!" },
       { time: 36.9, speaker: "assistant", text: "Gern geschehen. Ein Handwerker wird sich in Kürze bei Ihnen zur Terminvereinbarung melden. Auf Wiederhören!" }
     ],
     finalResult: {
@@ -73,11 +73,11 @@ const SCENARIOS: Scenario[] = [
     audioSrc: "/demo-strom.mp3",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist der digitale Anfrage-Assistent. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen behilflich sein?" },
-      { time: 7.8, speaker: "tenant", text: "Ja, hallo. Bei uns im gesamten Erdgeschoss ist der Strom weg." },
+      { time: 7.8, speaker: "caller", text: "Ja, hallo. Bei uns im gesamten Erdgeschoss ist der Strom weg." },
       { time: 12.4, speaker: "assistant", text: "Das verstehe ich. Haben Sie bereits den Sicherungskasten überprüft, ob der FI-Schalter herausgesprungen ist?" },
-      { time: 19.5, speaker: "tenant", text: "Ja, habe ich probiert, aber er springt immer wieder sofort raus." },
+      { time: 19.5, speaker: "caller", text: "Ja, habe ich probiert, aber er springt immer wieder sofort raus." },
       { time: 23.1, speaker: "assistant", text: "In Ordnung. Da der Kühlschrank betroffen ist, setze ich die Dringlichkeit auf Hoch. Ein Notfall-Elektriker wird umgehend benachrichtigt." },
-      { time: 32.0, speaker: "tenant", text: "Vielen Dank, das ist super." },
+      { time: 32.0, speaker: "caller", text: "Vielen Dank, das ist super." },
       { time: 35.1, speaker: "assistant", text: "Gerne. Er wird sich in den nächsten 15 Minuten bei Ihnen melden. Auf Wiederhören!" }
     ],
     finalResult: {
@@ -94,9 +94,9 @@ const SCENARIOS: Scenario[] = [
     audioSrc: "/demo-status.mp3",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist der digitale Anfrage-Assistent. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen behilflich sein?" },
-      { time: 7.1, speaker: "tenant", text: "Ja, hallo, hier ist Müller, Hauptstraße 12. Ich wollte mal nachfragen, wann der Handwerker wegen meines Siphons kommt." },
+      { time: 7.1, speaker: "caller", text: "Ja, hallo, hier ist Müller, Hauptstraße 12. Ich wollte mal nachfragen, wann der Handwerker wegen meines Siphons kommt." },
       { time: 13.3, speaker: "assistant", text: "Guten Tag Herr Müller. Ich sehe hier Ihr Ticket vom Dienstag. Der Sanitärbetrieb Schulze ist bereits beauftragt und hat den Termin für morgen, Freitag den 6. Juni um 10:30 Uhr, eingetragen." },
-      { time: 25.8, speaker: "tenant", text: "Super, das passt. Danke!" },
+      { time: 25.8, speaker: "caller", text: "Super, das passt. Danke!" },
       { time: 26.5, speaker: "assistant", text: "Sehr gerne. Der Handwerker wird sich vorher noch kurz bei Ihnen melden. Auf Wiederhören!" }
     ],
     finalResult: {
@@ -113,9 +113,9 @@ const SCENARIOS: Scenario[] = [
     audioSrc: "/demo-eskalation.mp3",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist der digitale Anfrage-Assistent. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen behilflich sein?" },
-      { time: 7.0, speaker: "tenant", text: "Hallo, hier ist Müller, Hauptstraße 12. Wegen dem Siphon im Bad — das Wasser spritzt jetzt richtig raus, der Flur steht schon unter Wasser!" },
+      { time: 7.0, speaker: "caller", text: "Hallo, hier ist Müller, Hauptstraße 12. Wegen dem Siphon im Bad — das Wasser spritzt jetzt richtig raus, der Flur steht schon unter Wasser!" },
       { time: 16.7, speaker: "assistant", text: "Herr Müller, ich sehe Ihr bestehendes Ticket. Ich stufe den Vorfall sofort als kritischen Notfall ein. Drehen Sie bitte sofort den Hauptwasserhahn ab, falls möglich. Ich alarmiere jetzt unseren Notdienst-Installateur." },
-      { time: 30.6, speaker: "tenant", text: "Okay, ich drehe ihn ab. Danke!" },
+      { time: 30.6, speaker: "caller", text: "Okay, ich drehe ihn ab. Danke!" },
       { time: 32.9, speaker: "assistant", text: "Er wird Sie in den nächsten fünf Minuten zurückrufen. Ihr Ticket ist auf Dringlichkeit Kritisch hochgestuft. Auf Wiederhören!" }
     ],
     finalResult: {
@@ -239,7 +239,7 @@ export function LiveDemoSection() {
   const visualizerState = useMemo((): VisualizerState => {
     if (!isPlaying || isComplete) return "idle";
     if (currentSpeaker === "assistant") return "speaking";
-    if (currentSpeaker === "tenant") return "listening";
+    if (currentSpeaker === "caller") return "listening";
     return "thinking";
   }, [isPlaying, isComplete, currentSpeaker]);
 
@@ -393,7 +393,7 @@ export function LiveDemoSection() {
                   
                   {/* Typing Indicator */}
                   <AnimatePresence>
-                    {isPlaying && !isComplete && visibleMessages[visibleMessages.length - 1]?.speaker === 'tenant' && (
+                    {isPlaying && !isComplete && visibleMessages[visibleMessages.length - 1]?.speaker === 'caller' && (
                       <motion.div 
                         initial={{ opacity: 0, y: 10 }} 
                         animate={{ opacity: 1, y: 0 }}

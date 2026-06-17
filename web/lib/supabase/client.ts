@@ -31,7 +31,7 @@ export function getSupabaseBrowserClient(): SupabaseClient {
       },
       // No cookieOptions.domain — let the browser set cookies for the
       // current origin automatically. This avoids issues where a hard-coded
-      // ".callfolio.io" blocks cookies on localhost or Vercel preview URLs.
+      // A fixed production cookie domain blocks cookies on localhost or Vercel preview URLs.
     }
   )
 

@@ -60,17 +60,17 @@ export default function AgbPage() {
                             <section>
                                 <h2 className="text-xl font-semibold text-slate-900 mt-8 mb-4">§ 3 Leistungsbeschreibung</h2>
                                 <p className="mb-3">
-                                    (1) AGENTEQ stellt dem Kunden eine KI-basierte Telefonzentrale als Software-as-a-Service (SaaS) zur Verfügung. Die Plattform umfasst insbesondere folgende Kernleistungen:
+                                    (1) AGENTEQ stellt dem Kunden einen KI-basierten Anfrage-Assistenten als Software-as-a-Service (SaaS) zur Verfügung. Die Plattform umfasst insbesondere folgende Kernleistungen:
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 ml-2 mb-4">
-                                    <li><strong className="text-slate-800">KI-Telefonassistent:</strong> Automatisierte Entgegennahme eingehender Anrufe, Erfassung und Kategorisierung von Kundenanliegen (Schadensmeldungen, kaufmännische Anfragen) mittels Spracherkennung und KI-Analyse.</li>
+                                    <li><strong className="text-slate-800">Anfrage-Assistent:</strong> Automatisierte Entgegennahme eingehender Anrufe, Erfassung und Kategorisierung von Kundenanliegen (Schadensmeldungen, Rückrufwünsche, kaufmännische Anfragen) mittels Spracherkennung und KI-Analyse.</li>
                                     <li><strong className="text-slate-800">Ticket-Management-System:</strong> Automatische Erstellung strukturierter Tickets mit Dringlichkeitsbewertung, Kundenzuordnung und Aktivitätsprotokollierung.</li>
                                     <li><strong className="text-slate-800">Visual Context (Foto-Upload):</strong> SMS-basierte Aufforderung an Endkunden zur Übermittlung von Schadensfotos, die dem jeweiligen Ticket zugeordnet werden.</li>
                                     <li><strong className="text-slate-800">Benachrichtigungssystem:</strong> Automatisierte E-Mail-Benachrichtigungen über neue und aktualisierte Tickets an den Kunden.</li>
                                     <li><strong className="text-slate-800">Admin-Dashboard:</strong> Webbasierte Verwaltungsoberfläche zur Einsicht, Bearbeitung und Weiterleitung von Tickets inklusive Handwerker-CRM und Kommunikationsvorlagen.</li>
                                 </ul>
                                 <p>
-                                    (2) Der KI-Telefonassistent ist ein <strong className="text-slate-800">technisches Assistenzsystem</strong>. Er dient der Ersterfassung und Vorqualifizierung von Kundenanliegen und ersetzt keine menschliche Entscheidungsfindung. Die finale Beurteilung, Priorisierung und Bearbeitung der Tickets obliegt ausschließlich dem Kunden.
+                                    (2) Der Anfrage-Assistent ist ein <strong className="text-slate-800">technisches Assistenzsystem</strong>. Er dient der Ersterfassung und Vorqualifizierung von Kundenanliegen und ersetzt keine menschliche Entscheidungsfindung. Die finale Beurteilung, Priorisierung und Bearbeitung der Tickets obliegt ausschließlich dem Kunden.
                                 </p>
                             </section>
 
@@ -134,7 +134,7 @@ export default function AgbPage() {
                                     (2) Für leichte Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten (Kardinalpflichten). Die Haftung ist in diesen Fällen auf den vertragstypischen, vorhersehbaren Schaden begrenzt, höchstens jedoch auf die vom Kunden in den letzten 12 Monaten gezahlte Vergütung.
                                 </p>
                                 <p className="mb-3">
-                                    (3) <strong className="text-slate-800">Der KI-Telefonassistent ist ein technisches Hilfsmittel zur Ersterfassung von Kundenanliegen.</strong> Der Anbieter übernimmt ausdrücklich keine Gewähr für:
+                                    (3) <strong className="text-slate-800">Der Anfrage-Assistent ist ein technisches Hilfsmittel zur Ersterfassung von Kundenanliegen.</strong> Der Anbieter übernimmt ausdrücklich keine Gewähr für:
                                 </p>
                                 <ul className="list-disc list-inside space-y-2 ml-2 mb-4">
                                     <li>Die inhaltliche Richtigkeit, Vollständigkeit oder Korrektheit der durch die KI generierten Zusammenfassungen, Kategorisierungen oder Dringlichkeitsbewertungen (&quot;KI-Halluzinationen&quot;).</li>

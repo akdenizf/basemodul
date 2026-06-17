@@ -6,8 +6,8 @@ import { NextRequest } from 'next/server';
 // CALLFOLIO v5.2 - AUTH GUARD (CLEAN ARCHITECTURE)
 // ============================================================
 // Saubere Trennung:
-//   - organizations: Hausverwaltungen (Kunden)
-//   - tenants: Mieter (Bewohner)
+//   - organizations: Kundenbetriebe
+//   - tenants: Kontakte/Endkunden
 // ============================================================
 
 export interface AuthGuardResult {

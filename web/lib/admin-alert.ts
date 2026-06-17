@@ -65,7 +65,7 @@ export async function sendAdminAlert(error: any, context: string, payload: any):
     const emailBody = `
 Hallo Admin,
 
-ein kritischer Systemfehler ist in Callfolio aufgetreten.
+ein kritischer Systemfehler ist in AGENTEQ aufgetreten.
 
 ---
 **Kontext:** ${context}
@@ -79,7 +79,7 @@ ${safeJsonStringify(payload)}
 
 Bitte überprüfe die Logs für weitere Details.
 
-Automatisch generierte Nachricht von Callfolio.
+Automatisch generierte Nachricht von AGENTEQ.
 `;
 
     await resend.emails.send({

@@ -1,5 +1,5 @@
 // ============================================================
-// CALLFOLIO — Twilio SMS Integration (Premium Concierge)
+// AGENTEQ — Twilio SMS Integration
 // ============================================================
 
 import Twilio from 'twilio';
@@ -8,12 +8,10 @@ const TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID;
 const TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN;
 const TWILIO_MESSAGING_SERVICE_SID = process.env.TWILIO_MESSAGING_SERVICE_SID;
 
-// Canonical app domain. `.de` is the marketing/landing site only —
-// upload + portal pages live on `.io`. The fallback intentionally points to
-// the .io app domain so we never SMS a link to the marketing site.
-const UPLOAD_BASE_URL = process.env.NEXT_PUBLIC_UPLOAD_BASE_URL || 'https://www.callfolio.io';
+// Canonical app domain for upload + portal pages.
+const UPLOAD_BASE_URL = process.env.NEXT_PUBLIC_UPLOAD_BASE_URL || 'https://agenteq.de';
 // Short-link base for SMS (keeps payloads under 160 chars). /t/[id] → /upload/[id]
-const SHORT_BASE_URL = process.env.NEXT_PUBLIC_SHORT_BASE_URL || 'https://callfolio.io';
+const SHORT_BASE_URL = process.env.NEXT_PUBLIC_SHORT_BASE_URL || 'https://agenteq.de';
 
 export interface SMSOptions {
   to: string;
@@ -71,9 +69,9 @@ export interface PhotoSMSContext extends Pick<SMSOptions, 'orgName' | 'ticketCod
 }
 
 /**
- * Sends a conditional SMS to the tenant:
- * - Template A (mode=register): unknown tenant → asks for name + address first, photo optional.
- * - Template B (mode=photo):   known tenant   → skips identity, asks only for damage photo.
+ * Sends a conditional SMS to the caller:
+ * - Template A (mode=register): unknown caller → asks for name + address first, photo optional.
+ * - Template B (mode=photo):   known caller   → skips identity, asks only for damage photo.
  * Both templates are kept under 160 characters per SMS segment.
  */
 export async function sendPhotoRequestSMS(
@@ -82,7 +80,7 @@ export async function sendPhotoRequestSMS(
   _category?: string,
   context?: PhotoSMSContext
 ): Promise<SendSMSResult> {
-  const org = context?.orgName || 'Ihrer Hausverwaltung';
+  const org = context?.orgName || 'Ihrem Betrieb';
   const isKnown = context?.isKnown ?? false;
   const tenantName = context?.tenantName?.trim() || null;
   // Prefer the short numeric ticket_code (e.g. "708066") over the full UUID to
@@ -94,7 +92,7 @@ export async function sendPhotoRequestSMS(
 
   if (!isKnown) {
     // ── Template A: Registration mode ────────────────────────────────────────
-    // Tenant is unregistered. Ask them to confirm identity first.
+    // Caller is unregistered. Ask them to confirm identity first.
     // URL appends ?mode=register so the portal shows identity fields prominently.
     const portalUrl = `${baseUrl}?mode=register`;
     body = [
@@ -105,7 +103,7 @@ export async function sendPhotoRequestSMS(
     ].join('\n');
   } else {
     // ── Template B: Service mode ──────────────────────────────────────────────
-    // Tenant is already identified. Jump straight to photo upload.
+    // Caller is already identified. Jump straight to photo upload.
     const greeting = tenantName ? `Hallo ${tenantName},` : 'Hallo,';
     const portalUrl = `${baseUrl}?mode=photo`;
     body = [
@@ -127,7 +125,7 @@ export async function sendPhotoRequestSMS(
  * Tone: Professional B2B — sachlich, handlungsorientiert.
  */
 export async function sendContractorAssignmentSMS(opts: SMSOptions): Promise<SendSMSResult> {
-  const org = opts.orgName || 'Hausverwaltung';
+  const org = opts.orgName || 'AGENTEQ-Kunde';
   const ref = opts.ticketCode ? `#${opts.ticketCode}` : 'neuer Auftrag';
   const portalLink = opts.link || UPLOAD_BASE_URL;
 
@@ -139,7 +137,7 @@ export async function sendContractorAssignmentSMS(opts: SMSOptions): Promise<Sen
     portalLink,
     ``,
     `Bitte bestätigen Sie den Erhalt kurzfristig über das Portal.`,
-    `Ihr Callfolio-System.`,
+    `Ihr AGENTEQ-System.`,
   ].join('\n');
 
   console.log(`[SMS] Sending contractor assignment to ${opts.to} | ref=${ref}`);
@@ -147,7 +145,7 @@ export async function sendContractorAssignmentSMS(opts: SMSOptions): Promise<Sen
 }
 
 /**
- * Sends an appointment confirmation SMS to the tenant.
+ * Sends an appointment confirmation SMS to the caller.
  * Triggered when the contractor sets an appointment date via the portal.
  * Tone: Premium concierge — förmlich, verbindlich.
  */
@@ -159,7 +157,7 @@ export async function sendAppointmentConfirmationSMS(opts: {
   contractorName?: string;
   tenantName?: string;
 }): Promise<SendSMSResult> {
-  const org = opts.orgName || 'Ihrer Hausverwaltung';
+  const org = opts.orgName || 'Ihrem Betrieb';
   const ref = opts.ticketCode ? `#${opts.ticketCode}` : 'Ihrem Anliegen';
   const contractor = opts.contractorName?.trim() || 'Ihr zuständiger Fachbetrieb';
 
@@ -173,15 +171,15 @@ export async function sendAppointmentConfirmationSMS(opts: {
     timeZone: 'Europe/Berlin',
   }).format(date);
 
-  const greeting = opts.tenantName ? `Hallo ${opts.tenantName},` : `Sehr geehrte(r) Mieter(in),`;
+  const greeting = opts.tenantName ? `Hallo ${opts.tenantName},` : `Guten Tag,`;
 
   const body = [
     greeting,
-    `für Ihr Anliegen ${ref} bei der ${org} wurde soeben der Termin bestätigt.`,
+    `für Ihr Anliegen ${ref} bei ${org} wurde soeben der Termin bestätigt.`,
     ``,
     `Die Firma ${contractor} wird am ${formatted} Uhr bei Ihnen vor Ort sein.`,
     ``,
-    `Ihr Callfolio-Team.`,
+    `Ihr AGENTEQ-Team.`,
   ].join('\n');
 
   console.log(`[SMS] Sending appointment confirmation to ${opts.to} | ref=${ref} | date=${opts.appointmentDate}`);
@@ -189,17 +187,17 @@ export async function sendAppointmentConfirmationSMS(opts: {
 }
 
 /**
- * Sends a completion notification SMS to the tenant.
+ * Sends a completion notification SMS to the caller.
  * Tone: Warm, reassuring — Abschluss-Kommunikation.
  */
 export async function sendCompletionSMS(
   to: string,
   context?: Pick<SMSOptions, 'orgName' | 'ticketCode'> & { tenantName?: string }
 ): Promise<SendSMSResult> {
-  const org = context?.orgName || 'Ihrer Hausverwaltung';
+  const org = context?.orgName || 'Ihrem Betrieb';
   const ref = context?.ticketCode ? ` (Referenz #${context.ticketCode})` : '';
 
-  const greeting = context?.tenantName ? `Hallo ${context.tenantName},` : `Sehr geehrte(r) Mieter(in),`;
+  const greeting = context?.tenantName ? `Hallo ${context.tenantName},` : `Guten Tag,`;
 
   const body = [
     greeting,

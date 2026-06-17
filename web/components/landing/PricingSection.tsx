@@ -22,7 +22,7 @@ const tiers = [
     description: "Ideal für kleinere Bestände und den Einstieg.",
     features: [
       "100 Anrufe / Monat (Keine Minutentaktung)",
-      "24/7 KI-Telefonassistent",
+      "24/7 Anfrage-Assistent",
       "Automatisches Ticket-System",
       "Zuverlässiger E-Mail Support",
     ],

@@ -99,7 +99,7 @@ export const adminNotificationTemplate: EmailTemplate = {
   generate: (ticket: Ticket, orgName?: string) => {
     const statusBadge = getStatusBadge(ticket.match_type);
     const priorityBadge = getPriorityBadge(ticket.urgency);
-    const dashboardUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'https://callfolio.vercel.app'}/admin?ticketId=${ticket.id}`;
+    const dashboardUrl = `${process.env.NEXT_PUBLIC_APP_URL || 'https://agenteq.de'}/admin?ticketId=${ticket.id}`;
 
     return {
       subject: `${statusBadge} ${priorityBadge} Ticket #${ticket.ticket_code || 'N/A'} | ${getCategoryText(ticket.category || 'OTHER')} - ${ticket.caller_name || 'Unbekannt'}`,
@@ -114,7 +114,7 @@ Ticket-Code:   ${ticket.ticket_code || 'N/A'}
 Status:        ${ticket.status || 'NEW'}
 Dringlichkeit: ${getUrgencyText(ticket.urgency || 'LOW')}
 Kategorie:     ${getCategoryText(ticket.category || 'OTHER')}
-Mieter:        ${ticket.caller_name || 'Unbekannt'}
+Kunde:         ${ticket.caller_name || 'Unbekannt'}
 Adresse:       ${ticket.address || 'Unbekannt'}${ticket.unit ? `, Einheit: ${ticket.unit}` : ''}
 Telefon:       ${ticket.caller_phone || 'Keine Nummer'}
 
@@ -151,14 +151,14 @@ Ticketsystem Voice Intelligence • Generiert am ${new Date().toLocaleString('de
  */
 export const tenantConfirmationTemplate: EmailTemplate = {
   id: 'tenant_confirmation',
-  name: 'Mieter Bestätigung',
-  description: 'Bestätigung für den Mieter über die Ticketerfassung',
+  name: 'Kundenbestätigung',
+  description: 'Bestätigung für den Kunden über die Ticketerfassung',
   recipient_type: 'tenant',
 
   // ── Plain-text fallback ──────────────────────────────────────
   generate: (ticket: Ticket, orgName?: string) => ({
     subject: `Ihre Meldung wurde erfasst - Ticket ${ticket.ticket_code || 'N/A'}`,
-    body: `Keine Sorge, ${ticket.caller_name || 'lieber Mieter'}, wir haben alles aufgenommen.
+    body: `Keine Sorge, ${ticket.caller_name || 'lieber Kunde'}, wir haben alles aufgenommen.
 
 Vielen Dank für Ihre Meldung über unser automatisches Telefonsystem. Wir haben Ihr Anliegen erfasst und werden uns schnellstmöglich darum kümmern.
 
@@ -171,7 +171,7 @@ Zusammenfassung: ${ticket.issue_summary} an ${ticket.address || 'Ihrer Adresse'}
 ${ticket.escalation_is_emergency ? `🚨 NOTFALL: Ihr Anliegen wurde als Notfall eingestuft und wird mit höchster Priorität bearbeitet.\n\n` : ''}Lehnen Sie sich zurück – wir melden uns, sobald es Neuigkeiten gibt oder ein Handwerker beauftragt wurde.
 
 Mit freundlichen Grüßen
-Ihre Hausverwaltung${orgName ? ` ${orgName}` : ''}
+Ihr Betrieb${orgName ? ` ${orgName}` : ''}
 
 ---
 Ticket erstellt: ${new Date().toLocaleString('de-DE')}
@@ -206,7 +206,7 @@ Diese E-Mail wurde automatisch generiert.`
         <!-- Hero Copy -->
         <tr><td style="padding:16px 40px 24px;text-align:center;">
           <h2 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#1E293B;line-height:1.4;">
-            Keine Sorge, ${ticket.caller_name ? ticket.caller_name.split(' ')[0] : 'lieber Mieter'},<br/>wir haben alles aufgenommen.
+            Keine Sorge, ${ticket.caller_name ? ticket.caller_name.split(' ')[0] : 'lieber Kunde'},<br/>wir haben alles aufgenommen.
           </h2>
           <p style="margin:0;font-size:15px;color:#64748B;line-height:1.6;">
             Wir haben Ihr Anliegen erfolgreich erfasst und unser Team kümmert sich bereits darum. Sie müssen sich um nichts weiter kümmern.
@@ -282,7 +282,7 @@ Diese E-Mail wurde automatisch generiert.`
           <p style="margin:0 0 8px;font-size:14px;font-weight:600;color:#334155;">
             Lehnen Sie sich zurück – wir melden uns, sobald es Neuigkeiten gibt oder ein Handwerker beauftragt wurde.
           </p>
-          <p style="margin:0;font-size:12px;color:#94A3B8;">Ihre Hausverwaltung${orgName ? ` ${orgName}` : ''}</p>
+          <p style="margin:0;font-size:12px;color:#94A3B8;">Ihr Betrieb${orgName ? ` ${orgName}` : ''}</p>
         </td></tr>
 
       </table>
@@ -359,7 +359,7 @@ Die Abrechnung erfolgt nach unseren vereinbarten Konditionen.
 Bitte verwenden Sie die Ticket-Nummer ${ticket.ticket_code} in allen Belegen.
 
 Mit freundlichen Grüßen
-Ihre Hausverwaltung${orgName ? ` ${orgName}` : ''}
+Ihr Betrieb${orgName ? ` ${orgName}` : ''}
 
 ---
 Auftrag erstellt: ${new Date().toLocaleString('de-DE')}
@@ -393,7 +393,7 @@ Ticket-Code: ${ticket.ticket_code}`
     const photosHtml = photoUrls && photoUrls.length > 0
       ? `
         <tr><td style="padding:24px 32px 8px;">
-          <h2 style="margin:0 0 16px;font-size:16px;font-weight:700;color:#1E293B;">📸 Fotos vom Mieter</h2>
+          <h2 style="margin:0 0 16px;font-size:16px;font-weight:700;color:#1E293B;">📸 Fotos vom Kunden</h2>
           ${photoUrls.map(url => `
             <div style="margin-bottom:16px;border-radius:12px;overflow:hidden;border:1px solid #E2E8F0;">
               <img src="${url}" alt="Schadensfoto" style="display:block;width:100%;max-width:100%;height:auto;" />
@@ -455,7 +455,7 @@ Ticket-Code: ${ticket.ticket_code}`
               <td style="padding:14px 16px;border-bottom:1px solid #F1F5F9;font-size:14px;color:#1E293B;font-weight:600;">${ticket.address || 'Wird nachgereicht'}${ticket.unit ? `, ${ticket.unit}` : ''}</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px;border-bottom:1px solid #F1F5F9;font-size:13px;font-weight:600;color:#64748B;background-color:#F8FAFC;">Mieter</td>
+              <td style="padding:14px 16px;border-bottom:1px solid #F1F5F9;font-size:13px;font-weight:600;color:#64748B;background-color:#F8FAFC;">Kunde</td>
               <td style="padding:14px 16px;border-bottom:1px solid #F1F5F9;font-size:14px;color:#1E293B;">${ticket.caller_name || 'Wird mitgeteilt'}</td>
             </tr>
             <tr>
@@ -509,7 +509,7 @@ Ticket-Code: ${ticket.ticket_code}`
 
         <!-- Magic Link CTA -->
         <tr><td style="padding:0 32px 32px;text-align:center;">
-          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://callfolio.io'}/order/${ticket.id}" 
+          <a href="${process.env.NEXT_PUBLIC_APP_URL || 'https://agenteq.de'}/order/${ticket.id}" 
              style="display:inline-block;background-color:#10B981;color:#FFFFFF;padding:22px 56px;border-radius:14px;text-decoration:none;font-weight:800;font-size:16px;letter-spacing:0.5px;box-shadow:0 10px 20px -4px rgba(16,185,129,0.35);">
             ZUM AUFTRAGS-PORTAL
           </a>
@@ -556,7 +556,7 @@ export const statusUpdateTemplate: EmailTemplate = {
   recipient_type: 'tenant',
   generate: (ticket: Ticket, orgName?: string) => ({
     subject: `Update zu Ihrem Ticket ${ticket.ticket_code || 'N/A'} - ${ticket.issue_summary}`,
-    body: `Hallo ${ticket.caller_name || 'Mieter/in'},
+    body: `Hallo ${ticket.caller_name || 'Kunde'},
 
 wir möchten Sie über den aktuellen Stand Ihres Tickets informieren:
 
@@ -581,7 +581,7 @@ ${ticket.status === 'IN_PROGRESS' ?
 Bei Fragen können Sie uns jederzeit unter der Ticket-Nummer ${ticket.ticket_code} kontaktieren.
 
 Mit freundlichen Grüßen
-Ihre Hausverwaltung${orgName ? ` ${orgName}` : ''}
+Ihr Betrieb${orgName ? ` ${orgName}` : ''}
 
 ---
 Diese E-Mail wurde automatisch generiert.`

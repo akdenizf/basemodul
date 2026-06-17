@@ -95,8 +95,8 @@ export function parseTemplate(
     const appUrl =
         options.appUrl ||
         (typeof process !== 'undefined'
-            ? process.env?.NEXT_PUBLIC_APP_URL || 'https://www.callfolio.io'
-            : 'https://www.callfolio.io')
+            ? process.env?.NEXT_PUBLIC_APP_URL || 'https://agenteq.de'
+            : 'https://agenteq.de')
 
     const uploadUrl = ticket.id ? `${appUrl}/upload/${ticket.id}` : appUrl
 
@@ -110,8 +110,8 @@ export function parseTemplate(
         ticket_id: safe(ticket.id, 'Nicht verfügbar'),
 
         // ── Caller / tenant ──
-        tenant_name: safe(ticket.caller_name, 'Mieter/in'),
-        caller_name: safe(ticket.caller_name, 'Mieter/in'),
+        tenant_name: safe(ticket.caller_name, 'Kunde'),
+        caller_name: safe(ticket.caller_name, 'Kunde'),
         phone: safe(ticket.caller_phone, 'Keine Nummer hinterlegt'),
         caller_phone: safe(ticket.caller_phone, 'Keine Nummer hinterlegt'),
 
@@ -156,7 +156,7 @@ export function parseTemplate(
  */
 export const TEMPLATE_VARIABLES = [
     { key: 'ticket_code', label: 'Ticket-Code', example: 'TK-00042', fallback: 'N/A' },
-    { key: 'tenant_name', label: 'Mieter-Name', example: 'Max Mustermann', fallback: 'Mieter/in' },
+    { key: 'tenant_name', label: 'Kundenname', example: 'Max Mustermann', fallback: 'Kunde' },
     { key: 'phone', label: 'Telefonnummer', example: '+4917612345678', fallback: 'Keine Nummer hinterlegt' },
     { key: 'issue', label: 'Problembeschreibung', example: 'Heizung fällt aus', fallback: 'Keine Beschreibung vorhanden' },
     { key: 'issue_details', label: 'Weitere Details', example: 'Seit gestern Abend…', fallback: '(leer)' },
@@ -167,6 +167,6 @@ export const TEMPLATE_VARIABLES = [
     { key: 'estimated_time', label: 'Geschätzte Bearbeitung', example: 'Innerhalb von 24 Stunden', fallback: 'Wird zeitnah bearbeitet' },
     { key: 'contractor_name', label: 'Name des Handwerkers', example: 'Sanitär Meier GmbH', fallback: 'Dienstleister' },
     { key: 'created_at', label: 'Erstellt am', example: '17.02.2026, 22:00', fallback: '(aktueller Zeitstempel)' },
-    { key: 'upload_url', label: 'Foto-Upload Link', example: 'https://callfolio.io/upload/…', fallback: '(App-URL)' },
+    { key: 'upload_url', label: 'Foto-Upload Link', example: 'https://agenteq.de/upload/…', fallback: '(App-URL)' },
     { key: 'signature', label: 'E-Mail Signatur', example: 'Mit freundlichen Grüßen…', fallback: '(leer)' },
 ] as const

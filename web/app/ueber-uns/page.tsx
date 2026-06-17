@@ -21,7 +21,7 @@ export default function UeberUnsPage() {
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-3xl text-center mb-16">
                             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl text-balance mb-6">
-                                Wir bauen das <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Betriebssystem</span> für Immobilienmacher.
+                                Wir bauen den <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Anfrage-Assistenten</span> für kleine Betriebe.
                             </h1>
                             <p className="text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto">
                                 AGENTEQ verbindet echte Branchen-Expertise mit moderner Künstlicher Intelligenz, um kleine Betriebe zukunftsfähig zu machen.
@@ -54,10 +54,10 @@ export default function UeberUnsPage() {
                                 </p>
                                 <div className="prose prose-slate text-slate-600 leading-relaxed">
                                     <p>
-                                        [Hier steht der Einführungstext des Gründers. Beschreiben Sie Ihre Motivation, den Hintergrund in der Immobilienbranche oder der Softwareentwicklung und warum AGENTEQ ins Leben gerufen wurde.]
+                                        AGENTEQ entsteht aus einem einfachen Problem: In kleinen Betrieben gehen zu viele Anfragen zwischen Telefon, WhatsApp, E-Mail und Rückrufzetteln verloren. Wir bauen Assistenten, die diese erste Sortierung übernehmen und Teams den Kopf freier machen.
                                     </p>
                                     <p>
-                                        [Zweiter Absatz für tiefergehende Philosophie: &quot;Wir glauben daran, dass gute Software sich unsichtbar in den Arbeitsalltag integrieren muss...&quot; - Platzhalter für Ihre persönliche Botschaft.]
+                                        Unser Anspruch ist nicht, Menschen zu ersetzen. Gute Automatisierung soll fehlende Infos einsammeln, Dringlichkeit erkennen und klare Übergaben vorbereiten - damit Menschen schneller die richtige Entscheidung treffen.
                                     </p>
                                 </div>
                             </div>

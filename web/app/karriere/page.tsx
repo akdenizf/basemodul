@@ -38,7 +38,7 @@ const benefits = [
     {
         icon: Zap,
         title: 'Echter Impact',
-        desc: 'Deine Arbeit automatisiert Millionen von Minuten Verwaltungsaufwand.',
+        desc: 'Deine Arbeit nimmt kleinen Teams jeden Tag echte Routinearbeit ab.',
     },
 ];
 
@@ -63,9 +63,9 @@ const jobs: Job[] = [
         location: 'Remote oder München',
         department: 'Engineering',
         mission:
-            'Du baust gemeinsam mit dem Gründer das technische Fundament von AGENTEQ. Als erste Entwicklerin / erster Entwickler im Team prägst du die Architektur, wählst Tools mit aus und sorgst dafür, dass unsere Voice-AI-Plattform skaliert.',
+            'Du baust gemeinsam mit dem Gründer das technische Fundament von AGENTEQ. Als erste Entwicklerin / erster Entwickler im Team prägst du Architektur, Tools und Produktlogik für Anfrage-Assistenten im KMU-Alltag.',
         tasks: [
-            'Weiterentwicklung der SaaS-Plattform für KI-Telefonassistenten in der Immobilienbranche',
+            'Weiterentwicklung der SaaS-Plattform für Anfrage-Assistenten in KMU',
             'Integration und Verbesserung unserer Voice-Agents (Vapi / OpenAI)',
             'Mitgestaltung der technischen Architektur und Produktstrategie',
             'Enge Zusammenarbeit mit dem Gründerteam – deine Meinung zählt',
@@ -80,7 +80,7 @@ const jobs: Job[] = [
         ],
         niceToHave: [
             'Erfahrung mit Voice-AI oder Echtzeit-Kommunikation (WebRTC, Vapi)',
-            'Kenntnisse in der Immobilien- oder PropTech-Branche',
+            'Erfahrung mit KMU, Handwerk, Dienstleistung oder PropTech',
             'Erfahrung mit CI/CD und Cloud-Deployments (Vercel, AWS)',
         ],
         offer: [
@@ -98,9 +98,9 @@ const jobs: Job[] = [
         location: 'Remote oder München',
         department: 'Sales',
         mission:
-            'Du bist die erste Stimme von AGENTEQ nach außen. Du überzeugst kleine Betriebe, warum KI-Telefonie ihr Alltagsgeschäft revolutioniert – und du schließt Deals ab, die das Unternehmen wachsen lassen.',
+            'Du bist die erste Stimme von AGENTEQ nach außen. Du überzeugst kleine Betriebe, warum ein Anfrage-Assistent ihr Alltagsgeschäft entlastet - und du schließt Deals ab, die das Unternehmen wachsen lassen.',
         tasks: [
-            'Eigenständige Akquise und Betreuung von kleine Betriebe als Neukunden',
+            'Eigenständige Akquise und Betreuung kleiner Betriebe als Neukunden',
             'Durchführung von Produktdemos (live und remote)',
             'Aufbau langfristiger Kundenbeziehungen und Expansion bestehender Accounts',
             'Enge Abstimmung mit dem Gründer zu Pricing, Positionierung und Produktfeedback',
@@ -114,9 +114,9 @@ const jobs: Job[] = [
             'Eigeninitiative und Hunter-Mentalität',
         ],
         niceToHave: [
-            'Kenntnisse in der Immobilienverwaltungsbranche',
+            'Kenntnisse in Handwerk, Facility, Hausverwaltung oder KMU-Dienstleistung',
             'Erfahrung mit HubSpot, Pipedrive oder ähnlichen CRMs',
-            'Eigenes Netzwerk in der PropTech- oder Real-Estate-Branche',
+            'Eigenes Netzwerk in KMU, Handwerk, Facility oder PropTech',
         ],
         offer: [
             'Attraktives Fixum + leistungsbasierte Provision ohne Deckelung',
@@ -325,7 +325,7 @@ export default function KarrierePage() {
                             </h1>
                             <p className="text-lg leading-relaxed text-slate-500">
                                 Wir entlasten kleine Betriebe mit einem Anfrage-Assistenten.
-                                Gestalte mit uns die Zukunft der Immobilienbranche.
+                                Gestalte mit uns ein Produkt, das echten Alltag einfacher macht.
                             </p>
                         </div>
 

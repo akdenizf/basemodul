@@ -51,7 +51,7 @@ export default function KontaktPage() {
                                     Kostenlose Demo buchen
                                 </h2>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    30 Minuten. Kein Verkaufsdruck. Wir zeigen Ihnen live, wie AGENTEQ Ihre Telefonzentrale übernimmt.
+                                    30 Minuten. Kein Verkaufsdruck. Wir schauen gemeinsam, wo Anfragen hängen bleiben und ob ein Pilot Sinn ergibt.
                                 </p>
                             </div>
                             <span className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-emerald-600">
@@ -131,8 +131,8 @@ export default function KontaktPage() {
                             </div>
                             <div>
                                 <p className="text-slate-300 leading-relaxed text-sm mb-3 italic">
-                                    &ldquo;Ich zeige Ihnen in 30 Minuten, wie AGENTEQ Ihre Telefonzentrale revolutioniert.
-                                    Buchen Sie einfach einen Termin – ich freue mich auf das Gespräch.&rdquo;
+                                    &ldquo;Wir schauen uns Ihren Anfragefluss an und prüfen, ob AGENTEQ Ihnen im Alltag wirklich Arbeit abnehmen kann.
+                                    Buchen Sie einfach einen Termin - ich freue mich auf das Gespräch.&rdquo;
                                 </p>
                                 <p className="font-bold text-white text-sm">Fatih Akdeniz</p>
                                 <p className="text-slate-400 text-xs">Gründer & CEO, AGENTEQ</p>
