@@ -70,7 +70,7 @@ export function PricingSection() {
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <motion.div variants={item} className="mb-14 max-w-[620px]">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            06 — Pilot
+            07 — Pilot
           </span>
           <h2 className="mb-[18px] mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
             Erst ein Modul testen. Dann entscheiden.

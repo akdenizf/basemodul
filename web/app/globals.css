@@ -17,6 +17,21 @@ body {
   color: #FAFAFA;
 }
 
+@layer base {
+  /* Sichtbarer Tastatur-Fokus — dezenter grüner Ring, respektiert vorhandene Radien.
+     Nur :focus-visible, damit Maus-Klicks keinen Ring auslösen. */
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  [tabindex]:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid rgba(74, 222, 128, 0.65);
+    outline-offset: 2px;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;

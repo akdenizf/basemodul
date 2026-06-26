@@ -48,7 +48,7 @@ export function VisualContextSection() {
           <div className="flex flex-col gap-8">
             <motion.div variants={item}>
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-                04 — Foto & Datei
+                05 — Foto & Datei
               </p>
               <h2 className="text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-ink sm:text-[46px]">
                 Wenn nach dem Anruf ein Foto fehlt,{" "}
@@ -119,8 +119,9 @@ export function VisualContextSection() {
 
                   <div className="mt-4 flex flex-col gap-2.5">
                     {[
-                      { label: "Typ", value: "Rückfrage", accent: false },
-                      { label: "Priorität", value: "Normal", accent: true },
+                      { label: "Typ", value: "Rückfrage", tone: "neutral" },
+                      // Amber bleibt dem Dringend-Fall vorbehalten; "Normal" ruhig in Grün.
+                      { label: "Priorität", value: "Normal", tone: "ok" },
                     ].map((tag) => (
                       <div
                         key={tag.label}
@@ -131,7 +132,11 @@ export function VisualContextSection() {
                         </span>
                         <span
                           className={`text-[12px] font-bold ${
-                            tag.accent ? "text-amber-400" : "text-ink"
+                            tag.tone === "urgent"
+                              ? "text-amber-400"
+                              : tag.tone === "ok"
+                              ? "text-leaf"
+                              : "text-ink"
                           }`}
                         >
                           {tag.value}

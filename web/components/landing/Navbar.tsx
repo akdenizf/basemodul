@@ -16,10 +16,45 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeId, setActiveId] = useState<string>("");
+
+  // Ein gemeinsamer rAF-gedrosselter Scroll-Handler für beides:
+  // (1) Navbar-Hintergrund/Border ab erstem Scroll, (2) Scroll-Spy für den aktiven Link.
+  // Re-Query pro Frame ist robust gegenüber der lazy geladenen Demo-Sektion.
+  useEffect(() => {
+    const ids = NAV_LINKS.map((l) => l.href.slice(1));
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        setScrolled(window.scrollY > 8);
+        const line = window.innerHeight * 0.35;
+        let current = ids[0];
+        for (const id of ids) {
+          const el = document.getElementById(id);
+          if (el && el.getBoundingClientRect().top <= line) current = id;
+        }
+        setActiveId(current);
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   return (
     <>
-      <nav className="fixed inset-x-0 top-0 z-50 h-[60px] border-b border-linesoft bg-paper/85 backdrop-blur-[12px]">
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 h-[60px] border-b transition-colors duration-300 ${
+          scrolled
+            ? "border-linesoft bg-paper/85 backdrop-blur-[12px]"
+            : "border-transparent bg-transparent"
+        }`}
+      >
         <div className="mx-auto flex h-[60px] max-w-[1400px] items-center justify-between px-6 lg:px-12">
           {/* Logo */}
           <Link href="/" className="flex items-baseline">
@@ -30,15 +65,24 @@ export function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden items-center gap-[30px] lg:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-[14px] font-medium text-label transition-colors hover:text-ink"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = activeId === link.href.slice(1);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "true" : undefined}
+                  className={`relative text-[14px] font-medium transition-colors ${
+                    active ? "text-ink" : "text-label hover:text-ink"
+                  }`}
+                >
+                  {link.label}
+                  {active && (
+                    <span className="absolute -bottom-1 left-0 right-0 mx-auto h-0.5 w-4 rounded-full bg-leafbright" />
+                  )}
+                </a>
+              );
+            })}
           </div>
 
           <div className="flex items-center gap-3.5">
