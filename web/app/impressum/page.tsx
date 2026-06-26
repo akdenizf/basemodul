@@ -4,8 +4,8 @@ import { Footer } from "@/components/landing/Footer";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Impressum | AGENTEQ',
-    description: 'Impressum des AGENTEQ Anfrage-Assistenten.',
+    title: 'Impressum | BaseModul',
+    description: 'Impressum von BaseModul – einem Angebot von AGENTEQ.',
 };
 
 export default function ImpressumPage() {
@@ -26,7 +26,7 @@ export default function ImpressumPage() {
                         <div className="space-y-10 text-slate-600 leading-relaxed">
                             <section>
                                 <h2 className="text-xl font-bold text-slate-900 mb-3">Anbieter</h2>
-                                <p className="mb-4">AGENTEQ ist ein Service von:</p>
+                                <p className="mb-4">BaseModul ist ein Angebot von AGENTEQ. Anbieter und verantwortlich im Sinne des § 5 DDG:</p>
                                 <div className="space-y-1 bg-slate-50 p-6 rounded-2xl border border-slate-100">
                                     <p className="font-extrabold text-slate-900">AGENTEQ</p>
                                     <p>Fatih Mehmet Akdeniz</p>
