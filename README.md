@@ -1,34 +1,56 @@
-# AGENTEQ KMU Assistants
+# basemodul.de
 
-AGENTEQ baut kleine, verkaufbare Assistenten fuer KMU, die viele Anfragen, Anrufe, WhatsApps, E-Mails oder Terminabstimmungen manuell sortieren muessen.
+Produktseite für modulare KI-Assistenten von AGENTEQ.
+
+**AGENTEQ** bleibt die Dachfirma / Enterprise-Marke. **basemodul.de** ist die
+konkrete Produktmarke für kleine und mittlere Betriebe, die Kundenanfragen
+besser annehmen, vorsortieren und übergeben wollen.
+
+## Positionierung
+
+basemodul.de baut KI-Module für Betriebe, die Anrufe, Termine, WhatsApp-
+Anfragen, Fotos und Notfälle automatisch vorqualifizieren wollen.
 
 Der Fokus ist nicht "KI als Buzzword", sondern ein konkreter operativer Nutzen:
 
-- keine Anfrage verlieren
-- Notfaelle und Dringlichkeit erkennen
-- fehlende Infos strukturiert abfragen
-- Termine, Rueckrufe oder Tickets sauber vorbereiten
-- dem Team jeden Tag Arbeit abnehmen
+- keine Anrufe verlieren
+- Termine schneller vorbereiten oder buchen
+- WhatsApp-Anfragen strukturiert einsammeln
+- Fotos und Schäden sauber erfassen
+- Notfälle erkennen und an Menschen eskalieren
+- Teams jeden Tag weniger Telefon- und Anfragechaos geben
+
+## Module
+
+1. **Telefon-Modul** - Anrufe annehmen, Anliegen erfassen, Rückruf/Ticket
+   vorbereiten.
+2. **Chat-Modul** - Infos per Chat sammeln, Rückfragen stellen, Übergabe
+   ans Team.
+3. **Termin-Modul** - Kalender prüfen, Termine vorbereiten, Bestätigungen
+   senden.
+4. **Foto-&-Datei-Modul** - Fotos oder Anhänge entgegennehmen, Kontext sammeln,
+   strukturierte Übergaben erzeugen.
+5. **Prioritäts-Modul** - Dringlichkeit erkennen, Pflichtinfos abfragen,
+   zuständige Person informieren.
 
 ## Arbeitsprinzip
 
-Wir bauen keine riesige Plattform im Blindflug. Wir testen mehrere kleine Service-Angebote parallel, messen Rueckmeldung im Markt und machen dann aus dem staerksten Signal ein eigenes Vertical.
+Wir bauen keine riesige Plattform im Blindflug. Wir testen mehrere kleine
+Module, messen Rückmeldung im Markt und machen dann aus dem stärksten Signal
+ein fokussiertes Angebot.
 
-## Erste Zielgruppen
+Bewusst nicht im ersten Fokus:
 
-- Handwerker und SHK-Betriebe
-- Hausverwaltungen
-- Facility und Gebaeudereinigung
-- Umzug und Entruempelung
-- kleine Dienstleister mit viel Telefon-/WhatsApp-Aufkommen
-
----
+- keine große Mission-Control-Plattform
+- keine vollautomatische Angebotserstellung als Kernangebot
+- keine Hausverwaltung/SHK-Schadenfall-Spur als Hauptpositionierung
+- keine sensiblen Spezialbereiche zuerst, wenn DSGVO/Regulierung zu schwer wird
 
 ## MVP-Webseite (`web/`)
 
 Die kundenseitige Landing + simulierte Demo liegt in `web/`. Sie ist aus dem
 erprobten Callfolio-Template abgeleitet (Next.js 14 App Router, TypeScript,
-Tailwind) und auf KMU/Handwerk umgebaut.
+Tailwind). Der Backend-/SaaS-Unterbau ist aktuell geparkt.
 
 ### Starten
 
@@ -41,44 +63,47 @@ npm run dev      # http://localhost:3000
 Weitere Befehle: `npm run build` (Production-Build), `npm start` (Prod-Server),
 `npm run lint`.
 
-### Was die Seite zeigt
+### Aktueller Umbau-Fokus
 
-- **Hero** "Keine Anfrage geht mehr verloren" mit animierter Anfrage-Karte
-- **Live-Demo** (`#livedemo`): self-contained, simulierter Anrufverlauf mit
-  Transkript-Streaming und Dringlichkeits-/Ticket-Ergebnis. Kein Backend, kein
-  Telefonie-Key noetig.
-- **Branchen** (`#branchen`): drei Karten — Handwerk/SHK, Hausverwaltung,
-  Facility/Gebaeudereinigung
-- Pain, So-funktioniert's, Self-Onboarding, Visueller Kontext, ROI,
-  Integrationen, Preise, FAQ
-- Rechtsseiten (Impressum/Datenschutz/AGB) mit echten AGENTEQ-Stammdaten,
-  von Hausverwaltung auf KMU generalisiert. **Vor Live-Gang anwaltlich pruefen.**
-- CTA durchgaengig: "Pilotplatz anfragen"
+Die bestehende Landing soll von "AGENTEQ KMU Assistants" auf **basemodul.de**
+umgebaut werden:
+
+- Branding: basemodul.de als Hauptmarke
+- Footer/Trust: "Ein Produkt von AGENTEQ"
+- Module statt Branchen als Kernlogik
+- Hausverwaltung raus
+- Design später finalisieren, zuerst Angebot/Copy/Funktion sauber schneiden
 
 ### Lean-MVP: was bewusst geparkt ist
 
 Das Callfolio-Template bringt einen vollen Multi-Tenant-SaaS mit (Dashboard,
-Auth, Tickets, Tenants, Vapi/Twilio/Resend/Supabase-Backends). Fuer den
+Auth, Tickets, Tenants, Vapi/Twilio/Resend/Supabase-Backends). Für den
 Markt-Test wird nur Landing + Demo betrieben. Der gesamte Backend-Unterbau
 liegt unangetastet unter `web/_parked/` und kann beim echten Piloten wieder
-verdrahtet werden (eigene, neue Keys noetig — niemals Callfolio-Production-Keys).
+verdrahtet werden (eigene, neue Keys nötig - niemals Callfolio-Production-Keys).
 
-Sicherheit beim Uebernehmen des Templates erledigt:
+Sicherheit beim Übernehmen des Templates erledigt:
 
 - Callfolio-`.env.local` (Live-Secrets) entfernt -> `web/.env.example` (nur Keys)
 - mitkopiertes `.git` (zeigte auf Callfolio-Repo) entfernt
 - `node_modules`/`.next`/`.vercel` entfernt, frisch installiert
 - Middleware neutralisiert (kein Auth/Supabase-Redirect)
-- Hero-"Live-Gespraech" (echtes Vapi) -> scrollt zur simulierten Demo
+- Hero-"Live-Gespräch" (echtes Vapi) -> scrollt zur simulierten Demo
 
-### Guardrails (aus TECHNICAL_BLUEPRINT.md)
+### Guardrails
 
 - keine verbindlichen Zusagen ohne menschliche Freigabe
-- Notfaelle immer an Menschen eskalieren
+- Notfälle immer an Menschen eskalieren
 - kein medizinischer Entscheidungsassistent
 - DSGVO/AVV beachten, Pilot klein halten
 - keine echten Sends / Kundendaten im MVP
 
 ## Strategie-Dokumente
 
-`PLAN.md` · `OFFER.md` · `GTM.md` · `LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md`
+`PLAN.md` · `OFFER.md` · `WIREFRAME.md` · `DESIGN_BRIEF.md` · `GTM.md` ·
+`LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md`
+
+## Agenten-Prompts
+
+`prompts/basemodul-landing-implementation.md` enthält den Claude-Code-Prompt für
+den ersten Landingpage-Umbau auf basemodul.de.

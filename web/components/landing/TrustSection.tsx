@@ -6,9 +6,9 @@ const BADGES = [
   { icon: "verified_user", label: "DSGVO-konform" },
   { icon: "dns", label: "Server in Frankfurt" },
   { icon: "flag", label: "Made in Germany" },
-  { icon: "bolt", label: "Ø 241ms Antwortzeit" },
+  { icon: "bolt", label: "Antwort in Sekunden" },
   { icon: "lock", label: "Ende-zu-Ende verschlüsselt" },
-  { icon: "support_agent", label: "24/7 Erreichbarkeit" },
+  { icon: "support_agent", label: "Auch außerhalb der Bürozeiten" },
 ];
 
 export function TrustSection() {
@@ -25,7 +25,7 @@ export function TrustSection() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
               className="flex items-center gap-2"
             >
-              <span className="material-symbols-outlined text-[16px] text-[#0369A1]">{b.icon}</span>
+              <span className="material-symbols-outlined text-[16px] text-[#15604A]">{b.icon}</span>
               <span className="text-[13px] font-medium text-slate-500">{b.label}</span>
               {i < BADGES.length - 1 && (
                 <span className="ml-10 hidden h-3.5 w-px bg-slate-200 sm:block" />

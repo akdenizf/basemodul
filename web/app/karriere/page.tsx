@@ -114,7 +114,7 @@ const jobs: Job[] = [
             'Eigeninitiative und Hunter-Mentalität',
         ],
         niceToHave: [
-            'Kenntnisse in Handwerk, Facility, Hausverwaltung oder KMU-Dienstleistung',
+            'Kenntnisse in Handwerk, Facility, technischem Service oder KMU-Dienstleistung',
             'Erfahrung mit HubSpot, Pipedrive oder ähnlichen CRMs',
             'Eigenes Netzwerk in KMU, Handwerk, Facility oder PropTech',
         ],

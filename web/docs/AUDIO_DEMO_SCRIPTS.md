@@ -1,185 +1,226 @@
-# Audio-Demo Skripte & Produktions-Guide
+# Audio-Demo Skripte & Produktions-Guide — basemodul.de
 
-Dieses Dokument enthält die exakten Skripte, Sprechzeiten und Produktionsanweisungen zur Erstellung der Audio-Dateien für die Landingpage-Demos von Callfolio. 
+Dieses Dokument enthält die finalen deutschen Skripte, Voice-Mapping und Produktionsanweisungen
+für die 4 Landing-Page-Demos. Der Generator liegt unter:
+`AI-Creator-Tool/scripts/generate_audio_demos.py`
 
-Die Audio-Dateien müssen exakt auf die Timestamps in der React-Komponente [LiveDemoSection.tsx](file:///Users/user/Desktop/Projects/CALLFOLIO_MVP/components/landing/LiveDemoSection.tsx) abgestimmt sein, damit Text, Visualizer und Ton perfekt synchron laufen.
-
----
-
-## 1. Stimmen-Profile
-
-Um ein realistisches Telefongespräch zu simulieren, werden zwei unterschiedliche Stimmen verwendet. Stimme A entspricht exakt eurer Vapi-Konfiguration.
-
-### Stimme A: Die KI-Assistentin (Callfolio - Vapi Live-Setup)
-* **ElevenLabs Custom Voice ID:** `Nf7t9cuyo0u3kuvi9q4b` (aus eurer Voice Library)
-* **Voice Model:** `Eleven_turbo_v2_5`
-* **Vapi / ElevenLabs Settings:**
-  * *Stability:* `0.5` (More Stable)
-  * *Clarity + Similarity:* `0.7` (High)
-  * *Speed:* `1.0` (Normal)
-  * *Style Exaggeration:* `0.0` (None / Fastest)
-  * *Use Speaker Boost:* Aktiviert (`true`)
-  * *Optimize Streaming Latency:* `1`
-  * *Auto Mode:* Deaktiviert (`false`)
-
-### Stimme B: Der Mieter / Anrufer
-* **Charakter:** Alltäglich, leicht besorgt/gestresst, spricht in normalem Tempo.
-* **ElevenLabs Empfehlung:**
-  * Name: `Marcus` (natürlicher deutscher Mann) oder ein ähnlicher deutscher Sprecher aus der Library.
-  * **Settings:**
-    * *Stability:* `0.3` – `0.4` (niedrigere Stabilität lässt die Stimme lebendiger und menschlicher wirken).
-    * *Clarity + Similarity:* `0.7`.
-    * *Style Exaggeration:* `0.1` – `0.15` (für eine natürlichere, leicht besorgte Betonung).
+Die Timestamps in den Skripten sind Schätzwerte. Der Generator ermittelt nach der
+Generierung die echten Sprechpausen per Silence-Detection und synchronisiert die
+`LiveDemoSection.tsx` automatisch.
 
 ---
 
-## 2. Szenario 1: Tropfender Siphon (`demo.mp3`)
-**Gesamtlänge Ziel:** ca. **33 Sekunden**
+## Stimmen-Profil
 
-Dieses Szenario zeigt einen Standard-Schadensfall mittlerer Priorität im Sanitär-Bereich.
+| Rolle | Stimme | ElevenLabs Voice-ID | Charakter |
+|---|---|---|---|
+| KI-Assistentin | **Monika** | `2zRM7PkgwBPiau2jvVXc` | Ruhig, klar, serviceorientiert |
+| Anruferin (w) | **Anika** | `Sm1seazb4gs7RSlUVw7c` | Lebendig, freundlich |
+| Anrufer (m) | **Lutz** | `9yzdeviXkFddZ4Oz8Mok` | Entspannt, direkt |
 
-### Produktions-Timeline (Stitching)
-
-| Start (Sekunde) | Sprecher | Text für ElevenLabs | Ziel-Dauer | Hinweis für Schnitt |
-| :--- | :--- | :--- | :--- | :--- |
-| **0.0s** | **KI** | "Grüß Gott bei Ihrer Hausverwaltung. Ich bin der KI-Assistent der Zentrale. Wie kann ich Ihnen behilflich sein?" | 6.0s | Direkt am Start einblenden. |
-| *6.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **6.0s** | **Mieter** | "Hallo, hier ist Müller aus der Hauptstraße 12. Bei mir tropft der Siphon im Bad." | 4.5s | Muss exakt ab 6.0s starten. |
-| *10.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **10.5s** | **KI** | "Guten Tag Herr Müller. Ich habe Ihr Profil gefunden. Hauptstraße 12, Erdgeschoss. Steht schon ein Eimer darunter?" | 5.5s | Startet bei 10.5s. |
-| *16.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **16.0s** | **Mieter** | "Ja, Eimer steht drunter, aber es ist schon ziemlich nass." | 3.0s | Startet bei 16.0s. |
-| *19.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **19.0s** | **KI** | "Alles klar. Ich lege sofort ein Ticket für Sie an und informiere unseren Sanitär-Partner. Sie erhalten gleich eine SMS mit einem Link, um ein kurzes Foto hochzuladen." | 8.5s | Startet bei 19.0s. |
-| *27.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **27.5s** | **Mieter** | "Super, mache ich. Danke!" | 2.0s | Startet bei 27.5s. |
-| *29.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **29.5s** | **KI** | "Gern geschehen. Ein Handwerker wird sich in Kürze bei Ihnen zur Terminvereinbarung melden. Auf Wiederhören!" | 3.5s | Startet bei 29.5s. |
-
-* **Export:** Die fertige Datei als `demo.mp3` im Ordner [public/](file:///Users/user/Desktop/Projects/CALLFOLIO_MVP/public/) speichern.
+Modell: `elevenlabs/text-to-dialogue-v3` via Kie.ai  
+Parameter: `stability: 0.5`, `language_code: "de"`, `speed: 1.0`
 
 ---
 
-## 3. Szenario 2: Kompletter Stromausfall (`demo-strom.mp3`)
-**Gesamtlänge Ziel:** ca. **32 Sekunden**
+## Szenario 1 — Standard Rückruf (`demo.mp3`)
 
-Dieses Szenario zeigt einen hoch-priorisierten Notfall (Elektro) außerhalb der Arbeitszeit.
+**Modul:** Telefon  
+**Kategorie:** CHAT · Dringlichkeit: MEDIUM  
+**Ziel:** Verpasster Anruf wird zu einer strukturierten Rückrufnotiz — kein Voicemail-Chaos.  
+**Anrufer:** Lutz (männlich)  
+**Geschätzte Dauer:** ~42 s
 
-### Produktions-Timeline (Stitching)
+### Transkript
 
-| Start (Sekunde) | Sprecher | Text für ElevenLabs | Ziel-Dauer | Hinweis für Schnitt |
-| :--- | :--- | :--- | :--- | :--- |
-| **0.0s** | **KI** | "Grüß Gott bei Ihrer Hausverwaltung. Ich bin der KI-Assistent der Zentrale. Wie kann ich Ihnen behilflich sein?" | 6.0s | Direkt am Start einblenden. |
-| *6.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **6.0s** | **Mieter** | "Ja, hallo. Bei uns im gesamten Erdgeschoss ist der Strom weg." | 4.0s | Startet bei 6.0s. |
-| *10.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **10.0s** | **KI** | "Das verstehe ich. Haben Sie bereits den Sicherungskasten überprüft, ob der FI-Schalter herausgesprungen ist?" | 5.5s | Startet bei 10.0s. |
-| *15.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **15.5s** | **Mieter** | "Ja, habe ich probiert, aber er springt immer wieder sofort raus." | 4.5s | Startet bei 15.5s. |
-| *20.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **20.0s** | **KI** | "In Ordnung. Da der Kühlschrank betroffen ist, setze ich die Dringlichkeit auf Hoch. Ein Notfall-Elektriker wird umgehend benachrichtigt." | 6.5s | Startet bei 20.0s. |
-| *26.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **26.5s** | **Mieter** | "Vielen Dank, das ist super." | 1.5s | Startet bei 26.5s. |
-| *28.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **28.0s** | **KI** | "Gerne. Er wird sich in den nächsten 15 Minuten bei Ihnen melden. Auf Wiederhören!" | 4.0s | Startet bei 28.0s. |
+| Runde | Sprecher | Text | Gesch. Start |
+|---|---|---|---|
+| 1 | **Monika** | Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen? | 0.0 s |
+| 2 | Lutz | Hallo, hier ist Müller. Ich habe eine Anfrage geschickt und hätte gern einen Rückruf. | 7.1 s |
+| 3 | **Monika** | Guten Tag Herr Müller. Ich notiere Ihren Rückrufwunsch. Worum geht es grob, damit das Team die Anfrage richtig einordnen kann? | 13.4 s |
+| 4 | Lutz | Es geht um einen neuen Auftrag. Ich kann auch gleich ein Foto oder Dokument mitschicken. | 20.5 s |
+| 5 | **Monika** | Alles klar. Ich erstelle eine Rückrufnotiz und sende Ihnen einen Upload-Link für den Anhang. Das Team bekommt alles strukturiert übergeben. | 23.9 s |
+| 6 | Lutz | Super, mache ich. Danke! | 36.1 s |
+| 7 | **Monika** | Gern geschehen. Das Team bekommt Ihre Meldung strukturiert übergeben und meldet sich zur Terminabstimmung. Auf Wiederhören! | 36.9 s |
 
-* **Export:** Die fertige Datei als `demo-strom.mp3` im Ordner [public/](file:///Users/user/Desktop/Projects/CALLFOLIO_MVP/public/) speichern.
+### Ergebnis-Karte (LiveDemoSection)
 
----
-
-## 4. Szenario 3: Status-Abfrage — „Wann kommt der Handwerker?" (`demo-status.mp3`)
-**Gesamtlänge Ziel:** ca. **30 Sekunden**
-
-Dieses Szenario zeigt Callfolios **Datenbankintegration**: Die KI liest das bestehende Ticket des Mieters, nennt den konkreten Handwerker-Termin. Ca. 30% aller Anrufe bei Hausverwaltungen sind reine Statusnachfragen — hier komplett ohne Mitarbeiter abgewickelt.
-
-### Produktions-Timeline (Stitching)
-
-| Start (Sekunde) | Sprecher | Text für ElevenLabs | Ziel-Dauer | Hinweis für Schnitt |
-| :--- | :--- | :--- | :--- | :--- |
-| **0.0s** | **KI** | "Grüß Gott bei Ihrer Hausverwaltung. Ich bin der KI-Assistent der Zentrale. Wie kann ich Ihnen behilflich sein?" | 6.0s | Direkt am Start einblenden. |
-| *6.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **6.0s** | **Mieter** | "Ja, hallo, hier ist Müller, Hauptstraße 12. Ich wollte mal nachfragen, wann der Handwerker wegen meines Siphons kommt." | 5.5s | Startet bei 6.0s. |
-| *11.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **11.5s** | **KI** | "Guten Tag Herr Müller. Ich sehe hier Ihr Ticket vom Dienstag. Der Sanitärbetrieb Schulze ist bereits beauftragt und hat den Termin für morgen, Freitag den 6. Juni um 10:30 Uhr, eingetragen." | 9.0s | Startet bei 11.5s. |
-| *20.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **20.5s** | **Mieter** | "Super, das passt. Danke!" | 2.0s | Startet bei 20.5s. |
-| *22.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **22.5s** | **KI** | "Sehr gerne. Der Handwerker wird sich vorher noch kurz bei Ihnen melden. Auf Wiederhören!" | 5.0s | Startet bei 22.5s. |
-
-* **Export:** Die fertige Datei als `demo-status.mp3` im Ordner [public/](file:///Users/user/Desktop/Projects/CALLFOLIO_MVP/public/) speichern.
-
----
-
-## 5. Szenario 4: Eskalation — „Es ist schlimmer geworden!" (`demo-eskalation.mp3`)
-**Gesamtlänge Ziel:** ca. **33 Sekunden**
-
-Dieses Szenario zeigt Callfolios **Kontext-Bewusstsein**: Die KI erkennt den Anrufer und das bestehende Ticket, erstellt **kein doppeltes Ticket**, stuft die Dringlichkeit auf Kritisch hoch, gibt eine Sofort-Verhaltensanweisung und aktiviert den Notdienst-Workflow.
-
-### Produktions-Timeline (Stitching)
-
-| Start (Sekunde) | Sprecher | Text für ElevenLabs | Ziel-Dauer | Hinweis für Schnitt |
-| :--- | :--- | :--- | :--- | :--- |
-| **0.0s** | **KI** | "Grüß Gott bei Ihrer Hausverwaltung. Ich bin der KI-Assistent der Zentrale. Wie kann ich Ihnen behilflich sein?" | 6.0s | Direkt am Start einblenden. |
-| *6.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **6.0s** | **Mieter** | "Hallo, hier ist Müller, Hauptstraße 12. Wegen dem Siphon im Bad — das Wasser spritzt jetzt richtig raus, der Flur steht schon unter Wasser!" | 6.5s | Leicht gestresste Stimme. |
-| *12.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **12.5s** | **KI** | "Herr Müller, ich sehe Ihr bestehendes Ticket. Ich stufe den Vorfall sofort als kritischen Notfall ein. Drehen Sie bitte sofort den Hauptwasserhahn ab, falls möglich. Ich alarmiere jetzt unseren Notdienst-Installateur." | 10.0s | Ruhige, klare, handlungsorientierte Stimme. |
-| *22.5s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **22.5s** | **Mieter** | "Okay, ich drehe ihn ab. Danke!" | 2.5s | Startet bei 22.5s. |
-| *25.0s* | | *(Kurze Pause / Stille)* | *0.0s* | *Nahtloser Übergang* |
-| **25.0s** | **KI** | "Er wird Sie in den nächsten fünf Minuten zurückrufen. Ihr Ticket ist auf Dringlichkeit Kritisch hochgestuft. Auf Wiederhören!" | 6.0s | Startet bei 25.0s. |
-
-* **Export:** Die fertige Datei als `demo-eskalation.mp3` im Ordner [public/](file:///Users/user/Desktop/Projects/CALLFOLIO_MVP/public/) speichern.
-
----
-
-## 6. Anleitung für den Videoschnitt (z. B. CapCut, Audacity, Premiere Pro)
-
-Falls du die Spuren manuell übereinanderlegst:
-1. Generiere die einzelnen Textfragmente (insgesamt 14 MP3s) bei ElevenLabs.
-2. Benenne sie sauber (z. B. `siphon_ki_1.mp3`, `siphon_mieter_1.mp3` usw.).
-3. Ziehe sie in eine Audiospur in deiner Schnittsoftware.
-4. Richte die Clips exakt nach der obigen Spalte **"Start (Sekunde)"** aus.
-5. Exportiere den gesamten Timeline-Abschnitt als **MP3** mit **128kbps** oder **192kbps** (nicht zu groß für schnelle Web-Ladezeiten).
-
----
-
-## Bonus: Automatisches Stitching per Python-Skript
-Falls du viele dieser Demos bauen willst oder Python bevorzugst, kannst du dieses Skript nutzen, um die generierten Clips automatisch passend zusammenzufügen. 
-
-*Voraussetzung:* `pip install pydub` (benötigt ffmpeg auf dem Rechner).
-
-```python
-import os
-from pydub import AudioSegment
-
-def stitch_scenario(parts, output_path, total_duration_ms):
-    # Starte mit einer leeren (leisen) Spur der gesamten Länge
-    combined = AudioSegment.silent(duration=total_duration_ms)
-    
-    for start_ms, file_path in parts:
-        if os.path.exists(file_path):
-            sound = AudioSegment.from_file(file_path)
-            # Clip an der exakten Startzeit einfügen (overlay)
-            combined = combined.overlay(sound, position=start_ms)
-            print(f"Overlayed {file_path} at {start_ms/1000.0}s")
-        else:
-            print(f"Warning: File {file_path} not found!")
-            
-    # Export als MP3
-    combined.export(output_path, format="mp3", bitrate="128k")
-    print(f"Exported combined audio to {output_path}\n")
-
-# Beispiel-Konfiguration für Siphon (Zeiten in Millisekunden)
-siphon_parts = [
-    (0, "siphon_ki_1.mp3"),
-    (6000, "siphon_mieter_1.mp3"),
-    (10500, "siphon_ki_2.mp3"),
-    (16000, "siphon_mieter_2.mp3"),
-    (19000, "siphon_ki_3.mp3"),
-    (27500, "siphon_mieter_3.mp3"),
-    (29500, "siphon_ki_4.mp3")
-]
-
-# stitch_scenario(siphon_parts, "public/demo.mp3", 33000)
 ```
+Ticket: #BM-8421
+Zusammenfassung: Rückrufwunsch mit Kontakt, Anliegen und optionalem Anhang.
+Aktion: Rückrufnotiz erstellt • Team informiert • Upload-Link versandt
+```
+
+---
+
+## Szenario 2 — Dringende Meldung (`demo-strom.mp3`)
+
+**Modul:** Priorität / Notfall  
+**Kategorie:** PRIORITY · Dringlichkeit: HIGH  
+**Ziel:** Dringende Meldung außerhalb der Bürozeit wird erkannt, aufgenommen und eskaliert.  
+**Anruferin:** Anika (weiblich)  
+**Geschätzte Dauer:** ~38 s
+
+### Transkript
+
+| Runde | Sprecher | Text | Gesch. Start |
+|---|---|---|---|
+| 1 | **Monika** | Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen? | 0.0 s |
+| 2 | Anika | Ja, hallo. Es ist dringend, ich erreiche gerade niemanden im Büro. | 7.8 s |
+| 3 | **Monika** | Verstanden. Ich nehme die wichtigsten Angaben auf. Wen soll das Team zurückrufen und worum geht es kurz? | 12.4 s |
+| 4 | Anika | Bitte unter dieser Nummer. Es betrifft einen laufenden Auftrag und muss heute geklärt werden. | 19.5 s |
+| 5 | **Monika** | In Ordnung. Ich setze die Priorität auf Hoch und informiere den festgelegten Übergabekanal. | 23.1 s |
+| 6 | Anika | Vielen Dank, das ist super. | 32.0 s |
+| 7 | **Monika** | Gerne. Das Team wird sich in Kürze bei Ihnen melden. Auf Wiederhören! | 35.1 s |
+
+> **Hinweis:** Runde 7 wurde leicht angepasst — die vorherige Version versprach
+> "in den nächsten 15 Minuten", was das Produkt nicht garantieren kann.
+> Neue Formulierung bleibt verbindlich ohne konkrete Zeitangabe.
+
+### Ergebnis-Karte
+
+```
+Ticket: #BM-9102
+Zusammenfassung: Dringende Kundenmeldung außerhalb der Bürozeit.
+Aktion: Priorität hoch • Übergabekanal informiert • Rückruf vorbereitet
+```
+
+---
+
+## Szenario 3 — Terminstatus abfragen (`demo-status.mp3`)
+
+**Modul:** Termin  
+**Kategorie:** APPOINTMENT · Dringlichkeit: LOW  
+**Ziel:** Terminanfrage wird vorbereitet — kein Telefonpingpong mit dem Team.  
+**Anrufer:** Lutz (männlich)  
+**Geschätzte Dauer:** ~30 s
+
+### Transkript
+
+| Runde | Sprecher | Text | Gesch. Start |
+|---|---|---|---|
+| 1 | **Monika** | Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen? | 0.0 s |
+| 2 | Lutz | Ja, hallo, hier ist Müller. Ich wollte nachfragen, wann mein Termin stattfindet. | 7.1 s |
+| 3 | **Monika** | Guten Tag Herr Müller. Ich sehe die Anfrage vom Dienstag. Der Termin ist für morgen, Freitag den 6. Juni um 10:30 Uhr vorbereitet. | 13.3 s |
+| 4 | Lutz | Super, das passt. Danke! | 25.8 s |
+| 5 | **Monika** | Sehr gerne. Das Team meldet sich bei Bedarf vorher noch einmal. Auf Wiederhören! | 26.5 s |
+
+### Ergebnis-Karte
+
+```
+Ticket: #BM-8421
+Zusammenfassung: Terminstatus abgerufen. Fr. 06. Jun. 10:30 Uhr bestätigt.
+Aktion: Status erkannt • Termin bestätigt • Team nicht unterbrochen
+```
+
+---
+
+## Szenario 4 — Foto / Datei-Eingang (`demo-eskalation.mp3`)
+
+**Modul:** Foto & Datei / optional WhatsApp  
+**Kategorie:** GENERAL · Dringlichkeit: MEDIUM  
+**Ziel:** Vage Beschreibung wird per Upload-Link zu einem nutzbaren Fall.  
+**Anruferin:** Anika (weiblich)  
+**Geschätzte Dauer:** ~30 s
+
+> ✅ **TSX-Update erledigt:** Das Szenario `id: "eskalation"` in
+> `LiveDemoSection.tsx` ist auf das Foto-/Datei-Modul umgestellt.
+> Struktur, Styling und ID bleiben gleich.
+
+### Transkript (revidiert — Foto-Modul)
+
+| Runde | Sprecher | Text | Gesch. Start |
+|---|---|---|---|
+| 1 | **Monika** | Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen? | 0.0 s |
+| 2 | Anika | Hallo, ich habe ein Problem bei mir im Betrieb — das ist schwer zu beschreiben, ich weiß nicht genau, woran es liegt. | 7.0 s |
+| 3 | **Monika** | Kein Problem. Am einfachsten geht das mit einem kurzen Foto oder Video. Ich schicke Ihnen gleich einen Upload-Link per SMS. Darf ich Ihre Handynummer kurz aufnehmen? | 14.5 s |
+| 4 | Anika | Ja, gerne. Sie können die 0151er nehmen. | 24.0 s |
+| 5 | **Monika** | Perfekt. Der Link ist unterwegs. Schicken Sie das Foto, sobald Sie können — das Team bekommt Ihre Meldung mit dem Bild direkt übergeben. | 27.5 s |
+| 6 | Anika | Super, vielen Dank. | 38.0 s |
+| 7 | **Monika** | Sehr gerne. Auf Wiederhören! | 39.5 s |
+
+### Ergebnis-Karte (nach TSX-Update)
+
+```
+Ticket: #BM-7033
+Zusammenfassung: Unklares Anliegen per Foto-Upload strukturiert übergeben.
+Aktion: Upload-Link versandt • Foto-Eingang erwartet • Team vorbereitet
+```
+
+### TSX-Änderung (Scenario 4 — `id: "eskalation"`)
+
+Folgende Felder in `LiveDemoSection.tsx` vor der Generierung anpassen:
+
+```ts
+{
+  id: "eskalation",
+  title: "Foto & Datei einreichen",
+  category: "GENERAL",
+  urgency: "MEDIUM",
+  audioSrc: "/demo-eskalation.mp3",
+  transcript: [
+    { time: 0.0,  speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
+    { time: 7.0,  speaker: "caller",    text: "Hallo, ich habe ein Problem bei mir im Betrieb — das ist schwer zu beschreiben, ich weiß nicht genau, woran es liegt." },
+    { time: 14.5, speaker: "assistant", text: "Kein Problem. Am einfachsten geht das mit einem kurzen Foto oder Video. Ich schicke Ihnen gleich einen Upload-Link per SMS. Darf ich Ihre Handynummer kurz aufnehmen?" },
+    { time: 24.0, speaker: "caller",    text: "Ja, gerne. Sie können die 0151er nehmen." },
+    { time: 27.5, speaker: "assistant", text: "Perfekt. Der Link ist unterwegs. Schicken Sie das Foto, sobald Sie können — das Team bekommt Ihre Meldung mit dem Bild direkt übergeben." },
+    { time: 38.0, speaker: "caller",    text: "Super, vielen Dank." },
+    { time: 39.5, speaker: "assistant", text: "Sehr gerne. Auf Wiederhören!" }
+  ],
+  finalResult: {
+    ticketId: "#BM-7033",
+    summary: "Unklares Anliegen per Foto-Upload strukturiert übergeben.",
+    action: "Upload-Link versandt • Foto-Eingang erwartet • Team vorbereitet"
+  }
+}
+```
+
+---
+
+## Generierungs-Checkliste (vor dem Start)
+
+- [x] TSX Szenario 4 (`eskalation`) aktualisiert (Transcript + finalResult)
+- [x] `scripts/generate_audio_demos.py` auf Agenteq-KMU-Assistants-Pfade umgestellt (siehe Generator-Änderungen unten)
+- [ ] KIE_API_KEY in `local_ai_factory/.env` gesetzt
+- [ ] `scratch/audio_cache_basemodul/` ggf. geleert (bei Re-Generierung)
+- [ ] Freigabe durch User erteilt
+
+---
+
+## Generator-Änderungen (umgesetzt vor Generierung)
+
+Datei: `AI-Creator-Tool/scripts/generate_audio_demos.py`
+
+**1. Pfade (Zeilen 47–48)**
+```python
+# Alt:
+OUTPUT_DIR    = PROJECT_ROOT.parent / "CALLFOLIO_MVP" / "public"
+FRONTEND_FILE = PROJECT_ROOT.parent / "CALLFOLIO_MVP" / "components" / "landing" / "LiveDemoSection.tsx"
+
+# Neu:
+OUTPUT_DIR    = PROJECT_ROOT.parent / "Agenteq-KMU-Assistants" / "web" / "public"
+FRONTEND_FILE = PROJECT_ROOT.parent / "Agenteq-KMU-Assistants" / "web" / "components" / "landing" / "LiveDemoSection.tsx"
+```
+
+**2. VOICE_CALLER-Mapping (Zeilen 81–86)**
+```python
+# Alt: Callfolio-IDs (siphon, stromausfall, status, eskalation)
+# Neu: gleiche IDs, angepasste Zuweisung
+VOICE_CALLER = {
+    "siphon":      VOICE_CATALOG["Lutz"],   # männlicher Anrufer
+    "stromausfall": VOICE_CATALOG["Anika"], # weibliche Anruferin
+    "status":      VOICE_CATALOG["Lutz"],   # männlicher Anrufer
+    "eskalation":  VOICE_CATALOG["Anika"],  # weibliche Anruferin
+}
+```
+*(Stromausfall war bisher Anika — unverändert. Eskalation war Anika — unverändert. Keine Änderung nötig, nur zur Klarheit dokumentiert.)*
+
+**3. SCENARIOS-Block ersetzen (Zeilen 89–146)**  
+Die 4 Szenarien durch die finalen basemodul.de-Skripte aus diesem Dokument ersetzen.
+Exakte `dialogue`-Arrays mit den Transkript-Texten oben befüllen.
+`planned_times` aus der Spalte "Gesch. Start" übernehmen.
+
+**4. Kosmetik**
+- `"Callfolio Landing Page Audio-Demos"` → `"basemodul.de Audio-Demos"`
+- Audition-Begrüßungstext entfernt Hausverwaltungs-Referenz
+- Cache getrennt über `scratch/audio_cache_basemodul/`, damit keine alten Callfolio-Rohdateien wiederverwendet werden

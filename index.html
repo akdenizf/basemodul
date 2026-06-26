@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>basemodul.de — Jede Anfrage wird zur fertigen Aktion</title>
+<meta name="description" content="KI-Module für Betriebe: Telefon, WhatsApp, Termine, Fotos und Notfälle vorsortieren und als fertige Aktion ans Team übergeben. Ein Produkt von AGENTEQ." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  /* ============ TOKENS ============ */
+  :root {
+    --bg: #0A0A0A;
+    --bg-2: #0D0D0D;
+    --surface: #141414;
+    --surface-2: #181818;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-2: rgba(255, 255, 255, 0.14);
+    --text: #FAFAFA;
+    --muted: #A1A1AA;
+    --faint: #6B6B72;
+    --green: #22C55E;
+    --green-deep: #16A34A;
+    --green-soft: rgba(34, 197, 94, 0.12);
+    --green-line: rgba(34, 197, 94, 0.35);
+    --radius: 14px;
+    --radius-sm: 10px;
+    --container: 1180px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--green); color: #06230f; }
+
+  .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+
+  /* ============ TYPE HELPERS ============ */
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--green);
+  }
+  .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+  .section-title { font-size: clamp(30px, 4.5vw, 46px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+  .section-sub { color: var(--muted); font-size: 17px; max-width: 560px; margin-top: 18px; }
+
+  .section { padding: clamp(80px, 11vw, 140px) 0; }
+  .section--line { border-top: 1px solid var(--line); }
+
+  /* ============ BUTTONS ============ */
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600;
+    padding: 13px 22px; border-radius: var(--radius-sm); cursor: pointer; border: 1px solid transparent;
+    transition: transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease); }
+  .btn svg { width: 17px; height: 17px; transition: transform .2s var(--ease); }
+  .btn-primary { background: var(--green); color: #052e14; box-shadow: 0 0 0 1px rgba(34,197,94,0.3), 0 8px 30px -8px rgba(34,197,94,0.4); }
+  .btn-primary:hover { background: #2ee06a; transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(34,197,94,0.5), 0 14px 40px -8px rgba(34,197,94,0.5); }
+  .btn-primary:hover svg { transform: translate(2px,-2px); }
+  .btn-ghost { background: rgba(255,255,255,0.02); color: var(--text); border-color: var(--line-2); }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.05); }
+
+  /* ============ NAV ============ */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background .3s var(--ease), border-color .3s var(--ease); border-bottom: 1px solid transparent; }
+  nav.scrolled { background: rgba(10,10,10,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom-color: var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; display: flex; align-items: baseline; gap: 8px; }
+  .logo .dot { color: var(--green); }
+  .logo .tag { font-size: 11px; font-weight: 500; color: var(--faint); letter-spacing: 0.04em; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions { display: flex; align-items: center; gap: 14px; }
+  .nav-cta { background: var(--green); color: #052e14; font-size: 14px; font-weight: 600; padding: 9px 16px; border-radius: 9px; transition: background .2s, transform .2s; }
+  .nav-cta:hover { background: #2ee06a; transform: translateY(-1px); }
+  .menu-btn { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 6px; }
+  .menu-btn svg { width: 26px; height: 26px; }
+
+  .mobile-menu { position: fixed; inset: 0; z-index: 99; background: var(--bg); padding: 90px 24px 24px; transform: translateX(100%); transition: transform .35s var(--ease); display: flex; flex-direction: column; }
+  .mobile-menu.open { transform: translateX(0); }
+  .mobile-menu a { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; gap: 14px; align-items: baseline; }
+  .mobile-menu a .num { font-size: 13px; color: var(--green); font-weight: 600; }
+  .mobile-menu .btn { margin-top: 28px; justify-content: center; }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; min-height: 100dvh; display: flex; flex-direction: column; justify-content: center; padding-top: 120px; padding-bottom: 60px; overflow: hidden; }
+  .hero-glow { position: absolute; top: -10%; left: 50%; transform: translateX(-50%); width: 1100px; height: 700px; background: radial-gradient(ellipse at center, rgba(34,197,94,0.16), transparent 62%); filter: blur(20px); pointer-events: none; z-index: 0; }
+  .hero-glow-2 { position: absolute; bottom: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(34,197,94,0.07), transparent 60%); pointer-events: none; z-index: 0; }
+  .hero .container { position: relative; z-index: 2; }
+  .hero-pill { display: inline-flex; align-items: center; gap: 9px; padding: 7px 14px 7px 12px; border: 1px solid var(--line); border-radius: 100px; background: rgba(255,255,255,0.03); font-size: 13px; color: var(--muted); margin-bottom: 30px; }
+  .hero-pill .live { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(34,197,94,0.6); animation: pulse 2.2s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5);} 70%{ box-shadow: 0 0 0 8px rgba(34,197,94,0);} 100%{box-shadow:0 0 0 0 rgba(34,197,94,0);} }
+  .hero h1 { font-size: clamp(42px, 7.2vw, 84px); font-weight: 800; line-height: 1.0; letter-spacing: -0.035em; max-width: 16ch; }
+  .hero h1 .accent { color: var(--green); }
+  .hero p.lead { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 580px; margin-top: 26px; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; align-items: center; }
+  .hero-trust { font-size: 13px; color: var(--faint); display: inline-flex; align-items: center; gap: 8px; }
+  .hero-trust svg { width: 15px; height: 15px; color: var(--green); }
+
+  /* Hero module ledger */
+  .ledger { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 64px; }
+  .ledger-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; cursor: pointer; overflow: hidden; transition: border-color .35s var(--ease), background .35s var(--ease), transform .35s var(--ease); }
+  .ledger-card .lc-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 26px; }
+  .ledger-card .lc-num { font-size: 12px; color: var(--faint); font-variant-numeric: tabular-nums; }
+  .ledger-card svg.ic { width: 20px; height: 20px; color: var(--muted); transition: color .35s; }
+  .ledger-card .lc-name { font-size: 15px; font-weight: 700; color: var(--muted); transition: color .35s; }
+  .ledger-card .lc-out { font-size: 12px; color: var(--faint); margin-top: 4px; display: flex; align-items: center; gap: 5px; transition: color .35s; }
+  .ledger-card .lc-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease); }
+  .ledger-card.active { background: var(--surface-2); border-color: var(--green-line); }
+  .ledger-card.active .lc-bar { transform: scaleX(1); }
+  .ledger-card.active svg.ic, .ledger-card.active .lc-name { color: var(--text); }
+  .ledger-card.active .lc-out { color: var(--green); }
+  .ledger-card:hover { transform: translateY(-2px); }
+
+  /* ============ MODULES ============ */
+  .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+  .mod-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; transition: border-color .25s var(--ease), transform .25s var(--ease), box-shadow .25s var(--ease); }
+  .mod-card:hover { border-color: var(--green-line); transform: translateY(-3px); box-shadow: 0 0 0 1px rgba(34,197,94,0.15), 0 20px 50px -20px rgba(34,197,94,0.25); }
+  .mod-icon { width: 46px; height: 46px; border-radius: 11px; background: var(--green-soft); border: 1px solid var(--green-line); display: flex; align-items: center; justify-content: center; color: var(--green); margin-bottom: 22px; }
+  .mod-icon svg { width: 22px; height: 22px; }
+  .mod-num { font-size: 12px; color: var(--faint); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .mod-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin: 6px 0 14px; }
+  .mod-card p { color: var(--muted); font-size: 14.5px; }
+  .mod-tag { display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-size: 13px; font-weight: 600; color: var(--green); background: var(--green-soft); border: 1px solid var(--green-line); padding: 6px 12px; border-radius: 8px; }
+
+  /* ============ ABLAUF ============ */
+  .flow-strip { display: flex; align-items: stretch; gap: 0; margin-top: 56px; flex-wrap: wrap; }
+  .flow-step { flex: 1; min-width: 220px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+  .flow-step .fs-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green); font-weight: 600; }
+  .flow-step h4 { font-size: 18px; font-weight: 700; margin: 10px 0 8px; letter-spacing: -0.01em; }
+  .flow-step p { color: var(--muted); font-size: 14px; }
+  .flow-arrow { display: flex; align-items: center; justify-content: center; color: var(--faint); padding: 0 14px; }
+  .flow-arrow svg { width: 24px; height: 24px; }
+
+  .examples { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 20px; }
+  .ex-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .ex-head { padding: 20px 24px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .ex-head .ex-tag { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); }
+  .ex-head h4 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; margin-top: 4px; }
+  .ex-mod { font-size: 12px; color: var(--green); border: 1px solid var(--green-line); background: var(--green-soft); padding: 5px 10px; border-radius: 7px; white-space: nowrap; }
+  .ex-stages { padding: 20px 24px; display: flex; flex-direction: column; gap: 10px; }
+  .ex-stage { display: flex; align-items: center; gap: 12px; }
+  .ex-stage .es-k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--faint); width: 92px; flex-shrink: 0; }
+  .ex-stage .es-t { font-size: 14px; color: var(--text); }
+  .ex-stage.final .es-t { color: var(--green); font-weight: 600; }
+  .ex-stage .es-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--line-2); flex-shrink: 0; }
+  .ex-stage.final .es-dot { background: var(--green); }
+
+  /* ============ DEMO / SAMPLE ============ */
+  .demo-wrap { margin-top: 56px; max-width: 720px; margin-left: auto; margin-right: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+  .demo-bar { display: flex; align-items: center; justify-content: space-between; padding: 16px 22px; border-bottom: 1px solid var(--line); }
+  .demo-bar .db-l { display: flex; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+  .demo-bar .live { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 2.2s infinite; }
+  .demo-bar .db-r { font-size: 12px; color: var(--faint); }
+  .chat { padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+  .bubble { max-width: 78%; padding: 13px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; }
+  .bubble .who { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 5px; opacity: 0.6; }
+  .bubble.bot { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--line); border-top-left-radius: 4px; }
+  .bubble.caller { align-self: flex-end; background: var(--green-soft); border: 1px solid var(--green-line); border-top-right-radius: 4px; color: #d6f5e0; }
+  .demo-result { margin: 4px 24px 24px; padding: 16px 18px; border: 1px solid var(--green-line); background: var(--green-soft); border-radius: 12px; display: flex; gap: 12px; align-items: flex-start; }
+  .demo-result svg { width: 20px; height: 20px; color: var(--green); flex-shrink: 0; margin-top: 1px; }
+  .demo-result .dr-t { font-size: 14px; font-weight: 600; }
+  .demo-result .dr-s { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+  /* ============ INTEGRATIONS ============ */
+  .int-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+  .int-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; transition: border-color .25s; }
+  .int-card:hover { border-color: var(--line-2); }
+  .int-card svg { width: 24px; height: 24px; color: var(--green); margin-bottom: 16px; }
+  .int-card h4 { font-size: 16px; font-weight: 700; }
+  .int-card p { font-size: 13.5px; color: var(--muted); margin-top: 5px; }
+
+  /* ============ PRICING ============ */
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; }
+  .price-card { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; }
+  .price-card.featured { border-color: var(--green-line); background: linear-gradient(180deg, rgba(34,197,94,0.06), var(--surface) 40%); box-shadow: 0 0 0 1px rgba(34,197,94,0.2), 0 30px 60px -30px rgba(34,197,94,0.3); }
+  .price-badge { position: absolute; top: 22px; right: 22px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--green); background: var(--green-soft); border: 1px solid var(--green-line); padding: 5px 10px; border-radius: 7px; }
+  .price-card .pc-name { font-size: 20px; font-weight: 700; }
+  .price-card .pc-desc { font-size: 14px; color: var(--muted); margin-top: 8px; min-height: 42px; }
+  .price-card .pc-price { font-size: 38px; font-weight: 800; letter-spacing: -0.03em; margin: 22px 0 6px; }
+  .price-card .pc-note { font-size: 13px; color: var(--faint); }
+  .price-card ul { list-style: none; margin: 24px 0; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .price-card li { display: flex; gap: 10px; font-size: 14px; color: var(--muted); }
+  .price-card li svg { width: 17px; height: 17px; color: var(--green); flex-shrink: 0; margin-top: 2px; }
+  .price-foot { margin-top: 26px; font-size: 13px; color: var(--faint); }
+
+  /* ============ FAQ ============ */
+  .faq-list { margin-top: 48px; border-top: 1px solid var(--line); max-width: 860px; }
+  .faq-item { border-bottom: 1px solid var(--line); }
+  .faq-q { width: 100%; background: none; border: none; color: var(--text); text-align: left; cursor: pointer; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 17px; font-weight: 600; font-family: inherit; }
+  .faq-q .fq-ic { width: 22px; height: 22px; flex-shrink: 0; color: var(--green); transition: transform .3s var(--ease); }
+  .faq-item.open .fq-ic { transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
+  .faq-a p { color: var(--muted); font-size: 15px; padding-bottom: 24px; max-width: 90%; }
+
+  /* ============ CTA ============ */
+  .cta-block { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--surface); padding: clamp(40px, 6vw, 72px); }
+  .cta-block .cta-glow { position: absolute; top: -40%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(34,197,94,0.14), transparent 60%); pointer-events: none; }
+  .cta-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 48px; align-items: center; }
+  .cta-block h2 { font-size: clamp(30px, 4.5vw, 50px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; }
+  .cta-block p { color: var(--muted); font-size: 16px; margin-top: 18px; max-width: 460px; }
+  .cta-actions { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .cta-meta { font-size: 13px; color: var(--faint); }
+  .host { display: flex; align-items: center; gap: 16px; }
+  .host .avatar { width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #1f1f1f, #2a2a2a); border: 1px solid var(--line-2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 20px; color: var(--green); flex-shrink: 0; }
+  .host .h-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); }
+  .host .h-name { font-weight: 700; font-size: 17px; margin-top: 3px; }
+  .host .h-sub { font-size: 13px; color: var(--muted); }
+
+  /* ============ FOOTER ============ */
+  footer { border-top: 1px solid var(--line); padding: 64px 0 40px; }
+  .foot-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .foot-brand .logo { margin-bottom: 16px; }
+  .foot-brand p { color: var(--muted); font-size: 14px; max-width: 280px; }
+  .foot-brand .agenteq { font-size: 12px; color: var(--faint); margin-top: 14px; }
+  .foot-col h5 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 16px; }
+  .foot-col a { display: block; color: var(--muted); font-size: 14px; padding: 6px 0; transition: color .2s; }
+  .foot-col a:hover { color: var(--text); }
+  .foot-bottom { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 13px; color: var(--faint); }
+
+  /* ============ REVEAL ============ */
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px) {
+    .modules-grid { grid-template-columns: repeat(2, 1fr); }
+    .int-grid { grid-template-columns: repeat(2, 1fr); }
+    .price-grid { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
+    .cta-inner { grid-template-columns: 1fr; gap: 32px; }
+    .ledger { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .menu-btn { display: block; }
+    .examples { grid-template-columns: 1fr; }
+    .flow-arrow { transform: rotate(90deg); padding: 8px 0; width: 100%; }
+    .flow-step { min-width: 0; }
+    .foot-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .foot-brand { grid-column: 1 / -1; }
+    .modules-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 460px) {
+    .ledger { grid-template-columns: 1fr; }
+    .int-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">basemodul<span class="dot">.de</span><span class="tag">/ von AGENTEQ</span></a>
+    <div class="nav-links">
+      <a href="#modules">Module</a>
+      <a href="#workflow">Ablauf</a>
+      <a href="#livedemo">Demo</a>
+      <a href="#integrations">Integrationen</a>
+      <a href="#pricing">Pilot</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#demo" class="nav-cta">Demo anfragen</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Menü">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#modules"><span class="num">01</span> Module</a>
+  <a href="#workflow"><span class="num">02</span> Ablauf</a>
+  <a href="#livedemo"><span class="num">03</span> Demo</a>
+  <a href="#integrations"><span class="num">04</span> Integrationen</a>
+  <a href="#pricing"><span class="num">05</span> Pilot</a>
+  <a href="#faq"><span class="num">06</span> FAQ</a>
+  <a href="#demo" class="btn btn-primary">Demo anfragen</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="container">
+    <span class="hero-pill"><span class="live"></span> basemodul.de — ein Produkt von AGENTEQ</span>
+    <h1>Jede Anfrage wird zur <span class="accent">fertigen Aktion.</span></h1>
+    <p class="lead">Telefon, WhatsApp, Termine, Fotos und Notfälle laufen in ein Modul. Es fragt fehlende Infos ab, erkennt Dringlichkeit und übergibt eine fertige Aktion an Ihr Team — kein halbes Ticket, kein verpasster Anruf.</p>
+    <div class="hero-actions">
+      <a href="#demo" class="btn btn-primary">Demo anfragen
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
+      <a href="#modules" class="btn btn-ghost">Module ansehen</a>
+      <span class="hero-trust">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 5v6c0 5 3.5 8 8 11 4.5-3 8-6 8-11V5l-8-3Z"/></svg>
+        DSGVO · Server in Frankfurt
+      </span>
+    </div>
+
+    <!-- Module ledger -->
+    <div class="ledger" id="ledger">
+      <button class="ledger-card active" data-i="0">
+        <span class="lc-bar"></span>
+        <div class="lc-top"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg><span class="lc-num">01</span></div>
+        <div class="lc-name">Telefon</div>
+        <div class="lc-out">→ Rückrufnotiz</div>
+      </button>
+      <button class="ledger-card" data-i="1">
+        <span class="lc-bar"></span>
+        <div class="lc-top"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg><span class="lc-num">02</span></div>
+        <div class="lc-name">WhatsApp</div>
+        <div class="lc-out">→ Anfrage sortiert</div>
+      </button>
+      <button class="ledger-card" data-i="2">
+        <span class="lc-bar"></span>
+        <div class="lc-top"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span class="lc-num">03</span></div>
+        <div class="lc-name">Termin</div>
+        <div class="lc-out">→ Termin vorbereitet</div>
+      </button>
+      <button class="ledger-card" data-i="3">
+        <span class="lc-bar"></span>
+        <div class="lc-top"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></svg><span class="lc-num">04</span></div>
+        <div class="lc-name">Foto / Schaden</div>
+        <div class="lc-out">→ Fall erstellt</div>
+      </button>
+      <button class="ledger-card" data-i="4">
+        <span class="lc-bar"></span>
+        <div class="lc-top"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 0 0-5 5v3a7 7 0 0 0 10 0V7a5 5 0 0 0-5-5ZM5 21h14M12 17v4"/></svg><span class="lc-num">05</span></div>
+        <div class="lc-name">Notdienst</div>
+        <div class="lc-out">→ Bereitschaft alarmiert</div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MODULES ============ -->
+<section class="section section--line" id="modules">
+  <div class="container">
+    <span class="eyebrow reveal">Die Module</span>
+    <h2 class="section-title reveal" style="margin-top:16px">Fünf Module. Ein Prinzip.</h2>
+    <p class="section-sub reveal">Jedes Modul übernimmt genau einen Eingangskanal und liefert ein fertiges Ergebnis. Sie starten mit einem — nicht mit allem.</p>
+    <div class="modules-grid">
+      <div class="mod-card reveal">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+        <span class="mod-num">01</span>
+        <h3>Telefon-Modul</h3>
+        <p>Nimmt Anrufe an, erkennt das Anliegen, sichert Kontakt und Standort — auch wenn niemand abnehmen kann.</p>
+        <span class="mod-tag">→ Rückrufnotiz</span>
+      </div>
+      <div class="mod-card reveal">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        <span class="mod-num">02</span>
+        <h3>Termin-Modul</h3>
+        <p>Klärt Leistung und Wunschzeit, prüft freie Slots und bereitet die Buchung vor — ohne Rückruf-Pingpong.</p>
+        <span class="mod-tag">→ Termin vorbereitet</span>
+      </div>
+      <div class="mod-card reveal">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></div>
+        <span class="mod-num">03</span>
+        <h3>WhatsApp-Modul</h3>
+        <p>Sammelt Chat-Anfragen, fragt fehlende Angaben nach und sortiert sie vor, bevor sie im Postfach landen.</p>
+        <span class="mod-tag">→ Anfrage sortiert</span>
+      </div>
+      <div class="mod-card reveal">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2Z"/><circle cx="12" cy="13" r="4"/></svg></div>
+        <span class="mod-num">04</span>
+        <h3>Foto-/Schaden-Modul</h3>
+        <p>Nimmt Bilder mit Kontext entgegen und macht daraus einen prüfbaren Vorgang — statt Bild ohne Information.</p>
+        <span class="mod-tag">→ Fall erstellt</span>
+      </div>
+      <div class="mod-card reveal">
+        <div class="mod-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a5 5 0 0 0-5 5v3a7 7 0 0 0 10 0V7a5 5 0 0 0-5-5ZM5 21h14M12 17v4"/></svg></div>
+        <span class="mod-num">05</span>
+        <h3>Notdienst-Modul</h3>
+        <p>Erkennt Dringlichkeit, fragt Pflichtinfos ab und alarmiert die Bereitschaft, bevor ein Notfall untergeht.</p>
+        <span class="mod-tag">→ Bereitschaft alarmiert</span>
+      </div>
+      <div class="mod-card reveal" style="display:flex;flex-direction:column;justify-content:center;background:transparent;border-style:dashed">
+        <h3 style="margin-top:0">Womit fängt Ihr Betrieb an?</h3>
+        <p>Wir starten mit dem Kanal, der gerade am meisten Zeit kostet.</p>
+        <a href="#demo" class="mod-tag" style="cursor:pointer">Modul wählen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABLAUF ============ -->
+<section class="section section--line" id="workflow" style="background:var(--bg-2)">
+  <div class="container">
+    <span class="eyebrow reveal">So arbeitet ein Modul</span>
+    <h2 class="section-title reveal" style="margin-top:16px">Eingang rein. Modul fragt nach. Aktion raus.</h2>
+    <p class="section-sub reveal">Kein Anrufbeantworter, kein halbes Ticket. Zwei echte Abläufe aus dem Betriebsalltag — vom Eingang bis zur fertigen Übergabe.</p>
+
+    <div class="flow-strip reveal">
+      <div class="flow-step">
+        <div class="fs-label">Eingang</div>
+        <h4>Anfrage kommt rein</h4>
+        <p>Anruf, WhatsApp, Foto oder Terminwunsch — über jeden Kanal.</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-step">
+        <div class="fs-label">Modul fragt nach</div>
+        <h4>Infos & Dringlichkeit</h4>
+        <p>Das Modul ergänzt fehlende Angaben und stuft die Dringlichkeit ein.</p>
+      </div>
+      <div class="flow-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div>
+      <div class="flow-step">
+        <div class="fs-label">Aktion raus</div>
+        <h4>Fertige Übergabe</h4>
+        <p>Ihr Team bekommt einen klaren Vorgang mit nächstem Schritt.</p>
+      </div>
+    </div>
+
+    <div class="examples">
+      <div class="ex-card reveal">
+        <div class="ex-head">
+          <div><span class="ex-tag">Inbound-Anruf · Notdienst</span><h4>Wasserschaden um 22:40 — niemand am Telefon.</h4></div>
+          <span class="ex-mod">Telefon + Notdienst</span>
+        </div>
+        <div class="ex-stages">
+          <div class="ex-stage"><span class="es-dot"></span><span class="es-k">Eingang</span><span class="es-t">Anruf außerhalb der Bürozeit</span></div>
+          <div class="ex-stage"><span class="es-dot"></span><span class="es-k">Modul fragt</span><span class="es-t">Adresse, Absperrung, Rückrufnummer</span></div>
+          <div class="ex-stage"><span class="es-dot"></span><span class="es-k">Erkennt</span><span class="es-t">Dringlichkeit: kritisch</span></div>
+          <div class="ex-stage final"><span class="es-dot"></span><span class="es-k">Aktion</span><span class="es-t">Bereitschaft per SMS alarmiert</span></div>
+        </div>
+      </div>
+      <div class="ex-card reveal">
+        <div class="ex-head">
+          <div><span class="ex-tag">WhatsApp · Schadenfall</span><h4>Ein Foto und drei Worte — der Rest fehlt.</h4></div>
+          <span class="ex-mod">WhatsApp + Foto</span>
+        </div>
+        <div class="ex-stages">
+          <div class="ex-stage"><span class="es-dot"></span><span class="es-k">Eingang</span><span class="es-t">Foto + halbe Nachricht per Chat</span></div>
+          <div class="ex-stage"><span class="es-dot"></span><span class="es-k">Modul fragt</span><span class="es-t">Fahrzeugschein, Ort, Hergang</span></div>
+          <div class="ex-stage"><span class="es-dot"></span><span class="es-k">Bündelt</span><span class="es-t">Foto und Kontext zusammengeführt</span></div>
+          <div class="ex-stage final"><span class="es-dot"></span><span class="es-k">Aktion</span><span class="es-t">Strukturierter Fall ans Team</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DEMO ============ -->
+<section class="section section--line" id="livedemo">
+  <div class="container">
+    <span class="eyebrow reveal">Beispielablauf</span>
+    <h2 class="section-title reveal" style="margin-top:16px">So klingt ein vorsortierter Anruf.</h2>
+    <p class="section-sub reveal">Ein echter Notdienst-Dialog: das Modul nimmt an, fragt nach, erkennt die Dringlichkeit und bereitet die Übergabe vor.</p>
+    <div class="demo-wrap reveal">
+      <div class="demo-bar">
+        <div class="db-l"><span class="live"></span> Telefon-Modul · Notdienst</div>
+        <div class="db-r">Sanitär · Dringlichkeit kritisch</div>
+      </div>
+      <div class="chat">
+        <div class="bubble bot"><span class="who">basemodul</span>Guten Abend, hier ist das Telefon-Modul. Ich nehme Ihr Anliegen auf — wie kann ich helfen?</div>
+        <div class="bubble caller"><span class="who">Anrufer</span>Hallo, bei uns spritzt Wasser aus der Leitung im Keller, das wird immer mehr!</div>
+        <div class="bubble bot"><span class="who">basemodul</span>Verstanden. Können Sie den Hauptwasserhahn abdrehen? Und nennen Sie mir bitte die Adresse und eine Rückrufnummer.</div>
+        <div class="bubble caller"><span class="who">Anrufer</span>Hauptstraße 12. Hahn ist zu. Nummer ist 0170 1234567.</div>
+        <div class="bubble bot"><span class="who">basemodul</span>Danke. Ich stufe das als kritisch ein und informiere jetzt die Bereitschaft. Sie werden in Kürze zurückgerufen.</div>
+      </div>
+      <div class="demo-result">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+        <div><div class="dr-t">Bereitschaft alarmiert · Fall #BM-2208 erstellt</div><div class="dr-s">Wasserschaden Hauptstr. 12 · kritisch · Rückruf vorbereitet</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTEGRATIONS ============ -->
+<section class="section section--line" id="integrations" style="background:var(--bg-2)">
+  <div class="container">
+    <span class="eyebrow reveal">Anbindung</span>
+    <h2 class="section-title reveal" style="margin-top:16px">Es hängt sich an Ihren Alltag.</h2>
+    <p class="section-sub reveal">Ein Modul muss nicht Ihr System ersetzen. Zum Start reicht oft eine E-Mail, ein Sheet oder eine WhatsApp-Übergabe.</p>
+    <div class="int-grid">
+      <div class="int-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+        <h4>Telefonie</h4><p>Nummer weiterleiten oder Testnummer nutzen.</p>
+      </div>
+      <div class="int-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+        <h4>WhatsApp</h4><p>Rückfragen, Foto-Links und Bestätigungen.</p>
+      </div>
+      <div class="int-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <h4>Google Calendar</h4><p>Freie Slots prüfen, Termine vorbereiten.</p>
+      </div>
+      <div class="int-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <h4>E-Mail / Sheet</h4><p>Übergabe an Postfach oder Tabelle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section section--line" id="pricing">
+  <div class="container">
+    <span class="eyebrow reveal">Pilot</span>
+    <h2 class="section-title reveal" style="margin-top:16px">Erst ein Modul testen. Dann entscheiden.</h2>
+    <p class="section-sub reveal">Kein Abo im Erstgespräch. Wir bauen einen schlanken Piloten, testen ihn mit echten Fällen — Sie entscheiden danach.</p>
+    <div class="price-grid">
+      <div class="price-card featured reveal">
+        <span class="price-badge">Bester Start</span>
+        <div class="pc-name">Pilot</div>
+        <div class="pc-desc">Ein Modul, ein klarer Flow, realistische Testfälle.</div>
+        <div class="pc-price">ab 750&nbsp;€</div>
+        <div class="pc-note">einmaliges Setup</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>30-Minuten-Check</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Ein Modul als Testflow</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Demo oder Testnummer/Testchat</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Übergabe per E-Mail, Sheet oder WhatsApp</li>
+        </ul>
+        <a href="#demo" class="btn btn-primary" style="justify-content:center">Pilot besprechen</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="pc-name">Modul</div>
+        <div class="pc-desc">Für Betriebe, die ein Modul sauber in den Alltag holen.</div>
+        <div class="pc-price">ab 1.500&nbsp;€</div>
+        <div class="pc-note">Setup + Betreuung</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Angepasster Betriebsflow</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Telefon, WhatsApp, Kalender oder Foto-Upload</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Eskalations- und Rückfragelogik</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Monatliche Betreuung nach Umfang</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost" style="justify-content:center">Modul planen</a>
+      </div>
+      <div class="price-card reveal">
+        <div class="pc-name">Custom</div>
+        <div class="pc-desc">Mehrere Module, Standorte oder bestehende Tools.</div>
+        <div class="pc-price">auf Anfrage</div>
+        <div class="pc-note">nach Umfang</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Mehrere Module kombiniert</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>CRM, Webhooks oder n8n</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Individuelle Regeln und Reporting</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>Persönliche Umsetzung mit AGENTEQ</li>
+        </ul>
+        <a href="#demo" class="btn btn-ghost" style="justify-content:center">Anfrage senden</a>
+      </div>
+    </div>
+    <p class="price-foot reveal">Alle Preise zzgl. MwSt. · laufende Kosten je nach Umfang, Telefonie, WhatsApp und Betreuung.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--line" id="faq" style="background:var(--bg-2)">
+  <div class="container">
+    <span class="eyebrow reveal">FAQ</span>
+    <h2 class="section-title reveal" style="margin-top:16px">Häufige Fragen.</h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q">Müssen wir direkt alle Module nutzen?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Nein. Der beste Start ist ein einzelnes Modul: zum Beispiel Telefon, WhatsApp, Termin oder Foto/Schaden. Erst wenn der Pilot im Alltag hilft, wird erweitert.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Wie schnell ist ein Pilot aktiv?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Ein erster Testflow ist je nach Umfang oft in wenigen Tagen möglich. Für echte Live-Nutzung prüfen wir vorher Nummern, Datenschutz, Übergabe und Eskalation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was passiert bei einem echten Notfall?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Das Notdienst-Modul fragt Pflichtinfos ab, erkennt hohe Dringlichkeit und informiert den festgelegten Menschen oder Bereitschaftskanal. Verbindliche Entscheidungen bleiben beim Team.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Kann ich meine bestehende Nummer behalten?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Ja. Für den Pilot kann eine Testnummer genutzt werden. Später kann eine bestehende Nummer weitergeleitet oder eine eigene Nummer eingerichtet werden.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Was passiert mit WhatsApp und Fotos?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Das WhatsApp- und das Foto-/Schaden-Modul sammeln Bilder und Nachrichten, fragen fehlende Angaben nach und übergeben alles als strukturierten Fall — statt halber Infos im Postfach.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Ist basemodul.de ein Produkt von AGENTEQ?<svg class="fq-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Ja. basemodul.de ist die Produktmarke für diese KI-Module. AGENTEQ bleibt der technische und organisatorische Anbieter im Hintergrund.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section" id="demo">
+  <div class="container">
+    <div class="cta-block reveal">
+      <div class="cta-glow"></div>
+      <div class="cta-inner">
+        <div>
+          <h2>Welches Modul testen wir zuerst?</h2>
+          <p>Wir schauen in 30 Minuten, welcher Eingangskanal gerade am meisten Zeit kostet — und ob ein schlanker basemodul-Pilot Sinn ergibt. Kein Komplettsystem, kein Vertrag im Erstgespräch.</p>
+          <div class="cta-actions">
+            <a href="#demo" class="btn btn-primary">Demo anfragen
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            </a>
+            <span class="cta-meta">30 Min · Telefon, WhatsApp, Termine oder Fotos</span>
+          </div>
+        </div>
+        <div class="host">
+          <div class="avatar">FA</div>
+          <div>
+            <div class="h-label">Ihr Ansprechpartner</div>
+            <div class="h-name">Fatih Akdeniz</div>
+            <div class="h-sub">AGENTEQ · basemodul.de</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">basemodul<span class="dot">.de</span></a>
+        <p>KI-Module für Betriebe: Anrufe, WhatsApp, Termine, Fotos und Notfälle vorsortieren und als fertige Aktion ans Team übergeben.</p>
+        <div class="agenteq">Ein Produkt von AGENTEQ</div>
+      </div>
+      <div class="foot-col">
+        <h5>Produkt</h5>
+        <a href="#modules">Module</a>
+        <a href="#workflow">Ablauf</a>
+        <a href="#livedemo">Demo</a>
+        <a href="#pricing">Pilot</a>
+      </div>
+      <div class="foot-col">
+        <h5>Unternehmen</h5>
+        <a href="#">Über uns</a>
+        <a href="#demo">Kontakt</a>
+        <a href="#">Karriere</a>
+      </div>
+      <div class="foot-col">
+        <h5>Rechtliches</h5>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 basemodul.de · Ein Produkt von AGENTEQ</span>
+      <span>Made in Germany · Server in Frankfurt</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 16);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // Hero ledger cycling + click
+  const cards = Array.from(document.querySelectorAll('#ledger .ledger-card'));
+  let idx = 0, timer;
+  const setActive = (i) => { cards.forEach((c, n) => c.classList.toggle('active', n === i)); idx = i; };
+  const startCycle = () => { timer = setInterval(() => setActive((idx + 1) % cards.length), 2200); };
+  cards.forEach((c, i) => c.addEventListener('click', () => { clearInterval(timer); setActive(i); startCycle(); }));
+  startCycle();
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(o => { o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null; });
+      if (!open) { item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+    });
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), (i % 6) * 60); io.unobserve(e.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

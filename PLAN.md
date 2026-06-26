@@ -2,84 +2,115 @@
 
 ## Ziel
 
-Innerhalb von 7 bis 14 Tagen soll ein verkaufbarer AGENTEQ-Service entstehen, der kleinen Unternehmen sofort verstaendlich macht:
+Aus dem Callfolio-Fundament wird keine weitere AGENTEQ-Agentur-Landingpage,
+sondern die Produktseite **basemodul.de**:
 
-> Wir nehmen euch Anfragen, Telefonchaos und manuelle Vorqualifizierung ab.
+> KI-Module für Betriebe, die Anrufe, Termine, WhatsApp-Anfragen und Fotos
+> automatisch vorqualifizieren wollen.
 
-Nicht als abstrakte KI-Agentur. Sondern als konkreter Assistent fuer echte Alltagsprobleme.
+AGENTEQ bleibt Dachfirma und Trust-Layer. basemodul.de ist das konkrete,
+verkaufbare Produktregal.
 
 ## Strategie
 
-Wir kopieren nicht stumpf Callfolio, sondern nutzen Callfolio als technische und kommerzielle Vorlage:
+Wir bauen kein riesiges All-in-One-System im Blindflug. Wir testen mehrere
+klare Module, die echte betriebliche Eingangskanäle entlasten.
 
-- Telefonnummer / Voice-Flow
-- Intake-Fragen
-- Zusammenfassung
-- Weiterleitung an Mensch
-- Dashboard oder einfache Inbox
-- Outreach und Landingpage
+Die Module sind:
 
-Danach wird das Angebot pro Branche anders verpackt.
+1. Telefon-Modul
+2. Termin-Modul
+3. WhatsApp-Modul
+4. Foto-/Schaden-Modul
+5. Notdienst-Modul
 
-## Phase 1: Service definieren
+Wenn ein Modul zieht, wird es fokussiert und bekommt eigene Nischen-Seiten.
+Wenn ein Modul nicht zieht, wird es geparkt.
 
-Positionierung:
+## Was aus den Recherchen wichtig ist
 
-> AGENTEQ Anfrage-Assistent fuer KMU
+Die Manus-Recherchen und die PDF zeigen:
 
-Kurzbeschreibung:
+- Kunden verstehen "KI-Telefonassistent", "Digitaler Empfang",
+  "Termin-Assistent" und "Kein Anruf mehr verpassen" sofort.
+- Reine KI-Beratung ist zu generisch.
+- Reine Voice-Bots sind bereits umkämpft.
+- Der bessere Winkel ist: Voice/WhatsApp/Fotos plus strukturierte Übergabe,
+  Kalender, Ticket oder Follow-up.
+- Handwerk, SHK, Kfz, Sachverständige, Entrümpelung, Reinigung und lokale
+  Servicebetriebe sind passende Testfelder.
+- Hausverwaltung bleibt aus dieser Produktmarke raus, weil Callfolio diese Spur
+  bereits abdeckt.
 
-> Nimmt Anrufe und Anfragen entgegen, fragt fehlende Infos ab, erkennt Dringlichkeit und legt alles sauber fuer Rueckruf, Termin oder Angebot bereit.
+## Phase 1: Projektgedächtnis festziehen
 
-Wichtig: nicht zu technisch verkaufen. Der Kunde kauft nicht Twilio, WAPI oder LLM. Er kauft weniger Chaos.
+Dokumente aktualisieren:
 
-## Phase 2: Verticals testen
+- `OFFER.md`: Angebot, Module, Positionierung
+- `PLAN.md`: Arbeitsschritte
+- `CLAUDE.md`: Navigationskarte / Kontext
+- `README.md`: Außenbeschreibung des Repos
+- `web/CLAUDE.md` und `web/components/landing/CLAUDE.md`: Landing-Kontext
 
-Wir testen zuerst drei Varianten:
+Ziel: Codex, Claude-Code und Fatih lesen ab jetzt dieselbe Richtung.
 
-1. Handwerk / SHK
-   - Notfall oder Standardanfrage erkennen
-   - Objekt, Problem, Dringlichkeit und Rueckrufnummer abfragen
-   - Team bekommt strukturierte Zusammenfassung
+## Phase 2: Landingpage auf basemodul.de trimmen
 
-2. Hausverwaltung
-   - Schadenmeldung aufnehmen
-   - Objekt, Mieter, Dringlichkeit, Foto/Details erfassen
-   - technische Meldungen vorsortieren
+Aktive `web/`-Landing umbauen von "AGENTEQ KMU Assistants" auf:
 
-3. Facility / Gebaeudereinigung
-   - Kundenanfragen, Reklamationen, Sonderreinigungen aufnehmen
-   - Standort, Art der Leistung und Deadline erfassen
-   - Angebot oder Rueckruf vorbereiten
+> basemodul.de - KI-Module für Telefon, Termine, WhatsApp, Fotos und Notdienst.
 
-## Phase 3: Landingpage und Demo
+Nicht zu viel Design-Feinschliff. Erst Struktur und Copy.
 
-Eine generische Landingpage reicht fuer den Start:
+Pflichtänderungen:
 
-- Headline: "Der Anfrage-Assistent fuer kleine Betriebe"
-- Subheadline: "Sortiert Anrufe, WhatsApps und E-Mails, fragt fehlende Infos ab und legt alles sauber fuer Ihr Team bereit."
-- Drei Branchenkarten
-- Demo-Flow
-- "Pilotplatz anfragen"
+- Branding: basemodul.de statt AGENTEQ als Hauptmarke
+- Footer/Trust: "Ein Produkt von AGENTEQ"
+- Hero: kein generisches KMU-Gewaber, klare Modulwelt
+- Branchen: Hausverwaltung raus
+- Module sichtbar machen: Telefon, Termin, WhatsApp, Foto/Schaden, Notdienst
+- Demo so belassen oder leicht umtexten, solange sie funktional bleibt
+- CTA: Pilot/Demo anfragen
 
-## Phase 4: Outreach und Ads
+## Phase 3: Erste Testseiten
 
-Parallel zum Bau:
+Nach der Übersicht nicht direkt zehn Seiten bauen. Erst 1-2 schlanke
+Detailseiten, die wir für Outreach verwenden können:
 
-- 20 Leads manuell recherchieren
-- 10 direkte E-Mails senden
-- 2-3 Instagram/Meta Ad Motive schreiben
-- 1 simple Demo-Video-/Screenshot-Story vorbereiten
+1. `/telefon-modul`
+2. `/foto-modul` oder `/notdienst-modul`
 
-## Entscheidung nach 14 Tagen
+Priorität:
+
+- Telefon-Modul, weil Callfolio-Erfahrung und Voice-Demo vorhanden sind.
+- Foto-/Schaden-Modul, weil es spannend für Sachverständige, Kfz und
+  Schadensfälle ist.
+
+## Phase 4: Outreach-Test
+
+Pro Modul kleine Zielgruppenlisten:
+
+- Telefon/Notdienst: SHK, Kfz, lokale Servicebetriebe
+- Foto/Schaden: Sachverständige, Kfz-Werkstätten, Entrümpelung,
+  Gebäudeschäden/Handwerk
+- Termin: Studios, Werkstätten, Servicebetriebe, kleinere Praxen nur mit
+  Vorsicht wegen Datenschutz/Healthcare
+
+Test:
+
+- 20 bis 50 Leads pro Modul
+- kurze persönliche Nachricht
+- Demo-Link statt langer Erklärung
+- messen: Antwort, Interesse, Einwand, Termin
+
+## Entscheidung nach 14 bis 30 Tagen
 
 Wir bewerten:
 
-- Welche Branche antwortet?
-- Welche Sprache zieht?
-- Wo ist der Schmerz am klarsten?
-- Wo ist die Umsetzung am schnellsten?
-- Wer ist bereit fuer Pilot/Setup zu zahlen?
+- Welche Modul-Seite bekommt Antworten?
+- Welcher Use Case ist sofort verständlich?
+- Wo ist Zahlungsbereitschaft vorhanden?
+- Was ist technisch schnell lieferbar?
+- Worauf hat Fatih wirklich Lust?
 
-Dann erst wird daraus ein fokussiertes Produkt.
-
+Dann wird das stärkste Modul fokussiert und größer gemacht.

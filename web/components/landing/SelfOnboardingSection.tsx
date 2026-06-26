@@ -16,25 +16,25 @@ const item: Variants = {
 const BENEFITS = [
   {
     icon: MessageSquare,
-    title: "Automatische SMS",
-    description: "Die KI erkennt eine unbekannte Nummer und sendet sofort einen Registrierungs-Link per SMS.",
+    title: "Automatische Rückfrage",
+    description: "Das Modul erkennt fehlende Angaben und fragt sie direkt per SMS oder WhatsApp nach.",
   },
   {
     icon: UserCheck,
-    title: "Selbst-Eintragung",
-    description: "Der Kunde bestätigt Name und Adresse selbst und lädt optional direkt ein Foto des Schadens hoch.",
+    title: "Kunde ergänzt selbst",
+    description: "Name, Adresse, Foto oder Wunschtermin werden vom Kunden ergänzt, ohne dass Ihr Team nachtelefoniert.",
   },
   {
     icon: ShieldCheck,
-    title: "Sauber erfasst",
-    description: "Kein Anrufer bleibt anonym — inklusive Doppel-SMS-Schutz und Rate-Limit gegen Missbrauch.",
+    title: "Sauber übergeben",
+    description: "Am Ende landet keine halbe Nachricht im Postfach, sondern ein strukturierter Fall mit nächstem Schritt.",
   },
 ];
 
 const FIELDS = [
   { label: "Name", value: "Max Mustermann" },
   { label: "Adresse", value: "Hauptstraße 12, München" },
-  { label: "Foto", value: "Schaden_Bad.jpg" },
+  { label: "Anhang", value: "Kundenfoto.jpg" },
 ];
 
 export function SelfOnboardingSection() {
@@ -45,7 +45,7 @@ export function SelfOnboardingSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden bg-[#F8FAFC] py-28 lg:py-36"
+      className="relative overflow-hidden bg-[#F4F3EE] py-28 lg:py-36"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
@@ -53,22 +53,22 @@ export function SelfOnboardingSection() {
           {/* ── LEFT: copy + benefits ─────────────────────────────── */}
           <motion.div variants={item} className="flex flex-col gap-8">
             <div>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
-                Self-Onboarding
+              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#15604A]">
+                WhatsApp-Modul
               </p>
               <h2 className="font-display max-w-xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]">
-                Auch unbekannte Anrufer werden vollständig erfasst.
+                Aus halben Nachrichten werden brauchbare Fälle.
               </h2>
               <p className="mt-6 max-w-lg text-[18px] font-medium leading-[1.7] text-slate-500">
-                Ruft jemand an, den Sie noch nicht im System haben, erkennt die KI das sofort — und
-                lässt den Kunden sich per SMS selbst registrieren. Ganz ohne Zutun Ihres Teams.
+                Wenn Kunden per WhatsApp, SMS oder Telefon nur einen Teil der
+                Infos liefern, fragt das Modul nach und sortiert die Antwort für Ihr Team.
               </p>
             </div>
 
             <div className="flex flex-col gap-5">
               {BENEFITS.map((b) => (
                 <div key={b.title} className="flex items-start gap-4">
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-slate-200 bg-white text-[#0369A1] shadow-sm">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] border border-slate-200 bg-white text-[#15604A] shadow-sm">
                     <b.icon className="h-5 w-5" />
                   </div>
                   <div>
@@ -82,38 +82,38 @@ export function SelfOnboardingSection() {
 
           {/* ── RIGHT: SMS + registration mockup ──────────────────── */}
           <motion.div variants={item} className="relative mx-auto w-full max-w-[420px]">
-            <div className="rounded-[2rem] border border-slate-200/60 bg-white p-6 shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-7">
+            <div className="rounded-2xl border border-slate-200/60 bg-white p-6 shadow-[0_20px_60px_rgba(0,0,0,0.08)] sm:p-7">
 
               {/* Incoming-call header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-5">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#0369A1]/20 bg-[#0369A1]/10 text-[#0369A1]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#15604A]/20 bg-[#15604A]/10 text-[#15604A]">
                     <PhoneIncoming className="h-[18px] w-[18px]" />
                   </div>
                   <div>
                     <p className="text-[14px] font-bold text-slate-900">Eingehender Anruf</p>
-                    <p className="text-[12px] font-medium text-slate-500">Unbekannte Nummer</p>
+                    <p className="text-[12px] font-medium text-slate-500">Unvollständige Anfrage</p>
                   </div>
                 </div>
                 <span className="rounded-full bg-amber-50 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-amber-600">
-                  Nicht im System
+                  Infos fehlen
                 </span>
               </div>
 
               {/* Outgoing SMS bubble */}
               <div className="mt-5 flex justify-end">
-                <div className="max-w-[85%] rounded-[1.25rem] rounded-tr-sm bg-[#0369A1] px-4 py-3 text-[13px] font-medium leading-relaxed text-white shadow-sm">
-                  Guten Tag! Damit wir Ihr Anliegen zuordnen können, bestätigen Sie bitte kurz Ihre Daten:
+                <div className="max-w-[85%] rounded-lg rounded-tr-sm bg-[#15604A] px-4 py-3 text-[13px] font-medium leading-relaxed text-white shadow-sm">
+                  Guten Tag! Damit wir Ihr Anliegen sauber zuordnen können, ergänzen Sie bitte kurz die fehlenden Angaben:
                   <span className="mt-2 block font-mono text-[12px] font-bold underline underline-offset-2">
-                    agenteq.de/r/8f2a
+                    basemodul.de/f/8f2a
                   </span>
                 </div>
               </div>
 
               {/* Self-registration card filling in */}
-              <div className="mt-5 rounded-2xl border border-slate-100 bg-[#F8FAFC] p-4">
+              <div className="mt-5 rounded-2xl border border-slate-100 bg-[#F4F3EE] p-4">
                 <p className="mb-3 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-                  Selbst-Registrierung
+                  Rückfrage beantwortet
                 </p>
                 <div className="flex flex-col gap-2.5">
                   {FIELDS.map((f, i) => (
@@ -129,8 +129,8 @@ export function SelfOnboardingSection() {
                         <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{f.label}</p>
                         <p className="truncate text-[13px] font-semibold text-slate-700">{f.value}</p>
                       </div>
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#0369A1]/15">
-                        <Check className="h-3 w-3 text-[#0369A1]" strokeWidth={3} />
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#15604A]/15">
+                        <Check className="h-3 w-3 text-[#15604A]" strokeWidth={3} />
                       </span>
                     </motion.div>
                   ))}
@@ -141,10 +141,10 @@ export function SelfOnboardingSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 1.1, type: "spring", stiffness: 220, damping: 22 }}
-                  className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[#0F172A] py-2.5 text-[12px] font-bold text-white"
+                  className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-[#1A1A17] py-2.5 text-[12px] font-bold text-white"
                 >
-                  <ShieldCheck className="h-4 w-4 text-[#0369A1]" />
-                  Verifiziert &amp; im Dashboard erfasst
+                  <ShieldCheck className="h-4 w-4 text-[#15604A]" />
+                  Strukturiert &amp; bereit zur Übergabe
                 </motion.div>
               </div>
             </div>

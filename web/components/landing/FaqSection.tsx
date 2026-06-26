@@ -3,11 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
-const container: Variants = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.08 } },
-};
+import { AmbientOrbs } from "./AmbientOrbs";
 
 const item: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -16,97 +12,91 @@ const item: Variants = {
 
 const faqItems = [
   {
-    question: "Wie funktioniert der Foto-Upload?",
+    question: "Müssen wir direkt alle Module nutzen?",
     answer:
-      "Bei einer Schadensmeldung sendet die KI automatisch einen SMS-Link an das Smartphone des Kunden. Über diesen Link kann der Kunde ein Foto hochladen, das sofort dem Ticket zugeordnet wird.",
+      "Nein. Der beste Start ist ein einzelnes Modul: zum Beispiel Telefon, Chat, Termin oder Foto & Datei. Erst wenn der Pilot im Alltag hilft, wird erweitert.",
   },
   {
-    question: "Wie schnell ist das System aktiv?",
+    question: "Wie schnell ist ein Pilot aktiv?",
     answer:
-      "In der Regel innerhalb von 48 Stunden. Wir konfigurieren die KI passend zu Ihren Bestandsdaten und stellen eine Testphase bereit.",
+      "Ein erster Testflow ist je nach Umfang oft in wenigen Tagen möglich. Für echte Live-Nutzung prüfen wir vorher Nummern, Datenschutz, Übergabe und Eskalation.",
   },
   {
     question: "Was passiert bei einem echten Notfall?",
     answer:
-      "Dringende Fälle wie Wasserrohrbrüche werden sofort als kritisch eingestuft. Die KI kann automatisch Handwerker benachrichtigen oder an Ihre Notfallhotline weiterleiten.",
+      "Das Prioritäts-Modul fragt Pflichtinfos ab, erkennt hohe Dringlichkeit und informiert den festgelegten Menschen oder Übergabekanal. Verbindliche Entscheidungen bleiben beim Team.",
   },
   {
     question: "Kann ich meine bestehende Nummer behalten?",
     answer:
-      "Ja. Sie können Ihre Festnetznummer einfach auf die AGENTEQ-Zentrale umleiten oder eine neue Nummer von uns erhalten.",
+      "Ja. Für den Pilot kann eine Testnummer genutzt werden. Später kann eine bestehende Nummer weitergeleitet oder eine eigene Nummer eingerichtet werden.",
   },
   {
-    question: "Erkennt die KI verschiedene Dialekte?",
+    question: "Was passiert mit WhatsApp und Fotos?",
     answer:
-      "Ja. Unsere KI ist speziell auf deutsche Dialekte und Fachbegriffe aus der Immobilienwirtschaft trainiert und unterstützt über 30 Sprachen.",
+      "Das Chat- oder Foto-&-Datei-Modul sammelt fehlende Angaben ein und legt Anhang, Kontakt, Anliegen und Kontext strukturiert zusammen. Ihr Team bekommt keine lose Nachricht, sondern eine saubere Übergabe.",
   },
   {
-    question: "Gibt es eine Mindestvertragslaufzeit?",
+    question: "Ist basemodul.de ein Produkt von AGENTEQ?",
     answer:
-      "Nein. Alle Tarife sind monatlich kündbar. Keine versteckten Kosten, kein Risiko.",
+      "Ja. basemodul.de ist die Produktmarke für diese KI-Module. AGENTEQ bleibt der technische und organisatorische Anbieter im Hintergrund.",
   },
 ];
 
-function FaqItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div
-      className="group cursor-pointer rounded-2xl border border-slate-200/60 bg-white p-6 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:-translate-y-1 hover:shadow-lg"
-      onClick={() => setOpen(!open)}
-    >
-      <div className="flex items-center justify-between gap-4">
-        <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#0369A1] transition-colors sm:text-base">{q}</h3>
-        <ChevronDown
-          size={18}
-          className={`shrink-0 text-slate-400 group-hover:text-[#0369A1] transition-all duration-300 ${open ? "rotate-180 text-[#0369A1]" : ""}`}
-        />
-      </div>
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden"
-          >
-            <p className="mt-4 text-sm leading-relaxed text-slate-600">{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
 export function FaqSection() {
-  return (
-    <motion.section
-      id="faq"
-      variants={container}
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden py-24 lg:py-32 xl:py-40"
-    >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <motion.div variants={item} className="mb-16 text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
-            FAQ
-          </p>
-          <h2 className="font-display mx-auto max-w-2xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]">
-            Häufig gestellte Fragen
-          </h2>
-        </motion.div>
+  const [open, setOpen] = useState<number | null>(null);
 
-        <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2">
-          {faqItems.map((faq, i) => (
-            <motion.div key={i} variants={item}>
-              <FaqItem q={faq.question} a={faq.answer} />
-            </motion.div>
-          ))}
+  return (
+    <section id="faq" className="relative bg-paper py-20">
+      <AmbientOrbs />
+      <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
+        <div className="mb-12 text-center">
+          <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">FAQ</span>
+          <h2 className="mt-3.5 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
+            Was Betriebe vor dem Start wissen wollen.
+          </h2>
+        </div>
+
+        <div className="mx-auto grid max-w-[980px] grid-cols-1 gap-4 md:grid-cols-2">
+          {faqItems.map((faq, i) => {
+            const isOpen = open === i;
+            return (
+              <motion.div
+                key={i}
+                variants={item}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-40px" }}
+                className="glass-surface h-fit overflow-hidden rounded-lg"
+              >
+                <button
+                  onClick={() => setOpen(isOpen ? null : i)}
+                  className="flex w-full items-center justify-between gap-4 p-5 text-left text-[16px] font-semibold text-ink"
+                >
+                  {faq.question}
+                  <ChevronDown
+                    size={20}
+                    className={`shrink-0 text-leafbright transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <p className="px-5 pb-5 text-[14.5px] leading-[1.6] text-inksoft">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

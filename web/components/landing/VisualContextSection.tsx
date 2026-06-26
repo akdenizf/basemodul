@@ -1,7 +1,8 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
+import { FileText, ArrowRight, CheckCircle2 } from "lucide-react";
+import { AmbientOrbs } from "./AmbientOrbs";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -13,6 +14,12 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 24 } },
 };
 
+const BULLETS = [
+  "Upload-Link per SMS oder Chat nach dem Anruf versandt",
+  "Foto, Kontakt und Kontext zusammengeführt",
+  "Strukturierte Übergabe für die Bearbeitung",
+];
+
 export function VisualContextSection() {
   return (
     <motion.section
@@ -21,107 +28,102 @@ export function VisualContextSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden bg-[#F8FAFC] py-28 lg:py-36"
+      className="relative bg-paperdeep py-20"
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <AmbientOrbs />
+      <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
 
           {/* Left: copy */}
           <div className="flex flex-col gap-8">
             <motion.div variants={item}>
-              <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
-                Visueller Kontext
+              <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
+                04 — Foto & Datei
               </p>
-              <h2
-                className="font-display text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]"
-              >
-                Das Telefon ist blind.
-                <br />
-                <span className="text-slate-400">AGENTEQ sieht hin.</span>
+              <h2 className="text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-ink sm:text-[46px]">
+                Wenn nach dem Anruf ein Foto fehlt,{" "}
+                <span className="text-inksoft">fragt das Modul nach.</span>
               </h2>
             </motion.div>
 
-            <motion.p variants={item} className="max-w-md text-[16px] leading-[1.7] text-slate-500">
-              Der Kunde beschreibt das Problem am Telefon. AGENTEQ schickt sofort
-              einen SMS-Link für den Foto-Upload. Sekunden später sehen Sie das Problem
-              live in Ihrem Dashboard — noch während das Gespräch läuft.
+            <motion.p variants={item} className="max-w-md text-[16px] leading-[1.7] text-inksoft">
+              Oft fehlt nach dem Anruf noch ein Bild oder Dokument. Das Modul
+              sendet einen Upload-Link, verbindet Foto, Kontakt und Kontext und
+              legt alles als klare Übergabe für das Team bereit.
             </motion.p>
 
             <motion.ul variants={item} className="flex flex-col gap-4">
-              {[
-                { icon: "sms", text: "Automatischer SMS-Link nach dem Anruf" },
-                { icon: "photo_camera", text: "Foto direkt im Ticket verknüpft" },
-                { icon: "verified", text: "Rechtssichere Dokumentation" },
-              ].map((point) => (
-                <li key={point.text} className="flex items-center gap-3.5">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#0369A1]/10">
-                    <span className="material-symbols-outlined text-[17px] text-[#0369A1]">{point.icon}</span>
+              {BULLETS.map((text) => (
+                <li key={text} className="flex items-center gap-3.5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] border border-[rgba(22,163,74,0.35)] bg-[rgba(22,163,74,0.08)]">
+                    <CheckCircle2 size={15} className="text-leaf" strokeWidth={2} />
                   </span>
-                  <span className="text-[15px] font-medium text-slate-700">{point.text}</span>
+                  <span className="text-[15px] font-medium text-inksoft">{text}</span>
                 </li>
               ))}
             </motion.ul>
           </div>
 
-          {/* Right: Dashboard mockup with rohrbruch.png */}
+          {/* Right: Übergabekarte */}
           <motion.div variants={item} className="relative">
-            {/* Double Bezel Card — the "dashboard" frame */}
-            <div className="relative rounded-[2.5rem] bg-slate-50 p-2 border border-slate-100 shadow-[0_0_0_1px_rgba(0,0,0,0.02)]">
-              <div className="overflow-hidden rounded-[calc(2.5rem-0.5rem)] border border-slate-200/50 bg-white shadow-[0_30px_80px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,1)]">
-              {/* Browser chrome */}
-              <div className="flex items-center gap-2 border-b border-slate-100 bg-slate-50 px-4 py-3">
-                <div className="flex gap-1.5">
-                  <div className="h-2.5 w-2.5 rounded-full bg-red-300" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
-                </div>
-                <div className="mx-auto flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 py-1">
-                  <span className="material-symbols-outlined text-[12px] text-slate-400">lock</span>
-                  <span className="font-mono text-[11px] text-slate-400">app.agenteq.de/tickets/8421</span>
-                </div>
-              </div>
+            <div className="glass-surface overflow-hidden rounded-[16px]">
 
-              {/* Ticket header */}
-              <div className="flex items-center justify-between border-b border-slate-100 px-5 py-4">
-                <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-blue-100 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-blue-600">
-                    Neu
+              {/* Card header */}
+              <div className="flex items-center justify-between border-b border-line px-5 py-4">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-[7px] bg-leaf">
+                    <FileText size={14} className="text-white" strokeWidth={2} />
                   </span>
-                  <span className="font-mono text-xs text-slate-400">#AQ-8421</span>
+                  <div className="leading-tight">
+                    <p className="text-[13px] font-bold text-ink">Übergabekarte</p>
+                    <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+                      Foto & Datei
+                    </p>
+                  </div>
                 </div>
-                <span className="flex items-center gap-1.5 text-[11px] font-medium text-slate-400">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0369A1] opacity-60" />
-                    <span className="relative h-2 w-2 rounded-full bg-[#0369A1]" />
-                  </span>
-                  Live
+                <span className="rounded-[7px] border border-[rgba(22,163,74,0.35)] bg-[rgba(22,163,74,0.08)] px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-leaf">
+                  Bereit zur Übergabe
                 </span>
               </div>
 
-              <div className="grid gap-0 sm:grid-cols-2">
-                {/* Ticket details */}
-                <div className="border-r border-slate-100 p-5">
-                  <h4 className="mb-1 text-[14px] font-bold text-slate-900">Undichter Siphon – Hauptstraße 12</h4>
-                  <p className="mb-4 text-[12px] text-slate-500">Anrufer: Thomas M. · EG · Badezimmer</p>
+              {/* Dashed separator */}
+              <div className="border-b border-dashed border-line" />
 
-                  <div className="rounded-xl bg-slate-50 p-3.5 border border-slate-100">
-                    <p className="mb-1.5 text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                      KI-Zusammenfassung
+              <div className="grid sm:grid-cols-2">
+                {/* Left col — details */}
+                <div className="border-b border-line p-5 sm:border-b-0 sm:border-r">
+                  <h4 className="mb-1 text-[14px] font-bold text-ink">Anfrage mit Anhang</h4>
+                  <p className="mb-4 text-[12px] text-inksoft">
+                    Thomas M. · Rückruf gewünscht · heute 14:30
+                  </p>
+
+                  <div className="rounded-[8px] border-l-2 border-leaf/40 bg-paper pl-3 pr-2 py-3">
+                    <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+                      Notiz vom Modul
                     </p>
-                    <p className="text-[12px] leading-relaxed text-slate-600">
-                      Kunde meldet tropfenden Siphon unter dem Waschbecken im Badezimmer.
-                      Eimer wurde bereits untergestellt, Boden leicht feucht.
+                    <p className="text-[12px] leading-relaxed text-inksoft">
+                      Kunde sendet einen Anhang mit kurzer Nachricht. Modul fragt
+                      fehlende Angaben ab und bündelt alles für die Bearbeitung.
                     </p>
                   </div>
 
-                  <div className="mt-4 flex flex-col gap-2">
+                  <div className="mt-4 flex flex-col gap-2.5">
                     {[
-                      { label: "Kategorie", value: "SANITÄR", color: "text-blue-600 bg-blue-50" },
-                      { label: "Dringlichkeit", value: "MITTEL", color: "text-amber-600 bg-amber-50" },
+                      { label: "Typ", value: "Rückfrage", accent: false },
+                      { label: "Priorität", value: "Normal", accent: true },
                     ].map((tag) => (
-                      <div key={tag.label} className="flex items-center justify-between">
-                        <span className="text-[11px] text-slate-400">{tag.label}</span>
-                        <span className={`rounded-md px-2 py-0.5 text-[11px] font-bold ${tag.color}`}>
+                      <div
+                        key={tag.label}
+                        className="flex items-center justify-between border-t border-dashed border-line pt-2.5 first:border-t-0 first:pt-0"
+                      >
+                        <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-faint">
+                          {tag.label}
+                        </span>
+                        <span
+                          className={`text-[12px] font-bold ${
+                            tag.accent ? "text-amber-400" : "text-ink"
+                          }`}
+                        >
                           {tag.value}
                         </span>
                       </div>
@@ -129,46 +131,54 @@ export function VisualContextSection() {
                   </div>
                 </div>
 
-                {/* Photo */}
-                <div className="flex flex-col gap-0 p-5">
-                  <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                    Foto-Upload · vom Kunden
+                {/* Right col — attachment */}
+                <div className="flex flex-col p-5">
+                  <p className="mb-3 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+                    Anhang · vom Kunden
                   </p>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-slate-100">
-                    <Image
-                      src="/siphon.png"
-                      alt="Foto eines undichten Siphons"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
-                      loading="lazy"
-                    />
-                    {/* Overlay badge */}
-                    <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between">
-                      <span className="rounded-lg bg-black/50 px-2.5 py-1 text-[10px] font-medium text-white backdrop-blur-sm">
-                        Vor 2 Min. hochgeladen
+                  <div className="relative flex aspect-[4/3] flex-col justify-between overflow-hidden rounded-[10px] border border-line bg-paper p-4">
+                    <div className="flex items-center gap-2.5">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-[9px] border border-line bg-paperdeep text-leaf">
+                        <FileText size={17} strokeWidth={2} />
                       </span>
+                      <div>
+                        <p className="text-[12px] font-bold text-ink">Anhang_Foto.jpg</p>
+                        <p className="mt-0.5 text-[10px] text-faint">vom Kunden hochgeladen</p>
+                      </div>
                     </div>
+                    <div className="grid grid-cols-3 gap-2">
+                      <span className="h-14 rounded bg-surface2" />
+                      <span className="h-14 rounded bg-surface2" />
+                      <span className="h-14 rounded bg-surface2" />
+                    </div>
+                    <span className="w-fit rounded bg-black/40 px-2 py-0.5 text-[10px] font-medium text-white">
+                      vor 2 Min.
+                    </span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-            {/* Floating response-time badge */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-8 hidden rounded-[1.25rem] border border-slate-100 bg-white p-1.5 shadow-[0_20px_40px_rgba(0,0,0,0.08)] backdrop-blur-xl lg:block"
-            >
-              <div className="rounded-[1rem] bg-slate-50 px-5 py-3 border border-slate-100 flex items-center gap-3">
-                <span className="material-symbols-outlined text-[16px] text-[#0369A1]">bolt</span>
-                <div>
-                  <p className="text-[12px] font-bold text-slate-900">Ø 241ms</p>
-                  <p className="text-[10px] text-slate-400">Antwortzeit</p>
-                </div>
+              {/* Footer */}
+              <div className="flex items-center gap-2.5 border-t border-line bg-paper px-5 py-3">
+                <ArrowRight size={15} className="text-leaf" />
+                <p className="text-[12px] font-medium text-inksoft">
+                  Nächster Schritt:{" "}
+                  <span className="font-bold text-ink">Rückrufnotiz ans Team</span>
+                </p>
               </div>
-            </motion.div>
+            </div>
+
+            {/* Floating badge — static, ruhig */}
+            <div
+              className="glass-surface absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-[12px] px-4 py-2.5 lg:flex"
+              style={{ boxShadow: "0 12px 30px -10px rgba(0,0,0,0.5)" }}
+            >
+              <CheckCircle2 size={18} className="text-leaf" strokeWidth={2} />
+              <div>
+                <p className="text-[12px] font-bold text-ink">Strukturiert</p>
+                <p className="text-[10px] text-faint">statt halber Infos</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

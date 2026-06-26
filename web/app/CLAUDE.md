@@ -14,12 +14,12 @@ Nur **aktive** öffentliche Routen. Das Backend ist geparkt
 | `/ueber-uns` · `/karriere` | je `page.tsx` | Unternehmensseiten |
 | `/impressum` · `/datenschutz` · `/agb` | je `page.tsx` | Recht — echte AGENTEQ-Stammdaten, **vor Live-Gang anwaltlich prüfen** |
 
-- `layout.tsx` — Root-Layout: Fonts (Inter/Calistoga/JetBrains), Metadaten.
+- `layout.tsx` — Root-Layout: Fonts (Inter/JetBrains), Voice-first-Metadaten.
 - `globals.css` — globale Styles.
 
 ## Konventionen
 
-- Marketing/Recht generalisiert auf **KMU** (nicht Hausverwaltung-spezifisch).
+- Marketing/Recht generalisiert auf **KMU/Servicebetriebe**.
 - Geparkte Routen (`/dashboard`, `/login`, `/api/*` …) liefern bewusst **404**.
 - Neue Marketing-Seite? Identität aus
   [`components/landing/CLAUDE.md`](../components/landing/CLAUDE.md) übernehmen.

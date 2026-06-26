@@ -1,9 +1,11 @@
-# web/ — AGENTEQ Landing + Demo
+# web/ — basemodul.de Landing + Demo
 
 [↑ Root-Karte](../CLAUDE.md) · Geschwister: [landing](components/landing/CLAUDE.md) · [_parked](_parked/CLAUDE.md) · [app](app/CLAUDE.md)
 
 Kundenseitige **Landing + simulierte Demo**. Abgeleitet aus dem Callfolio-Template
-(Next.js 14 App Router · TypeScript · Tailwind), auf KMU/Handwerk umgebaut.
+(Next.js 14 App Router · TypeScript · Tailwind). Aktueller Umbau-Fokus:
+**basemodul.de** als Produktseite für KI-Module. AGENTEQ bleibt Dachfirma /
+Trust-Layer, aber nicht die sichtbare Hauptmarke der Landing.
 
 ## Start
 
@@ -27,12 +29,27 @@ vom Typecheck ausgeschlossen (`tsconfig.json` → `exclude: ["_parked"]`).
 - Middleware neutralisiert (kein Auth/Supabase-Redirect): `middleware.ts`.
 - **Nie** Callfolio-Production-Keys verwenden; für echten Piloten eigene Keys.
 
-## Design-Identität: "Professional Navy"
+## Aktuelle Produktlogik
 
-Akzent/CTA `#0369A1` (Blau) · Text `#0F172A` (Navy) · BG `#F8FAFC` ·
-Headings **Calistoga** (Serif) · Body **Inter** · Mono JetBrains.
-Tokens & Regeln: [`design-system/MASTER.md`](design-system/MASTER.md).
-Umsetzung pro Sektion: [`components/landing/CLAUDE.md`](components/landing/CLAUDE.md).
+Kernmodule:
+
+- Telefon-Modul
+- Chat-Modul
+- Termin-Modul
+- Foto-&-Datei-Modul
+- Prioritäts-Modul
+
+Nicht als Hauptspur verwenden: Hausverwaltung/SHK-Schadenfälle, generische
+KI-Beratung, vollautomatische Angebotserstellung als Kernangebot.
+
+## Design-Identität: "Dark Premium" (verbindlich)
+
+Dunkel/premium (Linear/Vercel/Stripe): BG `#0A0A0A` · Flächen `#141414` ·
+Akzent **Grün `#22C55E`** · Text `#FAFAFA`/`#A1A1AA` · Font **Inter**.
+**Verbindliche Quelle:** [`../DESIGN_BRIEF.md`](../DESIGN_BRIEF.md) + die
+kanonische Referenz [`../index.html`](../index.html) (Repo-Root, standalone).
+Frühere Richtungen (Navy/hell-warm) und `design-system/MASTER.md` sind
+**verworfen**. Diese Landing wird später an `index.html` angeglichen.
 
 ## Schlüssel-Dateien
 

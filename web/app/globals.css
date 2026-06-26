@@ -3,40 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #111827;
+  --background: #0D0D0D;
+  --foreground: #FFFFFF;
 }
-
-:root {
-  --background: #ffffff;
-  --foreground: #111827;
-}
-
-.dark {
-  --background: #030712;
-  --foreground: #f9fafb;
-}
-
-/* Fallback for system preference if no class is present - optional if next-themes handles it well, 
-   but good to keep consistent. However, next-themes adds the class based on system pref too. 
-   So we can rely on the class. */
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
 }
 
-/* Global fix for invisible text in inputs when system is in dark mode */
-.light input, .light textarea, .light select {
-  color: #111827 !important; /* text-gray-900 */
-}
-
-.dark input, .dark textarea, .dark select {
-  color: #f9fafb !important; /* text-gray-50 */
-}
-
-/* Ensure placeholders are still visible but distinct */
-input::placeholder, textarea::placeholder {
-  color: #6b7280 !important; /* text-gray-500 */
+::selection {
+  background: rgba(34, 197, 94, 0.25);
+  color: #FAFAFA;
 }
 
 @layer utilities {
@@ -44,48 +22,48 @@ input::placeholder, textarea::placeholder {
     text-wrap: balance;
   }
 }
-@layer base {
-  .stitch-light {
-    --background: oklch(0.985 0.002 247);
-    --foreground: oklch(0.145 0.015 260);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0.015 260);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0.015 260);
-    --primary: oklch(0.488 0.200 264);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.96 0.005 260);
-    --secondary-foreground: oklch(0.205 0.015 260);
-    --muted: oklch(0.96 0.005 260);
-    --muted-foreground: oklch(0.556 0.01 260);
-    --accent: oklch(0.72 0.17 163);
-    --accent-foreground: oklch(0.145 0.015 260);
-    --destructive: oklch(0.577 0.245 27.325);
-    --destructive-foreground: oklch(0.985 0 0);
-    --border: oklch(0.905 0.008 260);
-    --input: oklch(0.905 0.008 260);
-    --ring: oklch(0.488 0.200 264);
-  }
 
-  .stitch-dark {
-    --background: oklch(0.13 0.015 260);
-    --foreground: oklch(0.96 0.005 260);
-    --card: oklch(0.16 0.015 260);
-    --card-foreground: oklch(0.96 0.005 260);
-    --popover: oklch(0.16 0.015 260);
-    --popover-foreground: oklch(0.96 0.005 260);
-    --primary: oklch(0.55 0.220 264);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.22 0.015 260);
-    --secondary-foreground: oklch(0.96 0.005 260);
-    --muted: oklch(0.22 0.015 260);
-    --muted-foreground: oklch(0.60 0.01 260);
-    --accent: oklch(0.72 0.17 163);
-    --accent-foreground: oklch(0.13 0.015 260);
-    --destructive: oklch(0.396 0.141 25);
-    --destructive-foreground: oklch(0.637 0.237 25);
-    --border: oklch(0.24 0.015 260);
-    --input: oklch(0.24 0.015 260);
-    --ring: oklch(0.55 0.220 264);
+@layer components {
+  /* Glassy premium surface — soft glass tint, cyan light edge, gloss, depth.
+     Radius/padding stay on the element via Tailwind; pseudo-elements inherit it. */
+  .glass-surface {
+    position: relative;
+    background: linear-gradient(160deg, rgba(28, 28, 32, 0.72), rgba(18, 18, 20, 0.66));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 26px 60px -22px rgba(0, 0, 0, 0.78),
+      0 0 42px -18px rgba(34, 211, 238, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  /* top gloss line */
+  .glass-surface::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    top: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* soft sheen from the top */
+  .glass-surface::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent 55%);
+    pointer-events: none;
+  }
+  /* green-tinted accent edge for highlighted surfaces */
+  .glass-accent {
+    border-color: rgba(34, 197, 94, 0.4);
+    box-shadow:
+      0 26px 60px -22px rgba(0, 0, 0, 0.78),
+      0 0 52px -16px rgba(34, 197, 94, 0.34),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 }

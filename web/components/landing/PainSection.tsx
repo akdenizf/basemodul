@@ -15,21 +15,21 @@ const item: Variants = {
 const PAINS = [
   {
     num: "01",
-    title: "Verpasste Anrufe eskalieren.",
-    body: "Jeder nicht angenommene Anruf kann ein Wasserschaden sein, der tagelang unbemerkt bleibt. Das kostet Vertrauen und fünfstellige Reparaturbeträge.",
-    tag: "Risikofaktor #1",
+    title: "Anrufe kommen im falschen Moment.",
+    body: "Auf Baustelle, in der Werkstatt oder beim Kunden kann niemand sauber mitschreiben. Der nächste Rückruf passiert oft erst, wenn der Auftrag schon woanders gelandet ist.",
+    tag: "Aufträge gehen verloren",
   },
   {
     num: "02",
-    title: "Dokumentations-Chaos kostet Zeit.",
-    body: "Excel-Tabellen, Notizzettel, E-Mails — kein System, das wirklich funktioniert. Mitarbeiter suchen länger nach Informationen als an Lösungen zu arbeiten.",
-    tag: "Täglich 2–4 Std. verloren",
+    title: "WhatsApp und Fotos bleiben ohne Kontext.",
+    body: "Kunden schicken Bilder, Sprachnachrichten und halbe Infos. Ihr Team muss nachfragen, sortieren und alles wieder in eine brauchbare Form bringen.",
+    tag: "Zu viele Rückfragen",
   },
   {
     num: "03",
-    title: "Ihr Team arbeitet am Limit.",
-    body: "40% der Arbeitszeit entfällt auf Routineanrufe. Das ist Zeit, die Ihren Mitarbeitern für wertschöpfende Aufgaben fehlt.",
-    tag: "Burnout-Risiko steigt",
+    title: "Dringendes landet zwischen Routinefällen.",
+    body: "Terminwünsche, Statusfragen und echte Notfälle laufen über dieselben Kanäle. Ohne Vorsortierung sieht Ihr Team zu spät, was wirklich brennt.",
+    tag: "Priorität fehlt",
   },
 ];
 
@@ -40,24 +40,24 @@ export function PainSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative overflow-hidden bg-[#F8FAFC] py-28 lg:py-36"
+      className="relative overflow-hidden bg-[#F4F3EE] py-28 lg:py-36"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <motion.div variants={item} className="mb-20 grid gap-6 lg:grid-cols-[1fr_auto]">
           <div>
-            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
+            <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#15604A]">
               Das Problem
             </p>
             <h2
               className="font-display max-w-xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px] lg:text-[52px]"
             >
-              Der teuerste Schaden ist der, der zu spät gemeldet wird.
+              Das Problem ist selten die Arbeit. Es ist der Eingang davor.
             </h2>
           </div>
           <div className="hidden items-end pb-1 lg:flex">
             <p className="max-w-[280px] text-sm leading-relaxed text-slate-400">
-              Kleine Betriebe verlieren täglich Aufträge, Zeit und Kundenvertrauen durch drei wiederkehrende Probleme.
+              Kleine Betriebe verlieren täglich Zeit, Übersicht und Chancen, weil Eingänge nicht sauber vorsortiert sind.
             </p>
           </div>
         </motion.div>
@@ -72,7 +72,7 @@ export function PainSection() {
             >
               {/* Number */}
               <span
-                className="font-display text-[42px] font-bold leading-none tracking-tight text-slate-200 transition-colors duration-300 group-hover:text-[#0369A1]/40 lg:text-[48px]"
+                className="font-display text-[42px] font-bold leading-none tracking-tight text-slate-200 transition-colors duration-300 group-hover:text-[#15604A]/40 lg:text-[48px]"
               >
                 {pain.num}
               </span>

@@ -15,27 +15,27 @@ const item: Variants = {
 const STEPS = [
   {
     number: "01",
-    icon: "call",
-    title: "Anruf eingehend",
-    description: "Die KI nimmt sofort und professionell entgegen. Kein Warten. Kein Verpassen. Rund um die Uhr.",
+    icon: "search",
+    title: "Eingangskanal finden",
+    description: "Wir schauen, wo aktuell am meisten Zeit verloren geht: Telefon, Chat, Termine, Fotos, Dateien oder Priorisierung.",
   },
   {
     number: "02",
-    icon: "psychology",
-    title: "KI-Analyse",
-    description: "Dringlichkeit, Standort, Kategorie und Stimmung werden in Echtzeit extrahiert und klassifiziert.",
+    icon: "extension",
+    title: "Erstes Modul wählen",
+    description: "Ein Modul wird als Pilot sauber zugeschnitten. Kein Komplettsystem, bevor der Nutzen klar ist.",
   },
   {
     number: "03",
-    icon: "photo_camera",
-    title: "Foto-Upload",
-    description: "Der Kunde erhält per SMS einen sicheren Link und kann Fotos des Schadens direkt hochladen.",
+    icon: "rule",
+    title: "Flow testen",
+    description: "Das Modul fragt fehlende Infos ab, erkennt Dringlichkeit und übergibt Rückruf, Termin oder Anfrage an Ihr Team.",
   },
   {
     number: "04",
     icon: "assignment_turned_in",
-    title: "Fertiges Ticket",
-    description: "Alle Daten landen strukturiert, priorisiert und rechtssicher dokumentiert in Ihrem Dashboard.",
+    title: "Ausbauen oder stoppen",
+    description: "Nach wenigen Tagen sieht man, ob es im Alltag hilft. Dann wird angepasst, erweitert oder bewusst geparkt.",
   },
 ];
 
@@ -52,13 +52,13 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <motion.div variants={item} className="mb-20 text-center">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#0369A1]">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-[#15604A]">
             Der Prozess
           </p>
           <h2
             className="font-display mx-auto max-w-2xl text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-slate-900 sm:text-[46px]"
           >
-            So einfach funktioniert AGENTEQ
+            So läuft der erste Pilot
           </h2>
         </motion.div>
 
@@ -76,9 +76,9 @@ export function HowItWorksSection() {
               className="group relative flex flex-col gap-5"
             >
               {/* Icon circle */}
-              <div className="relative z-10 flex h-[104px] w-[104px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:border-[#0369A1]/40 group-hover:shadow-[0_4px_24px_rgba(3, 105, 161,0.15)]">
+              <div className="relative z-10 flex h-[104px] w-[104px] flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] transition-all duration-300 group-hover:border-[#15604A]/40 group-hover:shadow-[0_4px_24px_rgba(21, 96, 74,0.15)]">
                 <span
-                  className="font-display text-xs font-bold tracking-widest text-[#0369A1]"
+                  className="font-display text-xs font-bold tracking-widest text-[#15604A]"
                 >
                   {step.number}
                 </span>
