@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { CalendarDays, MessageSquare, Mail, PhoneCall, ArrowUpRight } from "lucide-react";
-import { AmbientOrbs } from "./AmbientOrbs";
+import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -23,7 +23,8 @@ const CHANNELS = [
 
 export function IntegrationsSection() {
   return (
-    <section id="integrationen" className="relative bg-paper py-20">
+    <section id="integrationen" className="relative bg-paper pb-16 pt-10 lg:pb-20 lg:pt-12">
+      <FlowGrid />
       <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="mb-12 flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between">

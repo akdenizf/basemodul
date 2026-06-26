@@ -9,7 +9,7 @@ Der KI-Telefonassistent
 für Servicebetriebe.
 
 **Subtext:**
-BASEMODULE nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt Rückrufnotizen, Termine oder Notfälle direkt ans Team.
+BaseModul nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt Rückrufnotizen, Termine oder Notfälle direkt ans Team.
 
 **Branchen-Zeile:** Für SHK-Betriebe, Kältetechnik, Facility und technischen Service.
 

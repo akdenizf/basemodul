@@ -1,10 +1,19 @@
 "use client";
 
 import { useState, useRef, useEffect, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Play, Pause, CheckCircle2, Zap, MessageSquare, CalendarClock, Info } from "lucide-react";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import {
+  Play,
+  Pause,
+  CheckCircle2,
+  PhoneIncoming,
+  Zap,
+  MessageSquare,
+  CalendarClock,
+  Info,
+} from "lucide-react";
 import { BarVisualizer, type VisualizerState } from "./BarVisualizer";
-import { AmbientOrbs } from "./AmbientOrbs";
+import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 interface Scenario {
   id: string;
@@ -28,20 +37,20 @@ const CATEGORY_ICONS = {
   PRIORITY: <Zap className="h-4 w-4" />,
   CHAT: <MessageSquare className="h-4 w-4" />,
   APPOINTMENT: <CalendarClock className="h-4 w-4" />,
-  GENERAL: <Info className="h-4 w-4" />
+  GENERAL: <Info className="h-4 w-4" />,
 };
 
 const CATEGORY_LABELS = {
   PRIORITY: "Priorität",
   CHAT: "Chat",
   APPOINTMENT: "Termin",
-  GENERAL: "Allgemein"
+  GENERAL: "Allgemein",
 };
 
 const URGENCY_COLORS = {
   LOW: "bg-blue-400",
   MEDIUM: "bg-amber-400",
-  HIGH: "bg-red-500"
+  HIGH: "bg-red-500",
 };
 
 const SCENARIOS: Scenario[] = [
@@ -58,13 +67,13 @@ const SCENARIOS: Scenario[] = [
       { time: 21.5, speaker: "caller", text: "Es geht um einen neuen Auftrag. Ich kann auch gleich ein Foto oder Dokument mitschicken." },
       { time: 27.3, speaker: "assistant", text: "Alles klar. Ich erstelle eine Rückrufnotiz und sende Ihnen einen Upload-Link für den Anhang. Das Team bekommt alles strukturiert übergeben." },
       { time: 36.3, speaker: "caller", text: "Super, mache ich. Danke!" },
-      { time: 38.1, speaker: "assistant", text: "Gern geschehen. Das Team bekommt Ihre Meldung strukturiert übergeben und meldet sich zur Terminabstimmung. Auf Wiederhören!" }
+      { time: 38.1, speaker: "assistant", text: "Gern geschehen. Das Team bekommt Ihre Meldung strukturiert übergeben und meldet sich zur Terminabstimmung. Auf Wiederhören!" },
     ],
     finalResult: {
       ticketId: "#BM-8421",
       summary: "Rückrufwunsch mit Kontakt, Anliegen und optionalem Anhang.",
-      action: "Rückrufnotiz erstellt • Team informiert • Upload-Link versandt"
-    }
+      action: "Rückrufnotiz erstellt • Team informiert • Upload-Link versandt",
+    },
   },
   {
     id: "stromausfall",
@@ -79,13 +88,13 @@ const SCENARIOS: Scenario[] = [
       { time: 20.4, speaker: "caller", text: "Bitte unter dieser Nummer. Es betrifft einen laufenden Auftrag und muss heute geklärt werden." },
       { time: 26.6, speaker: "assistant", text: "In Ordnung. Ich setze die Priorität auf Hoch und informiere den festgelegten Übergabekanal." },
       { time: 33.1, speaker: "caller", text: "Vielen Dank, das ist super." },
-      { time: 36.0, speaker: "assistant", text: "Gerne. Das Team wird sich in Kürze bei Ihnen melden. Auf Wiederhören!" }
+      { time: 36.0, speaker: "assistant", text: "Gerne. Das Team wird sich in Kürze bei Ihnen melden. Auf Wiederhören!" },
     ],
     finalResult: {
       ticketId: "#BM-9102",
       summary: "Dringende Kundenmeldung außerhalb der Bürozeit.",
-      action: "Priorität hoch • Übergabekanal informiert • Rückruf vorbereitet"
-    }
+      action: "Priorität hoch • Übergabekanal informiert • Rückruf vorbereitet",
+    },
   },
   {
     id: "status",
@@ -98,13 +107,13 @@ const SCENARIOS: Scenario[] = [
       { time: 7.5, speaker: "caller", text: "Ja, hallo, hier ist Müller. Ich wollte nachfragen, wann mein Termin stattfindet." },
       { time: 13.0, speaker: "assistant", text: "Guten Tag Herr Müller. Ich sehe die Anfrage vom Dienstag. Der Termin ist für morgen, Freitag den 6. Juni um 10:30 Uhr vorbereitet." },
       { time: 22.5, speaker: "caller", text: "Super, das passt. Danke!" },
-      { time: 24.4, speaker: "assistant", text: "Sehr gerne. Das Team meldet sich bei Bedarf vorher noch einmal. Auf Wiederhören!" }
+      { time: 24.4, speaker: "assistant", text: "Sehr gerne. Das Team meldet sich bei Bedarf vorher noch einmal. Auf Wiederhören!" },
     ],
     finalResult: {
       ticketId: "#BM-8421",
       summary: "Terminstatus abgerufen. Fr. 06. Jun. 10:30 Uhr bestätigt.",
-      action: "Status erkannt • Termin bestätigt • Team nicht unterbrochen"
-    }
+      action: "Status erkannt • Termin bestätigt • Team nicht unterbrochen",
+    },
   },
   {
     id: "eskalation",
@@ -113,20 +122,20 @@ const SCENARIOS: Scenario[] = [
     urgency: "MEDIUM",
     audioSrc: "/demo-eskalation.mp3",
     transcript: [
-      { time: 0.0,  speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
-      { time: 7.3,  speaker: "caller",    text: "Hallo, ich habe ein Problem bei mir im Betrieb — das ist schwer zu beschreiben, ich weiß nicht genau, woran es liegt." },
+      { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
+      { time: 7.3, speaker: "caller", text: "Hallo, ich habe ein Problem bei mir im Betrieb — das ist schwer zu beschreiben, ich weiß nicht genau, woran es liegt." },
       { time: 15.9, speaker: "assistant", text: "Kein Problem. Am einfachsten geht das mit einem kurzen Foto oder Video. Ich schicke Ihnen gleich einen Upload-Link per SMS. Darf ich Ihre Handynummer kurz aufnehmen?" },
-      { time: 26.3, speaker: "caller",    text: "Ja, gerne. Sie können die 0151er nehmen." },
+      { time: 26.3, speaker: "caller", text: "Ja, gerne. Sie können die 0151er nehmen." },
       { time: 29.5, speaker: "assistant", text: "Perfekt. Der Link ist unterwegs. Schicken Sie das Foto, sobald Sie können — das Team bekommt Ihre Meldung mit dem Bild direkt übergeben." },
-      { time: 39.0, speaker: "caller",    text: "Super, vielen Dank." },
-      { time: 40.1, speaker: "assistant", text: "Sehr gerne. Auf Wiederhören!" }
+      { time: 39.0, speaker: "caller", text: "Super, vielen Dank." },
+      { time: 40.1, speaker: "assistant", text: "Sehr gerne. Auf Wiederhören!" },
     ],
     finalResult: {
       ticketId: "#BM-7033",
       summary: "Unklares Anliegen per Foto-Upload strukturiert übergeben.",
-      action: "Upload-Link versandt • Foto-Eingang erwartet • Team vorbereitet"
-    }
-  }
+      action: "Upload-Link versandt • Foto-Eingang erwartet • Team vorbereitet",
+    },
+  },
 ];
 
 const FALLBACK_DURATIONS: Record<string, number> = {
@@ -142,7 +151,6 @@ export function LiveDemoSection() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(FALLBACK_DURATIONS[SCENARIOS[0].id]);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
   const scenario = SCENARIOS.find((s) => s.id === activeScenarioId)!;
@@ -163,16 +171,10 @@ export function LiveDemoSection() {
     return scenario.transcript
       .map((msg, i) => ({
         ...msg,
-        endTime: scenario.transcript[i + 1]?.time ?? duration
+        endTime: scenario.transcript[i + 1]?.time ?? duration,
       }))
       .filter((msg) => msg.time <= currentTime);
   }, [scenario.transcript, currentTime, duration]);
-
-  useEffect(() => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
-    }
-  }, [visibleMessages.length]);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -183,7 +185,7 @@ export function LiveDemoSection() {
     } else {
       setIsPlaying(true);
       audioRef.current.play().catch(() => {
-        let startTime = performance.now() - (currentTime * 1000);
+        let startTime = performance.now() - currentTime * 1000;
         const simulatePlayback = () => {
           const now = performance.now();
           const newTime = (now - startTime) / 1000;
@@ -229,69 +231,68 @@ export function LiveDemoSection() {
     return "thinking";
   }, [isPlaying, isComplete, currentSpeaker]);
 
+  const currentMessage = visibleMessages[visibleMessages.length - 1] ?? null;
+
   return (
-    <section id="livedemo" className="relative bg-paper py-20">
+    <section id="livedemo" className="relative bg-paper pb-12 pt-10 lg:pb-14 lg:pt-12">
+      <FlowGrid />
       <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
+        <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
+          {/* Left — copy + scenario picker */}
+          <div>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
+              Demo — Beispielanruf
+            </span>
+            <h2 className="mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
+              Hören Sie einen <span className="text-leafaccent">echten Ablauf</span>.
+            </h2>
+            <p className="mt-5 max-w-[460px] text-[16px] leading-[1.7] text-inksoft">
+              Drücken Sie Play und hören Sie, wie BaseModul einen Anruf annimmt,
+              gezielt nachfragt und den Fall ans Team übergibt.
+            </p>
 
-        {/* Header */}
-        <div className="mb-14 max-w-2xl">
-          <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            Demo Lab — Beispielablauf
-          </span>
-          <h2 className="mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-            Hören Sie einen <span className="text-leafaccent">echten Ablauf</span>.
-          </h2>
-          <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-inksoft">
-            Dieselbe Logik wie oben — diesmal zum Anhören. Wählen Sie ein Szenario
-            und verfolgen Sie, wie das Modul nachfragt, Dringlichkeit erkennt und
-            einen Fall übergibt.
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-6 lg:flex-row">
-
-          {/* Scenario sidebar */}
-          <div className="flex w-full shrink-0 flex-col gap-3 lg:w-[300px]">
-            <div className="mb-1 px-1">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-faint">
-                Szenarien
+            {/* Scenario picker — calm, compact */}
+            <div className="mt-8">
+              <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+                Szenario wählen
               </span>
+              <div className="mt-3 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+                {SCENARIOS.map((s) => {
+                  const active = activeScenarioId === s.id;
+                  return (
+                    <button
+                      key={s.id}
+                      onClick={() => setActiveScenarioId(s.id)}
+                      className={`group flex items-center gap-3 rounded-xl border p-3 text-left transition-all duration-200 ${
+                        active
+                          ? "border-leaf/40 bg-white/[0.06]"
+                          : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05]"
+                      }`}
+                    >
+                      <span
+                        className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-[9px] border border-line bg-paperdeep transition-colors duration-200 ${
+                          active ? "text-leafbright" : "text-inksoft group-hover:text-ink"
+                        }`}
+                      >
+                        {CATEGORY_ICONS[s.category]}
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className={`block truncate text-[13px] font-semibold ${active ? "text-ink" : "text-inksoft"}`}>
+                          {s.title}
+                        </span>
+                        <span className="text-[11px] text-faint">{CATEGORY_LABELS[s.category]}</span>
+                      </span>
+                      <span className={`h-2 w-2 shrink-0 rounded-full ${URGENCY_COLORS[s.urgency]}`} />
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-            {SCENARIOS.map((s) => (
-              <button
-                key={s.id}
-                onClick={() => setActiveScenarioId(s.id)}
-                className={`relative flex flex-col items-start gap-3 rounded-[12px] border p-4 text-left transition-all duration-200 ${
-                  activeScenarioId === s.id
-                    ? "border-[rgba(22,163,74,0.35)] bg-surface2"
-                    : "border-line bg-paper2 hover:bg-surface2"
-                }`}
-              >
-                <div className="flex w-full items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-line bg-paper text-inksoft">
-                      {CATEGORY_ICONS[s.category]}
-                    </div>
-                    <span className="text-[12px] font-medium text-inksoft">
-                      {CATEGORY_LABELS[s.category]}
-                    </span>
-                  </div>
-                  <div className={`h-2 w-2 rounded-full ${URGENCY_COLORS[s.urgency]}`} />
-                </div>
-                <h3
-                  className={`text-[15px] font-bold tracking-tight ${
-                    activeScenarioId === s.id ? "text-ink" : "text-inksoft"
-                  }`}
-                >
-                  {s.title}
-                </h3>
-              </button>
-            ))}
           </div>
 
-          {/* Main stage */}
-          <div className="glass-surface relative flex h-[620px] flex-1 flex-col overflow-hidden rounded-[14px]">
+          {/* Right — phone call player */}
+          <div className="lg:justify-self-end">
             <audio
               ref={audioRef}
               src={scenario.audioSrc}
@@ -300,191 +301,229 @@ export function LiveDemoSection() {
               onEnded={handleEnded}
               onLoadedMetadata={handleLoadedMetadata}
             />
+            <DemoPhone
+              scenario={scenario}
+              isPlaying={isPlaying}
+              isComplete={isComplete}
+              currentTime={currentTime}
+              duration={duration}
+              progress={progress}
+              visualizerState={visualizerState}
+              togglePlay={togglePlay}
+              currentMessage={currentMessage}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
-            {/* Control bar */}
-            <div className="z-20 flex items-center justify-between border-b border-line bg-paper2/80 px-6 py-4 backdrop-blur-md">
-              <div className="flex items-center gap-3">
-                <div className="relative flex h-2.5 w-2.5">
-                  {isPlaying && (
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-leaf opacity-60" />
-                  )}
-                  <span
-                    className={`relative inline-flex h-2.5 w-2.5 rounded-full ${
-                      isPlaying ? "bg-leaf" : "bg-white/20"
-                    }`}
-                  />
-                </div>
-                <span className="font-mono text-[11px] uppercase tracking-widest text-faint">
-                  Modul-Demo
+/* ── Phone call-player (same device language as the hero) ────────────────── */
+
+function DemoPhone({
+  scenario,
+  isPlaying,
+  isComplete,
+  currentTime,
+  duration,
+  progress,
+  visualizerState,
+  togglePlay,
+  currentMessage,
+}: {
+  scenario: Scenario;
+  isPlaying: boolean;
+  isComplete: boolean;
+  currentTime: number;
+  duration: number;
+  progress: number;
+  visualizerState: VisualizerState;
+  togglePlay: () => void;
+  currentMessage: (Scenario["transcript"][number] & { endTime: number }) | null;
+}) {
+  const reduce = useReducedMotion();
+  const status = isComplete ? "Rückrufnotiz bereit" : isPlaying ? "KI nimmt an" : "Beispielanruf";
+
+  return (
+    <div className="relative mx-auto w-full max-w-[320px]">
+      {/* ambient glow */}
+      <div
+        className="pointer-events-none absolute -inset-12 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 50% at 50% 42%, rgba(34,197,94,0.14) 0%, rgba(34,211,238,0.06) 50%, transparent 72%)",
+        }}
+      />
+
+      <div className="relative mx-auto w-[270px] sm:w-[290px] lg:w-[310px]">
+        {/* side buttons */}
+        <div className="absolute -left-[2px] top-[20%] h-[7%] w-[3px] rounded-l-sm bg-black/50" />
+        <div className="absolute -left-[2px] top-[30%] h-[11%] w-[3px] rounded-l-sm bg-black/50" />
+        <div className="absolute -right-[2px] top-[26%] h-[13%] w-[3px] rounded-r-sm bg-black/50" />
+
+        <div
+          className="rounded-[46px] p-[4px] shadow-[0_50px_110px_-34px_rgba(0,0,0,0.6)]"
+          style={{ background: "linear-gradient(160deg,#2b2b2f,#161617 55%,#0b0b0c)" }}
+        >
+          <div className="rounded-[43px] bg-[#070707] p-[7px] ring-1 ring-white/[0.05]">
+            <div className="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[36px] border border-white/[0.06] bg-paperdeep px-4 pb-5 pt-4">
+              {/* glass sheen */}
+              <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-1/3"
+                style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.10), transparent)" }}
+              />
+
+              {/* notch */}
+              <div className="mx-auto flex h-[24px] w-[72px] items-center justify-center gap-2 rounded-full bg-black">
+                <span className="h-1.5 w-1.5 rounded-full bg-white/25" />
+                <span className="h-1 w-6 rounded-full bg-white/15" />
+              </div>
+
+              {/* header: Live-Demo + status */}
+              <div className="relative mt-4 flex items-center justify-between">
+                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">Live-Demo</span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-leafdimline/60 bg-leafdim/50 px-2 py-[3px] text-[10px] font-semibold text-leafbright">
+                  <span className="relative flex h-1.5 w-1.5">
+                    {isPlaying && !reduce && (
+                      <motion.span
+                        className="absolute inline-flex h-full w-full rounded-full bg-leafbright"
+                        animate={{ scale: [1, 2.4], opacity: [0.5, 0] }}
+                        transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                      />
+                    )}
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-leafbright" />
+                  </span>
+                  {status}
                 </span>
               </div>
 
-              <div className="flex flex-1 max-w-[400px] items-center justify-end gap-5">
-                <div className="h-8 w-32 flex items-end justify-center">
-                  <BarVisualizer state={visualizerState} barCount={28} className="h-full w-full" />
-                </div>
-                <span className="w-10 text-right font-mono text-[12px] text-faint tabular-nums">
-                  {formatTime(currentTime)}
+              {/* caller identity */}
+              <div className="relative mt-4 flex items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.03] px-3.5 py-3 backdrop-blur-md">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-leafdimline/50 bg-leafdim/40 text-leafbright">
+                  <PhoneIncoming size={18} strokeWidth={1.8} />
                 </span>
-                <div className="relative">
-                  {!isPlaying && (
+                <div className="min-w-0">
+                  <div className="truncate text-[13px] font-semibold text-ink">{scenario.title}</div>
+                  <div className="text-[11px] text-faint">{CATEGORY_LABELS[scenario.category]} · Beispielanruf</div>
+                </div>
+              </div>
+
+              {/* live bubble / result */}
+              <div className="relative mt-4 min-h-0 flex-1 overflow-hidden">
+                <AnimatePresence mode="wait">
+                  {isComplete ? (
                     <motion.div
-                      animate={{ scale: [1, 1.25, 1], opacity: [0.5, 0, 0.5] }}
+                      key="result"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.35 }}
+                      className="flex h-full flex-col justify-center"
+                    >
+                      <div className="rounded-2xl border border-leafbright/30 bg-gradient-to-b from-leaf/15 to-leaf/[0.04] p-4">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle2 size={18} className="text-leafbright" strokeWidth={1.9} />
+                          <span className="text-[13px] font-bold text-ink">Rückrufnotiz bereit</span>
+                        </div>
+                        <p className="mt-2 text-[12px] leading-snug text-inksoft">{scenario.finalResult.summary}</p>
+                        <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-2.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
+                          <span className="font-mono text-[10px] text-faint">{scenario.finalResult.ticketId} · Team informiert</span>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ) : currentMessage ? (
+                    <motion.div
+                      key={`${scenario.id}-${currentMessage.time}`}
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ type: "spring", stiffness: 420, damping: 30 }}
+                      className={`flex h-full items-end ${currentMessage.speaker === "assistant" ? "justify-start" : "justify-end"}`}
+                    >
+                      <div
+                        className={`max-w-[90%] rounded-2xl px-3.5 py-3 text-[12.5px] leading-relaxed ${
+                          currentMessage.speaker === "assistant"
+                            ? "rounded-bl-[4px] border border-white/10 bg-white/[0.05] text-ink"
+                            : "rounded-br-[4px] border border-leaf/25 bg-leaf/[0.10] text-ink"
+                        }`}
+                      >
+                        <span className="mb-1 block font-mono text-[9px] uppercase tracking-[0.12em] text-faint">
+                          {currentMessage.speaker === "assistant" ? "basemodul KI" : "Anrufer"}
+                        </span>
+                        <StreamingText
+                          text={currentMessage.text}
+                          startTime={currentMessage.time}
+                          endTime={currentMessage.endTime}
+                          currentTime={currentTime}
+                        />
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="idle"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="flex h-full flex-col items-center justify-center text-center"
+                    >
+                      <BarVisualizer state="idle" barCount={20} className="h-7 w-28 opacity-50" />
+                      <p className="mt-3 max-w-[180px] text-[12px] leading-snug text-faint">
+                        Tippen Sie auf Play und hören Sie den Anruf.
+                      </p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* visualizer while playing */}
+              <div className="relative mt-3 h-6">
+                <BarVisualizer state={visualizerState} barCount={24} className="h-full w-full" />
+              </div>
+
+              {/* play control + progress */}
+              <div className="relative mt-3 flex items-center gap-3">
+                <div className="relative shrink-0">
+                  {!isPlaying && !isComplete && (
+                    <motion.span
+                      animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                       className="absolute inset-0 rounded-full bg-leaf"
                     />
                   )}
                   <motion.button
-                    whileTap={{ scale: 0.95 }}
+                    whileTap={{ scale: 0.94 }}
                     onClick={togglePlay}
-                    className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full transition-colors ${
-                      isPlaying
-                        ? "bg-white/10 text-ink hover:bg-white/20"
-                        : "bg-leafbtn text-white hover:bg-leafbtnhover"
+                    aria-label={isPlaying ? "Pause" : "Play"}
+                    className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full transition-colors ${
+                      isPlaying ? "bg-white/10 text-ink hover:bg-white/20" : "bg-leafbtn text-white hover:bg-leafbtnhover"
                     }`}
                     style={
                       !isPlaying
-                        ? { boxShadow: "0 0 0 1px rgba(22,163,74,0.3), 0 8px 20px -8px rgba(22,163,74,0.5)" }
+                        ? { boxShadow: "0 0 0 1px rgba(22,163,74,0.3), 0 10px 24px -8px rgba(22,163,74,0.6)" }
                         : {}
                     }
                   >
-                    {isPlaying ? (
-                      <Pause className="h-5 w-5 fill-current" />
-                    ) : (
-                      <Play className="h-5 w-5 fill-current ml-0.5" />
-                    )}
+                    {isPlaying ? <Pause className="h-5 w-5 fill-current" /> : <Play className="ml-0.5 h-5 w-5 fill-current" />}
                   </motion.button>
                 </div>
+
+                <div className="min-w-0 flex-1">
+                  <div className="h-1 w-full overflow-hidden rounded-full bg-white/10">
+                    <div className="h-full rounded-full bg-leafbright transition-[width] duration-150" style={{ width: `${progress}%` }} />
+                  </div>
+                  <div className="mt-1.5 flex justify-between font-mono text-[10px] text-faint tabular-nums">
+                    <span>{formatTime(currentTime)}</span>
+                    <span>{formatTime(duration)}</span>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            {/* Transcript area */}
-            <div className="relative flex-1 overflow-hidden bg-paper">
-              <div
-                ref={scrollRef}
-                className="absolute inset-0 flex flex-col gap-5 overflow-y-auto p-6 pb-36 scroll-smooth"
-              >
-                <AnimatePresence mode="popLayout">
-                  {visibleMessages.map((msg, idx) => (
-                    <motion.div
-                      key={`${scenario.id}-${idx}`}
-                      initial={{ opacity: 0, y: 15, scale: 0.98 }}
-                      animate={{ opacity: isComplete ? 0.4 : 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                      className={`flex ${msg.speaker === "assistant" ? "justify-start" : "justify-end"}`}
-                    >
-                      <div
-                        className={`max-w-[78%] rounded-[14px] px-5 py-3.5 text-[14.5px] leading-relaxed ${
-                          msg.speaker === "assistant"
-                            ? "rounded-tl-[4px] border border-line bg-paper2 text-ink"
-                            : "rounded-tr-[4px] border border-[rgba(22,163,74,0.25)] bg-[rgba(22,163,74,0.08)] text-ink"
-                        } ${
-                          isPlaying && idx === visibleMessages.length - 1 && msg.speaker === "assistant"
-                            ? "ring-1 ring-leaf/30"
-                            : ""
-                        }`}
-                      >
-                        <span className="mb-1.5 block font-mono text-[10px] uppercase tracking-widest text-faint">
-                          {msg.speaker === "assistant" ? "basemodul KI" : "Anrufer"}
-                        </span>
-                        {msg.text.length > 0 && (
-                          <StreamingText
-                            text={msg.text}
-                            startTime={msg.time}
-                            endTime={msg.endTime}
-                            currentTime={currentTime}
-                          />
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-
-                {/* Typing indicator */}
-                <AnimatePresence>
-                  {isPlaying &&
-                    !isComplete &&
-                    visibleMessages[visibleMessages.length - 1]?.speaker === "caller" && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        className="flex justify-start"
-                      >
-                        <div className="flex h-[48px] items-center gap-1.5 rounded-[14px] rounded-tl-[4px] border border-line bg-paper2 px-5 py-4">
-                          <motion.span
-                            animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 1, repeat: Infinity, delay: 0 }}
-                            className="h-1.5 w-1.5 rounded-full bg-faint"
-                          />
-                          <motion.span
-                            animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
-                            className="h-1.5 w-1.5 rounded-full bg-faint"
-                          />
-                          <motion.span
-                            animate={{ scale: [1, 1.5, 1], opacity: [0.4, 1, 0.4] }}
-                            transition={{ duration: 1, repeat: Infinity, delay: 0.4 }}
-                            className="h-1.5 w-1.5 rounded-full bg-faint"
-                          />
-                        </div>
-                      </motion.div>
-                    )}
-                </AnimatePresence>
-              </div>
-
-              {/* Success result overlay */}
-              <AnimatePresence>
-                {isComplete && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25, delay: 0.2 }}
-                    className="absolute bottom-6 left-6 right-6 z-30"
-                  >
-                    <div
-                      className="rounded-[14px] border border-[rgba(22,163,74,0.35)] bg-paper2 p-5"
-                      style={{ boxShadow: "0 20px 50px -15px rgba(0,0,0,0.5)" }}
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[rgba(22,163,74,0.35)] bg-[rgba(22,163,74,0.08)]">
-                          <CheckCircle2 className="h-5 w-5 text-leaf" />
-                        </div>
-                        <div>
-                          <div className="mb-1 flex items-center gap-3">
-                            <h4 className="text-[16px] font-bold text-ink">
-                              Fall {scenario.finalResult.ticketId} erstellt
-                            </h4>
-                            <span className="rounded-[6px] border border-line bg-paper px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-faint">
-                              Übergabe
-                            </span>
-                          </div>
-                          <p className="mb-4 text-[14px] text-inksoft">
-                            {scenario.finalResult.summary}
-                          </p>
-                          <div className="flex items-center gap-2">
-                            <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[rgba(22,163,74,0.35)] bg-[rgba(22,163,74,0.08)]">
-                              <span className="h-1.5 w-1.5 rounded-full bg-leaf" />
-                            </span>
-                            <span className="text-[12px] font-medium text-inksoft">
-                              {scenario.finalResult.action}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              {/* Bottom fade */}
-              <div className="pointer-events-none absolute bottom-0 left-0 right-0 z-20 h-28 bg-gradient-to-t from-paper to-transparent" />
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/landing/HeroSection";
 import { ModulesSection } from "@/components/landing/ModulesSection";
 import { WorkflowSection } from "@/components/landing/WorkflowSection";
 import { ScrollStorySection } from "@/components/landing/ScrollStorySection";
+import { StorySeam } from "@/components/landing/StorySeam";
 import { VisualContextSection } from "@/components/landing/VisualContextSection";
 import { IntegrationsSection } from "@/components/landing/IntegrationsSection";
 import { PricingSection } from "@/components/landing/PricingSection";
@@ -14,7 +15,7 @@ import { FloatingCta } from "@/components/landing/FloatingCta";
 
 const LiveDemoSection = dynamic(
   () => import("@/components/landing/LiveDemoSection").then((m) => ({ default: m.LiveDemoSection })),
-  { ssr: false, loading: () => <div className="py-24 sm:py-32 bg-paper" /> }
+  { ssr: false, loading: () => <div className="py-16 bg-paper" /> }
 );
 
 export default function LandingPage() {
@@ -23,11 +24,17 @@ export default function LandingPage() {
       <Navbar />
       <main className="flex-1 pt-[60px]">
         <HeroSection />
+        <StorySeam />
         <ModulesSection />
+        <StorySeam />
         <WorkflowSection />
+        <StorySeam />
         <ScrollStorySection />
+        <StorySeam />
         <LiveDemoSection />
+        <StorySeam />
         <VisualContextSection />
+        <StorySeam />
         <IntegrationsSection />
         <PricingSection />
         <LetsWorkTogether />

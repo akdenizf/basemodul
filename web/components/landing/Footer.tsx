@@ -27,7 +27,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="text-[16px] font-bold tracking-[0.08em] text-ink">
-              BASEMODULE
+              BASEMODUL
             </Link>
             <p className="mt-4 max-w-[300px] text-[14px] leading-[1.7] text-inksoft">
               KI-Module für Betriebe: Telefon, Termine, WhatsApp, Fotos und
@@ -59,7 +59,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-linesoft pt-7 text-[13px] text-faint sm:flex-row sm:justify-between">
           <span>Ein Produkt von AGENTEQ</span>
-          <span>© {new Date().getFullYear()} BASEMODULE</span>
+          <span>© {new Date().getFullYear()} BASEMODUL</span>
         </div>
       </div>
     </footer>

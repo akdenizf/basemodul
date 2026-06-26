@@ -1,13 +1,27 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useTransform,
+  useReducedMotion,
+  MotionValue,
+} from "framer-motion";
 import {
   PhoneIncoming,
+  PhoneMissed,
+  HelpCircle,
   AlertTriangle,
   ClipboardList,
   CheckCircle2,
+  Check,
   ArrowRight,
+  Mail,
+  MessageCircle,
+  Sheet,
+  type LucideIcon,
 } from "lucide-react";
 
 /* ── Step definitions ──────────────────────────────────────────────────── */
@@ -17,7 +31,6 @@ interface Step {
   label: string;
   heading: string;
   body: string;
-  Visual: React.ComponentType;
 }
 
 const STEPS: Step[] = [
@@ -25,247 +38,340 @@ const STEPS: Step[] = [
     id: 1,
     label: "Anruf kommt rein",
     heading: "Das Telefon klingelt — niemand ist da.",
-    body: "BASEMODULE nimmt den Anruf an, begrüßt den Anrufer und erkennt das Anliegen. Kein Anrufbeantworter, keine Warteschleife.",
-    Visual: PhoneVisual,
+    body: "BaseModul nimmt den Anruf an, begrüßt den Anrufer und erkennt das Anliegen. Kein Anrufbeantworter, keine Warteschleife.",
   },
   {
     id: 2,
     label: "Modul fragt nach",
     heading: "Fehlende Infos werden gezielt abgefragt.",
     body: "Name, Adresse, Anliegen, Dringlichkeit — das Modul fragt nur, was wirklich fehlt. Kein unnötiges Hin und Her.",
-    Visual: ChatVisual,
   },
   {
     id: 3,
     label: "Dringlichkeit erkannt",
     heading: "Normaler Fall oder Notfall — das Modul unterscheidet.",
     body: "Bei hoher Dringlichkeit eskaliert das Modul sofort an die Bereitschaft. Sonst landet alles ruhig in der strukturierten Übergabe.",
-    Visual: UrgencyVisual,
   },
   {
     id: 4,
     label: "Übergabe vorbereitet",
     heading: "Alles strukturiert für das Team bereit.",
     body: "Rückrufnotiz, Terminslot oder Fallkarte — je nach Anliegen die passende Übergabe. Kein halbes Ticket.",
-    Visual: HandoffVisual,
   },
   {
     id: 5,
     label: "Team informiert",
     heading: "Das Team sieht alles — kein Anruf verpasst.",
     body: "Per E-Mail, Sheet oder WhatsApp: die Übergabe landet dort, wo das Team bereits arbeitet. Sofort einsatzbereit.",
-    Visual: DoneVisual,
   },
 ];
 
-/* ── Visual components (dark-premium, Tailwind only) ───────────────────── */
+/* ── Phone screen states (max 3 UI elements: icon · title · status) ──────── */
 
-function VisualShell({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="relative flex h-full w-full items-center justify-center p-10 lg:p-14">
-      {/* Ambient light orbs — refracted by the card's backdrop-blur for depth */}
-      <div className="pointer-events-none absolute left-[30%] top-[28%] h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,197,94,0.22),transparent_70%)] blur-2xl" />
-      <div className="pointer-events-none absolute bottom-[26%] right-[28%] h-52 w-52 translate-x-1/2 translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(34,211,238,0.15),transparent_70%)] blur-2xl" />
-      <div className="relative w-full max-w-[340px] lg:max-w-[380px]">{children}</div>
-    </div>
-  );
-}
+type Screen = {
+  icon: LucideIcon;
+  title: string;
+  status: string;
+  tone: "green" | "amber";
+  pulse?: boolean;
+};
 
-/* Glassy premium card shell — soft form, green/cyan light edge, gloss, depth */
-function GlassCard({
-  children,
-  accent = false,
-  className = "",
-}: {
-  children: React.ReactNode;
-  accent?: boolean;
-  className?: string;
-}) {
-  return (
-    <div
-      className={`relative overflow-hidden rounded-[22px] border backdrop-blur-xl ${
-        accent ? "border-[rgba(34,197,94,0.40)]" : "border-white/10"
-      } ${className}`}
-      style={{
-        background: "linear-gradient(160deg, rgba(28,28,32,0.72), rgba(18,18,20,0.66))",
-        boxShadow: accent
-          ? "0 26px 60px -22px rgba(0,0,0,0.78), 0 0 52px -16px rgba(34,197,94,0.34), inset 0 1px 0 rgba(255,255,255,0.10)"
-          : "0 26px 60px -22px rgba(0,0,0,0.78), 0 0 42px -18px rgba(34,211,238,0.20), inset 0 1px 0 rgba(255,255,255,0.10)",
-      }}
-    >
-      {/* top gloss line */}
-      <div className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" />
-      {/* soft sheen from the top */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/[0.06] via-transparent to-transparent" />
-      {/* content */}
-      <div className="relative">{children}</div>
-    </div>
-  );
-}
+const SCREENS: Screen[] = [
+  { icon: PhoneIncoming, title: "Eingehender Anruf", status: "KI nimmt an", tone: "green", pulse: true },
+  { icon: HelpCircle, title: "Fehlende Infos", status: "Ort + Anliegen?", tone: "green" },
+  { icon: AlertTriangle, title: "Notdienst erkannt", status: "Dringlichkeit: hoch", tone: "amber" },
+  { icon: ClipboardList, title: "Rückrufnotiz bereit", status: "Übergabe vorbereitet", tone: "green" },
+  { icon: CheckCircle2, title: "Team informiert", status: "kein Anruf verpasst", tone: "green" },
+];
 
-function PhoneVisual() {
-  return (
-    <VisualShell>
-      <GlassCard className="p-6">
-        <div className="mb-5 flex items-center justify-between">
-          <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-faint">Eingehend</span>
-          <span className="font-mono text-[10px] text-faint">jetzt</span>
-        </div>
-        <div className="flex items-center gap-4">
-          <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-white/10 bg-gradient-to-b from-white/[0.10] to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
-            <div className="absolute inset-0 animate-ping rounded-full border border-leaf/30" style={{ animationIterationCount: 3 }} />
-            <PhoneIncoming size={22} className="text-leafbright" strokeWidth={1.8} />
-          </div>
-          <div>
-            <p className="text-[16px] font-bold text-ink">Eingehender Anruf</p>
-            <p className="mt-0.5 font-mono text-[12px] text-faint">+49 176 24 …</p>
-          </div>
-        </div>
-        <div className="mt-5 rounded-[10px] border border-leafdimline bg-leafdim px-4 py-3">
-          <p className="text-[12px] font-medium text-leafbright">
-            BASEMODULE nimmt den Anruf entgegen…
-          </p>
-        </div>
-      </GlassCard>
-    </VisualShell>
-  );
-}
+/* ── The shared phone mockup (same language as the hero) ─────────────────── */
 
-function ChatVisual() {
-  const bubbles = [
-    { speaker: "assistant", text: "Guten Tag, wie kann ich Ihnen helfen?" },
-    { speaker: "caller", text: "Ich brauche einen Wartungstermin." },
-    { speaker: "assistant", text: "Kein Problem. Welche Anlage und welcher Standort?" },
-  ];
+function StoryPhone({ step, compact = false }: { step: number; compact?: boolean }) {
+  const reduce = useReducedMotion();
+  const s = SCREENS[step] ?? SCREENS[0];
+  const Icon = s.icon;
+  const amber = s.tone === "amber";
+
+  const iconColor = amber ? "#FBBF24" : "#4ADE80";
+  const callBg = amber
+    ? "linear-gradient(160deg,rgba(251,191,36,0.18),rgba(251,191,36,0.06))"
+    : "linear-gradient(160deg,rgba(20,83,45,0.5),rgba(20,83,45,0.22))";
+  const callRing = amber ? "rgba(251,191,36,0.4)" : "rgba(22,101,52,0.6)";
+  const statusBg = amber ? "rgba(251,191,36,0.12)" : "rgba(20,83,45,0.4)";
+  const statusBorder = amber ? "rgba(251,191,36,0.35)" : "rgba(22,101,52,0.5)";
+  const statusText = amber ? "#FCD34D" : "#4ADE80";
+
   return (
-    <VisualShell>
-      <GlassCard className="p-5">
-        <div className="mb-4 flex items-center gap-2">
-          <span className="h-1.5 w-1.5 rounded-full bg-leafbright shadow-[0_0_0_3px_rgba(74,222,128,0.18)]" />
-          <span className="text-[12px] font-semibold text-ink">BASEMODULE</span>
-          <span className="ml-auto font-mono text-[10px] text-faint">live</span>
-        </div>
-        <div className="flex flex-col gap-3">
-          {bubbles.map((b, i) => (
-            <div key={i} className={`flex ${b.speaker === "assistant" ? "justify-start" : "justify-end"}`}>
-              <div
-                className={`max-w-[82%] rounded-[12px] px-3.5 py-2.5 text-[12px] leading-snug ${
-                  b.speaker === "assistant"
-                    ? "rounded-tl-[3px] border border-line bg-paperdeep text-ink"
-                    : "rounded-tr-[3px] border border-[rgba(22,163,74,0.25)] bg-[rgba(22,163,74,0.08)] text-ink"
-                }`}
+    <div className={`relative mx-auto ${compact ? "w-[160px] sm:w-[180px]" : "w-[240px] lg:w-[268px]"}`}>
+      {/* ambient glow */}
+      <div
+        className="pointer-events-none absolute -inset-12 -z-10"
+        style={{
+          background:
+            "radial-gradient(ellipse 55% 50% at 50% 42%, rgba(34,197,94,0.14) 0%, rgba(34,211,238,0.06) 50%, transparent 72%)",
+        }}
+      />
+
+      {/* side buttons */}
+      <div className="absolute -left-[2px] top-[20%] h-[7%] w-[3px] rounded-l-sm bg-black/50" />
+      <div className="absolute -left-[2px] top-[30%] h-[11%] w-[3px] rounded-l-sm bg-black/50" />
+      <div className="absolute -right-[2px] top-[26%] h-[13%] w-[3px] rounded-r-sm bg-black/50" />
+
+      <div
+        className="rounded-[46px] p-[4px] shadow-[0_50px_110px_-34px_rgba(0,0,0,0.6)]"
+        style={{ background: "linear-gradient(160deg,#2b2b2f,#161617 55%,#0b0b0c)" }}
+      >
+        <div className="rounded-[43px] bg-[#070707] p-[7px] ring-1 ring-white/[0.05]">
+          <div className="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[36px] border border-white/[0.06] bg-paperdeep px-5 pb-7 pt-4">
+            {/* glass sheen */}
+            <div
+              className="pointer-events-none absolute inset-x-0 top-0 h-1/2"
+              style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.12), transparent)" }}
+            />
+
+            {/* notch */}
+            <div className="mx-auto flex h-[24px] w-[72px] items-center justify-center gap-2 rounded-full bg-black">
+              <span className="h-1.5 w-1.5 rounded-full bg-white/25" />
+              <span className="h-1 w-6 rounded-full bg-white/15" />
+            </div>
+
+            <div className="relative mt-5 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-faint">
+              Aktiver Anruf
+            </div>
+
+            {/* state that crossfades between steps */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={step}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="relative flex flex-1 flex-col items-center justify-center text-center"
               >
-                {b.text}
+                <span
+                  className="flex h-[64px] w-[64px] items-center justify-center rounded-full"
+                  style={{ background: callBg, border: `1px solid ${callRing}`, color: iconColor }}
+                >
+                  <Icon size={26} strokeWidth={1.7} />
+                </span>
+                <div className="mt-4 text-[15px] font-semibold text-ink">{s.title}</div>
+
+                <div
+                  className="mt-5 flex items-center gap-2 rounded-full px-3.5 py-1.5 text-[12px] font-semibold"
+                  style={{ background: statusBg, border: `1px solid ${statusBorder}`, color: statusText }}
+                >
+                  <span className="relative flex h-1.5 w-1.5">
+                    {s.pulse && !reduce && (
+                      <motion.span
+                        className="absolute inline-flex h-full w-full rounded-full"
+                        style={{ background: statusText }}
+                        animate={{ scale: [1, 2.4], opacity: [0.5, 0] }}
+                        transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                      />
+                    )}
+                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full" style={{ background: statusText }} />
+                  </span>
+                  {s.status}
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ── Klingel-Ringe (nur Step 1) ─────────────────────────────────────────── */
+
+function KlingelRings({ reduce }: { reduce: boolean | null }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+      className="pointer-events-none absolute left-1/2 top-1/2 z-0 -translate-x-1/2 -translate-y-1/2"
+      aria-hidden
+    >
+      {(reduce ? [0] : [0, 1, 2]).map((i) => (
+        <motion.span
+          key={i}
+          className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-leafbright/20"
+          animate={reduce ? { opacity: 0.18 } : { scale: [0.6, 1.5], opacity: [0.35, 0] }}
+          transition={
+            reduce
+              ? { duration: 0 }
+              : { duration: 3.2, repeat: Infinity, delay: i * 1.05, ease: "easeOut" }
+          }
+        />
+      ))}
+    </motion.div>
+  );
+}
+
+/* ── Schwebende Kontext-Artefakte pro Step ──────────────────────────────── */
+
+function floatProps(reduce: boolean | null, dy = 6, dur = 6) {
+  return reduce
+    ? {}
+    : { animate: { y: [0, dy, 0] }, transition: { duration: dur, repeat: Infinity, ease: "easeInOut" as const } };
+}
+
+const chip =
+  "rounded-xl border border-white/10 bg-[#141414]/85 backdrop-blur-md shadow-[0_18px_40px_-16px_rgba(0,0,0,0.8)]";
+const pill =
+  "inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] px-2 py-0.5 text-[11px] text-ink";
+
+function SceneArtifacts({ step, reduce }: { step: number; reduce: boolean | null }) {
+  return (
+    <AnimatePresence mode="popLayout">
+      <motion.div
+        key={step}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.4 }}
+        className="pointer-events-none absolute inset-0 z-20"
+        aria-hidden
+      >
+        {/* Step 1 — verpasste Anrufe, die BaseModul rettet */}
+        {step === 0 && (
+          <div className="absolute -left-32 top-[30%]">
+            <motion.div {...floatProps(reduce, -5, 7)} className={`w-[176px] p-3 ${chip}`}>
+              <div className="flex items-center gap-2 text-[11px] text-faint line-through opacity-60">
+                <PhoneMissed size={12} className="text-red-400/60" /> Anruf verpasst · 22:38
               </div>
-            </div>
-          ))}
-          <div className="flex justify-start">
-            <div className="max-w-[82%] rounded-[12px] rounded-tl-[3px] border border-line bg-paperdeep px-3.5 py-2.5 text-[12px] leading-snug text-ink">
-              Notiert — ich bereite die Übergabe vor.
-            </div>
+              <div className="mt-1.5 flex items-center gap-2 text-[11px] text-faint line-through opacity-40">
+                <PhoneMissed size={12} className="text-red-400/40" /> Kunde aufgelegt · 22:39
+              </div>
+              <div className="mt-2.5 flex items-center gap-1.5 border-t border-white/10 pt-2 text-[10px] font-semibold text-leafbright">
+                <Check size={11} strokeWidth={2.6} /> BaseModul übernimmt
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </GlassCard>
-    </VisualShell>
+        )}
+
+        {/* Step 2 — fehlende Infos / Rückfragen */}
+        {step === 1 && (
+          <div className="absolute -left-32 top-[33%]">
+            <motion.div {...floatProps(reduce, 6, 6.5)} className={`w-[168px] p-3 ${chip}`}>
+              <div className="mb-2 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-faint">
+                <HelpCircle size={11} className="text-leafbright" /> Infos fehlen
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                <span className={pill}>Ort?</span>
+                <span className={pill}>Anliegen?</span>
+              </div>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Step 3 — Dringlichkeit */}
+        {step === 2 && (
+          <>
+            <div className="absolute -right-3 top-[25%]">
+              <motion.div
+                {...floatProps(reduce, -5, 5.5)}
+                className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-amber-300 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.8)] backdrop-blur-md"
+              >
+                <AlertTriangle size={12} strokeWidth={2.2} /> Dringend
+              </motion.div>
+            </div>
+            <div className="absolute -left-28 bottom-[30%]">
+              <motion.div
+                {...floatProps(reduce, 6, 6.5)}
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-[11px] font-semibold text-inksoft ${chip} !rounded-full`}
+              >
+                <ArrowRight size={12} className="text-leafbright" /> an Bereitschaft
+              </motion.div>
+            </div>
+          </>
+        )}
+
+        {/* Step 4 — Rückrufnotiz */}
+        {step === 3 && (
+          <div className="absolute -left-32 top-[31%]">
+            <motion.div {...floatProps(reduce, 6, 6.5)} className={`w-[182px] p-3.5 ${chip}`}>
+              <div className="mb-2 flex items-center justify-between">
+                <span className="text-[10px] font-semibold uppercase tracking-[0.1em] text-faint">Rückrufnotiz</span>
+                <span className="font-mono text-[10px] text-faint">22:47</span>
+              </div>
+              <div className="text-[13px] font-semibold text-ink">Klaus M.</div>
+              <div className="mt-0.5 text-[11px] text-inksoft">Heizung ausgefallen</div>
+            </motion.div>
+          </div>
+        )}
+
+        {/* Step 5 — Team informiert / Output-Kanäle */}
+        {step === 4 && (
+          <div className="absolute -left-32 top-[33%]">
+            <motion.div
+              {...floatProps(reduce, 6, 6.5)}
+              className="w-[182px] rounded-xl border border-leafbright/25 bg-gradient-to-b from-leaf/15 to-leaf/[0.04] p-3.5 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.8)] backdrop-blur-md"
+            >
+              <div className="mb-2.5 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.1em] text-leafbright">
+                <Check size={11} strokeWidth={2.6} /> Übergabe gesendet
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                <span className={pill}><Mail size={11} className="text-leafbright" /> E-Mail</span>
+                <span className={pill}><MessageCircle size={11} className="text-leafbright" /> WhatsApp</span>
+                <span className={pill}><Sheet size={11} className="text-leafbright" /> Sheet</span>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </motion.div>
+    </AnimatePresence>
   );
 }
 
-function UrgencyVisual() {
-  return (
-    <VisualShell>
-      <GlassCard className="p-6">
-        <p className="mb-4 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">Klassifizierung</p>
-        <div className="space-y-2.5">
-          <div className="flex items-center justify-between rounded-[9px] border border-linesoft bg-paper px-4 py-3 opacity-40">
-            <span className="text-[13px] text-inksoft">Standardfall</span>
-            <span className="rounded-md border border-line px-2 py-0.5 text-[10px] text-faint">Normal</span>
-          </div>
-          <div className="flex items-center justify-between rounded-[9px] border border-linesoft bg-paper px-4 py-3 opacity-40">
-            <span className="text-[13px] text-inksoft">Rückrufwunsch</span>
-            <span className="rounded-md border border-line px-2 py-0.5 text-[10px] text-amber-400">Mittel</span>
-          </div>
-          <div className="flex items-center justify-between rounded-[9px] border border-[rgba(220,38,38,0.4)] bg-[rgba(220,38,38,0.06)] px-4 py-3 ring-1 ring-[rgba(220,38,38,0.3)]">
-            <div className="flex items-center gap-2">
-              <AlertTriangle size={14} className="text-[#FCA5A5]" strokeWidth={2} />
-              <span className="text-[13px] font-semibold text-ink">Notfall erkannt</span>
-            </div>
-            <span className="rounded-md border border-[rgba(248,113,113,0.4)] bg-[rgba(220,38,38,0.14)] px-2 py-0.5 text-[10px] font-bold text-[#FCA5A5]">
-              Hoch
-            </span>
-          </div>
-        </div>
-        <div className="mt-4 flex items-center gap-2 rounded-[9px] border border-leafdimline bg-leafdim px-4 py-2.5">
-          <ArrowRight size={13} className="text-leafbright" />
-          <span className="text-[12px] font-medium text-leafbright">Bereitschaft wird alarmiert</span>
-        </div>
-      </GlassCard>
-    </VisualShell>
-  );
-}
+/* ── Mobile: kompakter Artefakt-Hinweis pro Step ───────────────────────── */
 
-function HandoffVisual() {
-  return (
-    <VisualShell>
-      <GlassCard>
-        <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
-          <div className="flex items-center gap-2">
-            <ClipboardList size={14} className="text-leaf" strokeWidth={2} />
-            <span className="text-[13px] font-bold text-ink">Rückrufnotiz</span>
-          </div>
-          <span className="rounded border border-[rgba(22,163,74,0.35)] bg-[rgba(22,163,74,0.08)] px-2 py-0.5 font-mono text-[10px] text-leaf">
-            Bereit
-          </span>
-        </div>
-        <div className="space-y-0 divide-y divide-dashed divide-line px-5 py-4">
-          {[
-            { label: "Name", value: "Klaus M." },
-            { label: "Telefon", value: "0176 24 …" },
-            { label: "Anliegen", value: "Wartung · Heizung" },
-            { label: "Wunschzeit", value: "Di–Do, 14–17 Uhr" },
-          ].map((r) => (
-            <div key={r.label} className="flex items-center justify-between py-2.5 first:pt-0 last:pb-0">
-              <span className="text-[11px] text-faint">{r.label}</span>
-              <span className="text-[12px] font-medium text-ink">{r.value}</span>
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center gap-2 border-t border-line bg-paperdeep px-5 py-3">
-          <ArrowRight size={13} className="text-leaf" />
-          <span className="text-[11px] text-inksoft">Nächster Schritt: <span className="font-bold text-ink">Rückruf einplanen</span></span>
-        </div>
-      </GlassCard>
-    </VisualShell>
-  );
-}
+const miniPill =
+  "inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.05] px-2.5 py-1 text-[11px] text-ink";
 
-function DoneVisual() {
-  const channels = ["E-Mail", "Google Sheet", "WhatsApp"];
-  return (
-    <VisualShell>
-      <GlassCard accent className="p-6">
-        <div className="mb-5 flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(34,197,94,0.45)] bg-gradient-to-b from-[rgba(34,197,94,0.18)] to-transparent shadow-[inset_0_1px_0_rgba(255,255,255,0.18),0_0_18px_-6px_rgba(34,197,94,0.5)]">
-            <CheckCircle2 size={22} className="text-leaf" strokeWidth={1.8} />
-          </div>
-          <div>
-            <p className="text-[15px] font-bold text-ink">Übergabe erstellt</p>
-            <p className="text-[11px] text-faint">#BM-8421 · kein Anruf verpasst</p>
-          </div>
+function MobileArtifact({ step }: { step: number }) {
+  switch (step) {
+    case 0:
+      return (
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-leafbright/25 bg-leaf/10 px-2.5 py-1 text-[11px] font-semibold text-leafbright">
+          <Check size={11} strokeWidth={2.6} /> verpasst → angenommen
+        </span>
+      );
+    case 1:
+      return (
+        <div className="flex flex-wrap gap-1.5">
+          <span className={miniPill}>Ort?</span>
+          <span className={miniPill}>Anliegen?</span>
         </div>
-        <p className="mb-4 text-[12px] font-semibold uppercase tracking-[0.06em] text-faint">
-          Übergabe an
-        </p>
-        <div className="space-y-2">
-          {channels.map((c) => (
-            <div key={c} className="flex items-center gap-3 rounded-[9px] border border-linesoft bg-paper px-3.5 py-2.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
-              <span className="text-[13px] text-ink">{c}</span>
-            </div>
-          ))}
+      );
+    case 2:
+      return (
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-400/10 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-300">
+          <AlertTriangle size={11} strokeWidth={2.2} /> Dringend · Bereitschaft
+        </span>
+      );
+    case 3:
+      return (
+        <div className="flex flex-wrap gap-1.5">
+          <span className={miniPill}>Klaus M.</span>
+          <span className={miniPill}>Heizung ausgefallen</span>
+          <span className={`${miniPill} font-mono`}>22:47</span>
         </div>
-      </GlassCard>
-    </VisualShell>
-  );
+      );
+    case 4:
+      return (
+        <div className="flex flex-wrap gap-1.5">
+          <span className={miniPill}><Mail size={11} className="text-leafbright" /> E-Mail</span>
+          <span className={miniPill}><MessageCircle size={11} className="text-leafbright" /> WhatsApp</span>
+          <span className={miniPill}><Sheet size={11} className="text-leafbright" /> Sheet</span>
+        </div>
+      );
+    default:
+      return null;
+  }
 }
 
 /* ── Scroll-driven active index hook ───────────────────────────────────── */
@@ -284,6 +390,7 @@ function useActiveIndex(rawIndex: MotionValue<number>) {
 
 export function ScrollStorySection() {
   const containerRef = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -294,35 +401,35 @@ export function ScrollStorySection() {
   const rawIndex = useTransform(scrollYProgress, [0, 1], [0, STEPS.length - 1]);
   const activeIndex = useActiveIndex(rawIndex);
 
-  const ActiveVisual = STEPS[activeIndex].Visual;
-
   return (
     <section
       ref={containerRef}
       id="how-it-works"
-      aria-label="Wie BASEMODULE arbeitet"
+      aria-label="Wie BaseModul arbeitet"
       style={{ minHeight: `${STEPS.length * 58}dvh` }}
-      className="relative bg-paperdeep"
+      className="relative bg-paper"
     >
       {/* ── Desktop: sticky two-column layout ── */}
       <div className="sticky top-0 hidden h-screen lg:flex">
-        {/* Left — sticky visual */}
-        <div className="relative flex h-full w-1/2 items-center justify-center border-r border-line">
+        {/* Left — sticky call scene */}
+        <div className="relative flex h-full w-1/2 items-center justify-center overflow-hidden border-r border-line">
           {/* Eyebrow — absolute top left */}
           <div className="absolute left-10 top-10 z-10">
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
               03 — Wie es funktioniert
             </span>
           </div>
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="flex w-full items-center justify-center"
-          >
-            <ActiveVisual />
-          </motion.div>
+
+          {/* scene: phone anchor + ringing + per-step artifacts */}
+          <div className="relative w-[268px]">
+            <AnimatePresence>
+              {activeIndex === 0 && <KlingelRings key="rings" reduce={reduce} />}
+            </AnimatePresence>
+            <div className="relative z-10">
+              <StoryPhone step={activeIndex} />
+            </div>
+            <SceneArtifacts step={activeIndex} reduce={reduce} />
+          </div>
 
           {/* Step counter — bottom left */}
           <div className="absolute bottom-10 left-10 z-10 flex items-center gap-2">
@@ -374,39 +481,62 @@ export function ScrollStorySection() {
         </div>
       </div>
 
-      {/* ── Mobile: simple vertical list (no sticky) ── */}
-      <div className="px-6 py-16 lg:hidden">
-        <div className="mb-10">
+      {/* ── Mobile: phone anchor + compact step timeline ── */}
+      <div className="px-6 pb-12 pt-8 lg:hidden">
+        <div className="mb-6 text-center">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
             03 — Wie es funktioniert
           </span>
-          <h2 className="mt-4 text-[clamp(28px,7vw,38px)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
+          <h2 className="mt-4 text-[clamp(28px,7.5vw,38px)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
             Ein Anruf. Fünf Schritte.
             <br />
             <span className="text-inksoft">Nichts geht verloren.</span>
           </h2>
         </div>
-        <div className="flex flex-col gap-10">
-          {STEPS.map((step) => {
-            const StepVisual = step.Visual;
+
+        {/* anchor phone */}
+        <div className="mb-8 flex justify-center">
+          <StoryPhone step={0} compact />
+        </div>
+
+        {/* timeline */}
+        <ol className="mx-auto max-w-[420px] space-y-5">
+          {STEPS.map((step, i) => {
+            const sc = SCREENS[i];
+            const amber = sc.tone === "amber";
+            const accentColor = amber ? "#FBBF24" : "#4ADE80";
+            const accentBg = amber ? "rgba(251,191,36,0.12)" : "rgba(20,83,45,0.4)";
+            const accentBorder = amber ? "rgba(251,191,36,0.35)" : "rgba(22,101,52,0.55)";
             return (
-              <div key={step.id} className="flex flex-col gap-5">
-                {/* Visual mini */}
-                <div className="h-[240px] overflow-hidden rounded-xl border border-line bg-paper2">
-                  <StepVisual />
+              <li key={step.id} className="relative flex gap-4">
+                {/* badge + connector */}
+                <div className="relative flex flex-col items-center">
+                  <span
+                    className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                    style={{ background: accentBg, border: `1px solid ${accentBorder}`, color: accentColor }}
+                  >
+                    <sc.icon size={17} strokeWidth={1.8} />
+                  </span>
+                  {i < STEPS.length - 1 && (
+                    <span className="mt-1 w-px flex-1 bg-gradient-to-b from-linesoft to-transparent" />
+                  )}
                 </div>
-                {/* Text */}
-                <div>
+
+                {/* content card */}
+                <div className="flex-1 pb-1">
                   <span className="font-mono text-[10px] uppercase tracking-[0.1em] text-faint">
                     {String(step.id).padStart(2, "0")} — {step.label}
                   </span>
-                  <h3 className="mt-2 text-[20px] font-bold leading-snug text-ink">{step.heading}</h3>
-                  <p className="mt-2 text-[15px] leading-[1.65] text-inksoft">{step.body}</p>
+                  <h3 className="mt-1.5 text-[17px] font-bold leading-snug text-ink">{step.heading}</h3>
+                  <p className="mt-1.5 text-[14px] leading-[1.6] text-inksoft">{step.body}</p>
+                  <div className="mt-3">
+                    <MobileArtifact step={i} />
+                  </div>
                 </div>
-              </div>
+              </li>
             );
           })}
-        </div>
+        </ol>
       </div>
     </section>
   );

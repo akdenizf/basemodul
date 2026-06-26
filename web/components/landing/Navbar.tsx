@@ -24,7 +24,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-baseline">
             <span className="text-[16px] font-bold tracking-[0.08em] text-ink">
-              BASEMODULE
+              BASEMODUL
             </span>
           </Link>
 

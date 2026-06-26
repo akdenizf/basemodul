@@ -39,7 +39,7 @@ export function LetsWorkTogether() {
                 Telefonannahme testen?
               </h2>
               <p className="mt-[18px] max-w-[520px] text-[16px] leading-[1.7] text-inksoft">
-                Wir schauen in 30 Minuten, ob die Telefonannahme mit BASEMODULE
+                Wir schauen in 30 Minuten, ob die Telefonannahme mit BaseModul
                 für Ihren Betrieb passt. Kein Komplettsystem, kein Vertrag im
                 Erstgespräch.
               </p>

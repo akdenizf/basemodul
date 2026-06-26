@@ -1,43 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  PhoneMissed,
-  Wrench,
-  CalendarClock,
-  ArrowRight,
-  ArrowUpRight,
-  Lock,
-} from "lucide-react";
-
-// Static live-feed: [Eingang] → [Modul] → [Ergebnis] — keine Animation, kein Scrolling
-const FEED = [
-  {
-    icon: PhoneMissed,
-    input: "Anruf verpasst",
-    mod: "Telefon-Modul",
-    result: "Rückrufnotiz bereit",
-    time: "vor 2 Min.",
-  },
-  {
-    icon: Wrench,
-    input: "Störung gemeldet",
-    mod: "Notdienst-Modul",
-    result: "Techniker alarmiert",
-    time: "vor 6 Min.",
-  },
-  {
-    icon: CalendarClock,
-    input: "Terminwunsch",
-    mod: "Kalender-Modul",
-    result: "Rückruf vorbereitet",
-    time: "vor 14 Min.",
-  },
-];
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, Lock, PhoneIncoming, Check, Users } from "lucide-react";
 
 export function HeroSection() {
+  const reduce = useReducedMotion();
+
   return (
-    <section className="relative flex overflow-hidden bg-paper pb-10 pt-10 sm:pb-14 sm:pt-16 lg:pb-20 lg:pt-20">
+    <section className="relative flex overflow-hidden bg-paper pb-6 pt-10 sm:pb-8 sm:pt-16 lg:pb-10 lg:pt-20">
       {/* subtle operations grid — fades out at edges */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -59,8 +29,16 @@ export function HeroSection() {
             "radial-gradient(ellipse 70% 60% at 50% -10%, rgba(22,163,74,0.07) 0%, transparent 70%)",
         }}
       />
+      {/* untere Naht — weicher grüner Auslauf nach unten, fließt in die nächste Sektion */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-40"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 100% at 50% 120%, rgba(34,197,94,0.06) 0%, transparent 70%)",
+        }}
+      />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-10 px-6 sm:gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12">
+      <div className="relative z-10 mx-auto grid w-full max-w-[1200px] grid-cols-1 items-center gap-6 px-6 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-12">
         {/* Left — copy */}
         <div>
           {/* Pill */}
@@ -92,7 +70,7 @@ export function HeroSection() {
             transition={{ duration: 0.65, delay: 0.12 }}
             className="mt-5 max-w-[520px] text-[16px] leading-[1.62] text-[#A1A1AA] sm:mt-6 sm:text-[18px] sm:leading-[1.7]"
           >
-            BASEMODULE nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt
+            BaseModul nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt
             Rückrufnotizen, Termine oder Notfälle direkt ans Team.
           </motion.p>
           <motion.p
@@ -134,60 +112,118 @@ export function HeroSection() {
           </motion.div>
         </div>
 
-        {/* Right — live operations feed (static) */}
+        {/* Right — minimal call mockup: phone as a quiet product symbol */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.28 }}
-          className="w-full lg:max-w-[440px] lg:justify-self-end"
+          initial={{ opacity: 0, y: 24, scale: 0.97 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          className="relative mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:max-w-none lg:translate-x-6 lg:translate-y-6 lg:justify-self-end"
         >
-          <div className="glass-surface overflow-hidden rounded-2xl">
-            {/* header */}
-            <div className="flex items-center justify-between border-b border-line px-5 py-3.5">
-              <div className="flex items-center gap-2.5">
-                <span className="h-2 w-2 rounded-full bg-leafbright shadow-[0_0_0_3px_rgba(74,222,128,0.18)]" />
-                <span className="text-[13px] font-semibold text-ink">Live-Betrieb</span>
-              </div>
-              <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
-                <span>Heute</span>
-                <span className="h-1 w-1 rounded-full bg-faint" />
-                <span>3 Eingänge</span>
-              </div>
-            </div>
+          {/* ambient green glow behind the device */}
+          <div
+            className="pointer-events-none absolute -inset-12 -z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse 55% 50% at 55% 40%, rgba(34,197,94,0.12) 0%, transparent 70%)",
+            }}
+          />
 
-            {/* rows */}
-            <div>
-              {FEED.map((f) => (
-                <div
-                  key={f.input}
-                  className="flex items-start gap-3.5 border-b border-linesoft px-5 py-[18px] last:border-b-0"
-                >
-                  <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] border border-line bg-paperdeep text-label">
-                    <f.icon size={16} strokeWidth={1.8} />
-                  </span>
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-[14px] font-semibold text-ink">{f.input}</span>
-                      <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.06em] text-faint">
-                        {f.time}
-                      </span>
+          {/* floating: callback note — desktop only */}
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 1.0, duration: 0.5, ease: "easeOut" }}
+            className="absolute -left-4 top-20 z-20 hidden lg:block"
+          >
+            <motion.div
+              animate={reduce ? undefined : { y: [0, -6, 0] }}
+              transition={reduce ? undefined : { duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              className="w-[170px] rounded-xl border border-white/10 bg-[#141414]/85 p-3 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.85)] backdrop-blur-md"
+            >
+              <div className="mb-1.5 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-faint">
+                <span className="h-1 w-1 rounded-full bg-leafbright" />
+                Rückrufnotiz
+              </div>
+              <div className="text-[12px] font-semibold leading-snug text-ink">
+                Heizungsausfall · Rückruf gewünscht
+              </div>
+              <div className="mt-1 font-mono text-[10px] text-inksoft">22:47 · Bereitschaft</div>
+            </motion.div>
+          </motion.div>
+
+          {/* floating: status pill — desktop only */}
+          <motion.div
+            initial={{ opacity: 0, y: 8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ delay: 1.2, duration: 0.5, ease: "easeOut" }}
+            className="absolute -right-2 bottom-28 z-20 hidden lg:block"
+          >
+            <motion.div
+              animate={reduce ? undefined : { y: [0, 6, 0] }}
+              transition={reduce ? undefined : { duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+              className="flex items-center gap-1.5 rounded-full border border-white/10 bg-[#141414]/85 px-2.5 py-1 text-[10px] font-semibold text-inksoft shadow-[0_12px_30px_-12px_rgba(0,0,0,0.8)] backdrop-blur-md"
+            >
+              <Users size={11} className="text-leafbright" strokeWidth={2} />
+              Team informiert
+            </motion.div>
+          </motion.div>
+
+          {/* device frame — real, tall iPhone proportions */}
+          <div className="relative mx-auto w-[200px] sm:w-[240px] lg:w-[290px]">
+            {/* side buttons for realism */}
+            <div className="absolute -left-[2px] top-[110px] h-9 w-[3px] rounded-l-sm bg-[#0c0c0d]" />
+            <div className="absolute -left-[2px] top-[156px] h-14 w-[3px] rounded-l-sm bg-[#0c0c0d]" />
+            <div className="absolute -right-[2px] top-[132px] h-16 w-[3px] rounded-r-sm bg-[#0c0c0d]" />
+
+            <div className="rounded-[46px] bg-gradient-to-b from-[#2b2b2f] via-[#161617] to-[#0b0b0c] p-[4px] shadow-[0_50px_110px_-34px_rgba(0,0,0,0.92)]">
+              <div className="rounded-[43px] bg-[#070707] p-[7px] ring-1 ring-white/[0.05]">
+                <div className="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[36px] border border-white/[0.06] bg-paperdeep px-5 pb-7 pt-4">
+                  {/* camera / notch pill */}
+                  <div className="mx-auto flex h-[26px] w-[78px] items-center justify-center gap-2 rounded-full bg-black">
+                    <span className="h-1.5 w-1.5 rounded-full bg-white/15" />
+                    <span className="h-1 w-7 rounded-full bg-white/10" />
+                  </div>
+
+                  {/* top label */}
+                  <div className="mt-5 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-faint">
+                    Aktiver Anruf
+                  </div>
+
+                  {/* center · incoming call (1 · 2) */}
+                  <div className="flex flex-1 flex-col items-center justify-center text-center">
+                    <span className="flex h-[72px] w-[72px] items-center justify-center rounded-full border border-leafdimline/50 bg-leafdim/40 text-leafbright">
+                      <PhoneIncoming size={30} strokeWidth={1.7} />
+                    </span>
+                    <div className="mt-5 text-[16px] font-semibold text-ink">
+                      Eingehender Anruf
                     </div>
-                    <div className="mt-[5px] flex flex-wrap items-center gap-1.5 text-[12px]">
-                      <span className="text-inksoft">{f.mod}</span>
-                      <ArrowRight size={12} className="shrink-0 text-faint" />
-                      <span className="font-semibold text-leafbright">{f.result}</span>
+                    <div className="mt-1 font-mono text-[12px] tracking-wide text-inksoft">
+                      +49 176 24 •• •••
+                    </div>
+
+                    {/* 3 · status: KI nimmt an */}
+                    <div className="mt-7 flex items-center gap-2 rounded-full border border-leafdimline/50 bg-leafdim/40 px-4 py-2 text-[13px] font-semibold text-leafbright">
+                      <span className="relative flex h-1.5 w-1.5">
+                        {!reduce && (
+                          <motion.span
+                            className="absolute inline-flex h-full w-full rounded-full bg-leafbright"
+                            animate={{ scale: [1, 2.4], opacity: [0.5, 0] }}
+                            transition={{ duration: 1.8, repeat: Infinity, ease: "easeOut" }}
+                          />
+                        )}
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-leafbright" />
+                      </span>
+                      KI nimmt an
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
 
-            {/* footer */}
-            <div className="flex items-center gap-2 border-t border-line bg-paperdeep px-5 py-3">
-              <Lock size={12} className="text-faint" strokeWidth={2} />
-              <span className="text-[11px] text-faint">
-                Teamübergabe erstellt · 1 Rückruf offen
-              </span>
+                  {/* 4 · result: callback note ready */}
+                  <div className="flex items-center justify-center gap-2 rounded-2xl border border-line bg-paper2 py-3 text-[13px] font-medium text-label">
+                    <Check size={15} className="text-leafbright" strokeWidth={2.5} />
+                    Rückrufnotiz bereit
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>

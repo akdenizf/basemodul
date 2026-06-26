@@ -2,7 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import { FileText, ArrowRight, CheckCircle2 } from "lucide-react";
-import { AmbientOrbs } from "./AmbientOrbs";
+import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -28,8 +28,18 @@ export function VisualContextSection() {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, margin: "-80px" }}
-      className="relative bg-paperdeep py-20"
+      className="relative bg-paper pb-12 pt-10 lg:pb-14 lg:pt-12"
     >
+      {/* sanfter Tiefen-Verlauf statt harter paperdeep-Block */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden
+        style={{
+          background:
+            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 45%, transparent 100%)",
+        }}
+      />
+      <FlowGrid />
       <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
