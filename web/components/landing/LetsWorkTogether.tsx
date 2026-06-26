@@ -25,7 +25,7 @@ export function LetsWorkTogether() {
 
           {/* meta row */}
           <div className="relative z-10 mb-8 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">07 — Start</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">08 — Start</span>
             <span className="inline-flex w-fit items-center gap-[7px] rounded-full border border-leafdimline bg-leafdim px-3 py-[5px] text-[11px] font-semibold uppercase tracking-[0.06em] text-leafbright">
               <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
               ein Modul zuerst

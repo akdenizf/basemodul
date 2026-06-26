@@ -1,14 +1,15 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, ArrowDown, Check } from "lucide-react";
+import { ArrowRight, ArrowDown, Check, AlertTriangle } from "lucide-react";
 import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 // Ein einziger, kompakter Ablauf — in 5 Sekunden lesbar.
+// Amber = Dringend-Signal, Grün = erledigt/normal (durchgängig auf der ganzen Seite).
 const STEPS = [
   { text: "Anruf um 22:40" },
   { text: "KI fragt Ort + Problem ab" },
-  { text: "Notdienst erkannt" },
+  { text: "Notdienst erkannt", urgent: true },
   { text: "Bereitschaft informiert", accent: true },
 ];
 
@@ -40,13 +41,14 @@ export function WorkflowSection() {
         {/* Header */}
         <div className="mb-8 max-w-[600px] lg:mb-14">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            Praxisbeispiel — Ablauf in 5 Sekunden
+            02 — Praxisbeispiel
           </span>
           <h2 className="mb-[14px] mt-4 text-[clamp(30px,3.6vw,46px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
             Eingang rein. Modul fragt nach. Aktion raus.
           </h2>
           <p className="text-[16px] leading-[1.7] text-inksoft">
-            Ein echter Ablauf aus dem Betriebsalltag — vom Anruf bis zur Übergabe.
+            Der ganze Ablauf auf einen Blick — in fünf Sekunden erfasst. Den
+            Schritt für Schritt zeigt gleich die Story.
           </p>
         </div>
 
@@ -65,6 +67,8 @@ export function WorkflowSection() {
                 className={`group relative flex-1 overflow-hidden rounded-2xl px-5 py-5 text-center backdrop-blur-md ${
                   s.accent
                     ? "border border-leafbright/40 bg-gradient-to-b from-leaf/20 to-leaf/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_18px_40px_-16px_rgba(34,197,94,0.45)]"
+                    : s.urgent
+                    ? "border border-amber-400/40 bg-gradient-to-b from-amber-400/15 to-amber-400/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_40px_-16px_rgba(251,191,36,0.4)]"
                     : "border border-white/10 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_40px_-20px_rgba(0,0,0,0.7)]"
                 }`}
               >
@@ -75,9 +79,10 @@ export function WorkflowSection() {
                 />
                 <span className="relative flex items-center justify-center gap-2">
                   {s.accent && <Check size={15} className="text-leafbright" strokeWidth={2.6} />}
+                  {s.urgent && <AlertTriangle size={15} className="text-amber-300" strokeWidth={2.4} />}
                   <span
                     className={`text-[14px] font-semibold leading-snug ${
-                      s.accent ? "text-leafbright" : "text-ink"
+                      s.accent ? "text-leafbright" : s.urgent ? "text-amber-300" : "text-ink"
                     }`}
                   >
                     {s.text}

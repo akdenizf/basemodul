@@ -30,7 +30,7 @@ export function IntegrationsSection() {
         <div className="mb-12 flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-[560px]">
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              05 — Anbindung
+              06 — Anbindung
             </span>
             <h2 className="mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
               Es hängt sich an Ihren Alltag — nicht umgekehrt.
