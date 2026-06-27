@@ -1,0 +1,60 @@
+{
+  "_meta": {
+    "description": "BaseModul Outreach Kampagnen-Definitionen",
+    "current_department": "agenteq-outreach",
+    "target_department": "basemodul-outreach",
+    "migration_note": "department-Feld in allen Kampagnen-Einträgen auf basemodul-outreach ändern, sobald AgenteqInbox dieses Department unterstützt.",
+    "callfolio_note": "Keine Callfolio-Kampagnen in diese Datei. Callfolio hat eigene Kampagnenstruktur.",
+    "last_updated": "2026-06-27"
+  },
+  "campaigns": [
+    {
+      "id": "bm-wave-1-shk-munich",
+      "name": "Wave 1 — SHK Notdienst München",
+      "status": "planned",
+      "department": "agenteq-outreach",
+      "target_department": "basemodul-outreach",
+      "segment": "SHK",
+      "region": "München + Umland (80km)",
+      "hook": "A",
+      "module_focus": "Telefon-Modul + Notdienst-Übergabe",
+      "target_leads": 20,
+      "sends_planned": 10,
+      "created_at": "2026-06-27",
+      "send_window": "Mo–Do bevorzugt, Fr vormittags",
+      "notes": "Erste Test-Welle. Pilot-Angebot 750 EUR Setup. Demo-Link basemodul.de."
+    },
+    {
+      "id": "bm-wave-2-kfz-munich",
+      "name": "Wave 2 — Kfz / Sachverständige München",
+      "status": "planned",
+      "department": "agenteq-outreach",
+      "target_department": "basemodul-outreach",
+      "segment": "Kfz / Sachverständige",
+      "region": "München + Umland",
+      "hook": "C",
+      "module_focus": "Foto-&-Datei-Modul / Schaden-Modul",
+      "target_leads": 20,
+      "sends_planned": 10,
+      "created_at": "2026-06-27",
+      "send_window": "Mo–Do bevorzugt",
+      "notes": "Nach Wave 1 starten, wenn Feedback ausgewertet."
+    },
+    {
+      "id": "bm-wave-3-facility-munich",
+      "name": "Wave 3 — Facility / Gebäudereinigung München",
+      "status": "planned",
+      "department": "agenteq-outreach",
+      "target_department": "basemodul-outreach",
+      "segment": "Facility / Gebäudereinigung",
+      "region": "München + Umland",
+      "hook": "B",
+      "module_focus": "WhatsApp-/Chat-Modul + Telefon-Modul",
+      "target_leads": 20,
+      "sends_planned": 10,
+      "created_at": "2026-06-27",
+      "send_window": "Mo–Do bevorzugt",
+      "notes": "Dritte Welle, wenn SHK und Kfz erste Signale geliefert haben."
+    }
+  ]
+}

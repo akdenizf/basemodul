@@ -1,0 +1,12 @@
+{
+  "_meta": {
+    "description": "BaseModul Outreach Lead Store",
+    "current_department": "agenteq-outreach",
+    "target_department": "basemodul-outreach",
+    "migration_note": "department-Feld in allen Einträgen auf basemodul-outreach ändern, sobald AgenteqInbox dieses Department unterstützt. Struktur bleibt identisch.",
+    "callfolio_note": "Kein Callfolio-Lead gehört in diese Datei. Callfolio-Leads liegen in bubbles/01_callfolio/leads.json.",
+    "schema_version": "1.0",
+    "last_updated": "2026-06-27"
+  },
+  "leads": []
+}

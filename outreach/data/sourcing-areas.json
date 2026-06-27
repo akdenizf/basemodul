@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "description": "BaseModul Outreach — Zielregionen und Sourcing-Phasen",
+    "current_department": "agenteq-outreach",
+    "target_department": "basemodul-outreach",
+    "last_updated": "2026-06-27"
+  },
+  "areas": [
+    {
+      "id": "munich-core",
+      "name": "München Kernstadt",
+      "phase": 1,
+      "status": "active",
+      "rationale": "Fatih sitzt in München — lokales Trust-Signal, persönlicher Demo-Termin möglich. Höchste KMU-Dichte in Bayern.",
+      "segments": ["SHK", "Kfz", "Sachverständige", "Facility", "Entrümpelung"],
+      "search_radius_km": 20
+    },
+    {
+      "id": "munich-umland",
+      "name": "München Umland",
+      "phase": 1,
+      "status": "active",
+      "rationale": "Ergänzt Kernstadt, ähnliche Dichte, weiterhin Tagesfahrt möglich.",
+      "segments": ["SHK", "Kfz", "Handwerk"],
+      "search_radius_km": 80,
+      "cities": ["Augsburg", "Ingolstadt", "Landshut", "Rosenheim", "Freising", "Dachau", "Erding"]
+    },
+    {
+      "id": "bavaria",
+      "name": "Bayern (gesamt)",
+      "phase": 2,
+      "status": "planned",
+      "rationale": "Phase 2 nach erstem Signal aus Phase 1. Nürnberg, Würzburg, Regensburg.",
+      "segments": ["SHK", "Kfz", "Facility"],
+      "notes": "Start wenn ≥ 2 Pilot-Abschlüsse aus Phase 1."
+    },
+    {
+      "id": "dach",
+      "name": "DACH",
+      "phase": 3,
+      "status": "planned",
+      "rationale": "Phase 3 nach bewiesenem Playbook aus Bayern.",
+      "segments": ["SHK", "Kfz", "Facility", "Entrümpelung"],
+      "notes": "Österreich und Schweiz nur mit Recherche zur lokalen Regulatorik."
+    }
+  ]
+}
