@@ -41,7 +41,7 @@ export function WorkflowSection() {
         {/* Header */}
         <div className="mb-8 max-w-[600px] lg:mb-14">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            02 — Praxisbeispiel
+Praxisbeispiel
           </span>
           <h2 className="mb-[14px] mt-4 text-[clamp(30px,3.6vw,46px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
             Eingang rein. Modul fragt nach. Aktion raus.

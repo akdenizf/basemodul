@@ -48,7 +48,7 @@ export function VisualContextSection() {
           <div className="flex flex-col gap-8">
             <motion.div variants={item}>
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-                05 — Foto & Datei
+                06 — Foto & Datei
               </p>
               <h2 className="text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-ink sm:text-[46px]">
                 Wenn nach dem Anruf ein Foto fehlt,{" "}

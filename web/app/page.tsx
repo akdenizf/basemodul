@@ -1,7 +1,9 @@
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/landing/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { ProblemSection } from "@/components/landing/ProblemSection";
 import { ModulesSection } from "@/components/landing/ModulesSection";
+import { UseCasesSection } from "@/components/landing/UseCasesSection";
 import { WorkflowSection } from "@/components/landing/WorkflowSection";
 import { ScrollStorySection } from "@/components/landing/ScrollStorySection";
 import { StorySeam } from "@/components/landing/StorySeam";
@@ -24,8 +26,11 @@ export default function LandingPage() {
       <Navbar />
       <main className="flex-1 pt-[60px]">
         <HeroSection />
+        <ProblemSection />
         <StorySeam />
         <ModulesSection />
+        <StorySeam />
+        <UseCasesSection />
         <StorySeam />
         <WorkflowSection />
         <StorySeam />

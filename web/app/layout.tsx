@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "basemodul.de — KI-Telefonassistent für Servicebetriebe",
+  title: "basemodul.de — Anfragen strukturieren. Übergaben automatisieren.",
   description:
     "KI-Telefonassistent für Servicebetriebe: Anrufe entgegennehmen, fehlende Infos abfragen und Rückrufnotizen, Termine oder Notfälle sauber ans Team übergeben.",
   icons: {

@@ -242,7 +242,7 @@ export function LiveDemoSection() {
           {/* Left — copy + scenario picker */}
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              04 — Demo · Beispielanruf
+              05 — Demo · Beispielanruf
             </span>
             <h2 className="mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
               Hören Sie einen <span className="text-leafaccent">echten Ablauf</span>.

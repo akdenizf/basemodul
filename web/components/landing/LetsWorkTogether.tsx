@@ -25,7 +25,7 @@ export function LetsWorkTogether() {
 
           {/* meta row */}
           <div className="relative z-10 mb-8 flex flex-col gap-2.5 sm:flex-row sm:items-center sm:justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">08 — Start</span>
+            <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">09 — Start</span>
             <span className="inline-flex w-fit items-center gap-[7px] rounded-full border border-leafdimline bg-leafdim px-3 py-[5px] text-[11px] font-semibold uppercase tracking-[0.06em] text-leafbright">
               <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
               ein Modul zuerst
@@ -36,11 +36,11 @@ export function LetsWorkTogether() {
             {/* Left — copy + CTA */}
             <div>
               <h2 className="text-[clamp(30px,3.5vw,46px)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
-                Telefonannahme testen?
+                Bereit für saubere Anfragen?
               </h2>
               <p className="mt-[18px] max-w-[520px] text-[16px] leading-[1.7] text-inksoft">
-                Wir schauen in 30 Minuten, ob die Telefonannahme mit BaseModul
-                für Ihren Betrieb passt. Kein Komplettsystem, kein Vertrag im
+                Lassen Sie uns in 30 Minuten prüfen, welches Modul Ihrem Betrieb
+                sofort Zeit spart. Kein Komplettsystem, kein Vertrag im
                 Erstgespräch.
               </p>
 
@@ -48,7 +48,7 @@ export function LetsWorkTogether() {
                 onClick={() => window.open(CAL_LINK, "_blank")}
                 className="group mt-[30px] inline-flex items-center gap-2 rounded-lg bg-leafbtn px-7 py-3.5 text-[15px] font-bold text-white transition-all duration-200 hover:-translate-y-px hover:bg-leafbtnhover"
               >
-                Telefon-Demo anfragen
+                Termin vereinbaren
                 <ArrowUpRight
                   size={16}
                   className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

@@ -36,9 +36,9 @@ interface Step {
 const STEPS: Step[] = [
   {
     id: 1,
-    label: "Anruf kommt rein",
-    heading: "Das Telefon klingelt — niemand ist da.",
-    body: "BaseModul nimmt den Anruf an, begrüßt den Anrufer und erkennt das Anliegen. Kein Anrufbeantworter, keine Warteschleife.",
+    label: "Anfrage kommt rein",
+    heading: "Eine Anfrage trifft ein — niemand ist da.",
+    body: "BaseModul nimmt den Kontakt an, egal ob Telefon oder WhatsApp, begrüßt den Kunden und erkennt das Anliegen. Kein Anrufbeantworter, keine leere Chat-Box.",
   },
   {
     id: 2,
@@ -61,7 +61,7 @@ const STEPS: Step[] = [
   {
     id: 5,
     label: "Team informiert",
-    heading: "Das Team sieht alles — kein Anruf verpasst.",
+    heading: "Das Team sieht alles — keine Anfrage verpasst.",
     body: "Per E-Mail, Sheet oder WhatsApp: die Übergabe landet dort, wo das Team bereits arbeitet. Sofort einsatzbereit.",
   },
 ];
@@ -102,7 +102,7 @@ function StoryPhone({ step, compact = false }: { step: number; compact?: boolean
   const statusText = amber ? "#FCD34D" : "#4ADE80";
 
   return (
-    <div className={`relative mx-auto ${compact ? "w-[160px] sm:w-[180px]" : "w-[240px] lg:w-[268px]"}`}>
+    <div className={`relative mx-auto ${compact ? "w-[190px] sm:w-[210px]" : "w-[240px] lg:w-[268px]"}`}>
       {/* ambient glow */}
       <div
         className="pointer-events-none absolute -inset-12 -z-10"
@@ -386,11 +386,26 @@ function useActiveIndex(rawIndex: MotionValue<number>) {
   return activeIndex;
 }
 
+/* ── lg-Breakpoint (≥1024px), damit die Scroll-Höhe nur Desktop trifft ──── */
+
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+  return isDesktop;
+}
+
 /* ── Main component ─────────────────────────────────────────────────────── */
 
 export function ScrollStorySection() {
   const containerRef = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
+  const isDesktop = useIsDesktop();
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -406,7 +421,11 @@ export function ScrollStorySection() {
       ref={containerRef}
       id="how-it-works"
       aria-label="Wie BaseModul arbeitet"
-      style={{ minHeight: `${STEPS.length * 58}dvh` }}
+      // Desktop drives the sticky scroll-story via a tall container; mobile must
+      // stay at its natural content height, otherwise the timeline is followed
+      // by a huge empty block. The height is derived from STEPS.length and only
+      // applied ≥lg — so adding a step scales the scroll distance automatically.
+      style={isDesktop ? { minHeight: `${STEPS.length * 58}dvh` } : undefined}
       className="relative bg-paper"
     >
       {/* ── Desktop: sticky two-column layout ── */}
@@ -416,7 +435,7 @@ export function ScrollStorySection() {
           {/* Eyebrow — absolute top left */}
           <div className="absolute left-10 top-10 z-10">
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              03 — Wie es funktioniert
+              04 — Wie es funktioniert
             </span>
           </div>
 
@@ -455,7 +474,7 @@ export function ScrollStorySection() {
         {/* Right — step callouts */}
         <div className="flex h-full w-1/2 flex-col justify-center gap-0 overflow-hidden px-12 py-20">
           <h2 className="mb-10 text-[clamp(28px,2.8vw,38px)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
-            Ein Anruf. Fünf Schritte.
+            Eine Anfrage. Fünf Schritte.
             <br />
             <span className="text-inksoft">Nichts geht verloren.</span>
           </h2>
@@ -482,13 +501,13 @@ export function ScrollStorySection() {
       </div>
 
       {/* ── Mobile: phone anchor + compact step timeline ── */}
-      <div className="px-6 pb-12 pt-8 lg:hidden">
+      <div className="px-6 pb-14 pt-10 lg:hidden">
         <div className="mb-6 text-center">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            03 — Wie es funktioniert
+            04 — Wie es funktioniert
           </span>
           <h2 className="mt-4 text-[clamp(28px,7.5vw,38px)] font-bold leading-[1.1] tracking-[-0.025em] text-ink">
-            Ein Anruf. Fünf Schritte.
+            Eine Anfrage. Fünf Schritte.
             <br />
             <span className="text-inksoft">Nichts geht verloren.</span>
           </h2>

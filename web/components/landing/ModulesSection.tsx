@@ -52,10 +52,10 @@ function RueckrufNotiz() {
 /* ── Erweiterungen — nur kompakte Pills ────────────────────────────────── */
 
 const extensions: { Icon: LucideIcon; name: string; hint: string }[] = [
-  { Icon: Siren, name: "Notdienst", hint: "Dringend eskalieren" },
-  { Icon: CalendarCheck2, name: "Termin", hint: "Wunschzeit & Slot" },
-  { Icon: MessageSquare, name: "WhatsApp", hint: "Rückfragen & Fotos" },
-  { Icon: Camera, name: "Foto / Datei", hint: "Upload nachreichen" },
+  { Icon: Siren, name: "Notdienst-Modul", hint: "Hohe Dringlichkeit → Bereitschaft alarmieren" },
+  { Icon: CalendarCheck2, name: "Termin-Modul", hint: "Leistung & Wunschzeit im Vorfeld klären" },
+  { Icon: MessageSquare, name: "WhatsApp-Modul", hint: "Chat-Anfragen sortieren & bündeln" },
+  { Icon: Camera, name: "Foto- & Datei-Modul", hint: "Bilder & Dokumente gezielt anfordern" },
 ];
 
 export function ModulesSection() {
@@ -68,17 +68,17 @@ export function ModulesSection() {
           {/* Left — intro */}
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              01 — Die Module
+              02 — Die Module
             </span>
             <h2 className="mt-4 mb-5 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-              Telefon zuerst.<br />Erweiterungen, wenn es mehr braucht.
+              Ein Baukasten für<br />Ihre Anfragen.
             </h2>
             <p className="max-w-[360px] text-[16px] leading-[1.7] text-inksoft">
-              Sie starten mit der Telefonannahme. Alles andere wird optional angeschlossen.
+              Starten Sie mit einem Modul. Kombinieren Sie, was Ihr Betrieb braucht.
             </p>
             <span className="mt-7 inline-flex items-center gap-[7px] rounded-full border border-leafdimline bg-leafdim px-3 py-[5px] text-[11px] font-semibold uppercase tracking-[0.06em] text-leafbright">
               <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
-              Eingang → Modul → Aktion
+              Eingang → Modul → Übergabe
             </span>
           </div>
 
@@ -98,12 +98,9 @@ export function ModulesSection() {
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2.5">
                     <h3 className="text-[18px] font-bold text-ink">Telefon-Modul</h3>
-                    <span className="rounded-full border border-leafdimline bg-leafdim px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.06em] text-leafbright">
-                      Kern
-                    </span>
                   </div>
                   <p className="mt-1 text-[13px] leading-snug text-inksoft">
-                    Nimmt Anrufe an, erkennt das Anliegen, sichert Kontakt und Standort.
+                    Nimmt Anrufe an, erkennt das Anliegen und sichert Kontaktdaten sowie den Standort.
                   </p>
                 </div>
               </div>
@@ -118,7 +115,7 @@ export function ModulesSection() {
             <motion.div variants={rowV} className="mt-5">
               <p className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
                 <Plus size={12} strokeWidth={2} className="text-leafbright" />
-                Erweiterungen · optional anschließbar
+                Weitere Module · flexibel kombinierbar
               </p>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {extensions.map((e) => (
