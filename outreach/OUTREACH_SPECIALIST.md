@@ -1,7 +1,7 @@
 # BaseModul — Outreach Specialist Agent
 
 > Hermes/Claude-Code-Kontext für systematischen BaseModul-Outreach an KMU/Servicebetriebe.
-> Stand: 2026-06-27
+> Stand: 2026-07-07 (v2)
 
 ## Department (Migration)
 
@@ -95,18 +95,21 @@ created_at, last_updated_at, notes
 - Eine einfache Frage am Ende
 - Kein Massenmail-Template — jede Mail personalisiert
 
-### Outreach-Cadence (max. 4 Touchpoints)
+### Outreach-Cadence (max. 3 Touchpoints)
 
 | Tag | Aktion | Kanal |
 |---|---|---|
 | Tag 0 | Hook-E-Mail (je nach stärkstem Signal) | E-Mail |
-| Tag 4 | Follow-up: ein Satz + Demo-Link | E-Mail |
-| Tag 9 | LinkedIn Connection + kurze persönliche Notiz | LinkedIn (optional) |
-| Tag 14 | Breakup-Mail: „Kein Interesse? Kein Problem." | E-Mail |
+| Tag 4 | Follow-up: kurze Nachfrage + Telefon-Angebot | E-Mail |
+| Tag 7 | LinkedIn-Verbindungsanfrage (optional, manuell) | LinkedIn |
+| Tag 14 | Breakup-Mail: konkretes Branchenbeispiel | E-Mail |
 
 Sofort stoppen bei „Kein Interesse" (UWG/DSGVO-konform).
 
-→ Konkrete Templates: `outreach/knowledge-base/email_templates.md`
+→ Konkrete Templates: `outreach/knowledge-base/email_templates.md` (v2)
+→ Outreach-Formel und Hook-Auswahlregel: `AgenteqHQ/docs/basemodul-outreach/OUTREACH_FORMULA.md`
+→ Quality Gates und Verbotsliste: `AgenteqHQ/docs/basemodul-outreach/QUALITY_GATES.md`
+→ Follow-up-Policy und Cadence-Details: `AgenteqHQ/docs/basemodul-outreach/FOLLOWUP_POLICY.md`
 
 ---
 
@@ -133,7 +136,7 @@ curl -sS "http://localhost:3000/api/outreach-status?department=agenteq-outreach&
 Nach Migration nur `agenteq-outreach` durch `basemodul-outreach` ersetzen.
 
 Guard-Matrix und Reply-Intent-Logik:
-`/Users/user/Desktop/Projects/AgenteqHQ/docs/agenteq-outreach/MORNING_OUTREACH_CHECK.md`
+`AgenteqHQ/docs/agenteq-outreach/MORNING_OUTREACH_CHECK.md` (shared policy)
 
 ---
 
@@ -179,7 +182,7 @@ Mo–Do bevorzugt · Fr nur vormittags · Sa nur Ausnahme + explizites Fatih-Go 
 1. Send-Log schreiben: `outreach/reports/<datum>-<campaign>-send-log.md`
 2. Lead Store aktualisieren: `outreach/data/leads.json`
 3. `InboxOutboundRecord` exportieren mit `department=agenteq-outreach`
-   → `/Users/user/Desktop/Projects/Outreach-Agent/data/inbox-outbound.json`
+   → lokaler Outreach-Agent: `data/inbox-outbound.json`
 4. Mission Control aktualisieren: `mission-control/TODAY.md` im AgenteqHQ-Repo
 
 ---
@@ -193,5 +196,8 @@ Mo–Do bevorzugt · Fr nur vormittags · Sa nur Ausnahme + explizites Fatih-Go 
 - `outreach/knowledge-base/competitor_intel.md`
 - `outreach/data/leads.json` · `campaigns.json` · `sourcing-areas.json`
 - `docs/hermes/SOUL.basemodul.md`
-- `/Users/user/Desktop/Projects/AgenteqHQ/docs/agenteq-outreach/SEND_TIMING_POLICY.md`
-- `/Users/user/Desktop/Projects/AgenteqHQ/docs/agenteq-outreach/MORNING_OUTREACH_CHECK.md`
+- `AgenteqHQ/docs/basemodul-outreach/OUTREACH_FORMULA.md` — Hook-Typen, Beispiele, Tonalität
+- `AgenteqHQ/docs/basemodul-outreach/QUALITY_GATES.md` — Verbotsliste und Qualitätsprüfung
+- `AgenteqHQ/docs/basemodul-outreach/FOLLOWUP_POLICY.md` — Cadence und Follow-up-Templates
+- `AgenteqHQ/docs/agenteq-outreach/SEND_TIMING_POLICY.md` — Send-Timing (shared policy)
+- `AgenteqHQ/docs/agenteq-outreach/MORNING_OUTREACH_CHECK.md` — Guard-Matrix (shared policy)
