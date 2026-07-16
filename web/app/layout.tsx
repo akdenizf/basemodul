@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   description:
     "KI-Telefonassistent für Servicebetriebe: Anrufe entgegennehmen, fehlende Infos abfragen und Rückrufnotizen, Termine oder Notfälle sauber ans Team übergeben.",
   icons: {
-    icon: "/icon.svg?v=2",
-    shortcut: "/icon.svg?v=2",
-    apple: "/icon.svg?v=2",
+    icon: "/icon.svg?v=3",
+    shortcut: "/icon.svg?v=3",
+    apple: "/icon.svg?v=3",
   },
 };
 
