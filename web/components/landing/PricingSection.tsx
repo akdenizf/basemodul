@@ -20,12 +20,12 @@ const offers = [
     price: "ab 750 €",
     note: "Setup",
     features: [
-      "30-Minuten-Check zur Telefonannahme",
-      "ein Modul als Testflow",
-      "Demo oder eigene Testnummer einrichten",
-      "Übergabe per E-Mail, Sheet oder WhatsApp",
+      "ein Eingangskanal: Telefon, WhatsApp, Formular oder Foto",
+      "ein Beispiel-Flow mit Rückfragelogik",
+      "eine Übergabe ans Team: E-Mail, Sheet oder WhatsApp",
+      "Test mit realistischen Fällen",
     ],
-    cta: "Pilot besprechen",
+    cta: "30-Minuten-Check buchen",
     highlighted: true,
   },
   {
@@ -38,7 +38,7 @@ const offers = [
       "Eskalations- und Rückfragelogik",
       "monatliche Betreuung nach Umfang",
     ],
-    cta: "Modul planen",
+    cta: "30-Minuten-Check buchen",
     highlighted: false,
   },
   {
@@ -51,7 +51,7 @@ const offers = [
       "individuelle Regeln und Reporting",
       "persönliche Umsetzung mit AGENTEQ",
     ],
-    cta: "Anfrage senden",
+    cta: "30-Minuten-Check buchen",
     highlighted: false,
   },
 ];
@@ -70,14 +70,14 @@ export function PricingSection() {
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <motion.div variants={item} className="mb-14 max-w-[620px]">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            08 — Pilot
+            09 — Pilot
           </span>
           <h2 className="mb-[18px] mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-            Erst ein Modul testen. Dann entscheiden.
+            30-Minuten-Check. Ein Eingangskanal. Ein sauberer Pilot.
           </h2>
           <p className="text-[16px] leading-[1.7] text-inksoft">
-            Kein SaaS-Abo im Erstgespräch. Wir bauen einen schlanken Piloten,
-            testen ihn mit realistischen Fällen — und Sie entscheiden danach.
+            Kein SaaS-Abo im Erstgespräch. Ein schlanker Pilot, echte Fälle,
+            dann entscheiden Sie.
           </p>
         </motion.div>
 

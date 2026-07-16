@@ -15,7 +15,7 @@ nicht von der Landing importiert. Nicht löschen — Basis für den echten Pilot
 | `app/api/` | alle Backend-Routes (Vapi, Twilio, Resend, Supabase, Admin) |
 | `app/t · app/upload · app/order` | öffentliche Ticket-/Upload-Flows |
 | `components/` | Dashboard-/Admin-/Tenant-Komponenten + `ui/` (shadcn) |
-| `components/landing/` | ungenutzte Landing-Teile (Vapi-`LiveCallExperience` u.a.) |
+| `components/landing/` | ungenutzte Landing-Teile (Vapi-`LiveCallExperience` u.a.; `ScrollStorySection` seit der Choreografie 2026-07-16 geparkt — telefon-only Sticky-Story, wiederverwendbar für eine spätere SHK/Notdienst-Branchen-Landing) |
 
 ## Reaktivieren (für echten Piloten)
 

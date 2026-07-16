@@ -44,34 +44,34 @@ export function HeroSection() {
 
           {/* Headline */}
           <h1 className="mt-5 text-[clamp(36px,10.2vw,68px)] font-extrabold leading-[1.06] tracking-[-0.035em] text-ink sm:mt-6">
-            <span className="block">Aus chaotischen Anfragen werden</span>
-            <span className="block text-green-400">fertige Arbeitsaufträge.</span>
+            <span className="block">Weniger Telefonchaos.</span>
+            <span className="block text-green-400">Mehr vollständige Anfragen.</span>
           </h1>
 
           {/* Lead */}
           <p className="mt-5 max-w-[520px] text-[16px] leading-[1.62] text-[#A1A1AA] sm:mt-6 sm:text-[18px] sm:leading-[1.7]">
-            BaseModul nimmt Anfragen über Telefon oder WhatsApp an, fragt gezielt
-            fehlende Informationen ab und übergibt Ihrem Team einen sauber
-            strukturierten Fall. Kein Ping-Pong, keine verpassten Details.
+            BaseModul nimmt Anrufe, WhatsApp-Nachrichten, Formulare und Fotos
+            entgegen, fragt fehlende Infos ab und übergibt alles sauber an Ihr
+            Team.
           </p>
 
           {/* CTA row */}
           <div className="mt-7 flex flex-col items-stretch gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3.5">
             <a
-              href="#livedemo"
+              href="#cta"
               className="group inline-flex items-center justify-center gap-2 rounded-lg bg-leafbtn px-7 py-3.5 text-[15px] font-bold text-white transition-all duration-200 hover:bg-leafbtnhover hover:-translate-y-px"
             >
-              System live testen
+              30-Minuten-Check buchen
               <ArrowUpRight
                 size={16}
                 className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </a>
             <a
-              href="#modules"
+              href="#beispiel"
               className="inline-flex items-center justify-center rounded-lg border border-[#444] px-7 py-3.5 text-[15px] font-semibold text-[#D4D4D8] transition-all duration-200 hover:border-[#666] hover:text-white hover:bg-white/[0.04]"
             >
-              Module ansehen
+              Beispiel-Vorgang ansehen
             </a>
             <span className="flex items-center gap-[7px] text-[12px] text-faint">
               <Lock size={14} strokeWidth={2} />
@@ -91,9 +91,9 @@ export function HeroSection() {
             }}
           />
 
-          {/* floating: callback note — desktop only */}
+          {/* floating: callback note — desktop only, Vorgeschmack auf #beispiel */}
           <div className="absolute -left-4 top-20 z-20 hidden lg:block">
-            <div className="w-[170px] rounded-xl border border-white/10 bg-[#141414]/85 p-3 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.85)] backdrop-blur-md">
+            <div className="w-[188px] rounded-xl border border-white/10 bg-[#141414]/85 p-3 shadow-[0_18px_40px_-16px_rgba(0,0,0,0.85)] backdrop-blur-md">
               <div className="mb-1.5 flex items-center gap-1.5 text-[9px] font-semibold uppercase tracking-[0.1em] text-faint">
                 <span className="h-1 w-1 rounded-full bg-leafbright" />
                 Rückrufnotiz
@@ -101,7 +101,7 @@ export function HeroSection() {
               <div className="text-[12px] font-semibold leading-snug text-ink">
                 Heizungsausfall · Rückruf gewünscht
               </div>
-              <div className="mt-1 font-mono text-[10px] text-inksoft">22:47 · Bereitschaft</div>
+              <div className="mt-1.5 font-mono text-[10px] text-inksoft">22:47 · Bereitschaft</div>
             </div>
           </div>
 
@@ -156,10 +156,10 @@ export function HeroSection() {
                     </div>
                   </div>
 
-                  {/* 4 · result: callback note ready */}
+                  {/* 4 · result: case ready */}
                   <div className="flex items-center justify-center gap-2 rounded-2xl border border-line bg-paper2 py-3 text-[13px] font-medium text-label">
                     <Check size={15} className="text-leafbright" strokeWidth={2.5} />
-                    Rückrufnotiz bereit
+                    Vorgang bereit
                   </div>
                 </div>
               </div>

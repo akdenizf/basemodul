@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { FileText, ArrowRight, CheckCircle2 } from "lucide-react";
+import { FileText, ArrowRight, CheckCircle2, Camera, HelpCircle } from "lucide-react";
 import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 const container: Variants = {
@@ -14,10 +14,12 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 24 } },
 };
 
-const BULLETS = [
-  "Upload-Link per SMS oder Chat nach dem Anruf versandt",
-  "Foto, Kontakt und Kontext zusammengeführt",
-  "Strukturierte Übergabe für die Bearbeitung",
+// Der 3-Schritt-Ablauf statt generischer Bullets — kanal-agnostisch
+// (Anruf, WhatsApp oder Formular), max. 3 Punkte pro Kompaktheits-Regel.
+const STEPS = [
+  { Icon: Camera, text: "Foto kommt unvollständig rein" },
+  { Icon: HelpCircle, text: "BaseModul fragt gezielt nach" },
+  { Icon: CheckCircle2, text: "Team bekommt vollständigen Vorgang" },
 ];
 
 export function VisualContextSection() {
@@ -48,30 +50,41 @@ export function VisualContextSection() {
           <div className="flex flex-col gap-8">
             <motion.div variants={item}>
               <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-                06 — Foto & Datei
+                07 — Foto & Datei
               </p>
               <h2 className="text-[38px] font-bold leading-[1.08] tracking-[-0.025em] text-ink sm:text-[46px]">
-                Wenn nach dem Anruf ein Foto fehlt,{" "}
-                <span className="text-inksoft">fragt das Modul nach.</span>
+                Wenn ein Foto fehlt,{" "}
+                <span className="text-inksoft">fragt BaseModul nach.</span>
               </h2>
             </motion.div>
 
             <motion.p variants={item} className="max-w-md text-[16px] leading-[1.7] text-inksoft">
-              Oft fehlt nach dem Anruf noch ein Bild oder Dokument. Das Modul
-              sendet einen Upload-Link, verbindet Foto, Kontakt und Kontext und
-              legt alles als klare Übergabe für das Team bereit.
+              BaseModul sammelt Fotos, Dokumente und fehlende Angaben ein —
+              und übergibt alles mit Kontakt, Kontext und nächstem Schritt ans Team.
             </motion.p>
 
             <motion.ul variants={item} className="flex flex-col gap-4">
-              {BULLETS.map((text) => (
-                <li key={text} className="flex items-center gap-3.5">
+              {STEPS.map((s) => (
+                <li key={s.text} className="flex items-center gap-3.5">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-[8px] border border-[rgba(22,163,74,0.35)] bg-[rgba(22,163,74,0.08)]">
-                    <CheckCircle2 size={15} className="text-leaf" strokeWidth={2} />
+                    <s.Icon size={15} className="text-leaf" strokeWidth={2} />
                   </span>
-                  <span className="text-[15px] font-medium text-inksoft">{text}</span>
+                  <span className="text-[15px] font-medium text-inksoft">{s.text}</span>
                 </li>
               ))}
             </motion.ul>
+
+            <motion.a
+              variants={item}
+              href="#beispiel"
+              className="group inline-flex w-fit items-center gap-1.5 text-[14px] font-semibold text-inksoft transition-colors hover:text-ink"
+            >
+              Beispiel ansehen
+              <ArrowRight
+                size={15}
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+              />
+            </motion.a>
           </div>
 
           {/* Right: Übergabekarte */}
@@ -102,9 +115,9 @@ export function VisualContextSection() {
               <div className="grid sm:grid-cols-2">
                 {/* Left col — details */}
                 <div className="border-b border-line p-5 sm:border-b-0 sm:border-r">
-                  <h4 className="mb-1 text-[14px] font-bold text-ink">Anfrage mit Anhang</h4>
+                  <h4 className="mb-1 text-[14px] font-bold text-ink">Kfz-Schadenfall</h4>
                   <p className="mb-4 text-[12px] text-inksoft">
-                    Thomas M. · Rückruf gewünscht · heute 14:30
+                    Thomas M. · per WhatsApp · heute 14:30
                   </p>
 
                   <div className="rounded-[8px] border-l-2 border-leaf/40 bg-paper pl-3 pr-2 py-3">
@@ -112,16 +125,16 @@ export function VisualContextSection() {
                       Notiz vom Modul
                     </p>
                     <p className="text-[12px] leading-relaxed text-inksoft">
-                      Kunde sendet einen Anhang mit kurzer Nachricht. Modul fragt
-                      fehlende Angaben ab und bündelt alles für die Bearbeitung.
+                      Kunde sendet Fotos per WhatsApp. Modul fragt Fahrzeugschein
+                      und Kurzbeschreibung nach.
                     </p>
                   </div>
 
                   <div className="mt-4 flex flex-col gap-2.5">
                     {[
-                      { label: "Typ", value: "Rückfrage", tone: "neutral" },
-                      // Amber bleibt dem Dringend-Fall vorbehalten; "Normal" ruhig in Grün.
-                      { label: "Priorität", value: "Normal", tone: "ok" },
+                      { label: "Anhänge", value: "2 Fotos + Fahrzeugschein", tone: "neutral" },
+                      // Amber bleibt dem Dringend-Fall vorbehalten; "vorbereitet" ruhig in Grün.
+                      { label: "Rückruf", value: "vorbereitet", tone: "ok" },
                     ].map((tag) => (
                       <div
                         key={tag.label}
@@ -157,7 +170,7 @@ export function VisualContextSection() {
                         <FileText size={17} strokeWidth={2} />
                       </span>
                       <div>
-                        <p className="text-[12px] font-bold text-ink">Anhang_Foto.jpg</p>
+                        <p className="text-[12px] font-bold text-ink">Schaden_Foto.jpg</p>
                         <p className="mt-0.5 text-[10px] text-faint">vom Kunden hochgeladen</p>
                       </div>
                     </div>
@@ -178,7 +191,7 @@ export function VisualContextSection() {
                 <ArrowRight size={15} className="text-leaf" />
                 <p className="text-[12px] font-medium text-inksoft">
                   Nächster Schritt:{" "}
-                  <span className="font-bold text-ink">Rückrufnotiz ans Team</span>
+                  <span className="font-bold text-ink">Vorgang ans Team</span>
                 </p>
               </div>
             </div>

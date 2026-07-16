@@ -7,10 +7,17 @@ Alle gerenderten Landing-Bausteine. Reihenfolge wird in
 
 ## Sektions-Reihenfolge (page.tsx)
 
-`Navbar → HeroSection → TrustSection → PainSection → ModulesSection →
-HowItWorksSection → LiveDemoSection → SelfOnboardingSection → VisualContextSection →
-RoiSection → IntegrationsSection → PricingSection → LetsWorkTogether →
-FaqSection → Footer → FloatingCta`
+Dramaturgie: **Pain → fertiger Vorgang → Beispiele → Module → Demo → Pilot**
+(Entscheidung: [`docs/content/basemodul-landing-choreography-2026-07-16.md`](../../../docs/content/basemodul-landing-choreography-2026-07-16.md))
+
+`Navbar → HeroSection → RequestArtifactSection (#beispiel) → ProblemSection →
+StorySeam → UseCasesSection → ModulesSection → WorkflowSection → StorySeam →
+LiveDemoSection → VisualContextSection → IntegrationsSection → StorySeam →
+PricingSection → FaqSection → LetsWorkTogether → Footer → FloatingCta`
+
+StorySeam bewusst nur an den drei großen Nähten. `ScrollStorySection` ist nach
+[`../../_parked/components/landing/`](../../_parked/CLAUDE.md) geparkt
+(Dopplung mit Workflow + RequestArtifact, telefon-only Visual).
 
 ## Design-Identität: "Dark Premium" (verbindlich)
 
@@ -38,28 +45,33 @@ Die Landing ist auf **basemodul.de** gedreht:
 
 - Hauptmarke: basemodul.de
 - Trust/Absender: ein Produkt von AGENTEQ
-- Positionierung: **KI-Telefonassistent für Servicebetriebe**
-- Voice/Telefon ist die Speerspitze
-- Module sind Erweiterungen rund um die Telefonannahme: Notdienst, Termin,
-  WhatsApp, Foto/Schaden, Integrationen
-- SHK/Kältetechnik/Facility sind bewusst naheliegende Beispielbranchen
+- Positionierung: **Anfrage-/Intake-System für Servicebetriebe** — Telefon,
+  WhatsApp, Formulare und Fotos werden zu vollständigen Vorgängen
+- Telefon ist der häufigste erste Einstieg (Speerspitze), aber nicht der
+  ganze Produktkern — kein „KI-Telefonassistent"-Only-Framing
+- **`RequestArtifactSection`** (`#beispiel`) ist der zentrale Proof: der
+  vollständige Vorgang direkt nach dem Hero (Logo-/Testimonial-Ersatz)
+- SHK/Kälte, Kfz/Gutachter, Entrümpelung/Reinigung sind die Beispielbranchen
 - Design nicht überoptimieren; Copy, Struktur und Demo-Logik stabil halten
 
 ## Wichtige Eigenheiten
 
 - **`LiveDemoSection`** ist self-contained (Audio/Transkript-Player, **kein
   Backend/Vapi**) und in `page.tsx` als `dynamic` mit **`ssr: false`** geladen —
-  daher nicht im Server-HTML, rendert nur clientseitig.
-- **`ModulesSection`** erklärt die Erweiterungen nach der Telefonannahme.
-  Beispiele sollen technisch/service-nah bleiben und nicht in eine reine
-  Branchen-SaaS-Spur kippen.
-- Hero-Button „Demo ansehen" scrollt zu `#livedemo` (kein echtes Vapi mehr).
-- Ungenutzte Legacy-Komponenten (Vapi-`LiveCallExperience`, `UseCasesSection`,
-  `ProductShowcase`, `FinalCtaSection`) liegen in
+  daher nicht im Server-HTML, rendert nur clientseitig. Copy sagt ehrlich
+  „Beispiel-Vorgang", nie „echter Ablauf"/„Live".
+- **`ModulesSection`** zeigt den Baukasten: Telefon als „Häufigster Einstieg",
+  die weiteren Module gleichwertig als Wege zum selben Output (Vorgang).
+- Hero-CTAs: primär „30-Minuten-Check buchen" → `#cta`, sekundär
+  „Beispiel-Vorgang ansehen" → `#beispiel`.
+- Ungenutzte Legacy-Komponenten (Vapi-`LiveCallExperience`, `UseCasesSection`
+  (alt), `ProductShowcase`, `FinalCtaSection`, `ScrollStorySection`) liegen in
   [`../../_parked/components/landing/`](../../_parked/CLAUDE.md).
 
 ## Konvention
 
-CTA-Text weiterhin schlank halten, z. B. **„Demo anfragen"** oder
-**„Telefonannahme testen"**. Kein KI-Buzzword-Framing — Benefit zuerst
-(Anrufe annehmen, Rückrufnotizen erstellen, Notfälle erkennen).
+Ein Conversion-Ziel: alle primären CTAs führen zu `#cta` (dort Cal-Link).
+Vokabular fixiert: **„30-Minuten-Check buchen"** (primär),
+**„Beispiel-Vorgang ansehen"** (sekundär). „Demo anfragen" ist raus — die Demo
+ist auf der Seite. Kein KI-Buzzword-Framing, kein „klingt wie ein Mensch",
+keine erfundenen Trust-Signale; Notfälle werden informiert, nicht entschieden.

@@ -1,31 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Siren, Car, Trash2, X, Check } from "lucide-react";
+import { X, Check } from "lucide-react";
 
+// Scanability: pro Card 1 dominantes Emoji als Kategorie-Marker (dekorativ,
+// aria-hidden — das Textlabel daneben trägt die Information). Max. 2
+// Vorher-/Mit-BaseModul-Bullets — die Guard-Aussage ("Team entscheidet")
+// steckt direkt in den Bullets, kein zusätzliches Accordion nötig.
 const CASES = [
   {
-    Icon: Siren,
+    emoji: "🚨",
     tag: "SHK / Kälte / Notdienst",
     scenario: "Heizungsausfall um 22:13 Uhr.",
-    before: "Anruf geht auf die Mailbox, Kunde ist frustriert.",
-    after: "Das Telefon-Modul nimmt ab, erkennt den Notfall, fragt die Adresse ab und meldet sofort an die Bereitschaft — z. B. per SMS, Telegram oder E-Mail.",
+    before: ["Mailbox statt Antwort", "Adresse & Dringlichkeit unklar"],
+    after: ["fragt Pflichtinfos ab", "informiert Bereitschaft — Team entscheidet"],
+    artifact: "Notfallkarte",
     amber: true,
   },
   {
-    Icon: Car,
+    emoji: "🚗",
     tag: "Kfz / Gutachter / Werkstatt",
-    scenario: "Kunde schickt 7 Fotos eines Unfallschadens per WhatsApp.",
-    before: "Bilder ohne Kontext. Das Büro muss nachfragen, um welches Auto es geht.",
-    after: "Das WhatsApp-Modul bedankt sich für die Bilder, fragt automatisch nach dem Fahrzeugschein und einer kurzen Beschreibung und übergibt einen fertigen Fall.",
+    scenario: "7 Fotos eines Unfallschadens per WhatsApp.",
+    before: ["Bilder ohne Kontext", "Büro fragt telefonisch nach"],
+    after: ["fragt Fahrzeugschein + Kurzbeschreibung ab", "bündelt zu einem Fall"],
+    artifact: "Schadenfall",
     amber: false,
   },
   {
-    Icon: Trash2,
+    emoji: "📦",
     tag: "Entrümpelung / Reinigung",
-    scenario: "Anfrage für eine Wohnungsauflösung über das Kontaktformular.",
-    before: "Es fehlen Angaben zu Stockwerk, Aufzug und Volumen für ein Angebot.",
-    after: "Das Modul sendet automatisch einen Link, über den der Kunde die fehlenden Eckdaten per Chat ergänzt. Das Team erhält die fertige Angebotsgrundlage.",
+    scenario: "Wohnungsauflösung über das Kontaktformular.",
+    before: ["Stockwerk, Aufzug, Volumen fehlen", "Angebot nicht kalkulierbar"],
+    after: ["sammelt Eckdaten per Chat", "Team erhält Angebotsgrundlage"],
+    artifact: "Angebotsgrundlage",
     amber: false,
   },
 ];
@@ -53,16 +60,17 @@ export function UseCasesSection() {
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
               className="flex flex-col rounded-2xl border border-white/[0.07] bg-paper2 p-6"
             >
-              {/* Header */}
+              {/* Header: Emoji-Marker + Branche + Szenario */}
               <div className="mb-5 flex items-start gap-3">
                 <span
-                  className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-[10px] ${
+                  aria-hidden="true"
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] text-[20px] leading-none ${
                     c.amber
-                      ? "border border-amber-400/30 bg-amber-400/10 text-amber-400"
-                      : "border border-leafdimline/60 bg-leafdim/50 text-leafbright"
+                      ? "border border-amber-400/30 bg-amber-400/10"
+                      : "border border-leafdimline/60 bg-leafdim/50"
                   }`}
                 >
-                  <c.Icon size={16} strokeWidth={1.8} />
+                  {c.emoji}
                 </span>
                 <div>
                   <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-faint">
@@ -74,21 +82,60 @@ export function UseCasesSection() {
                 </div>
               </div>
 
-              {/* Before / After */}
+              {/* Vorher / Mit BaseModul — kurze Bullets statt Prosa */}
               <div className="mt-auto space-y-3">
                 <div className="rounded-xl border border-white/[0.06] bg-paperdeep p-3.5">
-                  <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-faint">
+                  <div className="mb-2 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-faint">
                     <X size={10} strokeWidth={2.5} className="text-red-400/70" />
                     Vorher
                   </div>
-                  <p className="text-[13px] leading-[1.55] text-inksoft">{c.before}</p>
+                  <ul className="space-y-1.5">
+                    {c.before.map((line) => (
+                      <li
+                        key={line}
+                        className="flex items-start gap-2 text-[13px] leading-[1.45] text-inksoft"
+                      >
+                        <X
+                          size={11}
+                          strokeWidth={2.5}
+                          className="mt-[3px] shrink-0 text-red-400/50"
+                        />
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+
                 <div className="rounded-xl border border-leafdimline/40 bg-leaf/[0.06] p-3.5">
-                  <div className="mb-1.5 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-leafbright">
+                  <div className="mb-2 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-leafbright">
                     <Check size={10} strokeWidth={2.5} />
                     Mit BaseModul
                   </div>
-                  <p className="text-[13px] leading-[1.55] text-inksoft">{c.after}</p>
+                  <ul className="space-y-1.5">
+                    {c.after.map((line) => (
+                      <li
+                        key={line}
+                        className="flex items-start gap-2 text-[13px] leading-[1.45] text-inksoft"
+                      >
+                        <Check
+                          size={11}
+                          strokeWidth={2.5}
+                          className="mt-[3px] shrink-0 text-leafbright"
+                        />
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex items-center gap-2 pt-0.5">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
+                    Ergebnis
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-leafdimline bg-leafdim px-2.5 py-[3px] text-[11px] font-semibold text-leafbright">
+                    <Check size={10} strokeWidth={2.6} />
+                    {c.artifact}
+                  </span>
                 </div>
               </div>
             </motion.div>

@@ -1,11 +1,11 @@
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/landing/Navbar";
 import { HeroSection } from "@/components/landing/HeroSection";
+import { RequestArtifactSection } from "@/components/landing/RequestArtifactSection";
 import { ProblemSection } from "@/components/landing/ProblemSection";
-import { ModulesSection } from "@/components/landing/ModulesSection";
 import { UseCasesSection } from "@/components/landing/UseCasesSection";
+import { ModulesSection } from "@/components/landing/ModulesSection";
 import { WorkflowSection } from "@/components/landing/WorkflowSection";
-import { ScrollStorySection } from "@/components/landing/ScrollStorySection";
 import { StorySeam } from "@/components/landing/StorySeam";
 import { VisualContextSection } from "@/components/landing/VisualContextSection";
 import { IntegrationsSection } from "@/components/landing/IntegrationsSection";
@@ -20,31 +20,29 @@ const LiveDemoSection = dynamic(
   { ssr: false, loading: () => <div className="py-16 bg-paper" /> }
 );
 
+// Dramaturgie: Pain → fertiger Vorgang → Beispiele → Module → Demo → Pilot
+// (siehe docs/content/basemodul-landing-choreography-2026-07-16.md)
 export default function LandingPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col overflow-x-clip bg-paper text-ink">
       <Navbar />
       <main className="flex-1 pt-[60px]">
         <HeroSection />
+        <RequestArtifactSection />
         <ProblemSection />
         <StorySeam />
-        <ModulesSection />
-        <StorySeam />
         <UseCasesSection />
-        <StorySeam />
+        <ModulesSection />
         <WorkflowSection />
         <StorySeam />
-        <ScrollStorySection />
-        <StorySeam />
         <LiveDemoSection />
-        <StorySeam />
         <VisualContextSection />
-        <StorySeam />
         <IntegrationsSection />
+        <StorySeam />
         <PricingSection />
+        <FaqSection />
         <LetsWorkTogether />
       </main>
-      <FaqSection />
       <Footer />
       <FloatingCta />
     </div>

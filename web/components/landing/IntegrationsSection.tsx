@@ -30,7 +30,7 @@ export function IntegrationsSection() {
         <div className="mb-12 flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-[560px]">
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              07 — Anbindung
+              08 — Anbindung
             </span>
             <h2 className="mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
               Es hängt sich an Ihren Alltag — nicht umgekehrt.
@@ -40,7 +40,7 @@ export function IntegrationsSection() {
             href="#cta"
             className="group inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#333] px-7 py-3.5 text-[15px] font-semibold text-ink transition-all hover:border-[#555] hover:bg-white/[0.03]"
           >
-            Anbindung anfragen
+            30-Minuten-Check buchen
             <ArrowUpRight
               size={16}
               className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -69,9 +69,8 @@ export function IntegrationsSection() {
         </motion.div>
 
         <p className="mt-7 max-w-[720px] text-[14px] leading-[1.7] text-faint">
-          Keine eigene Schnittstelle? Zum Start reicht oft eine E-Mail, ein Google
-          Sheet oder eine WhatsApp-Übergabe ans Team. CRM, Webhooks oder n8n kommen
-          später dazu, wenn ein Modul zieht.
+          Keine eigene Schnittstelle? Zum Start reicht E-Mail, Sheet oder WhatsApp.
+          CRM oder n8n kommen später dazu.
         </p>
       </div>
     </section>

@@ -4,13 +4,13 @@ import { motion, Variants } from "framer-motion";
 import { ArrowRight, ArrowDown, Check, AlertTriangle } from "lucide-react";
 import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
-// Ein einziger, kompakter Ablauf — in 5 Sekunden lesbar.
+// Ein einziger, kompakter Ablauf — in 5 Sekunden lesbar, kanal-agnostisch.
 // Amber = Dringend-Signal, Grün = erledigt/normal (durchgängig auf der ganzen Seite).
 const STEPS = [
-  { text: "Anruf um 22:40" },
-  { text: "KI fragt Ort + Problem ab" },
-  { text: "Notdienst erkannt", urgent: true },
-  { text: "Bereitschaft informiert", accent: true },
+  { text: "Anfrage kommt rein" },
+  { text: "Fehlende Infos werden abgefragt" },
+  { text: "Dringlichkeit markiert", urgent: true },
+  { text: "Vorgang ans Team übergeben", accent: true },
 ];
 
 const stagger: Variants = {
@@ -41,14 +41,13 @@ export function WorkflowSection() {
         {/* Header */}
         <div className="mb-8 max-w-[600px] lg:mb-14">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-Praxisbeispiel
+            05 — Ablauf
           </span>
           <h2 className="mb-[14px] mt-4 text-[clamp(30px,3.6vw,46px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
             Eingang rein. Modul fragt nach. Aktion raus.
           </h2>
           <p className="text-[16px] leading-[1.7] text-inksoft">
-            Der ganze Ablauf auf einen Blick — in fünf Sekunden erfasst. Den
-            Schritt für Schritt zeigt gleich die Story.
+            Der ganze Ablauf auf einen Blick — in fünf Sekunden erfasst.
           </p>
         </div>
 
@@ -109,7 +108,7 @@ Praxisbeispiel
           transition={{ delay: 0.5, duration: 0.5 }}
           className="mt-7 text-center text-[13px] text-faint"
         >
-          Auch für Terminwünsche, Rückrufe und Foto-Nachreichungen.
+          Funktioniert für Anrufe, WhatsApp, Formulare, Fotos und Terminwünsche.
         </motion.p>
       </div>
     </section>

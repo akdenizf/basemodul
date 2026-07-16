@@ -25,7 +25,7 @@ export function FloatingCta() {
           className="group fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-[10px] bg-leafbtn px-4 py-3 text-[13px] font-bold text-white transition-all duration-200 hover:bg-leafbtnhover hover:-translate-y-px"
           style={{ boxShadow: "0 8px 30px -8px rgba(21,128,61,0.5)" }}
         >
-          <span>Demo anfragen</span>
+          <span>30-Minuten-Check</span>
           <ArrowUpRight
             size={16}
             className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"

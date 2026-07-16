@@ -3,23 +3,24 @@
 import { motion } from "framer-motion";
 import { Phone, MessageSquare, AlertTriangle } from "lucide-react";
 
+// Kurze Symptom-Bullets statt Erklärtexten — in 2 Sekunden erfassbar.
 const PROBLEMS = [
   {
     Icon: Phone,
     title: "Das Telefon klingelt endlos",
-    body: "Anrufe nach Feierabend oder wenn alle im Einsatz sind, gehen ins Leere.",
+    points: ["Anrufe laufen abends ins Leere", "Zettel ohne Rückrufnummer"],
     amber: false,
   },
   {
     Icon: MessageSquare,
-    title: "WhatsApp-Chaos",
-    body: "Kunden schicken Bilder von Schäden, aber vergessen Adresse und Kontext.",
+    title: "WhatsApp- und Formular-Chaos",
+    points: ["Fotos ohne Kontext", "Formulare ohne Adresse"],
     amber: false,
   },
   {
     Icon: AlertTriangle,
     title: "Unklare Dringlichkeit",
-    body: "Notfälle gehen in allgemeinen Anfragen unter, weil die Vorqualifizierung fehlt.",
+    points: ["Notfälle gehen in Anfragen unter", "Vorqualifizierung fehlt"],
     amber: true,
   },
 ];
@@ -30,13 +31,13 @@ export function ProblemSection() {
       <div className="mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="mx-auto max-w-[600px] text-center">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            01 — Problem
+            02 — Problem
           </span>
           <h2 className="mt-4 text-[clamp(24px,3.2vw,38px)] font-bold leading-[1.12] tracking-[-0.025em] text-ink">
-            Ihr Team verliert Stunden mit unvollständigen Anfragen.
+            Halbe Anfragen kosten Zeit, Rückrufe und manchmal Aufträge.
           </h2>
           <p className="mt-4 text-[16px] leading-[1.7] text-inksoft">
-            Der Alltag in lokalen Betrieben besteht oft aus Nachfassen und Sortieren.
+            Der Alltag: viel Nachfassen, wenig Struktur.
           </p>
         </div>
 
@@ -60,7 +61,18 @@ export function ProblemSection() {
                 <p.Icon size={18} strokeWidth={1.7} />
               </span>
               <h3 className="mt-4 text-[15px] font-semibold leading-snug text-ink">{p.title}</h3>
-              <p className="mt-2 text-[14px] leading-[1.6] text-inksoft">{p.body}</p>
+              <ul className="mt-2.5 space-y-1.5">
+                {p.points.map((point) => (
+                  <li key={point} className="flex items-start gap-2 text-[14px] leading-[1.5] text-inksoft">
+                    <span
+                      className={`mt-[8px] h-1 w-1 shrink-0 rounded-full ${
+                        p.amber ? "bg-amber-400/70" : "bg-faint/60"
+                      }`}
+                    />
+                    {point}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>

@@ -10,36 +10,67 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 24 } },
 };
 
+// Priorisiert: die 8 wichtigsten Kaufeinwände zuerst, Rest danach.
 const faqItems = [
   {
-    question: "Müssen wir direkt alle Module nutzen?",
+    question: "Ist BaseModul ein Callcenter oder ein Telefonbot?",
     answer:
-      "Nein. Der beste Start ist ein einzelnes Modul: zum Beispiel Telefon, Chat, Termin oder Foto & Datei. Erst wenn der Pilot im Alltag hilft, wird erweitert.",
+      "Weder noch. Ein Baukasten aus Modulen: nimmt Anfragen an, fragt fehlende Infos ab, übergibt einen vollständigen Vorgang ans Team.",
   },
   {
-    question: "Wie schnell ist ein Pilot aktiv?",
+    question: "Muss der Assistent so tun, als wäre er ein Mensch?",
     answer:
-      "Ein erster Testflow ist je nach Umfang oft in wenigen Tagen möglich. Für echte Live-Nutzung prüfen wir vorher Nummern, Datenschutz, Übergabe und Eskalation.",
+      "Nein. Der Assistent sagt ehrlich, dass er ein digitaler Assistent ist — das schafft Vertrauen.",
+  },
+  {
+    question: "Wo landet die fertige Anfrage?",
+    answer:
+      "Dort, wo Ihr Team heute arbeitet: E-Mail, WhatsApp, Sheet, Kalender oder CRM. Kein neues Tool.",
+  },
+  {
+    question: "Bleibt unser Team in Kontrolle?",
+    answer:
+      "Ja. Der Assistent sammelt und sortiert, Ihr Team entscheidet — Zusagen und Angebote nur mit menschlicher Freigabe.",
   },
   {
     question: "Was passiert bei einem echten Notfall?",
     answer:
-      "Das Prioritäts-Modul fragt Pflichtinfos ab, erkennt hohe Dringlichkeit und informiert den festgelegten Menschen oder Übergabekanal. Verbindliche Entscheidungen bleiben beim Team.",
+      "Das Prioritäts-Modul erkennt hohe Dringlichkeit und informiert die Bereitschaft. Entscheidungen bleiben beim Team.",
   },
   {
-    question: "Kann ich meine bestehende Nummer behalten?",
+    question: "Wie schnell ist ein Pilot aktiv?",
     answer:
-      "Ja. Für den Pilot kann eine Testnummer genutzt werden. Später kann eine bestehende Nummer weitergeleitet oder eine eigene Nummer eingerichtet werden.",
+      "Ein erster Testflow ist oft in wenigen Tagen möglich. Für den Live-Betrieb prüfen wir vorher Datenschutz und Übergabe.",
   },
   {
-    question: "Was passiert mit WhatsApp und Fotos?",
+    question: "Wie wird Datenschutz und AVV behandelt?",
     answer:
-      "Das Chat- oder Foto-&-Datei-Modul sammelt fehlende Angaben ein und legt Anhang, Kontakt, Anliegen und Kontext strukturiert zusammen. Ihr Team bekommt keine lose Nachricht, sondern eine saubere Übergabe.",
+      "DSGVO-konform mit Servern in Frankfurt. Vor dem Live-Pilot klären wir AVV und Datenflüsse gemeinsam.",
   },
   {
     question: "Ist basemodul.de ein Produkt von AGENTEQ?",
     answer:
       "Ja. basemodul.de ist die Produktmarke für diese KI-Module. AGENTEQ bleibt der technische und organisatorische Anbieter im Hintergrund.",
+  },
+  {
+    question: "Welche Infos fragt BaseModul ab?",
+    answer:
+      "Die Pflichtinfos fürs Weiterarbeiten: Kontakt, Einsatzort, Anliegen, Dringlichkeit, je nach Fall Fotos oder Dokumente.",
+  },
+  {
+    question: "Müssen wir direkt alle Module nutzen?",
+    answer:
+      "Nein. Starten Sie mit einem Modul — erweitert wird erst, wenn der Pilot im Alltag hilft.",
+  },
+  {
+    question: "Kann ich meine bestehende Nummer behalten?",
+    answer:
+      "Ja. Im Pilot reicht eine Testnummer. Später kann Ihre bestehende Nummer weitergeleitet werden.",
+  },
+  {
+    question: "Was passiert mit WhatsApp und Fotos?",
+    answer:
+      "Das Chat- oder Foto-Modul sammelt fehlende Angaben ein und bündelt alles zu einer sauberen Übergabe.",
   },
 ];
 

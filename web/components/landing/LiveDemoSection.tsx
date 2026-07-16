@@ -21,6 +21,7 @@ interface Scenario {
   category: "PRIORITY" | "CHAT" | "APPOINTMENT" | "GENERAL";
   urgency: "LOW" | "MEDIUM" | "HIGH";
   audioSrc: string;
+  resultLabel: string;
   transcript: {
     time: number;
     speaker: "assistant" | "caller";
@@ -60,6 +61,7 @@ const SCENARIOS: Scenario[] = [
     category: "CHAT",
     urgency: "MEDIUM",
     audioSrc: "/demo.mp3",
+    resultLabel: "Rückrufnotiz bereit",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
       { time: 7.3, speaker: "caller", text: "Hallo, hier ist Müller. Ich habe eine Anfrage geschickt und hätte gern einen Rückruf." },
@@ -81,6 +83,7 @@ const SCENARIOS: Scenario[] = [
     category: "PRIORITY",
     urgency: "HIGH",
     audioSrc: "/demo-strom.mp3",
+    resultLabel: "Meldung übergeben",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
       { time: 7.8, speaker: "caller", text: "Ja, hallo. Es ist dringend, ich erreiche gerade niemanden im Büro." },
@@ -102,6 +105,7 @@ const SCENARIOS: Scenario[] = [
     category: "APPOINTMENT",
     urgency: "LOW",
     audioSrc: "/demo-status.mp3",
+    resultLabel: "Vorgang bereit",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
       { time: 7.5, speaker: "caller", text: "Ja, hallo, hier ist Müller. Ich wollte nachfragen, wann mein Termin stattfindet." },
@@ -121,6 +125,7 @@ const SCENARIOS: Scenario[] = [
     category: "GENERAL",
     urgency: "MEDIUM",
     audioSrc: "/demo-eskalation.mp3",
+    resultLabel: "Fotofall bereit",
     transcript: [
       { time: 0.0, speaker: "assistant", text: "Guten Tag, hier ist das Telefon-Modul von basemodul.de. Ich nehme Ihr Anliegen auf. Wie kann ich Ihnen helfen?" },
       { time: 7.3, speaker: "caller", text: "Hallo, ich habe ein Problem bei mir im Betrieb — das ist schwer zu beschreiben, ich weiß nicht genau, woran es liegt." },
@@ -242,14 +247,14 @@ export function LiveDemoSection() {
           {/* Left — copy + scenario picker */}
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              05 — Demo · Beispielanruf
+              06 — Demo · Beispiel-Vorgang
             </span>
             <h2 className="mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-              Hören Sie einen <span className="text-leafaccent">echten Ablauf</span>.
+              Spielen Sie einen <span className="text-leafaccent">Beispiel-Vorgang</span> durch.
             </h2>
             <p className="mt-5 max-w-[460px] text-[16px] leading-[1.7] text-inksoft">
-              Drücken Sie Play und hören Sie, wie BaseModul einen Anruf annimmt,
-              gezielt nachfragt und den Fall ans Team übergibt.
+              Drücken Sie Play und hören Sie, wie BaseModul eine Anfrage annimmt,
+              gezielt nachfragt und den Vorgang ans Team übergibt.
             </p>
 
             {/* Scenario picker — calm, compact */}
@@ -343,7 +348,7 @@ function DemoPhone({
   currentMessage: (Scenario["transcript"][number] & { endTime: number }) | null;
 }) {
   const reduce = useReducedMotion();
-  const status = isComplete ? "Rückrufnotiz bereit" : isPlaying ? "KI nimmt an" : "Beispielanruf";
+  const status = isComplete ? scenario.resultLabel : isPlaying ? "KI nimmt an" : "Beispielanruf";
 
   return (
     <div className="relative mx-auto w-full max-w-[320px]">
@@ -380,9 +385,9 @@ function DemoPhone({
                 <span className="h-1 w-6 rounded-full bg-white/15" />
               </div>
 
-              {/* header: Live-Demo + status */}
+              {/* header: Demo + status */}
               <div className="relative mt-4 flex items-center justify-between">
-                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">Live-Demo</span>
+                <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-faint">Demo</span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-leafdimline/60 bg-leafdim/50 px-2 py-[3px] text-[10px] font-semibold text-leafbright">
                   <span className="relative flex h-1.5 w-1.5">
                     {isPlaying && !reduce && (
@@ -424,7 +429,7 @@ function DemoPhone({
                       <div className="rounded-2xl border border-leafbright/30 bg-gradient-to-b from-leaf/15 to-leaf/[0.04] p-4">
                         <div className="flex items-center gap-2">
                           <CheckCircle2 size={18} className="text-leafbright" strokeWidth={1.9} />
-                          <span className="text-[13px] font-bold text-ink">Rückrufnotiz bereit</span>
+                          <span className="text-[13px] font-bold text-ink">{scenario.resultLabel}</span>
                         </div>
                         <p className="mt-2 text-[12px] leading-snug text-inksoft">{scenario.finalResult.summary}</p>
                         <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-2.5">

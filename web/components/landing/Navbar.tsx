@@ -6,10 +6,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
+  { label: "Beispiel", href: "#beispiel" },
   { label: "Module", href: "#modules" },
-  { label: "Ablauf", href: "#workflow" },
   { label: "Demo", href: "#livedemo" },
-  { label: "Integrationen", href: "#integrationen" },
   { label: "Pilot", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -90,7 +89,7 @@ export function Navbar() {
               href="#cta"
               className="hidden rounded-md bg-leafbtn px-[18px] py-2 text-[14px] font-semibold text-white transition-colors hover:bg-leafbtnhover sm:inline-flex"
             >
-              Demo anfragen
+              30-Minuten-Check
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -130,7 +129,7 @@ export function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="mt-7 flex w-full items-center justify-center rounded-lg bg-leafbtn py-4 text-lg font-bold text-white"
               >
-                Demo anfragen
+                30-Minuten-Check
               </a>
             </div>
           </motion.div>
