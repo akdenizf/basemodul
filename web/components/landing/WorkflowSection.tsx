@@ -8,9 +8,9 @@ import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 // Amber = Dringend-Signal, Grün = erledigt/normal (durchgängig auf der ganzen Seite).
 const STEPS = [
   { text: "Anfrage kommt rein" },
-  { text: "Fehlende Infos werden abgefragt" },
-  { text: "Dringlichkeit markiert", urgent: true },
-  { text: "Vorgang ans Team übergeben", accent: true },
+  { text: "Fehlende Infos werden geklärt" },
+  { text: "Nach Regeln priorisieren", urgent: true },
+  { text: "Team erhält nächsten Schritt", accent: true },
 ];
 
 const stagger: Variants = {
@@ -41,13 +41,13 @@ export function WorkflowSection() {
         {/* Header */}
         <div className="mb-8 max-w-[600px] lg:mb-14">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-            05 — Ablauf
+            05 — Der Ablauf
           </span>
           <h2 className="mb-[14px] mt-4 text-[clamp(30px,3.6vw,46px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-            Eingang rein. Modul fragt nach. Aktion raus.
+            Eingang rein. Fehlende Infos klären. Team handlungsfähig machen.
           </h2>
           <p className="text-[16px] leading-[1.7] text-inksoft">
-            Der ganze Ablauf auf einen Blick — in fünf Sekunden erfasst.
+            BaseModul arbeitet nach vereinbarten Fragen, Zuständigkeiten und Eskalationsregeln. Fachliche Entscheidungen und kritische Fälle bleiben bei Ihrem Team.
           </p>
         </div>
 
@@ -108,7 +108,7 @@ export function WorkflowSection() {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="mt-7 text-center text-[13px] text-faint"
         >
-          Funktioniert für Anrufe, WhatsApp, Formulare, Fotos und Terminwünsche.
+          Funktioniert für Anrufe, WhatsApp, Formulare, Fotos und Terminwünsche – immer mit einem definierten menschlichen Fallback.
         </motion.p>
       </div>
     </section>

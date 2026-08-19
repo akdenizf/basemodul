@@ -10,67 +10,56 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 24 } },
 };
 
-// Priorisiert: die 8 wichtigsten Kaufeinwände zuerst, Rest danach.
 const faqItems = [
   {
-    question: "Ist BaseModul ein Callcenter oder ein Telefonbot?",
+    question: "Ist BaseModul eine reine Voice-Agentur?",
     answer:
-      "Weder noch. Ein Baukasten aus Modulen: nimmt Anfragen an, fragt fehlende Infos ab, übergibt einen vollständigen Vorgang ans Team.",
-  },
-  {
-    question: "Muss der Assistent so tun, als wäre er ein Mensch?",
-    answer:
-      "Nein. Der Assistent sagt ehrlich, dass er ein digitaler Assistent ist — das schafft Vertrauen.",
-  },
-  {
-    question: "Wo landet die fertige Anfrage?",
-    answer:
-      "Dort, wo Ihr Team heute arbeitet: E-Mail, WhatsApp, Sheet, Kalender oder CRM. Kein neues Tool.",
-  },
-  {
-    question: "Bleibt unser Team in Kontrolle?",
-    answer:
-      "Ja. Der Assistent sammelt und sortiert, Ihr Team entscheidet — Zusagen und Angebote nur mit menschlicher Freigabe.",
-  },
-  {
-    question: "Was passiert bei einem echten Notfall?",
-    answer:
-      "Das Prioritäts-Modul erkennt hohe Dringlichkeit und informiert die Bereitschaft. Entscheidungen bleiben beim Team.",
-  },
-  {
-    question: "Wie schnell ist ein Pilot aktiv?",
-    answer:
-      "Ein erster Testflow ist oft in wenigen Tagen möglich. Für den Live-Betrieb prüfen wir vorher Datenschutz und Übergabe.",
-  },
-  {
-    question: "Wie wird Datenschutz und AVV behandelt?",
-    answer:
-      "DSGVO-konform mit Servern in Frankfurt. Vor dem Live-Pilot klären wir AVV und Datenflüsse gemeinsam.",
-  },
-  {
-    question: "Ist basemodul.de ein Produkt von AGENTEQ?",
-    answer:
-      "Ja. basemodul.de ist die Produktmarke für diese KI-Module. AGENTEQ bleibt der technische und organisatorische Anbieter im Hintergrund.",
-  },
-  {
-    question: "Welche Infos fragt BaseModul ab?",
-    answer:
-      "Die Pflichtinfos fürs Weiterarbeiten: Kontakt, Einsatzort, Anliegen, Dringlichkeit, je nach Fall Fotos oder Dokumente.",
+      "Nein. Telefonie ist ein häufiger Einstieg, wenn dort heute Anfragen verloren gehen. BaseModul beginnt aber immer beim Prozess: Telefon, WhatsApp, Website oder Fotos werden zu einer vollständigen Teamübergabe.",
   },
   {
     question: "Müssen wir direkt alle Module nutzen?",
     answer:
-      "Nein. Starten Sie mit einem Modul — erweitert wird erst, wenn der Pilot im Alltag hilft.",
+      "Nein. Wir starten mit genau einem Eingangskanal. Termin, Foto/Datei, Prioritätslogik oder ein weiterer Betriebs-Agent kommen erst dazu, wenn der erste Ablauf im Alltag nachweislich hilft.",
   },
   {
-    question: "Kann ich meine bestehende Nummer behalten?",
+    question: "Wo landet die fertige Anfrage?",
     answer:
-      "Ja. Im Pilot reicht eine Testnummer. Später kann Ihre bestehende Nummer weitergeleitet werden.",
+      "Dort, wo Ihr Team heute arbeitet: zum Beispiel per E-Mail, WhatsApp, Sheet, Kalender, Ticket oder in einem bestehenden System. Zum Start wird kein neues Komplettsystem vorausgesetzt.",
   },
   {
-    question: "Was passiert mit WhatsApp und Fotos?",
+    question: "Bleibt unser Team in Kontrolle?",
     answer:
-      "Das Chat- oder Foto-Modul sammelt fehlende Angaben ein und bündelt alles zu einer sauberen Übergabe.",
+      "Ja. BaseModul sammelt, strukturiert und übergibt. Fachliche Entscheidungen, verbindliche Zusagen, Angebote und Verträge bleiben bei Ihrem Team und werden nicht autonom getroffen.",
+  },
+  {
+    question: "Was passiert bei einem echten Notfall?",
+    answer:
+      "Der Ablauf arbeitet nach Ihren vorab vereinbarten Signalen, fragt die benötigten Informationen ab und informiert die zuständige menschliche Bereitschaft oder einen definierten Fallback. Die fachliche Entscheidung trifft Ihr Betrieb.",
+  },
+  {
+    question: "Wie läuft der 30-Tage-Pilot ab?",
+    answer:
+      "Zuerst legen wir Kanal, Pflichtfelder, Zuständigkeiten, Eskalationsregeln und Baseline fest. Danach testen wir Übergabe und Fallback. Im produktiven Teil dokumentieren wir reale Fälle und entscheiden am Ende mit der Scorecard über Ausbau, Nachschärfung oder Pause.",
+  },
+  {
+    question: "Was wird im Pilot gemessen?",
+    answer:
+      "Zum Beispiel relevante Eingänge, nicht angenommene oder unvollständige Anfragen, vollständige Übergaben, Zeit bis zur Teamübergabe, Rückruf- oder Terminquote, menschliche Korrekturen und Fallbacks. Nicht verfügbare Ausgangsdaten werden nicht geschätzt.",
+  },
+  {
+    question: "Was passiert nach den 30 Tagen?",
+    answer:
+      "Wenn Übergaben vollständig sind und das Team den Ablauf akzeptiert, erweitern wir bewusst. Wenn einzelne Fragen oder Regeln schwach sind, schärfen wir nach. Fehlt der nachweisbare Nutzen, vereinfachen oder pausieren wir statt künstlich ein Komplettsystem zu verkaufen.",
+  },
+  {
+    question: "Wie werden Datenschutz und Datenflüsse behandelt?",
+    answer:
+      "Vor dem Go-live dokumentieren wir Datenfluss, Speicherort, Löschfristen und Auftragsverarbeitung für den konkreten Pilot. Ohne geklärte Übergabe- und Datenschutzregeln geht kein Ablauf produktiv.",
+  },
+  {
+    question: "Kann später auch ein weiterer Betriebs-Agent dazukommen?",
+    answer:
+      "Ja, wenn ein weiterer operativer Engpass klar beschrieben und messbar ist – etwa Angebotsvorbereitung, Disposition, internes Wissen oder Reporting. Das wird dann separat gescoped, statt ungeplant in den ersten Pilot zu rutschen.",
   },
 ];
 

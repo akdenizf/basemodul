@@ -1,167 +1,297 @@
-# basemodul.de — Landing Page Content
+# basemodul.de — Verbindliche Landing-Copy
 
-## Hero
+> **Zweck:** Inhaltsquelle für die aktive Startseite. Diese Datei beschreibt die Produktlogik und die freigegebene Botschaft; visuelle Art Direction wird separat entschieden.
+>
+> **Produktquelle:** `../../PRODUCT_ARCHITECTURE.md` und `../../PILOT_DELIVERY_PLAYBOOK.md`
 
-**Badge:** FÜR HANDWERK, NOTDIENSTE & SERVICEBETRIEBE
+## 1. Positionierung in einem Satz
+
+> **BaseModul sorgt dafür, dass aus jeder relevanten Kundenanfrage ein sauberer nächster Schritt wird.**
+
+BaseModul ist eine modulare Produktmarke für lokale Servicebetriebe. Sie hilft, Anfragen aus Telefon, WhatsApp, Website und Fotos vollständig aufzunehmen, nach vereinbarten Regeln einzuordnen und mit Kontext an das Team zu übergeben.
+
+BaseModul ist **keine reine Voice-Agentur**, kein CRM- oder ERP-Ersatz und keine allgemeine „KI für alles“-Leistung. Telefonie ist ein häufiger Einstieg; der Kern ist immer ein zuverlässiger Anfrage-Eingang und eine klare Teamübergabe.
+
+## 2. Messaging-Hierarchie
+
+| Ebene | Freigegebene Aussage |
+|---|---|
+| **Arbeitsrealität** | Wenn das Team im Einsatz ist, bleiben Anrufe, WhatsApp-Nachrichten und Webanfragen leicht liegen oder kommen unvollständig an. |
+| **Wirkung** | BaseModul macht aus einem losen Eingang eine vollständige Rückrufnotiz, einen Terminwunsch oder eine priorisierte Teamübergabe. |
+| **Beleg** | Das Team sieht Kontakt, Ort, Anliegen, vereinbarte Pflichtfelder, Dringlichkeit und den nächsten Schritt. |
+| **Einstieg** | Wir beginnen mit genau einem Eingangskanal, an dem heute Anfragen oder Zeit verloren gehen. |
+| **Nachweis** | Ein 30-Tage-Pilot misst vollständige Übergaben, Übergabezeit, Rückrufe und menschliche Korrekturen. |
+| **Ausbau** | Erst wenn der erste Ablauf im Alltag funktioniert, kommen weitere Module oder ein klar begrenzter Betriebs-Agent dazu. |
+
+## 3. Hero
+
+**Eyebrow:** FÜR LOKALE SERVICEBETRIEBE
 
 **Headline:**
-Keine relevante Anfrage
-geht verloren.
+
+> Wenn Ihr Team im Einsatz ist, darf keine Anfrage im Leeren landen.
 
 **Subtext:**
-BaseModul bringt Telefon-, WhatsApp- und Webanfragen in eine klare Reihenfolge: fehlende Infos werden abgefragt, Dringlichkeit wird erkannt und Ihr Team erhält einen vollständigen nächsten Schritt.
 
-**Branchen-Zeile:** Für SHK-Betriebe, Kfz, Facility und lokale Servicebetriebe.
+> BaseModul bringt Anrufe, WhatsApp-Nachrichten, Formulare und Fotos in einen sauberen Vorgang. Ihr Team weiß dadurch, wen es zurückruft, worum es geht und was als Nächstes zu tun ist.
 
-**CTA primär:** Demo anfragen
-**CTA sekundär:** Module ansehen
-**Trust:** DSGVO · Server in Frankfurt
+**Primäre CTA:** `30-Minuten-Check buchen`
 
-### Live-Feed Einträge
-1. Eingang: Anruf verpasst | Modul: Telefon-Modul | Ergebnis: Rückrufnotiz bereit
-2. Eingang: WhatsApp mit Foto | Modul: Foto/Datei-Modul | Ergebnis: Fall vollständig
-3. Eingang: Terminwunsch | Modul: Termin-Modul | Ergebnis: Rückruf vorbereitet
+**Sekundäre CTA:** `Beispiel-Vorgang ansehen`
 
-**Footer Live-Feed:** Teamübergabe erstellt · 1 Rückruf offen
+**Vertrauenszeile:** `Ein klarer Eingang statt fünf Kanäle · Menschliche Übergabe bleibt gesetzt`
 
----
+**Begleittext zum dargestellten Vorgang:**
 
-## Module Section
+> Nicht noch ein Tool. Ein Vorgang, mit dem Ihr Team arbeiten kann.
 
-**Label:** 02 — DIE MODULE
-**Headline:** Ein Eingang zuerst. Erweiterungen, wenn sie wirklich helfen.
-**Subtext:** Wir starten mit dem Kanal, an dem heute Anfragen verloren gehen: Telefon, WhatsApp oder Website. Termine, Fotos, Ticketing und weitere Betriebs-Agenten kommen dazu, wenn der Ablauf sitzt.
-**Tag:** EINGANG → QUALIFIZIERUNG → NÄCHSTER SCHRITT
+## 4. Beispiel: vollständige Teamübergabe
 
-### Modul 01 — Telefon
-**Titel:** Telefon-Modul
-**Beschreibung:** Nimmt Anrufe an, erkennt das Anliegen, sichert Kontakt und Standort.
-**Artefakt:** Rückrufnotiz | Name: Klaus M. | Telefon: 0176 24 … | Anliegen: Rückruf gewünscht | Zeit: 22:47
+**Label:** `01 — BEISPIEL AUS DEM ALLTAG`
 
-### Modul 02 — Notdienst
-**Titel:** Notdienst-Modul
-**Beschreibung:** Erkennt dringende Fälle und alarmiert die richtige Person.
-**Artefakt:** DRINGEND | Heizungsausfall, Familie mit Kind | Zuständig: Bereitschaft
+**Headline:**
 
-### Modul 03 — Termin
-**Titel:** Termin-Modul
-**Beschreibung:** Klärt Leistung und Wunschzeit, prüft Slots und bereitet Rückruf oder Buchung vor.
-**Artefakt:** Leistung: Jahreswartung Heizung | Slot 1: 09:00–10:00 belegt | Slot 2: DI 14:30–15:30 reserviert
+> So kommt eine Anfrage bei Ihrem Team an.
 
-### Modul 04 — WhatsApp & Web
-**Titel:** Chat-/Web-Anfrage-Modul
-**Beschreibung:** Macht unvollständige Nachrichten und Formulare zu vollständigen Anfragen mit einem klaren nächsten Schritt.
-**Artefakt:** Chat-Bubble: "Hallo, ich hätte eine Frage zu meinem Auftrag." → Rückfrage nach Ort und Anliegen → Anfrage ans Team
+**Subtext:**
 
-### Modul 05 — Foto & Datei
-**Titel:** Foto-/Datei-Modul
-**Beschreibung:** Holt fehlende Bilder oder Anhänge ein und verbindet sie mit Kontakt, Anliegen und Kontext.
-**Artefakt:** #A-204 | Kontakt: Thomas M. | Status: vollständig | Priorität: Normal
+> Nicht als lose Nachricht und nicht als technische Oberfläche. Sondern als vollständige, verständliche Übergabe mit einem klaren nächsten Schritt.
 
-### Modul 06 — Übergabe & Prozess
-**Titel:** Betriebs-Agenten
-**Beschreibung:** Ergänzt einen bewiesenen Anfrage-Flow um Ticketing, Angebotsvorbereitung, Disposition oder internes Wissen.
-**Artefakt:** Anfrage vollständig | Zuständig: Team Service | Nächster Schritt: Rückruf bis 10:30
+**Pflichtfelder im dargestellten Beispiel:**
 
----
+| Feld | Beispiel |
+|---|---|
+| Eingang | Anruf · heute 22:47 |
+| Kontakt | Klaus M. · 0176 24 68 … |
+| Einsatzort | Bergstraße 12, 51063 Köln |
+| Anliegen | Heizung ausgefallen, kein Warmwasser |
+| Dringlichkeit | Hoch · Notdienst |
+| Anhänge | 2 Fotos · per Upload-Link nachgereicht |
+| Nächster Schritt | Rückruf durch Bereitschaft — Team entscheidet |
+| Übergabe | E-Mail + WhatsApp an die Bereitschaft · 22:49 |
 
-## Ablauf Section
+**Vorher/Nachher-Zeile:**
 
-**Label:** 03 — SO ARBEITET EIN MODUL
-**Headline:** Eingang rein. Modul fragt nach. Aktion raus.
-**Subtext:** Kein Anrufbeantworter, kein halbes Ticket. Zwei echte Abläufe aus dem Betriebsalltag — vom Eingang bis zur fertigen Übergabe.
+> Vorher: 7 Nachrichten, 3 Rückfragen.
+>
+> Nachher: ein sauberer Vorgang.
 
-### Beispiel A
-**Label:** INBOUND-ANRUF · NOTDIENST
-**Titel:** Wasserschaden um 22:40 — niemand am Telefon.
-**Tag:** Telefon + Notdienst
-**Flow:** Anruf außerhalb der Bürozeit → Kontakt, Ort, kurze Beschreibung → Dringlichkeit: hoch → Zuständige Person informiert
+**Link zur Demonstration:** `Beispiel-Ablauf ansehen`
 
-### Beispiel B
-**Label:** CHAT · UNKLARE ANFRAGE
-**Titel:** Terminwunsch am Telefon — Kalender noch offen.
-**Tag:** Telefon + Kalender
-**Flow:** Anrufer möchte einen Wartungstermin → Adresse, Anlage, Zeitfenster → Terminwunsch und Kontaktdaten → Rückruf mit Terminvorschlag
+## 5. Problem
 
----
+**Label:** `02 — DER ENGSPASS IM ALLTAG`
 
-## Integrationen
+**Headline:**
 
-**Label:** ANBINDUNG · AUF ANFRAGE
-**Headline:** Es hängt sich an Ihren Alltag — nicht umgekehrt.
-**CTA:** Anbindung anfragen
+> Halbe Anfragen kosten Zeit, Rückrufe und manchmal Aufträge.
 
-**Karten:**
-- Telefonie: Nummer weiterleiten oder Testnummer einrichten.
-- WhatsApp: Rückfragen, Foto-Links, Bestätigungen.
-- Google Calendar: Slots prüfen, Termine vorbereiten.
-- E-Mail / Sheet: Übergabe an Postfach oder Tabelle.
+**Subtext:**
 
-**Hinweis:** Keine eigene Schnittstelle? Zum Start reicht oft eine E-Mail, ein Google Sheet oder eine WhatsApp-Übergabe ans Team. CRM, Webhooks oder n8n kommen später dazu, wenn ein Modul zieht.
+> Der Alltag: viel Nachfassen, wenig Struktur.
 
----
+| Problem | Konkret |
+|---|---|
+| Das Telefon klingelt weiter | Anrufe laufen im Einsatz oder nach Feierabend ins Leere; Zettel enthalten keine vollständige Rückrufnummer. |
+| WhatsApp- und Formular-Chaos | Fotos kommen ohne Kontext; Formulare ohne Adresse oder relevante Angaben. |
+| Unklare Dringlichkeit | Wichtige Fälle sind nicht unterscheidbar, weil Ort, Problem oder Rückrufwunsch fehlen. |
 
-## Preise
+## 6. Praxisbeispiele
 
-**Label:** 05 — PILOT
-**Headline:** Erst ein Modul testen. Dann entscheiden.
-**Subtext:** Kein SaaS-Abo im Erstgespräch. Wir bauen einen schlanken Piloten, testen ihn mit realistischen Fällen — und Sie entscheiden danach.
+**Label:** `03 — PRAXISBEISPIELE`
 
-**Paket 1 — Pilot** (hervorgehoben, Badge: BESTER START)
-Preis: ab 750 € SETUP
-- 30-Minuten-Check
-- ein Modul als Testflow
-- Demo oder Testnummer/Testchat
-- Übergabe per E-Mail, Sheet oder WhatsApp
-CTA: Pilot besprechen
+**Headline:**
 
-**Paket 2 — Modul**
-Preis: ab 1.500 € SETUP
-- angepasster Betriebsflow
-- Telefon, WhatsApp, Kalender oder Foto-Upload
-- Eskalations- und Rückfragelogik
-- monatliche Betreuung nach Umfang
-CTA: Modul planen
+> So wird aus einer Anfrage ein bearbeitbarer Fall.
 
-**Paket 3 — Custom**
-Preis: auf Anfrage NACH UMFANG
-- mehrere Module kombiniert
-- CRM, Kalender, Webhooks oder n8n
-- individuelle Regeln und Reporting
-- persönliche Umsetzung mit AGENTEQ
-CTA: Anfrage senden
+| Branche / Situation | Vorher | Mit BaseModul | Ergebnis |
+|---|---|---|---|
+| SHK / Kälte / Notdienst: Heizungsausfall um 22:13 | Mailbox, Adresse und Dringlichkeit unklar | Pflichtinfos abfragen; nach Regel an Bereitschaft übergeben | Notfallkarte mit nächstem Schritt |
+| Kfz / Gutachter / Werkstatt: 7 Schadensfotos per WhatsApp | Bilder ohne Kontext; Büro fragt alles nach | Fahrzeugschein und Kurzbeschreibung nachfordern; Kontext bündeln | Strukturierter Schadenfall |
+| Reinigung / Entrümpelung: Wohnungsauflösung per Formular | Stockwerk, Aufzug und Umfang fehlen | Eckdaten ergänzen; Anfrage ans Team übergeben | Angebotsgrundlage |
 
-**Hinweis:** ALLE PREISE ZZGL. MWST · LAUFENDE KOSTEN JE NACH UMFANG, TELEFONIE, WHATSAPP UND BETREUUNG
+## 7. Module und Ausbau
 
----
+**Label:** `04 — MODULARER ANFRAGE-FLOW`
 
-## CTA Section
+**Headline:**
 
-**Label:** 04 — PILOT
-**Badge:** EIN MODUL ZUERST
-**Headline:** Welches Modul testen wir zuerst?
-**Subtext:** Wir schauen in 30 Minuten, an welchem Eingangskanal Sie heute Anfragen oder Zeit verlieren – und ob ein schlanker BaseModul-Pilot den Ablauf messbar verbessern kann. Kein Komplettsystem, kein Vertrag im Erstgespräch.
-**CTA:** Demo anfragen
-**Ansprechpartner:** Fatih Akdeniz | AGENTEQ · basemodul.de
+> Ein Eingang zuerst. Weitere Module erst, wenn sie wirklich helfen.
 
----
+**Subtext:**
 
-## FAQ
+> Wir beginnen mit dem Kanal, an dem heute Anfragen oder Zeit verloren gehen. Danach erweitern wir nur den Ablauf, der sich im Alltag bewährt hat.
 
-1. Müssen wir direkt alle Module nutzen?
-2. Wie schnell ist ein Pilot aktiv?
-3. Was passiert bei einem echten Notfall?
-4. Kann ich meine bestehende Nummer behalten?
-5. Was passiert mit WhatsApp und Fotos?
-6. Ist basemodul.de ein Produkt von AGENTEQ?
+**Prozesszeile:** `EINGANG → QUALIFIZIERUNG → ÜBERGABE → NÄCHSTER SCHRITT`
 
----
+### Häufigster Einstieg: Telefon-Modul
 
-## Footer
+> Nimmt Anrufe an, sichert Kontakt, Anliegen, Ort und vereinbarte Pflichtfelder und übergibt den Vorgang nach definierten Regeln ans Team.
 
-**Logo:** basemodul.de
-**Beschreibung:** KI-Module für Servicebetriebe: Anfragen über Telefon, WhatsApp und Website strukturiert aufnehmen, priorisieren und sauber ans Team übergeben.
-**Spalte Produkt:** Module / Demo / Pilot / FAQ
-**Spalte Unternehmen:** Über uns / Karriere / Kontakt
-**Spalte Rechtliches:** Impressum / Datenschutz / AGB
-**Copyright:** Ein Produkt von AGENTEQ · © 2026 basemodul.de
+**Ergebnisbeispiel:** `Rückrufnotiz bereit · Name · Telefon · Anliegen · Zeit`
+
+### Sinnvolle Erweiterungen
+
+| Modul | Nutzen | Nur einsetzen, wenn … |
+|---|---|---|
+| Prioritäts-/Notdienst-Modul | Kritische Fälle nach vereinbarten Regeln an Menschen eskalieren | Bereitschaft, Zuständigkeiten und Fallback klar definiert sind |
+| WhatsApp-/Chat-Modul | Unstrukturierte Nachrichten in vollständige Anfragen überführen | Chat ein relevanter Eingangskanal ist |
+| Foto-/Datei-Modul | Fehlende Bilder und Unterlagen mit Kontext einsammeln | Bilder oder Dokumente für die Bearbeitung relevant sind |
+| Termin-Modul | Terminwünsche vorbereiten, bestätigen oder erinnern | Leistung, Zeitfenster und verantwortlicher Prozess feststehen |
+| Übergabe-/Ticket-Modul | Zuständigkeit, Status und nächste Aktion sichtbar machen | mehrere Personen oder Medienbrüche den Ablauf bremsen |
+| Betriebs-Agenten | Einen klar belegten Backoffice-Engpass reduzieren | der Anfrage-Flow funktioniert und der Folgeprozess eindeutig beschreibbar ist |
+
+**Abschlusszeile:**
+
+> Alle Module führen zum selben Ergebnis: ein vollständiger Vorgang für Ihr Team.
+
+## 8. So arbeitet BaseModul
+
+**Label:** `05 — DER ABLAUF`
+
+**Headline:**
+
+> Eingang rein. Die fehlenden Infos werden geklärt. Ihr Team bekommt einen nächsten Schritt.
+
+**Subtext:**
+
+> BaseModul entscheidet keine fachlichen Fälle an Stelle Ihres Betriebs. Es arbeitet nach vereinbarten Fragen, Zuständigkeiten und Eskalationsregeln.
+
+| Schritt | Was passiert |
+|---|---|
+| 1. Anfrage kommt rein | Telefon, WhatsApp, Formular, Foto oder Terminwunsch wird aufgenommen. |
+| 2. Kontext wird vervollständigt | Fehlende Kontakt-, Orts-, Anliegen- oder Pflichtinformationen werden abgefragt. |
+| 3. Priorität wird markiert | Der Ablauf wendet Ihre vorher vereinbarten Regeln an. Unsichere oder kritische Fälle gehen an Menschen. |
+| 4. Team übernimmt | Die zuständige Person erhält Vorgang, Kontext und nächsten Schritt in E-Mail, Sheet, WhatsApp oder einem angeschlossenen System. |
+
+## 9. Beispiel-Demo
+
+**Label:** `06 — BEISPIEL-VORGANG`
+
+**Headline:**
+
+> Hören Sie, wie aus einer Anfrage ein klarer Vorgang wird.
+
+**Subtext:**
+
+> Die Demo zeigt einen Beispielablauf. Sie ist kein Live-Betrieb und keine Zusage für einen beliebigen Kundenprozess.
+
+**Szenarien:** `Rückruf zu Anfrage · Dringende Meldung · Terminstatus · Foto & Datei`
+
+**Begleitzeile:**
+
+> Anliegen erkannt · Standort abgefragt · Priorität dokumentiert · Teamübergabe vorbereitet.
+
+## 10. Foto, Dateien und Anbindung
+
+**Foto-/Datei-Label:** `07 — FOTO & DATEI`
+
+**Foto-/Datei-Headline:**
+
+> Wenn ein Foto fehlt, fragt BaseModul nach.
+
+**Foto-/Datei-Subtext:**
+
+> Bilder, Dokumente und fehlende Angaben werden mit Kontakt, Kontext und dem richtigen nächsten Schritt verbunden. Das Team bekommt keinen Anhang ohne Vorgang.
+
+**Integrations-Label:** `08 — ANBINDUNG`
+
+**Integrations-Headline:**
+
+> Es hängt sich an Ihren Alltag — nicht umgekehrt.
+
+| Anbindung | Zum Start |
+|---|---|
+| Telefonie | Bestehende Nummer nach definierten Regeln weiterleiten oder mit Testnummer starten |
+| WhatsApp | Rückfragen, Foto-Links und Bestätigungen nach abgestimmtem Ablauf |
+| Kalender | Slots prüfen, Terminwunsch vorbereiten oder Erinnerungen auslösen |
+| E-Mail / Sheet | Übergabe ans Postfach oder eine strukturierte Liste |
+
+**Hinweis:**
+
+> Zum Start reicht häufig E-Mail, Sheet oder eine WhatsApp-Übergabe. CRM, Kalender, Webhooks oder n8n kommen erst dazu, wenn der erste Ablauf zieht.
+
+## 11. Der 30-Tage-Pilot und Preisrahmen
+
+**Label:** `09 — 30-TAGE-PILOT`
+
+**Headline:**
+
+> Erst einen Eingang im Alltag beweisen. Dann bewusst erweitern.
+
+**Subtext:**
+
+> Kein Komplettsystem im Erstgespräch. Wir grenzen einen Kanal, die benötigten Informationen, die Zuständigkeiten und die sichere Übergabe ab. Danach wird Wirkung mit realen Fällen geprüft.
+
+### Phasen
+
+| Zeitraum | Ergebnis |
+|---|---|
+| Tag 0–5 | Eingangskanal, Pflichtfelder, Zuständigkeiten, Eskalationsregeln und verfügbare Baseline festgelegt |
+| Tag 6–12 | Testflow, Beispielanfragen, menschliche Übergabe und Fallback geprüft |
+| Tag 13–30 | Reale Anfragen werden nach den freigegebenen Regeln strukturiert aufgenommen |
+| Tag 30 | Scorecard, Teamfeedback, Fehlerbild und nächster Schritt entschieden |
+
+### Scorecard auf der Website
+
+- Relevante Eingänge
+- Nicht angenommene oder unvollständige Eingänge
+- Vollständige Übergaben
+- Zeit bis zur Team-Übergabe
+- Rückruf- oder Terminquote
+- Menschliche Korrekturen und Eskalationen
+
+**Reporting-Grundsatz:**
+
+> Wirkung wird berichtet, nicht versprochen. Nicht verfügbare Ausgangsdaten werden nicht geschätzt. Umsatz und ROI werden nicht garantiert.
+
+### Angebotsstufen
+
+| Stufe | Preisrahmen | Geeignet für | Enthalten |
+|---|---:|---|---|
+| **Anfrage-Eingang / Pilot** | ab 750 € Setup | Einen klar abgegrenzten Kanal prüfen | Ein Kanal, Fragenlogik, Teamübergabe, Tests und Pilot-Scorecard |
+| **Anfrage-Flow / Modul** | ab 1.500 € Setup | Einen bewiesenen Ablauf um Regeln oder Anschlussmodule erweitern | Konfigurierter Flow, beispielsweise Telefon, WhatsApp, Kalender oder Foto-Upload; Eskalations- und Rückfragelogik |
+| **Betriebs-Agenten / Custom** | nach Umfang | Einen belegten Folgeengpass eigenständig scopen | Kundenspezifische Regeln, Integrationen, Reporting und Freigabe-Gates |
+
+**Preis-Hinweis:**
+
+> Alle Preise zzgl. MwSt. Laufende Kosten für Telefonie, WhatsApp, Betreuung oder zusätzliche Infrastruktur werden vor dem Go-live transparent festgelegt.
+
+## 12. CTA und Check
+
+**Label:** `10 — EIN MODUL ZUERST`
+
+**Headline:**
+
+> Welcher Eingangskanal kostet Sie aktuell am meisten Zeit?
+
+**Subtext:**
+
+> In 30 Minuten prüfen wir, wo Anfragen liegen bleiben, welche Informationen Ihr Team vor dem ersten Rückruf braucht und ob ein klar abgegrenzter Pilot sinnvoll ist. Kein Komplettsystem und kein Vertrag im Erstgespräch.
+
+**CTA:** `30-Minuten-Check buchen`
+
+**Kontaktzeile:** `Fatih Akdeniz · AGENTEQ / basemodul.de`
+
+## 13. Öffentliche FAQ
+
+1. Ersetzt BaseModul unsere Disposition oder Rezeption?
+2. Müssen wir direkt alle Module nutzen?
+3. Welche Eingangskanäle sind möglich?
+4. Was passiert bei einem echten Notfall?
+5. Kann ich unsere bestehende Nummer behalten?
+6. Wo landet die fertige Anfrage?
+7. Wie wird Wirkung im Pilot gemessen?
+8. Was passiert nach 30 Tagen?
+9. Ist BaseModul eine reine Voice-Agentur?
+10. Können später weitere Betriebs-Agenten dazukommen?
+
+## 14. Guardrails für alle Website-Texte
+
+- Nicht behaupten, Mitarbeitende zu ersetzen.
+- Nicht behaupten, Notfälle fachlich autonom zu entscheiden.
+- Keine garantierte Umsatz-, ROI- oder Conversion-Steigerung behaupten.
+- Keine uneingeschränkte „24/7“- oder „alles automatisiert“-Aussage verwenden.
+- Menschliche Übergaben, dokumentierte Regeln und Fallbacks klar benennen.
+- Technische Begriffe nur nutzen, wenn sie für die betriebliche Entscheidung relevant sind.
+- Erweiterungen erst nach einem funktionierenden Kernprozess als nächsten Schritt zeigen.
