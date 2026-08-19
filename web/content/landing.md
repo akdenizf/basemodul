@@ -5,13 +5,13 @@
 **Badge:** FÜR HANDWERK, NOTDIENSTE & SERVICEBETRIEBE
 
 **Headline:**
-Der KI-Telefonassistent
-für Servicebetriebe.
+Keine relevante Anfrage
+geht verloren.
 
 **Subtext:**
-BaseModul nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt Rückrufnotizen, Termine oder Notfälle direkt ans Team.
+BaseModul bringt Telefon-, WhatsApp- und Webanfragen in eine klare Reihenfolge: fehlende Infos werden abgefragt, Dringlichkeit wird erkannt und Ihr Team erhält einen vollständigen nächsten Schritt.
 
-**Branchen-Zeile:** Für SHK-Betriebe, Kältetechnik, Facility und technischen Service.
+**Branchen-Zeile:** Für SHK-Betriebe, Kfz, Facility und lokale Servicebetriebe.
 
 **CTA primär:** Demo anfragen
 **CTA sekundär:** Module ansehen
@@ -19,8 +19,8 @@ BaseModul nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt Rückrufn
 
 ### Live-Feed Einträge
 1. Eingang: Anruf verpasst | Modul: Telefon-Modul | Ergebnis: Rückrufnotiz bereit
-2. Eingang: Störung gemeldet | Modul: Notdienst-Modul | Ergebnis: Techniker alarmiert
-3. Eingang: Terminwunsch | Modul: Kalender-Modul | Ergebnis: Rückruf vorbereitet
+2. Eingang: WhatsApp mit Foto | Modul: Foto/Datei-Modul | Ergebnis: Fall vollständig
+3. Eingang: Terminwunsch | Modul: Termin-Modul | Ergebnis: Rückruf vorbereitet
 
 **Footer Live-Feed:** Teamübergabe erstellt · 1 Rückruf offen
 
@@ -29,9 +29,9 @@ BaseModul nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt Rückrufn
 ## Module Section
 
 **Label:** 02 — DIE MODULE
-**Headline:** Telefon zuerst. Erweiterungen, wenn es mehr braucht.
-**Subtext:** Sie starten mit der Telefonannahme. WhatsApp, Fotos, Kalender und Webhooks kommen dazu, wenn der Ablauf sitzt.
-**Tag:** EINGANG → MODUL → AKTION
+**Headline:** Ein Eingang zuerst. Erweiterungen, wenn sie wirklich helfen.
+**Subtext:** Wir starten mit dem Kanal, an dem heute Anfragen verloren gehen: Telefon, WhatsApp oder Website. Termine, Fotos, Ticketing und weitere Betriebs-Agenten kommen dazu, wenn der Ablauf sitzt.
+**Tag:** EINGANG → QUALIFIZIERUNG → NÄCHSTER SCHRITT
 
 ### Modul 01 — Telefon
 **Titel:** Telefon-Modul
@@ -48,15 +48,20 @@ BaseModul nimmt Anrufe entgegen, fragt fehlende Infos ab und übergibt Rückrufn
 **Beschreibung:** Klärt Leistung und Wunschzeit, prüft Slots und bereitet Rückruf oder Buchung vor.
 **Artefakt:** Leistung: Jahreswartung Heizung | Slot 1: 09:00–10:00 belegt | Slot 2: DI 14:30–15:30 reserviert
 
-### Modul 04 — WhatsApp
-**Titel:** WhatsApp-Modul
-**Beschreibung:** Sammelt Nachfragen, Bestätigungen und Kontext nach dem Anruf.
-**Artefakt:** Chat-Bubble: "Hallo, ich hätte eine Frage zu meinem Auftrag. Können Sie mich zurückrufen?" → Anfrage ans Team
+### Modul 04 — WhatsApp & Web
+**Titel:** Chat-/Web-Anfrage-Modul
+**Beschreibung:** Macht unvollständige Nachrichten und Formulare zu vollständigen Anfragen mit einem klaren nächsten Schritt.
+**Artefakt:** Chat-Bubble: "Hallo, ich hätte eine Frage zu meinem Auftrag." → Rückfrage nach Ort und Anliegen → Anfrage ans Team
 
-### Modul 05 — Foto & Schaden
-**Titel:** Foto/Schaden-Modul
-**Beschreibung:** Holt fehlende Bilder oder Anhänge nach dem Anruf ein und verbindet sie mit Kontakt und Kontext.
+### Modul 05 — Foto & Datei
+**Titel:** Foto-/Datei-Modul
+**Beschreibung:** Holt fehlende Bilder oder Anhänge ein und verbindet sie mit Kontakt, Anliegen und Kontext.
 **Artefakt:** #A-204 | Kontakt: Thomas M. | Status: vollständig | Priorität: Normal
+
+### Modul 06 — Übergabe & Prozess
+**Titel:** Betriebs-Agenten
+**Beschreibung:** Ergänzt einen bewiesenen Anfrage-Flow um Ticketing, Angebotsvorbereitung, Disposition oder internes Wissen.
+**Artefakt:** Anfrage vollständig | Zuständig: Team Service | Nächster Schritt: Rückruf bis 10:30
 
 ---
 
@@ -135,7 +140,7 @@ CTA: Anfrage senden
 **Label:** 04 — PILOT
 **Badge:** EIN MODUL ZUERST
 **Headline:** Welches Modul testen wir zuerst?
-**Subtext:** Wir schauen in 30 Minuten, welcher Eingangskanal gerade am meisten Zeit kostet — und ob ein schlanker basemodul-Pilot Sinn ergibt. Kein Komplettsystem, kein Vertrag im Erstgespräch.
+**Subtext:** Wir schauen in 30 Minuten, an welchem Eingangskanal Sie heute Anfragen oder Zeit verlieren – und ob ein schlanker BaseModul-Pilot den Ablauf messbar verbessern kann. Kein Komplettsystem, kein Vertrag im Erstgespräch.
 **CTA:** Demo anfragen
 **Ansprechpartner:** Fatih Akdeniz | AGENTEQ · basemodul.de
 
@@ -155,7 +160,7 @@ CTA: Anfrage senden
 ## Footer
 
 **Logo:** basemodul.de
-**Beschreibung:** KI-Module für Betriebe: Telefon, Termine, WhatsApp, Fotos und Notfälle vorsortieren und sauber ans Team übergeben.
+**Beschreibung:** KI-Module für Servicebetriebe: Anfragen über Telefon, WhatsApp und Website strukturiert aufnehmen, priorisieren und sauber ans Team übergeben.
 **Spalte Produkt:** Module / Demo / Pilot / FAQ
 **Spalte Unternehmen:** Über uns / Karriere / Kontakt
 **Spalte Rechtliches:** Impressum / Datenschutz / AGB
