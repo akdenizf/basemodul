@@ -1,4 +1,4 @@
-# BaseModule — Support und Eskalation im 30-Tage-Pilot
+# BaseModul — Support und Eskalation im 30-Tage-Pilot
 
 > Diese Vorlage beschreibt den Arbeitsweg für den konkreten Pilot. Sie begründet keine pauschale Service-Level-, Verfügbarkeits- oder Reaktionszeitgarantie.
 
@@ -8,7 +8,7 @@
 | Eingangskanal | `{{Telefon / WhatsApp / Web / Foto-Datei}}` |
 | Produktivstart | `{{TT.MM.JJJJ}}` |
 | Kundenseitige Pilotverantwortung | `{{Name, E-Mail, Telefon}}` |
-| BaseModule Delivery Owner | `{{Name, E-Mail, Telefon}}` |
+| BaseModul Delivery Owner | `{{Name, E-Mail, Telefon}}` |
 | Technischer Kontakt | `{{Name, E-Mail, Telefon}}` |
 
 ## 1. Wofür dieser Leitfaden gilt
@@ -21,7 +21,7 @@ Der Leitfaden gilt für den im Scope festgelegten Eingangskanal, die vereinbarte
 |---|---|---|
 | Anfrage kommt nicht oder unvollständig an | `{{Support-E-Mail / Ticketweg}}` | Scope-ID, Zeitpunkt, Fallreferenz soweit zulässig, erwartete und tatsächliche Übergabe. |
 | Eingangskanal / Erreichbarkeit auffällig | `{{Support-E-Mail / Telefon}}` | Zeitpunkt, Kanal, beobachtetes Verhalten, Rückrufkontakt. |
-| Unklarer oder potenziell kritischer Fall | Zuerst kundenseitige Fallback-Regel. Danach BaseModule informieren. | Fallreferenz, angewandte Regel, erreichbare Verantwortliche. |
+| Unklarer oder potenziell kritischer Fall | Zuerst kundenseitige Fallback-Regel. Danach BaseModul informieren. | Fallreferenz, angewandte Regel, erreichbare Verantwortliche. |
 | Datenschutz-/Sicherheitsfrage | `{{Datenschutzkontakt}}` | Kurzbeschreibung, Scope-ID, sichere Rückkontaktmöglichkeit. |
 | Wunsch nach neuer Funktion / Kanal | `{{Delivery Owner}}` | Gewünschter Nutzen, betroffener Prozess, Dringlichkeit. |
 
@@ -36,7 +36,7 @@ Der Leitfaden gilt für den im Scope festgelegten Eingangskanal, die vereinbarte
 
 ## 4. Fallback hat Vorrang
 
-Bei unklaren oder potenziell kritischen Fällen gilt immer die im Scope dokumentierte kundenspezifische menschliche Fallback-Regel. BaseModule trifft keine fachliche, preisliche, vertragliche oder operative Sachentscheidung und ersetzt keinen kundenseitigen Bereitschafts- oder Notfallprozess.
+Bei unklaren oder potenziell kritischen Fällen gilt immer die im Scope dokumentierte kundenspezifische menschliche Fallback-Regel. BaseModul trifft keine fachliche, preisliche, vertragliche oder operative Sachentscheidung und ersetzt keinen kundenseitigen Bereitschafts- oder Notfallprozess.
 
 | Fall | Kundenseitige Regel / Ansprechpartner |
 |---|---|

@@ -80,7 +80,7 @@ Das Zugpferd ist deshalb nicht ein bestimmtes Tool und auch nicht ausschließlic
 
 Gute Sprache:
 
-> Kein qualifizierter Anruf und keine relevante Anfrage geht verloren.
+> Wir beginnen mit einem Eingangskanal, an dem heute Anfragen oder Zeit verloren gehen, und prüfen die Wirkung mit einer Scorecard.
 
 > Aus Telefon-, WhatsApp- und Website-Chaos werden vollständige nächste Schritte.
 

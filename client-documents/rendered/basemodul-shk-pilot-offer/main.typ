@@ -1,8 +1,8 @@
 #import "report-theme.typ": report-theme
 
 #show: report-theme.with(
-  title: "BaseModule SHK-Anfrage-Eingang Pilot",
-  author: "BaseModule · AGENTEQ",
+  title: "BaseModul SHK-Anfrage-Eingang Pilot",
+  author: "BaseModul · AGENTEQ",
   rhythm: "report",
   running-header: false,
 )
@@ -26,7 +26,7 @@
 #let card(body) = block(fill: soft, stroke: 0.7pt + line, radius: 7pt, inset: 8pt, body)
 #let tick(body) = grid(columns: (11pt, 1fr), column-gutter: 4pt, text(fill: green, weight: "bold")[✓], body)
 
-#label[BaseModule · Ein Produkt von AGENTEQ]
+#label[BaseModul · Ein Produkt von AGENTEQ]
 #v(4pt)
 #text(size: 22pt, weight: "bold", fill: ink)[SHK-Anfrage-Eingang Pilot]
 #v(1pt)
@@ -36,7 +36,7 @@
 #block(fill: pale, radius: 7pt, inset: 9pt)[
   #text(size: 10.2pt, weight: "bold", fill: green)[Damit relevante Anfragen nicht in Mailbox, Zettel oder unvollständiger Nachricht enden.]
   #v(2pt)
-  BaseModule testet mit Ihrem Betrieb einen klar abgegrenzten Anfrage-Eingang. Ihr Team erhält vollständige, priorisierte nächste Schritte — ohne großes Systemprojekt.
+  BaseModul testet mit Ihrem Betrieb einen klar abgegrenzten Anfrage-Eingang. Ihr Team erhält vollständige, priorisierte nächste Schritte — ohne großes Systemprojekt.
 ]
 
 #v(8pt)
@@ -110,7 +110,7 @@
 #block(fill: ink, radius: 7pt, inset: 10pt)[
   #text(fill: white, size: 10pt, weight: "bold")[Nächster Schritt: gemeinsamer 30-Minuten-Check]
   #v(2pt)
-  #text(fill: rgb("E2EAE5"), size: 8pt)[Danach erhalten Sie den ausgefüllten „BaseModule Anfrage-Eingang Pilot — Scope & Success Plan“ mit Kanal, Pflichtinformationen, Zuständigkeiten, Fallback und Go-live-Ablauf.]
+  #text(fill: rgb("E2EAE5"), size: 8pt)[Danach erhalten Sie den ausgefüllten „BaseModul Anfrage-Eingang Pilot — Scope & Success Plan“ mit Kanal, Pflichtinformationen, Zuständigkeiten, Fallback und Go-live-Ablauf.]
 ]
 
 #v(6pt)

@@ -1,4 +1,4 @@
-# BaseModule Claims Register
+# BaseModul Claims Register
 
 **Zweck:** Freigabegrundlage für Website, Landingpages, Demo, Angebot, Sales, Outreach und Case Studies.
 **Regel:** Extern wird nur genutzt, was den Status **Freigegeben** oder **Bedingt freigegeben** mit der angegebenen Einschränkung hat.
@@ -19,13 +19,13 @@
 
 | ID | Aussage | Status | Zulässige Formulierung | Beleg / Prüfquelle | Grenze |
 |---|---|---|---|---|---|
-| BM-01 | Kernversprechen | **Freigegeben** | „BaseModule sorgt dafür, dass aus jeder relevanten Kundenanfrage ein sauberer nächster Schritt wird.“ | `PRODUCT_ARCHITECTURE.md`. | Kein Umsatz-, Zeit- oder Erreichbarkeitsversprechen implizieren. |
+| BM-01 | Kernversprechen | **Freigegeben** | „BaseModul sorgt dafür, dass aus jeder relevanten Kundenanfrage ein sauberer nächster Schritt wird.“ | `PRODUCT_ARCHITECTURE.md`. | Kein Umsatz-, Zeit- oder Erreichbarkeitsversprechen implizieren. |
 | BM-02 | Ein klarer Eingangskanal | **Freigegeben** | „Wir beginnen mit einem Eingangskanal, an dem heute Anfragen oder Zeit verloren gehen.“ | Produktarchitektur, Pilot-Scope. | Kanal ist im Einzelfall Telefon, WhatsApp, Web oder Foto/Datei — nicht automatisch alle. |
-| BM-03 | Strukturierte Übergabe | **Bedingt freigegeben** | „BaseModule nimmt die vereinbarten Informationen auf und übergibt Ihrem Team einen klaren nächsten Schritt mit Kontext.“ | Pilot-Scope, Testfälle. | Vollständigkeit hängt von vereinbarten Pflichtfeldern und den Angaben der anfragenden Person ab. |
+| BM-03 | Strukturierte Übergabe | **Bedingt freigegeben** | „BaseModul nimmt die vereinbarten Informationen auf und übergibt Ihrem Team einen klaren nächsten Schritt mit Kontext.“ | Pilot-Scope, Testfälle. | Vollständigkeit hängt von vereinbarten Pflichtfeldern und den Angaben der anfragenden Person ab. |
 | BM-04 | Priorisierung | **Bedingt freigegeben** | „Anfragen werden nach den mit Ihrem Betrieb abgestimmten Regeln eingeordnet und übergeben.“ | Konfiguration, Testfälle, Scope. | Keine fachlich verbindliche Endentscheidung durch das System behaupten. |
 | BM-05 | Menschlicher Fallback | **Freigegeben** | „Unklare oder kritische Fälle folgen einer klaren menschlichen Übergabe.“ | Produktarchitektur, Pilot-Scope. | Erreichbarkeit und konkrete Notfallregel sind kundenspezifisch. |
 | BM-06 | Modulare Erweiterung | **Freigegeben** | „Wir erweitern erst, wenn der erste Ablauf im Alltag nachweislich funktioniert.“ | Produktarchitektur, Delivery Playbook. | Kein Versprechen, dass jedes Zusatzmodul für jeden Betrieb sinnvoll ist. |
-| BM-07 | Foto-/Dateikontext | **Bedingt freigegeben** | „Bei passenden Fällen kann BaseModule Fotos oder Unterlagen mit dem richtigen Kontext anfordern und zuordnen.“ | Produktarchitektur, kundenfreigegebener Testfall. | Nur bei vereinbartem Kanal, Zweck und Datenfluss. |
+| BM-07 | Foto-/Dateikontext | **Bedingt freigegeben** | „Bei passenden Fällen kann BaseModul Fotos oder Unterlagen mit dem richtigen Kontext anfordern und zuordnen.“ | Produktarchitektur, kundenfreigegebener Testfall. | Nur bei vereinbartem Kanal, Zweck und Datenfluss. |
 
 ## 3. Angebots- und Pilotaussagen
 
@@ -53,7 +53,7 @@
 |---|---|---|---|---|
 | BM-30 | „DSGVO-konform“ | **Technik-/Rechtsprüfung offen** | Abhängig von konkretem Datenfluss, Diensten, Rollen, Auftragsverarbeitung, TOMs und Kundenkonfiguration. | „Datenverarbeitung, Zuständigkeiten und erforderliche Freigaben werden vor Go-live pro Pilot geklärt.“ |
 | BM-31 | „24/7 erreichbar“ | **Bedingt freigegeben** | Kanalverfügbarkeit, Weiterleitung, menschliche Bereitschaft und Servicezeit sind zu unterscheiden. | „Der Eingangskanal folgt der im Scope vereinbarten Erreichbarkeits- und Übergaberegel.“ |
-| BM-32 | „Notdienst wird automatisch gelöst“ | **Nicht verwenden** | BaseModule darf keine autonome fachliche/operative Notfallentscheidung suggerieren. | „Kritische Fälle werden nach einer klaren kundenspezifischen Regel an Menschen eskaliert.“ |
+| BM-32 | „Notdienst wird automatisch gelöst“ | **Nicht verwenden** | BaseModul darf keine autonome fachliche/operative Notfallentscheidung suggerieren. | „Kritische Fälle werden nach einer klaren kundenspezifischen Regel an Menschen eskaliert.“ |
 | BM-33 | „Integration mit {{System}}“ | **Technik-/Rechtsprüfung offen** | Tiefe, Datenfluss, Aufwand und Freigabe sind systemspezifisch. | „Bestehende Übergabewege werden im Pilot geprüft; Integrationen werden separat gescopt.“ |
 | BM-34 | „WhatsApp-Integration“ | **Technik-/Rechtsprüfung offen** | Kanal, Opt-in, Template-/Messaging-Regeln und Datenfluss sind vor Go-live zu prüfen. | „WhatsApp kann bei passendem Use Case als separater Eingangskanal geprüft werden.“ |
 | BM-35 | „Antwort in Sekunden“ | **Technikprüfung offen** | Mess- und Verfügbarkeitsbedingungen müssen präzise definiert sein. | „Anfragen werden nach der vereinbarten Logik erfasst und übergeben.“ |
@@ -73,10 +73,10 @@
 
 | Schritt | Verantwortlich | Ergebnis |
 |---|---|---|
-| Produktverantwortung prüft Funktionsumfang und Grenze. | BaseModule Product Owner. | Statusvorschlag mit Produktbeleg. |
-| Technik prüft Kanal, Integration und tatsächliche Betriebsbedingung. | BaseModule Technical Owner. | Technischer Beleg oder Einschränkung. |
-| Bei Daten/Vertrag prüft die zuständige Stelle. | BaseModule bzw. Kunde je Kontext. | Dokumentierte Freigabe oder neutrale Prozessformulierung. |
-| Sales, Landing und Demo übernehmen nur freigegebene Formulierungen. | BaseModule Go-to-Market. | Einheitliche Angebotskommunikation. |
+| Produktverantwortung prüft Funktionsumfang und Grenze. | BaseModul Product Owner. | Statusvorschlag mit Produktbeleg. |
+| Technik prüft Kanal, Integration und tatsächliche Betriebsbedingung. | BaseModul Technical Owner. | Technischer Beleg oder Einschränkung. |
+| Bei Daten/Vertrag prüft die zuständige Stelle. | BaseModul bzw. Kunde je Kontext. | Dokumentierte Freigabe oder neutrale Prozessformulierung. |
+| Sales, Landing und Demo übernehmen nur freigegebene Formulierungen. | BaseModul Go-to-Market. | Einheitliche Angebotskommunikation. |
 | Pilotwerte werden nach Abschluss mit Zeitraum, Methode und Kundenfreigabe bewertet. | Delivery Owner + Kunde. | Freigegebene Case-Study- oder Wirkungsclaims. |
 
 ## 8. Pflege

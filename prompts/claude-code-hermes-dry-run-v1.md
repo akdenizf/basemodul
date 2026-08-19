@@ -1,8 +1,8 @@
-# Claude Code Prompt — BaseModule Hermes Dry Run v1
+# Claude Code Prompt — BaseModul Hermes Dry Run v1
 
 ## Rolle und Ziel
 
-Du führst **ausschließlich einen lokalen, synthetischen Hermes-Dry-Run** im BaseModule-Repository aus. Ziel ist die technische und inhaltliche Prüfung der Hermes-Wissensquellen für einen späteren menschlich geführten SHK-Pilot-Discovery-Prozess.
+Du führst **ausschließlich einen lokalen, synthetischen Hermes-Dry-Run** im BaseModul-Repository aus. Ziel ist die technische und inhaltliche Prüfung der Hermes-Wissensquellen für einen späteren menschlich geführten SHK-Pilot-Discovery-Prozess.
 
 > **Dies ist kein Outreach-Job.** Du recherchierst keine echten Unternehmen, legst keine Leads an, generierst keine tatsächlich zu verwendenden Pitches und versendest oder terminierst nichts.
 

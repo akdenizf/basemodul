@@ -74,7 +74,7 @@ if (fixture) {
   }
 }
 
-console.log('Hermes Dry Run — BaseModule');
+console.log('Hermes Dry Run — BaseModul');
 console.log('Mode: static validation only; no leads, no sends, no external calls.');
 console.log('');
 for (const check of checks) console.log(`PASS  ${check}`);

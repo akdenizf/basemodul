@@ -1,4 +1,4 @@
-# BaseModule — Kundenpaket für den ersten Pilot
+# BaseModul — Kundenpaket für den ersten Pilot
 
 Dieses Verzeichnis trennt kundenfähige Unterlagen von strategischen und rechtlich prüfpflichtigen Arbeitsentwürfen.
 
@@ -8,7 +8,7 @@ Dieses Verzeichnis trennt kundenfähige Unterlagen von strategischen und rechtli
 |---|---|---|
 | Nach einem qualifizierten Gespräch | `rendered/BASEMODUL_SHK_PILOT_OFFER_ONE_PAGER.pdf` | Kurzer, kundenfähiger SHK-Pilotüberblick. Vor Versand Betriebsname, Ansprechpartner, Angebots-ID und Gültigkeit ergänzen. |
 | Nach Scoping, vor Beauftragung | `../BASEMODUL_30_DAY_PILOT_SCOPE.md` | Ausgefüllter Scope mit Kanal, Rollen, Fallback, Scorecard, Preis und kaufmännischen Details. |
-| Vor Produktivstart | `templates/BASEMODUL_GO_LIVE_APPROVAL.md` | Go-live erst nach dokumentierter Kunden- und BaseModule-Freigabe. |
+| Vor Produktivstart | `templates/BASEMODUL_GO_LIVE_APPROVAL.md` | Go-live erst nach dokumentierter Kunden- und BaseModul-Freigabe. |
 | Vor Verarbeitung echter Kundendaten | `legal-review/BASEMODUL_DPA_AVV_DRAFT.md`, TOMs und Subprocessor-Liste | Ausschließlich nach Technik- und Rechtsprüfung als Vertrags-/Anlagenpaket verwenden. |
 | Während des Piloten | `../PILOT_DELIVERY_PLAYBOOK.md` | Interner Wochenrhythmus, Scorecard und Tag-30-Entscheidung. |
 

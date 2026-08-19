@@ -1,4 +1,4 @@
-# BaseModule — Tag-30-Pilotabschluss und Entscheidung
+# BaseModul — Tag-30-Pilotabschluss und Entscheidung
 
 | Kunde / Betrieb | `{{Betriebsname}}` |
 |---|---|
@@ -81,4 +81,4 @@
 | Rolle | Name | Datum | Bestätigung |
 |---|---|---|---|
 | Kundenseitige Pilotverantwortung | `{{}}` | `{{}}` | ☐ |
-| BaseModule Delivery Owner | `{{}}` | `{{}}` | ☐ |
+| BaseModul Delivery Owner | `{{}}` | `{{}}` | ☐ |

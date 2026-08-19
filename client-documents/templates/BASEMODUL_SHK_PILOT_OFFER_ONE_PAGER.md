@@ -1,4 +1,4 @@
-# BaseModule SHK-Anfrage-Eingang Pilot
+# BaseModul SHK-Anfrage-Eingang Pilot
 
 > **Ein klarer Eingang. Vollständige Übergaben. 30 Tage messbar prüfen.**
 
@@ -13,7 +13,7 @@
 
 Wenn das Team im Einsatz, im Kundentermin oder außerhalb der Bürozeit ist, fehlen bei Anfragen oft genau die Informationen für einen sauberen ersten Rückruf: Kontakt, Einsatzort, Anliegen, Dringlichkeit und Zuständigkeit.
 
-BaseModule startet deshalb nicht mit einem großen Gesamtsystem. Wir testen mit Ihrem Betrieb **einen klar abgegrenzten Anfrage-Eingang** und prüfen anhand realer Fälle, ob Ihr Team vollständige, priorisierte nächste Schritte erhält.
+BaseModul startet deshalb nicht mit einem großen Gesamtsystem. Wir testen mit Ihrem Betrieb **einen klar abgegrenzten Anfrage-Eingang** und prüfen anhand realer Fälle, ob Ihr Team vollständige, priorisierte nächste Schritte erhält.
 
 > **Ziel nach 30 Tagen:** Gemeinsam entscheiden, ob der Ablauf im Betriebsalltag funktioniert, welche Regeln gegebenenfalls nachgeschärft werden und ob ein Ausbau sinnvoll ist.
 
@@ -30,7 +30,7 @@ BaseModule startet deshalb nicht mit einem großen Gesamtsystem. Wir testen mit 
 | **Externe Nutzung** | Telefonie-, Messaging- und weitere externe Nutzungskosten nur transparent und vorab abgestimmt. |
 | **Möglicher Dauerbetrieb** | Nach Tag 30: Ausbauen, Nachschärfen, Vereinfachen oder Pausieren; Folgetarif nur mit separatem Angebot. |
 
-## Was BaseModule im Pilot liefert
+## Was BaseModul im Pilot liefert
 
 | Wir liefern | Wir ersetzen nicht |
 |---|---|
@@ -70,9 +70,9 @@ Wir berichten Wirkung, nicht Versprechen. Die Scorecard betrachtet nur tatsächl
 
 ## Nächster Schritt
 
-In einem kurzen 30-Minuten-Check legen wir den passenden Eingang fest. Danach erhalten Sie den ausgefüllten **„BaseModule Anfrage-Eingang Pilot — Scope & Success Plan“** mit Ihrem konkreten Kanal, Pflichtinformationen, Zuständigkeiten, Fallback und Go-live-Ablauf.
+In einem kurzen 30-Minuten-Check legen wir den passenden Eingang fest. Danach erhalten Sie den ausgefüllten **„BaseModul Anfrage-Eingang Pilot — Scope & Success Plan“** mit Ihrem konkreten Kanal, Pflichtinformationen, Zuständigkeiten, Fallback und Go-live-Ablauf.
 
-| BaseModule / AGENTEQ | `{{Name, E-Mail, Telefon}}` |
+| BaseModul / AGENTEQ | `{{Name, E-Mail, Telefon}}` |
 |---|---|
 | Kundenseite | `{{Name, Rolle, E-Mail}}` |
 

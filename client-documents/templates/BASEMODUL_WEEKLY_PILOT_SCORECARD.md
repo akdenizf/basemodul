@@ -1,4 +1,4 @@
-# BaseModule — Weekly Pilot Scorecard
+# BaseModul — Weekly Pilot Scorecard
 
 | Kunde / Betrieb | `{{Betriebsname}}` |
 |---|---|
@@ -63,4 +63,4 @@
 | Rolle | Name | Datum | Bestätigung |
 |---|---|---|---|
 | Kundenseitige Pilotverantwortung | `{{}}` | `{{}}` | ☐ |
-| BaseModule Delivery Owner | `{{}}` | `{{}}` | ☐ |
+| BaseModul Delivery Owner | `{{}}` | `{{}}` | ☐ |
