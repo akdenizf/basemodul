@@ -89,15 +89,26 @@ Pricing/FAQ hatten noch unmigrierte Dark-Premium-Glass-Reste, die dem eigenen
 - Hero-Flow-Panel von großer dunkler Karte auf schmale Leiste verkleinert —
   Rückrufnotiz ist jetzt der klare, einzige Hauptfokus.
 
+**Zusätzlich gefixt (2026-08-19, zweite Runde):** `VisualContextSection`,
+`IntegrationsSection` und `LiveDemoSection` hatten denselben `AmbientOrbs`/
+dunklen-Verlauf-Rest wie Workflow/Modules — jetzt überall entfernt,
+`AmbientOrbs.tsx` selbst gelöscht (keine Verwender mehr). `LiveDemoSection`
+zusätzlich komplett durchgefixt: Szenario-Picker-Pills und das gesamte
+Phone-Screen-Innenleben (Anrufer-Karte, Chat-Bubbles, Ergebnis-Karte,
+Progress-Bar, Play-Button) liefen noch auf `border-white/10`/`bg-white/[0.0x]`
+— jetzt Papier-Sprache. Cyan-Anteil im Ambient-Glow raus (war nie Teil der
+Palette). Urgency-Punkte nutzen jetzt echte Tokens statt generischem
+Tailwind-Rot/Amber/Blau (`priority`/`leaf`/`appointment`).
+
 ## Noch offen (separate Checkpoints, nicht in einem Rutsch)
 
-1. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
-   ausbauen; nutzt noch `AmbientOrbs` außerhalb des Phone-Mockups — beim Umbau
-   mitprüfen.
-2. Makro-Navigation für die 15-Sektionen-Seite (P2 aus der Kritik) — kein
+1. Makro-Navigation für die 15-Sektionen-Seite (P2 aus der Kritik) — kein
    akuter Fix, aber im Hinterkopf behalten.
-3. Doku-Font-Widerspruch (P3): sicherstellen, dass alle CLAUDE.md-Dateien
+2. Doku-Font-Widerspruch (P3): sicherstellen, dass alle CLAUDE.md-Dateien
    konsistent „Public Sans" nennen.
-4. Abschließender Konsistenz-Pass über restliche Sektionen.
+3. `/ki-telefonassistent-shk` — separate SHK-Pilot-Seite, teilt keine
+   Komponenten, läuft noch auf der alten Optik.
+4. Abschließender Konsistenz-Pass über restliche, noch nicht angefasste
+   Sektionen (UseCases, StorySeam, LetsWorkTogether, Footer, Navbar).
 
 Jeder Punkt ist ein eigener Review-Checkpoint mit dem Owner, kein Blankoscheck.
