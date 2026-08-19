@@ -19,3 +19,11 @@ Dieses Verzeichnis trennt kundenfähige Unterlagen von strategischen und rechtli
 - Alle Felder im Format `{{...}}` sind vor Kundennutzung auszufüllen.
 - Für Telefon-, WhatsApp-, Web- und Foto-/Dateipiloten gilt die gleiche Kernlogik; kanalbezogene Daten- und Technikregeln werden im konkreten Scope ergänzt.
 - Die rechtlich markierten Entwürfe müssen vor verbindlicher Nutzung fachlich geprüft werden.
+
+## Steuerung während und nach dem Pilot
+
+| Zeitpunkt | Dokument | Verwendung |
+|---|---|---|
+| Wöchentlich während des Piloten | `templates/BASEMODUL_WEEKLY_PILOT_SCORECARD.md` | Gemeinsamer, faktischer Review von Prozessqualität, Fallbacks, Änderungen und nächsten Aufgaben. |
+| Tag 30 | `templates/BASEMODUL_DAY_30_PILOT_OUTCOME_REPORT.md` | Ergebnis, offene Punkte und die bewusste Entscheidung über Dauerbetrieb, Nachschärfen, Erweiterung oder Pause. |
+| Bei Fragen oder Störungen | `templates/BASEMODUL_SUPPORT_AND_ESCALATION_GUIDE.md` | Kontaktweg, Priorisierung, Fallback und Abgrenzung von Support gegenüber Erweiterungswünschen. |
