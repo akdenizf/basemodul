@@ -36,6 +36,23 @@ body {
   }
 }
 
+/* framer-motion wird über MotionConfig abgedeckt; das hier fängt CSS-/Tailwind-
+   Animationen und das globale Smooth-Scroll ab. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 @layer components {
   /* Helles, taktiles Papier statt Glassmorphism. */
   .glass-surface {

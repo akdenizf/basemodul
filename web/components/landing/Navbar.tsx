@@ -87,7 +87,7 @@ export function Navbar() {
           <div className="flex items-center gap-3.5">
             <a
               href="#cta"
-              className="hidden rounded-md bg-leafbtn px-[18px] py-2 text-[14px] font-semibold text-white transition-colors hover:bg-leafbtnhover sm:inline-flex"
+              className="hidden min-h-[44px] items-center rounded-md bg-leafbtn px-[18px] py-2 text-[14px] font-semibold text-white transition-colors hover:bg-leafbtnhover sm:inline-flex"
             >
               30-Minuten-Check buchen
             </a>

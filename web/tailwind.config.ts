@@ -31,7 +31,9 @@ const config: Config = {
         ink: "#1F2A23",
         label: "#455249",
         inksoft: "#687169",
-        faint: "#849087",
+        // WCAG AA: #849087 erreichte auf paper/paperdeep nur 2.85–3.3:1 —
+        // zu wenig für die 10–11px-Mikrolabels, in denen der Token steckt.
+        faint: "#5F6B63",
         // Vertrauen & Status
         leafbtn: "#2E6246",
         leafbtnhover: "#214D36",

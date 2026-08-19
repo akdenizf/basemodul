@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Public_Sans, JetBrains_Mono } from "next/font/google";
+import { MotionProvider } from "@/components/MotionProvider";
 
 const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sans", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
@@ -27,7 +28,7 @@ export default function RootLayout({
         className={`min-h-screen font-sans bg-paper text-ink ${publicSans.variable} ${jetbrainsMono.variable} ${publicSans.className}`}
         style={{ WebkitFontSmoothing: "antialiased" }}
       >
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );
