@@ -1,177 +1,49 @@
-# BaseModul — Factsheet
-<<<<<<< Updated upstream
-# Last Updated: 2026-08-19
-# Department: current=agenteq-outreach | target=basemodul-outreach
-# Source of Truth: PRODUCT_ARCHITECTURE.md
-=======
-# Last Updated: 2026-06-27
-# Department: current=base-modul-outreach
->>>>>>> Stashed changes
+# BaseModule — Hermes Produkt-Factsheet
 
-## Produkt
+**Stand:** 2026-08-19
+**Zweck:** Verdichtete Wissensquelle für Research-, Discovery- und Follow-up-Entwürfe. Bei Widersprüchen gelten `BASEMODUL_CLAIMS_REGISTER.md`, `PRODUCT_ARCHITECTURE.md` und `BASEMODUL_30_DAY_PILOT_SCOPE.md` vorrangig.
 
-product_name: BaseModul
-tagline: KI-Module für Servicebetriebe, die keine relevante Anfrage mehr verlieren wollen.
-dachmarke: AGENTEQ (Trust-Layer, Absender, Impressum und individuelle Umsetzung – nicht die sichtbare Hauptmarke)
-website: basemodul.de
-founder: Fatih Akdeniz
-location: München
-founded: 2026
-category: Modulare Anfrage- und Prozessautomatisierung für KMU-Servicebetriebe
+## Produktwahrheit
 
-## Positionierung (ein Satz)
+| Feld | Verbindliche Einordnung |
+|---|---|
+| Produktname | BaseModule |
+| Kategorie | Kontrollierter Anfrage-Eingang Pilot für KMU-Servicebetriebe |
+| Erste Zielgruppe | SHK-, Heizungs-, Klima- und notdienstnahe Servicebetriebe |
+| Mögliche Rollen | Inhaber, Betriebsleitung, Service-/Dispositionsverantwortung |
+| Erster Kaufpfad | Ein Kanal, ein Use Case, 30 Tage, menschlicher Fallback, gemeinsame Scorecard |
 
-BaseModul sorgt dafür, dass aus jeder relevanten Kundenanfrage ein sauberer nächster Schritt wird: Telefon, WhatsApp und Webanfragen werden strukturiert aufgenommen, fehlende Informationen nachgefragt, priorisiert und verlässlich an das Team übergeben.
+> **BaseModule testet mit einem Servicebetrieb einen klar abgegrenzten Anfrage-Eingang, damit vereinbarte Anfragen vollständig, priorisiert und nachvollziehbar beim richtigen Team ankommen.**
 
-## Kernversprechen
+## Was der erste Pilot umfasst
 
-> Kein qualifizierter Anruf und keine relevante Anfrage geht verloren.
+Der erste Pilot startet mit genau einem vereinbarten Kanal: Telefon, WhatsApp, Web-Anfrage oder Foto-/Dateieingang. Kanal, Pflichtinformationen, Zuständigkeiten, menschlicher Fallback und Scorecard werden gemeinsam festgelegt. Der Pilot dauert 30 Tage ab dokumentiertem Produktivstart und endet mit einer bewussten Entscheidung über Dauerbetrieb, Nachschärfen, Erweiterung oder Pause.
 
-BaseModul startet mit dem Eingangskanal, an dem ein Betrieb heute Anfragen oder Zeit verliert. Das kann Telefonie sein, muss es aber nicht sein. Voice ist ein mögliches, starkes Modul – **BaseModul ist keine reine Voice-Agentur.**
+## Zulässige Wirkungssprache
 
-## Angebotsstufen
+| Hermes darf sagen | Hermes darf nicht als Fakt sagen |
+|---|---|
+| Vereinbarte Informationen können strukturiert erfasst und nach festgelegten Regeln übergeben werden. | Jede Anfrage werde automatisch vollständig bearbeitet oder gehe nie verloren. |
+| Der Pilot prüft, ob der konkrete Eingang für das Team praktikabel ist. | Garantierte Umsatz-, ROI-, Zeit- oder Personaleffekte. |
+| Unklare oder kritische Fälle bleiben menschlich geführt. | Autonome Notdienst-, Preis-, Vertrags- oder fachliche Entscheidung. |
+| Erweiterungen werden erst nach belegtem Bedarf separat bewertet. | Eine bestimmte Integration, ein bestimmter Kanal oder ein Foto-Flow sei im Pilot immer enthalten. |
 
-### Anfrage-Eingang
-- ein klar abgegrenzter Eingangskanal
-- strukturierte Qualifizierung
-- Übergabe an Team per E-Mail, WhatsApp, Sheet oder bestehendes System
-- Pilot-Reporting für Anfragen, Übergabezeit und nächste Schritte
-- Ziel: ein messbares Anfrageleck schließen
+## Preis- und Angebotsgrenze
 
-### Anfrage-Flow
-- mehrere passende Eingangskanäle
-- Rückfragen, Terminlogik, Erinnerungen und Status-Übergaben
-- Ticket-/CRM-Anbindung, wenn sinnvoll
-- Ziel: aus Einzelanfragen einen durchgängigen, nachvollziehbaren Ablauf machen
+Hermes nennt im Erstkontakt keinen Preis. Nach qualifiziertem Gespräch kann ein menschlicher Owner den kundenspezifischen Pilot-Scope und das passende Angebot freigeben. Der aktuelle SHK-Founding-Pilot ist in den verbindlichen Angebotsunterlagen geregelt; externe Nutzungskosten, Dauerbetrieb und Erweiterungen werden nur im konkreten Scope transparent vereinbart.
 
-### Betriebs-Agenten
-- kundenspezifische Agenten für belegte, wiederkehrende operative Engpässe
-- zum Beispiel Angebotsvorbereitung, Disposition, internes Wissen oder Reporting
-- nur bei klaren Regeln, gepflegter Datenbasis und menschlicher Freigabe bei verbindlichen Entscheidungen
-- Ziel: Teamzeit in geschäftskritischen Prozessen reduzieren
+## Daten und Betrieb
 
-## Module (Produktregal)
+Datenkategorien, tatsächliche Anbieter, Speicherorte, Aufzeichnungsregeln, Löschfristen und Sicherheitsmaßnahmen werden vor Go-live gegen den konkreten Kanal und Pilot technisch sowie rechtlich geprüft. Hermes darf daraus keine pauschale Datenschutz- oder Hostingzusage ableiten.
 
-### Telefon-Modul
-- nimmt Anrufe an, wenn das Team nicht erreichbar oder beschäftigt ist
-- erkennt Anliegen und Dringlichkeit
-- fragt Kontaktdaten, Standort und notwendige Details ab
-- erstellt Rückrufnotiz, Anfrage oder Ticket für das Team
-- Ideal für: SHK, Kfz, Handwerk, Facility und Servicebetriebe
+## Was BaseModule nicht ist
 
-### WhatsApp-/Chat-Modul
-- sammelt strukturierte Informationen aus Chats statt unvollständiger Freitexte
-- stellt Rückfragen bei fehlenden Angaben
-- verknüpft Kontakt, Kontext, Bilder und nächsten Schritt
-- übergibt die Anfrage sauber ans Team
-- Ideal für: Betriebe mit häufigen WhatsApp-Kundenanfragen
+- kein CRM-, ERP- oder vollständiger Plattform-Ersatz;
+- keine pauschale Personalersatz-Automation;
+- keine Hausverwaltungs-Lösung;
+- kein offenes Individualprojekt ohne klaren ersten Scope;
+- keine Antwort auf einen ungeklärten Betriebsprozess durch mehr Marketing oder mehr Kanäle.
 
-### Web-Anfrage-Modul
-- macht Website-Anfragen vollständig und qualifizierbar
-- fragt die für Leistung, Rückruf oder Termin nötigen Informationen ab
-- stößt sofort die definierte Team-Übergabe oder Rückfrage an
-- Ideal für: Betriebe mit Formular-Leads, die heute langsam oder unvollständig bearbeitet werden
+## Hermes-Grenze
 
-### Termin-Modul
-- klärt Leistung, Wunschzeit und notwendige Vorabinformationen
-- prüft Kalender oder freie Slots nach definierten Regeln
-- bereitet Termin, Bestätigung und Erinnerung vor
-- reduziert Rückruf-Hin-und-her
-- Ideal für: Werkstätten, Wartung, Besichtigungen und planbare Serviceleistungen
-
-### Foto-&-Datei-Modul
-- nimmt Fotos, Schadenbilder, Objektbilder oder Dokumente entgegen
-- fragt fehlenden Kontext ab, zum Beispiel Ort, Hergang oder Fahrzeugschein
-- erstellt einen strukturierten Fall mit Anhängen
-- Ideal für: Kfz, Sachverständige, Handwerk, Entrümpelung und Facility
-
-### Prioritäts-/Notdienst-Modul
-- erkennt zeitkritische Fälle anhand klarer Regeln
-- fragt Pflichtinformationen wie Adresse, Problem und Rückrufnummer ab
-- eskaliert an Bereitschaft oder Team per definiertem Kanal
-- verhindert, dass kritische Fälle in Mailbox oder Chat verschwinden
-- Ideal für: SHK, Elektro, technische Services und andere Bereitschaftsmodelle
-
-### Übergabe-/Ticket-Modul
-- hält Anfrage, Kontext, Priorität, Zuständigkeit und Status zusammen
-- schafft einen klaren nächsten Schritt für das Team
-- macht Nachverfolgung und Reporting möglich
-- Ideal für: Betriebe mit mehreren Mitarbeitenden oder Medienbrüchen
-
-## Vertikaler Fokus (Phase 1)
-
-1. SHK, Heizung, Klima, Elektro und notdienst-nahe Handwerksbetriebe
-2. Kfz-Werkstätten, Gutachter und Aufbereitung
-3. Gebäudereinigung, Facility und Entrümpelung
-
-Hausverwaltungen gehören zur Callfolio-Spur. Healthcare und andere regulierungsintensive Vertikalen sind nicht der erste Fokus.
-
-## Pilot-Favorit
-
-Der typische erste Pilot ist **Anfrage-Eingang für einen klaren Kanal**. Bei telefonlastigen Betrieben bedeutet das Telefon-Modul plus Rückruf- oder Notdienst-Übergabe. Bei bild- oder chatlastigen Prozessen kann WhatsApp plus Foto-/Datei-Modul der bessere Einstieg sein.
-
-Warum: Der Painpoint ist schnell verständlich, die Wirkung kann nach 30 Tagen gemessen werden und weitere Module ergeben sich erst aus dem belegten Prozessbedarf.
-
-## Messung im Pilot
-
-- relevante eingehende Anfragen
-- nicht angenommene oder unvollständige Anfragen
-- vollständig qualifizierte Übergaben
-- Zeit bis zur Team-Übergabe
-- Termin- oder Rückrufquote
-- menschliche Korrekturen und Eskalationen
-
-BaseModul berichtet diese Kennzahlen. Es gibt **keine garantierten Umsatz- oder ROI-Zusagen**.
-
-## Pricing (Stand 2026-08-19)
-
-### Pilot / Anfrage-Eingang
-Setup: 750–1.500 EUR einmalig
-Retainer: ab 150–399 EUR/Monat, abhängig von Betreuung und Umfang
-Für: ein klar abgegrenzter Eingangskanal, einfacher Flow, Testnummer/Testchat oder realitätsnaher Pilot
-
-### Anfrage-Flow / Modul
-Setup: 1.500–4.000 EUR einmalig
-Retainer: 300–899 EUR/Monat, abhängig von Kanälen, Integrationen und Betreuung
-Für: ein sauber integrierter Betriebsflow, zum Beispiel Telefon oder WhatsApp plus Kalender, Foto-Upload und Team-Übergabe
-
-### Betriebs-Agenten / Custom
-Setup: ab 5.000 EUR einmalig
-Retainer: ab 899 EUR/Monat
-Für: mehrere Module, mehrere Standorte, CRM/Kalender/Reporting oder einen klar abgegrenzten individuellen Prozess-Agenten
-
-Hinweis: Telefonie-, Messaging- und externe Nutzungsgebühren werden transparent nach tatsächlichem Umfang ausgewiesen und nicht als pauschaler "All-inclusive"-Block versprochen.
-
-## Tech-Stack (intern, nicht im Pitch ausspielen)
-
-Voice: Vapi, wenn Telefonie der passende Eingangskanal ist
-Messaging: WhatsApp Business API / Twilio
-Automation: n8n Workflows
-Backend: Next.js + Supabase (PostgreSQL)
-LLM: geeignete Modelle je Flow und Datenschutzanforderung
-Hosting: europäisch dokumentierter Produktivbetrieb je Kundenprojekt
-
-## Operative Guardrails
-
-- keine verbindlichen Preis-, Angebots- oder Vertragszusagen ohne menschliche Freigabe
-- kritische Fälle und Notfälle immer nach klaren Regeln an Menschen eskalieren
-- digitaler Assistent stellt seine Rolle transparent dar und ermöglicht bei Bedarf die menschliche Übergabe
-- keine Telefonaufzeichnung als Standardfunktion; Datenverarbeitung, Speicherort und Löschfristen pro Pilot dokumentieren
-- Reaktivierung, Direktansprache und Marketing-Automation nur nach geprüfter rechtlicher und organisatorischer Grundlage
-- keine medizinischen, rechtlichen oder sonstigen regulierten Entscheidungen autonom treffen
-
-## Was BaseModul nicht ist
-
-- keine reine Voice-Agentur
-- keine generische KI-Agentur für beliebige Sonderwünsche
-- kein CRM-, ERP- oder vollständiger Plattform-Ersatz
-- keine Hausverwaltungs-Lösung (das ist Callfolio)
-- keine große Mission-Control-Plattform als erster Kundenschritt
-- keine Automatisierung, die mehr Marketingnachfrage in einen ungeklärten Anfrageprozess leitet
-
-## Abgrenzung AGENTEQ / BaseModul
-
-AGENTEQ = Dachmarke, Absender, Trust-Layer und individuelle Umsetzungskompetenz
-BaseModul = sichtbare Produktmarke für modulare Anfrage- und Prozessautomatisierung auf basemodul.de
-
-Im Outreach: AGENTEQ kann als Absender-Firma auftreten, BaseModul als Produktname. Auf Landingpage und im Kundengespräch bleibt BaseModul die verständliche Produktmarke.
+Hermes darf aus diesem Factsheet keine Leads anlegen, keine E-Mails versenden, keine Preise kalkulieren, keine Vertrags-/Datenschutzentscheidung treffen und keine Go-live-Freigabe erteilen.
