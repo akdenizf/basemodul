@@ -47,16 +47,14 @@ export function BaseModulFlow({
         {INPUTS.map(({ Icon, label }) => (
           <div key={label} className="flex flex-col items-center gap-1.5">
             <span
-              className={`flex items-center justify-center rounded-[5px] border border-line bg-paperdeep text-ink ${
-                compact ? "h-7 w-7" : "h-9 w-9"
+              className={`flex items-center justify-center rounded-[7px] border border-line bg-paper2 text-ink ${
+                compact ? "h-9 w-9" : "h-12 w-12"
               }`}
             >
-              <Icon size={compact ? 13 : 16} strokeWidth={1.9} />
+              <Icon size={compact ? 17 : 22} strokeWidth={1.8} />
             </span>
             {!compact && (
-              <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-faint">
-                {label}
-              </span>
+              <span className="text-[12px] font-semibold text-ink">{label}</span>
             )}
           </div>
         ))}
@@ -94,21 +92,21 @@ export function BaseModulFlow({
       {/* Hub */}
       <div className="flex flex-col items-center gap-2">
         <div
-          className={`flex flex-col items-center justify-center rounded-[6px] bg-forestdeep text-white shadow-[0_10px_24px_-14px_rgba(22,56,43,0.6)] ${
-            compact ? "h-14 w-16 px-2" : "h-[72px] w-[88px] px-3"
+          className={`flex flex-col items-center justify-center rounded-[8px] bg-forestdeep text-white shadow-[0_10px_24px_-14px_rgba(22,56,43,0.6)] ${
+            compact ? "h-14 w-16 px-2" : "h-[84px] w-[104px] px-3"
           }`}
         >
-          <span className={`font-bold leading-none ${compact ? "text-[10px]" : "text-[12px]"}`}>Base</span>
-          <span className={`font-bold leading-none ${compact ? "text-[10px]" : "text-[12px]"}`}>Modul</span>
+          <span className={`font-bold leading-tight ${compact ? "text-[11px]" : "text-[15px]"}`}>Base</span>
+          <span className={`font-bold leading-tight ${compact ? "text-[11px]" : "text-[15px]"}`}>Modul</span>
         </div>
         {!compact && (
-          <div className="flex flex-col gap-0.5">
+          <div className="flex flex-col gap-1">
             {CHECKLIST.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-1 font-mono text-[10px] font-semibold uppercase tracking-[0.05em] text-leaf"
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-leaf"
               >
-                <Check size={9} strokeWidth={3} />
+                <Check size={13} strokeWidth={2.8} />
                 {item}
               </span>
             ))}
@@ -124,15 +122,13 @@ export function BaseModulFlow({
       {/* Output */}
       <div className="flex flex-col items-center gap-1.5">
         <span
-          className={`flex items-center justify-center rounded-[5px] border border-leafdimline bg-leafdim text-leaf ${
-            compact ? "h-7 w-7" : "h-9 w-9"
+          className={`flex items-center justify-center rounded-[7px] border border-leafdimline bg-leafdim text-leaf ${
+            compact ? "h-9 w-9" : "h-12 w-12"
           }`}
         >
-          <Users size={compact ? 13 : 16} strokeWidth={1.9} />
+          <Users size={compact ? 17 : 22} strokeWidth={1.8} />
         </span>
-        {!compact && (
-          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-faint">Team</span>
-        )}
+        {!compact && <span className="text-[12px] font-semibold text-ink">Team</span>}
       </div>
     </div>
   );
