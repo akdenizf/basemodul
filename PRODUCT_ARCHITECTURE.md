@@ -150,6 +150,8 @@ Erst bei sichtbarem Nutzen werden weitere Module oder Betriebs-Agenten ergänzt.
 
 - `OFFER.md` – Leistungsumfang, Pakete und Preiskorridore
 - `PILOT_DELIVERY_PLAYBOOK.md` – verbindliche 30-Tage-Scorecard, Delivery-Matrix und Go-live-Artefakte
+- `BASEMODUL_30_DAY_PILOT_SCOPE.md` – kundenfähiger Scope mit Preis, Kanal, Rollen, Fallback und Tag-30-Entscheidung
+- `BASEMODUL_CLAIMS_REGISTER.md` – freigegebene, bedingte und nicht zulässige Aussagen für Landing, Demo und Angebot
 - `outreach/knowledge-base/basemodul_factsheet.md` – verdichtetes Produktwissen für Outreach und Assistenzsysteme
 - `outreach/knowledge-base/faq_objections.md` – geprüfte Einwandbehandlung und FAQ
 - `web/content/landing.md` – freigegebene Landingpage-Copy der Hauptseite
