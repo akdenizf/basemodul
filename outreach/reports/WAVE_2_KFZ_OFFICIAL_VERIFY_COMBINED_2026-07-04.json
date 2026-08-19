@@ -1,0 +1,1534 @@
+{
+  "created_at": "2026-07-04T12:26:23.007874+02:00",
+  "scope": "BaseModul Wave 2 official verification combined",
+  "department": "base-modul-outreach",
+  "send_or_followup": false,
+  "results": [
+    {
+      "company_name": "089 Gutachten Kfz Sachverständigenbüro Zwez",
+      "website": "https://089-kfz-gutachten-muenchen.de/",
+      "city": "München",
+      "industry": "Kfz-Sachverständige",
+      "contact_email": "info@089gutachten.de",
+      "all_emails": [
+        "info@089gutachten.de",
+        "nfo@kfz-gutachter-zwez.de",
+        "info@089-kfz-gutachten-moorenweis.de",
+        "info@089-gutachten-muenchen.de",
+        "info@089-kfz-gutachten-krailling.de",
+        "info@089-kfz-gutachten-alling.de",
+        "info@089-kfz-gutachten-wessling.de",
+        "info@089-kfz-gutachten-starnberg.de",
+        "info@kfz-gutachter-zwez.de"
+      ],
+      "phone": "013-03-07",
+      "contact_type": "email",
+      "contact_source_url": "https://089-kfz-gutachten-muenchen.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "gutachten",
+        "sachverständ"
+      ],
+      "snippets": [
+        {
+          "url": "https://089-kfz-gutachten-muenchen.de/",
+          "keyword": "sachverständ",
+          "snippet": "Kfz-Gutachter München » 089 Kfz-Sachverständiger Zwez #mega-menu-wrap-primary,#mega-menu-wrap-primary #mega-menu-primary,#mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu,#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-item,#mega-menu"
+        },
+        {
+          "url": "https://089-kfz-gutachten-muenchen.de/kontakt/",
+          "keyword": "sachverständ",
+          "snippet": "n!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}}); Kontakt 089 Kfz-Sachverständigenbüro Zwez in München #mega-menu-wrap-primary,#mega-menu-wrap-primary #mega-menu-primary,#mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu,#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-"
+        },
+        {
+          "url": "https://089-kfz-gutachten-muenchen.de/kontakt/",
+          "keyword": "sachverständ",
+          "snippet": "n!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}}); Kontakt 089 Kfz-Sachverständigenbüro Zwez in München #mega-menu-wrap-primary,#mega-menu-wrap-primary #mega-menu-primary,#mega-menu-wrap-primary #mega-menu-primary ul.mega-sub-menu,#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://089-kfz-gutachten-muenchen.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://089-kfz-gutachten-muenchen.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://089-kfz-gutachten-muenchen.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://089-kfz-gutachten-muenchen.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://089-kfz-gutachten-muenchen.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://089-kfz-gutachten-muenchen.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://089-kfz-gutachten-muenchen.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "Unfallhelden",
+      "website": "https://www.unfallhelden.de/",
+      "city": "München",
+      "industry": "Unfall-/Schadenservice",
+      "contact_email": null,
+      "all_emails": [],
+      "phone": "09573079405029",
+      "contact_type": "none_found",
+      "contact_source_url": null,
+      "confidence": "low",
+      "recommendation": "hold",
+      "found_keywords": [
+        "unfall",
+        "schaden",
+        "fahrzeug",
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.unfallhelden.de/",
+          "keyword": "unfall",
+          "snippet": "UNFALLHELDEN - Ihr unabhängiger Helfer nach einem Unfall var data_server = '//www.unfallhelden.de/data/', baseUrl = '/', module = 'index', controller = 'index', baseUrl = '/', domain = 'www.unfallhelden.de', changeLogo ="
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.unfallhelden.de/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.unfallhelden.de/kontakt/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.unfallhelden.de/kontakt",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.unfallhelden.de/impressum/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.unfallhelden.de/impressum",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.unfallhelden.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.unfallhelden.de/datenschutz/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        }
+      ]
+    },
+    {
+      "company_name": "Manlik Karosseriebau & Kraftfahrzeugmechanik GmbH",
+      "website": "https://www.manlik-kfz.de/",
+      "city": "Aschheim",
+      "industry": "Karosserie / Kfz-Werkstatt",
+      "contact_email": null,
+      "all_emails": [],
+      "phone": "025/08/",
+      "contact_type": "contact_form",
+      "contact_source_url": null,
+      "confidence": "medium",
+      "recommendation": "hold",
+      "found_keywords": [],
+      "snippets": [],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/kontakt",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.als-elmshorn-sh.de/datenschutzerklarung/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "Autokühler Schneider",
+      "website": "https://www.kuehlerschneider.de/",
+      "city": "München",
+      "industry": "Spezialwerkstatt",
+      "contact_email": "info@kuehlerschneider.de",
+      "all_emails": [
+        "info@kuehlerschneider.de"
+      ],
+      "phone": "089 5470 100",
+      "contact_type": "email",
+      "contact_source_url": "https://www.kuehlerschneider.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "fahrzeug",
+        "reparatur",
+        "werkstatt",
+        "termin",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.kuehlerschneider.de/",
+          "keyword": "fahrzeug",
+          "snippet": "tion:'kenburnsDownRight', title:\"Klimaservice\", text:\"Wir sind wir Ihr Spezialist für die Fahrzeugklimatisierung aller PKW Modelle bis zu 3,5 Tonnen in München.\", link:\"\", ldesc:\"\", tanim:'tanim-slidein', tdelay:500, }, { src: 'https://www.kuehlerschneider.de/media/vslider/kuehlerbau.jpg', transition:'slideRi"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.kuehlerschneider.de/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.kuehlerschneider.de/kontakt/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kuehlerschneider.de/kontakt",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kuehlerschneider.de/impressum/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kuehlerschneider.de/impressum",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kuehlerschneider.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kuehlerschneider.de/datenschutz/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        }
+      ]
+    },
+    {
+      "company_name": "Auto Münch",
+      "website": "https://automuench.de/",
+      "city": "München",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": "service@automuench.de",
+      "all_emails": [
+        "service@automuench.de",
+        "service@automuench.deUmsatzsteuer",
+        "webmasteradmin@automuench.de"
+      ],
+      "phone": "022/12/",
+      "contact_type": "email",
+      "contact_source_url": "https://automuench.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "unfall",
+        "fahrzeug",
+        "karosserie",
+        "lack",
+        "reparatur",
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://automuench.de/",
+          "keyword": "unfall",
+          "snippet": "nchen Sendling am Westpark. KFZ Reparatur, Inspektion, Wartung, Karosserie & Lackiererei, Unfallinstandsetzung, TÜV-AU, Klimaservice und Hauptuntersuchung.\",\"breadcrumb\":{\"@id\":\"https://automuench.de/#breadcrumb\"},\"inLanguage\":\"de-DE\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://automuench.de/\""
+        },
+        {
+          "url": "https://automuench.de/impressum/",
+          "keyword": "lack",
+          "snippet": "image/\"},\"sameAs\":[\"https://www.instagram.com/automuench/\"]}]} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange:"
+        },
+        {
+          "url": "https://automuench.de/impressum/",
+          "keyword": "lack",
+          "snippet": "image/\"},\"sameAs\":[\"https://www.instagram.com/automuench/\"]}]} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange:"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://automuench.de/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://automuench.de/kontakt/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://automuench.de/kontakt",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://automuench.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://automuench.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://automuench.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://automuench.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "KFZ Werkstatt Rudolf Fischer",
+      "website": "https://www.kfzwerkstatt-fischer.de/",
+      "city": "München",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": "mail@kfzwerkstatt-fischer.de",
+      "all_emails": [
+        "mail@kfzwerkstatt-fischer.de"
+      ],
+      "phone": "089 796284",
+      "contact_type": "email",
+      "contact_source_url": "https://www.kfzwerkstatt-fischer.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "fahrzeug",
+        "reparatur",
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.kfzwerkstatt-fischer.de/",
+          "keyword": "fahrzeug",
+          "snippet": "SPEKTION + + KUNDENDIENST + + SERVICE + + HU (mit integrierter AU) + m. autor. Prüforg. + FAHRZEUGELEKTRIK + + FAHRZEUGELEKTRONIK + + KLIMA-SERVICE + + FEHLERDIAGNOSE + + FAHRWERKSREPARATUR + + BREMSENREPARATUR + + ÖLWECHSEL + DAMIT SIE UNS GUT FINDEN Wolfratshauser Straße 248 81479 München Solln 089-796284 m"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.kfzwerkstatt-fischer.de/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.kfzwerkstatt-fischer.de/kontakt/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kfzwerkstatt-fischer.de/kontakt",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kfzwerkstatt-fischer.de/impressum/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kfzwerkstatt-fischer.de/impressum",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kfzwerkstatt-fischer.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.kfzwerkstatt-fischer.de/datenschutz/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        }
+      ]
+    },
+    {
+      "company_name": "Aigner Kfz-Service GmbH & Co. KG",
+      "website": "https://aigner-kfz-service.de/",
+      "city": "München",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": "info@aigner-kfz-service.de",
+      "all_emails": [
+        "info@aigner-kfz-service.de"
+      ],
+      "phone": "014-10-29",
+      "contact_type": "email",
+      "contact_source_url": "https://aigner-kfz-service.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "lack",
+        "reparatur",
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://aigner-kfz-service.de/",
+          "keyword": "lack",
+          "snippet": "towerkstatt und KFZ-Werkstatt mit Erfahrung. Wir bieten Autogas-Umrüstung, Reifenservice, Lackierungen und Auto-Zubehör.\",\"breadcrumb\":{\"@id\":\"https://aigner-kfz-service.de/#breadcrumb\"},\"inLanguage\":\"de-DE\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://aigner-kfz-service.de/\"]}]},{\"@type\":\"Brea"
+        },
+        {
+          "url": "https://aigner-kfz-service.de/kontakt-anfahrt/",
+          "keyword": "lack",
+          "snippet": "1477 Solln in München ist Profi für Klimaservice und Klimaanlagenservice. Wir führen auch Lackierungen jeder Art durch und bieten Auto-Zubehör.\",\"breadcrumb\":{\"@id\":\"https://aigner-kfz-service.de/kontakt-anfahrt/#breadcrumb\"},\"inLanguage\":\"de-DE\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://aig"
+        },
+        {
+          "url": "https://aigner-kfz-service.de/kontakt-anfahrt/",
+          "keyword": "lack",
+          "snippet": "1477 Solln in München ist Profi für Klimaservice und Klimaanlagenservice. Wir führen auch Lackierungen jeder Art durch und bieten Auto-Zubehör.\",\"breadcrumb\":{\"@id\":\"https://aigner-kfz-service.de/kontakt-anfahrt/#breadcrumb\"},\"inLanguage\":\"de-DE\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://aig"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://aigner-kfz-service.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://aigner-kfz-service.de/kontakt-anfahrt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://aigner-kfz-service.de/kontakt-anfahrt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://aigner-kfz-service.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://aigner-kfz-service.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://aigner-kfz-service.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://aigner-kfz-service.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "B&G Fahrzeugtechnik",
+      "website": "https://www.bg-automotive.de/",
+      "city": "München",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": "info@bg-automotive.de",
+      "all_emails": [
+        "info@bg-automotive.de",
+        "INFO@BG-AUTOMOTIVE.DE"
+      ],
+      "phone": "+49894303273",
+      "contact_type": "email",
+      "contact_source_url": "https://www.bg-automotive.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "unfall",
+        "fahrzeug",
+        "reparatur",
+        "werkstatt",
+        "termin",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.bg-automotive.de/",
+          "keyword": "unfall",
+          "snippet": "ngen und Reparaturen nach Herstellervorgaben Inspektion Ölwechsel Hauptuntersuchung (TÜV) Unfallinstandsetzung Klimaanlagenservice Räder und Reifen Bremsenservice Über uns Ihr KFZ-Fachbetrieb in München B&G Fahrzeugtechnik steht für kompetenten KFZ-Service in München-Trudering. Als inhabergeführter Meisterbet"
+        },
+        {
+          "url": "https://www.bg-automotive.de/kontakt/",
+          "keyword": "unfall",
+          "snippet": "ekt an. Gewünschte Leistung Wartung / Inspektion Hauptuntersuchung (HU/AU) Bremsenservice Unfallinstandsetzung Klimaservice Sonstiges Ich habe die Datenschutzerklärung gelesen und zur Kenntnis genommen.* Senden * Pflichtfeld const t=typeof crypto.randomUUID==\"function\"?crypto.randomUUID():Array.from(crypto.ge"
+        },
+        {
+          "url": "https://www.bg-automotive.de/kontakt/",
+          "keyword": "unfall",
+          "snippet": "ekt an. Gewünschte Leistung Wartung / Inspektion Hauptuntersuchung (HU/AU) Bremsenservice Unfallinstandsetzung Klimaservice Sonstiges Ich habe die Datenschutzerklärung gelesen und zur Kenntnis genommen.* Senden * Pflichtfeld const t=typeof crypto.randomUUID==\"function\"?crypto.randomUUID():Array.from(crypto.ge"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.bg-automotive.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.bg-automotive.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.bg-automotive.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.bg-automotive.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.bg-automotive.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.bg-automotive.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://www.bg-automotive.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "ETH Kfz-Werkstatt GmbH",
+      "website": "https://www.eth-werkstatt.de/",
+      "city": "München",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": "info@ethwerkstatt.de",
+      "all_emails": [
+        "info@ethwerkstatt.de",
+        "%20info@ethwerkstatt.de"
+      ],
+      "phone": "020-09-10",
+      "contact_type": "email",
+      "contact_source_url": "https://www.eth-werkstatt.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "unfall",
+        "schaden",
+        "fahrzeug",
+        "lack",
+        "reparatur",
+        "werkstatt",
+        "termin",
+        "service",
+        "versicherung"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.eth-werkstatt.de/",
+          "keyword": "unfall",
+          "snippet": "', 'js' ); //# sourceURL=twentytwenty_no_js_class Skip to the content Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT Menu Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT PLATZ 1 – Beste KFZ-Werkstatt in München* *Laut einer Umfrage"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/kontakt/",
+          "keyword": "unfall",
+          "snippet": "', 'js' ); //# sourceURL=twentytwenty_no_js_class Skip to the content Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT Menu Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT KONTAKT Wir freuen uns, von Ihnen zu hören. Rufen Sie uns an,"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/kontakt/",
+          "keyword": "unfall",
+          "snippet": "', 'js' ); //# sourceURL=twentytwenty_no_js_class Skip to the content Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT Menu Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT KONTAKT Wir freuen uns, von Ihnen zu hören. Rufen Sie uns an,"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.eth-werkstatt.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.eth-werkstatt.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.eth-werkstatt.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.eth-werkstatt.de/impressum/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.eth-werkstatt.de/impressum",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.eth-werkstatt.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://www.eth-werkstatt.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "Autohaus Gehrhardt Kfz-Meisterwerkstatt",
+      "website": "https://autohaus-gehrhardt.de/",
+      "city": "München",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": "autohaus-gehrhardt@web.de",
+      "all_emails": [
+        "autohaus-gehrhardt@web.de"
+      ],
+      "phone": "020/07/31/",
+      "contact_type": "email",
+      "contact_source_url": "https://autohaus-gehrhardt.de/",
+      "confidence": "high",
+      "recommendation": "hold",
+      "found_keywords": [
+        "reparatur"
+      ],
+      "snippets": [
+        {
+          "url": "https://autohaus-gehrhardt.de/",
+          "keyword": "reparatur",
+          "snippet": "Autoreparaturen fast aller Marken in Giesing / Ramersdorf var et_pagename = \"https://autohaus-gehrhardt.de\"; var et_areas = \"67656\"; /*========================================================================================="
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://autohaus-gehrhardt.de/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://autohaus-gehrhardt.de/kontakt/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://autohaus-gehrhardt.de/kontakt",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://autohaus-gehrhardt.de/impressum",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://autohaus-gehrhardt.de/impressum",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://autohaus-gehrhardt.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://autohaus-gehrhardt.de/datenschutz",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "Auto Riedl",
+      "website": "https://www.auto-riedl.de/",
+      "city": "Neuried",
+      "industry": "Kfz-Werkstatt",
+      "contact_email": null,
+      "all_emails": [],
+      "phone": "088-943",
+      "contact_type": "contact_form",
+      "contact_source_url": null,
+      "confidence": "medium",
+      "recommendation": "use_form",
+      "found_keywords": [
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.auto-riedl.de/",
+          "keyword": "werkstatt",
+          "snippet": "Auto Riedl KFZ Werkstatt - autoriedl window.CookieControlSet.setToNormal(); html,body{margin:0}.hidden{display:none}.n{padding:5px}#cc-website-title a {text-decoration: none}.cc-m-image-align-1{text-align:left}.cc-m-image-align-2{text-"
+        },
+        {
+          "url": "https://www.auto-riedl.de/kontakt/",
+          "keyword": "service",
+          "snippet": "regModule = regModuleBuffer; } })(window); Auto-Riedl Neuried Home Aktuelles Über uns KFZ-Service Öf"
+        },
+        {
+          "url": "https://www.auto-riedl.de/kontakt",
+          "keyword": "service",
+          "snippet": "regModule = regModuleBuffer; } })(window); Auto-Riedl Neuried Home Aktuelles Über uns KFZ-Service Öf"
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://www.auto-riedl.de/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.auto-riedl.de/kontakt/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://www.auto-riedl.de/kontakt",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.auto-riedl.de/impressum/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.auto-riedl.de/impressum",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.auto-riedl.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://www.auto-riedl.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "Autohaus Feicht",
+      "website": "https://www.feicht.de/",
+      "city": "Haar",
+      "industry": "Autohaus / Werkstatt",
+      "contact_email": "info@feicht.de",
+      "all_emails": [
+        "info@feicht.de"
+      ],
+      "phone": "019-04-09",
+      "contact_type": "email",
+      "contact_source_url": "https://feicht.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "fahrzeug",
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://feicht.de/",
+          "keyword": "fahrzeug",
+          "snippet": "+00:00\",\"description\":\"Sie suchen einen Neu-/ Gebrauchtwagen der Marke Volkswagen, VW Nutzfahrzeuge oder Audi? Dann ist Autohaus Feicht Ihr zuverlässiger Partner.\",\"breadcrumb\":{\"@id\":\"https://feicht.de/#breadcrumb\"},\"inLanguage\":\"de\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://feicht.de/\"]}]}"
+        },
+        {
+          "url": "https://feicht.de/impressum/",
+          "keyword": "werkstatt",
+          "snippet": "ttps://feicht.de/\",\"name\":\"Autohaus Feicht GmbH\",\"description\":\"Neu- und Gebrauchtwagen & Werkstatt\",\"publisher\":{\"@id\":\"https://feicht.de/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://feicht.de/?s={search_term_string}\"},\"query-input\":{\"@type\""
+        },
+        {
+          "url": "https://feicht.de/impressum/",
+          "keyword": "werkstatt",
+          "snippet": "ttps://feicht.de/\",\"name\":\"Autohaus Feicht GmbH\",\"description\":\"Neu- und Gebrauchtwagen & Werkstatt\",\"publisher\":{\"@id\":\"https://feicht.de/#organization\"},\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://feicht.de/?s={search_term_string}\"},\"query-input\":{\"@type\""
+        }
+      ],
+      "pages_checked": [
+        {
+          "ok": true,
+          "url": "https://feicht.de/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.feicht.de/kontakt/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": false,
+          "url": "https://www.feicht.de/kontakt",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://feicht.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": true,
+          "url": "https://feicht.de/impressum/",
+          "status": 200
+        },
+        {
+          "ok": false,
+          "url": "https://www.feicht.de/contact/",
+          "error": "<HTTPError 404: 'Not Found'>"
+        },
+        {
+          "ok": true,
+          "url": "https://feicht.de/datenschutz/",
+          "status": 200
+        }
+      ]
+    },
+    {
+      "company_name": "Autohaus Gehrhard Kfz-Meisterwerkstatt",
+      "website": "https://autohaus-gehrhardt.de/",
+      "city": "München",
+      "industry": "werkstatt_service",
+      "contact_email": "autohaus-gehrhardt@web.de",
+      "all_emails": [
+        "autohaus-gehrhardt@web.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://autohaus-gehrhardt.de/",
+      "confidence": "high",
+      "recommendation": "hold",
+      "found_keywords": [
+        "reparatur"
+      ],
+      "snippets": [
+        {
+          "url": "https://autohaus-gehrhardt.de/",
+          "keyword": "reparatur",
+          "snippet": "Autoreparaturen fast aller Marken in Giesing / Ramersdorf var et_pagename = \"https://autohaus-gehrhardt.de\"; var et_areas = \"67656\"; /*========================================================================================="
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://autohaus-gehrhardt.de/",
+          "ok": true,
+          "final_url": "https://autohaus-gehrhardt.de/"
+        },
+        {
+          "url": "https://autohaus-gehrhardt.de/kontakt/",
+          "ok": false,
+          "final_url": "https://autohaus-gehrhardt.de/kontakt/"
+        },
+        {
+          "url": "https://autohaus-gehrhardt.de/kontakt",
+          "ok": false,
+          "final_url": "https://autohaus-gehrhardt.de/kontakt"
+        },
+        {
+          "url": "https://autohaus-gehrhardt.de/impressum/",
+          "ok": true,
+          "final_url": "https://autohaus-gehrhardt.de/impressum"
+        },
+        {
+          "url": "https://autohaus-gehrhardt.de/impressum",
+          "ok": true,
+          "final_url": "https://autohaus-gehrhardt.de/impressum"
+        }
+      ]
+    },
+    {
+      "company_name": "ETH Kfz - Werkstatt GmbH",
+      "website": "https://www.eth-werkstatt.de/",
+      "city": "München",
+      "industry": "werkstatt_service",
+      "contact_email": "info@ethwerkstatt.de",
+      "all_emails": [
+        "info@ethwerkstatt.de",
+        "%20info@ethwerkstatt.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://www.eth-werkstatt.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "unfall",
+        "schaden",
+        "fahrzeug",
+        "lack",
+        "reparatur",
+        "werkstatt",
+        "termin",
+        "service",
+        "versicherung",
+        "inspektion"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.eth-werkstatt.de/",
+          "keyword": "unfall",
+          "snippet": " //# sourceURL=twentytwenty_no_js_class Skip to the content Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT Menu Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT PLATZ 1 – Beste KFZ-Werkstatt in München* *Laut einer Umfrage"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/kontakt/",
+          "keyword": "unfall",
+          "snippet": " //# sourceURL=twentytwenty_no_js_class Skip to the content Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT Menu Start KFZ-SERVICE & Unfallinstandsetzung SERVICE CENTER KFZ-Gutachter ÜBER UNS KONTAKT KONTAKT Wir freuen uns, von Ihnen zu hören. Rufen Sie uns an,"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://www.eth-werkstatt.de/",
+          "ok": true,
+          "final_url": "https://www.eth-werkstatt.de/"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/kontakt/",
+          "ok": true,
+          "final_url": "https://www.eth-werkstatt.de/kontakt/"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/kontakt",
+          "ok": true,
+          "final_url": "https://www.eth-werkstatt.de/kontakt/"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/impressum/",
+          "ok": false,
+          "final_url": "https://www.eth-werkstatt.de/impressum/"
+        },
+        {
+          "url": "https://www.eth-werkstatt.de/impressum",
+          "ok": false,
+          "final_url": "https://www.eth-werkstatt.de/impressum"
+        }
+      ]
+    },
+    {
+      "company_name": "Auto Schüssler",
+      "website": "http://www.auto-schuessler.com",
+      "city": "München",
+      "industry": "werkstatt_service",
+      "contact_email": "info@auto-schuessler.com",
+      "all_emails": [
+        "info@auto-schuessler.com"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "http://www.auto-schuessler.com",
+      "confidence": "high",
+      "recommendation": "hold",
+      "found_keywords": [],
+      "snippets": [],
+      "pages_checked": [
+        {
+          "url": "http://www.auto-schuessler.com",
+          "ok": true,
+          "final_url": "http://www.auto-schuessler.com"
+        },
+        {
+          "url": "http://www.auto-schuessler.com/kontakt/",
+          "ok": false,
+          "final_url": "http://www.auto-schuessler.com/kontakt/"
+        },
+        {
+          "url": "http://www.auto-schuessler.com/kontakt",
+          "ok": false,
+          "final_url": "http://www.auto-schuessler.com/kontakt"
+        },
+        {
+          "url": "http://www.auto-schuessler.com/impressum/",
+          "ok": false,
+          "final_url": "http://www.auto-schuessler.com/impressum/"
+        },
+        {
+          "url": "http://www.auto-schuessler.com/impressum",
+          "ok": false,
+          "final_url": "http://www.auto-schuessler.com/impressum"
+        }
+      ]
+    },
+    {
+      "company_name": "Black Bean",
+      "website": "http://blackbean-muenchen.de/",
+      "city": "München",
+      "industry": "karosserie_lack",
+      "contact_email": null,
+      "all_emails": [],
+      "contact_type": "contact_form",
+      "contact_source_url": null,
+      "confidence": "medium",
+      "recommendation": "hold",
+      "found_keywords": [
+        "lack"
+      ],
+      "snippets": [
+        {
+          "url": "http://blackbean-muenchen.de/",
+          "keyword": "lack",
+          "snippet": "﻿ Black Bean | Coffeeshop und Cafe - die Adresse für Kaffee und Co. var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-32276016-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script');"
+        },
+        {
+          "url": "http://www.blackbean-muenchen.de/fehlerseite.html",
+          "keyword": "lack",
+          "snippet": "﻿ Black Bean - München - Error .auto-style1 { text-align: center; } .auto-style2 { font-family: \"Franklin Gothic Medium\", \"Arial Narrow\", Arial, sans-serif; color: #FF6F37; } .auto-style3 { color: #FF6F37; } .auto-style5 { "
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "http://blackbean-muenchen.de/",
+          "ok": true,
+          "final_url": "http://blackbean-muenchen.de/"
+        },
+        {
+          "url": "http://blackbean-muenchen.de/kontakt/",
+          "ok": true,
+          "final_url": "http://www.blackbean-muenchen.de/fehlerseite.html"
+        },
+        {
+          "url": "http://blackbean-muenchen.de/kontakt",
+          "ok": true,
+          "final_url": "http://www.blackbean-muenchen.de/fehlerseite.html"
+        },
+        {
+          "url": "http://blackbean-muenchen.de/impressum/",
+          "ok": true,
+          "final_url": "http://www.blackbean-muenchen.de/fehlerseite.html"
+        },
+        {
+          "url": "http://blackbean-muenchen.de/impressum",
+          "ok": true,
+          "final_url": "http://www.blackbean-muenchen.de/fehlerseite.html"
+        }
+      ]
+    },
+    {
+      "company_name": "Heidari Ingenieur-Sachverständigenbüro",
+      "website": "https://heidari-gutachten.de/",
+      "city": "München",
+      "industry": "kfz_sachverstaendige",
+      "contact_email": "info@heidari-gutachten.de",
+      "all_emails": [
+        "info@heidari-gutachten.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://www.heidari-gutachten.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "unfall",
+        "schaden",
+        "fahrzeug",
+        "termin",
+        "service",
+        "versicherung",
+        "gutachten",
+        "sachverständ"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.heidari-gutachten.de/",
+          "keyword": "unfall",
+          "snippet": "en umfassende Kfz-Gutachten, die genau auf Ihre Bedürfnisse abgestimmt sind. Ob Unfallgutachten zur kostenfreien Durchsetzung Ihrer Ansprüche gegenüber der Haftpflichtversicherung, Kaskogutachten bei Eigenverschulden, unabhängige Fahrzeugbewertungen oder spezialisierte Oldtimer-Gutachten – wir liefe"
+        },
+        {
+          "url": "https://www.heidari-gutachten.de/kontakt",
+          "keyword": "unfall",
+          "snippet": "kostenlosen Rückruf an Wir rufen Sie zurück! Wir verstehen, dass nach einem Autounfall schnelle und effiziente Hilfe von größter Bedeutung ist. Daher haben wir den Grundsatz, immer so schnell wie möglich auf Ihre Anfragen zu reagieren. Ich bin damit einverstanden, dass meine eingereichten Informatio"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://heidari-gutachten.de/",
+          "ok": true,
+          "final_url": "https://www.heidari-gutachten.de/"
+        },
+        {
+          "url": "https://heidari-gutachten.de/kontakt/",
+          "ok": true,
+          "final_url": "https://www.heidari-gutachten.de/kontakt"
+        },
+        {
+          "url": "https://heidari-gutachten.de/kontakt",
+          "ok": true,
+          "final_url": "https://www.heidari-gutachten.de/kontakt"
+        },
+        {
+          "url": "https://heidari-gutachten.de/impressum/",
+          "ok": true,
+          "final_url": "https://www.heidari-gutachten.de/impressum"
+        },
+        {
+          "url": "https://heidari-gutachten.de/impressum",
+          "ok": true,
+          "final_url": "https://www.heidari-gutachten.de/impressum"
+        }
+      ]
+    },
+    {
+      "company_name": "Die Autowerkstatt München-Planegg",
+      "website": "https://www.die-autowerkstatt.net/planegg",
+      "city": "Planegg",
+      "industry": "werkstatt_service",
+      "contact_email": "deutschlandzentrale@die-autowerkstatt.de",
+      "all_emails": [
+        "deutschlandzentrale@die-autowerkstatt.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://die-autowerkstatt.net/kontakt/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "lack",
+        "werkstatt"
+      ],
+      "snippets": [
+        {
+          "url": "https://die-autowerkstatt.net/kontakt/",
+          "keyword": "lack",
+          "snippet": "-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange:"
+        },
+        {
+          "url": "https://die-autowerkstatt.net/kontakt/",
+          "keyword": "lack",
+          "snippet": "-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange:"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://www.die-autowerkstatt.net/planegg",
+          "ok": false,
+          "final_url": "https://www.die-autowerkstatt.net/planegg"
+        },
+        {
+          "url": "https://www.die-autowerkstatt.net/kontakt/",
+          "ok": true,
+          "final_url": "https://die-autowerkstatt.net/kontakt/"
+        },
+        {
+          "url": "https://www.die-autowerkstatt.net/kontakt",
+          "ok": true,
+          "final_url": "https://die-autowerkstatt.net/kontakt/"
+        },
+        {
+          "url": "https://www.die-autowerkstatt.net/impressum/",
+          "ok": true,
+          "final_url": "https://die-autowerkstatt.net/impressum/"
+        },
+        {
+          "url": "https://www.die-autowerkstatt.net/impressum",
+          "ok": true,
+          "final_url": "https://die-autowerkstatt.net/impressum/"
+        }
+      ]
+    },
+    {
+      "company_name": "Kfz-Technik Bliemel",
+      "website": "https://kfztechnik-bliemel.de/",
+      "city": "München/Umfeld",
+      "industry": "werkstatt_service",
+      "contact_email": "info@kfztechnik-bliemel.de",
+      "all_emails": [
+        "info@kfztechnik-bliemel.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://kfztechnik-bliemel.de/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "reparatur",
+        "werkstatt",
+        "service"
+      ],
+      "snippets": [
+        {
+          "url": "https://kfztechnik-bliemel.de/",
+          "keyword": "reparatur",
+          "snippet": "https://kfztechnik-bliemel.de/\",\"name\":\"Kfz-Technik Bliemel\",\"description\":\"Kfz Reparatur und Wartung in Gräfelfing\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://kfztechnik-bliemel.de/?s={search_term_string}\"},\"query-input\":\"required name=search_te"
+        },
+        {
+          "url": "https://kfztechnik-bliemel.de/kontakt/",
+          "keyword": "reparatur",
+          "snippet": "https://kfztechnik-bliemel.de/\",\"name\":\"Kfz-Technik Bliemel\",\"description\":\"Kfz Reparatur und Wartung in Gräfelfing\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://kfztechnik-bliemel.de/?s={search_term_string}\"},\"query-input\":\"required name=search_te"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://kfztechnik-bliemel.de/",
+          "ok": true,
+          "final_url": "https://kfztechnik-bliemel.de/"
+        },
+        {
+          "url": "https://kfztechnik-bliemel.de/kontakt/",
+          "ok": true,
+          "final_url": "https://kfztechnik-bliemel.de/kontakt/"
+        },
+        {
+          "url": "https://kfztechnik-bliemel.de/kontakt",
+          "ok": true,
+          "final_url": "https://kfztechnik-bliemel.de/kontakt/"
+        },
+        {
+          "url": "https://kfztechnik-bliemel.de/impressum/",
+          "ok": true,
+          "final_url": "https://kfztechnik-bliemel.de/impressum/"
+        },
+        {
+          "url": "https://kfztechnik-bliemel.de/impressum",
+          "ok": true,
+          "final_url": "https://kfztechnik-bliemel.de/impressum/"
+        }
+      ]
+    },
+    {
+      "company_name": "Üblacker-Häusl",
+      "website": "https://www.freunde-haidhausens.de/",
+      "city": "München",
+      "industry": "karosserie_lack",
+      "contact_email": "Verena@Haidhausen.fun",
+      "all_emails": [
+        "Verena@Haidhausen.fun",
+        "vke@kayser-eichberg.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://www.freunde-haidhausens.de/kontakt/",
+      "confidence": "high",
+      "recommendation": "hold",
+      "found_keywords": [
+        "termin"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.freunde-haidhausens.de/",
+          "keyword": "termin",
+          "snippet": "{name:\"wpTestEmojiSupports\"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],\"flag\"!==t&&(n.supports.everythingExceptFlag=n.supports.ev"
+        },
+        {
+          "url": "https://www.freunde-haidhausens.de/kontakt/",
+          "keyword": "termin",
+          "snippet": "{name:\"wpTestEmojiSupports\"});return void(r.onmessage=function(e){c(n=e.data),r.terminate(),t(n)})}catch(e){}c(n=g(i,f,p,u))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],\"flag\"!==t&&(n.supports.everythingExceptFlag=n.supports.ev"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://www.freunde-haidhausens.de/",
+          "ok": true,
+          "final_url": "https://www.freunde-haidhausens.de/"
+        },
+        {
+          "url": "https://www.freunde-haidhausens.de/kontakt/",
+          "ok": true,
+          "final_url": "https://www.freunde-haidhausens.de/kontakt/"
+        },
+        {
+          "url": "https://www.freunde-haidhausens.de/kontakt",
+          "ok": true,
+          "final_url": "https://www.freunde-haidhausens.de/kontakt/"
+        },
+        {
+          "url": "https://www.freunde-haidhausens.de/impressum/",
+          "ok": true,
+          "final_url": "https://www.freunde-haidhausens.de/impressum/"
+        },
+        {
+          "url": "https://www.freunde-haidhausens.de/impressum",
+          "ok": true,
+          "final_url": "https://www.freunde-haidhausens.de/impressum/"
+        }
+      ]
+    },
+    {
+      "company_name": "Häusler",
+      "website": "https://www.haeusler-automobil-gmbh.de/standorte/harlaching/",
+      "city": "München/Umfeld",
+      "industry": "werkstatt_service",
+      "contact_email": "info@remove-this.haeusler",
+      "all_emails": [
+        "info@remove-this.haeusler",
+        "info.harlaching@remove-this.haeusler",
+        "julius.kerscher@remove-this.haeusler",
+        "andreas.gross@remove-this.haeusler",
+        "anton.kraft@remove-this.haeusler",
+        "alban.haxhosaj@remove-this.haeusler",
+        "ralph.eberl@remove-this.haeusler",
+        "salvatore.incerti@remove-this.haeusler",
+        "markus.eichinger@remove-this.haeusler",
+        "manuela.carlozzo@remove-this.haeusler",
+        "ina.dreissig@remove-this.haeusler",
+        "daniel.hipp@remove-this.haeusler",
+        "lager-harlaching@remove-this.haeusler",
+        "datenschutz@remove-this.haeusler",
+        "mail@remove-this.verbraucher",
+        "info@remove-this.be"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://www.haeusler-automobil-gmbh.de/standorte/harlaching/",
+      "confidence": "high",
+      "recommendation": "use",
+      "found_keywords": [
+        "fahrzeug",
+        "termin",
+        "service",
+        "versicherung"
+      ],
+      "snippets": [
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/standorte/harlaching/",
+          "keyword": "fahrzeug",
+          "snippet": "Autohaus Harlaching, Opel Neufahrzeuge | Häusler (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.sr"
+        },
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/standorte",
+          "keyword": "fahrzeug",
+          "snippet": "s-18 { clip-path: url(#clippath-5); } .cls-19 { clip-path: url(#clippath-10); } Fahrzeugbestand Unser Fahrzeugbestand Gebrauchtwagen HÄUSLER Elektro-Welt Opel Neufahrzeuge/ Vorführfahrzeuge Gebrauchtwagen Elektro-Fahrzeuge Mazda Neufahrzeuge/ Vorführfahrzeuge Gebrauchtwagen Elektro-Fahrzeuge BYD Neu"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/standorte/harlaching/",
+          "ok": true,
+          "final_url": "https://www.haeusler-automobil-gmbh.de/standorte/harlaching/"
+        },
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/kontakt/",
+          "ok": true,
+          "final_url": "https://www.haeusler-automobil-gmbh.de/standorte"
+        },
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/kontakt",
+          "ok": true,
+          "final_url": "https://www.haeusler-automobil-gmbh.de/standorte"
+        },
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/impressum/",
+          "ok": true,
+          "final_url": "https://www.haeusler-automobil-gmbh.de/impressum/"
+        },
+        {
+          "url": "https://www.haeusler-automobil-gmbh.de/impressum",
+          "ok": true,
+          "final_url": "https://www.haeusler-automobil-gmbh.de/impressum"
+        }
+      ]
+    },
+    {
+      "company_name": "Autospenglerei Forstmeier",
+      "website": "https://forstmeier-muenchen.de/",
+      "city": "München/Umfeld",
+      "industry": "werkstatt_service",
+      "contact_email": "info@forstmeier-muenchen.de",
+      "all_emails": [
+        "info@forstmeier-muenchen.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://forstmeier-muenchen.de/impressum/",
+      "confidence": "high",
+      "recommendation": "hold",
+      "found_keywords": [
+        "lack"
+      ],
+      "snippets": [
+        {
+          "url": "https://forstmeier-muenchen.de/",
+          "keyword": "lack",
+          "snippet": "-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--prese"
+        },
+        {
+          "url": "https://forstmeier-muenchen.de/kontakt/",
+          "keyword": "lack",
+          "snippet": "-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--colo"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "https://forstmeier-muenchen.de/",
+          "ok": true,
+          "final_url": "https://forstmeier-muenchen.de/"
+        },
+        {
+          "url": "https://forstmeier-muenchen.de/kontakt/",
+          "ok": true,
+          "final_url": "https://forstmeier-muenchen.de/kontakt/"
+        },
+        {
+          "url": "https://forstmeier-muenchen.de/kontakt",
+          "ok": true,
+          "final_url": "https://forstmeier-muenchen.de/kontakt/"
+        },
+        {
+          "url": "https://forstmeier-muenchen.de/impressum/",
+          "ok": true,
+          "final_url": "https://forstmeier-muenchen.de/impressum/"
+        },
+        {
+          "url": "https://forstmeier-muenchen.de/impressum",
+          "ok": true,
+          "final_url": "https://forstmeier-muenchen.de/impressum/"
+        }
+      ]
+    },
+    {
+      "company_name": "Gorans Werkstatt",
+      "website": "http://www.gorans-werkstatt.de/",
+      "city": "München/Umfeld",
+      "industry": "werkstatt_service",
+      "contact_email": null,
+      "all_emails": [],
+      "contact_type": "none_found",
+      "contact_source_url": null,
+      "confidence": "low",
+      "recommendation": "hold",
+      "found_keywords": [
+        "unfall",
+        "fahrzeug",
+        "reparatur",
+        "werkstatt",
+        "service",
+        "diagnose",
+        "inspektion"
+      ],
+      "snippets": [
+        {
+          "url": "http://www.gorans-werkstatt.de/",
+          "keyword": "unfall",
+          "snippet": " eine freie KFZ Werkstatt mit hoher Kompetenz im Bereich Reparatur, Wartung und Unfallinstandsetzung für alle Fabrikate. Als Meisterwerkstatt verfügen wir über modernste Fahrzeugdiagnose- und reparatursysteme. Durch permanente Weiterbildungsmaßnahmen steht ein hochmotiviertes Team zur Verfügung, den"
+        }
+      ],
+      "pages_checked": [
+        {
+          "url": "http://www.gorans-werkstatt.de/",
+          "ok": true,
+          "final_url": "http://www.gorans-werkstatt.de/"
+        },
+        {
+          "url": "http://www.gorans-werkstatt.de/kontakt/",
+          "ok": false,
+          "final_url": "http://www.gorans-werkstatt.de/kontakt/"
+        },
+        {
+          "url": "http://www.gorans-werkstatt.de/kontakt",
+          "ok": false,
+          "final_url": "http://www.gorans-werkstatt.de/kontakt"
+        },
+        {
+          "url": "http://www.gorans-werkstatt.de/impressum/",
+          "ok": false,
+          "final_url": "http://www.gorans-werkstatt.de/impressum/"
+        },
+        {
+          "url": "http://www.gorans-werkstatt.de/impressum",
+          "ok": false,
+          "final_url": "http://www.gorans-werkstatt.de/impressum"
+        }
+      ]
+    },
+    {
+      "company_name": "Fachschule für Farb- und Lacktechnik",
+      "website": "https://www.fachschule-muenchen.de/",
+      "city": "München",
+      "industry": "karosserie_lack",
+      "contact_email": "info@fachschule-muenchen.de",
+      "all_emails": [
+        "info@fachschule-muenchen.de"
+      ],
+      "contact_type": "email",
+      "contact_source_url": "https://www.fachschule-muenchen.de/",
+      "confidence": "high",
+      "recommendation": "hold",
+      "found_keywords": [],
+      "snippets": [],
+      "pages_checked": [
+        {
+          "url": "https://www.fachschule-muenchen.de/",
+          "ok": true,
+          "final_url": "https://www.fachschule-muenchen.de/"
+        },
+        {
+          "url": "https://www.fachschule-muenchen.de/kontakt/",
+          "ok": true,
+          "final_url": "https://www.fachschule-muenchen.de/kontakt/"
+        },
+        {
+          "url": "https://www.fachschule-muenchen.de/kontakt",
+          "ok": true,
+          "final_url": "https://www.fachschule-muenchen.de/kontakt/"
+        },
+        {
+          "url": "https://www.fachschule-muenchen.de/impressum/",
+          "ok": true,
+          "final_url": "https://www.fachschule-muenchen.de/impressum/"
+        },
+        {
+          "url": "https://www.fachschule-muenchen.de/impressum",
+          "ok": true,
+          "final_url": "https://www.fachschule-muenchen.de/impressum/"
+        }
+      ]
+    }
+  ]
+}

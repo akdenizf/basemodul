@@ -1,0 +1,386 @@
+<!doctype html>
+<!--
+THESIS: This diagram explains BaseModule as a modular intake-to-handoff architecture for local service businesses.
+OWN-WORLD: Dark premium basemodul.de system: black operating surface, green action path, compact panels and restrained labels.
+STORY: Requests enter through common channels, module logic completes the missing context, the data contract structures the case, and the team receives a reviewable action.
+FIRST VIEWPORT: One 16:9 workflow board with channels on the left, module engine in the center, data contract below, and human handoff on the right.
+FORM: Static 1600x900 architecture diagram, deeper than the cover but still readable in Upwork gallery view.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BaseModule Workflow Architecture</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #141414;
+      --panel-2: #181818;
+      --line: rgba(255, 255, 255, 0.10);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --text: #fafafa;
+      --muted: #a1a1aa;
+      --dim: #6b6b72;
+      --green: #22c55e;
+      --green-soft: rgba(34, 197, 94, 0.12);
+      --warn: #fbbf24;
+      --warn-soft: rgba(251, 191, 36, 0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #050505;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .canvas {
+      position: relative;
+      width: min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
+      max-width: 1600px;
+      max-height: 900px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 52% 50%, rgba(34, 197, 94, 0.13), transparent 34%),
+        linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .header {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      top: 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 47px;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
+      font-weight: 860;
+    }
+
+    .subtitle {
+      margin: 12px 0 0;
+      width: 870px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.42;
+      font-weight: 520;
+    }
+
+    .badge {
+      margin-top: 4px;
+      padding: 11px 15px;
+      border: 1px solid rgba(34, 197, 94, 0.32);
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.08);
+      color: #d9fbe5;
+      font-size: 13px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .lane {
+      position: absolute;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .lane.channels { left: 54px; top: 175px; width: 340px; height: 520px; }
+    .lane.logic { left: 430px; top: 175px; width: 520px; height: 520px; }
+    .lane.handoff { right: 54px; top: 175px; width: 560px; height: 520px; }
+    .lane.contract { left: 430px; right: 54px; bottom: 58px; height: 116px; }
+
+    .lane-label {
+      position: absolute;
+      left: 18px;
+      top: 14px;
+      color: var(--dim);
+      font-size: 12px;
+      font-weight: 820;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .node {
+      position: absolute;
+      z-index: 2;
+      padding: 17px 18px;
+      border: 1px solid var(--line-strong);
+      border-radius: 15px;
+      background: rgba(20, 20, 20, 0.94);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.26);
+    }
+
+    .node.green {
+      border-color: rgba(34, 197, 94, 0.42);
+      background: rgba(34, 197, 94, 0.09);
+    }
+
+    .node.warn {
+      border-color: rgba(251, 191, 36, 0.36);
+      background: var(--warn-soft);
+    }
+
+    .node strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 17px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 820;
+    }
+
+    .node span {
+      display: block;
+      color: var(--muted);
+      font-size: 12.8px;
+      line-height: 1.38;
+      font-weight: 560;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 5px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 7px;
+      color: #d4d4d8;
+      background: rgba(255, 255, 255, 0.045);
+      font-size: 11px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .tag.green {
+      color: #bbf7d0;
+      border-color: rgba(34, 197, 94, 0.30);
+      background: rgba(34, 197, 94, 0.11);
+    }
+
+    .tag.warn {
+      color: #fde68a;
+      border-color: rgba(251, 191, 36, 0.28);
+      background: rgba(251, 191, 36, 0.10);
+    }
+
+    .channels-list {
+      left: 86px;
+      top: 244px;
+      width: 276px;
+      min-height: 342px;
+    }
+
+    .module-engine {
+      left: 480px;
+      top: 240px;
+      width: 370px;
+      min-height: 162px;
+    }
+
+    .schema {
+      left: 492px;
+      top: 462px;
+      width: 360px;
+      min-height: 150px;
+    }
+
+    .review {
+      left: 1006px;
+      top: 248px;
+      width: 218px;
+      min-height: 140px;
+    }
+
+    .queue {
+      right: 88px;
+      top: 236px;
+      width: 254px;
+      min-height: 172px;
+    }
+
+    .actions {
+      right: 92px;
+      top: 468px;
+      width: 536px;
+      min-height: 132px;
+    }
+
+    .contract-strip {
+      position: absolute;
+      left: 468px;
+      right: 92px;
+      bottom: 82px;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+    }
+
+    .field {
+      min-height: 48px;
+      padding: 10px 9px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      background: rgba(255, 255, 255, 0.045);
+      color: #d4d4d8;
+      font-size: 11px;
+      line-height: 1.2;
+      font-weight: 760;
+      text-align: center;
+      display: grid;
+      place-items: center;
+    }
+
+    .arrow-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .arrow {
+      fill: none;
+      stroke: rgba(34, 197, 94, 0.78);
+      stroke-width: 2.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      marker-end: url(#arrowhead);
+    }
+
+    .arrow.muted {
+      stroke: rgba(255, 255, 255, 0.32);
+    }
+
+    .sources {
+      position: absolute;
+      left: 72px;
+      bottom: 26px;
+      width: 800px;
+      color: var(--dim);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 620;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="BaseModule modular intake workflow architecture">
+    <header class="header">
+      <div>
+        <h1>BaseModule workflow architecture</h1>
+        <p class="subtitle">A modular intake layer for local service businesses: request comes in, missing context gets collected, urgency is classified, and humans receive a structured next action.</p>
+      </div>
+      <div class="badge">basemodul.de / by AGENTEQ</div>
+    </header>
+
+    <section class="lane channels"><div class="lane-label">Incoming channels</div></section>
+    <section class="lane logic"><div class="lane-label">Module logic</div></section>
+    <section class="lane handoff"><div class="lane-label">Human operations</div></section>
+    <section class="lane contract"><div class="lane-label">Minimal data contract</div></section>
+
+    <svg class="arrow-layer" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#22c55e"></path>
+        </marker>
+      </defs>
+      <path class="arrow" d="M362 415 C410 415 418 322 480 322"></path>
+      <path class="arrow" d="M850 322 C912 322 940 318 1006 318"></path>
+      <path class="arrow" d="M1224 318 H1260"></path>
+      <path class="arrow muted" d="M665 402 V462"></path>
+      <path class="arrow" d="M852 535 H972"></path>
+      <path class="arrow" d="M1424 408 C1424 440 1330 440 1268 468"></path>
+      <path class="arrow muted" d="M672 612 C672 668 672 684 672 724"></path>
+    </svg>
+
+    <article class="node channels-list">
+      <strong>Calls, WhatsApp, appointments, photos and urgent requests</strong>
+      <span>Multiple entry points are treated as one intake problem: capture enough context before the team reacts.</span>
+      <div class="tags">
+        <span class="tag">Telefon</span>
+        <span class="tag">WhatsApp</span>
+        <span class="tag">Termin</span>
+        <span class="tag">Foto</span>
+        <span class="tag warn">Notdienst</span>
+      </div>
+    </article>
+
+    <article class="node green module-engine">
+      <strong>Reusable module engine</strong>
+      <span>Each module asks the missing questions, classifies urgency and prepares a handoff instead of pretending to be a fully autonomous decision-maker.</span>
+      <div class="tags">
+        <span class="tag green">required fields</span>
+        <span class="tag green">intent</span>
+        <span class="tag green">urgency</span>
+        <span class="tag green">next step</span>
+      </div>
+    </article>
+
+    <article class="node schema">
+      <strong>Structured request schema</strong>
+      <span>The current blueprint defines a compact JSON-style contract for name, phone, object/company, request type, urgency, description, missing info and recommended next step.</span>
+      <div class="tags">
+        <span class="tag">JSON output</span>
+        <span class="tag">handoff_required</span>
+        <span class="tag">missing_info[]</span>
+      </div>
+    </article>
+
+    <article class="node warn review">
+      <strong>Human review guardrail</strong>
+      <span>Urgent or unclear cases move to a person before sensitive outcomes.</span>
+      <div class="tags"><span class="tag warn">no binding promises</span><span class="tag warn">escalation</span></div>
+    </article>
+
+    <article class="node queue">
+      <strong>Team queue / dashboard handoff</strong>
+      <span>The team receives a callback note, appointment preparation, ticket or routed urgent case.</span>
+      <div class="tags"><span class="tag green">reviewable action</span></div>
+    </article>
+
+    <article class="node actions">
+      <strong>Operational output</strong>
+      <span>BaseModule is built for small pilots first: clear module, clear channel, clear acceptance criteria, then expand only when market feedback proves the lane.</span>
+      <div class="tags">
+        <span class="tag">callback note</span>
+        <span class="tag">appointment prep</span>
+        <span class="tag">structured case</span>
+        <span class="tag">emergency alert</span>
+        <span class="tag">team decision</span>
+      </div>
+    </article>
+
+    <div class="contract-strip">
+      <div class="field">customer_name</div>
+      <div class="field">phone</div>
+      <div class="field">company_or_object</div>
+      <div class="field">request_type</div>
+      <div class="field">urgency</div>
+      <div class="field">missing_info[]</div>
+      <div class="field">recommended_next_step</div>
+    </div>
+
+    <p class="sources">Verified from BaseModule README, OFFER.md, GTM.md, TECHNICAL_BLUEPRINT.md and DESIGN_BRIEF.md. Diagram uses synthetic demo framing and avoids customer claims, real lead data, private sends, secrets or unverified metrics.</p>
+  </main>
+</body>
+</html>

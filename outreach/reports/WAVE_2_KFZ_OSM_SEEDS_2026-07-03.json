@@ -1,0 +1,563 @@
+{
+  "created_at": "2026-07-03T12:17:49.510686+02:00",
+  "scope": "BaseModul Wave 2 prep — Kfz / Sachverständige / Werkstätten München",
+  "department": "base-modul-outreach",
+  "send_or_followup": false,
+  "seed_count": 146,
+  "seeds": [
+    {
+      "name": "blacksheepsports",
+      "category": "karosserie_lack",
+      "city": "München",
+      "street": "Holzhofstraße",
+      "website": "https://blacksheepsports.de/",
+      "email_osm_unverified": "info@blacksheepsports.de",
+      "phone_osm": "+49 89 21019826",
+      "osm_tags": {
+        "shop": "sports"
+      },
+      "prep_fit_score": 8,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "089 Gutachten Kfz Sachverständigenbüro Zwez",
+      "category": "kfz_sachverstaendige",
+      "city": "München",
+      "street": "Thorwaldsenstraße",
+      "website": "https://089-kfz-gutachten-muenchen.de/",
+      "email_osm_unverified": "info@089-kfz-gutachten-muenchen.de",
+      "phone_osm": "+49 89 85635032",
+      "osm_tags": {},
+      "prep_fit_score": 8,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Black Rabbit Ink",
+      "category": "karosserie_lack",
+      "city": "München",
+      "street": "Gabelsbergerstraße",
+      "website": "https://blackrabbit.ink",
+      "email_osm_unverified": "loco@blackrabbit.ink",
+      "phone_osm": "+49 89 324 903 77",
+      "osm_tags": {
+        "shop": "tattoo"
+      },
+      "prep_fit_score": 8,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Unfallhelden",
+      "category": "karosserie_lack",
+      "city": "München",
+      "street": "Widenmayerstraße",
+      "website": "https://www.unfallhelden.de/",
+      "email_osm_unverified": "Service@unfallhelden.de",
+      "phone_osm": null,
+      "osm_tags": {},
+      "prep_fit_score": 8,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Auto Riedl",
+      "category": "werkstatt_service",
+      "city": "Neuried",
+      "street": "Buchendorfer Straße",
+      "website": "https://www.auto-riedl.de/",
+      "email_osm_unverified": "autoriedl@gmx.de",
+      "phone_osm": "+49 89 750600",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Autohaus Feicht",
+      "category": "werkstatt_service",
+      "city": "Haar",
+      "street": "Münchener Straße",
+      "website": "https://www.feicht.de/",
+      "email_osm_unverified": "info@feicht.de",
+      "phone_osm": "+49 89 453037-0",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Autohaus Gehrhard Kfz-Meisterwerkstatt",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Sankt-Martin-Straße",
+      "website": "https://autohaus-gehrhardt.de/",
+      "email_osm_unverified": "autohaus-gehrhardt@web.de",
+      "phone_osm": "+49 89 409962",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Auto Münch",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Hansastraße",
+      "website": "https://automuench.de/",
+      "email_osm_unverified": "service@automuench.de",
+      "phone_osm": "+49 89 59976190",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "KFZ Werkstatt Rudolf Fischer",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Wolfratshauser Straße",
+      "website": "https://www.kfzwerkstatt-fischer.de/",
+      "email_osm_unverified": "mail@kfzwerkstatt-fischer.de",
+      "phone_osm": "+49 89 79 62 84",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Premio",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Meglingerstraße",
+      "website": "https://bernhard.premio.de/",
+      "email_osm_unverified": "premio@premio.de",
+      "phone_osm": "0800 2454070",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Aigner Kfz-Service GmbH & Co. KG",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Kistlerhofstraße",
+      "website": "https://aigner-kfz-service.de/",
+      "email_osm_unverified": "info@aigner-kfz-service.de",
+      "phone_osm": "+49 89 788 729",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "B&G Fahrzeugtechnik",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Wasserburger Landstraße",
+      "website": "https://www.bg-automotive.de/",
+      "email_osm_unverified": "info@bg-automotive.de",
+      "phone_osm": "+49 89 4303273",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "ETH Kfz - Werkstatt GmbH",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Preußenstraße",
+      "website": "https://www.eth-werkstatt.de/",
+      "email_osm_unverified": "info@ethwerkstatt.de",
+      "phone_osm": "+49 89 300 91 11",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Manlik Karosseriebau & Kraftfahrzeugmechanik GmbH",
+      "category": "karosserie_lack",
+      "city": "Aschheim",
+      "street": "Industriestraße",
+      "website": "https://www.manlik-kfz.de/",
+      "email_osm_unverified": "kontakt@manlik-kfz.de",
+      "phone_osm": "+4989429186",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "US-Kfz-Teile",
+      "category": "werkstatt_service",
+      "city": "Haar",
+      "street": "Keferloher Straße",
+      "website": "http://damc.kollmer.com/",
+      "email_osm_unverified": "mail@damc.de",
+      "phone_osm": "+49 89 439884 12",
+      "osm_tags": {
+        "shop": "car"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Auto Schüssler",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Georg-Reismüller-Straße",
+      "website": "http://www.auto-schuessler.com",
+      "email_osm_unverified": "info@auto-schuessler.com",
+      "phone_osm": "+49 89 89 22 39 59",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 7,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Black Bean",
+      "category": "karosserie_lack",
+      "city": "München",
+      "street": "Pündterplatz",
+      "website": "http://blackbean-muenchen.de/",
+      "email_osm_unverified": null,
+      "phone_osm": null,
+      "osm_tags": {
+        "amenity": "cafe"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Heidari Ingenieur-Sachverständigenbüro",
+      "category": "kfz_sachverstaendige",
+      "city": "München",
+      "street": "Balanstraße",
+      "website": "https://heidari-gutachten.de/",
+      "email_osm_unverified": null,
+      "phone_osm": null,
+      "osm_tags": {},
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Die Autowerkstatt München-Planegg",
+      "category": "werkstatt_service",
+      "city": "Planegg",
+      "street": "Bahnhofstraße",
+      "website": "https://www.die-autowerkstatt.net/planegg",
+      "email_osm_unverified": "planegg@die-autowerkstatt.de",
+      "phone_osm": "+49 89 8599950",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Kfz-Technik Bliemel",
+      "category": "werkstatt_service",
+      "city": "München/Umfeld",
+      "street": null,
+      "website": "https://kfztechnik-bliemel.de/",
+      "email_osm_unverified": "info@kfztechnik-bliemel.de",
+      "phone_osm": "+49 89 852730",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Üblacker-Häusl",
+      "category": "karosserie_lack",
+      "city": "München",
+      "street": "Preysingstraße",
+      "website": "https://www.freunde-haidhausens.de/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 480 76 79",
+      "osm_tags": {
+        "shop": "art"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Häusler",
+      "category": "werkstatt_service",
+      "city": "München/Umfeld",
+      "street": null,
+      "website": "https://www.haeusler-automobil-gmbh.de/standorte/harlaching/",
+      "email_osm_unverified": "info.harlaching@haeusler.de",
+      "phone_osm": "+49 89 6205210",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Autospenglerei Forstmeier",
+      "category": "werkstatt_service",
+      "city": "München/Umfeld",
+      "street": null,
+      "website": "https://forstmeier-muenchen.de/",
+      "email_osm_unverified": "info@forstmeier-muenchen.de",
+      "phone_osm": "+49897592376",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Gorans Werkstatt",
+      "category": "werkstatt_service",
+      "city": "München/Umfeld",
+      "street": "Geretsrieder Straße",
+      "website": "http://www.gorans-werkstatt.de/",
+      "email_osm_unverified": "info@gorans-werkstatt.de",
+      "phone_osm": "+49 89 17118828",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Fachschule für Farb- und Lacktechnik",
+      "category": "karosserie_lack",
+      "city": "München",
+      "street": "Hofmannstraße",
+      "website": "https://www.fachschule-muenchen.de/",
+      "email_osm_unverified": null,
+      "phone_osm": null,
+      "osm_tags": {
+        "amenity": "school"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Tom's Art Garage",
+      "category": "werkstatt_service",
+      "city": "München/Umfeld",
+      "street": null,
+      "website": "https://www.toms-art-garage.de",
+      "email_osm_unverified": "info@toms-art-garage.de",
+      "phone_osm": "+49 89 86399939",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Autowerkstatt Gürth und Spriegel",
+      "category": "werkstatt_service",
+      "city": "München/Umfeld",
+      "street": "Allacher Straße",
+      "website": "http://www.autowerkstatt-allach.de",
+      "email_osm_unverified": "autowerkstatt-muenchen@t-online.de",
+      "phone_osm": "+498981802903",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Coat'n Cast GmbH",
+      "category": "kfz_sachverstaendige",
+      "city": "München",
+      "street": "Hans-Preißinger-Straße",
+      "website": "https://www.coatncast.de",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 724 066 36",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "ACR Autoteile GmbH",
+      "category": "werkstatt_service",
+      "city": "Garching b. München",
+      "street": "Münchener Straße",
+      "website": "https://www.acr-autoteile.de/",
+      "email_osm_unverified": "info@acr-autoteile.de",
+      "phone_osm": "+49 89 3204023",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 6,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Autohaus Obermenzing",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Verdistraße",
+      "website": "https://die-autowerkstatt.net/obermenzing",
+      "email_osm_unverified": null,
+      "phone_osm": null,
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Autokühler Schneider",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Landsberger Straße",
+      "website": "https://www.kuehlerschneider.de/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 547010-0",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "A24 Autowerkstatt",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Aidenbachstraße",
+      "website": "https://www.a24.de/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 24244 0",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Ritz",
+      "category": "werkstatt_service",
+      "city": "Unterhaching",
+      "street": "Von-Stauffenberg-Straße",
+      "website": "https://www.ford-ritz-unterhaching.de",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 6152430",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "JB Tuning",
+      "category": "werkstatt_service",
+      "city": "Ismaning",
+      "street": "Schloßstraße",
+      "website": "https://jbsc-muc.com/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 20321625",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Krieg Classic Cars",
+      "category": "werkstatt_service",
+      "city": "Ismaning",
+      "street": "Mayerbacherstraße",
+      "website": "https://www.classic-cars-munich.de/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 960 551 910",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Auto-Sedlmeier GmbH",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Bodenseestraße",
+      "website": "https://www.mazda-autohaus-sedlmeier-muenchen.de/",
+      "email_osm_unverified": null,
+      "phone_osm": null,
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Black Wave Records",
+      "category": "karosserie_lack",
+      "city": "München/Umfeld",
+      "street": null,
+      "website": "https://blackwaverecords.wordpress.com/",
+      "email_osm_unverified": null,
+      "phone_osm": null,
+      "osm_tags": {
+        "shop": "music"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "AUTO C.S.H.Z. ÇELIK",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Wilhelmine-Reichard-Straße",
+      "website": "http://autocelik.de/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 35747325",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "Ziegler Kfz-Meisterbetrieb",
+      "category": "werkstatt_service",
+      "city": "München",
+      "street": "Steinkirchner Straße",
+      "website": "https://auto-service-ziegler.jimdofree.com/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 7696920",
+      "osm_tags": {
+        "shop": "car_repair"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    },
+    {
+      "name": "KFZ Ankauf & Verkauf",
+      "category": "werkstatt_service",
+      "city": "Ottobrunn",
+      "street": "Putzbrunner Straße",
+      "website": "https://gebrauchtwagencenter-ottobrunn.de/",
+      "email_osm_unverified": null,
+      "phone_osm": "+49 89 66007039",
+      "osm_tags": {
+        "shop": "car"
+      },
+      "prep_fit_score": 5,
+      "source": "OpenStreetMap Overpass public seed; contact must be verified on official website before outreach"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "_meta": {
     "description": "BaseModul Outreach — Zielregionen und Sourcing-Phasen",
-    "current_department": "agenteq-outreach",
-    "target_department": "basemodul-outreach",
+    "current_department": "base-modul-outreach",
+    "target_department": "base-modul-outreach",
     "last_updated": "2026-06-27"
   },
   "areas": [

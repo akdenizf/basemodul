@@ -1,6 +1,6 @@
 # BaseModul — Branchen-Kontext
 # Last Updated: 2026-06-27
-# Department: current=agenteq-outreach | target=basemodul-outreach
+# Department: current=base-modul-outreach
 
 ## Zielbranchen (Phase 1)
 

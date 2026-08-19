@@ -1,0 +1,360 @@
+{
+  "run": "bm-wave-shk-kkl-minibatch-2026-07-13",
+  "department": "base-modul-outreach",
+  "approved_phrase": "Okay let's go / Ja mach das bitte",
+  "sent_at_utc": "2026-07-13T11:07:55.830049+00:00",
+  "send_timing_check": {
+    "weekday": "Monday",
+    "policy": "allowed",
+    "guard_checked": true,
+    "fatih_go_present": true,
+    "result": "send_allowed"
+  },
+  "sync_before": {
+    "ok": true,
+    "accountEmail": "akdenizfatih@agenteq.de",
+    "syncedAt": "2026-07-13T11:07:50.360Z",
+    "messageCount": 40,
+    "syncPath": "/Users/user/Desktop/Projects/AgenteqInbox/data/gmail-sync.json"
+  },
+  "sync_after": {
+    "ok": true,
+    "accountEmail": "akdenizfatih@agenteq.de",
+    "syncedAt": "2026-07-13T11:07:55.723Z",
+    "messageCount": 40,
+    "syncPath": "/Users/user/Desktop/Projects/AgenteqInbox/data/gmail-sync.json"
+  },
+  "sender": "Fatih von AGENTEQ <go@agenteq.de>",
+  "reply_to": "Fatih Akdeniz <akdenizfatih@agenteq.de>",
+  "sender_domain_check": {
+    "ok": true,
+    "agenteq_de_verified": true,
+    "domains": [
+      {
+        "name": "agenteq.de",
+        "status": "verified"
+      }
+    ]
+  },
+  "dedupe": {
+    "checked": true,
+    "hits": 0
+  },
+  "guard_results": {
+    "info@muenchner-heizungsbau.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-13T11:07:50.360Z",
+      "statuses": []
+    },
+    "info@anton-ostler.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-13T11:07:50.360Z",
+      "statuses": []
+    },
+    "info@lengauer.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-13T11:07:50.360Z",
+      "statuses": []
+    },
+    "info@karl-greiner-gmbh.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-13T11:07:50.360Z",
+      "statuses": []
+    },
+    "info@memminger-gmbh.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-13T11:07:50.360Z",
+      "statuses": []
+    }
+  },
+  "post_send_guard": {
+    "info@muenchner-heizungsbau.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-13T11:07:55.723Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w1-002",
+          "leadId": "bm-w1-002",
+          "leadEmail": "info@muenchner-heizungsbau.de",
+          "leadName": "MH Münchner Heizungsbau GmbH / Heizungsbau Hirt",
+          "companyName": "MH Münchner Heizungsbau GmbH / Heizungsbau Hirt",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 18.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-002_d89981fa-5afc-4e97-bfbf-646f93cd17c3",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-shk-kkl-minibatch-2026-07-13",
+          "campaignName": "BaseModul SHK/Kälte/Klima Mini-Batch 2026-07-13",
+          "provider": "resend",
+          "providerMessageId": "d89981fa-5afc-4e97-bfbf-646f93cd17c3",
+          "lastActivityAt": "2026-07-13T11:07:51.741926+00:00",
+          "nextFollowupAt": "2026-07-18T11:07:51.741926+00:00",
+          "subject": "Notdienst-Anfragen sauberer aufnehmen?",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@anton-ostler.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-13T11:07:55.723Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w1-011",
+          "leadId": "bm-w1-011",
+          "leadEmail": "info@anton-ostler.de",
+          "leadName": "Anton Ostler GmbH & Co. KG",
+          "companyName": "Anton Ostler GmbH & Co. KG",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 18.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-011_32875160-8d2c-4b0c-a920-7bf20fb8f60f",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-shk-kkl-minibatch-2026-07-13",
+          "campaignName": "BaseModul SHK/Kälte/Klima Mini-Batch 2026-07-13",
+          "provider": "resend",
+          "providerMessageId": "32875160-8d2c-4b0c-a920-7bf20fb8f60f",
+          "lastActivityAt": "2026-07-13T11:07:52.239166+00:00",
+          "nextFollowupAt": "2026-07-18T11:07:52.239166+00:00",
+          "subject": "Kundendienst und Notdienst vorsortieren?",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@lengauer.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-13T11:07:55.723Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w1-014",
+          "leadId": "bm-w1-014",
+          "leadEmail": "info@lengauer.de",
+          "leadName": "Lengauer GmbH Heizung + Sanitär",
+          "companyName": "Lengauer GmbH Heizung + Sanitär",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 18.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-014_8813d90f-26ca-4ccf-a66d-d5f5f3cc2480",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-shk-kkl-minibatch-2026-07-13",
+          "campaignName": "BaseModul SHK/Kälte/Klima Mini-Batch 2026-07-13",
+          "provider": "resend",
+          "providerMessageId": "8813d90f-26ca-4ccf-a66d-d5f5f3cc2480",
+          "lastActivityAt": "2026-07-13T11:07:52.440884+00:00",
+          "nextFollowupAt": "2026-07-18T11:07:52.440884+00:00",
+          "subject": "WhatsApp und Telefon sauber zusammenführen?",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@karl-greiner-gmbh.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-13T11:07:55.723Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w1-009",
+          "leadId": "bm-w1-009",
+          "leadEmail": "info@karl-greiner-gmbh.de",
+          "leadName": "Karl Greiner GmbH",
+          "companyName": "Karl Greiner GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 18.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-009_8b771580-e7c7-4d28-bc79-5e1901cfe658",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-shk-kkl-minibatch-2026-07-13",
+          "campaignName": "BaseModul SHK/Kälte/Klima Mini-Batch 2026-07-13",
+          "provider": "resend",
+          "providerMessageId": "8b771580-e7c7-4d28-bc79-5e1901cfe658",
+          "lastActivityAt": "2026-07-13T11:07:52.978204+00:00",
+          "nextFollowupAt": "2026-07-18T11:07:52.978204+00:00",
+          "subject": "Anfragen direkt richtig einsortieren?",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@memminger-gmbh.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-13T11:07:55.723Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w1-007",
+          "leadId": "bm-w1-007",
+          "leadEmail": "info@memminger-gmbh.de",
+          "leadName": "Memminger Heizungsbau GmbH",
+          "companyName": "Memminger Heizungsbau GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 18.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-007_28049050-7989-41f3-b472-49898d8f56fd",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-shk-kkl-minibatch-2026-07-13",
+          "campaignName": "BaseModul SHK/Kälte/Klima Mini-Batch 2026-07-13",
+          "provider": "resend",
+          "providerMessageId": "28049050-7989-41f3-b472-49898d8f56fd",
+          "lastActivityAt": "2026-07-13T11:07:53.182250+00:00",
+          "nextFollowupAt": "2026-07-18T11:07:53.182250+00:00",
+          "subject": "Heizungsausfall oder Wartung direkt trennen?",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "lead_id": "bm-w1-002",
+      "company_name": "MH Münchner Heizungsbau GmbH / Heizungsbau Hirt",
+      "recipient_email": "info@muenchner-heizungsbau.de",
+      "subject": "Notdienst-Anfragen sauberer aufnehmen?",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "d89981fa-5afc-4e97-bfbf-646f93cd17c3",
+      "sent_at_utc": "2026-07-13T11:07:51.741926+00:00",
+      "next_followup_at": "2026-07-18T11:07:51.741926+00:00",
+      "resend_detail": {
+        "id": "d89981fa-5afc-4e97-bfbf-646f93cd17c3",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@muenchner-heizungsbau.de"
+        ],
+        "subject": "Notdienst-Anfragen sauberer aufnehmen?",
+        "created_at": "2026-07-13 11:07:51.86305+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "bm-w1-011",
+      "company_name": "Anton Ostler GmbH & Co. KG",
+      "recipient_email": "info@anton-ostler.de",
+      "subject": "Kundendienst und Notdienst vorsortieren?",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "32875160-8d2c-4b0c-a920-7bf20fb8f60f",
+      "sent_at_utc": "2026-07-13T11:07:52.239166+00:00",
+      "next_followup_at": "2026-07-18T11:07:52.239166+00:00",
+      "resend_detail": {
+        "id": "32875160-8d2c-4b0c-a920-7bf20fb8f60f",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@anton-ostler.de"
+        ],
+        "subject": "Kundendienst und Notdienst vorsortieren?",
+        "created_at": "2026-07-13 11:07:52.389358+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w1-014",
+      "company_name": "Lengauer GmbH Heizung + Sanitär",
+      "recipient_email": "info@lengauer.de",
+      "subject": "WhatsApp und Telefon sauber zusammenführen?",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "8813d90f-26ca-4ccf-a66d-d5f5f3cc2480",
+      "sent_at_utc": "2026-07-13T11:07:52.440884+00:00",
+      "next_followup_at": "2026-07-18T11:07:52.440884+00:00",
+      "resend_detail": {
+        "id": "8813d90f-26ca-4ccf-a66d-d5f5f3cc2480",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@lengauer.de"
+        ],
+        "subject": "WhatsApp und Telefon sauber zusammenführen?",
+        "created_at": "2026-07-13 11:07:52.58168+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w1-009",
+      "company_name": "Karl Greiner GmbH",
+      "recipient_email": "info@karl-greiner-gmbh.de",
+      "subject": "Anfragen direkt richtig einsortieren?",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "8b771580-e7c7-4d28-bc79-5e1901cfe658",
+      "sent_at_utc": "2026-07-13T11:07:52.978204+00:00",
+      "next_followup_at": "2026-07-18T11:07:52.978204+00:00",
+      "resend_detail": {
+        "id": "8b771580-e7c7-4d28-bc79-5e1901cfe658",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@karl-greiner-gmbh.de"
+        ],
+        "subject": "Anfragen direkt richtig einsortieren?",
+        "created_at": "2026-07-13 11:07:53.125568+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w1-007",
+      "company_name": "Memminger Heizungsbau GmbH",
+      "recipient_email": "info@memminger-gmbh.de",
+      "subject": "Heizungsausfall oder Wartung direkt trennen?",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "28049050-7989-41f3-b472-49898d8f56fd",
+      "sent_at_utc": "2026-07-13T11:07:53.182250+00:00",
+      "next_followup_at": "2026-07-18T11:07:53.182250+00:00",
+      "resend_detail": {
+        "id": "28049050-7989-41f3-b472-49898d8f56fd",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@memminger-gmbh.de"
+        ],
+        "subject": "Heizungsausfall oder Wartung direkt trennen?",
+        "created_at": "2026-07-13 11:07:53.318133+00",
+        "last_event": "sent"
+      }
+    }
+  ],
+  "inbox_outbound_records_written": 5
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beispiel-Rückrufnotiz Heizungsstörung · BaseModul</title>
+  <style>
+    body { margin: 0; background: #0b1220; color: #e5edf7; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.55; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 48px 22px; }
+    .eyebrow { color: #8fb5ff; text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 700; }
+    h1 { margin: 8px 0 10px; font-size: clamp(30px, 5vw, 52px); line-height: 1.04; }
+    .sub { color: #b7c5d8; font-size: 18px; max-width: 700px; }
+    .grid { display: grid; grid-template-columns: 1fr 1.35fr; gap: 18px; margin-top: 28px; }
+    .card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 22px; padding: 22px; box-shadow: 0 20px 80px rgba(0,0,0,.25); }
+    .card h2 { margin: 0 0 12px; font-size: 18px; }
+    .call { font-size: 22px; color: #fff; }
+    ul { padding-left: 20px; margin: 10px 0 0; color: #c9d7e8; }
+    .note { background: #f8fafc; color: #111827; border-radius: 18px; padding: 20px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 14px; white-space: pre-wrap; }
+    .benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
+    .benefit { background: rgba(143,181,255,.1); border: 1px solid rgba(143,181,255,.2); border-radius: 16px; padding: 14px; color: #dce8fa; }
+    .footer { color: #8ca0bb; font-size: 13px; margin-top: 24px; }
+    @media (max-width: 760px) { .grid, .benefits { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="eyebrow">BaseModul Beispiel</div>
+    <h1>Aus „Heizung ausgefallen“ wird eine saubere Rückrufnotiz.</h1>
+    <p class="sub">Ein kleiner Intake fragt die wichtigsten Pflichtinfos ab und übergibt dem Team eine klare Notiz — statt loser Mailbox, WhatsApp oder Telefonzettel.</p>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Eingehender Anruf</h2>
+        <p class="call">„Hallo, bei uns ist die Heizung ausgefallen. Warmwasser geht auch nicht richtig. Können Sie jemanden schicken?“</p>
+        <h2>BaseModul fragt nach</h2>
+        <ul>
+          <li>Name & Rückrufnummer</li>
+          <li>Adresse / Einsatzort</li>
+          <li>betroffene Anlage</li>
+          <li>Problem & Dringlichkeit</li>
+          <li>Rückrufzeit / Zusatzinfos</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Beispiel-Ausgabe fürs Team</h2>
+        <div class="note">RÜCKRUFNOTIZ — Heizungsstörung
+
+Kunde: Max Mustermann
+Telefon: 0176 12345678
+Adresse: Beispielstraße 12, 81243 München
+
+Anliegen:
+- Heizung seit heute Morgen ausgefallen
+- Warmwasser nur lauwarm
+- Gastherme im Keller betroffen
+- Keine sichtbare Leckage
+
+Dringlichkeit:
+- Hoch: Heizungsausfall + Warmwasserproblem
+- Rückruf gewünscht: heute vor 14:00 Uhr
+
+Fehlende Infos:
+- Hersteller/Modell der Anlage offen
+- Foto vom Display wäre hilfreich
+
+Übergabe:
+- Kundendienst / Notdienst prüfen
+- Rückruf mit Abfrage Hersteller + Fehlermeldung</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="benefit">Weniger unvollständige Rückrufzettel</div>
+      <div class="benefit">Notdienstfälle schneller erkennen</div>
+      <div class="benefit">Weniger Nachtelefonieren</div>
+      <div class="benefit">Saubere Übergabe ans Team</div>
+    </section>
+
+    <p class="footer">AGENTEQ · basemodul.de — Beispiel-Asset für Servicebetriebe. Keine automatische Zusage, Notfälle bleiben menschlich eskaliert.</p>
+  </main>
+</body>
+</html>

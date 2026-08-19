@@ -7,11 +7,16 @@ Wir suchen keine "grossen Fische" zuerst. Wir suchen KMU, bei denen der Schmerz 
 ## Gute Branchen
 
 - SHK / Heizung / Klima / Elektro
-- Hausverwaltung
 - Gebaeudereinigung
 - Facility Services
 - Umzug / Entruempelung
 - lokale Dienstleister mit Notdienst oder vielen Rueckfragen
+
+Nicht in dieser BaseModul-Spur:
+
+- Hausverwaltung / Mieterkommunikation, weil das zur separaten Callfolio-Lane
+  gehört
+- Healthcare oder stark regulierte Spezialbereiche als erster Test
 
 ## Suchqueries
 
@@ -22,17 +27,17 @@ Handwerk:
 - `Kältetechnik Notdienst Gewerbekunden Kontakt`
 - `Elektriker Notdienst Kontaktformular`
 
-Hausverwaltung:
-
-- `Hausverwaltung Schadenmeldung München`
-- `Hausverwaltung Mieterportal Kontaktformular`
-- `WEG Verwaltung technische Meldung Formular`
-
 Facility:
 
 - `Gebäudereinigung Angebot Anfrage Formular`
 - `Facility Service Kontaktformular mehrere Standorte`
 - `Reinigungsfirma Sonderreinigung Anfrage`
+
+Kfz / Sachverstaendige:
+
+- `Kfz Gutachter Schaden Fotos Kontaktformular Bayern`
+- `Unfallgutachter Fahrzeugschein Fotos Anfrage`
+- `Kfz Werkstatt Termin Anfrage WhatsApp`
 
 ## Lead-Felder
 

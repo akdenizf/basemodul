@@ -1,6 +1,6 @@
 # BaseModul — Competitor Intel
 # Last Updated: 2026-06-27
-# Department: current=agenteq-outreach | target=basemodul-outreach
+# Department: current=base-modul-outreach
 # Hinweis: Nie Wettbewerbernamen proaktiv im Outreach nennen; nur bei direkter Nachfrage nutzen.
 
 ## KMU-Segment (direkter Wettbewerb)

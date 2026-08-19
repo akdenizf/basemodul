@@ -1,0 +1,360 @@
+{
+  "run": "bm-wave-2-kfz-munich-top5-2026-07-06",
+  "department": "base-modul-outreach",
+  "approved_phrase": "Bitte Go11",
+  "sent_at_utc": "2026-07-06T06:35:48.550661+00:00",
+  "send_timing_check": {
+    "weekday": "Monday",
+    "policy": "allowed",
+    "guard_checked": true,
+    "fatih_go_present": true,
+    "result": "send_allowed"
+  },
+  "sync_before": {
+    "ok": true,
+    "accountEmail": "akdenizfatih@agenteq.de",
+    "syncedAt": "2026-07-06T06:35:44.839Z",
+    "messageCount": 40,
+    "syncPath": "/Users/user/Desktop/Projects/AgenteqInbox/data/gmail-sync.json"
+  },
+  "sync_after": {
+    "ok": true,
+    "accountEmail": "akdenizfatih@agenteq.de",
+    "syncedAt": "2026-07-06T06:35:48.463Z",
+    "messageCount": 40,
+    "syncPath": "/Users/user/Desktop/Projects/AgenteqInbox/data/gmail-sync.json"
+  },
+  "sender": "Fatih von AGENTEQ <go@agenteq.de>",
+  "reply_to": "Fatih Akdeniz <akdenizfatih@agenteq.de>",
+  "sender_domain_check": {
+    "ok": true,
+    "agenteq_de_verified": true,
+    "domains": [
+      {
+        "name": "agenteq.de",
+        "status": "verified"
+      }
+    ]
+  },
+  "dedupe": {
+    "checked": true,
+    "hits": 0
+  },
+  "guard_results": {
+    "info@heidari-gutachten.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-06T06:35:44.839Z",
+      "statuses": []
+    },
+    "info@ethwerkstatt.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-06T06:35:44.839Z",
+      "statuses": []
+    },
+    "service@automuench.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-06T06:35:44.839Z",
+      "statuses": []
+    },
+    "info@bg-automotive.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-06T06:35:44.839Z",
+      "statuses": []
+    },
+    "info@aigner-kfz-service.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-06T06:35:44.839Z",
+      "statuses": []
+    }
+  },
+  "post_send_guard": {
+    "info@heidari-gutachten.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-06T06:35:48.463Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w2-002",
+          "leadId": "bm-w2-002",
+          "leadEmail": "info@heidari-gutachten.de",
+          "leadName": "Heidari Ingenieur-Sachverständigenbüro",
+          "companyName": "Heidari Ingenieur-Sachverständigenbüro",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 11.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w2-002_2a4c7e21-7338-4fe7-afe1-fa1a798d46ef",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-2-kfz-munich-top5-2026-07-06",
+          "campaignName": "BaseModul Wave 2 — Kfz München Top 5",
+          "provider": "resend",
+          "providerMessageId": "2a4c7e21-7338-4fe7-afe1-fa1a798d46ef",
+          "lastActivityAt": "2026-07-06T06:35:45.441388+00:00",
+          "nextFollowupAt": "2026-07-11T06:35:45.441388+00:00",
+          "subject": "Frage zu Schadenbildern und Gutachtenanfragen",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@ethwerkstatt.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-06T06:35:48.463Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w2-003",
+          "leadId": "bm-w2-003",
+          "leadEmail": "info@ethwerkstatt.de",
+          "leadName": "ETH Kfz-Werkstatt GmbH",
+          "companyName": "ETH Kfz-Werkstatt GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 11.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w2-003_656305a1-6d81-48f9-bc02-574ff11a6baa",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-2-kfz-munich-top5-2026-07-06",
+          "campaignName": "BaseModul Wave 2 — Kfz München Top 5",
+          "provider": "resend",
+          "providerMessageId": "656305a1-6d81-48f9-bc02-574ff11a6baa",
+          "lastActivityAt": "2026-07-06T06:35:45.668934+00:00",
+          "nextFollowupAt": "2026-07-11T06:35:45.668934+00:00",
+          "subject": "Frage zu Unfall- und Reparaturanfragen",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "service@automuench.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-06T06:35:48.463Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w2-004",
+          "leadId": "bm-w2-004",
+          "leadEmail": "service@automuench.de",
+          "leadName": "Auto Münch",
+          "companyName": "Auto Münch",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 11.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w2-004_aea25fef-e2ce-4779-a5f1-6306f8ebefaf",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-2-kfz-munich-top5-2026-07-06",
+          "campaignName": "BaseModul Wave 2 — Kfz München Top 5",
+          "provider": "resend",
+          "providerMessageId": "aea25fef-e2ce-4779-a5f1-6306f8ebefaf",
+          "lastActivityAt": "2026-07-06T06:35:45.913242+00:00",
+          "nextFollowupAt": "2026-07-11T06:35:45.913242+00:00",
+          "subject": "Kurze Frage zu Unfallschaden-Anfragen",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@bg-automotive.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-06T06:35:48.463Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w2-005",
+          "leadId": "bm-w2-005",
+          "leadEmail": "info@bg-automotive.de",
+          "leadName": "B&G Fahrzeugtechnik",
+          "companyName": "B&G Fahrzeugtechnik",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 11.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w2-005_a19fb0f5-1876-4608-a92f-8a74817167a9",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-2-kfz-munich-top5-2026-07-06",
+          "campaignName": "BaseModul Wave 2 — Kfz München Top 5",
+          "provider": "resend",
+          "providerMessageId": "a19fb0f5-1876-4608-a92f-8a74817167a9",
+          "lastActivityAt": "2026-07-06T06:35:46.151518+00:00",
+          "nextFollowupAt": "2026-07-11T06:35:46.151518+00:00",
+          "subject": "Frage zu Reparatur- und Unfallanfragen",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@aigner-kfz-service.de": {
+      "ok": true,
+      "count": 1,
+      "syncedAt": "2026-07-06T06:35:48.463Z",
+      "statuses": [
+        {
+          "key": "lead:bm-w2-008",
+          "leadId": "bm-w2-008",
+          "leadEmail": "info@aigner-kfz-service.de",
+          "leadName": "Aigner Kfz-Service GmbH & Co. KG",
+          "companyName": "Aigner Kfz-Service GmbH & Co. KG",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Follow-up geplant am 11.07.2026 — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w2-008_8de1bd8e-e459-4e2e-9cf3-9149e7229b94",
+          "source": "hermes-agent",
+          "campaignId": "bm-wave-2-kfz-munich-top5-2026-07-06",
+          "campaignName": "BaseModul Wave 2 — Kfz München Top 5",
+          "provider": "resend",
+          "providerMessageId": "8de1bd8e-e459-4e2e-9cf3-9149e7229b94",
+          "lastActivityAt": "2026-07-06T06:35:46.380190+00:00",
+          "nextFollowupAt": "2026-07-11T06:35:46.380190+00:00",
+          "subject": "Frage zu Karosserie- und Reparaturanfragen",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    }
+  },
+  "results": [
+    {
+      "lead_id": "bm-w2-002",
+      "company_name": "Heidari Ingenieur-Sachverständigenbüro",
+      "recipient_email": "info@heidari-gutachten.de",
+      "subject": "Frage zu Schadenbildern und Gutachtenanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "2a4c7e21-7338-4fe7-afe1-fa1a798d46ef",
+      "sent_at_utc": "2026-07-06T06:35:45.441388+00:00",
+      "next_followup_at": "2026-07-11T06:35:45.441388+00:00",
+      "resend_detail": {
+        "id": "2a4c7e21-7338-4fe7-afe1-fa1a798d46ef",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@heidari-gutachten.de"
+        ],
+        "subject": "Frage zu Schadenbildern und Gutachtenanfragen",
+        "created_at": "2026-07-06 06:35:45.508362+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w2-003",
+      "company_name": "ETH Kfz-Werkstatt GmbH",
+      "recipient_email": "info@ethwerkstatt.de",
+      "subject": "Frage zu Unfall- und Reparaturanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "656305a1-6d81-48f9-bc02-574ff11a6baa",
+      "sent_at_utc": "2026-07-06T06:35:45.668934+00:00",
+      "next_followup_at": "2026-07-11T06:35:45.668934+00:00",
+      "resend_detail": {
+        "id": "656305a1-6d81-48f9-bc02-574ff11a6baa",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@ethwerkstatt.de"
+        ],
+        "subject": "Frage zu Unfall- und Reparaturanfragen",
+        "created_at": "2026-07-06 06:35:45.743967+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w2-004",
+      "company_name": "Auto Münch",
+      "recipient_email": "service@automuench.de",
+      "subject": "Kurze Frage zu Unfallschaden-Anfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "aea25fef-e2ce-4779-a5f1-6306f8ebefaf",
+      "sent_at_utc": "2026-07-06T06:35:45.913242+00:00",
+      "next_followup_at": "2026-07-11T06:35:45.913242+00:00",
+      "resend_detail": {
+        "id": "aea25fef-e2ce-4779-a5f1-6306f8ebefaf",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "service@automuench.de"
+        ],
+        "subject": "Kurze Frage zu Unfallschaden-Anfragen",
+        "created_at": "2026-07-06 06:35:46.031893+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w2-005",
+      "company_name": "B&G Fahrzeugtechnik",
+      "recipient_email": "info@bg-automotive.de",
+      "subject": "Frage zu Reparatur- und Unfallanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "a19fb0f5-1876-4608-a92f-8a74817167a9",
+      "sent_at_utc": "2026-07-06T06:35:46.151518+00:00",
+      "next_followup_at": "2026-07-11T06:35:46.151518+00:00",
+      "resend_detail": {
+        "id": "a19fb0f5-1876-4608-a92f-8a74817167a9",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@bg-automotive.de"
+        ],
+        "subject": "Frage zu Reparatur- und Unfallanfragen",
+        "created_at": "2026-07-06 06:35:46.215841+00",
+        "last_event": "sent"
+      }
+    },
+    {
+      "lead_id": "bm-w2-008",
+      "company_name": "Aigner Kfz-Service GmbH & Co. KG",
+      "recipient_email": "info@aigner-kfz-service.de",
+      "subject": "Frage zu Karosserie- und Reparaturanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "8de1bd8e-e459-4e2e-9cf3-9149e7229b94",
+      "sent_at_utc": "2026-07-06T06:35:46.380190+00:00",
+      "next_followup_at": "2026-07-11T06:35:46.380190+00:00",
+      "resend_detail": {
+        "id": "8de1bd8e-e459-4e2e-9cf3-9149e7229b94",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@aigner-kfz-service.de"
+        ],
+        "subject": "Frage zu Karosserie- und Reparaturanfragen",
+        "created_at": "2026-07-06 06:35:46.437553+00",
+        "last_event": "sent"
+      }
+    }
+  ],
+  "inbox_outbound_records_written": 5
+}

@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "title": "BaseModul SHK/Kälte/Klima Mini-Batch Polished Preview",
+    "date": "2026-07-13",
+    "department": "base-modul-outreach",
+    "selected_from": "WAVE_SHK_KKL_LEAD_DROP_PREVIEW_2026-07-13.md",
+    "send_timing_check": {
+      "heutiger_tag": "Monday 2026-07-13 11:16 CEST",
+      "policy": "allowed",
+      "guard_geprueft": "no",
+      "fatih_go_vorhanden": "no_for_send_go_on_means_continue_prepare",
+      "ergebnis": "prepare_only"
+    },
+    "guard_note": "Kein Send, kein Follow-up, kein send-ready Status. Vor echtem Send Live-Guard department=base-modul-outreach prüfen."
+  },
+  "leads": [
+    {
+      "rank": 1,
+      "lead_id": "bm-w1-002",
+      "company_name": "MH Münchner Heizungsbau GmbH / Heizungsbau Hirt",
+      "website": "https://muenchner-heizungsbau.de",
+      "city": "München",
+      "industry": "SHK / Heizungsbau",
+      "contact_email": "info@muenchner-heizungsbau.de",
+      "lead_score": 84,
+      "reason_selected": "starkes öffentliches Intake-/Kundendienst-Signal; gutes BaseModul-Telefon/Notdienst/WhatsApp-Mapping",
+      "public_signals": [
+        "Website nennt Wartung, verlässlichen Kundendienst und umfassenden Notdienst.",
+        "Meisterbetrieb für Heizung und Sanitär in München.",
+        "Kontakt und Impressum öffentlich mit Telefon/E-Mail erreichbar."
+      ],
+      "suspected_bottleneck": "Wenn Notdienst, Kundendienst und Wartung über dieselben Kontaktwege laufen, kann eine strukturierte Vorqualifikation nach Adresse, Anlage und Dringlichkeit Rückrufe entlasten.",
+      "module": "Prioritäts-/Notdienst-Modul plus Telefonannahme für Heizungsstörungen.",
+      "subject": "Notdienst-Anfragen sauberer aufnehmen?",
+      "body": "Hallo zusammen, ich habe gesehen, dass Sie Kundendienst, Wartung und Notdienst anbieten.\n\nBei Heizungsstörungen sind am Anfang oft Adresse, Anlage, Problem und Dringlichkeit entscheidend.\n\nWäre es für Sie interessant, einmal 20 Minuten zu prüfen, ob man genau diese Infos vor dem Rückruf automatisch sauber abfragen kann?",
+      "source_urls": [
+        "https://muenchner-heizungsbau.de/",
+        "https://muenchner-heizungsbau.de/kontakt/",
+        "https://muenchner-heizungsbau.de/impressum/",
+        "https://www.openstreetmap.org/node/7225759016"
+      ],
+      "status": "polished_preview_only_no_send"
+    },
+    {
+      "rank": 2,
+      "lead_id": "bm-w1-011",
+      "company_name": "Anton Ostler GmbH & Co. KG",
+      "website": "https://www.anton-ostler.de",
+      "city": "München",
+      "industry": "SHK / Gebäudetechnik / Lüftung",
+      "contact_email": "info@anton-ostler.de",
+      "lead_score": 84,
+      "reason_selected": "starkes öffentliches Intake-/Kundendienst-Signal; gutes BaseModul-Telefon/Notdienst/WhatsApp-Mapping",
+      "public_signals": [
+        "Website-Navigation enthält Kundendienst, Notdienst und Fördermittel-Service.",
+        "Gewerbekundenbereich nennt Anlagenplanung und Wartung.",
+        "Kontaktformular für offene Fragen und Anfrage vorhanden."
+      ],
+      "suspected_bottleneck": "Kundendienst, Notdienst und Gewerbekundenanfragen haben unterschiedliche Dringlichkeit; automatisierte Erstaufnahme könnte sauber routen.",
+      "module": "Telefon-/Prioritäts-Modul für Kundendienst, Notdienst und Gewerbekunden-Wartung.",
+      "subject": "Kundendienst und Notdienst vorsortieren?",
+      "body": "Hallo zusammen, bei Ihnen sind Kundendienst, Notdienst und Gewerbekunden-Wartung klar sichtbar.\n\nDas sind unterschiedliche Anfragen, die am Telefon trotzdem oft erst einmal gleich reinkommen.\n\nWäre ein kurzer Check spannend, ob ein Telefon-Modul Dringlichkeit und Pflichtinfos vor dem Rückruf sauber erfassen könnte?",
+      "source_urls": [
+        "https://www.anton-ostler.de/",
+        "https://www.anton-ostler.de/kontakt/",
+        "https://www.anton-ostler.de/impressum/",
+        "https://www.openstreetmap.org/node/10063901931"
+      ],
+      "status": "polished_preview_only_no_send"
+    },
+    {
+      "rank": 3,
+      "lead_id": "bm-w1-014",
+      "company_name": "Lengauer GmbH Heizung + Sanitär",
+      "website": "https://www.lengauer.de",
+      "city": "München",
+      "industry": "SHK / Sanitär-Heizung",
+      "contact_email": "info@lengauer.de",
+      "lead_score": 82,
+      "reason_selected": "starkes öffentliches Intake-/Kundendienst-Signal; gutes BaseModul-Telefon/Notdienst/WhatsApp-Mapping",
+      "public_signals": [
+        "Website beschreibt Kundendienst und Service für Sanitär- oder Heizungsarbeiten.",
+        "Kontaktwege: Telefon, E-Mail, Kontaktformular und WhatsApp.",
+        "Anliegen-Schilderung und zeitnahe Terminvereinbarung sind Teil des öffentlichen Vorgehens."
+      ],
+      "suspected_bottleneck": "WhatsApp plus Telefon plus Formular kann intern zu doppelten oder unvollständigen Anfragen führen; ein strukturierter Intake könnte das glätten.",
+      "module": "WhatsApp-/Telefon-Modul für einheitliche Anfrageaufnahme und Terminvorbereitung.",
+      "subject": "WhatsApp und Telefon sauber zusammenführen?",
+      "body": "Hallo zusammen, ich habe gesehen, dass Sie neben Telefon und Formular auch WhatsApp als Kontaktweg anbieten.\n\nBei mehreren Kanälen wird die Übergabe ans Team schnell uneinheitlich.\n\nWäre es relevant, wenn daraus automatisch vollständige Rückruf- oder Terminnotizen entstehen?",
+      "source_urls": [
+        "https://www.lengauer.de/",
+        "https://www.lengauer.de/impressum/",
+        "https://www.openstreetmap.org/node/6615953794"
+      ],
+      "status": "polished_preview_only_no_send"
+    },
+    {
+      "rank": 4,
+      "lead_id": "bm-w1-009",
+      "company_name": "Karl Greiner GmbH",
+      "website": "https://karl-greiner-gmbh.de",
+      "city": "München",
+      "industry": "SHK / Elektro / Kundendienst",
+      "contact_email": "info@karl-greiner-gmbh.de",
+      "lead_score": 80,
+      "reason_selected": "starkes öffentliches Intake-/Kundendienst-Signal; gutes BaseModul-Telefon/Notdienst/WhatsApp-Mapping",
+      "public_signals": [
+        "Website nennt Elektro, Heizung, Wärmepumpenbau, Badrenovierung und Kundendienst.",
+        "Kontaktformular fragt Art der Anfrage wie Angebot, Reparatur, Wartung, Rückfrage zu bestehendem Vorgang.",
+        "Mehrere Gewerke aus einer Hand werden öffentlich betont."
+      ],
+      "suspected_bottleneck": "Die Kontaktformular-Kategorien zeigen bereits Sortierbedarf; ein Telefon-/Chat-Modul könnte denselben Intake auch außerhalb des Formulars übernehmen.",
+      "module": "Telefon-/Chat-Modul mit Kategorien Angebot, Reparatur, Wartung und Rückfrage.",
+      "subject": "Anfragen direkt richtig einsortieren?",
+      "body": "Hallo zusammen, Ihr Kontaktformular trennt bereits Angebot, Reparatur, Wartung und Rückfragen zu bestehenden Vorgängen.\n\nDas zeigt gut, dass die Sortierung am Anfang wichtig ist.\n\nWäre es interessant, wenn ein Assistent diese Struktur auch am Telefon oder im Chat abfragt?",
+      "source_urls": [
+        "https://karl-greiner-gmbh.de/",
+        "https://karl-greiner-gmbh.de/kontakt",
+        "https://karl-greiner-gmbh.de/impressum",
+        "https://www.openstreetmap.org/node/9660643865"
+      ],
+      "status": "polished_preview_only_no_send"
+    },
+    {
+      "rank": 5,
+      "lead_id": "bm-w1-007",
+      "company_name": "Memminger Heizungsbau GmbH",
+      "website": "https://www.memminger-gmbh.de",
+      "city": "München",
+      "industry": "SHK / Heizungsbau",
+      "contact_email": "info@memminger-gmbh.de",
+      "lead_score": 78,
+      "reason_selected": "starkes öffentliches Intake-/Kundendienst-Signal; gutes BaseModul-Telefon/Notdienst/WhatsApp-Mapping",
+      "public_signals": [
+        "Website nennt Kundendienst bei defekter WC-Spülung oder Heizungsausfall.",
+        "Jährliche Wartung wird als Thema herausgestellt.",
+        "Heizung, Sanitär, Kundendienst und Solaranlagen öffentlich positioniert."
+      ],
+      "suspected_bottleneck": "Störungen und Wartungsanfragen könnten am Telefon ähnlich reinkommen, obwohl sie unterschiedliche Priorität haben; ein strukturierter Intake kann das trennen.",
+      "module": "Telefon-/Kundendienst-Modul für Störungen, Wartung und Rückrufnotizen.",
+      "subject": "Heizungsausfall oder Wartung direkt trennen?",
+      "body": "Hallo zusammen, auf Ihrer Website sind sowohl Heizungsausfall als auch jährliche Wartung Thema.\n\nBeides kommt oft über dieselben Kontaktwege rein, hat aber eine andere Dringlichkeit.\n\nWäre ein kurzer Check interessant, ob ein Telefon-Modul solche Anfragen vor dem Rückruf sauber trennen kann?",
+      "source_urls": [
+        "https://memminger-gmbh.de/",
+        "https://memminger-gmbh.de/kontakt/",
+        "https://memminger-gmbh.de/impressum/",
+        "https://www.openstreetmap.org/node/8812262829"
+      ],
+      "status": "polished_preview_only_no_send"
+    }
+  ]
+}

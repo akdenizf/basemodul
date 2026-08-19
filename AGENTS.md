@@ -17,11 +17,14 @@ Für Outreach-Aufgaben zuerst lesen:
 - [`docs/hermes/BASEMODUL_PROFILE_BLUEPRINT.md`](docs/hermes/BASEMODUL_PROFILE_BLUEPRINT.md) — Hermes-Profil-Blueprint
 - [`docs/hermes/SOUL.basemodul.md`](docs/hermes/SOUL.basemodul.md) — Rollen-SOUL
 
-Department (Migration):
+Guard / Department:
 
-- **current:** `department=agenteq-outreach` (aktiv)
-- **target:** `department=basemodul-outreach` (sobald AgenteqInbox unterstützt)
+- **BaseModul:** `department=base-modul-outreach` (aktiv)
+- **AGENTEQ:** `department=agenteq-outreach`
 - **nie:** `department=callfolio-outreach`
+
+Inbox Guard Base URL: `http://localhost:4550/api/outreach-status`.
+`localhost:3000` nicht mehr für Agenteq Inbox Guard nutzen; 3000 kann von anderen lokalen Apps belegt sein.
 
 Morning Outreach Check:
 `/Users/user/Desktop/Projects/AgenteqHQ/docs/agenteq-outreach/MORNING_OUTREACH_CHECK.md`

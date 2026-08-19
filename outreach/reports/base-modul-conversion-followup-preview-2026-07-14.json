@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "title": "BaseModul Conversion Follow-up Preview — Beispiel-schicken CTA",
+    "date": "2026-07-14",
+    "created_at": "2026-07-14T07:54:33.556300+00:00",
+    "department": "base-modul-outreach",
+    "scope": "10 stärkste fällige Follow-up-Kandidaten; Preview only; kein Versand",
+    "guard_checked": true,
+    "guard_source": "POST /api/gmail/sync + GET /api/outreach-status?department=base-modul-outreach&includeAll=true",
+    "guard_ok": true,
+    "guard_syncedAt": "2026-07-14T07:53:31.784Z",
+    "send_timing": {
+      "weekday": "Tuesday",
+      "policy": "allowed",
+      "fatih_go_present": "no_for_send",
+      "result": "prepare_only"
+    },
+    "conversion_test": "CTA von 20-Minuten-Check auf „Soll ich Ihnen ein Beispiel schicken?“ reduziert Call-Friktion."
+  },
+  "leads": [
+    {
+      "lead_id": "bm-w1-004",
+      "company_name": "Hühnchen Heiztechnik GmbH",
+      "email": "info@heiztechnik-gmbh.de",
+      "website": "https://www.heiztechnik-gmbh.de",
+      "industry": "SHK / Heiztechnik",
+      "lead_score": 89,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 7 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Website-Headline: Partner für Heizungswartung und Notdienst in München.",
+        "Notdienst an 365 Tagen im Jahr wird öffentlich genannt."
+      ],
+      "previous_subject": "Re: Kurze Frage zu Ihrem 365-Tage-Notdienst",
+      "followup_subject_preview": "Re: Kurze Frage zu Ihrem 365-Tage-Notdienst",
+      "followup_body_preview": "Hallo zusammen,\n\nkurzer Nachtrag zu meiner Frage zum 365-Tage-Notdienst.\n\nMir ging es nicht um ein großes System, sondern um den ersten Schritt: Aus einem Anruf wie „Heizung ausgefallen, Adresse, Anlage, Rückrufnummer, Dringlichkeit“ automatisch eine vollständige Rückrufnotiz fürs Team machen.\n\nSoll ich Ihnen einmal ein kurzes Beispiel schicken, wie so eine Notiz aussehen würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Rückrufnotiz für Service-/Notdienstanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w1-006",
+      "company_name": "allwartung GmbH",
+      "email": "info@allwartung.de",
+      "website": "https://www.allwartung.de",
+      "industry": "SHK / Haustechnik / Klima-Lüftung",
+      "lead_score": 88,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 7 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Navigation enthält Kundendienst beauftragen und Notdienst.",
+        "Website nennt Wartung und Haustechnik in München seit 1971."
+      ],
+      "previous_subject": "Re: Kurze Frage zu Kundendienst und Notdienst",
+      "followup_subject_preview": "Re: Kurze Frage zu Kundendienst und Notdienst",
+      "followup_body_preview": "Hallo zusammen,\n\nich wollte meine Frage kurz nach vorne holen.\n\nBei Kundendienst- und Notdienstanfragen über mehrere Gewerke geht es oft nur um saubere Basics vor dem Rückruf: Problem, Anlage, Standort, Rückrufnummer und Dringlichkeit.\n\nSoll ich Ihnen einmal ein Beispiel schicken, wie BaseModul daraus eine kurze Rückrufnotiz fürs Team machen würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Rückrufnotiz für Service-/Notdienstanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w2-002",
+      "company_name": "Heidari Ingenieur-Sachverständigenbüro",
+      "email": "info@heidari-gutachten.de",
+      "website": "https://heidari-gutachten.de",
+      "industry": "Kfz-Sachverständige / Gutachten",
+      "lead_score": 88,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 8 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Offizielle Website positioniert Kfz-Gutachten/Sachverständigen-Leistung.",
+        "Gutachten-Fälle erfordern typischerweise Schadenbilder, Fahrzeugdaten, Hergang und Kontaktdaten vor Termin/Rückruf."
+      ],
+      "previous_subject": "Frage zu Schadenbildern und Gutachtenanfragen",
+      "followup_subject_preview": "Re: Frage zu Schadenbildern und Gutachtenanfragen",
+      "followup_body_preview": "Hallo zusammen,\n\nkurzer Nachtrag zu meiner Frage zu Gutachtenanfragen.\n\nMir ging es um den ersten Schritt vor Rückruf oder Termin: Schadenbilder, Fahrzeugdaten, Hergang, Kontaktdaten und Versicherungsinfos direkt vollständig einsammeln.\n\nSoll ich Ihnen einmal ein kurzes Beispiel schicken, wie so ein strukturierter Gutachten-Fall aussehen würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Fallübergabe für Schaden-/Reparaturanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w1-012",
+      "company_name": "J. Baumgartner GmbH",
+      "email": "info@j-baumgartner.de",
+      "website": "https://www.j-baumgartner.de",
+      "industry": "SHK / Elektro / Sanierung",
+      "lead_score": 87,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 7 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Website nennt Service & Notdienst.",
+        "Kontaktwege: Telefon, E-Mail, Kontaktformular und WhatsApp-Chat."
+      ],
+      "previous_subject": "Re: Telefon, Formular und WhatsApp — kurze Frage",
+      "followup_subject_preview": "Re: Telefon, Formular und WhatsApp — kurze Frage",
+      "followup_body_preview": "Hallo zusammen,\n\nkurzer Nachtrag zu Telefon, Formular und WhatsApp.\n\nMir ging es nicht um einen weiteren Kanal, sondern um eine einheitliche Übergabe: Anliegen, Kontaktdaten, Fotos/Details und Dringlichkeit direkt so erfassen, dass das Team damit arbeiten kann.\n\nSoll ich Ihnen einmal ein kurzes Beispiel schicken, wie so eine strukturierte Anfrage aussehen würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Rückrufnotiz für Service-/Notdienstanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w1-003",
+      "company_name": "Achatz Wärmetechnik GmbH",
+      "email": "info@achatz-heizung.de",
+      "website": "https://achatz-heizung.de",
+      "industry": "SHK / Wärmetechnik",
+      "lead_score": 86,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 7 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Website erwähnt Notdienst auch an Wochenenden und Feiertagen.",
+        "Kontaktformular fragt nach Anfrage allgemein, Angebot Heizung, Angebot Solar und technische Frage."
+      ],
+      "previous_subject": "Re: Kurze Frage zu Notdienst-Anfragen",
+      "followup_subject_preview": "Re: Kurze Frage zu Notdienst-Anfragen",
+      "followup_body_preview": "Hallo zusammen,\n\nich wollte meine Frage kurz nach vorne holen.\n\nBei Notdienst, Heizungsanfragen und technischen Fragen ist wahrscheinlich schon vor dem Rückruf wichtig: Was ist dringend, welche Anlage ist betroffen, welche Adresse und Rückrufnummer gehören dazu?\n\nSoll ich Ihnen einmal ein Beispiel schicken, wie daraus automatisch eine saubere Rückrufnotiz entstehen könnte?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Rückrufnotiz für Service-/Notdienstanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w1-005",
+      "company_name": "Herrlinger Dienstleistungen",
+      "email": "info@herrlinger.eu",
+      "website": "https://www.herrlinger.eu",
+      "industry": "Sanitär / Service",
+      "lead_score": 85,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 7 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Website nennt SOS-Notdienst mit Mobilnummer.",
+        "Leistungen: Bäder, Sanitär, Service."
+      ],
+      "previous_subject": "Re: SOS-Notdienst — kurze Frage zur Erstaufnahme",
+      "followup_subject_preview": "Re: SOS-Notdienst — kurze Frage zur Erstaufnahme",
+      "followup_body_preview": "Hallo zusammen,\n\nkurzer Nachtrag zu meiner Frage zum SOS-Notdienst.\n\nWenn spontan ein Sanitärproblem reinkommt, fehlen vor dem Rückruf oft genau die Basics: Ort, Problem, Rückrufnummer und Dringlichkeit.\n\nSoll ich Ihnen einmal ein kurzes Beispiel schicken, wie so eine Notiz für Ihr Team aussehen würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Rückrufnotiz für Service-/Notdienstanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w2-003",
+      "company_name": "ETH Kfz-Werkstatt GmbH",
+      "email": "info@ethwerkstatt.de",
+      "website": "https://www.eth-werkstatt.de",
+      "industry": "Kfz-Werkstatt / Karosserie / Lack",
+      "lead_score": 83,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 8 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Öffentliche Signale zu Unfall/Schaden/Versicherung deuten auf strukturierte Schadenaufnahme hin.",
+        "Karosserie-/Lack-Signal passt stark zum Foto-&-Datei-/Schaden-Modul."
+      ],
+      "previous_subject": "Frage zu Unfall- und Reparaturanfragen",
+      "followup_subject_preview": "Re: Frage zu Unfall- und Reparaturanfragen",
+      "followup_body_preview": "Hallo zusammen,\n\nich wollte meine Frage kurz nach vorne holen.\n\nBei Unfall-, Lack- oder Reparaturanfragen fehlen vor dem Rückruf oft Bilder, Fahrzeugdaten oder eine kurze Schadensbeschreibung.\n\nSoll ich Ihnen einmal ein Beispiel schicken, wie BaseModul daraus eine strukturierte Reparatur-/Rückrufnotiz machen würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Fallübergabe für Schaden-/Reparaturanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w2-004",
+      "company_name": "Auto Münch",
+      "email": "service@automuench.de",
+      "website": "https://automuench.de",
+      "industry": "Kfz-Werkstatt / Karosserie / Lack",
+      "lead_score": 83,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 8 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Öffentliche Signale zu Unfall/Schaden/Versicherung deuten auf strukturierte Schadenaufnahme hin.",
+        "Karosserie-/Lack-Signal passt stark zum Foto-&-Datei-/Schaden-Modul."
+      ],
+      "previous_subject": "Kurze Frage zu Unfallschaden-Anfragen",
+      "followup_subject_preview": "Re: Kurze Frage zu Unfallschaden-Anfragen",
+      "followup_body_preview": "Hallo zusammen,\n\nkurzer Nachtrag zu meiner Frage zu Unfallschaden-Anfragen.\n\nMir ging es um eine einfache Voraufnahme vor dem Rückruf: Fotos, Fahrzeugdaten, Schadenskontext, Kontaktdaten und Dringlichkeit sauber zusammenführen.\n\nSoll ich Ihnen einmal ein kurzes Beispiel schicken, wie so eine Fallübergabe aussehen könnte?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Fallübergabe für Schaden-/Reparaturanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w2-005",
+      "company_name": "B&G Fahrzeugtechnik",
+      "email": "info@bg-automotive.de",
+      "website": "https://www.bg-automotive.de",
+      "industry": "Kfz-Werkstatt / Fahrzeugtechnik",
+      "lead_score": 83,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 8 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Öffentliche Signale zu Unfall/Schaden/Versicherung deuten auf strukturierte Schadenaufnahme hin.",
+        "Termin-Signal deutet auf Rückruf-/Planungsaufwand hin."
+      ],
+      "previous_subject": "Frage zu Reparatur- und Unfallanfragen",
+      "followup_subject_preview": "Re: Frage zu Reparatur- und Unfallanfragen",
+      "followup_body_preview": "Hallo zusammen,\n\nich wollte meine Frage kurz nach vorne holen.\n\nBei Reparatur- oder Unfallanfragen ist oft schon vor dem Rückruf wichtig: Fahrzeug, Schaden, Fotos, Terminwunsch und Dringlichkeit.\n\nSoll ich Ihnen einmal ein Beispiel schicken, wie BaseModul diese Infos als klare Übergabe fürs Team vorbereiten würde?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Fallübergabe für Schaden-/Reparaturanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    },
+    {
+      "lead_id": "bm-w2-008",
+      "company_name": "Aigner Kfz-Service GmbH & Co. KG",
+      "email": "info@aigner-kfz-service.de",
+      "website": "https://aigner-kfz-service.de",
+      "industry": "Kfz-Werkstatt",
+      "lead_score": 83,
+      "guard": {
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 8 Tagen — Follow-up fällig.",
+        "syncedAt": "2026-07-14T07:53:31.784Z"
+      },
+      "why_selected": "fällig laut Live-Guard + starker Score/Signal-Fit; neue CTA testet Asset-Angebot statt Call-Druck",
+      "public_signal": [
+        "Karosserie-/Lack-Signal passt stark zum Foto-&-Datei-/Schaden-Modul.",
+        "Werkstatt-/Service-Signale sprechen für wiederkehrende Reparatur- und Rückrufanfragen."
+      ],
+      "previous_subject": "Frage zu Karosserie- und Reparaturanfragen",
+      "followup_subject_preview": "Re: Frage zu Karosserie- und Reparaturanfragen",
+      "followup_body_preview": "Hallo zusammen,\n\nkurzer Nachtrag zu meiner Frage zu Karosserie- und Reparaturanfragen.\n\nGerade bei solchen Anfragen fehlen vorab oft noch Fotos, Fahrzeugdaten oder eine kurze Einordnung des Problems.\n\nSoll ich Ihnen einmal ein kurzes Beispiel schicken, wie daraus eine strukturierte Rückruf- oder Reparaturnotiz entstehen könnte?\n\nViele Grüße\nFatih Akdeniz\nAGENTEQ · basemodul.de",
+      "asset_offer": "Beispiel-Fallübergabe für Schaden-/Reparaturanfrage",
+      "status": "preview_only_no_send_no_status_change"
+    }
+  ],
+  "later_todos": [
+    "Nach Fatih-Go kleine Batch senden, vorher Live-Guard erneut prüfen",
+    "Mini-Asset „Beispiel Rückrufnotiz Heizungsstörung“ bauen"
+  ]
+}

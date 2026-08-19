@@ -1,0 +1,338 @@
+{
+  "run": "basemodul-due-followups-2026-07-03",
+  "department": "base-modul-outreach",
+  "approved_phrase": "ja sende er bitte.",
+  "sent_at_utc": "2026-07-03T09:55:24.302744+00:00",
+  "send_timing_check": {
+    "weekday": "Friday",
+    "policy": "allowed_friday_morning_conscious",
+    "guard_checked": true,
+    "fatih_go_present": true,
+    "result": "send_allowed"
+  },
+  "sync": {
+    "ok": true,
+    "accountEmail": "akdenizfatih@agenteq.de",
+    "syncedAt": "2026-07-03T09:55:19.730Z",
+    "messageCount": 40,
+    "syncPath": "/Users/user/Desktop/Projects/AgenteqInbox/data/gmail-sync.json"
+  },
+  "sender": "Fatih von AGENTEQ <go@agenteq.de>",
+  "reply_to": "Fatih Akdeniz <akdenizfatih@agenteq.de>",
+  "sender_domain_check": {
+    "ok": true,
+    "agenteq_de_verified": true,
+    "domains": [
+      {
+        "name": "agenteq.de",
+        "status": "verified"
+      }
+    ]
+  },
+  "guard_results": {
+    "kundendienst@sam-klimatechnik.de": {
+      "syncedAt": "2026-07-03T09:55:19.730Z",
+      "status": {
+        "key": "lead:gtm-09-sam-klimatechnik",
+        "leadId": "gtm-09-sam-klimatechnik",
+        "leadEmail": "kundendienst@sam-klimatechnik.de",
+        "leadName": "SAM Klimatechnik",
+        "companyName": "SAM Klimatechnik",
+        "department": "base-modul-outreach",
+        "pipelineName": "BaseModul Outreach",
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 6 Tagen — Follow-up fällig.",
+        "sourceRecordId": "outbound_agenteq-outreach_gtm-09-sam-klimatechnik_a05ca50e-1fd0-4e21-a765-23267c1a1cb5",
+        "source": "hermes-agent",
+        "campaignId": "basemodul-wave-send-2026-06-26",
+        "campaignName": "basemodul",
+        "provider": "resend",
+        "providerMessageId": "a05ca50e-1fd0-4e21-a765-23267c1a1cb5",
+        "lastActivityAt": "2026-06-26T10:03:24.564834+00:00",
+        "nextFollowupAt": "2026-07-01T10:03:24.564834+00:00",
+        "subject": "Frage zu Klimaanfragen",
+        "latestInboundAt": null,
+        "latestInboundFrom": null,
+        "latestInboundSubject": null,
+        "latestInboundSnippet": null,
+        "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+      }
+    },
+    "info@arktika-gmbh.de": {
+      "syncedAt": "2026-07-03T09:55:19.730Z",
+      "status": {
+        "key": "lead:gtm-11-arktika-gmbh",
+        "leadId": "gtm-11-arktika-gmbh",
+        "leadEmail": "info@arktika-gmbh.de",
+        "leadName": "Arktika GmbH",
+        "companyName": "Arktika GmbH",
+        "department": "base-modul-outreach",
+        "pipelineName": "BaseModul Outreach",
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 6 Tagen — Follow-up fällig.",
+        "sourceRecordId": "outbound_agenteq-outreach_gtm-11-arktika-gmbh_b9f92c1b-b03c-40fb-9b54-12375a5bf21c",
+        "source": "hermes-agent",
+        "campaignId": "basemodul-wave-send-2026-06-26",
+        "campaignName": "basemodul",
+        "provider": "resend",
+        "providerMessageId": "b9f92c1b-b03c-40fb-9b54-12375a5bf21c",
+        "lastActivityAt": "2026-06-26T10:03:25.404628+00:00",
+        "nextFollowupAt": "2026-07-01T10:03:25.404628+00:00",
+        "subject": "Frage zu Notdienstanfragen",
+        "latestInboundAt": null,
+        "latestInboundFrom": null,
+        "latestInboundSubject": null,
+        "latestInboundSnippet": null,
+        "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+      }
+    },
+    "firmenkunden@atu-logistik.de": {
+      "syncedAt": "2026-07-03T09:55:19.730Z",
+      "status": {
+        "key": "lead:gtm-10-atu-logistik-gmbh",
+        "leadId": "gtm-10-atu-logistik-gmbh",
+        "leadEmail": "firmenkunden@atu-logistik.de",
+        "leadName": "ATU Logistik GmbH",
+        "companyName": "ATU Logistik GmbH",
+        "department": "base-modul-outreach",
+        "pipelineName": "BaseModul Outreach",
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 6 Tagen — Follow-up fällig.",
+        "sourceRecordId": "outbound_agenteq-outreach_gtm-10-atu-logistik-gmbh_9ea2d218-3ba2-405a-bec7-bb5791d4d166",
+        "source": "hermes-agent",
+        "campaignId": "basemodul-wave-send-2026-06-26",
+        "campaignName": "basemodul",
+        "provider": "resend",
+        "providerMessageId": "9ea2d218-3ba2-405a-bec7-bb5791d4d166",
+        "lastActivityAt": "2026-06-26T10:03:25.900387+00:00",
+        "nextFollowupAt": "2026-07-01T10:03:25.900387+00:00",
+        "subject": "Frage zu Besichtigungsanfragen",
+        "latestInboundAt": null,
+        "latestInboundFrom": null,
+        "latestInboundSubject": null,
+        "latestInboundSnippet": null,
+        "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+      }
+    },
+    "office@loogo.at": {
+      "syncedAt": "2026-07-03T09:55:19.730Z",
+      "status": {
+        "key": "lead:gtm-14-loogo-umzuge",
+        "leadId": "gtm-14-loogo-umzuge",
+        "leadEmail": "office@loogo.at",
+        "leadName": "LOOGO Umzüge",
+        "companyName": "LOOGO Umzüge",
+        "department": "base-modul-outreach",
+        "pipelineName": "BaseModul Outreach",
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 6 Tagen — Follow-up fällig.",
+        "sourceRecordId": "outbound_agenteq-outreach_gtm-14-loogo-umzuge_cbbc649c-40c2-4732-8ab4-f31433e3426e",
+        "source": "hermes-agent",
+        "campaignId": "basemodul-wave-send-2026-06-26",
+        "campaignName": "basemodul",
+        "provider": "resend",
+        "providerMessageId": "cbbc649c-40c2-4732-8ab4-f31433e3426e",
+        "lastActivityAt": "2026-06-26T10:03:26.692843+00:00",
+        "nextFollowupAt": "2026-07-01T10:03:26.692843+00:00",
+        "subject": "Frage zur Anfrageverteilung",
+        "latestInboundAt": null,
+        "latestInboundFrom": null,
+        "latestInboundSubject": null,
+        "latestInboundSnippet": null,
+        "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+      }
+    },
+    "office@umzugsritter.at": {
+      "syncedAt": "2026-07-03T09:55:19.730Z",
+      "status": {
+        "key": "lead:gtm-16-umzugsritter",
+        "leadId": "gtm-16-umzugsritter",
+        "leadEmail": "office@umzugsritter.at",
+        "leadName": "Umzugsritter",
+        "companyName": "Umzugsritter",
+        "department": "base-modul-outreach",
+        "pipelineName": "BaseModul Outreach",
+        "replyStatus": "no_reply",
+        "blockFollowup": false,
+        "nextAction": "follow_up_due",
+        "reason": "Keine Antwort seit 6 Tagen — Follow-up fällig.",
+        "sourceRecordId": "outbound_agenteq-outreach_gtm-16-umzugsritter_f613b799-0f15-419a-8905-b6d190a8d179",
+        "source": "hermes-agent",
+        "campaignId": "basemodul-wave-send-2026-06-26",
+        "campaignName": "basemodul",
+        "provider": "resend",
+        "providerMessageId": "f613b799-0f15-419a-8905-b6d190a8d179",
+        "lastActivityAt": "2026-06-26T10:03:27.180502+00:00",
+        "nextFollowupAt": "2026-07-01T10:03:27.180502+00:00",
+        "subject": "Frage zum Inventartool",
+        "latestInboundAt": null,
+        "latestInboundFrom": null,
+        "latestInboundSubject": null,
+        "latestInboundSnippet": null,
+        "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+      }
+    }
+  },
+  "results": [
+    {
+      "lead_id": "gtm-09-sam-klimatechnik",
+      "company_name": "SAM Klimatechnik",
+      "recipient_email": "kundendienst@sam-klimatechnik.de",
+      "subject": "Re: Frage zu Klimaanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "44c90404-cb1a-4ec5-9044-62556912e735",
+      "sent_at_utc": "2026-07-03T09:55:20.711719+00:00",
+      "resend_detail": {
+        "id": "44c90404-cb1a-4ec5-9044-62556912e735",
+        "to": [
+          "kundendienst@sam-klimatechnik.de"
+        ],
+        "subject": "Re: Frage zu Klimaanfragen",
+        "created_at": "2026-07-03 09:55:42.030463+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "gtm-11-arktika-gmbh",
+      "company_name": "Arktika GmbH",
+      "recipient_email": "info@arktika-gmbh.de",
+      "subject": "Re: Frage zu Notdienstanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "97e5d6ef-df71-4480-a248-cc9ec526a39a",
+      "sent_at_utc": "2026-07-03T09:55:21.527378+00:00",
+      "resend_detail": {
+        "id": "97e5d6ef-df71-4480-a248-cc9ec526a39a",
+        "to": [
+          "info@arktika-gmbh.de"
+        ],
+        "subject": "Re: Frage zu Notdienstanfragen",
+        "created_at": "2026-07-03 09:55:40.992626+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "gtm-10-atu-logistik-gmbh",
+      "company_name": "ATU Logistik GmbH",
+      "recipient_email": "firmenkunden@atu-logistik.de",
+      "subject": "Re: Frage zu Besichtigungsanfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "f2008d4b-a11e-4806-888b-8a93a2c03d99",
+      "sent_at_utc": "2026-07-03T09:55:22.546058+00:00",
+      "resend_detail": {
+        "id": "f2008d4b-a11e-4806-888b-8a93a2c03d99",
+        "to": [
+          "firmenkunden@atu-logistik.de"
+        ],
+        "subject": "Re: Frage zu Besichtigungsanfragen",
+        "created_at": "2026-07-03 09:55:41.045444+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "gtm-14-loogo-umzuge",
+      "company_name": "LOOGO Umzüge",
+      "recipient_email": "office@loogo.at",
+      "subject": "Re: Frage zur Anfrageverteilung",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "7c0f6d9c-e8bb-497a-8792-4818285b8f5e",
+      "sent_at_utc": "2026-07-03T09:55:23.601591+00:00",
+      "resend_detail": {
+        "id": "7c0f6d9c-e8bb-497a-8792-4818285b8f5e",
+        "to": [
+          "office@loogo.at"
+        ],
+        "subject": "Re: Frage zur Anfrageverteilung",
+        "created_at": "2026-07-03 09:55:43.228266+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "gtm-16-umzugsritter",
+      "company_name": "Umzugsritter",
+      "recipient_email": "office@umzugsritter.at",
+      "subject": "Re: Frage zum Inventartool",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "170c60f1-d4a1-4c7c-bdd1-4599af674bed",
+      "sent_at_utc": "2026-07-03T09:55:24.067171+00:00",
+      "resend_detail": {
+        "id": "170c60f1-d4a1-4c7c-bdd1-4599af674bed",
+        "to": [
+          "office@umzugsritter.at"
+        ],
+        "subject": "Re: Frage zum Inventartool",
+        "created_at": "2026-07-03 09:55:43.001348+00",
+        "last_event": "delivered"
+      }
+    }
+  ],
+  "inbox_outbound_records_written": 5,
+  "delivery_checked_at_utc": "2026-07-03T09:55:56.805629+00:00",
+  "delivery_check": {
+    "all_last_event_delivered": true,
+    "messages": [
+      {
+        "id": "44c90404-cb1a-4ec5-9044-62556912e735",
+        "to": [
+          "kundendienst@sam-klimatechnik.de"
+        ],
+        "subject": "Re: Frage zu Klimaanfragen",
+        "last_event": "delivered",
+        "created_at": "2026-07-03 09:55:42.030463+00"
+      },
+      {
+        "id": "97e5d6ef-df71-4480-a248-cc9ec526a39a",
+        "to": [
+          "info@arktika-gmbh.de"
+        ],
+        "subject": "Re: Frage zu Notdienstanfragen",
+        "last_event": "delivered",
+        "created_at": "2026-07-03 09:55:40.992626+00"
+      },
+      {
+        "id": "f2008d4b-a11e-4806-888b-8a93a2c03d99",
+        "to": [
+          "firmenkunden@atu-logistik.de"
+        ],
+        "subject": "Re: Frage zu Besichtigungsanfragen",
+        "last_event": "delivered",
+        "created_at": "2026-07-03 09:55:41.045444+00"
+      },
+      {
+        "id": "7c0f6d9c-e8bb-497a-8792-4818285b8f5e",
+        "to": [
+          "office@loogo.at"
+        ],
+        "subject": "Re: Frage zur Anfrageverteilung",
+        "last_event": "delivered",
+        "created_at": "2026-07-03 09:55:43.228266+00"
+      },
+      {
+        "id": "170c60f1-d4a1-4c7c-bdd1-4599af674bed",
+        "to": [
+          "office@umzugsritter.at"
+        ],
+        "subject": "Re: Frage zum Inventartool",
+        "last_event": "delivered",
+        "created_at": "2026-07-03 09:55:43.001348+00"
+      }
+    ]
+  }
+}

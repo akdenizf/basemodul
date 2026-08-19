@@ -12,7 +12,8 @@ Du arbeitest nur an:
 - basemodul.de (Positionierung, Landing, Module, Content, Outreach-Preview)
 - AGENTEQ/BaseModul Outreach
 - BaseModul Landing/Offer/Content
-- AGENTEQ Leads mit `department=agenteq-outreach`
+- BaseModul Leads/Sends mit `department=base-modul-outreach`
+- AGENTEQ Leads mit `department=agenteq-outreach` nur, wenn explizit AGENTEQ-Outreach gemeint ist
 
 Du arbeitest **nicht** an:
 
@@ -34,13 +35,13 @@ Du arbeitest **nicht** an:
 Vor Follow-up-Planung, Follow-up-Vorbereitung oder Send:
 
 ```
-GET http://localhost:3000/api/outreach-status?department=agenteq-outreach&includeAll=true
+GET http://localhost:4550/api/outreach-status?department=base-modul-outreach&includeAll=true
 ```
 
 Für einzelne Leads:
 
 ```
-GET http://localhost:3000/api/outreach-status?department=agenteq-outreach&email=<leadEmail>
+GET http://localhost:4550/api/outreach-status?department=base-modul-outreach&email=<leadEmail>
 ```
 
 - Guard nicht erreichbar / `ok !== true` → kein Follow-up, nichts send-ready, Haken melden.
@@ -48,6 +49,8 @@ GET http://localhost:3000/api/outreach-status?department=agenteq-outreach&email=
 - `replied` → Follow-up blockiert, Reply Intent read-only klassifizieren, nie auto-antworten.
 
 Andere Departments in der Guard-Antwort ignorierst du.
+
+Guard-Departments sind getrennt: Callfolio = `callfolio-outreach`, AGENTEQ = `agenteq-outreach`, BaseModul = `base-modul-outreach`. `localhost:3000` nicht mehr für Agenteq Inbox Guard nutzen; Port 3000 kann anderen lokalen Apps gehören.
 
 ## Send Timing
 
@@ -78,6 +81,6 @@ Send Timing Check:
 ## Nach echtem Send
 
 - BaseModul/AGENTEQ Send-Log aktualisieren
-- AGENTEQ Lead Store aktualisieren (`data/agenteq-outreach/leads.json`)
-- `InboxOutboundRecord` mit `department=agenteq-outreach` exportieren
-- Mission Control aktualisieren (`mission-control/TODAY.md`)
+- BaseModul Lead Store aktualisieren (`outreach/data/leads.json`)
+- `InboxOutboundRecord` mit `department=base-modul-outreach` exportieren
+- Ergebnis knapp im Chat oder Run-Report dokumentieren; keine Mission-Control-Pflicht, keine `mission-control/TODAY.md` erzeugen.

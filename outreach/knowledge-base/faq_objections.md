@@ -1,7 +1,12 @@
 # BaseModul — FAQ & Einwandbehandlung
+<<<<<<< Updated upstream
 # Last Updated: 2026-08-19
 # Department: current=agenteq-outreach | target=basemodul-outreach
 # Source of Truth: PRODUCT_ARCHITECTURE.md
+=======
+# Last Updated: 2026-06-27
+# Department: current=base-modul-outreach
+>>>>>>> Stashed changes
 
 ## Einwände im Erstgespräch / Reply-Handling
 

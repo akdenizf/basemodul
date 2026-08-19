@@ -1,32 +1,47 @@
 # basemodul.de Content-Wireframe
 
+Stand: 2026-07-16
+
+Dieses Wireframe beschreibt die aktuell umgesetzte Landing-Choreografie nach
+dem HeyKiki-Strategie-Transfer. Detailentscheidungen stehen in:
+
+- `docs/content/heykiki-strategy-transfer-2026-07-16.md`
+- `docs/content/basemodul-landing-rebuild-plan-2026-07-16.md`
+- `docs/content/basemodul-landing-choreography-2026-07-16.md`
+- `web/components/landing/CLAUDE.md`
+
 ## Ziel der Seite
 
 basemodul.de soll nicht wie eine klassische KI-Agentur wirken und nicht wie
-eine weitere Callfolio-Kopie. Die Seite verkauft ein klares Produktregal:
+eine HeyKiki- oder Callfolio-Kopie. Die Seite verkauft ein klares
+Intake-Produktregal:
 
-> KI-Module für Betriebe, die Anrufe, Termine, WhatsApp-Anfragen, Fotos und
-> Notfälle automatisch vorqualifizieren wollen.
+> Telefon, WhatsApp, Formulare und Fotos werden zu vollständigen Vorgängen, die
+> das Team sauber weiterbearbeiten kann.
 
 AGENTEQ bleibt im Hintergrund als Dachfirma / Trust-Layer.
 
 ## Kernbotschaft
 
-Kleine Betriebe verlieren jeden Tag Zeit und Aufträge, weil Kunden über Telefon,
-WhatsApp, E-Mail und Fotos unstrukturiert reinkommen.
+Kleine Betriebe verlieren Zeit, Rückrufe und manchmal Aufträge, weil Kunden über
+Telefon, WhatsApp, Formulare und Fotos unvollständig reinkommen.
 
-basemodul.de macht daraus vorsortierte Rückrufe, Termine, Tickets und
-Notfallmeldungen.
+BaseModul fragt fehlende Infos ab, markiert Dringlichkeit und übergibt daraus
+einen sauberen Vorgang an das Team.
+
+Kurz:
+
+> Weniger Telefonchaos. Mehr vollständige Anfragen.
 
 ## Zielgruppen
 
 Primär:
 
-- Handwerk und SHK
-- Kfz-Werkstätten
-- Sachverständige
+- Handwerk, SHK, Kälte/Klima, Notdienst
+- Kfz-Werkstätten und Sachverständige
 - Entrümpelung und lokale Servicebetriebe
 - Reinigung / Facility
+- inhabergeführte Betriebe mit 2 bis 30 Mitarbeitern ohne feste Rezeption
 
 Bewusst nicht primär:
 
@@ -36,187 +51,252 @@ Bewusst nicht primär:
 
 ## Seitenstruktur
 
+Dramaturgie:
+
+> Pain → fertiger Vorgang → Beispiele → Module → Demo → Pilot
+
+Aktuelle Reihenfolge:
+
+1. Hero
+2. RequestArtifactSection (`#beispiel`)
+3. Problem
+4. Use Cases
+5. Module
+6. Workflow
+7. LiveDemo
+8. VisualContext
+9. Integrationen
+10. Pricing / Pilot
+11. FAQ
+12. Abschluss-CTA
+
+`ScrollStorySection` ist geparkt, weil sie den Ablauf doppelt und stark
+telefon-only erzählt.
+
 ### 1. Hero
 
-Zweck: In 5 Sekunden erklären, was basemodul.de ist.
+Zweck: In 5 Sekunden Schmerz, Nutzen und nächsten Schritt klären.
 
-Headline-Idee:
+Headline:
 
-> KI-Module für Betriebe, die keine Anfrage mehr verlieren wollen.
+> Weniger Telefonchaos. Mehr vollständige Anfragen.
 
 Subline:
 
-> basemodul.de nimmt Anrufe, Termine, WhatsApp-Nachrichten und Fotos entgegen,
+> BaseModul nimmt Anrufe, WhatsApp-Nachrichten, Formulare und Fotos entgegen,
 > fragt fehlende Infos ab und übergibt alles sauber an Ihr Team.
 
 Primärer CTA:
 
-> Demo anfragen
+> 30-Minuten-Check buchen
 
 Sekundärer CTA:
 
-> Module ansehen
+> Beispiel-Vorgang ansehen
 
-Hero sollte direkt ein greifbares Beispiel zeigen:
+Hero-Visual:
 
-- Anruf kommt rein
-- KI fragt nach Anliegen und Dringlichkeit
-- Ergebnis wird als Rückruf/Ticket/Termin an das Team übergeben
+- Telefon bleibt als anschaulicher Einstieg erlaubt.
+- Ergebnis muss aber als Vorgang/Rückrufnotiz mit Pflichtinfos sichtbar sein.
+- Beispielhinweise wie Adresse, Rückrufnummer und Team-Übergabe stärken den
+  Output statt nur die Telefonie.
 
-### 2. Problem
+### 2. Fertiger Vorgang als Beweis
+
+Zweck: Direkt nach dem Hero zeigen, was BaseModul konkret produziert.
+
+Section:
+
+> So sieht eine vollständige Anfrage aus.
+
+Das Artefakt ist der Trust-Ersatz für fehlende Logos, Presse und Testimonials.
+
+Felder:
+
+- Eingang
+- Kontakt
+- Einsatzort
+- Anliegen
+- Dringlichkeit
+- Anhänge
+- Fehlende Infos
+- Nächster Schritt
+- Übergabe
+
+Beispielcharakter:
+
+- kanal-gemischt, z. B. Anruf plus Fotos per Upload-Link
+- klar als Beispiel-Vorgang, nicht als echte Kundenreferenz
+- Vorher/Nachher sichtbar:
+  - vorher: mehrere Nachrichten und Rückfragen
+  - nachher: ein sauberer Vorgang
+
+### 3. Problem
 
 Zweck: Den Alltag der Zielgruppe treffen, ohne zu dramatisieren.
 
 Kernaussage:
 
-> Die meisten Betriebe verlieren keine Kunden, weil sie schlecht arbeiten.
-> Sie verlieren Kunden, weil sie nicht schnell genug reagieren können.
+> Halbe Anfragen kosten Zeit, Rückrufe und manchmal Aufträge.
 
 Painpoints:
 
 - Telefon klingelt, während alle auf Baustelle, in Werkstatt oder unterwegs sind
 - WhatsApp-Anfragen bleiben unsortiert
 - Fotos kommen ohne Kontext
+- Formulare oder E-Mails enthalten nicht genug Pflichtinfos
 - Termine werden per Hin-und-her abgestimmt
 - Notfälle landen zu spät beim richtigen Menschen
-- Rückrufe werden abends nachgeholt, wenn der Kunde schon weitergezogen ist
 
-### 3. Modulübersicht
+### 4. Use Cases
+
+Zweck: Aus abstrakten Modulen konkrete Situationen machen.
+
+Flow 1: SHK / Kälte / Notdienst
+
+1. Kunde ruft wegen eines dringenden Problems an.
+2. BaseModul fragt Adresse, Problem, Rückrufnummer und Pflichtinfos ab.
+3. Dringlichkeit wird markiert.
+4. Bereitschaft oder Team wird informiert.
+5. Ergebnis: Notfallkarte.
+
+Wichtig: BaseModul informiert und strukturiert. Die Entscheidung bleibt beim
+Team.
+
+Flow 2: Kfz / Gutachter / Werkstatt
+
+1. Kunde schickt Fotos eines Schadens.
+2. BaseModul fragt Fahrzeugschein, Ort, Hergang und Kontakt ab.
+3. Fall wird mit Bildern und Zusammenfassung übergeben.
+4. Ergebnis: Schadenfall.
+
+Flow 3: Entrümpelung / Reinigung / Service
+
+1. Kunde fragt per WhatsApp oder Formular an.
+2. BaseModul klärt Leistung, Adresse, Umfang und Wunschzeit.
+3. Team erhält eine saubere Grundlage für Rückruf oder Termin.
+4. Ergebnis: Angebotsgrundlage.
+
+Wichtig: Angebotsgrundlage heißt Vorbereitung, nicht automatische
+Angebotserstellung.
+
+### 5. Module
 
 Zweck: Das Produktregal verständlich machen.
+
+Framing:
+
+> Ein Baukasten für Ihre Anfragen.
+
+BaseModul ist kein Telefon-only-Produkt. Telefon ist häufigster Einstieg, aber
+alle Module führen zum gleichen Ziel: vollständiger Vorgang, saubere Übergabe.
+
+Module:
 
 #### Telefon-Modul
 
 Für Betriebe, die Anrufe verpassen.
 
-Leistet:
-
 - nimmt Anrufe an
 - erkennt Anliegen
 - fragt Kontaktdaten, Standort und Dringlichkeit ab
-- erstellt Rückrufnotiz oder Ticket
+- erstellt Rückrufnotiz oder Vorgang
 
-#### Termin-Modul
-
-Für Betriebe, die Termine manuell abstimmen.
-
-Leistet:
-
-- prüft freie Slots oder Kalenderlogik
-- bereitet Termine vor
-- sendet Bestätigungen und Erinnerungen
-- reduziert Rückruf-Hin-und-her
-
-#### WhatsApp-Modul
+#### WhatsApp-/Chat-Modul
 
 Für Betriebe, bei denen Kunden per Chat schreiben.
-
-Leistet:
 
 - sammelt strukturierte Infos
 - stellt Rückfragen
 - erkennt fehlende Angaben
 - übergibt die Anfrage sauber ans Team
 
-#### Foto-/Schaden-Modul
+#### Foto-&-Datei-Modul
 
-Für Betriebe, die Bilder, Schäden oder Objekte einschätzen müssen.
+Für Betriebe, die Bilder, Schäden oder Dokumente brauchen.
 
-Leistet:
-
-- nimmt Fotos entgegen
+- nimmt Fotos oder Dateien entgegen
 - fragt Kontext ab
-- erkennt grob Kategorie und fehlende Infos
+- verknüpft Anhang, Anliegen und Kontaktdaten
 - erstellt einen strukturierten Fall
 
-#### Notdienst-Modul
+#### Termin-Modul
+
+Für Betriebe, die Termine manuell abstimmen.
+
+- klärt Leistung und Wunschzeit
+- bereitet Termin oder Rückruf vor
+- sendet Bestätigungen oder Erinnerungen, wenn im Pilot vereinbart
+- reduziert Rückruf-Hin-und-her
+
+#### Prioritäts-/Notdienst-Modul
 
 Für Betriebe mit dringenden Fällen außerhalb normaler Bürozeiten.
 
-Leistet:
-
-- erkennt Dringlichkeit
+- erkennt hohe Dringlichkeit
 - fragt Pflichtinfos ab
 - informiert Bereitschaft oder Team
 - verhindert, dass Notfälle in Mailbox oder Chat verschwinden
 
-### 4. Beispiel-Flows
+### 6. Workflow
 
-Zweck: Aus abstrakten Modulen konkrete Situationen machen.
+Zweck: Den Ablauf kanal-agnostisch in wenigen Sekunden zeigen.
 
-Flow 1: SHK-Notdienst
+Steps:
 
-1. Kunde ruft wegen Wasserschaden an.
-2. Telefon-Modul fragt Adresse, Problem, Absperrung, Rückrufnummer.
-3. Notdienst-Modul erkennt Dringlichkeit.
-4. Techniker erhält strukturierte Meldung per WhatsApp/SMS.
+1. Anfrage kommt rein
+2. Fehlende Infos werden abgefragt
+3. Dringlichkeit wird markiert
+4. Vorgang ans Team übergeben
 
-Flow 2: Kfz / Sachverständige
+Caption:
 
-1. Kunde schickt Fotos vom Schaden.
-2. Foto-Modul fragt Fahrzeugschein, Ort, Unfallhergang und Kontakt ab.
-3. Fall wird mit Bildern und Zusammenfassung ans Team übergeben.
+> Funktioniert für Anrufe, WhatsApp, Formulare, Fotos und Terminwünsche.
 
-Flow 3: Lokaler Servicebetrieb
+### 7. LiveDemo
 
-1. Kunde fragt per WhatsApp nach einem Termin.
-2. WhatsApp-Modul klärt Leistung, Adresse und Wunschzeit.
-3. Termin-Modul bereitet Buchung oder Rückruf vor.
+Zweck: Zeigen statt nur erklären.
 
-### 5. Live-Demo
+Framing:
 
-Zweck: Zeigen statt erklären.
+> Spielen Sie einen Beispiel-Vorgang durch.
 
-MVP-Demo:
+Wichtig:
 
-- simuliertes Szenario, kein echter Telefonie-Key nötig
-- Eingang: Anruf oder WhatsApp-Anfrage
-- KI stellt Rückfragen
-- Ergebnis: strukturiertes Ticket mit Dringlichkeit, Kontaktdaten und nächstem
-  Schritt
+- self-contained Demo, keine echte Telefonie-Integration
+- nicht als "echter Ablauf" oder echte Live-Kundensituation bezeichnen
+- Ergebnislabel je nach Szenario:
+  - Rückrufnotiz bereit
+  - Meldung übergeben
+  - Vorgang bereit
+  - Fotofall bereit
 
 Demo-Szenarien:
 
-- Notdienst-Anruf
-- Terminwunsch
-- Foto-/Schadenaufnahme
+- Rückrufnotiz
+- dringende Meldung
+- Terminstatus
+- Foto-Übergabe
 
-### 6. Für wen passt das?
+### 8. VisualContext
 
-Zweck: Zielgruppe eingrenzen, ohne zu eng zu werden.
+Zweck: Den Foto-/Datei-Spezialfall sichtbar machen.
 
-Passend für:
+Rolle:
 
-- Betriebe mit 2 bis 30 Mitarbeitern
-- Betriebe ohne feste Rezeption
-- Inhaber, die selbst operativ arbeiten
-- Teams, die Telefon, WhatsApp und Fotos nicht sauber sortiert bekommen
-- Firmen, bei denen schnelle Reaktion Umsatz bringt
+- kein zweites kanonisches Artefakt
+- kein allgemeiner Dashboard-Beweis
+- klar abgegrenzter Spezialfall: Fotos, Anhänge, Kontext und Übergabe
 
-Nicht ideal für:
+### 9. Integrationen
 
-- Unternehmen, die bereits ein tief integriertes Callcenter-System haben
-- Betriebe, die sofort eine große Individualplattform erwarten
-- Fälle, in denen rechtliche oder medizinische Entscheidungen automatisiert
-  werden sollen
+Zweck: IT-Angst senken.
 
-### 7. Wie der Pilot läuft
+Kernaussage:
 
-Zweck: Einstieg einfach und risikoarm machen.
+> Die Übergabe landet dort, wo Ihr Team heute arbeitet.
 
-Schritte:
-
-1. 30-Minuten-Check: Welcher Eingangskanal nervt am meisten?
-2. Modul auswählen: Telefon, Termin, WhatsApp, Foto/Schaden oder Notdienst.
-3. Pilot bauen: einfacher Flow, Testnummer oder Testchat, Übergabe ans Team.
-4. Zwei Wochen testen: echte Fälle oder realistische Testfälle.
-5. Entscheiden: ausbauen, anpassen oder stoppen.
-
-### 8. Integrationen
-
-Zweck: Zeigen, dass es praktisch anschließbar ist.
-
-Nicht zu technisch ausspielen. Nur sagen, was möglich ist:
+Beispiele:
 
 - Telefonie / Weiterleitung
 - WhatsApp
@@ -224,42 +304,100 @@ Nicht zu technisch ausspielen. Nur sagen, was möglich ist:
 - Google Calendar
 - Google Sheets
 - CRM oder bestehende Tools nach Bedarf
-- n8n / Webhooks für individuelle Abläufe
+- n8n / Webhooks nur als technische Option, nicht als Hauptsprache
 
-### 9. Pilotangebot
+Integrationen sind wichtig, aber nicht Hauptnavigation. Die Navbar fokussiert:
 
-Zweck: Verkaufbarer Einstieg.
+> Beispiel, Module, Demo, Pilot, FAQ
 
-Textidee:
+### 10. Pricing / Pilotangebot
 
-> Wir bauen ein erstes KI-Modul für Ihren Betrieb, testen es mit realistischen
-> Anfragen und zeigen nach wenigen Tagen, ob es im Alltag wirklich entlastet.
+Zweck: Verkaufbarer Einstieg, kein harter SaaS-Sale.
 
-Preis-Kommunikation:
+Headline-Richtung:
 
-- entweder "Pilot ab 500 EUR Setup"
-- oder erstmal "Pilot anfragen", falls Preis noch nicht prominent sein soll
+> Erst einen Eingangskanal testen. Dann entscheiden.
 
-Empfehlung für MVP:
+Pilot:
 
-> Pilot ab 750 EUR Setup, danach monatliche Betreuung nach Umfang.
+- 30-Minuten-Check
+- ein Eingangskanal
+- ein Beispiel-Flow
+- Übergabe ans Team
+- Test mit realistischen Fällen
+- ab 750 EUR Setup
 
-### 10. Abschluss-CTA
+Modul:
 
-Zweck: Kein harter SaaS-Sale, sondern Gespräch / Demo.
+- angepasster Betriebsflow
+- mehrere Übergaben oder Zusatzlogiken
+- ab 1.500 EUR Setup
 
-Headline-Idee:
+Custom:
+
+- mehrere Module, Standorte, CRM/Kalender oder tiefere Regeln
+- auf Anfrage
+
+Wichtig: Keine zu reife SaaS-Planlogik, kein "Jetzt starten" als Hauptsprache.
+
+### 11. FAQ
+
+Zweck: Einwände vor dem Abschluss-CTA beantworten.
+
+Fragen sollten abdecken:
+
+- Ist BaseModul ein Callcenter oder Telefonbot?
+- Muss der Assistent so tun, als wäre er ein Mensch?
+- Welche Infos fragt BaseModul ab?
+- Wo landet die fertige Anfrage?
+- Können wir mit einem Modul starten?
+- Wie schnell ist ein Pilot aktiv?
+- Was passiert bei Notfällen?
+- Bleibt unser Team in Kontrolle?
+- Was passiert mit WhatsApp und Fotos?
+- Können wir unsere bestehende Nummer behalten?
+- Wie wird Datenschutz/AVV behandelt?
+- Ist basemodul.de ein Produkt von AGENTEQ?
+
+### 12. Abschluss-CTA
+
+Zweck: Das Gespräch als nächsten Schritt verkaufen.
+
+Headline:
 
 > Welcher Eingangskanal kostet Sie aktuell am meisten Zeit?
 
-CTA:
-
-> Demo anfragen
-
 Subtext:
 
-> Wir schauen gemeinsam, ob Telefon, WhatsApp, Termine, Fotos oder Notdienst der
-> sinnvollste erste Hebel ist.
+> Wir prüfen gemeinsam, ob Telefon, WhatsApp, Fotos, Formulare oder Notdienst
+> der sinnvollste erste Hebel ist.
+
+CTA:
+
+> 30-Minuten-Check buchen
+
+## CTA-Logik
+
+Ein primäres Conversion-Ziel:
+
+> `#cta` → Cal-Link / Termin mit Fatih
+
+Primäre CTA-Sprache:
+
+> 30-Minuten-Check buchen
+
+Sekundäre CTA-Sprache:
+
+> Beispiel-Vorgang ansehen
+
+Nicht mehr verwenden:
+
+- Demo anfragen
+- Jetzt starten
+- System live testen
+
+Sekundäre Anker führen nur vorwärts und sollen nicht vom Abschlussziel
+wegziehen.
 
 ## Tonalität
 
@@ -267,11 +405,13 @@ Direkt, praktisch, betrieblich.
 
 Gut:
 
-- "keine Anrufe verlieren"
+- "vollständige Anfrage"
+- "sauberer Vorgang"
 - "saubere Rückrufnotiz"
 - "Fotos mit Kontext"
-- "Notfälle direkt weiterleiten"
-- "Ihr Team sieht morgens, was wirklich wichtig ist"
+- "Notfälle an den richtigen Menschen"
+- "Ihr Team sieht, was wichtig ist"
+- "30-Minuten-Check"
 
 Nicht gut:
 
@@ -279,12 +419,34 @@ Nicht gut:
 - "AI-powered Orchestration"
 - "End-to-end Digital Transformation"
 - "Enterprise Workflow Intelligence"
+- "klingt wie ein Mensch"
+- "KI-Sekretärin fürs Handwerk"
 
 ## Was die Seite vermeiden muss
 
 - kein Callfolio-Look als gefühlte Kopie
 - keine Hausverwaltung als Modul/Zielbranche
+- keine HeyKiki-Kopie über "KI-Sekretärin"
+- keine erfundenen Kunden, Logos, Testimonials, Presse oder Zahlen
 - keine überladene Plattform-Vision
-- keine zu trockene Angebotsautomatisierung als Hauptthema
-- kein Dashboard-Versprechen, das wir im MVP nicht liefern
+- keine automatische Angebotserstellung, Rechnungen oder Diagnosen versprechen
+- keine Notfall-Entscheidung durch KI versprechen
+- kein Dashboard-Versprechen, das im MVP nicht geliefert wird
 - keine medizinischen oder rechtlich sensiblen Automationsversprechen
+
+## Verifikation
+
+Der aktuelle Umbau wurde laut QA auf Desktop und Mobile geprüft:
+
+- kein horizontaler Overflow
+- alle Anker vorhanden
+- Demo-Player funktioniert mit simulierter Wiedergabe
+- Build grün
+- `RequestArtifactSection` ist der zentrale Output-Beweis direkt nach Hero
+
+Bei künftigen Änderungen:
+
+1. `npm run build` in `web/`
+2. Desktop- und Mobile-Check
+3. CTA-Anker prüfen
+4. Claim-Guards prüfen

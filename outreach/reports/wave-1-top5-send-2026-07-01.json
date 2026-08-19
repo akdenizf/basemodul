@@ -1,0 +1,170 @@
+{
+  "run": "bm-wave-1-shk-munich-top5-2026-07-01",
+  "department": "base-modul-outreach",
+  "approved_phrase": "alles klar leg einfach los Bro.",
+  "sent_at_utc": "2026-07-01T09:26:55.572399+00:00",
+  "send_timing_check": {
+    "weekday": "Wednesday",
+    "policy": "allowed",
+    "guard_checked": true,
+    "fatih_go_present": true,
+    "result": "send_allowed"
+  },
+  "sender": "Fatih von AGENTEQ <go@agenteq.de>",
+  "reply_to": "Fatih Akdeniz <akdenizfatih@agenteq.de>",
+  "sender_domain_check": {
+    "ok": true,
+    "agenteq_de_verified": true,
+    "domains": [
+      {
+        "name": "agenteq.de",
+        "status": "verified"
+      }
+    ]
+  },
+  "guard_results": {
+    "info@heiztechnik-gmbh.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-01T09:15:07.118Z"
+    },
+    "info@allwartung.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-01T09:15:07.118Z"
+    },
+    "info@j-baumgartner.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-01T09:15:07.118Z"
+    },
+    "info@achatz-heizung.de": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-01T09:15:07.118Z"
+    },
+    "info@herrlinger.eu": {
+      "ok": true,
+      "count": 0,
+      "syncedAt": "2026-07-01T09:15:07.118Z"
+    }
+  },
+  "results": [
+    {
+      "lead_id": "bm-w1-004",
+      "company_name": "Hühnchen Heiztechnik GmbH",
+      "recipient_email": "info@heiztechnik-gmbh.de",
+      "subject": "Kurze Frage zu Ihrem 365-Tage-Notdienst",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "ecd5d0ec-f5f1-43ab-b698-73d634e258e4",
+      "sent_at_utc": "2026-07-01T09:26:52.485234+00:00",
+      "next_followup_at": "2026-07-06T09:26:52.485234+00:00",
+      "resend_detail": {
+        "id": "ecd5d0ec-f5f1-43ab-b698-73d634e258e4",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@heiztechnik-gmbh.de"
+        ],
+        "subject": "Kurze Frage zu Ihrem 365-Tage-Notdienst",
+        "created_at": "2026-07-01 09:26:52.600886+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "bm-w1-006",
+      "company_name": "allwartung GmbH",
+      "recipient_email": "info@allwartung.de",
+      "subject": "Kurze Frage zu Kundendienst und Notdienst",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "f8464d04-75e7-4ed7-b8ef-da22f75716ac",
+      "sent_at_utc": "2026-07-01T09:26:53.285284+00:00",
+      "next_followup_at": "2026-07-06T09:26:53.285284+00:00",
+      "resend_detail": {
+        "id": "f8464d04-75e7-4ed7-b8ef-da22f75716ac",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@allwartung.de"
+        ],
+        "subject": "Kurze Frage zu Kundendienst und Notdienst",
+        "created_at": "2026-07-01 09:26:53.426+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "bm-w1-012",
+      "company_name": "J. Baumgartner GmbH",
+      "recipient_email": "info@j-baumgartner.de",
+      "subject": "Telefon, Formular und WhatsApp — kurze Frage",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "8019def4-d054-4218-8ca0-a82666926646",
+      "sent_at_utc": "2026-07-01T09:26:54.092163+00:00",
+      "next_followup_at": "2026-07-06T09:26:54.092163+00:00",
+      "resend_detail": {
+        "id": "8019def4-d054-4218-8ca0-a82666926646",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@j-baumgartner.de"
+        ],
+        "subject": "Telefon, Formular und WhatsApp — kurze Frage",
+        "created_at": "2026-07-01 09:26:54.196225+00",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "bm-w1-003",
+      "company_name": "Achatz Wärmetechnik GmbH",
+      "recipient_email": "info@achatz-heizung.de",
+      "subject": "Kurze Frage zu Notdienst-Anfragen",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "0a843aeb-58f3-4f63-b68b-1c03b150067a",
+      "sent_at_utc": "2026-07-01T09:26:54.836673+00:00",
+      "next_followup_at": "2026-07-06T09:26:54.836673+00:00",
+      "resend_detail": {
+        "id": "0a843aeb-58f3-4f63-b68b-1c03b150067a",
+        "last_event": "delivered"
+      }
+    },
+    {
+      "lead_id": "bm-w1-005",
+      "company_name": "Herrlinger Dienstleistungen",
+      "recipient_email": "info@herrlinger.eu",
+      "subject": "SOS-Notdienst — kurze Frage zur Erstaufnahme",
+      "attempted": true,
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "a0e7f0d5-e348-4008-9233-7d24d555f52f",
+      "sent_at_utc": "2026-07-01T09:26:55.294633+00:00",
+      "next_followup_at": "2026-07-06T09:26:55.294633+00:00",
+      "resend_detail": {
+        "id": "a0e7f0d5-e348-4008-9233-7d24d555f52f",
+        "from": "Fatih von AGENTEQ <go@agenteq.de>",
+        "to": [
+          "info@herrlinger.eu"
+        ],
+        "subject": "SOS-Notdienst — kurze Frage zur Erstaufnahme",
+        "created_at": "2026-07-01 09:26:55.408767+00",
+        "last_event": "delivered"
+      }
+    }
+  ],
+  "inbox_outbound_records_written": 5,
+  "delivery_checked_at_utc": "2026-07-01T09:27:39.870484+00:00",
+  "delivery_check": {
+    "all_last_event_delivered": true,
+    "message_ids": {
+      "ecd5d0ec-f5f1-43ab-b698-73d634e258e4": "delivered",
+      "f8464d04-75e7-4ed7-b8ef-da22f75716ac": "delivered",
+      "8019def4-d054-4218-8ca0-a82666926646": "delivered",
+      "0a843aeb-58f3-4f63-b68b-1c03b150067a": "delivered",
+      "a0e7f0d5-e348-4008-9233-7d24d555f52f": "delivered"
+    }
+  }
+}

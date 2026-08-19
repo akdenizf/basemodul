@@ -23,7 +23,7 @@ Sie beschreibt **nur Projekt-Doku**. Sie erstellt **kein** Hermes-Profil und än
 
 - basemodul.de Positionierung, Landing, Module, Content, Outreach-Preview
 - AGENTEQ/BaseModul Leads und Kampagnen
-- `department=agenteq-outreach` für Inbox Guard / Follow-up Guard
+- `department=base-modul-outreach` für BaseModul Inbox Guard / Follow-up Guard
 - **keine** Callfolio-Leads, **keine** Callfolio-Kampagnen, **keine** Callfolio-Sends
 
 **Source of Truth:**
@@ -38,14 +38,14 @@ Sie beschreibt **nur Projekt-Doku**. Sie erstellt **kein** Hermes-Profil und än
 - `/Users/user/Desktop/Projects/basemodul/docs/hermes/basemodul-core.SKILL.md`
 - `/Users/user/Desktop/Projects/AgenteqHQ/docs/agenteq-outreach/SEND_TIMING_POLICY.md`
 - `/Users/user/Desktop/Projects/AgenteqHQ/docs/agenteq-outreach/MORNING_OUTREACH_CHECK.md`
-- `/Users/user/Desktop/Projects/AgenteqHQ/data/agenteq-outreach/leads.json`
+- `/Users/user/Desktop/Projects/basemodul/outreach/data/leads.json`
 
 ---
 
 ## 2. Operating Rules
 
 1. Nur BaseModul/AGENTEQ Outreach bearbeiten.
-2. Für Inbox-/Reply-/Follow-up-Guard ausschließlich `department=agenteq-outreach` nutzen.
+2. Für BaseModul Inbox-/Reply-/Follow-up-Guard ausschließlich `department=base-modul-outreach` auf `http://localhost:4550` nutzen.
 3. Alle Guard-Responses mit anderem Department ignorieren.
 4. Keine Callfolio-Artefakte anfassen (Leads, Kampagnen, Reports, Suppression, Sends),
    außer Fatih beauftragt explizit eine **getrennte** Callfolio-Aufgabe.
@@ -56,8 +56,7 @@ Sie beschreibt **nur Projekt-Doku**. Sie erstellt **kein** Hermes-Profil und än
    - Fr nur vormittags/bewusst
    - Sa nur Ausnahme + explizites Fatih-Go
    - So kein Versand
-8. Nach echtem Send: Send-Log, Lead Store, `InboxOutboundRecord` (`department=agenteq-outreach`),
-   Mission Control aktualisieren.
+8. Nach echtem Send: Send-Log, Lead Store und InboxOutboundRecord `department=base-modul-outreach` aktualisieren; Ergebnis knapp berichten. Keine Mission-Control-Pflicht.
 
 ---
 
@@ -66,13 +65,13 @@ Sie beschreibt **nur Projekt-Doku**. Sie erstellt **kein** Hermes-Profil und än
 Vor jeder Follow-up-Planung, Follow-up-Vorbereitung oder jedem Send:
 
 ```bash
-curl -sS "http://localhost:3000/api/outreach-status?department=agenteq-outreach&includeAll=true"
+curl -sS "http://localhost:4550/api/outreach-status?department=base-modul-outreach&includeAll=true"
 ```
 
 Für einzelne Leads:
 
 ```bash
-curl -sS "http://localhost:3000/api/outreach-status?department=agenteq-outreach&email=<leadEmail>"
+curl -sS "http://localhost:4550/api/outreach-status?department=base-modul-outreach&email=<leadEmail>"
 ```
 
 Regeln:
@@ -118,13 +117,13 @@ kein `InboxOutboundRecord`-Export; nächsten erlaubten Slot vorschlagen.
 ## 5. Pflicht nach jedem echten Send
 
 1. **Send-Log** schreiben (BaseModul/AGENTEQ Campaign-Report bzw. Send-Log).
-2. **Lead Store** aktualisieren — AGENTEQ: `data/agenteq-outreach/leads.json`.
-3. **InboxOutboundRecord** exportieren mit `department=agenteq-outreach`
+2. **Lead Store** aktualisieren — BaseModul: `outreach/data/leads.json`.
+3. **InboxOutboundRecord** exportieren mit `department=base-modul-outreach`
    (Ziel-MVP: `/Users/user/Desktop/Projects/Outreach-Agent/data/inbox-outbound.json`).
    Pflichtfelder: `source`, `department`, `campaignName`, `leadId`, `leadEmail`,
    `companyName`, `fromEmail`, `replyToEmail`, `subject`, `provider`,
    `providerMessageId`, `resendMessageId`, `sentAt`, `nextFollowupAt`, `status`.
-4. **Mission Control** aktualisieren — `mission-control/TODAY.md`.
+4. **Ergebnis knapp berichten** — Chat oder Run-Report; keine Mission-Control-Pflicht und keine `mission-control/TODAY.md` erzeugen.
 
 ---
 
@@ -140,7 +139,7 @@ Siehe `docs/hermes/basemodul-core.SKILL.md`. Inhalt deckt ab:
   Kfz, Sachverständige, Entrümpelung, lokale Servicebetriebe
 - **keine Hausverwaltung als Default-Lane** (Callfolio-Spur)
 - Send Timing Policy
-- Inbox Guard mit `department=agenteq-outreach`
+- Inbox Guard mit `department=base-modul-outreach`
 
 ---
 
@@ -169,7 +168,7 @@ Kein cross-profile Write aus einer AGENTEQ-Session.
 
 ## 9. Abgrenzung Callfolio (hart)
 
-- BaseModul nutzt nur `department=agenteq-outreach`.
+- BaseModul nutzt nur `department=base-modul-outreach`.
 - Callfolio hat eigenes Department (`callfolio-outreach`), eigene Stores/Reports/Send-Logs/Suppression.
 - Keine Vermischung in Reports oder Records.
 - Hausverwaltung ist die Callfolio-Lane und **nicht** BaseModul-Zielbranche.

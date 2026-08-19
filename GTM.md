@@ -29,12 +29,22 @@ Kein automatisierter Massenversand. Jede Chance braucht ein dokumentiertes öffe
 
 Gute Leads haben mindestens eines dieser Signale:
 
-- viele Standorte
-- Notdienst / dringende Anfragen
-- Kontaktformular mit freien Textfeldern
-- Stellenanzeigen fuer Dispo, Sachbearbeitung, Kundenservice
-- Kundenportal oder mehrere Kommunikationskanaele
-- Hinweise auf manuelle Termin- oder Angebotsprozesse
+- Notdienst, dringende Anfragen oder Bereitschaftsdienst
+- Kontaktformular mit freien Textfeldern und fehlender Struktur
+- mehrere Kommunikationskanaele: Telefon, WhatsApp, E-Mail, Formular, Fotos
+- Stellenanzeigen fuer Dispo, Sachbearbeitung, Kundenservice oder Empfang
+- viele Standorte, Touren, Servicebereiche oder wiederkehrende Einsätze
+- sichtbare Termin-, Wartungs-, Schaden- oder Angebotsprozesse
+
+## Angebotswinkel pro Lead
+
+Jeder Lead bekommt genau einen primären Hook:
+
+1. **Telefon-/Notdienst-Hook** — kein Anruf geht verloren; Dringlichkeit und
+   Pflichtinfos werden sauber abgefragt.
+2. **Foto-/Schaden-Hook** — Fotos rein, strukturierter Fall raus.
+3. **WhatsApp-/Termin-Hook** — aus Chat-Chaos werden vollständige Anfragen und
+   vorbereitete Termine.
 
 ## Gesprächseröffnung und Unterlagen
 
@@ -50,14 +60,36 @@ Beispiel für ein menschliches Erstgespräch:
 > Guten Tag Herr/Frau [Name], ich halte es kurz. Sie bieten auf Ihrer Website [konkreten Notdienst-/Servicebezug] an. Bei solchen Betrieben gehen Anfragen häufig genau dann verloren, wenn das Team im Einsatz ist. Wir testen aktuell in München einen kleinen Ablauf, der Kontakt, Ort, Anliegen und Dringlichkeit strukturiert ans Team übergibt. Ist das Thema „verpasste oder unvollständige Anfragen“ bei Ihnen grundsätzlich relevant – oder soll ich Sie nicht weiter dazu ansprechen?
 
 Der vollständige Leitfaden mit Demo, Discovery-Fragen und Gesprächsabschlüssen steht in [`outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md`](outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md).
-## Ads
 
-Wir testen simple Problem-Ads wie das Instagram-Beispiel:
+## Content / Ads
 
-- "Jeden Tag puenktlich Feierabend"
-- "Keine Anfrage geht verloren"
-- "Telefonnummer reicht"
-- "Sortiert Anfragen, erkennt Dringlichkeit, bereitet Rueckruf vor"
+Wir testen simple Problem-Assets, keine generischen KI-Roboter:
 
-Wichtig: konkrete Branche im Bild/Text zeigen. Keine generischen KI-Roboter als Hauptargument.
+- "Kein Anruf geht verloren"
+- "Aus WhatsApp-Chaos werden saubere Anfragen"
+- "Fotos rein, strukturierter Fall raus"
+- "Notfälle landen direkt beim richtigen Menschen"
+- "Ihr Team bekommt vorsortierte Rückrufe statt Zettelwirtschaft"
+
+Wichtig: konkrete Branche im Bild/Text zeigen. Demo-Shorts sind Outreach- und
+Social-Assets, nicht Pflichtbestandteil der Landing.
+
+## 14-Tage-Loop
+
+1. 5 bis 10 neue Leads pro Arbeitstag recherchieren.
+2. Pro Lead Signal, vermuteten Engpass und passendes Modul notieren.
+3. 2 bis 3 First-Touch-Varianten schreiben, aber nicht senden ohne Fatih-Go.
+4. Antworten nach Interesse, Einwand, später, kein Interesse oder manuelle
+   Prüfung klassifizieren.
+5. Nach 14 Tagen entscheiden: stärkster Hook, stärkstes Segment, nächste
+   Nischenseite.
+
+## Messpunkte
+
+- Reply Rate
+- positive oder neugierige Antworten
+- Einwände: Preis, Datenschutz, bestehende Telefonanlage, kein Bedarf
+- Demo-/Terminwünsche
+- wiederkehrende Formulierungen der Betriebe
+- Modul-Signal: Telefon, Notdienst, Foto/Schaden, WhatsApp/Termin
 

@@ -1,0 +1,379 @@
+<!doctype html>
+<!--
+THESIS: BaseModule is shown as a modular B2B intake system that turns messy incoming requests into structured team handoffs, refusing the generic "AI agency" pitch.
+OWN-WORLD: Dark premium basemodul.de world from the design brief: black canvas, white typography, restrained green accent, precise operational panels.
+STORY: A local business receives calls, WhatsApp messages, appointments, photos and urgent requests; BaseModule turns them into complete, reviewable actions.
+FIRST VIEWPORT: Brand and promise on the left, a live operations board on the right, module rail below, and one clear handoff strip at the bottom.
+FORM: Static 1600x900 Upwork cover asset for portfolio thumbnail readability.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BaseModule Upwork Cover</title>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --panel: #141414;
+      --panel-2: #181818;
+      --line: rgba(255, 255, 255, 0.10);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --text: #fafafa;
+      --muted: #a1a1aa;
+      --dim: #6b6b72;
+      --green: #22c55e;
+      --green-deep: #16a34a;
+      --green-soft: rgba(34, 197, 94, 0.12);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: #050505;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .canvas {
+      position: relative;
+      width: min(100vw, calc(100vh * 16 / 9));
+      height: min(100vh, calc(100vw * 9 / 16));
+      max-width: 1600px;
+      max-height: 900px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 78% 18%, rgba(34, 197, 94, 0.16), transparent 28%),
+        radial-gradient(circle at 12% 86%, rgba(34, 197, 94, 0.08), transparent 34%),
+        linear-gradient(180deg, #0a0a0a 0%, #0d0d0d 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .top {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      top: 58px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 28px;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .brand span {
+      color: var(--dim);
+      font-weight: 650;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid rgba(34, 197, 94, 0.32);
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.08);
+      color: #d9fbe5;
+      font-size: 14px;
+      font-weight: 760;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .hero {
+      position: absolute;
+      left: 80px;
+      top: 154px;
+      width: 690px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 70px;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      font-weight: 860;
+    }
+
+    h1 span {
+      color: var(--green);
+    }
+
+    .lead {
+      width: 610px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: 23px;
+      line-height: 1.35;
+      font-weight: 520;
+    }
+
+    .signature {
+      margin-top: 34px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      padding: 10px 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      color: #d4d4d8;
+      font-size: 14px;
+      font-weight: 740;
+    }
+
+    .board {
+      position: absolute;
+      right: 80px;
+      top: 150px;
+      width: 680px;
+      height: 470px;
+      padding: 26px;
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      background: rgba(20, 20, 20, 0.88);
+      box-shadow: var(--shadow);
+    }
+
+    .board-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+
+    .board-title {
+      margin: 0;
+      font-size: 25px;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      font-weight: 820;
+    }
+
+    .board-sub {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.4;
+      font-weight: 560;
+    }
+
+    .status {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: #bbf7d0;
+      border: 1px solid rgba(34, 197, 94, 0.28);
+      font-size: 12px;
+      font-weight: 780;
+      white-space: nowrap;
+    }
+
+    .request {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: #101010;
+      margin-bottom: 18px;
+    }
+
+    .request-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+
+    .request strong {
+      font-size: 18px;
+      line-height: 1.18;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+
+    .request p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.42;
+      font-weight: 560;
+    }
+
+    .mini-tag {
+      padding: 6px 9px;
+      border-radius: 7px;
+      background: rgba(255, 255, 255, 0.06);
+      color: #d4d4d8;
+      font-size: 12px;
+      font-weight: 760;
+      white-space: nowrap;
+    }
+
+    .pipeline {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr 1fr;
+      gap: 15px;
+      margin-top: 18px;
+    }
+
+    .stage {
+      min-height: 124px;
+      padding: 15px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.035);
+    }
+
+    .stage h2 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.12;
+      letter-spacing: 0;
+      font-weight: 820;
+    }
+
+    .stage p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.38;
+      font-weight: 550;
+    }
+
+    .stage.active {
+      border-color: rgba(34, 197, 94, 0.44);
+      background: rgba(34, 197, 94, 0.08);
+    }
+
+    .modules {
+      position: absolute;
+      left: 80px;
+      right: 80px;
+      bottom: 82px;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1fr 1.1fr;
+      gap: 16px;
+    }
+
+    .module {
+      min-height: 126px;
+      padding: 19px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .module strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.12;
+      font-weight: 820;
+    }
+
+    .module span {
+      display: block;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.35;
+      font-weight: 560;
+    }
+
+    .module.primary {
+      border-color: rgba(34, 197, 94, 0.42);
+      background: rgba(34, 197, 94, 0.09);
+    }
+
+    .caption {
+      position: absolute;
+      right: 82px;
+      bottom: 34px;
+      color: var(--dim);
+      font-size: 12px;
+      font-weight: 650;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" role="img" aria-label="BaseModule modular AI intake system portfolio cover">
+    <div class="top">
+      <div class="brand">basemodul.de <span>/ by AGENTEQ</span></div>
+      <div class="badge"><span class="dot"></span> Portfolio prototype / technical case study</div>
+    </div>
+
+    <section class="hero">
+      <h1>Modular AI intake for <span>B2B operations</span></h1>
+      <p class="lead">From calls, WhatsApp messages, appointments, photos and urgent requests to structured handoffs your team can review.</p>
+      <div class="signature">
+        <span class="chip">Next.js</span>
+        <span class="chip">TypeScript</span>
+        <span class="chip">Workflow design</span>
+        <span class="chip">Human review</span>
+      </div>
+    </section>
+
+    <section class="board" aria-label="Example operations board">
+      <div class="board-head">
+        <div>
+          <p class="board-title">Example request flow</p>
+          <p class="board-sub">Synthetic demo data. Built to show the product logic, not a private customer record.</p>
+        </div>
+        <span class="status">Human handoff required</span>
+      </div>
+
+      <article class="request">
+        <div class="request-top">
+          <strong>Incoming service request</strong>
+          <span class="mini-tag">Phone + photo follow-up</span>
+        </div>
+        <p>Problem, location, callback number, urgency and missing details are collected before the team receives the case.</p>
+      </article>
+
+      <div class="pipeline">
+        <article class="stage">
+          <h2>Intake</h2>
+          <p>Capture channel, contact, issue type and required fields.</p>
+        </article>
+        <article class="stage active">
+          <h2>Module logic</h2>
+          <p>Ask follow-up questions, detect urgency and prepare the next action.</p>
+        </article>
+        <article class="stage">
+          <h2>Team queue</h2>
+          <p>Deliver a clean callback note, appointment prep or ticket.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="modules" aria-label="BaseModule modules">
+      <article class="module primary"><strong>Phone module</strong><span>Accept calls, capture intent and prepare callback or ticket notes.</span></article>
+      <article class="module"><strong>Appointment module</strong><span>Collect timing needs, prepare calendar handoff and confirmations.</span></article>
+      <article class="module"><strong>WhatsApp module</strong><span>Turn chat messages into complete, structured requests.</span></article>
+      <article class="module"><strong>Photo module</strong><span>Collect images, files and context for reviewable cases.</span></article>
+      <article class="module primary"><strong>Priority module</strong><span>Detect urgent cases and escalate to the right human.</span></article>
+    </section>
+
+    <div class="caption">BaseModule Upwork portfolio cover - 1600 x 900</div>
+  </main>
+</body>
+</html>

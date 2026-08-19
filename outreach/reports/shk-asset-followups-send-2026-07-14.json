@@ -1,0 +1,311 @@
+{
+  "run": "bm-shk-asset-followups-2026-07-14",
+  "department": "base-modul-outreach",
+  "approved_phrase": "Ja man, mach das mal bitte",
+  "recovery_note": "Original send script completed sends and persisted lead/outbound records, then failed during post-send guard because nextAction changed to wait. This report was reconstructed read-only from persisted records + Resend details.",
+  "sent_at_utc": "2026-07-14T08:40:29.346047+00:00",
+  "send_timing_check": {
+    "weekday": "Tuesday",
+    "policy": "allowed",
+    "guard_checked": true,
+    "fatih_go_present": true,
+    "result": "send_allowed"
+  },
+  "sync_after": {
+    "ok": true,
+    "accountEmail": "akdenizfatih@agenteq.de",
+    "syncedAt": "2026-07-14T08:40:28.991Z",
+    "messageCount": 40,
+    "syncPath": "/Users/user/Desktop/Projects/AgenteqInbox/data/gmail-sync.json"
+  },
+  "asset": {
+    "markdown_path": "/Users/user/Desktop/Projects/basemodul/outreach/assets/beispiel-rueckrufnotiz-heizungsstoerung-2026-07-14.md",
+    "html_path": "/Users/user/Desktop/Projects/basemodul/outreach/assets/beispiel-rueckrufnotiz-heizungsstoerung-2026-07-14.html",
+    "delivery": "inline_text_example_no_attachment"
+  },
+  "results": [
+    {
+      "lead_id": "bm-w1-004",
+      "company_name": "Hühnchen Heiztechnik GmbH",
+      "recipient_email": "info@heiztechnik-gmbh.de",
+      "subject": "Re: Kurze Frage zu Ihrem 365-Tage-Notdienst",
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "15c08dc8-c771-486a-a046-3159857d4748",
+      "sent_at_utc": "2026-07-14T08:39:40.647682+00:00",
+      "resend_detail": {
+        "id": "15c08dc8-c771-486a-a046-3159857d4748",
+        "last_event": "unknown",
+        "detail_error": {
+          "ok": false,
+          "status": 403,
+          "text": "error code: 1010\n"
+        }
+      },
+      "lead_followup_count": 2,
+      "lead_asset_followup_id": "15c08dc8-c771-486a-a046-3159857d4748"
+    },
+    {
+      "lead_id": "bm-w1-006",
+      "company_name": "allwartung GmbH",
+      "recipient_email": "info@allwartung.de",
+      "subject": "Re: Kurze Frage zu Kundendienst und Notdienst",
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "34c5eb12-d692-4649-b136-ddc84ed4607e",
+      "sent_at_utc": "2026-07-14T08:39:41.171849+00:00",
+      "resend_detail": {
+        "id": "34c5eb12-d692-4649-b136-ddc84ed4607e",
+        "last_event": "unknown",
+        "detail_error": {
+          "ok": false,
+          "status": 403,
+          "text": "error code: 1010\n"
+        }
+      },
+      "lead_followup_count": 2,
+      "lead_asset_followup_id": "34c5eb12-d692-4649-b136-ddc84ed4607e"
+    },
+    {
+      "lead_id": "bm-w1-012",
+      "company_name": "J. Baumgartner GmbH",
+      "recipient_email": "info@j-baumgartner.de",
+      "subject": "Re: Telefon, Formular und WhatsApp — kurze Frage",
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "62bad9f0-bf87-47b9-9353-8447c745acf9",
+      "sent_at_utc": "2026-07-14T08:39:41.667332+00:00",
+      "resend_detail": {
+        "id": "62bad9f0-bf87-47b9-9353-8447c745acf9",
+        "last_event": "unknown",
+        "detail_error": {
+          "ok": false,
+          "status": 403,
+          "text": "error code: 1010\n"
+        }
+      },
+      "lead_followup_count": 2,
+      "lead_asset_followup_id": "62bad9f0-bf87-47b9-9353-8447c745acf9"
+    },
+    {
+      "lead_id": "bm-w1-003",
+      "company_name": "Achatz Wärmetechnik GmbH",
+      "recipient_email": "info@achatz-heizung.de",
+      "subject": "Re: Kurze Frage zu Notdienst-Anfragen",
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "ea96f04f-f5b7-497e-a32e-9772d203c270",
+      "sent_at_utc": "2026-07-14T08:39:41.891066+00:00",
+      "resend_detail": {
+        "id": "ea96f04f-f5b7-497e-a32e-9772d203c270",
+        "last_event": "unknown",
+        "detail_error": {
+          "ok": false,
+          "status": 403,
+          "text": "error code: 1010\n"
+        }
+      },
+      "lead_followup_count": 2,
+      "lead_asset_followup_id": "ea96f04f-f5b7-497e-a32e-9772d203c270"
+    },
+    {
+      "lead_id": "bm-w1-005",
+      "company_name": "Herrlinger Dienstleistungen",
+      "recipient_email": "info@herrlinger.eu",
+      "subject": "Re: SOS-Notdienst — kurze Frage zur Erstaufnahme",
+      "sent": true,
+      "provider": "resend",
+      "provider_message_id": "f0f5d8f4-d53b-48e1-8ad1-47933f3ad5d2",
+      "sent_at_utc": "2026-07-14T08:39:42.104916+00:00",
+      "resend_detail": {
+        "id": "f0f5d8f4-d53b-48e1-8ad1-47933f3ad5d2",
+        "last_event": "unknown",
+        "detail_error": {
+          "ok": false,
+          "status": 403,
+          "text": "error code: 1010\n"
+        }
+      },
+      "lead_followup_count": 2,
+      "lead_asset_followup_id": "f0f5d8f4-d53b-48e1-8ad1-47933f3ad5d2"
+    }
+  ],
+  "inbox_outbound_records_written": 5,
+  "post_send_guard": {
+    "info@heiztechnik-gmbh.de": {
+      "ok": true,
+      "accountEmail": "akdenizfatih@agenteq.de",
+      "syncedAt": "2026-07-14T08:40:28.991Z",
+      "count": 1,
+      "statuses": [
+        {
+          "key": "lead:bm-w1-004",
+          "leadId": "bm-w1-004",
+          "leadEmail": "info@heiztechnik-gmbh.de",
+          "leadName": "Hühnchen Heiztechnik GmbH",
+          "companyName": "Hühnchen Heiztechnik GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Keine Antwort, erst 0 Tage alt — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-004_15c08dc8-c771-486a-a046-3159857d4748",
+          "source": "hermes-agent",
+          "campaignId": "bm-shk-asset-followups-2026-07-14",
+          "campaignName": "BaseModul SHK Asset Follow-ups 2026-07-14",
+          "provider": "resend",
+          "providerMessageId": "15c08dc8-c771-486a-a046-3159857d4748",
+          "lastActivityAt": "2026-07-14T08:39:40.647682+00:00",
+          "nextFollowupAt": null,
+          "subject": "Re: Kurze Frage zu Ihrem 365-Tage-Notdienst",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@allwartung.de": {
+      "ok": true,
+      "accountEmail": "akdenizfatih@agenteq.de",
+      "syncedAt": "2026-07-14T08:40:28.991Z",
+      "count": 1,
+      "statuses": [
+        {
+          "key": "lead:bm-w1-006",
+          "leadId": "bm-w1-006",
+          "leadEmail": "info@allwartung.de",
+          "leadName": "allwartung GmbH",
+          "companyName": "allwartung GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Keine Antwort, erst 0 Tage alt — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-006_34c5eb12-d692-4649-b136-ddc84ed4607e",
+          "source": "hermes-agent",
+          "campaignId": "bm-shk-asset-followups-2026-07-14",
+          "campaignName": "BaseModul SHK Asset Follow-ups 2026-07-14",
+          "provider": "resend",
+          "providerMessageId": "34c5eb12-d692-4649-b136-ddc84ed4607e",
+          "lastActivityAt": "2026-07-14T08:39:41.171849+00:00",
+          "nextFollowupAt": null,
+          "subject": "Re: Kurze Frage zu Kundendienst und Notdienst",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@j-baumgartner.de": {
+      "ok": true,
+      "accountEmail": "akdenizfatih@agenteq.de",
+      "syncedAt": "2026-07-14T08:40:28.991Z",
+      "count": 1,
+      "statuses": [
+        {
+          "key": "lead:bm-w1-012",
+          "leadId": "bm-w1-012",
+          "leadEmail": "info@j-baumgartner.de",
+          "leadName": "J. Baumgartner GmbH",
+          "companyName": "J. Baumgartner GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Keine Antwort, erst 0 Tage alt — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-012_62bad9f0-bf87-47b9-9353-8447c745acf9",
+          "source": "hermes-agent",
+          "campaignId": "bm-shk-asset-followups-2026-07-14",
+          "campaignName": "BaseModul SHK Asset Follow-ups 2026-07-14",
+          "provider": "resend",
+          "providerMessageId": "62bad9f0-bf87-47b9-9353-8447c745acf9",
+          "lastActivityAt": "2026-07-14T08:39:41.667332+00:00",
+          "nextFollowupAt": null,
+          "subject": "Re: Telefon, Formular und WhatsApp — kurze Frage",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@achatz-heizung.de": {
+      "ok": true,
+      "accountEmail": "akdenizfatih@agenteq.de",
+      "syncedAt": "2026-07-14T08:40:28.991Z",
+      "count": 1,
+      "statuses": [
+        {
+          "key": "lead:bm-w1-003",
+          "leadId": "bm-w1-003",
+          "leadEmail": "info@achatz-heizung.de",
+          "leadName": "Achatz Wärmetechnik GmbH",
+          "companyName": "Achatz Wärmetechnik GmbH",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Keine Antwort, erst 0 Tage alt — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-003_ea96f04f-f5b7-497e-a32e-9772d203c270",
+          "source": "hermes-agent",
+          "campaignId": "bm-shk-asset-followups-2026-07-14",
+          "campaignName": "BaseModul SHK Asset Follow-ups 2026-07-14",
+          "provider": "resend",
+          "providerMessageId": "ea96f04f-f5b7-497e-a32e-9772d203c270",
+          "lastActivityAt": "2026-07-14T08:39:41.891066+00:00",
+          "nextFollowupAt": null,
+          "subject": "Re: Kurze Frage zu Notdienst-Anfragen",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    },
+    "info@herrlinger.eu": {
+      "ok": true,
+      "accountEmail": "akdenizfatih@agenteq.de",
+      "syncedAt": "2026-07-14T08:40:28.991Z",
+      "count": 1,
+      "statuses": [
+        {
+          "key": "lead:bm-w1-005",
+          "leadId": "bm-w1-005",
+          "leadEmail": "info@herrlinger.eu",
+          "leadName": "Herrlinger Dienstleistungen",
+          "companyName": "Herrlinger Dienstleistungen",
+          "department": "base-modul-outreach",
+          "pipelineName": "BaseModul Outreach",
+          "replyStatus": "no_reply",
+          "blockFollowup": false,
+          "nextAction": "wait",
+          "reason": "Keine Antwort, erst 0 Tage alt — noch abwarten.",
+          "sourceRecordId": "outbound_base-modul-outreach_bm-w1-005_f0f5d8f4-d53b-48e1-8ad1-47933f3ad5d2",
+          "source": "hermes-agent",
+          "campaignId": "bm-shk-asset-followups-2026-07-14",
+          "campaignName": "BaseModul SHK Asset Follow-ups 2026-07-14",
+          "provider": "resend",
+          "providerMessageId": "f0f5d8f4-d53b-48e1-8ad1-47933f3ad5d2",
+          "lastActivityAt": "2026-07-14T08:39:42.104916+00:00",
+          "nextFollowupAt": null,
+          "subject": "Re: SOS-Notdienst — kurze Frage zur Erstaufnahme",
+          "latestInboundAt": null,
+          "latestInboundFrom": null,
+          "latestInboundSubject": null,
+          "latestInboundSnippet": null,
+          "evidence": "Outreach-Quelle ohne passende Gmail-Antwort im lokalen Sync — Follow-up offen. Quelle: hermes-agent Record (base-modul-outreach) — keine Keyword-Schätzung."
+        }
+      ]
+    }
+  }
+}

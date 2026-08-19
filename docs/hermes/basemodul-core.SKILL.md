@@ -1,6 +1,6 @@
 ---
 name: basemodul-core
-description: Kernwissen für BaseModul Outreach — Positionierung, Module, Segment-Guardrails, Inbox Guard (department=agenteq-outreach) und Send Timing. Callfolio strikt ausgeschlossen.
+description: Kernwissen für BaseModul Outreach — Positionierung, Module, Segment-Guardrails, Inbox Guard (department=base-modul-outreach auf :4550) und Send Timing. Callfolio strikt ausgeschlossen.
 ---
 
 # Skill: basemodul-core
@@ -48,14 +48,16 @@ Sachverständige, Entrümpelung, lokale Servicebetriebe (2–30 Mitarbeiter, ohn
 - Healthcare/Compliance-heavy Verticals als erster Markt-Test.
 - Enterprise-Konzerne mit langem Sales-Cycle.
 
-## 4. Inbox Guard (Pflicht, immer `department=agenteq-outreach`)
+## 4. Inbox Guard (Pflicht, immer `department=base-modul-outreach`)
 
 Vor jeder Follow-up-Planung, Follow-up-Vorbereitung oder jedem Send:
 
 ```bash
-curl -sS "http://localhost:3000/api/outreach-status?department=agenteq-outreach&includeAll=true"
-curl -sS "http://localhost:3000/api/outreach-status?department=agenteq-outreach&email=<leadEmail>"
+curl -sS "http://localhost:4550/api/outreach-status?department=base-modul-outreach&includeAll=true"
+curl -sS "http://localhost:4550/api/outreach-status?department=base-modul-outreach&email=<leadEmail>"
 ```
+
+`localhost:3000` nicht mehr für Agenteq Inbox Guard nutzen; 3000 kann von anderen lokalen Apps belegt sein. Department-Trennung: Callfolio = `callfolio-outreach`, AGENTEQ = `agenteq-outreach`, BaseModul = `base-modul-outreach`.
 
 - Guard nicht erreichbar / `ok !== true` → kein Follow-up, nichts send-ready, Haken melden.
 - `blockFollowup=true` → nicht vorbereiten/senden, `nextAction` befolgen.
@@ -80,10 +82,10 @@ curl -sS "http://localhost:3000/api/outreach-status?department=agenteq-outreach&
 ## 7. Nach echtem Send
 
 1. Send-Log schreiben (BaseModul/AGENTEQ Campaign-Report).
-2. Lead Store aktualisieren (`data/agenteq-outreach/leads.json`).
-3. `InboxOutboundRecord` mit `department=agenteq-outreach` exportieren
+2. Lead Store aktualisieren (`outreach/data/leads.json`).
+3. `InboxOutboundRecord` mit `department=base-modul-outreach` exportieren
    (`/Users/user/Desktop/Projects/Outreach-Agent/data/inbox-outbound.json`).
-4. Mission Control aktualisieren (`mission-control/TODAY.md`).
+4. Ergebnis knapp im Chat oder Run-Report dokumentieren; keine Mission-Control-Pflicht und keine `mission-control/TODAY.md` erzeugen.
 
 ## Querverweise
 
