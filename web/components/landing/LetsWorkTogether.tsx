@@ -39,9 +39,7 @@ export function LetsWorkTogether() {
                 Welcher Eingangskanal kostet Sie aktuell am meisten Zeit?
               </h2>
               <p className="mt-[18px] max-w-[520px] text-[16px] leading-[1.7] text-inksoft">
-                Wir prüfen gemeinsam, ob Telefon, WhatsApp, Fotos, Formulare oder
-                Notdienst der sinnvollste erste Hebel ist. Kein Komplettsystem,
-                kein Vertrag im Erstgespräch.
+                In 30 Minuten prüfen wir, wo Anfragen liegen bleiben, welche Informationen Ihr Team vor dem ersten Rückruf braucht und ob ein klar abgegrenzter Pilot sinnvoll ist. Kein Komplettsystem, kein Vertrag im Erstgespräch.
               </p>
 
               <button

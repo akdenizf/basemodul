@@ -51,26 +51,26 @@ const extensions: { emoji: string; name: string; hint: string; details: string[]
   {
     emoji: "🚨",
     name: "Notdienst-Modul",
-    hint: "Dringendes sofort zur Bereitschaft",
-    details: ["erkennt hohe Dringlichkeit", "fragt Pflichtinfos ab", "informiert die Bereitschaft"],
+    hint: "Nach Regeln an Menschen eskalieren",
+    details: ["arbeitet nach vereinbarten Signalen", "fragt Pflichtinfos ab", "informiert die Bereitschaft oder den Fallback"],
   },
   {
     emoji: "📅",
     name: "Termin-Modul",
-    hint: "Wunschzeit im Vorfeld klären",
-    details: ["klärt Leistung + Wunschzeit", "bereitet Termin oder Rückruf vor", "weniger Hin und Her"],
+    hint: "Terminwünsche sauber vorbereiten",
+    details: ["klärt Leistung + Wunschzeit", "bereitet Termin oder Rückruf vor", "erst nach einem bewiesenen Eingang ergänzen"],
   },
   {
     emoji: "💬",
     name: "WhatsApp-Modul",
-    hint: "Chat-Anfragen sortieren",
-    details: ["stellt Rückfragen im Chat", "erkennt fehlende Angaben", "bündelt zu einem Vorgang"],
+    hint: "Nachrichten in Fälle überführen",
+    details: ["stellt Rückfragen im Chat", "erkennt fehlende Angaben", "bündelt Kontext und nächsten Schritt"],
   },
   {
     emoji: "📎",
     name: "Foto- & Datei-Modul",
-    hint: "Bilder gezielt anfordern",
-    details: ["sendet Upload-Link", "fragt Kontext zum Bild ab", "erstellt strukturierten Fall"],
+    hint: "Bilder mit Kontext einsammeln",
+    details: ["sendet Upload-Link", "fragt Kontext zum Bild ab", "verbindet Anhang und Vorgang"],
   },
 ];
 
@@ -84,17 +84,17 @@ export function ModulesSection() {
           {/* Left — intro */}
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              04 — Die Module
+              04 — Modularer Anfrage-Flow
             </span>
             <h2 className="mt-4 mb-5 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-              Ein Baukasten für<br />Ihre Anfragen.
+              Ein Eingang zuerst.<br />Weitere Module nur mit Grund.
             </h2>
             <p className="max-w-[360px] text-[16px] leading-[1.7] text-inksoft">
-              Starten Sie mit dem Eingangskanal, der gerade am meisten Zeit kostet.
+              Wir beginnen mit dem Kanal, an dem heute Anfragen oder Zeit verloren gehen. Erst wenn dieser Ablauf im Alltag funktioniert, kommt der nächste Baustein dazu.
             </p>
             <span className="mt-7 inline-flex items-center gap-[7px] rounded-full border border-leafdimline bg-leafdim px-3 py-[5px] text-[11px] font-semibold uppercase tracking-[0.06em] text-leafbright">
               <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
-              Eingang → Modul → Übergabe
+              Eingang → Qualifizierung → Übergabe
             </span>
           </div>
 
@@ -122,7 +122,7 @@ export function ModulesSection() {
                     </span>
                   </div>
                   <p className="mt-1 text-[13px] leading-snug text-inksoft">
-                    Nimmt Anrufe an, erkennt das Anliegen und sichert Kontakt + Standort.
+                    Sichert Kontakt, Anliegen, Ort und vereinbarte Pflichtfelder – und übergibt den Vorgang nach klaren Regeln ans Team.
                   </p>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export function ModulesSection() {
             <motion.div variants={rowV} className="mt-5">
               <p className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
                 <Plus size={12} strokeWidth={2} className="text-leafbright" />
-                Weitere Module · flexibel kombinierbar
+                Sinnvolle Erweiterungen · nachgewiesener Bedarf
               </p>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {extensions.map((e) => (
@@ -175,7 +175,7 @@ export function ModulesSection() {
                 ))}
               </div>
               <p className="mt-4 text-[13px] text-faint">
-                Alle Module führen zum selben Ergebnis: ein vollständiger Vorgang für Ihr Team.
+                Alle Module führen zum selben Ergebnis: ein vollständiger Vorgang mit Kontext und nächstem Schritt für Ihr Team.
               </p>
             </motion.div>
           </motion.div>

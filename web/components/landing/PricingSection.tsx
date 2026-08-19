@@ -16,40 +16,40 @@ const item: Variants = {
 
 const offers = [
   {
-    name: "Pilot",
+    name: "Anfrage-Eingang",
     price: "ab 750 €",
     note: "Setup",
     features: [
-      "ein Eingangskanal: Telefon, WhatsApp, Formular oder Foto",
-      "ein Beispiel-Flow mit Rückfragelogik",
-      "eine Übergabe ans Team: E-Mail, Sheet oder WhatsApp",
-      "Test mit realistischen Fällen",
+      "ein definierter Eingangskanal: Telefon, WhatsApp, Formular oder Foto",
+      "Pflichtfelder, Zuständigkeit und sichere Teamübergabe",
+      "Testfälle und Freigabe vor dem Go-live",
+      "30-Tage-Pilot mit wöchentlicher Scorecard",
     ],
     cta: "30-Minuten-Check buchen",
     highlighted: true,
   },
   {
-    name: "Modul",
+    name: "Anfrage-Flow",
     price: "ab 1.500 €",
     note: "Setup",
     features: [
-      "angepasster Betriebsflow",
+      "erprobten Eingang um passende Regeln oder Anschlussmodule erweitern",
       "Telefon, WhatsApp, Kalender oder Foto-Upload",
-      "Eskalations- und Rückfragelogik",
-      "monatliche Betreuung nach Umfang",
+      "Eskalations-, Rückfrage- und Übergabelogik",
+      "Betreuung nach klar definiertem Umfang",
     ],
     cta: "30-Minuten-Check buchen",
     highlighted: false,
   },
   {
-    name: "Custom",
+    name: "Betriebs-Agenten",
     price: "auf Anfrage",
-    note: "nach Umfang",
+    note: "nach Scoping",
     features: [
-      "mehrere Module kombiniert",
-      "CRM, Kalender, Webhooks oder n8n",
-      "individuelle Regeln und Reporting",
-      "persönliche Umsetzung mit AGENTEQ",
+      "einen belegten Folgeengpass gezielt lösen",
+      "Integration mit CRM, Kalender, Webhooks oder n8n",
+      "individuelle Regeln, Reporting und Freigabe-Gates",
+      "separates Scoping statt ungeplanter Sonderentwicklung",
     ],
     cta: "30-Minuten-Check buchen",
     highlighted: false,
@@ -73,11 +73,10 @@ export function PricingSection() {
             09 — Pilot
           </span>
           <h2 className="mb-[18px] mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-            30-Minuten-Check. Ein Eingangskanal. Ein sauberer Pilot.
+            30 Tage. Ein Eingang. Eine klare Entscheidung.
           </h2>
           <p className="text-[16px] leading-[1.7] text-inksoft">
-            Kein SaaS-Abo im Erstgespräch. Ein schlanker Pilot, echte Fälle,
-            dann entscheiden Sie.
+            Kein Komplettsystem im Erstgespräch. Wir grenzen einen Kanal, die benötigten Informationen, Zuständigkeiten und eine sichere Übergabe ab – dann prüfen wir reale Fälle mit einer Scorecard.
           </p>
         </motion.div>
 
@@ -92,7 +91,7 @@ export function PricingSection() {
             >
               {offer.highlighted && (
                 <span className="absolute right-6 top-6 rounded-md bg-leafbtn px-3.5 py-1.5 text-[13px] font-bold uppercase tracking-[0.06em] text-white">
-                  Bester Start
+                  Erster Schritt
                 </span>
               )}
 
@@ -131,7 +130,7 @@ export function PricingSection() {
           variants={item}
           className="mt-8 text-[11px] font-semibold uppercase tracking-[0.08em] text-faint"
         >
-          Alle Preise zzgl. MwSt · laufende Kosten je nach Umfang, Telefonie, WhatsApp und Betreuung
+          Alle Preise zzgl. MwSt · laufende Kosten für Telefonie, WhatsApp, Betreuung oder zusätzliche Infrastruktur werden vor dem Go-live transparent festgelegt
         </motion.p>
       </div>
     </motion.section>
