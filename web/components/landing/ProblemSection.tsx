@@ -49,12 +49,12 @@ export function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.45, delay: i * 0.08, ease: "easeOut" }}
-              className="rounded-2xl border border-white/[0.07] bg-paper2 p-6"
+              className="rounded-[8px] border border-line bg-paper2 p-6 shadow-[0_12px_30px_-26px_rgba(31,42,35,0.38)]"
             >
               <span
                 className={`flex h-10 w-10 items-center justify-center rounded-[10px] ${
                   p.amber
-                    ? "border border-amber-400/30 bg-amber-400/10 text-amber-400"
+                    ? "border border-[#E5C8AB] bg-[#FCF0E5] text-[#A75420]"
                     : "border border-line bg-paperdeep text-faint"
                 }`}
               >
@@ -66,7 +66,7 @@ export function ProblemSection() {
                   <li key={point} className="flex items-start gap-2 text-[14px] leading-[1.5] text-inksoft">
                     <span
                       className={`mt-[8px] h-1 w-1 shrink-0 rounded-full ${
-                        p.amber ? "bg-amber-400/70" : "bg-faint/60"
+                        p.amber ? "bg-[#D8843F]" : "bg-faint/60"
                       }`}
                     />
                     {point}

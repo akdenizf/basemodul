@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,30 +17,29 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        // ── basemodul.de · Dark Premium (v2) ──────────────────────────────
-        // Surfaces
-        paper: "#0D0D0D",        // page background
-        paperdeep: "#0A0A0A",    // alternating / deep sections + footer
-        paper2: "#161616",       // cards / elevated surfaces
-        surface2: "#1C1C1C",     // card hover
-        cta: "#111111",          // CTA panel
-        // Lines
-        line: "#262626",         // borders
-        linesoft: "#1F1F1F",     // soft dividers / nav border
+        // ── basemodul.de · Handwerklich klar (v3) ───────────────────────────
+        // Warmes Arbeitsumfeld statt Dark-Premium-SaaS.
+        paper: "#F7F5EF",
+        paperdeep: "#EFEEE6",
+        paper2: "#FFFFFF",
+        surface2: "#F8F8F3",
+        cta: "#EAF0E8",
+        // Linien
+        line: "#DDDCD3",
+        linesoft: "#E7E5DD",
         // Text
-        ink: "#FFFFFF",          // primary text
-        label: "#A1A1AA",        // nav links / lighter labels
-        inksoft: "#71717A",      // body / secondary text
-        faint: "#52525B",        // eyebrows, muted labels
-        // Green system (military green, not neon)
-        leafbtn: "#15803D",      // primary button bg
-        leafbtnhover: "#166534", // primary button hover
-        leaf: "#16A34A",         // general accent (featured border etc.)
-        leafbright: "#4ADE80",   // arrows, checks, chevrons, tag text
-        leafaccent: "#22C55E",   // headline accent ONLY
-        leafdim: "#14532D",      // tag / badge / aktion bg
-        leafdimline: "#166534",  // tag / badge border
-        leafdark: "#166534",     // legacy alias
+        ink: "#1F2A23",
+        label: "#455249",
+        inksoft: "#687169",
+        faint: "#849087",
+        // Vertrauen & Status
+        leafbtn: "#2E6246",
+        leafbtnhover: "#214D36",
+        leaf: "#2E6246",
+        leafbright: "#2E6246",
+        leafaccent: "#2E6246",
+        leafdim: "#EAF0E8",
+        leafdimline: "#BED2C1",
       },
     },
   },

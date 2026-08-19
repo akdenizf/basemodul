@@ -19,25 +19,24 @@ StorySeam bewusst nur an den drei großen Nähten. `ScrollStorySection` ist nach
 [`../../_parked/components/landing/`](../../_parked/CLAUDE.md) geparkt
 (Dopplung mit Workflow + RequestArtifact, telefon-only Visual).
 
-## Design-Identität: "Dark Premium" (verbindlich)
+## Design-Identität: „Handwerklich klar“ (verbindlich)
 
-> Frühere Richtungen ("Professional Navy" / hell-warme "Werkbank") sind
-> **verworfen**. Maßgeblich: [`../../../DESIGN_BRIEF.md`](../../../DESIGN_BRIEF.md)
-> + die kanonische Referenz [`../../../index.html`](../../../index.html).
-> Die Next-Komponenten sind bereits auf diese Richtung portiert; neue Änderungen
-> sollen nur gezielt polieren.
+> Die frühere „Dark Premium“-Richtung ist abgelöst. Maßgeblich sind
+> [`../../../DESIGN_BRIEF.md`](../../../DESIGN_BRIEF.md) und
+> [`../../../DESIGN_DIRECTION_HANDWERKSNAH.md`](../../../DESIGN_DIRECTION_HANDWERKSNAH.md).
+> Die aktive Next-Landing ist die kanonische visuelle Referenz.
 
 | Rolle | Wert |
 |---|---|
-| Hintergrund | `#0A0A0A` (alt. `#0D0D0D`) |
-| Flächen / Karten | `#141414`, hover/aktiv `#181818` |
-| Akzent / CTA | **Grün `#4ADE80` / `text-green-400`** (CTA tiefer `#16A34A`) |
-| Text primär | `#FAFAFA` · sekundär `#A1A1AA` · gedämpft `#6B6B72` |
-| Linien | `rgba(255,255,255,0.08)` |
-| Headings + Body | **Inter** (keine Serif) |
+| Hintergrund | `#F7F5EF` (warmes Off-White) |
+| Flächen / Karten | `#FFFFFF` und `#EFEEE6` |
+| Akzent / CTA | **Waldgrün `#2E6246`** |
+| Funktionsakzent | Gedämpftes Orange `#D8843F` ausschließlich für Priorität/Markierung |
+| Text primär | `#1F2A23` · sekundär `#687169` · gedämpft `#849087` |
+| Linien | `#DDDCD3` |
+| Headings + Body | **Inter** (direkt, sachlich und gut lesbar) |
 
-Regeln: kein heller/Raster-Hintergrund, keine Uppercase-Headlines, kein
-„API-Tool"-Look, genau eine Akzentfarbe, Glow nur subtil.
+Regeln: Papier-/Arbeitsmappen statt Glassmorphism, Rückrufnotiz/Einsatzübergabe statt Smartphone-Mockup, keine Glows und keine dunkle SaaS-Flächen. Jede visuelle Fläche muss den Betriebsalltag, die Zuständigkeit oder den nächsten Schritt verständlicher machen.
 
 ## Aktueller Umbau-Fokus
 

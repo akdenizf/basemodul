@@ -1,75 +1,67 @@
 # basemodul.de Design-Brief
 
-> **Diese Datei ist die verbindliche Design-Richtlinie.** Frühere Versionen
-> (hell/warm/„Werkbank"/„Professional Navy") sind **verworfen**. Maßgeblich ist
-> ausschließlich diese Richtung. Die kanonische Referenz-Umsetzung ist
-> [`index.html`](index.html) im Repo-Root — neue Flächen orientieren sich daran.
+> **Diese Datei ist die verbindliche Design-Richtlinie.**
+>
+> Die frühere „Dark Premium“-Richtung ist abgelöst. Maßgeblich ist die aktive Next.js-Landing unter [`web/`](web/) zusammen mit [`DESIGN_DIRECTION_HANDWERKSNAH.md`](DESIGN_DIRECTION_HANDWERKSNAH.md). Die ältere Root-Referenz `index.html` dient nicht mehr als visuelle Vorgabe.
 
 ## Richtung
 
-Modern, **dunkel, premium**. Vorbild: **Linear.app, Vercel, Stripe** — klare
-Typografie, viel Whitespace, mutige Headlines, subtile Gradienten/Glows.
+**Hell, klar, handwerksnah und verlässlich.** BaseModul darf modern aussehen, aber niemals wie eine abstrakte AI- oder SaaS-Oberfläche. Die visuelle Welt beginnt beim Arbeitsalltag eines Servicebetriebs: Rückrufnotiz, Einsatzort, Ansprechpartner, Dringlichkeit, Zuständigkeit und nächster Schritt.
 
-Kein heller/beiger Hintergrund. Kein Raster-/Grid-Pattern. Kein
-„SaaS-Starter-Template"-Look (Exa/Firecrawl-artig). Kein „API-Tool"-Look
-(keine Terminal-Fenster, keine Code-Snippets als Deko). Keine
-Uppercase-Hauptüberschriften (Uppercase nur für kleine Labels/Tags).
+> Nicht: „Hier ist eine intelligente Software.“
+>
+> Sondern: „So kommt eine Anfrage bei Ihrem Team an, damit es handeln kann.“
 
-## Farben (Tokens)
+Die entscheidende Bildmetapher ist die **saubere Arbeitsmappe**. Eine starke Seite zeigt ein brauchbares Ergebnis, nicht zuerst ein Gerät, ein Dashboard oder eine technische Funktion.
 
-| Rolle | Wert |
-|---|---|
-| Hintergrund | `#0A0A0A` (alt. Sektion `#0D0D0D`) |
-| Flächen / Karten | `#141414`, hover/aktiv `#181818` |
-| Linien | `rgba(255,255,255,0.08)`, stärker `0.14` |
-| Text primär (Headlines) | `#FAFAFA` |
-| Text sekundär (Fließtext, Labels) | `#A1A1AA` |
-| Text gedämpft | `#6B6B72` |
-| Akzent | **Grün `#22C55E`** (tiefer `#16A34A`) |
-| Akzent-Flächen | `rgba(34,197,94,0.12)`, Linie `0.35` |
+## Farben
 
-Genau **eine** Akzentfarbe (Grün) für CTAs, Highlights, aktive Zustände, Pfeile,
-Tags. Glow sparsam und subtil einsetzen (Hero, CTA), nie grell.
+| Rolle | Wert | Wirkung |
+|---|---|---|
+| Seitenhintergrund | `#F7F5EF` | Warmes Off-White, wie ein ruhiger Arbeitsbereich |
+| Papier / Karten | `#FFFFFF` | Sauber, verständlich, greifbar |
+| Alternative Fläche | `#EFEEE6` | Ruhige Abschnittstrennung |
+| Tinte / Headlines | `#1F2A23` | Ernsthaft und bodenständig |
+| Fließtext | `#687169` | Lesbar, nicht technisch-kalt |
+| Linien | `#DDDCD3` | Materielle Papierlinie statt UI-Haarrand |
+| Primärfarbe | `#2E6246` | Tiefes Waldgrün für Vertrauen, CTA und bestätigte Übergaben |
+| Funktionsakzent | `#D8843F` | Gedämpftes Orange für Priorität, Warnung oder Markierung |
+| Statusfläche | `#EAF0E8` | Ruhiges Grün für gelöste/übergebene Vorgänge |
+
+Waldgrün ist die einzige dominante Markenfarbe. Orange ist kein zweiter CTA-Farbton und kein Dekoelement; es markiert funktional Dringlichkeit oder einen Orientierungspunkt im Ablauf.
 
 ## Typografie
 
-- Font: **Inter** (400–900), `system-ui` als Fallback.
-- Hero-Headline sehr groß und mutig: Desktop ~72–84px, `font-weight 800`,
-  `line-height ~1.0`, `letter-spacing -0.03em`. Kernaussage/zweites Wort in Grün.
-- Sektions-Headlines `clamp(30px, 4.5vw, 46px)`, bold, weiß.
-- Fließtext `#A1A1AA`, ~15–17px, max. ~60ch.
-- Tabular-Figures für Preise/Nummern.
+- **Inter** bleibt die Grundschrift: direkt, modern und im Betrieb gut lesbar.
+- Hero-Headlines bleiben klar und groß, aber ohne Tech-Launch-Gefühl. Der Akzent liegt auf einem betriebsnahen Ergebnis, nicht auf „KI“.
+- Kleine Labels dürfen in Uppercase erscheinen; Hauptüberschriften und Absätze bleiben in natürlicher Schreibweise.
+- Monospace ist ausschließlich für praktische Metadaten wie Vorgangsnummer, Zeit oder Status geeignet, nie als Design-Selbstzweck.
 
 ## Komponenten
 
-- **Nav:** sticky, dunkel, leicht transparent mit `backdrop-blur`; Logo
-  „basemodul.de" weiß + „/ von AGENTEQ" grau; Links mittig; grüner CTA rechts.
-- **Hero:** volle Viewport-Höhe, mutige Headline, grauer Subtext, zwei Buttons
-  (grün gefüllt + transparent mit Rand), Trust-Zeile „DSGVO · Server in
-  Frankfurt", darunter die 5 Module als horizontale Karten (aktiver Zustand
-  zyklisch). Kein Screenshot.
-- **Karten:** dunkle Fläche `#141414` + 1px Linie; Hover = grüne Umrandung +
-  dezenter grüner Glow + leichtes Anheben. Radius 10–16px.
-- **Buttons:** primär = grün gefüllt, dunkler Text; sekundär = transparent,
-  heller Rand. Hover: leichtes `translateY(-1px)`.
-- **Icons:** ausschließlich inline-SVG (1.5–1.8 Stroke) oder Unicode — keine
-  externen Icon-Bibliotheken/Bilder.
+- **Navigation:** Helles, ruhiges Headerband; Waldgrün nur für den klaren nächsten Schritt.
+- **Hero:** Helle Fläche, echte Betriebssituation in der Copy und eine Rückruf-/Einsatznotiz als zentraler Beleg. Keine dominanten Smartphone-Mockups.
+- **Arbeitsmappe / Vorgang:** Weiße Fläche, solide Linien, leichte Schatten, konkrete Felder und sichtbare Zuständigkeit. Der Leser muss sie in Sekunden verstehen.
+- **Karten:** Weiß oder leicht gebrochen, geringer Radius, robuste Linie, zurückhaltender Schatten. Kein Glassmorphism, keine Glows, keine schwebenden App-Kacheln.
+- **CTA:** Waldgrüne Schaltfläche mit weißer Schrift; sekundäre Aktion als weiße Papierfläche mit grüner oder neutraler Linie.
+- **Abschnittsübergänge:** Ruhige Papierlinie mit kleiner Markierung statt animierter Lichtnaht.
 
-## Inhaltliche Leitplanken (unverändert gültig)
+## Bildsprache
 
-- Marke: **basemodul.de**; **AGENTEQ** nur Trust-Layer/Anbieter im Hintergrund.
-- Module: Telefon, Termin, WhatsApp, Foto-/Schaden, Notdienst — Prinzip
-  „Eingang rein → Modul fragt nach → fertige Aktion raus".
-- Keine Hausverwaltung. Keine Fake-Claims (kein 24/7, 241ms, 80%, 30+ Sprachen).
-- Tonalität: direkt, betrieblich, deutsch. Keine AI-Buzzwords.
+- Bevorzugt echte, lizenzierte oder selbst erstellte Szenen aus Service, Werkstatt, Anlage, Einsatz und Teamübergabe.
+- Keine generischen Stock-Handshake-Motive, keine Roboter, keine futuristischen Gerätebilder und keine austauschbaren Software-Screenshots.
+- Wenn kein Foto nötig ist, sind klare Arbeitsartefakte – Rückrufnotiz, Einsatzkarte, Ablaufzettel – die bessere Wahl.
 
-## Technische Leitplanken (für die Referenz `index.html`)
+## Inhaltliche Leitplanken
 
-- Eine `index.html`, eingebettetes CSS + vanilla JS, kein CSS-Framework.
-- Google Fonts (Inter), Smooth-Scroll, FAQ-Accordion (JS), responsive @768px.
-- Alle CTAs → `#demo`. Keine externen Bilder, nur inline-SVG/Unicode.
-- `prefers-reduced-motion` respektieren.
+- Marke: **basemodul.de**; **AGENTEQ** bleibt Trust-/Anbieter-Layer im Hintergrund.
+- Module: Telefon, Termin, WhatsApp, Foto-/Schaden und Notdienst folgen immer demselben Prinzip: **Eingang → fehlende Informationen → vollständige Übergabe**.
+- Keine Hausverwaltung als BaseModul-Lane. Keine Fake-Claims und keine AI-Buzzwords.
+- Telefon ist ein häufiger Einstieg, aber nie die gesamte Markenidentität.
+- Notfälle werden nach Regeln an Menschen informiert; fachliche und verbindliche Entscheidungen bleiben beim Betrieb.
 
-> Die Next.js-Landing unter `web/` wird später an diese Richtung angeglichen
-> bzw. aus `index.html` zurückportiert. Bei Konflikt gilt **diese Datei +
-> `index.html`**.
+## Technische Leitplanken
+
+- Die aktive Referenz ist die Next.js-Landing in `web/`.
+- Responsive Gestaltung, echte Tastaturfokusse und `prefers-reduced-motion` bleiben erhalten.
+- Neue Elemente werden zuerst auf ihre Alltagsrelevanz geprüft: Hilft dieses Element dem Betrieb, Vorgang und nächsten Schritt sofort zu verstehen?

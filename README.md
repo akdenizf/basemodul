@@ -101,7 +101,7 @@ Sicherheit beim Übernehmen des Templates erledigt:
 ## Strategie-Dokumente
 
 `PLAN.md` · `PRODUCT_ARCHITECTURE.md` · `PILOT_DELIVERY_PLAYBOOK.md` ·
-`OFFER.md` · `WIREFRAME.md` · `DESIGN_BRIEF.md` · `GTM.md` ·
+`OFFER.md` · `WIREFRAME.md` · `DESIGN_BRIEF.md` · `DESIGN_DIRECTION_HANDWERKSNAH.md` · `GTM.md` ·
 `LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md` ·
 `outreach/playbooks/SHK_PILOT_PLAYBOOK.md` · `outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md` ·
 `outreach/client-materials/SHK_PILOTANGEBOT.html` · `outreach/client-materials/SHK_PILOTANGEBOT.pdf` ·

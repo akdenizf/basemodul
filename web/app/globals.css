@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #0D0D0D;
-  --foreground: #FFFFFF;
+  --background: #f7f5ef;
+  --foreground: #1f2a23;
 }
 
 body {
@@ -13,13 +13,11 @@ body {
 }
 
 ::selection {
-  background: rgba(34, 197, 94, 0.25);
-  color: #FAFAFA;
+  background: #d9e8d8;
+  color: #1f2a23;
 }
 
 @layer base {
-  /* Sichtbarer Tastatur-Fokus — dezenter grüner Ring, respektiert vorhandene Radien.
-     Nur :focus-visible, damit Maus-Klicks keinen Ring auslösen. */
   a:focus-visible,
   button:focus-visible,
   [role="button"]:focus-visible,
@@ -27,8 +25,8 @@ body {
   input:focus-visible,
   textarea:focus-visible,
   select:focus-visible {
-    outline: 2px solid rgba(74, 222, 128, 0.65);
-    outline-offset: 2px;
+    outline: 2px solid rgba(46, 98, 70, 0.7);
+    outline-offset: 3px;
   }
 }
 
@@ -39,46 +37,29 @@ body {
 }
 
 @layer components {
-  /* Glassy premium surface — soft glass tint, cyan light edge, gloss, depth.
-     Radius/padding stay on the element via Tailwind; pseudo-elements inherit it. */
+  /* Helles, taktiles Papier statt Glassmorphism. */
   .glass-surface {
     position: relative;
-    background: linear-gradient(160deg, rgba(28, 28, 32, 0.72), rgba(18, 18, 20, 0.66));
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow:
-      0 26px 60px -22px rgba(0, 0, 0, 0.78),
-      0 0 42px -18px rgba(34, 211, 238, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    background: #ffffff;
+    border: 1px solid #dddcd3;
+    box-shadow: 0 18px 42px -30px rgba(31, 42, 35, 0.38), 0 2px 7px rgba(31, 42, 35, 0.04);
   }
-  /* top gloss line */
-  .glass-surface::before {
-    content: "";
-    position: absolute;
-    left: 1.5rem;
-    right: 1.5rem;
-    top: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
-    pointer-events: none;
-    z-index: 1;
-  }
-  /* soft sheen from the top */
+
+  .glass-surface::before,
   .glass-surface::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), transparent 55%);
-    pointer-events: none;
+    content: none;
   }
-  /* green-tinted accent edge for highlighted surfaces */
+
   .glass-accent {
-    border-color: rgba(34, 197, 94, 0.4);
-    box-shadow:
-      0 26px 60px -22px rgba(0, 0, 0, 0.78),
-      0 0 52px -16px rgba(34, 197, 94, 0.34),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: #9dbca4;
+    box-shadow: 0 20px 45px -30px rgba(46, 98, 70, 0.34), 0 2px 7px rgba(31, 42, 35, 0.04);
+  }
+
+  .work-paper {
+    background-color: #ffffff;
+    background-image: linear-gradient(rgba(68, 82, 73, 0.045) 1px, transparent 1px);
+    background-size: 100% 28px;
+    border: 1px solid #d9d8cf;
+    box-shadow: 0 20px 44px -30px rgba(31, 42, 35, 0.34), 0 3px 9px rgba(31, 42, 35, 0.05);
   }
 }

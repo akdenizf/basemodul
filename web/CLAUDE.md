@@ -42,20 +42,21 @@ Kernmodule:
 Nicht als Hauptspur verwenden: Hausverwaltung/SHK-Schadenfälle, generische
 KI-Beratung, vollautomatische Angebotserstellung als Kernangebot.
 
-## Design-Identität: "Dark Premium" (verbindlich)
+## Design-Identität: „Handwerklich klar“ (verbindlich)
 
-Dunkel/premium (Linear/Vercel/Stripe): BG `#0A0A0A` · Flächen `#141414` ·
-Akzent **Grün `#22C55E`** · Text `#FAFAFA`/`#A1A1AA` · Font **Inter**.
-**Verbindliche Quelle:** [`../DESIGN_BRIEF.md`](../DESIGN_BRIEF.md) + die
-kanonische Referenz [`../index.html`](../index.html) (Repo-Root, standalone).
-Frühere Richtungen (Navy/hell-warm) und `design-system/MASTER.md` sind
-**verworfen**. Diese Landing wird später an `index.html` angeglichen.
+Helles, warmes Arbeitsumfeld: Hintergrund `#F7F5EF` · Papierflächen `#FFFFFF` ·
+Primärfarbe **Waldgrün `#2E6246`** · funktionale Prioritätsmarkierung
+`#D8843F` · Text `#1F2A23`/`#687169` · Font **Inter**.
+**Verbindliche Quelle:** [`../DESIGN_BRIEF.md`](../DESIGN_BRIEF.md) und
+[`../DESIGN_DIRECTION_HANDWERKSNAH.md`](../DESIGN_DIRECTION_HANDWERKSNAH.md).
+Die aktive Next-Landing ist die kanonische Referenz; die frühere Dark-Premium-
+und Root-`index.html`-Richtung ist nicht mehr maßgeblich.
 
 ## Schlüssel-Dateien
 
 - `app/layout.tsx` — Fonts + Metadaten
 - `app/page.tsx` — Sektions-Reihenfolge der Landing
-- `tailwind.config.ts` — `font-display`=Calistoga, `font-sans`=Inter
+- `tailwind.config.ts` — zentrale helle Handwerks-Palette und Inter als Grundschrift
 - `middleware.ts` — Pass-through (neutralisiert)
 
 *Veraltete Callfolio-Doku (`GEMINI.md`, `lib/AGENTS.md`, `database/AGENTS.md`)
