@@ -60,17 +60,22 @@ Pricing — macht die Wiedererkennung erst zum Brand-Element.
   der Karte, Tiefenstaffelung wie im Hero, Mono-Zeitstempel bei
   Eingang/Übergabe. Copy, `#beispiel`-Anker und Vorher/Nachher-Zeile
   unverändert.
+- **`ProblemSection`**: asymmetrischer Vorher/Nachher-Moment statt
+  gleichförmigem 3er-Grid — drei unterschiedlich gestylte, leicht rotierte
+  „Fragmente" (verpasster Anruf, WhatsApp-Foto ohne Kontext, unklare
+  Dringlichkeit) transformieren sich visuell in ein `BaseModulFlow`-Panel
+  („Ein sauberer Vorgang."). Copy unverändert, nur neu komponiert. Einzige
+  Sektion, die bewusst vom Karten-Grid-Muster abweichen darf.
 
 ## Noch offen (separate Checkpoints, nicht in einem Rutsch)
 
-1. `ProblemSection` — ein editorialer Vorher/Nachher-Moment statt Karten-Grid.
-2. `ModulesSection` — `BaseModulFlow` mit Hover-Snap-in; **Achtung:** enthält
+1. `ModulesSection` — `BaseModulFlow` mit Hover-Snap-in; **Achtung:** enthält
    noch unmigrierte Dark-Premium-Klassen (`bg-white/[0.0x]`, `border-white/10`,
    `backdrop-blur-md`), die auf dem hellen `bg-paper`-Hintergrund kaum
    sichtbar sind — beim Umbau mitfixen.
-3. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
+2. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
    ausbauen; gleiches Dark-Premium-Leftover-Problem wie oben, außerhalb des
    Phone-Mockups.
-4. Abschließender Konsistenz-Pass über restliche Sektionen.
+3. Abschließender Konsistenz-Pass über restliche Sektionen.
 
 Jeder Punkt ist ein eigener Review-Checkpoint mit dem Owner, kein Blankoscheck.
