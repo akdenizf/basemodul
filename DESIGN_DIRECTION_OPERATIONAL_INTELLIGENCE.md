@@ -56,19 +56,21 @@ Pricing — macht die Wiedererkennung erst zum Brand-Element.
 - **Hero** (`HeroSection.tsx`): Operations-Szene (`BaseModulFlow`, animiert,
   auf `inkdeep`-Panel) ersetzt die einzelne statische Karte; Rückrufnotiz
   bleibt darunter, jetzt tiefengestaffelt mit Mono-ID/Zeitstempel.
+- **`RequestArtifactSection`**: kompakter `BaseModulFlow` (unanimiert) über
+  der Karte, Tiefenstaffelung wie im Hero, Mono-Zeitstempel bei
+  Eingang/Übergabe. Copy, `#beispiel`-Anker und Vorher/Nachher-Zeile
+  unverändert.
 
 ## Noch offen (separate Checkpoints, nicht in einem Rutsch)
 
-1. `RequestArtifactSection` — Mono-Zeitstempel in Feldwerten, Tiefenstaffelung,
-   optional kompakter `BaseModulFlow`.
-2. `ProblemSection` — ein editorialer Vorher/Nachher-Moment statt Karten-Grid.
-3. `ModulesSection` — `BaseModulFlow` mit Hover-Snap-in; **Achtung:** enthält
+1. `ProblemSection` — ein editorialer Vorher/Nachher-Moment statt Karten-Grid.
+2. `ModulesSection` — `BaseModulFlow` mit Hover-Snap-in; **Achtung:** enthält
    noch unmigrierte Dark-Premium-Klassen (`bg-white/[0.0x]`, `border-white/10`,
    `backdrop-blur-md`), die auf dem hellen `bg-paper`-Hintergrund kaum
    sichtbar sind — beim Umbau mitfixen.
-4. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
+3. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
    ausbauen; gleiches Dark-Premium-Leftover-Problem wie oben, außerhalb des
    Phone-Mockups.
-5. Abschließender Konsistenz-Pass über restliche Sektionen.
+4. Abschließender Konsistenz-Pass über restliche Sektionen.
 
 Jeder Punkt ist ein eigener Review-Checkpoint mit dem Owner, kein Blankoscheck.
