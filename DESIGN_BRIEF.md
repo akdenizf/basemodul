@@ -32,7 +32,7 @@ Waldgrün ist die einzige dominante Markenfarbe. Orange ist kein zweiter CTA-Far
 
 ## Typografie
 
-- **Inter** bleibt die Grundschrift: direkt, modern und im Betrieb gut lesbar.
+- **Public Sans** ist die Grundschrift: sachlich, greifbar wie ein Werkstatt-Lieferschein, im Betrieb gut lesbar. Ersetzt Inter, das als generischer SaaS-Default zu abstrakt wirkte.
 - Hero-Headlines bleiben klar und groß, aber ohne Tech-Launch-Gefühl. Der Akzent liegt auf einem betriebsnahen Ergebnis, nicht auf „KI“.
 - Kleine Labels dürfen in Uppercase erscheinen; Hauptüberschriften und Absätze bleiben in natürlicher Schreibweise.
 - Monospace ist ausschließlich für praktische Metadaten wie Vorgangsnummer, Zeit oder Status geeignet, nie als Design-Selbstzweck.

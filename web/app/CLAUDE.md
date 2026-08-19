@@ -14,7 +14,7 @@ Nur **aktive** öffentliche Routen. Das Backend ist geparkt
 | `/ueber-uns` · `/karriere` | je `page.tsx` | Unternehmensseiten |
 | `/impressum` · `/datenschutz` · `/agb` | je `page.tsx` | Recht — echte AGENTEQ-Stammdaten, **vor Live-Gang anwaltlich prüfen** |
 
-- `layout.tsx` — Root-Layout: Fonts (Inter/JetBrains), Voice-first-Metadaten.
+- `layout.tsx` — Root-Layout: Fonts (Public Sans/JetBrains), Voice-first-Metadaten.
 - `globals.css` — globale Styles.
 
 ## Konventionen

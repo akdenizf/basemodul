@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        display: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-public-sans)", "sans-serif"],
+        display: ["var(--font-public-sans)", "sans-serif"],
         mono: ["var(--font-jetbrains-mono)", "monospace"],
       },
       colors: {

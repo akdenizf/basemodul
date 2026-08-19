@@ -46,7 +46,7 @@ KI-Beratung, vollautomatische Angebotserstellung als Kernangebot.
 
 Helles, warmes Arbeitsumfeld: Hintergrund `#F7F5EF` · Papierflächen `#FFFFFF` ·
 Primärfarbe **Waldgrün `#2E6246`** · funktionale Prioritätsmarkierung
-`#D8843F` · Text `#1F2A23`/`#687169` · Font **Inter**.
+`#D8843F` · Text `#1F2A23`/`#687169` · Font **Public Sans**.
 **Verbindliche Quelle:** [`../DESIGN_BRIEF.md`](../DESIGN_BRIEF.md) und
 [`../DESIGN_DIRECTION_HANDWERKSNAH.md`](../DESIGN_DIRECTION_HANDWERKSNAH.md).
 Die aktive Next-Landing ist die kanonische Referenz; die frühere Dark-Premium-
@@ -54,7 +54,7 @@ und Root-`index.html`-Richtung ist nicht mehr maßgeblich.
 
 ## Schlüssel-Dateien
 
-- `app/layout.tsx` — Fonts + Metadaten
+- `app/layout.tsx` — Fonts (Public Sans/JetBrains Mono) + Metadaten
 - `app/page.tsx` — Sektions-Reihenfolge der Landing
 - `tailwind.config.ts` — zentrale helle Handwerks-Palette und Inter als Grundschrift
 - `middleware.ts` — Pass-through (neutralisiert)

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Public_Sans, JetBrains_Mono } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sans", display: "swap" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 
 export const metadata: Metadata = {
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="de" suppressHydrationWarning className="antialiased scroll-smooth">
       <body
-        className={`min-h-screen font-sans bg-paper text-ink ${inter.variable} ${jetbrainsMono.variable} ${inter.className}`}
+        className={`min-h-screen font-sans bg-paper text-ink ${publicSans.variable} ${jetbrainsMono.variable} ${publicSans.className}`}
         style={{ WebkitFontSmoothing: "antialiased" }}
       >
         {children}
