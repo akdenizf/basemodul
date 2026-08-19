@@ -5,7 +5,6 @@ import { RequestArtifactSection } from "@/components/landing/RequestArtifactSect
 import { ProblemSection } from "@/components/landing/ProblemSection";
 import { UseCasesSection } from "@/components/landing/UseCasesSection";
 import { ModulesSection } from "@/components/landing/ModulesSection";
-import { WorkflowSection } from "@/components/landing/WorkflowSection";
 import { StorySeam } from "@/components/landing/StorySeam";
 import { VisualContextSection } from "@/components/landing/VisualContextSection";
 import { IntegrationsSection } from "@/components/landing/IntegrationsSection";
@@ -33,7 +32,6 @@ export default function LandingPage() {
         <StorySeam />
         <UseCasesSection />
         <ModulesSection />
-        <WorkflowSection />
         <StorySeam />
         <LiveDemoSection />
         <VisualContextSection />

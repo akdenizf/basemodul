@@ -15,40 +15,37 @@ const item: Variants = {
 
 const offers = [
   {
-    name: "Anfrage-Eingang",
+    name: "Ein Kanal",
     price: "ab 750 €",
-    note: "Setup",
+    note: "einmalig",
     features: [
-      "ein definierter Eingangskanal: Telefon, WhatsApp, Formular oder Foto",
-      "Pflichtfelder, Zuständigkeit und sichere Teamübergabe",
-      "Testfälle und Freigabe vor dem Go-live",
-      "30-Tage-Pilot mit wöchentlicher Scorecard",
+      "Telefon, WhatsApp, Formular oder Foto — Sie wählen einen",
+      "wir testen es an echten Anrufen, bevor es live geht",
+      "30 Tage testen, jede Woche sehen Sie, was es bringt",
     ],
     cta: "30-Minuten-Check buchen",
     highlighted: true,
   },
   {
-    name: "Anfrage-Flow",
+    name: "Mehrere Kanäle",
     price: "ab 1.500 €",
-    note: "Setup",
+    note: "einmalig",
     features: [
-      "erprobten Eingang um passende Regeln oder Anschlussmodule erweitern",
-      "Telefon, WhatsApp, Kalender oder Foto-Upload",
-      "Eskalations-, Rückfrage- und Übergabelogik",
-      "Betreuung nach klar definiertem Umfang",
+      "Telefon, WhatsApp, Termine und Fotos zusammen",
+      "eigene Regeln, wer wann informiert wird",
+      "laufende Betreuung, nicht nur Einrichtung",
     ],
     cta: "30-Minuten-Check buchen",
     highlighted: false,
   },
   {
-    name: "Betriebs-Agenten",
+    name: "Individuell",
     price: "auf Anfrage",
-    note: "nach Scoping",
+    note: "nach Gespräch",
     features: [
-      "einen belegten Folgeengpass gezielt lösen",
-      "Integration mit CRM, Kalender, Webhooks oder n8n",
-      "individuelle Regeln, Reporting und Freigabe-Gates",
-      "separates Scoping statt ungeplanter Sonderentwicklung",
+      "für einen bestimmten Engpass in Ihrem Betrieb",
+      "Anbindung an Ihre bestehenden Programme",
+      "wir sprechen erst, dann bauen wir",
     ],
     cta: "30-Minuten-Check buchen",
     highlighted: false,
@@ -71,10 +68,11 @@ export function PricingSection() {
             09 — Pilot
           </span>
           <h2 className="mb-[18px] mt-4 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-            30 Tage. Ein Eingang. Eine klare Entscheidung.
+            30 Tage testen. Dann entscheiden Sie.
           </h2>
           <p className="text-[16px] leading-[1.7] text-inksoft">
-            Kein Komplettsystem im Erstgespräch. Wir grenzen einen Kanal, die benötigten Informationen, Zuständigkeiten und eine sichere Übergabe ab – dann prüfen wir reale Fälle mit einer Scorecard.
+            Sie kaufen kein Komplettsystem. Wir richten einen Kanal ein, testen ihn
+            an echten Anfragen, und Sie sehen jede Woche, ob er was bringt.
           </p>
         </motion.div>
 

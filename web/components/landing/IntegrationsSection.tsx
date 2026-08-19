@@ -35,7 +35,7 @@ export function IntegrationsSection() {
           </div>
           <a
             href="#cta"
-            className="group inline-flex shrink-0 items-center gap-2 rounded-lg border border-[#333] px-7 py-3.5 text-[15px] font-semibold text-ink transition-all hover:border-[#555] hover:bg-white/[0.03]"
+            className="group inline-flex min-h-[44px] shrink-0 items-center gap-2 rounded-lg border border-line px-7 py-3.5 text-[15px] font-semibold text-ink transition-all hover:border-leaf/50 hover:bg-leafdim/30"
           >
             30-Minuten-Check buchen
             <ArrowUpRight
@@ -66,8 +66,7 @@ export function IntegrationsSection() {
         </motion.div>
 
         <p className="mt-7 max-w-[720px] text-[14px] leading-[1.7] text-faint">
-          Keine eigene Schnittstelle? Zum Start reicht E-Mail, Sheet oder WhatsApp.
-          CRM oder n8n kommen später dazu.
+          Kein eigenes System? Zum Start reicht E-Mail, eine Tabelle oder WhatsApp.
         </p>
       </div>
     </section>

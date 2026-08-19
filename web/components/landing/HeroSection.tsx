@@ -22,14 +22,15 @@ export function HeroSection() {
       <div className="relative mx-auto grid w-full max-w-[1200px] items-center gap-11 px-6 lg:grid-cols-[1fr_0.92fr] lg:gap-16 lg:px-12">
         <div className="max-w-[620px]">
           <div className="inline-flex items-center gap-2 border-l-[3px] border-leaf pl-3 text-[11px] font-bold uppercase tracking-[0.1em] text-leaf">
-            Für lokale Servicebetriebe
+            KI-Telefonassistent für Handwerksbetriebe
           </div>
           <h1 className="mt-5 text-balance text-[clamp(40px,6vw,72px)] font-extrabold leading-[1.03] tracking-[-0.048em] text-ink">
             Jeder verpasste Anruf kann ein <span className="text-leaf">Auftrag</span> sein.
           </h1>
           <p className="mt-6 max-w-[540px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">
-            BaseModul nimmt ab, fragt das Wichtigste ab und übergibt die Anfrage
-            vollständig an Ihr Team.
+            Ein KI-Programm nimmt den Anruf an, wenn Sie nicht rankönnen. Es
+            fragt Name, Adresse und Problem ab und schickt Ihrem Team alles
+            fertig aufs Handy.
           </p>
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a
@@ -57,6 +58,9 @@ export function HeroSection() {
 
         {/* Derselbe Anruf, zweimal. Der Unterschied erklärt das Produkt. */}
         <div className="mx-auto w-full max-w-[420px] lg:justify-self-end">
+          <p className="mb-2 text-center text-[11px] font-bold uppercase tracking-[0.1em] text-faint">
+            Beispiel · so kommt ein Anruf bei Ihnen an
+          </p>
           {/* Heute: was auf dem Handy landet, wenn niemand rangeht */}
           <div className="rounded-[10px] border border-line bg-paperdeep px-5 py-4">
             <div className="flex items-center justify-between gap-3">

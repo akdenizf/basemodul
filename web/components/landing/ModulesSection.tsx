@@ -48,27 +48,27 @@ function MiniVorgang() {
 const extensions: { Icon: typeof PhoneIncoming; name: string; hint: string; details: string[] }[] = [
   {
     Icon: AlertTriangle,
-    name: "Notdienst-Modul",
-    hint: "Nach Regeln an Menschen eskalieren",
-    details: ["arbeitet nach vereinbarten Signalen", "fragt Pflichtinfos ab", "informiert die Bereitschaft oder den Fallback"],
+    name: "Notdienst",
+    hint: "Bei Notfällen wird sofort jemand informiert",
+    details: ["erkennt, wenn's dringend ist", "fragt Adresse und Problem ab", "ruft direkt die Bereitschaft an"],
   },
   {
     Icon: Calendar,
-    name: "Termin-Modul",
-    hint: "Terminwünsche sauber vorbereiten",
-    details: ["klärt Leistung + Wunschzeit", "bereitet Termin oder Rückruf vor", "erst nach einem bewiesenen Eingang ergänzen"],
+    name: "Termine",
+    hint: "Termine vorbereiten, ohne dass Sie telefonieren",
+    details: ["fragt, worum es geht und wann", "schlägt einen Termin vor", "kommt erst dazu, wenn das Telefon läuft"],
   },
   {
     Icon: MessageSquare,
-    name: "WhatsApp-Modul",
-    hint: "Nachrichten in Fälle überführen",
-    details: ["stellt Rückfragen im Chat", "erkennt fehlende Angaben", "bündelt Kontext und nächsten Schritt"],
+    name: "WhatsApp",
+    hint: "Auch Nachrichten werden vollständig",
+    details: ["stellt Rückfragen im Chat", "merkt, wenn was fehlt", "schickt die fertige Anfrage weiter"],
   },
   {
     Icon: Paperclip,
-    name: "Foto- & Datei-Modul",
-    hint: "Bilder mit Kontext einsammeln",
-    details: ["sendet Upload-Link", "fragt Kontext zum Bild ab", "verbindet Anhang und Vorgang"],
+    name: "Fotos & Dateien",
+    hint: "Fotos kommen mit Erklärung an, nicht allein",
+    details: ["schickt einen Upload-Link", "fragt, was auf dem Foto zu sehen ist", "hängt beides an den Vorgang"],
   },
 ];
 
@@ -80,18 +80,14 @@ export function ModulesSection() {
           {/* Left — intro */}
           <div>
             <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
-              04 — Modularer Anfrage-Flow
+              04 — Module
             </span>
             <h2 className="mt-4 mb-5 text-[clamp(32px,4vw,52px)] font-bold leading-[1.08] tracking-[-0.025em] text-ink">
-              Ein Eingang zuerst.<br />Weitere Module nur mit Grund.
+              Fangen Sie mit dem Telefon an. Der Rest kommt, wenn Sie ihn brauchen.
             </h2>
             <p className="max-w-[360px] text-[16px] leading-[1.7] text-inksoft">
-              Wir beginnen mit dem Kanal, an dem heute Anfragen oder Zeit verloren gehen. Erst wenn dieser Ablauf im Alltag funktioniert, kommt der nächste Baustein dazu.
+              Wir starten mit dem Kanal, wo heute am meisten liegen bleibt. Läuft das gut, kommen WhatsApp, Termine oder Fotos dazu.
             </p>
-            <span className="mt-7 inline-flex items-center gap-[7px] rounded-full border border-leafdimline bg-leafdim px-3 py-[5px] text-[11px] font-semibold uppercase tracking-[0.06em] text-leafbright">
-              <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
-              Eingang → Qualifizierung → Übergabe
-            </span>
           </div>
 
           {/* Right — one core module + extension tiles */}
@@ -112,19 +108,19 @@ export function ModulesSection() {
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2.5">
-                    <h3 className="text-[18px] font-bold text-ink">Telefon-Modul</h3>
+                    <h3 className="text-[18px] font-bold text-ink">Telefon</h3>
                     <span className="rounded-full border border-leafdimline bg-leafdim px-2 py-[3px] text-[10px] font-semibold uppercase tracking-[0.06em] text-leafbright">
-                      Häufigster Einstieg
+                      Womit Sie starten
                     </span>
                   </div>
                   <p className="mt-1 text-[13px] leading-snug text-inksoft">
-                    Sichert Kontakt, Anliegen, Ort und vereinbarte Pflichtfelder – und übergibt den Vorgang nach klaren Regeln ans Team.
+                    Nimmt ab, fragt Name, Ort und Problem ab und schickt es Ihrem Team.
                   </p>
                 </div>
               </div>
 
               <p className="mb-2 flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
-                <span className="h-1 w-1 rounded-full bg-leafbright" /> Ergebnis
+                <span className="h-1 w-1 rounded-full bg-leafbright" /> So kommt es an
               </p>
               <MiniVorgang />
             </motion.div>
@@ -133,7 +129,7 @@ export function ModulesSection() {
             <motion.div variants={rowV} className="mt-5">
               <p className="mb-3 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
                 <Plus size={12} strokeWidth={2} className="text-leafbright" />
-                Sinnvolle Erweiterungen · nachgewiesener Bedarf
+                Kommt später dazu, bei Bedarf
               </p>
               <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
                 {extensions.map((e) => (
@@ -171,7 +167,7 @@ export function ModulesSection() {
                 ))}
               </div>
               <p className="mt-4 text-[13px] text-faint">
-                Alle Module führen zum selben Ergebnis: ein vollständiger Vorgang mit Kontext und nächstem Schritt für Ihr Team.
+                Egal welches Modul: Ihr Team bekommt am Ende eine fertige Anfrage.
               </p>
             </motion.div>
           </motion.div>

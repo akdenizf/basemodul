@@ -11,54 +11,34 @@ const item: Variants = {
 
 const faqItems = [
   {
-    question: "Ist BaseModul eine reine Voice-Agentur?",
+    question: "Ist das ein Callcenter mit echten Menschen?",
     answer:
-      "Nein. Telefonie ist ein häufiger Einstieg, wenn dort heute Anfragen verloren gehen. BaseModul beginnt aber immer beim Prozess: Telefon, WhatsApp, Website oder Fotos werden zu einer vollständigen Teamübergabe.",
+      "Nein, ein KI-Programm nimmt ab. Es klingt wie ein Mensch am Telefon, entscheidet aber nichts selbst — es sammelt nur, was Ihr Team braucht.",
   },
   {
-    question: "Müssen wir direkt alle Module nutzen?",
+    question: "Müssen wir gleich alles nutzen?",
     answer:
-      "Nein. Wir starten mit genau einem Eingangskanal. Termin, Foto/Datei, Prioritätslogik oder ein weiterer Betriebs-Agent kommen erst dazu, wenn der erste Ablauf im Alltag nachweislich hilft.",
+      "Nein. Sie starten mit einem Kanal, meistens dem Telefon. WhatsApp, Termine oder Fotos kommen erst dazu, wenn Sie das wollen.",
   },
   {
-    question: "Wo landet die fertige Anfrage?",
+    question: "Wo kommt die fertige Anfrage bei uns an?",
     answer:
-      "Dort, wo Ihr Team heute arbeitet: zum Beispiel per E-Mail, WhatsApp, Sheet, Kalender, Ticket oder in einem bestehenden System. Zum Start wird kein neues Komplettsystem vorausgesetzt.",
+      "Da, wo Sie heute schon arbeiten — E-Mail, WhatsApp oder eine Tabelle. Sie brauchen kein neues System.",
   },
   {
-    question: "Bleibt unser Team in Kontrolle?",
+    question: "Entscheidet die KI irgendwas selbst?",
     answer:
-      "Ja. BaseModul sammelt, strukturiert und übergibt. Fachliche Entscheidungen, verbindliche Zusagen, Angebote und Verträge bleiben bei Ihrem Team und werden nicht autonom getroffen.",
+      "Nein. Sie sammelt Infos und gibt sie weiter. Zusagen, Angebote und Termine entscheidet immer Ihr Team.",
   },
   {
     question: "Was passiert bei einem echten Notfall?",
     answer:
-      "Der Ablauf arbeitet nach Ihren vorab vereinbarten Signalen, fragt die benötigten Informationen ab und informiert die zuständige menschliche Bereitschaft oder einen definierten Fallback. Die fachliche Entscheidung trifft Ihr Betrieb.",
+      "Die KI fragt das Nötigste ab und ruft sofort Ihre Bereitschaft an. Die Entscheidung, was zu tun ist, trifft Ihr Betrieb.",
   },
   {
-    question: "Wie läuft der 30-Tage-Pilot ab?",
+    question: "Was kostet der Einstieg?",
     answer:
-      "Zuerst legen wir Kanal, Pflichtfelder, Zuständigkeiten, Eskalationsregeln und Baseline fest. Danach testen wir Übergabe und Fallback. Im produktiven Teil dokumentieren wir reale Fälle und entscheiden am Ende mit der Scorecard über Ausbau, Nachschärfung oder Pause.",
-  },
-  {
-    question: "Was wird im Pilot gemessen?",
-    answer:
-      "Zum Beispiel relevante Eingänge, nicht angenommene oder unvollständige Anfragen, vollständige Übergaben, Zeit bis zur Teamübergabe, Rückruf- oder Terminquote, menschliche Korrekturen und Fallbacks. Nicht verfügbare Ausgangsdaten werden nicht geschätzt.",
-  },
-  {
-    question: "Was passiert nach den 30 Tagen?",
-    answer:
-      "Wenn Übergaben vollständig sind und das Team den Ablauf akzeptiert, erweitern wir bewusst. Wenn einzelne Fragen oder Regeln schwach sind, schärfen wir nach. Fehlt der nachweisbare Nutzen, vereinfachen oder pausieren wir statt künstlich ein Komplettsystem zu verkaufen.",
-  },
-  {
-    question: "Wie werden Datenschutz und Datenflüsse behandelt?",
-    answer:
-      "Vor dem Go-live dokumentieren wir Datenfluss, Speicherort, Löschfristen und Auftragsverarbeitung für den konkreten Pilot. Ohne geklärte Übergabe- und Datenschutzregeln geht kein Ablauf produktiv.",
-  },
-  {
-    question: "Kann später auch ein weiterer Betriebs-Agent dazukommen?",
-    answer:
-      "Ja, wenn ein weiterer operativer Engpass klar beschrieben und messbar ist – etwa Angebotsvorbereitung, Disposition, internes Wissen oder Reporting. Das wird dann separat gescoped, statt ungeplant in den ersten Pilot zu rutschen.",
+      "Ab 750 € einmalig für einen Kanal, plus 30 Tage testen. Details unten bei den Preisen.",
   },
 ];
 
