@@ -40,6 +40,13 @@ const config: Config = {
         leafaccent: "#2E6246",
         leafdim: "#EAF0E8",
         leafdimline: "#BED2C1",
+        // ── Operational Intelligence — Tiefe & Betonung (v4-Erweiterung) ────
+        forestdeep: "#16382B",
+        inkdeep: "#16231C",
+        signal: "#4CA66B",
+        signaldim: "#DCEEDF",
+        appointment: "#3E6E8C",
+        appointmentdim: "#E8EFF3",
       },
     },
   },

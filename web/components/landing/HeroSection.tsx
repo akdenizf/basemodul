@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   ArrowUpRight,
   CheckCircle2,
@@ -8,6 +11,7 @@ import {
   User,
   Wrench,
 } from "lucide-react";
+import { BaseModulFlow } from "./BaseModulFlow";
 
 const NOTE_FIELDS = [
   { Icon: User, label: "Kunde", value: "Familie Bauer · 0176 24•• •••" },
@@ -62,35 +66,56 @@ export function HeroSection() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[555px] lg:justify-self-end">
-          <div className="absolute -left-4 -top-4 h-20 w-20 rounded-full border border-[#D6E1D5] bg-[#EEF4ED]" />
-          <div className="work-paper relative rotate-[1deg] rounded-[6px] p-4 sm:p-6">
-            <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[#D9D8CF] pb-4">
-              <div className="flex items-center gap-3">
-                <span className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-leaf text-white"><PhoneIncoming size={20} strokeWidth={2} /></span>
+          {/* Scene: Eingang → BaseModul → Übergabe, als echte Pipeline statt einer einzelnen Karte */}
+          <div className="rounded-[8px] border border-line bg-inkdeep px-5 py-6 shadow-[0_24px_50px_-30px_rgba(22,35,28,0.55)] sm:px-7">
+            <p className="text-center font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-signaldim">
+              Eingang → Verarbeitung → Übergabe
+            </p>
+            <div className="mt-4 flex justify-center overflow-x-auto">
+              <BaseModulFlow size="full" orientation="horizontal" animated />
+            </div>
+          </div>
+
+          {/* Tiefengestaffelte Rückrufnotiz, an die Szene oben angebunden */}
+          <div className="relative mt-6">
+            <div className="absolute -right-2 -top-2 h-full w-full rounded-[6px] border border-[#D9D8CF] bg-[#F1F0E8]" />
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+              className="work-paper relative rotate-[1deg] rounded-[6px] p-4 sm:p-6"
+            >
+              <div className="flex flex-wrap items-start justify-between gap-3 border-b border-[#D9D8CF] pb-4">
+                <div className="flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-leaf text-white"><PhoneIncoming size={20} strokeWidth={2} /></span>
+                  <div>
+                    <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-faint">
+                      Neue Rückrufnotiz
+                      <span className="font-mono normal-case tracking-normal text-faint/80">#BM-2417</span>
+                    </p>
+                    <p className="mt-0.5 text-[15px] font-bold text-ink">Heizung ausgefallen · Rückruf benötigt</p>
+                  </div>
+                </div>
+                <span className="border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#A75420]">Dringend</span>
+              </div>
+
+              <div className="mt-2">
+                {NOTE_FIELDS.map(({ Icon, label, value }) => (
+                  <div key={label} className="grid grid-cols-[104px_1fr] gap-3 border-b border-dashed border-[#D9D8CF] py-3.5 sm:grid-cols-[124px_1fr]">
+                    <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.07em] text-faint"><Icon size={14} strokeWidth={1.9} /> {label}</span>
+                    <span className="text-[14px] font-semibold leading-snug text-ink">{value}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-5 flex flex-col gap-3 rounded-[5px] border border-[#BED2C1] bg-[#EAF0E8] p-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-faint">Neue Rückrufnotiz</p>
-                  <p className="mt-0.5 text-[15px] font-bold text-ink">Heizung ausgefallen · Rückruf benötigt</p>
+                  <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-leaf">Nächster Schritt</p>
+                  <p className="mt-1 text-[15px] font-bold text-ink">Bereitschaft informiert.</p>
                 </div>
+                <span className="inline-flex w-fit items-center gap-1.5 font-mono text-[12px] font-semibold text-leaf"><CheckCircle2 size={15} /> 22:49 · Übergabe bereit</span>
               </div>
-              <span className="border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#A75420]">Dringend</span>
-            </div>
-
-            <div className="mt-2">
-              {NOTE_FIELDS.map(({ Icon, label, value }) => (
-                <div key={label} className="grid grid-cols-[104px_1fr] gap-3 border-b border-dashed border-[#D9D8CF] py-3.5 sm:grid-cols-[124px_1fr]">
-                  <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.07em] text-faint"><Icon size={14} strokeWidth={1.9} /> {label}</span>
-                  <span className="text-[14px] font-semibold leading-snug text-ink">{value}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 flex flex-col gap-3 rounded-[5px] border border-[#BED2C1] bg-[#EAF0E8] p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-leaf">Nächster Schritt</p>
-                <p className="mt-1 text-[15px] font-bold text-ink">Bereitschaft informiert.</p>
-              </div>
-              <span className="inline-flex w-fit items-center gap-1.5 text-[12px] font-semibold text-leaf"><CheckCircle2 size={15} /> Übergabe bereit</span>
-            </div>
+            </motion.div>
           </div>
           <p className="mt-4 text-center text-[12px] font-medium text-inksoft">Nicht noch ein Tool. Ein Vorgang, mit dem Ihr Team arbeiten kann.</p>
         </div>

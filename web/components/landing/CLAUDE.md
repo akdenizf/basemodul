@@ -21,10 +21,14 @@ StorySeam bewusst nur an den drei großen Nähten. `ScrollStorySection` ist nach
 
 ## Design-Identität: „Handwerklich klar“ (verbindlich)
 
-> Die frühere „Dark Premium“-Richtung ist abgelöst. Maßgeblich sind
+> Die frühere „Dark Premium”-Richtung ist abgelöst. Maßgeblich sind
 > [`../../../DESIGN_BRIEF.md`](../../../DESIGN_BRIEF.md) und
 > [`../../../DESIGN_DIRECTION_HANDWERKSNAH.md`](../../../DESIGN_DIRECTION_HANDWERKSNAH.md).
 > Die aktive Next-Landing ist die kanonische visuelle Referenz.
+>
+> **Laufende Erweiterung:** [`../../../DESIGN_DIRECTION_OPERATIONAL_INTELLIGENCE.md`](../../../DESIGN_DIRECTION_OPERATIONAL_INTELLIGENCE.md)
+> — mehr Kontrast, Signature-Motiv `BaseModulFlow`, Mono-/Tiefen-Craft. Im
+> Hero bereits live, weitere Sektionen folgen als eigene Checkpoints.
 
 | Rolle | Wert |
 |---|---|
