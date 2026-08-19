@@ -55,16 +55,16 @@ export function WorkflowSection() {
                   s.accent
                     ? "border-leafdimline bg-leafdim"
                     : s.urgent
-                    ? "border-[#E5C8AB] bg-[#FCF0E5]"
+                    ? "border-priorityline bg-prioritydim"
                     : "border-line bg-paper2"
                 }`}
               >
                 <span className="relative flex items-center justify-center gap-2">
                   {s.accent && <Check size={15} className="text-leaf" strokeWidth={2.6} />}
-                  {s.urgent && <AlertTriangle size={15} className="text-[#A75420]" strokeWidth={2.4} />}
+                  {s.urgent && <AlertTriangle size={15} className="text-priority" strokeWidth={2.4} />}
                   <span
                     className={`text-[14px] font-semibold leading-snug ${
-                      s.accent ? "text-leaf" : s.urgent ? "text-[#A75420]" : "text-ink"
+                      s.accent ? "text-leaf" : s.urgent ? "text-priority" : "text-ink"
                     }`}
                   >
                     {s.text}

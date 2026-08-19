@@ -68,7 +68,7 @@ export function HeroSection() {
         <div className="relative mx-auto w-full max-w-[555px] lg:justify-self-end">
           {/* Schmale Flow-Leiste — Signature-Motiv, aber die Notiz darunter bleibt der klare Hauptfokus */}
           <div className="flex items-center gap-3 rounded-[8px] border border-line bg-inkdeep px-4 py-2.5 shadow-[0_16px_36px_-26px_rgba(22,35,28,0.5)]">
-            <span className="shrink-0 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-signaldim">
+            <span className="shrink-0 font-mono text-[10px] font-semibold uppercase tracking-[0.1em] text-signaldim">
               Eingang → Übergabe
             </span>
             <div className="flex flex-1 justify-end overflow-x-auto">
@@ -96,7 +96,7 @@ export function HeroSection() {
                     <p className="mt-0.5 text-[15px] font-bold text-ink">Heizung ausgefallen · Rückruf benötigt</p>
                   </div>
                 </div>
-                <span className="border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#A75420]">Dringend</span>
+                <span className="border border-priorityline bg-prioritydim px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-priority">Dringend</span>
               </div>
 
               <div className="mt-2">
@@ -108,7 +108,7 @@ export function HeroSection() {
                 ))}
               </div>
 
-              <div className="mt-5 flex flex-col gap-3 rounded-[5px] border border-[#BED2C1] bg-[#EAF0E8] p-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mt-5 flex flex-col gap-3 rounded-[5px] border border-leafdimline bg-leafdim p-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-leaf">Nächster Schritt</p>
                   <p className="mt-1 text-[15px] font-bold text-ink">Bereitschaft informiert.</p>

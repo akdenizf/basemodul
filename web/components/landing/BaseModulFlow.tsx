@@ -54,7 +54,7 @@ export function BaseModulFlow({
               <Icon size={compact ? 13 : 16} strokeWidth={1.9} />
             </span>
             {!compact && (
-              <span className="text-[9px] font-bold uppercase tracking-[0.08em] text-faint">
+              <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-faint">
                 {label}
               </span>
             )}
@@ -106,7 +106,7 @@ export function BaseModulFlow({
             {CHECKLIST.map((item) => (
               <span
                 key={item}
-                className="inline-flex items-center gap-1 font-mono text-[9px] font-semibold uppercase tracking-[0.05em] text-leaf"
+                className="inline-flex items-center gap-1 font-mono text-[10px] font-semibold uppercase tracking-[0.05em] text-leaf"
               >
                 <Check size={9} strokeWidth={3} />
                 {item}
@@ -131,7 +131,7 @@ export function BaseModulFlow({
           <Users size={compact ? 13 : 16} strokeWidth={1.9} />
         </span>
         {!compact && (
-          <span className="text-[9px] font-bold uppercase tracking-[0.08em] text-faint">Team</span>
+          <span className="text-[10px] font-bold uppercase tracking-[0.08em] text-faint">Team</span>
         )}
       </div>
     </div>

@@ -40,6 +40,10 @@ const config: Config = {
         leafaccent: "#2E6246",
         leafdim: "#EAF0E8",
         leafdimline: "#BED2C1",
+        // Priorität/Dringlichkeit — bislang als Roh-Hex wiederholt, jetzt Tokens
+        priority: "#A75420",
+        prioritydim: "#FCF0E5",
+        priorityline: "#E5C8AB",
         // ── Operational Intelligence — Tiefe & Betonung (v4-Erweiterung) ────
         forestdeep: "#16382B",
         inkdeep: "#16231C",

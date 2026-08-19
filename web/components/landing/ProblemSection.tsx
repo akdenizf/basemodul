@@ -60,7 +60,7 @@ export function ProblemSection() {
                 <span className="font-mono text-[10px] text-faint/80">19:42</span>
               </div>
               <p className="mt-2 text-[13px] leading-snug text-inksoft">{PROBLEMS[0].points[0]}</p>
-              <p className="mt-1 text-[13px] font-semibold leading-snug text-[#A75420]">{PROBLEMS[0].points[1]}</p>
+              <p className="mt-1 text-[13px] font-semibold leading-snug text-priority">{PROBLEMS[0].points[1]}</p>
             </motion.div>
 
             {/* Fragment 2 — WhatsApp-Chaos */}
@@ -89,13 +89,13 @@ export function ProblemSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.45, delay: 0.16, ease: "easeOut" }}
-              className="w-full rotate-[-1deg] rounded-[6px] border border-[#E5C8AB] bg-[#FCF0E5] p-4 shadow-[0_14px_30px_-26px_rgba(31,42,35,0.4)] lg:absolute lg:left-[8%] lg:top-[224px] lg:w-[280px]"
+              className="w-full rotate-[-1deg] rounded-[6px] border border-priorityline bg-prioritydim p-4 shadow-[0_14px_30px_-26px_rgba(31,42,35,0.4)] lg:absolute lg:left-[8%] lg:top-[224px] lg:w-[280px]"
             >
-              <span className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-[#A75420]">
+              <span className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.06em] text-priority">
                 <AlertTriangle size={13} strokeWidth={1.9} /> {PROBLEMS[2].title}
               </span>
-              <p className="mt-2 text-[13px] leading-snug text-[#A75420]">{PROBLEMS[2].points[0]}</p>
-              <p className="mt-1 text-[13px] font-semibold leading-snug text-[#A75420]">{PROBLEMS[2].points[1]}</p>
+              <p className="mt-2 text-[13px] leading-snug text-priority">{PROBLEMS[2].points[0]}</p>
+              <p className="mt-1 text-[13px] font-semibold leading-snug text-priority">{PROBLEMS[2].points[1]}</p>
             </motion.div>
           </div>
 

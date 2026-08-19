@@ -53,7 +53,7 @@ export function RequestArtifactSection() {
                 <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-faint">Rückruf- und Einsatznotiz</span>
                 <span className="font-mono text-[10px] text-faint">#BM-2417</span>
               </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-[#BED2C1] bg-[#EAF0E8] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.06em] text-leaf">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-leafdimline bg-leafdim px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.06em] text-leaf">
                 <Check size={11} strokeWidth={2.6} />
                 Bereit zur Übergabe
               </span>
@@ -67,11 +67,11 @@ export function RequestArtifactSection() {
                     {f.label}
                   </span>
                   {f.urgent ? (
-                    <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[12px] font-bold text-[#A75420]">
+                    <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-priorityline bg-prioritydim px-2.5 py-1 text-[12px] font-bold text-priority">
                       <AlertTriangle size={12} strokeWidth={2.2} /> {f.value}
                     </span>
                   ) : f.ok ? (
-                    <span className="inline-flex w-fit flex-wrap items-center gap-1.5 rounded-full border border-[#BED2C1] bg-[#EAF0E8] px-2.5 py-1 text-[12px] font-semibold text-leaf">
+                    <span className="inline-flex w-fit flex-wrap items-center gap-1.5 rounded-full border border-leafdimline bg-leafdim px-2.5 py-1 text-[12px] font-semibold text-leaf">
                       <Check size={12} strokeWidth={2.6} /> {f.value}
                       {f.time && <span className="font-mono text-[11px] font-semibold opacity-80">· {f.time}</span>}
                     </span>
