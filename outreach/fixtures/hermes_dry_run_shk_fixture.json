@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "purpose": "Hermes infrastructure dry run only — no lead creation, no outreach, no sending",
+  "company_name": "Muster Heiztechnik GmbH",
+  "company_is_fictional": true,
+  "segment": "SHK-Servicebetrieb",
+  "public_signal": "Fiktiver Website-Hinweis: Störung? Rufen Sie uns an.",
+  "hypothesis": "Bei hoher Auslastung könnten erste Angaben für Rückruf und Zuständigkeit unvollständig sein.",
+  "allowed_pilot_focus": {
+    "channel": "Telefon",
+    "use_case": "Störungs- oder Serviceanfrage",
+    "required_information": ["Kontakt", "Einsatzort", "Anliegen", "Rückrufwunsch"],
+    "human_fallback": "Kundenseitig zu definierende verantwortliche Person oder Bereitschaft"
+  },
+  "forbidden_output": [
+    "real contact data",
+    "price or tariff",
+    "24/7 guarantee",
+    "automated emergency promise",
+    "DSGVO or hosting guarantee",
+    "email sending",
+    "demo or meeting scheduling",
+    "lead record creation"
+  ],
+  "required_output_status": "human_review_required"
+}

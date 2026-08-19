@@ -45,7 +45,7 @@ Bei Widersprüchen gilt stets die höhere Quelle. Keine ältere Vorlage, Landing
 - Kein Preis, keine Vertragszusage und keine Daten-/Sicherheits- oder DSGVO-Zusage im Entwurf.
 - Keine absoluten Automatisierungs-, Erreichbarkeits-, Notdienst- oder Wirkungsgarantien.
 - Keine erfundenen Kundenfakten, Notdienstregeln, Betriebsgrößen oder Ansprechpartner.
-- Keine Dokumentanlage im Erstkontakt. Angebots-PDF und Scope erst nach qualifiziertem Gespräch und menschlicher Freigabe.
+- Keine Dokumentanlage im Erstkontakt. Angebots-PDF und Scope erst nach qualifiziertem Gespräch, menschlichem Review und menschlicher Freigabe.
 - Keine Lead-Dateien, CRM-Datensätze oder Versandlogs anfassen.
 
 ## 6. Output-Qualität
