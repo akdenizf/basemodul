@@ -100,7 +100,16 @@ Vor Go-live liegen mindestens diese Artefakte vor:
 - Dokumentation der Datenverarbeitung, Speicherorte und Löschfristen;
 - Go-live-Freigabe durch eine benannte Person auf Kundenseite.
 
-## 8. Angebotsformulierung
+## 8. Referenzdokumente
+
+| Dokument | Verwendung |
+|---|---|
+| `PRODUCT_ARCHITECTURE.md` | Positionierung, Angebotsstufen, Produktgrenzen und Pilotprinzip. |
+| `BASEMODUL_30_DAY_PILOT_SCOPE.md` | Kundenspezifischer Scope mit Preis, Kanal, Rollen, Fallback, Scorecard und Go-live-Check. |
+| `BASEMODUL_CLAIMS_REGISTER.md` | Freigegebene und nicht zulässige Aussagen für Demo, Angebot und Landing. |
+| `OFFER.md` | Aktuelle Angebots- und Preiskorridore; vor jeder verbindlichen Nutzung auf Konsistenz prüfen. |
+
+## 9. Angebotsformulierung
 
 > Wir starten mit einem Eingangskanal und machen sichtbar, ob aus verpassten oder unvollständigen Anfragen vollständige nächste Schritte werden. Erst wenn der Ablauf im Alltag funktioniert, erweitern wir ihn um weitere Module.
 
