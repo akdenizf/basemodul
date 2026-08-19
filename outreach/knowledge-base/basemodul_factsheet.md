@@ -1,4 +1,4 @@
-# BaseModule — Hermes Produkt-Factsheet
+# BaseModul — Hermes Produkt-Factsheet
 
 **Stand:** 2026-08-19
 **Zweck:** Verdichtete Wissensquelle für Research-, Discovery- und Follow-up-Entwürfe. Bei Widersprüchen gelten `BASEMODUL_CLAIMS_REGISTER.md`, `PRODUCT_ARCHITECTURE.md` und `BASEMODUL_30_DAY_PILOT_SCOPE.md` vorrangig.
@@ -7,13 +7,13 @@
 
 | Feld | Verbindliche Einordnung |
 |---|---|
-| Produktname | BaseModule |
+| Produktname | BaseModul |
 | Kategorie | Kontrollierter Anfrage-Eingang Pilot für KMU-Servicebetriebe |
 | Erste Zielgruppe | SHK-, Heizungs-, Klima- und notdienstnahe Servicebetriebe |
 | Mögliche Rollen | Inhaber, Betriebsleitung, Service-/Dispositionsverantwortung |
 | Erster Kaufpfad | Ein Kanal, ein Use Case, 30 Tage, menschlicher Fallback, gemeinsame Scorecard |
 
-> **BaseModule testet mit einem Servicebetrieb einen klar abgegrenzten Anfrage-Eingang, damit vereinbarte Anfragen vollständig, priorisiert und nachvollziehbar beim richtigen Team ankommen.**
+> **BaseModul testet mit einem Servicebetrieb einen klar abgegrenzten Anfrage-Eingang, damit vereinbarte Anfragen vollständig, priorisiert und nachvollziehbar beim richtigen Team ankommen.**
 
 ## Was der erste Pilot umfasst
 
@@ -36,7 +36,7 @@ Hermes nennt im Erstkontakt keinen Preis. Nach qualifiziertem Gespräch kann ein
 
 Datenkategorien, tatsächliche Anbieter, Speicherorte, Aufzeichnungsregeln, Löschfristen und Sicherheitsmaßnahmen werden vor Go-live gegen den konkreten Kanal und Pilot technisch sowie rechtlich geprüft. Hermes darf daraus keine pauschale Datenschutz- oder Hostingzusage ableiten.
 
-## Was BaseModule nicht ist
+## Was BaseModul nicht ist
 
 - kein CRM-, ERP- oder vollständiger Plattform-Ersatz;
 - keine pauschale Personalersatz-Automation;

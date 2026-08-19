@@ -1,4 +1,4 @@
-# BaseModule — Go-live-Freigabe für den Anfrage-Eingang Pilot
+# BaseModul — Go-live-Freigabe für den Anfrage-Eingang Pilot
 
 > **Arbeitsentwurf — vor verbindlicher Nutzung technisch, kaufmännisch und rechtlich prüfen.**
 
@@ -9,15 +9,15 @@
 | **Erster Eingangskanal** | `{{Telefon / WhatsApp / Web / Foto-Datei}}` |
 | **Geplanter Produktivstart** | `{{TT.MM.JJJJ, Uhrzeit}}` |
 | **Kundenseitige Pilotverantwortung** | `{{Name, Rolle, Telefon, E-Mail}}` |
-| **BaseModule Delivery Owner** | `{{Name, Telefon, E-Mail}}` |
+| **BaseModul Delivery Owner** | `{{Name, Telefon, E-Mail}}` |
 
 ## Freigabegrundsatz
 
-Diese Checkliste bestätigt, dass der vereinbarte BaseModule-Pilot technisch und organisatorisch für den Produktivstart vorbereitet wurde. Sie ersetzt keine erforderlichen Angebots-, Vertrags- oder Datenschutzunterlagen. Ohne dokumentierte Freigabe wird der vereinbarte Eingang nicht produktiv aktiviert.
+Diese Checkliste bestätigt, dass der vereinbarte BaseModul-Pilot technisch und organisatorisch für den Produktivstart vorbereitet wurde. Sie ersetzt keine erforderlichen Angebots-, Vertrags- oder Datenschutzunterlagen. Ohne dokumentierte Freigabe wird der vereinbarte Eingang nicht produktiv aktiviert.
 
 ## A. Scope und Eingangskanal
 
-| Prüfung | Kundenseite | BaseModule | Bemerkung |
+| Prüfung | Kundenseite | BaseModul | Bemerkung |
 |---|:---:|:---:|---|
 | Pilotbereich, Use Case und erster Kanal stimmen mit dem aktuellen Scope überein. | ☐ | ☐ | `{{}}` |
 | Eingangskanal, Trigger und Auslöse-/Erreichbarkeitsregel wurden geprüft. | ☐ | ☐ | `{{}}` |
@@ -26,7 +26,7 @@ Diese Checkliste bestätigt, dass der vereinbarte BaseModule-Pilot technisch und
 
 ## B. Anfrage und Übergabe
 
-| Prüfung | Kundenseite | BaseModule | Bemerkung |
+| Prüfung | Kundenseite | BaseModul | Bemerkung |
 |---|:---:|:---:|---|
 | Pflichtinformationen für vollständige Anfragen sind bestätigt. | ☐ | ☐ | `{{}}` |
 | Kategorien, Priorität und gewünschter nächster Schritt sind dokumentiert. | ☐ | ☐ | `{{}}` |
@@ -35,7 +35,7 @@ Diese Checkliste bestätigt, dass der vereinbarte BaseModule-Pilot technisch und
 
 ## C. Menschlicher Fallback und kritische Fälle
 
-| Prüfung | Kundenseite | BaseModule | Bemerkung |
+| Prüfung | Kundenseite | BaseModul | Bemerkung |
 |---|:---:|:---:|---|
 | Eine verantwortliche Person für unklare Anfragen ist erreichbar benannt. | ☐ | ☐ | `{{Name / Team}}` |
 | Kundenspezifische Regel für potenziell kritische Fälle ist schriftlich bestätigt. | ☐ | ☐ | `{{Regel / Verweis}}` |
@@ -44,7 +44,7 @@ Diese Checkliste bestätigt, dass der vereinbarte BaseModule-Pilot technisch und
 
 ## D. Daten, Zugänge und Freigaben
 
-| Prüfung | Kundenseite | BaseModule | Bemerkung |
+| Prüfung | Kundenseite | BaseModul | Bemerkung |
 |---|:---:|:---:|---|
 | Datenquelle, Berechtigung und zulässiger Pilotzweck sind festgelegt. | ☐ | ☐ | `{{}}` |
 | Erforderliche Angebots-, Vertrags- und Datenschutzunterlagen sind geprüft bzw. vereinbart. | ☐ | ☐ | `{{Verweis}}` |
@@ -82,4 +82,4 @@ Diese Checkliste bestätigt, dass der vereinbarte BaseModule-Pilot technisch und
 |---|---|---|---|
 | Kundenseitige Pilotverantwortung | `{{}}` | `{{}}` | ☐ |
 | Kundenseitige Fallback-/Bereitschaftsverantwortung | `{{}}` | `{{}}` | ☐ |
-| BaseModule Delivery Owner | `{{}}` | `{{}}` | ☐ |
+| BaseModul Delivery Owner | `{{}}` | `{{}}` | ☐ |

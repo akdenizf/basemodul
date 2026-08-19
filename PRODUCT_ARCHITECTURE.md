@@ -18,7 +18,7 @@ AGENTEQ bleibt die Dachmarke, der Vertrauensrahmen und bei Bedarf der Absender f
 
 Im Marketing und im Erstgespräch wird nicht das gesamte Modulregal verkauft. Der Einstieg ist ein sichtbares, wirtschaftlich relevantes Problem:
 
-> **Kein qualifizierter Anruf und keine Anfrage geht verloren.**
+> **Wir beginnen mit einem Eingangskanal, an dem heute Anfragen oder Zeit verloren gehen, und prüfen die Wirkung mit einer Scorecard.**
 
 Ein Betrieb startet mit **einem Eingangskanal**, an dem heute Anfragen oder Zeit verloren gehen. BaseModul nimmt die Anfrage auf, fragt die nötigen Informationen ab, priorisiert sie und übergibt sie an die richtige Person oder den richtigen Prozess.
 
@@ -110,7 +110,7 @@ BaseModul kann integrieren und erweitern, aber der erste Wertnachweis bleibt kle
 
 ### Gute Formulierungen
 
-- „Kein qualifizierter Anruf und keine relevante Anfrage geht verloren.“
+- „Wir beginnen mit einem Eingangskanal, an dem heute Anfragen oder Zeit verloren gehen, und prüfen die Wirkung mit einer Scorecard.“
 - „Ihr Team bekommt nur noch vollständige Rückrufe, Termine und Fälle mit Kontext.“
 - „Wir beginnen mit einem Eingangskanal und erweitern nur, wenn der Ablauf nachweislich besser wird.“
 - „Voice ist möglich, wenn Telefonie Ihr Engpass ist. BaseModul beginnt aber immer bei Ihrem Prozess, nicht bei einem Tool.“

@@ -1,4 +1,4 @@
-# BaseModule — Hermes Pilot & Offer Knowledge
+# BaseModul — Hermes Pilot & Offer Knowledge
 
 > **Zweck:** Verbindliche Wissensquelle für Hermes bei Research, Discovery-Vorbereitung und Follow-up-Entwürfen. Diese Datei erlaubt weder Lead-Recherche, Versand noch die Erteilung rechtlicher oder verbindlicher Produktzusagen.
 
@@ -14,7 +14,7 @@
 
 ## 2. Produktwahrheit in einem Satz
 
-> **BaseModule testet mit einem Servicebetrieb einen klar abgegrenzten Anfrage-Eingang, damit vereinbarte Anfragen vollständig, priorisiert und nachvollziehbar beim richtigen Team ankommen.**
+> **BaseModul testet mit einem Servicebetrieb einen klar abgegrenzten Anfrage-Eingang, damit vereinbarte Anfragen vollständig, priorisiert und nachvollziehbar beim richtigen Team ankommen.**
 
 Der erste Kaufpfad ist kein großes Systemprojekt. Er ist ein kontrollierter **30-Tage-Pilot** mit einem Eingangskanal, einem konkreten Use Case, einer menschlichen Fallback-Regel und einer gemeinsamen Scorecard.
 
@@ -25,7 +25,7 @@ Der erste Kaufpfad ist kein großes Systemprojekt. Er ist ein kontrollierter **3
 | Erstkontakt | „Wir schauen, ob ein klar abgegrenzter Anfrage-Eingang für Ihren Betrieb einen relevanten Engpass adressieren könnte.“ |
 | Discovery | „Im Pilot wird ein Kanal und ein Use Case gemeinsam festgelegt; unklare oder kritische Fälle bleiben menschlich geführt.“ |
 | Nach qualifiziertem Interesse | „Der Pilot läuft 30 Tage und endet mit einer gemeinsamen Auswertung statt einer unklaren offenen Einführung.“ |
-| Produktwirkung | „BaseModule erfasst die vereinbarten Informationen und übergibt sie nach den gemeinsam festgelegten Regeln an die zuständige Person.“ |
+| Produktwirkung | „BaseModul erfasst die vereinbarten Informationen und übergibt sie nach den gemeinsam festgelegten Regeln an die zuständige Person.“ |
 | Dokumente | „Nach einem passenden Gespräch kann der menschliche Ansprechpartner einen kundenspezifischen Pilot-Scope vorbereiten.“ |
 
 ## 4. Verbotene oder prüfpflichtige Aussagen

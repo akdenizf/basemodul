@@ -1,5 +1,9 @@
 # Callfolio v5.1 - Sales Arguments & Marketing Highlights
 
+> **LEGACY — NICHT FÜR SALES, OUTREACH, AGENTEN, LANDINGPAGES ODER KUNDENKOMMUNIKATION VERWENDEN.**
+>
+> Dieser Text dokumentiert den Callfolio-v5.1-Stand vom Januar 2026. Er enthält überholte Produktpositionierung, nicht freigegebene Wirkungs-, Datenschutz-, Verfügbarkeits- und ROI-Claims sowie einen überholten Angebotsweg. Für aktive Aussagen gelten ausschließlich `PRODUCT_ARCHITECTURE.md`, `BASEMODUL_CLAIMS_REGISTER.md`, `OFFER.md` und die aktuellen Pilotunterlagen.
+
 ## Executive Summary
 
 **Callfolio ist das "Digitale Vorzimmer" für deutsche Hausverwaltungen** - ein KI-gestütztes Voice-Intake-System, das aus dem Telefon-Chaos ein strukturiertes, nachvollziehbares Ticketing-System macht.

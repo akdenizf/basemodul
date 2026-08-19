@@ -1,4 +1,4 @@
-# BaseModule — Hermes Outreach Template Infrastructure
+# BaseModul — Hermes Outreach Template Infrastructure
 
 **Stand:** 2026-08-19
 **Zweck:** Vorlagen ausschließlich für menschlich zu prüfende Entwürfe. Diese Datei berechtigt nicht zu Recherche, Versand, Terminierung oder Follow-up-Ausführung.
@@ -50,7 +50,7 @@ Guten Tag {Anrede} {Nachname},
 
 bei {Firmenname} ist {öffentliches_signal} sichtbar. Ich frage mich deshalb: Kommen beim ersten Kontakt immer die Informationen an, die Ihr Team für Rückruf, Zuordnung und nächsten Schritt wirklich braucht?
 
-BaseModule testet mit Betrieben einen klar abgegrenzten Anfrage-Eingang statt eines großen Systemprojekts.
+BaseModul testet mit Betrieben einen klar abgegrenzten Anfrage-Eingang statt eines großen Systemprojekts.
 
 Ist das bei Ihnen bereits sauber gelöst, oder gibt es dort noch manuelle Nacharbeit?
 

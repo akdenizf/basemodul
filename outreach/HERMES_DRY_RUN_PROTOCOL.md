@@ -1,4 +1,4 @@
-# BaseModule — Hermes Dry-Run Protocol
+# BaseModul — Hermes Dry-Run Protocol
 
 > **Zweck:** Die aktualisierten Hermes-Quellen vor ihrem ersten Einsatz gegen einen vollständig synthetischen SHK-Testfall prüfen. Dieser Ablauf erstellt keine Leads, versendet nichts und nutzt keine realen Kunden- oder Kontaktdaten.
 

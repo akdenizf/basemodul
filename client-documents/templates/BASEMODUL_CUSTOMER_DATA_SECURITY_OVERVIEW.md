@@ -1,4 +1,4 @@
-# BaseModule — Daten- und Sicherheitsübersicht für den Pilot
+# BaseModul — Daten- und Sicherheitsübersicht für den Pilot
 
 > **Arbeitsentwurf vor Technik- und Rechtsprüfung.** Diese Übersicht erklärt den vorgesehenen Pilotablauf. Sie ersetzt keine Auftragsverarbeitungsvereinbarung, individuelle Datenschutzberatung oder technische Vertragsanlage.
 
@@ -12,7 +12,7 @@
 
 ## 1. Wofür Daten im Pilot verwendet werden
 
-BaseModule unterstützt ausschließlich den vereinbarten Anfrage-Eingang. Die Datenverarbeitung soll sich auf Aufnahme, Strukturierung, Übergabe und die gemeinsame Pilot-Scorecard beschränken.
+BaseModul unterstützt ausschließlich den vereinbarten Anfrage-Eingang. Die Datenverarbeitung soll sich auf Aufnahme, Strukturierung, Übergabe und die gemeinsame Pilot-Scorecard beschränken.
 
 | Verarbeitungsschritt | Zweck | Beispieldaten | Kundenspezifische Festlegung vor Go-live |
 |---|---|---|---|
@@ -36,7 +36,7 @@ Der Kunde bleibt für die fachlichen Betriebsregeln und die rechtliche Grundlage
 
 ## 3. Transparenz und menschliche Verantwortung
 
-Wenn der vereinbarte Kanal einen KI-gestützten Assistenten nutzt, wird dessen Rolle im Kundenkontakt transparent gestaltet. BaseModule bereitet Anfragen nach den vereinbarten Regeln vor und übergibt sie. Fachliche Diagnosen, verbindliche Preise, Verträge, Termine oder kritische operative Entscheidungen bleiben beim Kunden und seinen benannten Verantwortlichen.
+Wenn der vereinbarte Kanal einen KI-gestützten Assistenten nutzt, wird dessen Rolle im Kundenkontakt transparent gestaltet. BaseModul bereitet Anfragen nach den vereinbarten Regeln vor und übergibt sie. Fachliche Diagnosen, verbindliche Preise, Verträge, Termine oder kritische operative Entscheidungen bleiben beim Kunden und seinen benannten Verantwortlichen.
 
 ## 4. Datenminimierung und Zugriff
 
@@ -44,7 +44,7 @@ Wenn der vereinbarte Kanal einen KI-gestützten Assistenten nutzt, wird dessen R
 |---|---|
 | **Datenminimierung** | Nur Informationen erfassen, die für den vereinbarten Eingang, die Übergabe und die Scorecard erforderlich sind. |
 | **Zweckbindung** | Pilotdaten nur zur vereinbarten Anfragebearbeitung und Pilotbewertung verwenden. |
-| **Zugriff** | Zugriffe auf kundenseitig benannte Rollen und für Delivery notwendige BaseModule-Rollen begrenzen. |
+| **Zugriff** | Zugriffe auf kundenseitig benannte Rollen und für Delivery notwendige BaseModul-Rollen begrenzen. |
 | **Menschlicher Fallback** | Unklare oder kritische Fälle folgen einer kundenspezifischen menschlichen Regel. |
 | **Scope-Änderung** | Neue Kanäle, Integrationen, Kategorien oder Datenquellen erst nach dokumentierter Prüfung und Freigabe. |
 
@@ -62,7 +62,7 @@ Konkrete technische und organisatorische Maßnahmen sowie tatsächlich eingesetz
 
 ## 6. Ansprechpartner bei Fragen
 
-| Thema | Kundenseite | BaseModule / AGENTEQ |
+| Thema | Kundenseite | BaseModul / AGENTEQ |
 |---|---|---|
 | Pilotablauf und Scope | `{{Name, E-Mail}}` | `{{Name, E-Mail}}` |
 | Anfragequalität und Fallback | `{{Name, E-Mail}}` | `{{Name, E-Mail}}` |

@@ -1,13 +1,13 @@
-# BaseModule — Unterauftragsverarbeiterliste
+# BaseModul — Unterauftragsverarbeiterliste
 
-> **Arbeitsentwurf vor Technik-, Vertrags- und Rechtsprüfung.** Diese Vorlage wird für jeden produktiven BaseModule-Pilot erst nach Abgleich mit der tatsächlichen Kanal-, Daten- und Integrationsarchitektur vervollständigt. Sie ist keine Zusage, dass ein bestimmter Dienst oder Standort in jedem Pilot eingesetzt wird.
+> **Arbeitsentwurf vor Technik-, Vertrags- und Rechtsprüfung.** Diese Vorlage wird für jeden produktiven BaseModul-Pilot erst nach Abgleich mit der tatsächlichen Kanal-, Daten- und Integrationsarchitektur vervollständigt. Sie ist keine Zusage, dass ein bestimmter Dienst oder Standort in jedem Pilot eingesetzt wird.
 
 | Scope-ID | `{{BM-PILOT-JJJJ-NNN}}` |
 |---|---|
 | Kanal | `{{Telefon / WhatsApp / Web / Foto-Datei}}` |
 | Version / Stand | `{{Version, Datum}}` |
 | Freigegeben durch Kunde | `{{Name, Datum}}` |
-| Freigegeben durch BaseModule | `{{Name, Datum}}` |
+| Freigegeben durch BaseModul | `{{Name, Datum}}` |
 
 ## 1. Freigaberegel
 
@@ -49,7 +49,7 @@ Ein Dienst wird nur dann für den konkreten Pilot freigegeben, wenn die folgende
 | Informationsweg bei geplanter Änderung | `{{E-Mail / Kundenportal / Vertragsnachtrag}}` |
 | Informationsfrist | `{{}}` |
 | Kundenseitiger Ansprechpartner | `{{}}` |
-| BaseModule-Verantwortung | `{{}}` |
+| BaseModul-Verantwortung | `{{}}` |
 
 Jede Änderung wird vor Produktivnutzung dokumentiert. Wenn ein erforderlicher Dienst nicht freigegeben ist, wird der betroffene Funktionsumfang nicht aktiviert.
 

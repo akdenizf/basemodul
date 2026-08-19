@@ -1,4 +1,4 @@
-# Rechtsquellen und Review-Notizen für BaseModule-Kundendokumente
+# Rechtsquellen und Review-Notizen für BaseModul-Kundendokumente
 
 **Status:** Arbeitsnotizen — keine Rechtsberatung und keine rechtsverbindliche Vertragsgrundlage ohne fachliche Prüfung.
 **Stand:** 19. August 2026

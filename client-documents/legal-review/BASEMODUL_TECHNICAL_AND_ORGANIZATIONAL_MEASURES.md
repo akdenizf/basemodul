@@ -1,8 +1,8 @@
-# BaseModule — Technische und organisatorische Maßnahmen (TOMs)
+# BaseModul — Technische und organisatorische Maßnahmen (TOMs)
 
 > **Arbeitsentwurf vor Technik- und Rechtsprüfung.** Diese Anlage ist nur nach Abgleich mit der tatsächlichen Pilotarchitektur, den eingesetzten Dienstleistern, Zugriffskonzepten und dem konkreten Kundenscope als Vertragsanlage zu verwenden.
 
-| Geltung | BaseModule Anfrage-Eingang Pilot |
+| Geltung | BaseModul Anfrage-Eingang Pilot |
 |---|---|
 | Scope-ID | `{{BM-PILOT-JJJJ-NNN}}` |
 | Kanal | `{{Telefon / WhatsApp / Web / Foto-Datei}}` |
@@ -53,8 +53,8 @@ Eine Maßnahme gilt erst als **bestätigt**, wenn ihre tatsächliche Umsetzung, 
 |---|---|---|---|
 | Kundenseitige Pilotverantwortung | Scope, Übergabe, Fallback und Scorecard steuern. | Kundeneigene Pilotdaten gemäß Rollenmodell. | `{{}}` |
 | Kundenseitige Bearbeitungsrolle | Anfragen bearbeiten und Rückmeldung geben. | Nur erforderliche Anfragen-/Kontextdaten. | `{{}}` |
-| BaseModule Delivery Owner | Konfiguration, Test, Go-live und qualitätsbezogene Pilotbetreuung. | Nur notwendiger kundenbezogener Pilotzugriff. | `{{}}` |
-| BaseModule technische Rolle | Störung, Sicherheit und technisch notwendige Wartung. | Zeitlich und fachlich begrenzter Adminzugriff. | `{{}}` |
+| BaseModul Delivery Owner | Konfiguration, Test, Go-live und qualitätsbezogene Pilotbetreuung. | Nur notwendiger kundenbezogener Pilotzugriff. | `{{}}` |
+| BaseModul technische Rolle | Störung, Sicherheit und technisch notwendige Wartung. | Zeitlich und fachlich begrenzter Adminzugriff. | `{{}}` |
 | Externer Dienstleister | Nur gemäß geprüfter Unterauftragsverarbeitungsvereinbarung. | Nur technisch erforderlicher Umfang. | `{{}}` |
 
 ## 5. Pflege

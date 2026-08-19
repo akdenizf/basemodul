@@ -1,4 +1,4 @@
-# BaseModule Landing-Refactor: Ausführungsplan
+# BaseModul Landing-Refactor: Ausführungsplan
 
 ## Zielbild
 
@@ -51,7 +51,7 @@ Die Umsetzung ist erst fertig, wenn die folgenden Aussagen bei einem kurzen visu
 
 | Kriterium | Prüffrage |
 |---|---|
-| Klarheit | Versteht man im ersten Viewport für wen BaseModule ist, welches Problem es löst und was als Nächstes passiert? |
+| Klarheit | Versteht man im ersten Viewport für wen BaseModul ist, welches Problem es löst und was als Nächstes passiert? |
 | Leichtigkeit | Kann man den Nutzen verstehen, ohne „Modul“, „Vorgang“, „Eskalationslogik“, „Webhook“ oder „n8n“ gelesen zu haben? |
 | Keine Ticket-Anmutung | Wirkt die erste Ergebnisdarstellung wie eine hilfreiche Anfrage für das Team statt wie ein System-Dashboard? |
 | Visuelle Kontinuität | Wirkt die Seite noch eindeutig wie die vorhandene Premium-Landing, nicht wie ein neues Theme? |
@@ -67,4 +67,4 @@ Eine separate, zweite Iteration ist sinnvoll, wenn nach dem ersten Build noch ei
 
 ## Grenzen des Refactors
 
-Es werden keine Backend-Routen reaktiviert, keine neuen externen Dienste oder Abhängigkeiten eingeführt, keine realen Nachrichten versendet und keine Produktclaims erfunden. AGENTEQ bleibt Vertrauens-/Anbieter-Layer; BaseModule bleibt die sichtbare Marke.
+Es werden keine Backend-Routen reaktiviert, keine neuen externen Dienste oder Abhängigkeiten eingeführt, keine realen Nachrichten versendet und keine Produktclaims erfunden. AGENTEQ bleibt Vertrauens-/Anbieter-Layer; BaseModul bleibt die sichtbare Marke.

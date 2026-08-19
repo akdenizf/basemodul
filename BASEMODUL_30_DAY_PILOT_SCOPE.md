@@ -1,4 +1,4 @@
-# BaseModule Anfrage-Eingang Pilot — Scope & Success Plan
+# BaseModul Anfrage-Eingang Pilot — Scope & Success Plan
 
 > **Arbeitsentwurf — vor verbindlicher Nutzung in Angebot oder Vertrag rechtlich und kaufmännisch prüfen.** Dieses Dokument beschreibt den gemeinsam geplanten Pilotumfang und ersetzt keine erforderlichen Vertrags-, Datenschutz- oder Auftragsverarbeitungsunterlagen.
 
@@ -7,7 +7,7 @@
 | **Kunde / Betrieb** | `{{Firmenname}}` |
 | **Branche / Gewerk** | `{{z. B. SHK, Elektro, Kfz, Facility}}` |
 | **Pilotverantwortung Kunde** | `{{Name, Rolle, E-Mail, Telefon}}` |
-| **BaseModule Delivery Owner** | `{{Name, E-Mail, Telefon}}` |
+| **BaseModul Delivery Owner** | `{{Name, E-Mail, Telefon}}` |
 | **Scope-ID** | `BM-PILOT-{{JJJJ}}-{{NNN}}` |
 | **Freigabedatum** | `{{TT.MM.JJJJ}}` |
 | **Produktivstart** | `{{TT.MM.JJJJ}}` |
@@ -19,7 +19,7 @@
 
 > `{{Zum Beispiel: Wenn das Team im Einsatz ist oder außerhalb der Bürozeit anruft, gehen Anfragen in Mailbox, Notizen oder unvollständigen WhatsApp-Nachrichten verloren. Dem Team fehlen Kontakt, Einsatzort, Problem und Dringlichkeit für einen sauberen nächsten Schritt.}}`
 
-BaseModule führt im Pilot kein neues Gesamt-CRM und keine allgemeine KI-Plattform ein. Der Pilot prüft, ob **ein klar abgegrenzter Eingangskanal** relevante Kundenanfragen in vollständige Rückrufe, Termine oder priorisierte Team-Übergaben verwandelt.
+BaseModul führt im Pilot kein neues Gesamt-CRM und keine allgemeine KI-Plattform ein. Der Pilot prüft, ob **ein klar abgegrenzter Eingangskanal** relevante Kundenanfragen in vollständige Rückrufe, Termine oder priorisierte Team-Übergaben verwandelt.
 
 ## 2. Das gewünschte Ergebnis nach 30 Tagen
 
@@ -42,7 +42,7 @@ Der Pilot wird nicht an garantierten Umsatz- oder ROI-Versprechen gemessen. Maß
 | **Laufzeit im Preis** | 30 Tage produktiver Pilot gemäß diesem Scope. |
 | **Laufende externe Nutzungskosten** | Telefonie, Messaging, WhatsApp oder weitere externe Infrastruktur nur nach transparenter, vorab abgestimmter Regel. |
 | **Möglicher Dauerbetrieb** | Nach Tag 30: einfacher Eingangskanal typischerweise ab 299–499 €/Monat; genauer Tarif nur im individuellen Folgeangebot. |
-| **Menschlicher Fallback** | Kundenseitig benannte Person, Bereitschaft oder Teamregel; BaseModule trifft keine fachlich verbindliche Endentscheidung. |
+| **Menschlicher Fallback** | Kundenseitig benannte Person, Bereitschaft oder Teamregel; BaseModul trifft keine fachlich verbindliche Endentscheidung. |
 
 ### Kaufmännische Ergänzungen vor Freigabe
 
@@ -53,7 +53,7 @@ Der Pilot wird nicht an garantierten Umsatz- oder ROI-Versprechen gemessen. Maß
 | **Folgetarif oder Pause nach Tag 30** | `{{Betriebsangebot / Entscheidungsdatum}}` |
 | **Rechnungsadresse / USt.-Angaben** | `{{Ergänzen}}` |
 
-## 4. Was BaseModule im Pilot liefert
+## 4. Was BaseModul im Pilot liefert
 
 | Bestandteil | Konkretes Ergebnis |
 |---|---|
@@ -83,9 +83,9 @@ Neue Anforderungen werden gemeinsam als **A — Fehlerkorrektur**, **B — begre
 
 ## 6. Zuständigkeiten und sichere Übergabe
 
-BaseModule strukturiert die Anfrage und bereitet einen nächsten Schritt vor. Fachliche, rechtliche, kaufmännische und operative Entscheidungen verbleiben beim Kunden und den benannten Verantwortlichen.
+BaseModul strukturiert die Anfrage und bereitet einen nächsten Schritt vor. Fachliche, rechtliche, kaufmännische und operative Entscheidungen verbleiben beim Kunden und den benannten Verantwortlichen.
 
-| Thema | Kundenseitige Verantwortung | BaseModule-Verantwortung |
+| Thema | Kundenseitige Verantwortung | BaseModul-Verantwortung |
 |---|---|---|
 | **Pilotentscheidung** | Scope, Rollen und Start freigeben. | Scope dokumentieren und Delivery koordinieren. |
 | **Kundenanfrage bearbeiten** | Rückruf, Termin, Einsatz, Angebot oder Priorität final entscheiden. | Vereinbarte Informationen aufnehmen, strukturieren und übergeben. |
@@ -144,7 +144,7 @@ Die Scorecard dient der Prozessentscheidung — nicht der Leistungsüberwachung 
 
 Vor Produktivstart werden die folgenden Punkte von beiden Seiten bestätigt. Erforderliche vertragliche, datenschutzrechtliche und organisatorische Freigaben werden vor Aktivierung durch die jeweils zuständigen Stellen geklärt.
 
-| Prüfung | Kundenseite | BaseModule |
+| Prüfung | Kundenseite | BaseModul |
 |---|---:|---:|
 | Eingangskanal und Weiterleitungs-/Triggerlogik getestet | ☐ | ☐ |
 | Übergabeempfänger, Zeitfenster und Fallback benannt | ☐ | ☐ |
@@ -172,4 +172,4 @@ Mit den nachstehenden Namen bestätigen die Beteiligten, dass der beschriebene P
 |---|---|---|---|
 | Kundenseitige Pilotverantwortung | `{{}}` | `{{}}` | ☐ |
 | Kundenseitige Fallback-/Bereitschaftsverantwortung | `{{}}` | `{{}}` | ☐ |
-| BaseModule Delivery Owner | `{{}}` | `{{}}` | ☐ |
+| BaseModul Delivery Owner | `{{}}` | `{{}}` | ☐ |

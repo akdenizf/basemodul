@@ -1,17 +1,17 @@
-# Entwurf — Auftragsverarbeitungsvereinbarung für den BaseModule-Pilot
+# Entwurf — Auftragsverarbeitungsvereinbarung für den BaseModul-Pilot
 
 > **Arbeitsentwurf vor Rechts- und Technikprüfung. Nicht unterschriftsreif und nicht ohne anwaltliche Prüfung verwenden.** Firmenbezeichnungen, Anschriften, Datenfluss, Unterauftragsverarbeiter, TOMs, Löschfristen und Sondervereinbarungen müssen vor Kundennutzung vollständig geprüft und ergänzt werden.
 
 | Rolle | Partei |
 |---|---|
 | **Verantwortlicher** | `{{Kunde / Betrieb mit vollständiger Firma, Anschrift, Vertretung}}` |
-| **Auftragsverarbeiter** | `{{rechtstragende AGENTEQ-/BaseModule-Gesellschaft mit vollständiger Firma, Anschrift, Vertretung}}` |
+| **Auftragsverarbeiter** | `{{rechtstragende AGENTEQ-/BaseModul-Gesellschaft mit vollständiger Firma, Anschrift, Vertretung}}` |
 | **Hauptvertrag / Pilot-Scope** | `{{Verweis auf Angebot, Scope-ID und Datum}}` |
 | **Beginn / Dauer** | `{{Beginn}}` bis `{{Pilotende bzw. Beendigung Hauptvertrag}}` |
 
 ## 1. Gegenstand und Dauer
 
-Der Auftragsverarbeiter verarbeitet personenbezogene Daten ausschließlich im Auftrag des Verantwortlichen, soweit dies zur Durchführung des im Hauptvertrag beschriebenen BaseModule Anfrage-Eingang Piloten erforderlich ist. Der Pilot umfasst einen klar abgegrenzten Eingangskanal, die Strukturierung vereinbarter Kundenanfragen, die Übergabe an benannte Empfänger sowie die dokumentierte Pilotbewertung.
+Der Auftragsverarbeiter verarbeitet personenbezogene Daten ausschließlich im Auftrag des Verantwortlichen, soweit dies zur Durchführung des im Hauptvertrag beschriebenen BaseModul Anfrage-Eingang Piloten erforderlich ist. Der Pilot umfasst einen klar abgegrenzten Eingangskanal, die Strukturierung vereinbarter Kundenanfragen, die Übergabe an benannte Empfänger sowie die dokumentierte Pilotbewertung.
 
 Die Verarbeitung beginnt nicht vor der dokumentierten Go-live-Freigabe und endet mit Ende des Hauptvertrags beziehungsweise nach dem vereinbarten Rückgabe-/Löschprozess.
 

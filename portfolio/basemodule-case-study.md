@@ -1,8 +1,8 @@
-# BaseModule: Internal Tools & Workflow Module System for B2B Operations
+# BaseModul: Internal Tools & Workflow Module System for B2B Operations
 
-BaseModule is a portfolio project for building reusable AI-assisted intake and workflow modules for local B2B operations.
+BaseModul is a portfolio project for building reusable AI-assisted intake and workflow modules for local B2B operations.
 
-The project focuses on a practical operational pattern: requests arrive through phone, WhatsApp, appointment flows, photos/files or urgent service channels. Instead of treating each channel as a separate mess, BaseModule turns the intake into a structured handoff: required fields, urgency, missing information, recommended next step and human review.
+The project focuses on a practical operational pattern: requests arrive through phone, WhatsApp, appointment flows, photos/files or urgent service channels. Instead of treating each channel as a separate mess, BaseModul turns the intake into a structured handoff: required fields, urgency, missing information, recommended next step and human review.
 
 Verified project context:
 
@@ -22,7 +22,7 @@ My role:
 
 Suggested Upwork description:
 
-BaseModule is a portfolio project for building reusable internal tools and workflow modules for B2B operations.
+BaseModul is a portfolio project for building reusable internal tools and workflow modules for B2B operations.
 
 The project focuses on turning recurring business processes into structured product components: phone intake, WhatsApp requests, appointment preparation, photo/file context, priority detection, dashboards and reviewable handoff states.
 

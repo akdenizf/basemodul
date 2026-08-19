@@ -1,9 +1,9 @@
 {
   "entry": "main.typ",
   "metadata": {
-    "author": "BaseModule · AGENTEQ",
+    "author": "BaseModul · AGENTEQ",
     "subtitle": "Ein klarer Eingang. Vollständige Übergaben. 30 Tage messbar prüfen.",
-    "title": "BaseModule SHK-Anfrage-Eingang Pilot"
+    "title": "BaseModul SHK-Anfrage-Eingang Pilot"
   },
   "mode": "report",
   "theme": "report-theme.typ"

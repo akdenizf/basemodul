@@ -1,4 +1,4 @@
-# BaseModule Hermes — Quality Gates
+# BaseModul Hermes — Quality Gates
 
 > **Geltung:** Jeder von Hermes vorbereitete Research-Eintrag, Erstkontaktentwurf, Reply-Entwurf, Discovery-Notiz oder Scope-Entwurf. Diese Gates berechtigen niemals zu Versand, Terminierung oder Vertrags-/Compliance-Zusagen.
 
@@ -19,7 +19,7 @@
 
 Ein Entwurf erhält den Status `needs_review`, wenn mindestens eine Warnregel erfüllt ist.
 
-- Der erste Satz beschreibt BaseModule statt ein konkretes öffentliches Signal beim Empfänger.
+- Der erste Satz beschreibt BaseModul statt ein konkretes öffentliches Signal beim Empfänger.
 - Der Text enthält mehr als 120 Wörter oder mehr als einen Use Case.
 - Es fehlt die klare Trennung zwischen vermutetem Problem und belegtem Fakt.
 - Er erwähnt einen Kanal, eine Integration, einen Foto-/Datei-Flow oder Notdienstlogik außerhalb des bestätigten Scopes.

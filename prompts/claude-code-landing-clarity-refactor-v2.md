@@ -1,14 +1,14 @@
-# Claude Code Prompt: BaseModule Landing — Klarheit statt Ticket-System
+# Claude Code Prompt: BaseModul Landing — Klarheit statt Ticket-System
 
-Du arbeitest **im Root des BaseModule-Repositories**. Setze einen kontrollierten Refactor der bestehenden Next.js-Landing-Page um. Arbeite nicht an Backend, Telefonie oder API-Routen.
+Du arbeitest **im Root des BaseModul-Repositories**. Setze einen kontrollierten Refactor der bestehenden Next.js-Landing-Page um. Arbeite nicht an Backend, Telefonie oder API-Routen.
 
 ## Deine Aufgabe
 
-Die Landing-Page von BaseModule soll leichter, klarer und weniger technisch wirken — **ohne die bestehende visuelle Premium-Richtung zu verlieren**.
+Die Landing-Page von BaseModul soll leichter, klarer und weniger technisch wirken — **ohne die bestehende visuelle Premium-Richtung zu verlieren**.
 
-BaseModule ist keine neue Ticket-Software und keine Integrationsplattform, die zuerst erklärt werden muss. Das Kernversprechen lautet:
+BaseModul ist keine neue Ticket-Software und keine Integrationsplattform, die zuerst erklärt werden muss. Das Kernversprechen lautet:
 
-> BaseModule nimmt unvollständige Anfragen entgegen, klärt die wichtigen Details und gibt dem Team alles gesammelt weiter.
+> BaseModul nimmt unvollständige Anfragen entgegen, klärt die wichtigen Details und gibt dem Team alles gesammelt weiter.
 
 Die Seite soll sich für einen lokalen Servicebetrieb nach einer praktischen Entlastung anfühlen, nicht nach einem komplexen Tool, das zusätzlich gepflegt werden muss.
 
@@ -33,7 +33,7 @@ Lies anschließend nur die Landing-Komponenten, die du tatsächlich ändern muss
 | Bestehende dunkle Premium-Ästhetik, Inter, viel Negativraum und Grün als einzige Akzentfarbe | Kein vollständiges Redesign, kein helles Theme und kein generischer SaaS-Template-Look |
 | Hero-Headline: **„Weniger Telefonchaos. Mehr vollständige Anfragen.“** | Keine generische KI-/Automations-Headline |
 | Telefon-Visual im Hero sowie dessen hohe visuelle Qualität | Hero nicht durch einen Screenshot, Terminal oder ein Dashboard ersetzen |
-| Marke BaseModule im Vordergrund; AGENTEQ nur als Trust-/Anbieter-Layer | Kein AGENTEQ-Rebranding und kein Callfolio-Framing |
+| Marke BaseModul im Vordergrund; AGENTEQ nur als Trust-/Anbieter-Layer | Kein AGENTEQ-Rebranding und kein Callfolio-Framing |
 | Haupt-CTA: **„30-Minuten-Check buchen“** | Keine Vielzahl austauschbarer CTA-Texte für dieselbe Handlung |
 | Fokus auf lokale Servicebetriebe | Keine Hausverwaltung, keine erfundenen Kundenlogos, Testimonials oder Kennzahlen |
 | Bestehende gute Detailsektionen als spätere Vertiefung | Nicht einfach schöne Sektionen löschen, nur weil sie nicht in den ersten Scroll gehören |
@@ -44,7 +44,7 @@ Nach maximal zwei Scrollbewegungen muss klar sein:
 
 1. **Für wen:** lokale Servicebetriebe mit Anruf-, WhatsApp-, Formular- oder Fotoanfragen.
 2. **Welches Problem:** fehlende Angaben, Rückfragen, verlorene Anfragen und unklare Dringlichkeit.
-3. **Was BaseModule macht:** wichtige Informationen werden abgefragt und gesammelt ans Team weitergegeben.
+3. **Was BaseModul macht:** wichtige Informationen werden abgefragt und gesammelt ans Team weitergegeben.
 4. **Warum es leicht ist:** Start mit einem Eingangskanal im Pilot; das Team bleibt in Kontrolle.
 5. **Was der nächste Schritt ist:** 30-Minuten-Check buchen.
 
@@ -73,7 +73,7 @@ Wenn du aufgrund des bestehenden Scroll-/Anchor-Verhaltens eine leicht andere Re
 
 Behalte die Headline, die zwei CTA-Stufen und das Telefon-Visual. Prüfe alle kleinen Badges, schwebenden Labels und Status-Texte. Der Status **„KI nimmt an“** soll wirkungsorientiert werden, zum Beispiel **„Anfrage wird aufgenommen“** oder **„Details werden geklärt“**. Reduziere zusätzliche Mikrocopy, wenn sie das Visual unruhig macht.
 
-Die Subline soll kurz bleiben und in einfacher Sprache erklären, dass BaseModule Anfragen annimmt, fehlende wichtige Informationen nachfragt und dem Team alles gesammelt weitergibt. Keine technische Kanalliste als Hauptbotschaft.
+Die Subline soll kurz bleiben und in einfacher Sprache erklären, dass BaseModul Anfragen annimmt, fehlende wichtige Informationen nachfragt und dem Team alles gesammelt weitergibt. Keine technische Kanalliste als Hauptbotschaft.
 
 ### 2. Problem zuerst, kompakt und branchennah
 
