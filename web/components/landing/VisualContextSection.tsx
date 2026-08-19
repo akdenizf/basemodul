@@ -2,7 +2,6 @@
 
 import { motion, Variants } from "framer-motion";
 import { FileText, ArrowRight, CheckCircle2, Camera, HelpCircle } from "lucide-react";
-import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -32,17 +31,6 @@ export function VisualContextSection() {
       viewport={{ once: true, margin: "-80px" }}
       className="relative bg-paper pb-12 pt-10 lg:pb-14 lg:pt-12"
     >
-      {/* sanfter Tiefen-Verlauf statt harter paperdeep-Block */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 45%, transparent 100%)",
-        }}
-      />
-      <FlowGrid />
-      <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
 
@@ -197,10 +185,7 @@ export function VisualContextSection() {
             </div>
 
             {/* Floating badge — static, ruhig */}
-            <div
-              className="glass-surface absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-[12px] px-4 py-2.5 lg:flex"
-              style={{ boxShadow: "0 12px 30px -10px rgba(0,0,0,0.5)" }}
-            >
+            <div className="glass-surface absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-[12px] px-4 py-2.5 shadow-[0_18px_40px_-28px_rgba(31,42,35,0.45)] lg:flex">
               <CheckCircle2 size={18} className="text-leaf" strokeWidth={2} />
               <div>
                 <p className="text-[12px] font-bold text-ink">Strukturiert</p>

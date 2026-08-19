@@ -13,7 +13,6 @@ import {
   Info,
 } from "lucide-react";
 import { BarVisualizer, type VisualizerState } from "./BarVisualizer";
-import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 interface Scenario {
   id: string;
@@ -240,8 +239,6 @@ export function LiveDemoSection() {
 
   return (
     <section id="livedemo" className="relative bg-paper pb-12 pt-10 lg:pb-14 lg:pt-12">
-      <FlowGrid />
-      <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-16">
           {/* Left — copy + scenario picker */}
