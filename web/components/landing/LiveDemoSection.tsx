@@ -48,9 +48,9 @@ const CATEGORY_LABELS = {
 };
 
 const URGENCY_COLORS = {
-  LOW: "bg-blue-400",
-  MEDIUM: "bg-amber-400",
-  HIGH: "bg-red-500",
+  LOW: "bg-appointment",
+  MEDIUM: "bg-leaf",
+  HIGH: "bg-priority",
 };
 
 const SCENARIOS: Scenario[] = [
@@ -268,8 +268,8 @@ export function LiveDemoSection() {
                       onClick={() => setActiveScenarioId(s.id)}
                       className={`group flex items-center gap-3 rounded-xl border p-3 text-left transition-all duration-200 ${
                         active
-                          ? "border-leaf/40 bg-white/[0.06]"
-                          : "border-white/10 bg-white/[0.03] hover:border-white/20 hover:bg-white/[0.05]"
+                          ? "border-leaf/40 bg-leafdim/40"
+                          : "border-line bg-paper2 hover:border-leaf/25 hover:bg-leafdim/20"
                       }`}
                     >
                       <span
@@ -354,7 +354,7 @@ function DemoPhone({
         className="pointer-events-none absolute -inset-12 -z-10"
         style={{
           background:
-            "radial-gradient(ellipse 55% 50% at 50% 42%, rgba(34,197,94,0.14) 0%, rgba(34,211,238,0.06) 50%, transparent 72%)",
+            "radial-gradient(ellipse 55% 50% at 50% 42%, rgba(46,98,70,0.12) 0%, transparent 72%)",
         }}
       />
 
@@ -369,13 +369,7 @@ function DemoPhone({
           style={{ background: "linear-gradient(160deg,#2b2b2f,#161617 55%,#0b0b0c)" }}
         >
           <div className="rounded-[43px] bg-[#070707] p-[7px] ring-1 ring-white/[0.05]">
-            <div className="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[36px] border border-white/[0.06] bg-paperdeep px-4 pb-5 pt-4">
-              {/* glass sheen */}
-              <div
-                className="pointer-events-none absolute inset-x-0 top-0 h-1/3"
-                style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.10), transparent)" }}
-              />
-
+            <div className="relative flex aspect-[9/19.5] flex-col overflow-hidden rounded-[36px] border border-line bg-paperdeep px-4 pb-5 pt-4">
               {/* notch */}
               <div className="mx-auto flex h-[24px] w-[72px] items-center justify-center gap-2 rounded-full bg-black">
                 <span className="h-1.5 w-1.5 rounded-full bg-white/25" />
@@ -401,7 +395,7 @@ function DemoPhone({
               </div>
 
               {/* caller identity */}
-              <div className="relative mt-4 flex items-center gap-3 rounded-2xl border border-white/[0.07] bg-white/[0.03] px-3.5 py-3 backdrop-blur-md">
+              <div className="relative mt-4 flex items-center gap-3 rounded-2xl border border-line bg-paper2 px-3.5 py-3">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-leafdimline/50 bg-leafdim/40 text-leafbright">
                   <PhoneIncoming size={18} strokeWidth={1.8} />
                 </span>
@@ -423,14 +417,14 @@ function DemoPhone({
                       transition={{ duration: 0.35 }}
                       className="flex h-full flex-col justify-center"
                     >
-                      <div className="rounded-2xl border border-leafbright/30 bg-gradient-to-b from-leaf/15 to-leaf/[0.04] p-4">
+                      <div className="rounded-2xl border border-leafdimline bg-leafdim p-4">
                         <div className="flex items-center gap-2">
-                          <CheckCircle2 size={18} className="text-leafbright" strokeWidth={1.9} />
+                          <CheckCircle2 size={18} className="text-leaf" strokeWidth={1.9} />
                           <span className="text-[13px] font-bold text-ink">{scenario.resultLabel}</span>
                         </div>
                         <p className="mt-2 text-[12px] leading-snug text-inksoft">{scenario.finalResult.summary}</p>
-                        <div className="mt-3 flex items-center gap-2 border-t border-white/10 pt-2.5">
-                          <span className="h-1.5 w-1.5 rounded-full bg-leafbright" />
+                        <div className="mt-3 flex items-center gap-2 border-t border-leafdimline pt-2.5">
+                          <span className="h-1.5 w-1.5 rounded-full bg-leaf" />
                           <span className="font-mono text-[10px] text-faint">{scenario.finalResult.ticketId} · Team informiert</span>
                         </div>
                       </div>
@@ -447,8 +441,8 @@ function DemoPhone({
                       <div
                         className={`max-w-[90%] rounded-2xl px-3.5 py-3 text-[12.5px] leading-relaxed ${
                           currentMessage.speaker === "assistant"
-                            ? "rounded-bl-[4px] border border-white/10 bg-white/[0.05] text-ink"
-                            : "rounded-br-[4px] border border-leaf/25 bg-leaf/[0.10] text-ink"
+                            ? "rounded-bl-[4px] border border-line bg-paper2 text-ink"
+                            : "rounded-br-[4px] border border-leafdimline bg-leafdim text-ink"
                         }`}
                       >
                         <span className="mb-1 block font-mono text-[9px] uppercase tracking-[0.12em] text-faint">
@@ -498,12 +492,14 @@ function DemoPhone({
                     whileTap={{ scale: 0.94 }}
                     onClick={togglePlay}
                     aria-label={isPlaying ? "Pause" : "Play"}
-                    className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full transition-colors ${
-                      isPlaying ? "bg-white/10 text-ink hover:bg-white/20" : "bg-leafbtn text-white hover:bg-leafbtnhover"
+                    className={`relative z-10 flex h-12 w-12 items-center justify-center rounded-full border transition-colors ${
+                      isPlaying
+                        ? "border-line bg-paper2 text-ink hover:bg-paperdeep"
+                        : "border-transparent bg-leafbtn text-white hover:bg-leafbtnhover"
                     }`}
                     style={
                       !isPlaying
-                        ? { boxShadow: "0 0 0 1px rgba(22,163,74,0.3), 0 10px 24px -8px rgba(22,163,74,0.6)" }
+                        ? { boxShadow: "0 10px 24px -8px rgba(46,98,70,0.45)" }
                         : {}
                     }
                   >
@@ -512,8 +508,8 @@ function DemoPhone({
                 </div>
 
                 <div className="min-w-0 flex-1">
-                  <div className="h-1 w-full overflow-hidden rounded-full bg-white/10">
-                    <div className="h-full rounded-full bg-leafbright transition-[width] duration-150" style={{ width: `${progress}%` }} />
+                  <div className="h-1 w-full overflow-hidden rounded-full bg-line">
+                    <div className="h-full rounded-full bg-leaf transition-[width] duration-150" style={{ width: `${progress}%` }} />
                   </div>
                   <div className="mt-1.5 flex justify-between font-mono text-[10px] text-faint tabular-nums">
                     <span>{formatTime(currentTime)}</span>
