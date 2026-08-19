@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BaseModul SHK-Anfrage-Eingang Pilot</title>
+  <style>
+    :root {
+      --paper: #0a0a0a;
+      --surface: #141414;
+      --surface-soft: #1a1a1a;
+      --line: rgba(255,255,255,.11);
+      --text: #fafafa;
+      --muted: #a1a1aa;
+      --faint: #707078;
+      --accent: #4ade80;
+      --accent-dark: #16a34a;
+      --accent-soft: rgba(74,222,128,.12);
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--paper); }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    .document { max-width: 980px; margin: 0 auto; padding: 28px 28px 56px; }
+    .topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); padding: 0 0 18px; }
+    .brand { font-size: 14px; font-weight: 800; letter-spacing: .12em; }
+    .brand small { color: var(--faint); font-size: 10px; font-weight: 700; letter-spacing: .08em; }
+    .status { color: var(--accent); border: 1px solid rgba(74,222,128,.32); background: var(--accent-soft); border-radius: 999px; padding: 6px 10px; font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    .hero { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 24px; margin-top: 24px; padding: 48px; background: radial-gradient(ellipse 80% 100% at 94% 0%, rgba(74,222,128,.14), transparent 60%), var(--surface); }
+    .hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(to right, rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,.025) 1px, transparent 1px); background-size: 36px 36px; mask-image: linear-gradient(to bottom, black, transparent 76%); }
+    .hero > * { position: relative; z-index: 1; }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    h1 { max-width: 720px; margin: 15px 0 0; font-size: clamp(38px, 6.4vw, 68px); line-height: 1.02; letter-spacing: -.05em; }
+    h1 span { color: var(--accent); }
+    .lead { max-width: 650px; margin: 22px 0 0; color: var(--muted); font-size: 18px; }
+    .recipient { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 620px; margin-top: 34px; }
+    .field { border-top: 1px solid var(--line); padding-top: 10px; }
+    .field span { display: block; color: var(--faint); font-size: 10px; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+    .field strong { display: block; margin-top: 3px; font-size: 14px; }
+    .section { margin-top: 52px; }
+    .section-label { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+    h2 { margin: 8px 0 0; font-size: 30px; line-height: 1.12; letter-spacing: -.035em; }
+    .section-intro { max-width: 700px; color: var(--muted); font-size: 15px; margin: 14px 0 0; }
+    .grid { display: grid; gap: 14px; margin-top: 20px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .card { border: 1px solid var(--line); background: var(--surface); border-radius: 16px; padding: 20px; }
+    .step { color: var(--accent); font-size: 11px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 800; }
+    h3 { margin: 13px 0 0; font-size: 17px; letter-spacing: -.02em; }
+    .card p { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .offer { margin-top: 20px; border: 1px solid rgba(74,222,128,.34); border-radius: 18px; overflow: hidden; background: linear-gradient(135deg, rgba(74,222,128,.12), rgba(20,20,20,.94) 45%); }
+    .offer-head { padding: 24px 24px 18px; border-bottom: 1px solid var(--line); }
+    .offer-head h3 { margin: 0; font-size: 22px; }
+    .offer-head p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+    .offer-grid { display: grid; grid-template-columns: 1.25fr .75fr; }
+    .offer-body { padding: 24px; }
+    .offer-price { padding: 24px; border-left: 1px solid var(--line); background: rgba(0,0,0,.16); }
+    .offer-price small { color: var(--faint); display: block; font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+    .price { margin-top: 8px; font-size: 36px; letter-spacing: -.05em; font-weight: 850; }
+    .price span { color: var(--accent); }
+    .offer-price p { margin: 8px 0 0; color: var(--muted); font-size: 13px; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { position: relative; padding-left: 24px; color: var(--muted); font-size: 14px; margin: 10px 0; }
+    li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 800; }
+    table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-top: 20px; font-size: 13px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 14px 16px; text-align: left; vertical-align: top; }
+    th { color: var(--faint); background: var(--surface-soft); font-size: 10px; letter-spacing: .09em; text-transform: uppercase; }
+    td { color: var(--muted); }
+    td:first-child { width: 31%; color: var(--text); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+    .notice { border-left: 3px solid var(--accent); border-radius: 0 12px 12px 0; background: var(--accent-soft); padding: 17px 19px; margin-top: 20px; color: #d7fbe3; font-size: 14px; }
+    .timeline { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+    .timeline .card { min-height: 164px; }
+    .timeline strong { display: block; margin-top: 14px; font-size: 16px; }
+    .timeline p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .next { margin-top: 52px; padding: 36px; border: 1px solid var(--line); border-radius: 22px; background: radial-gradient(ellipse 70% 150% at 100% 0%, rgba(74,222,128,.11), transparent 55%), var(--surface); }
+    .next h2 { max-width: 660px; }
+    .next p { max-width: 720px; color: var(--muted); margin: 14px 0 0; font-size: 15px; }
+    .next-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+    .footer { border-top: 1px solid var(--line); color: var(--faint); display: flex; justify-content: space-between; gap: 16px; margin-top: 44px; padding-top: 18px; font-size: 11px; }
+    .footer strong { color: var(--muted); }
+    @media (max-width: 700px) {
+      .document { padding: 16px 16px 36px; }
+      .hero { padding: 30px 24px; }
+      .recipient, .grid.two, .grid.three, .offer-grid, .timeline, .next-grid { grid-template-columns: 1fr; }
+      .offer-price { border-left: 0; border-top: 1px solid var(--line); }
+      h1 { font-size: 42px; }
+      .lead { font-size: 16px; }
+      .footer { flex-direction: column; }
+    }
+    @page { size: A4; margin: 11mm; }
+    @media print {
+      html, body { background: #fff; color: #111; }
+      .document { max-width: none; padding: 0; }
+      .topline, .footer { border-color: #ddd; }
+      .brand { color: #111; }
+      .status, .eyebrow, .section-label, .step { color: #167a3c; }
+      .hero, .card, .offer, .next { background: #fff; border-color: #ddd; box-shadow: none; }
+      .hero::after { display: none; }
+      h1, h2, h3, .field strong, td:first-child, .offer-head h3, .next h2 { color: #111; }
+      h1 span, .price span { color: #167a3c; }
+      .lead, .section-intro, .card p, .offer-head p, .offer-price p, td, li, .next p { color: #444; }
+      .field span, .offer-price small, th, .footer { color: #777; }
+      .offer-price, th { background: #f6f8f6; }
+      th, td, table, .offer-head, .offer-price { border-color: #ddd; }
+      .notice { background: #edf9f0; color: #174c29; }
+      .section, .offer, table, .next { break-inside: avoid; }
+      .hero { min-height: 204mm; display: flex; flex-direction: column; justify-content: center; page-break-after: always; }
+      .timeline .card { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <main class="document">
+    <header class="topline">
+      <div class="brand">BASEMODUL <small>· EIN PRODUKT VON AGENTEQ</small></div>
+      <div class="status">Pilotangebot · SHK</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">BaseModul SHK-Anfrage-Eingang Pilot</div>
+      <h1>Ein klarer Eingang.<br><span>Vollständige Übergaben.</span><br>30 Tage messbar prüfen.</h1>
+      <p class="lead">Wir testen mit Ihrem Betrieb einen klar abgegrenzten Anfrage-Eingang. So werden aus verpassten oder unvollständigen Anfragen vollständige Rückrufe, priorisierte Fälle und nachvollziehbare nächste Schritte.</p>
+      <div class="recipient">
+        <div class="field"><span>Für</span><strong>[Betriebsname]</strong></div>
+        <div class="field"><span>Stand</span><strong>[Datum]</strong></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Das Ziel</div>
+      <h2>Nicht mehr Technik. Ein verlässlicher erster Schritt für jede relevante Anfrage.</h2>
+      <p class="section-intro">Der Pilot startet nicht mit einem großen System. Wir schließen gemeinsam eine konkrete Lücke im Alltag Ihres Betriebs – dort, wo Telefon-, WhatsApp- oder Website-Anfragen heute nicht vollständig bei der richtigen Person ankommen.</p>
+      <div class="grid three">
+        <article class="card"><div class="step">01</div><h3>Anfrage aufnehmen</h3><p>Ein klar definierter Eingangskanal wird strukturiert angenommen – zum Beispiel bei Nichterreichbarkeit, außerhalb Bürozeiten oder bei hoher Auslastung.</p></article>
+        <article class="card"><div class="step">02</div><h3>Pflichtinfos sichern</h3><p>Kontakt, Ort, Anliegen, Rückrufnummer und vereinbarte Zusatzinformationen kommen vollständig beim Team an.</p></article>
+        <article class="card"><div class="step">03</div><h3>Nächsten Schritt auslösen</h3><p>Die Anfrage wird an die zuständige Person oder Bereitschaft übergeben. Unklare und kritische Fälle bleiben bewusst menschlich geführt.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Ihr 30-Tage-Pilot</div>
+      <h2>Ein Eingangskanal. Ein sauberer Ablauf. Echte Fälle.</h2>
+      <div class="offer">
+        <div class="offer-head"><h3>BaseModul SHK-Anfrage-Eingang Pilot</h3><p>Für einen klar abgegrenzten Erstkontakt-Flow – mit menschlicher Übergabe und überprüfbarer Wirkung im Betriebsalltag.</p></div>
+        <div class="offer-grid">
+          <div class="offer-body">
+            <ul>
+              <li>Ein festgelegter Eingangskanal: Telefon, WhatsApp oder Web-Anfrage</li>
+              <li>Gemeinsam definierte Pflichtfelder und Rückfragen für typische SHK-Anfragen</li>
+              <li>Klare Zuständigkeiten, Eskalationsregeln und menschliche Fallbacks</li>
+              <li>Testfälle für Normalfall, unvollständige Anfrage und kritischen Fall</li>
+              <li>Wöchentliches Review anhand einer transparenten Pilot-Scorecard</li>
+              <li>Abschlussentscheidung: ausbauen, nachschärfen, vereinfachen oder pausieren</li>
+            </ul>
+          </div>
+          <aside class="offer-price">
+            <small>Einmaliges Pilot-Setup</small>
+            <div class="price"><span>1.250 €</span></div>
+            <p>zzgl. USt. · 30 Tage produktiver Pilot</p>
+            <p>Telefonie-, Messaging- und externe Nutzungsgebühren werden transparent nach tatsächlichem Umfang ausgewiesen.</p>
+          </aside>
+        </div>
+      </div>
+      <div class="notice"><strong>Bewusst begrenzt:</strong> Der Pilot ersetzt kein CRM und trifft keine fachlichen, preislichen oder vertraglichen Entscheidungen. Er schafft einen vollständigen, priorisierten Eingang für Ihr Team.</div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Ablauf</div>
+      <h2>Vom Scope zur belastbaren Entscheidung in 30 Tagen.</h2>
+      <div class="timeline">
+        <article class="card"><div class="step">TAG 0–5</div><strong>Scope & Baseline</strong><p>Wir legen Kanal, Pflichtfelder, Zuständigkeiten, Fallbacks, Datenfluss und verfügbare Ausgangsdaten fest.</p></article>
+        <article class="card"><div class="step">TAG 6–12</div><strong>Konfiguration & Test</strong><p>Wir testen Ablauf, Übergabe und kritische Fälle gemeinsam, bevor der Pilot in den Betriebsalltag geht.</p></article>
+        <article class="card"><div class="step">TAG 13–30</div><strong>Produktiver Pilot</strong><p>Reale Anfragen werden strukturiert verarbeitet. Wir betrachten Wirkung, Korrekturen und Fallbacks im Wochenrhythmus.</p></article>
+        <article class="card"><div class="step">TAG 30</div><strong>Auswertung</strong><p>Wir entscheiden gemeinsam, ob der Ablauf ausgebaut, nachgeschärft, vereinfacht oder beendet wird.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Pilot-Scorecard</div>
+      <h2>Wir berichten Wirkung, nicht Versprechen.</h2>
+      <p class="section-intro">Die Scorecard nutzt echte Betriebsdaten. Falls eine Kennzahl vor dem Start nicht sauber vorliegt, wird sie als nicht verfügbar gekennzeichnet – nicht geschätzt.</p>
+      <table>
+        <thead><tr><th>Kennzahl</th><th>Was sie für Ihren Betrieb sichtbar macht</th></tr></thead>
+        <tbody>
+          <tr><td>Relevante Eingänge</td><td>Wie viele Anfragen im gewählten Kanal tatsächlich ankommen und bearbeitet werden können.</td></tr>
+          <tr><td>Nicht angenommene Eingänge</td><td>Welche Anfragen ohne den Pilot nicht oder nicht rechtzeitig vom Team erreicht worden wären.</td></tr>
+          <tr><td>Vollständige Übergaben</td><td>Ob Kontakt, Ort, Anliegen und die vereinbarten Pflichtfelder vor dem Rückruf vorliegen.</td></tr>
+          <tr><td>Zeit bis zur Übergabe</td><td>Wie schnell eine relevante Anfrage bei der zuständigen Person landet.</td></tr>
+          <tr><td>Rückruf- oder Terminquote</td><td>Ob qualifizierte Anfragen einen klaren nächsten Schritt erhalten.</td></tr>
+          <tr><td>Menschliche Korrekturen</td><td>Wo der Ablauf noch vereinfacht, präzisiert oder früher an Menschen übergeben werden muss.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <div class="section-label">Sicherheit & Klarheit</div>
+      <div class="grid two">
+        <article class="card"><h3>Was BaseModul übernimmt</h3><p>Strukturierte Annahme, vollständige Informationen, vereinbarte Rückfragen, priorisierte Übergaben und nachvollziehbare nächste Schritte.</p></article>
+        <article class="card"><h3>Was beim Betrieb bleibt</h3><p>Fachliche Bewertung, Preis- und Angebotsfreigabe, verbindliche Zusagen, kritische Entscheidungen sowie die Freigabe von Regeln und Zuständigkeiten.</p></article>
+      </div>
+    </section>
+
+    <section class="next">
+      <div class="section-label">Der nächste Schritt</div>
+      <h2>In einem 30-Minuten-Check den passenden Eingang festlegen.</h2>
+      <p>Im ersten Check klären wir, welcher Eingangskanal heute Anfragen verliert, welche Informationen Ihr Team wirklich benötigt und ob ein schlanker Pilot für Ihren Betrieb sinnvoll ist.</p>
+      <div class="next-grid">
+        <div class="field"><span>Vorzubereiten</span><strong>Typische Anfragearten, Erreichbarkeiten und Zuständigkeiten</strong></div>
+        <div class="field"><span>Ergebnis des Checks</span><strong>Ein klarer Pilot-Scope statt eines offenen Softwareprojekts</strong></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div><strong>BASEMODUL</strong> · Ein Produkt von AGENTEQ</div>
+      <div>Dieses Dokument beschreibt einen vorgeschlagenen Pilotumfang. Der finale Scope wird vor Go-live gemeinsam schriftlich festgelegt.</div>
+    </footer>
+  </main>
+</body>
+</html>

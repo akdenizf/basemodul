@@ -103,7 +103,9 @@ Sicherheit beim Übernehmen des Templates erledigt:
 `PLAN.md` · `PRODUCT_ARCHITECTURE.md` · `PILOT_DELIVERY_PLAYBOOK.md` ·
 `OFFER.md` · `WIREFRAME.md` · `DESIGN_BRIEF.md` · `GTM.md` ·
 `LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md` ·
-`outreach/playbooks/SHK_PILOT_PLAYBOOK.md` · `outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md`
+`outreach/playbooks/SHK_PILOT_PLAYBOOK.md` · `outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md` ·
+`outreach/client-materials/SHK_PILOTANGEBOT.html` · `outreach/client-materials/SHK_PILOTANGEBOT.pdf` ·
+`outreach/templates/SHK_RESEARCH_CARD_TEMPLATE.csv` · `outreach/templates/SHK_LEAD_RESEARCH_AGENT_BRIEFING.md`
 
 ## Agenten-Prompts
 
