@@ -2,7 +2,6 @@
 
 import { motion, Variants } from "framer-motion";
 import { ArrowRight, ArrowDown, Check, AlertTriangle } from "lucide-react";
-import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
 
 // Ein einziger, kompakter Ablauf — in 5 Sekunden lesbar, kanal-agnostisch.
 // Amber = Dringend-Signal, Grün = erledigt/normal (durchgängig auf der ganzen Seite).
@@ -26,17 +25,6 @@ const item: Variants = {
 export function WorkflowSection() {
   return (
     <section id="workflow" className="relative bg-paper pb-12 pt-10 lg:pb-14 lg:pt-12">
-      {/* sanfter Tiefen-Verlauf statt harter paperdeep-Block — recessed, aber ohne Naht */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 45%, transparent 100%)",
-        }}
-      />
-      <FlowGrid />
-      <AmbientOrbs />
       <div className="relative mx-auto max-w-[960px] px-6 lg:px-12">
         {/* Header */}
         <div className="mb-8 max-w-[600px] lg:mb-14">
@@ -63,25 +51,20 @@ export function WorkflowSection() {
             <div key={s.text} className="contents">
               <motion.div
                 variants={item}
-                className={`group relative flex-1 overflow-hidden rounded-2xl px-5 py-5 text-center backdrop-blur-md ${
+                className={`group relative flex-1 rounded-2xl border px-5 py-5 text-center shadow-[0_12px_30px_-26px_rgba(31,42,35,0.38)] ${
                   s.accent
-                    ? "border border-leafbright/40 bg-gradient-to-b from-leaf/20 to-leaf/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.14),0_18px_40px_-16px_rgba(34,197,94,0.45)]"
+                    ? "border-leafdimline bg-leafdim"
                     : s.urgent
-                    ? "border border-amber-400/40 bg-gradient-to-b from-amber-400/15 to-amber-400/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_18px_40px_-16px_rgba(251,191,36,0.4)]"
-                    : "border border-white/10 bg-white/[0.04] shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_18px_40px_-20px_rgba(0,0,0,0.7)]"
+                    ? "border-[#E5C8AB] bg-[#FCF0E5]"
+                    : "border-line bg-paper2"
                 }`}
               >
-                {/* soft top sheen */}
-                <span
-                  className="pointer-events-none absolute inset-x-0 top-0 h-1/2"
-                  style={{ background: "linear-gradient(to bottom, rgba(255,255,255,0.08), transparent)" }}
-                />
                 <span className="relative flex items-center justify-center gap-2">
-                  {s.accent && <Check size={15} className="text-leafbright" strokeWidth={2.6} />}
-                  {s.urgent && <AlertTriangle size={15} className="text-amber-300" strokeWidth={2.4} />}
+                  {s.accent && <Check size={15} className="text-leaf" strokeWidth={2.6} />}
+                  {s.urgent && <AlertTriangle size={15} className="text-[#A75420]" strokeWidth={2.4} />}
                   <span
                     className={`text-[14px] font-semibold leading-snug ${
-                      s.accent ? "text-leafbright" : s.urgent ? "text-amber-300" : "text-ink"
+                      s.accent ? "text-leaf" : s.urgent ? "text-[#A75420]" : "text-ink"
                     }`}
                   >
                     {s.text}
@@ -91,7 +74,7 @@ export function WorkflowSection() {
 
               {/* very subtle connector */}
               {i < STEPS.length - 1 && (
-                <div className="flex items-center justify-center py-1.5 text-white/15 sm:px-2 sm:py-0">
+                <div className="flex items-center justify-center py-1.5 text-faint sm:px-2 sm:py-0">
                   <ArrowDown size={16} className="sm:hidden" />
                   <ArrowRight size={16} className="hidden sm:block" />
                 </div>

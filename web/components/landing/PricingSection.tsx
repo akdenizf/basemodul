@@ -2,7 +2,6 @@
 
 import { motion, Variants } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
-import { AmbientOrbs } from "./AmbientOrbs";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -66,7 +65,6 @@ export function PricingSection() {
       viewport={{ once: true, margin: "-80px" }}
       className="relative bg-paperdeep py-20"
     >
-      <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <motion.div variants={item} className="mb-14 max-w-[620px]">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">
@@ -116,7 +114,7 @@ export function PricingSection() {
                 className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-5 py-3.5 text-[15px] font-bold transition-all ${
                   offer.highlighted
                     ? "bg-leafbtn text-white hover:-translate-y-px hover:bg-leafbtnhover"
-                    : "border border-[#333] font-semibold text-ink hover:border-[#555] hover:bg-white/[0.03]"
+                    : "border border-line font-semibold text-ink hover:border-leaf/50 hover:bg-leafdim/30"
                 }`}
               >
                 {offer.cta}

@@ -120,7 +120,7 @@ export function VisualContextSection() {
                     Thomas M. · per WhatsApp · heute 14:30
                   </p>
 
-                  <div className="rounded-[8px] border-l-2 border-leaf/40 bg-paper pl-3 pr-2 py-3">
+                  <div className="rounded-[8px] border border-leafdimline bg-leafdim/40 px-3 py-3">
                     <p className="mb-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-faint">
                       Notiz vom Modul
                     </p>

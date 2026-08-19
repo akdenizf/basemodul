@@ -1,8 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Plus, Check, ChevronDown } from "lucide-react";
-import { AmbientOrbs, FlowGrid } from "./AmbientOrbs";
+import { Plus, Check, ChevronDown, AlertTriangle, Calendar, MessageSquare, Paperclip, PhoneIncoming } from "lucide-react";
 
 const container: Variants = {
   hidden: { opacity: 0 },
@@ -44,30 +43,29 @@ function MiniVorgang() {
 }
 
 /* ── Weitere Module — scanbare Kacheln, Details nur bei Interesse ───────── */
-// Emoji als Kategorie-Marker (dekorativ, aria-hidden — der Name daneben
-// trägt die Information). Max. 1 Emoji pro Modul.
+// Lucide-Icons statt Emoji — konsistent mit dem Icon-System aus Hero/RequestArtifact.
 
-const extensions: { emoji: string; name: string; hint: string; details: string[] }[] = [
+const extensions: { Icon: typeof PhoneIncoming; name: string; hint: string; details: string[] }[] = [
   {
-    emoji: "🚨",
+    Icon: AlertTriangle,
     name: "Notdienst-Modul",
     hint: "Nach Regeln an Menschen eskalieren",
     details: ["arbeitet nach vereinbarten Signalen", "fragt Pflichtinfos ab", "informiert die Bereitschaft oder den Fallback"],
   },
   {
-    emoji: "📅",
+    Icon: Calendar,
     name: "Termin-Modul",
     hint: "Terminwünsche sauber vorbereiten",
     details: ["klärt Leistung + Wunschzeit", "bereitet Termin oder Rückruf vor", "erst nach einem bewiesenen Eingang ergänzen"],
   },
   {
-    emoji: "💬",
+    Icon: MessageSquare,
     name: "WhatsApp-Modul",
     hint: "Nachrichten in Fälle überführen",
     details: ["stellt Rückfragen im Chat", "erkennt fehlende Angaben", "bündelt Kontext und nächsten Schritt"],
   },
   {
-    emoji: "📎",
+    Icon: Paperclip,
     name: "Foto- & Datei-Modul",
     hint: "Bilder mit Kontext einsammeln",
     details: ["sendet Upload-Link", "fragt Kontext zum Bild ab", "verbindet Anhang und Vorgang"],
@@ -77,8 +75,6 @@ const extensions: { emoji: string; name: string; hint: string; details: string[]
 export function ModulesSection() {
   return (
     <section id="modules" className="relative bg-paper pb-12 pt-8 lg:pb-16 lg:pt-10">
-      <FlowGrid />
-      <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1fr] lg:items-center lg:gap-16">
           {/* Left — intro */}
@@ -110,9 +106,9 @@ export function ModulesSection() {
               <div className="mb-5 flex items-center gap-3.5">
                 <span
                   aria-hidden="true"
-                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[12px] border border-leafdimline/60 bg-leafdim/50 text-[21px] leading-none"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[12px] border border-leafdimline/60 bg-leafdim/50 text-leaf"
                 >
-                  ☎️
+                  <PhoneIncoming size={20} strokeWidth={1.9} />
                 </span>
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2.5">
@@ -143,13 +139,13 @@ export function ModulesSection() {
                 {extensions.map((e) => (
                   <div
                     key={e.name}
-                    className="group/tile flex flex-col rounded-xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-md transition-colors duration-200 hover:border-leaf/40 hover:bg-white/[0.06]"
+                    className="group/tile flex flex-col rounded-xl border border-line bg-paper2 p-3.5 shadow-[0_10px_26px_-24px_rgba(31,42,35,0.4)] transition-colors duration-200 hover:border-leaf/40 hover:bg-leafdim/20"
                   >
                     <span
                       aria-hidden="true"
-                      className="flex h-8 w-8 items-center justify-center rounded-[9px] border border-line bg-paperdeep text-[15px] leading-none"
+                      className="flex h-8 w-8 items-center justify-center rounded-[9px] border border-line bg-paperdeep text-faint"
                     >
-                      {e.emoji}
+                      <e.Icon size={15} strokeWidth={1.8} />
                     </span>
                     <div className="mt-2.5 text-[13px] font-semibold text-ink">{e.name}</div>
                     <div className="mt-0.5 text-[11px] text-faint">{e.hint}</div>

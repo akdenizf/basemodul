@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { AmbientOrbs } from "./AmbientOrbs";
 
 const item: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -68,7 +67,6 @@ export function FaqSection() {
 
   return (
     <section id="faq" className="relative bg-paper py-20">
-      <AmbientOrbs />
       <div className="relative mx-auto max-w-[1200px] px-6 lg:px-12">
         <div className="mb-12 text-center">
           <span className="text-[11px] font-semibold uppercase tracking-[0.08em] text-faint">FAQ</span>

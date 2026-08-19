@@ -66,18 +66,18 @@ export function HeroSection() {
         </div>
 
         <div className="relative mx-auto w-full max-w-[555px] lg:justify-self-end">
-          {/* Scene: Eingang → BaseModul → Übergabe, als echte Pipeline statt einer einzelnen Karte */}
-          <div className="rounded-[8px] border border-line bg-inkdeep px-5 py-6 shadow-[0_24px_50px_-30px_rgba(22,35,28,0.55)] sm:px-7">
-            <p className="text-center font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-signaldim">
-              Eingang → Verarbeitung → Übergabe
-            </p>
-            <div className="mt-4 flex justify-center overflow-x-auto">
-              <BaseModulFlow size="full" orientation="horizontal" animated />
+          {/* Schmale Flow-Leiste — Signature-Motiv, aber die Notiz darunter bleibt der klare Hauptfokus */}
+          <div className="flex items-center gap-3 rounded-[8px] border border-line bg-inkdeep px-4 py-2.5 shadow-[0_16px_36px_-26px_rgba(22,35,28,0.5)]">
+            <span className="shrink-0 font-mono text-[9px] font-semibold uppercase tracking-[0.1em] text-signaldim">
+              Eingang → Übergabe
+            </span>
+            <div className="flex flex-1 justify-end overflow-x-auto">
+              <BaseModulFlow size="compact" orientation="horizontal" animated />
             </div>
           </div>
 
-          {/* Tiefengestaffelte Rückrufnotiz, an die Szene oben angebunden */}
-          <div className="relative mt-6">
+          {/* Tiefengestaffelte Rückrufnotiz — der eigentliche Beweis, jetzt der dominante Blickfang */}
+          <div className="relative mt-4">
             <div className="absolute -right-2 -top-2 h-full w-full rounded-[6px] border border-[#D9D8CF] bg-[#F1F0E8]" />
             <motion.div
               initial={{ opacity: 0, y: 10 }}
