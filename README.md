@@ -102,7 +102,8 @@ Sicherheit beim Übernehmen des Templates erledigt:
 
 `PLAN.md` · `PRODUCT_ARCHITECTURE.md` · `PILOT_DELIVERY_PLAYBOOK.md` ·
 `OFFER.md` · `WIREFRAME.md` · `DESIGN_BRIEF.md` · `GTM.md` ·
-`LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md`
+`LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md` ·
+`outreach/playbooks/SHK_PILOT_PLAYBOOK.md` · `outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md`
 
 ## Agenten-Prompts
 

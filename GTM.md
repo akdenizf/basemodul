@@ -1,26 +1,30 @@
 # Go-to-Market
 
-## Ziel fuer die ersten 14 Tage
+## Verbindlicher Startfokus
 
-Nicht perfekt bauen. Verkaufen lernen.
+Nicht breiter bauen. Einen ersten bezahlten **SHK-Anfrage-Eingang Pilot** gewinnen und daraus eine belastbare Case Study machen.
 
-Wir brauchen Marktfeedback von echten KMU:
+> Der verbindliche Ablauf liegt in [`outreach/playbooks/SHK_PILOT_PLAYBOOK.md`](outreach/playbooks/SHK_PILOT_PLAYBOOK.md).
+> Der Gesprächsablauf liegt in [`outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md`](outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md).
 
-- Antwortet jemand?
-- Wird der Schmerz verstanden?
-- Fragt jemand nach Preis/Demo?
-- Gibt es ein klares Vertical?
+Wir brauchen Marktfeedback von echten SHK-Betrieben:
 
-## Outreach-Welle 1
+- Ist der Schmerz „verpasste oder unvollständige Anfragen“ konkret und aktuell?
+- Versteht der Entscheider den begrenzten 30-Tage-Pilot?
+- Ist ein Eingangskanal für einen Test klar abgrenzbar?
+- Gibt es einen echten, messbaren Ablauf, der nach dem Pilot ausgebaut werden kann?
 
-Ziel: 20 Leads, davon 10 anschreiben.
+## Zielkunden-Welle 1
 
-Prioritaet:
+Ziel: **20–25 handgeprüfte SHK-Betriebe**, daraus zehn echte Chancen und fünf priorisierte Gesprächswege.
 
-1. Handwerker / SHK mit Notdienst, Wartung oder vielen Formularanfragen
-2. Hausverwaltungen mit Schadenmeldung, Kontaktformular oder Mieterportal
-3. Facility / Reinigung mit wiederkehrenden Kundenanfragen
+Priorität:
 
+1. SHK-, Heizungs-, Klima- und Elektro-Betriebe mit Notdienst, Wartung oder schneller Erreichbarkeit
+2. Kfz und Facility erst nach dem ersten SHK-Pilot als parallele Testfelder
+3. Hausverwaltungen bleiben ausdrücklich Callfolio-Spur, nicht BaseModul-Outreach
+
+Kein automatisierter Massenversand. Jede Chance braucht ein dokumentiertes öffentliches Signal, eine konkrete Hypothese und einen kontrollierten Kontaktweg.
 ## Lead-Kriterien
 
 Gute Leads haben mindestens eines dieser Signale:
@@ -32,20 +36,20 @@ Gute Leads haben mindestens eines dieser Signale:
 - Kundenportal oder mehrere Kommunikationskanaele
 - Hinweise auf manuelle Termin- oder Angebotsprozesse
 
-## Outreach-Copy
+## Gesprächseröffnung und Unterlagen
 
 Prinzip:
 
-- kurz
-- konkret
-- auf oeffentliches Signal bezogen
-- keine KI-Prahlerei
-- eine einfache Frage
+- kurz und auf ein konkretes öffentliches Signal bezogen
+- kein generischer KI-Pitch und kein automatisierter E-Mail-Funnel
+- erst Relevanz prüfen, dann mit Erlaubnis Pilotunterlagen senden
+- bei „kein Interesse“ sofort stoppen und dokumentieren
 
-Beispiel Handwerk:
+Beispiel für ein menschliches Erstgespräch:
 
-> Hallo zusammen, auf Ihrer Website sehe ich Wartung, Kundendienst und Notdienst. Dabei kommen wahrscheinlich viele Anfragen mit unterschiedlicher Dringlichkeit rein. Waere es hilfreich, wenn ein Assistent vorab Objekt, Problem, Dringlichkeit und Rueckrufdaten sauber abfragt, bevor Ihr Team zurueckruft?
+> Guten Tag Herr/Frau [Name], ich halte es kurz. Sie bieten auf Ihrer Website [konkreten Notdienst-/Servicebezug] an. Bei solchen Betrieben gehen Anfragen häufig genau dann verloren, wenn das Team im Einsatz ist. Wir testen aktuell in München einen kleinen Ablauf, der Kontakt, Ort, Anliegen und Dringlichkeit strukturiert ans Team übergibt. Ist das Thema „verpasste oder unvollständige Anfragen“ bei Ihnen grundsätzlich relevant – oder soll ich Sie nicht weiter dazu ansprechen?
 
+Der vollständige Leitfaden mit Demo, Discovery-Fragen und Gesprächsabschlüssen steht in [`outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md`](outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md).
 ## Ads
 
 Wir testen simple Problem-Ads wie das Instagram-Beispiel:

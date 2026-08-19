@@ -194,6 +194,8 @@ Mo–Do bevorzugt · Fr nur vormittags · Sa nur Ausnahme + explizites Fatih-Go 
 - `outreach/knowledge-base/faq_objections.md`
 - `outreach/knowledge-base/industry_context.md`
 - `outreach/knowledge-base/competitor_intel.md`
+- `outreach/playbooks/SHK_PILOT_PLAYBOOK.md` — verbindlicher Angebots-, Research- und 10-Arbeitstage-Plan für den ersten SHK-Pilot
+- `outreach/playbooks/SHK_PILOT_DEMO_GUIDE.md` — 12-Minuten-Demo, Discovery und Gesprächsabschluss
 - `outreach/data/leads.json` · `campaigns.json` · `sourcing-areas.json`
 - `docs/hermes/SOUL.basemodul.md`
 - `AgenteqHQ/docs/basemodul-outreach/OUTREACH_FORMULA.md` — Hook-Typen, Beispiele, Tonalität
