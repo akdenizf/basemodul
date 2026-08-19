@@ -100,8 +100,9 @@ Sicherheit beim Übernehmen des Templates erledigt:
 
 ## Strategie-Dokumente
 
-`PLAN.md` · `PRODUCT_ARCHITECTURE.md` · `OFFER.md` · `WIREFRAME.md` ·
-`DESIGN_BRIEF.md` · `GTM.md` · `LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md`
+`PLAN.md` · `PRODUCT_ARCHITECTURE.md` · `PILOT_DELIVERY_PLAYBOOK.md` ·
+`OFFER.md` · `WIREFRAME.md` · `DESIGN_BRIEF.md` · `GTM.md` ·
+`LEAD_RESEARCH.md` · `TECHNICAL_BLUEPRINT.md`
 
 ## Agenten-Prompts
 

@@ -149,8 +149,10 @@ Erst bei sichtbarem Nutzen werden weitere Module oder Betriebs-Agenten ergänzt.
 ## 11. Referenzdokumente
 
 - `OFFER.md` – Leistungsumfang, Pakete und Preiskorridore
+- `PILOT_DELIVERY_PLAYBOOK.md` – verbindliche 30-Tage-Scorecard, Delivery-Matrix und Go-live-Artefakte
 - `outreach/knowledge-base/basemodul_factsheet.md` – verdichtetes Produktwissen für Outreach und Assistenzsysteme
 - `outreach/knowledge-base/faq_objections.md` – geprüfte Einwandbehandlung und FAQ
-- `web/content/landing.md` – freigegebene Landingpage-Copy
+- `web/content/landing.md` – freigegebene Landingpage-Copy der Hauptseite
+- `web/content/ki-telefonassistent-shk.md` – freigegebene SHK-Einstiegsbotschaft für `/ki-telefonassistent-shk`
 - `GTM.md` – Zielgruppen- und Marktbearbeitung
 - `TECHNICAL_BLUEPRINT.md` – technische Delivery-Leitplanken
