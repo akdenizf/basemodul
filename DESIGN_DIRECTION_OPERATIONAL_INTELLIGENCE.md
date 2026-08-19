@@ -67,15 +67,37 @@ Pricing — macht die Wiedererkennung erst zum Brand-Element.
   („Ein sauberer Vorgang."). Copy unverändert, nur neu komponiert. Einzige
   Sektion, die bewusst vom Karten-Grid-Muster abweichen darf.
 
+## Impeccable-Kritik (2026-08-19)
+
+`$impeccable critique` lief gegen den aktuellen Stand. Ergebnis: Hero/
+RequestArtifact/Problem lesen sich nicht als AI-Slop, aber Modules/Workflow/
+Pricing/FAQ hatten noch unmigrierte Dark-Premium-Glass-Reste, die dem eigenen
+„kein Glow"-Prinzip direkt widersprachen. Automatischer Scan: 1 Fund
+(Side-Tab-Border in `VisualContextSection.tsx`). Nielsen-Score vorher: 25/40.
+
+**Gefixt:**
+- `AmbientOrbs`/`FlowGrid` aus `WorkflowSection`, `ModulesSection`,
+  `PricingSection`, `FaqSection` entfernt (Glow-Reste aus der Dark-Premium-Ära,
+  auf hellem Hintergrund unsichtbar/falsch).
+- `bg-white/[0.0x]`, `border-white/10`, `backdrop-blur-md`, `border-[#333]` in
+  Workflow-Steps, Modul-Kacheln und Pricing-Sekundärbutton auf Papier-Sprache
+  (`border-line`/`bg-paper2`/`leafdim`) umgestellt.
+- Emoji-Icons in `ModulesSection` durch lucide-Icons ersetzt (konsistent mit
+  Hero/RequestArtifact).
+- Side-Tab-Border (`border-l-2`) in `VisualContextSection.tsx` auf vollen
+  Rand + Tint umgestellt.
+- Hero-Flow-Panel von großer dunkler Karte auf schmale Leiste verkleinert —
+  Rückrufnotiz ist jetzt der klare, einzige Hauptfokus.
+
 ## Noch offen (separate Checkpoints, nicht in einem Rutsch)
 
-1. `ModulesSection` — `BaseModulFlow` mit Hover-Snap-in; **Achtung:** enthält
-   noch unmigrierte Dark-Premium-Klassen (`bg-white/[0.0x]`, `border-white/10`,
-   `backdrop-blur-md`), die auf dem hellen `bg-paper`-Hintergrund kaum
-   sichtbar sind — beim Umbau mitfixen.
-2. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
-   ausbauen; gleiches Dark-Premium-Leftover-Problem wie oben, außerhalb des
-   Phone-Mockups.
-3. Abschließender Konsistenz-Pass über restliche Sektionen.
+1. `LiveDemoSection` — als Hero-Level-Moment mit `forestdeep`/`inkdeep`
+   ausbauen; nutzt noch `AmbientOrbs` außerhalb des Phone-Mockups — beim Umbau
+   mitprüfen.
+2. Makro-Navigation für die 15-Sektionen-Seite (P2 aus der Kritik) — kein
+   akuter Fix, aber im Hinterkopf behalten.
+3. Doku-Font-Widerspruch (P3): sicherstellen, dass alle CLAUDE.md-Dateien
+   konsistent „Public Sans" nennen.
+4. Abschließender Konsistenz-Pass über restliche Sektionen.
 
 Jeder Punkt ist ein eigener Review-Checkpoint mit dem Owner, kein Blankoscheck.

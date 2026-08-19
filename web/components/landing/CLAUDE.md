@@ -38,7 +38,7 @@ StorySeam bewusst nur an den drei großen Nähten. `ScrollStorySection` ist nach
 | Funktionsakzent | Gedämpftes Orange `#D8843F` ausschließlich für Priorität/Markierung |
 | Text primär | `#1F2A23` · sekundär `#687169` · gedämpft `#849087` |
 | Linien | `#DDDCD3` |
-| Headings + Body | **Inter** (direkt, sachlich und gut lesbar) |
+| Headings + Body | **Public Sans** (sachlich, greifbar wie ein Werkstatt-Lieferschein) |
 
 Regeln: Papier-/Arbeitsmappen statt Glassmorphism, Rückrufnotiz/Einsatzübergabe statt Smartphone-Mockup, keine Glows und keine dunkle SaaS-Flächen. Jede visuelle Fläche muss den Betriebsalltag, die Zuständigkeit oder den nächsten Schritt verständlicher machen.
 
