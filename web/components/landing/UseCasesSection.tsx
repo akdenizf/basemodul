@@ -1,15 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { X, Check } from "lucide-react";
+import { X, Check, AlertTriangle, Car, Package } from "lucide-react";
 
-// Scanability: pro Card 1 dominantes Emoji als Kategorie-Marker (dekorativ,
+// Scanability: pro Card 1 dominantes Icon als Kategorie-Marker (dekorativ,
 // aria-hidden — das Textlabel daneben trägt die Information). Max. 2
 // Vorher-/Mit-BaseModul-Bullets — die Guard-Aussage ("Team entscheidet")
 // steckt direkt in den Bullets, kein zusätzliches Accordion nötig.
 const CASES = [
   {
-    emoji: "🚨",
+    Icon: AlertTriangle,
     tag: "SHK / Kälte / Notdienst",
     scenario: "Heizungsausfall um 22:13 Uhr.",
     before: ["Mailbox statt Antwort", "Adresse & Dringlichkeit unklar"],
@@ -18,7 +18,7 @@ const CASES = [
     amber: true,
   },
   {
-    emoji: "🚗",
+    Icon: Car,
     tag: "Kfz / Gutachter / Werkstatt",
     scenario: "7 Fotos eines Unfallschadens per WhatsApp.",
     before: ["Bilder ohne Kontext", "Büro fragt telefonisch nach"],
@@ -27,7 +27,7 @@ const CASES = [
     amber: false,
   },
   {
-    emoji: "📦",
+    Icon: Package,
     tag: "Entrümpelung / Reinigung",
     scenario: "Wohnungsauflösung über das Kontaktformular.",
     before: ["Stockwerk, Aufzug, Volumen fehlen", "Angebot nicht kalkulierbar"],
@@ -58,19 +58,19 @@ export function UseCasesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
-              className="flex flex-col rounded-2xl border border-white/[0.07] bg-paper2 p-6"
+              className="flex flex-col rounded-2xl border border-line bg-paper2 p-6"
             >
-              {/* Header: Emoji-Marker + Branche + Szenario */}
+              {/* Header: Icon-Marker + Branche + Szenario */}
               <div className="mb-5 flex items-start gap-3">
                 <span
                   aria-hidden="true"
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] text-[20px] leading-none ${
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] ${
                     c.amber
-                      ? "border border-amber-400/30 bg-amber-400/10"
-                      : "border border-leafdimline/60 bg-leafdim/50"
+                      ? "border border-priorityline bg-prioritydim text-priority"
+                      : "border border-leafdimline/60 bg-leafdim/50 text-leaf"
                   }`}
                 >
-                  {c.emoji}
+                  <c.Icon size={18} strokeWidth={1.8} />
                 </span>
                 <div>
                   <div className="text-[10px] font-semibold uppercase tracking-[0.08em] text-faint">
@@ -84,9 +84,9 @@ export function UseCasesSection() {
 
               {/* Vorher / Mit BaseModul — kurze Bullets statt Prosa */}
               <div className="mt-auto space-y-3">
-                <div className="rounded-xl border border-white/[0.06] bg-paperdeep p-3.5">
+                <div className="rounded-xl border border-line bg-paperdeep p-3.5">
                   <div className="mb-2 flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-faint">
-                    <X size={10} strokeWidth={2.5} className="text-red-400/70" />
+                    <X size={10} strokeWidth={2.5} className="text-faint" />
                     Vorher
                   </div>
                   <ul className="space-y-1.5">
@@ -98,7 +98,7 @@ export function UseCasesSection() {
                         <X
                           size={11}
                           strokeWidth={2.5}
-                          className="mt-[3px] shrink-0 text-red-400/50"
+                          className="mt-[3px] shrink-0 text-faint"
                         />
                         {line}
                       </li>

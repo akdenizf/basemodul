@@ -89,11 +89,11 @@ export function Navbar() {
               href="#cta"
               className="hidden rounded-md bg-leafbtn px-[18px] py-2 text-[14px] font-semibold text-white transition-colors hover:bg-leafbtnhover sm:inline-flex"
             >
-              30-Minuten-Check
+              30-Minuten-Check buchen
             </a>
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex h-11 w-11 items-center justify-center rounded-md text-ink transition-colors hover:bg-white/[0.04] lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-md text-ink transition-colors hover:bg-paperdeep lg:hidden"
               aria-label={mobileOpen ? "Menü schließen" : "Menü öffnen"}
             >
               {mobileOpen ? <X size={24} /> : <Menu size={24} />}
