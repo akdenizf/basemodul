@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BaseModulFlow } from "../../components/landing/BaseModulFlow";
 import {
   AlertTriangle,
   ArrowUpRight,
@@ -74,7 +75,18 @@ export default function ShkIntakePage() {
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-[12px] text-inksoft"><span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} className="text-leaf" /> Klare menschliche Übergaben</span><span className="inline-flex items-center gap-1.5"><ClipboardCheck size={14} className="text-leaf" /> 30 Tage messbar prüfen</span></div>
             </div>
 
-            <div id="beispiel" className="work-paper relative mx-auto w-full max-w-[540px] rounded-[6px] p-4 sm:p-6">
+            <div className="mx-auto w-full max-w-[540px]">
+              <div className="mb-3 overflow-hidden rounded-[6px] bg-forestdeep px-4 py-4 text-white shadow-[0_16px_30px_-20px_rgba(22,56,43,0.72)] sm:px-5">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="font-mono text-[9px] font-semibold uppercase tracking-[0.13em] text-white/75">Eingang → Prüfung → Übergabe</p>
+                  <span className="rounded-[3px] border border-white/15 bg-white/10 px-2 py-1 text-[8px] font-bold uppercase tracking-[0.1em] text-white/80">SHK-Flow</span>
+                </div>
+                <div className="mt-3 flex items-center justify-center">
+                  <BaseModulFlow size="compact" orientation="horizontal" animated={false} className="origin-center scale-[0.9]" />
+                </div>
+                <p className="-mt-1 text-center text-[9px] font-medium text-white/62">Telefon · WhatsApp · Foto → vollständige Übergabe</p>
+              </div>
+              <div id="beispiel" className="work-paper relative w-full rounded-[6px] p-4 sm:p-6">
               <div className="flex items-center justify-between gap-3 border-b border-[#D9D8CF] pb-4">
                 <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-leaf text-white"><PhoneIncoming size={19} /></span><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-faint">Neue Rückrufnotiz</p><p className="mt-0.5 text-[14px] font-bold text-ink">Heizung ausgefallen · Rückruf benötigt</p></div></div>
                 <span className="border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#A75420]">Dringend</span>
@@ -91,6 +103,7 @@ export default function ShkIntakePage() {
                 })}
               </div>
               <div className="mt-5 flex flex-col gap-3 rounded-[5px] border border-[#BED2C1] bg-[#EAF0E8] p-4 sm:flex-row sm:items-center sm:justify-between"><div><p className="text-[10px] font-bold uppercase tracking-[0.1em] text-leaf">Nächster Schritt</p><p className="mt-1 text-[15px] font-bold text-ink">Bereitschaft ruft zurück.</p></div><span className="inline-flex w-fit items-center gap-1.5 text-[12px] font-semibold text-leaf"><CheckCircle2 size={15} /> Übergabe bereit</span></div>
+            </div>
             </div>
           </div>
         </section>
