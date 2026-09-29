@@ -20,7 +20,7 @@ export default defineConfig({
   },
   test: {
     environment: 'node',
-    include: ['tests/vapi/**/*.test.ts'],
+    include: ['tests/vapi/**/*.test.ts', 'tests/seo/**/*.test.ts'],
     globals: false,
     clearMocks: true,
   },

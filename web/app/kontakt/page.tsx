@@ -6,8 +6,9 @@ import { Metadata } from 'next';
 import { Mail, Phone, Calendar, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Kontakt | AGENTEQ',
+    title: 'Kontakt | BaseModul',
     description: 'Nehmen Sie Kontakt mit uns auf oder buchen Sie direkt eine kostenlose Demo.',
+    alternates: { canonical: '/kontakt' },
 };
 
 const CAL_LINK = 'https://app.cal.eu/agenteq/30min?user=agenteq&overlayCalendar=true';

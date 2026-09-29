@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Datenschutz | BaseModul',
     description: 'Datenschutzerklärung für die Website basemodul.de – ein Angebot von AGENTEQ.',
+    alternates: { canonical: '/datenschutz' },
 };
 
 export default function DatenschutzPage() {

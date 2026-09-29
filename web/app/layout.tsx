@@ -7,9 +7,14 @@ const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sa
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.basemodul.de"),
   title: "basemodul.de — Aus Anfragen werden klare nächste Schritte.",
   description:
     "BaseModul bringt Telefon, WhatsApp, Web-Anfragen und Fotos in einen strukturierten Vorgang für lokale Servicebetriebe.",
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: "/icon.svg?v=3",
     shortcut: "/icon.svg?v=3",

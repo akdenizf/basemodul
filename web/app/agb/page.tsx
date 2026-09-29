@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'AGB | BaseModul',
     description: 'Pilot- und Leistungsbedingungen für BaseModul (B2B) – ein Angebot von AGENTEQ.',
+    alternates: { canonical: '/agb' },
 };
 
 export default function AgbPage() {

@@ -6,8 +6,9 @@ import { Metadata } from 'next';
 import { Target, Zap, ShieldCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
-    title: 'Über uns | AGENTEQ',
-    description: 'Lernen Sie das Team hinter AGENTEQ kennen.',
+    title: 'Über uns | BaseModul',
+    description: 'Lernen Sie das Team hinter BaseModul und AGENTEQ kennen.',
+    alternates: { canonical: '/ueber-uns' },
 };
 
 export default function UeberUnsPage() {

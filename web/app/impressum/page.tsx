@@ -6,6 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: 'Impressum | BaseModul',
     description: 'Impressum von BaseModul – einem Angebot von AGENTEQ.',
+    alternates: { canonical: '/impressum' },
 };
 
 export default function ImpressumPage() {

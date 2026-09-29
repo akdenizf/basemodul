@@ -20,6 +20,24 @@ export const metadata: Metadata = {
   title: "Anfragen für SHK-Betriebe zuverlässig annehmen | BaseModul",
   description:
     "BaseModul macht aus verpassten oder unvollständigen SHK-Anfragen klare Rückrufe, vollständige Übergaben und nachvollziehbare nächste Schritte.",
+  alternates: {
+    canonical: "/ki-telefonassistent-shk",
+  },
+  openGraph: {
+    title: "KI-Telefonassistent für SHK-Betriebe | BaseModul",
+    description:
+      "SHK-Anfragen strukturiert aufnehmen, für den Rückruf vorbereiten und mit klarer menschlicher Übergabe bearbeiten.",
+    url: "/ki-telefonassistent-shk",
+    siteName: "BaseModul",
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "KI-Telefonassistent für SHK-Betriebe | BaseModul",
+    description:
+      "SHK-Anfragen strukturiert aufnehmen, für den Rückruf vorbereiten und mit klarer menschlicher Übergabe bearbeiten.",
+  },
 };
 
 const pilotSteps = [
