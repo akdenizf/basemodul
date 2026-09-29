@@ -60,7 +60,7 @@ const processSteps = [
   ["01", "Eingangskanal wählen", "Starten Sie mit dem Kanal, an dem heute am meisten hängen bleibt: Telefon, WhatsApp oder Web."],
   ["02", "Pflichtinformationen festlegen", "Definieren Sie, welche Angaben Ihr Team vor Rückruf, Angebot oder Termin wirklich braucht."],
   ["03", "Übergabe regeln", "Legen Sie fest, wer welche Anfrage bekommt, wann ein Mensch übernehmen muss und welche Fälle nicht automatisiert werden."],
-  ["04", "Pilot messen", "Prüfen Sie vollständige Übergaben, Rückrufzeit, Korrekturen und Fallbacks, bevor weitere Module ergänzt werden."],
+  ["04", "Pilot messen", "Prüfen Sie Übergaben mit vereinbarten Pflichtfeldern, gemessene Rückrufzeit, Korrekturen und Fallbacks, bevor weitere Module ergänzt werden."],
 ];
 
 const handoffFields = [
@@ -248,7 +248,7 @@ export default function CraftRequestAutomationPage() {
                 Für wen die Seite gedacht ist
               </p>
               <h2 className="mt-5 text-[31px] font-extrabold leading-[1.13] tracking-[-0.035em] text-ink">
-                Für Betriebe, die Anfragen verlieren, obwohl Nachfrage da ist.
+                Für Betriebe, bei denen Anfragen liegen bleiben oder unvollständig ankommen, obwohl Nachfrage da ist.
               </h2>
               <ul className="mt-7 space-y-4">
                 {[

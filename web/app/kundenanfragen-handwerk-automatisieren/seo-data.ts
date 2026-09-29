@@ -7,7 +7,7 @@ export const faqs = [
   {
     question: "Welche Kundenanfragen eignen sich für einen ersten Pilot?",
     answer:
-      "Geeignet sind wiederkehrende Erstkontakte wie Rückrufwünsche, neue Reparaturanfragen, Terminwünsche oder unvollständige WhatsApp-Nachrichten. Kritische Fälle brauchen vorab definierte Eskalationsregeln und eine menschliche Übergabe.",
+      "Geeignet sind wiederkehrende Erstkontakte wie Rückrufwünsche, neue Reparaturanfragen, Terminwünsche oder unvollständige WhatsApp-Nachrichten. Hinweise auf kritische Fälle brauchen vorab definierte Regeln und eine menschliche Prüfung.",
   },
   {
     question: "Ersetzt BaseModul Mitarbeitende in der Anfrageannahme?",
@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "Wie wird der Erfolg eines Anfrageprozesses gemessen?",
     answer:
-      "Messbar sind zum Beispiel vollständige Übergaben, Zeit bis zum Rückruf, fehlende Pflichtfelder, Korrekturen durch das Team und Fälle mit menschlichem Fallback. Nicht verfügbare Ausgangsdaten sollten klar als Datenlücke markiert werden.",
+      "Messbar sind zum Beispiel Übergaben mit vereinbarten Pflichtfeldern, gemessene Zeit bis zum Rückruf, fehlende Pflichtfelder, Korrekturen durch das Team und Fälle mit menschlichem Fallback. Nicht verfügbare Ausgangsdaten sollten klar als Datenlücke markiert werden.",
   },
 ];
 

@@ -17,12 +17,12 @@ export const faqs = [
   {
     question: "Kann BaseModul automatisch entscheiden, was wichtig ist?",
     answer:
-      "BaseModul kann Informationen sammeln und nach vereinbarten Regeln vorbereiten. Fachliche Bewertung, kritische Fälle und Grenzentscheidungen bleiben beim Betrieb.",
+      "BaseModul kann Informationen sammeln und nach vereinbarten Regeln vorbereiten. Fachliche Bewertung, als kritisch markierte Fälle und Grenzentscheidungen bleiben beim Betrieb.",
   },
   {
     question: "Wie startet man mit besserer Anfragequalifizierung?",
     answer:
-      "Starten Sie mit einem wiederkehrenden Anfragefall, definieren Sie Pflichtfelder, messen Sie Vollständigkeit und Rückrufzeit und schärfen Sie den Ablauf nach echten Fällen nach.",
+      "Starten Sie mit einem wiederkehrenden Anfragefall, definieren Sie Pflichtfelder, messen Sie Pflichtfeld-Abdeckung und Rückrufzeit im Pilot und schärfen Sie den Ablauf nach echten Fällen nach.",
   },
 ];
 

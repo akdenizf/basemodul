@@ -19,7 +19,7 @@ import { faqs, structuredData } from "./seo-data";
 export const metadata: Metadata = {
   title: "Telefonservice für Handwerksbetriebe | BaseModul",
   description:
-    "BaseModul nimmt Anrufe strukturiert auf, bereitet Rückrufe vor und übergibt unklare oder kritische Fälle nach vereinbarten Regeln an Menschen.",
+    "BaseModul nimmt Anrufe im vereinbarten Ablauf strukturiert auf, bereitet Rückrufe vor und kennzeichnet unklare Fälle zur menschlichen Prüfung.",
   alternates: {
     canonical: "/telefonservice-handwerk",
   },
@@ -48,10 +48,10 @@ const intakeRows = [
 ] as const;
 
 const steps = [
-  ["Anruf annehmen", "Der Ablauf erfasst zunächst, wer anruft und wie die Person erreichbar ist."],
+  ["Anruf nach vereinbarten Regeln aufnehmen", "Der Ablauf erfasst zunächst, wer anruft und wie die Person erreichbar ist."],
   ["Pflichtinfos klären", "Einsatzort, Anliegen, Dringlichkeit und fehlende Unterlagen werden strukturiert abgefragt."],
   ["Übergabe vorbereiten", "Ihr Team bekommt eine Rückrufnotiz statt einer leeren Mailbox oder losen Telefonnotiz."],
-  ["Mensch übernimmt", "Unklare, sensible oder kritische Fälle gehen nach vereinbarten Regeln an eine zuständige Person."],
+  ["Mensch übernimmt", "Unklare, sensible oder als kritisch markierte Fälle werden nach vereinbarten Regeln für eine zuständige Person gekennzeichnet und übergeben."],
 ];
 
 const comparison = [
@@ -95,7 +95,7 @@ export default function TelefonserviceHandwerkPage() {
                 Telefonservice für Handwerksbetriebe, der aus Anrufen Rückrufnotizen macht.
               </h1>
               <p className="mt-6 max-w-[650px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">
-                BaseModul nimmt Anfragen strukturiert auf, fragt fehlende Pflichtinformationen ab und bereitet die Übergabe an Ihr Team vor. Fachliche Entscheidung und kritische Fälle bleiben bei Menschen.
+                BaseModul nimmt Anfragen im vereinbarten Ablauf strukturiert auf, fragt fehlende Pflichtinformationen ab und bereitet die Übergabe an Ihr Team vor. Fachliche Entscheidung und als kritisch markierte Fälle bleiben bei Menschen.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a

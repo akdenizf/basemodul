@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 
 const BADGES = [
-  { icon: "verified_user", label: "DSGVO-konform" },
-  { icon: "dns", label: "Server in Frankfurt" },
+  { icon: "verified_user", label: "Datenschutz vor Go-live geprüft" },
+  { icon: "dns", label: "Infrastruktur nach Setup geklärt" },
   { icon: "flag", label: "Made in Germany" },
-  { icon: "bolt", label: "Antwort in Sekunden" },
-  { icon: "lock", label: "Ende-zu-Ende verschlüsselt" },
-  { icon: "support_agent", label: "Auch außerhalb der Bürozeiten" },
+  { icon: "bolt", label: "Schnelle Rückrufvorbereitung" },
+  { icon: "lock", label: "Zugriffe und Rollen dokumentiert" },
+  { icon: "support_agent", label: "Abläufe nach Vereinbarung" },
 ];
 
 export function TrustSection() {

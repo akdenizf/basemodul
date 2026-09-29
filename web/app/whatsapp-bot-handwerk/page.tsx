@@ -66,7 +66,7 @@ const pilotChecks = [
   "Ein WhatsApp-Anfragefall als Pilot, nicht alle Kanäle auf einmal",
   "Pflichtfelder für Rückruf, Termin oder Angebot",
   "Regeln für unklare, dringende oder sensible Fälle",
-  "Messung von Vollständigkeit, Korrekturen und Rückrufzeit",
+  "Messung von Pflichtfeldern, Korrekturen und Rückrufzeit im Pilot",
 ];
 
 const useCases = [
@@ -111,7 +111,7 @@ export default function WhatsappBotHandwerkPage() {
                 WhatsApp-Bot für Handwerksbetriebe, der aus Nachrichten klare Vorgänge macht.
               </h1>
               <p className="mt-6 max-w-[650px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">
-                BaseModul fragt fehlende Angaben ab, sammelt Fotos und bereitet eine Übergabe vor. Ihr Team entscheidet weiter selbst, was fachlich passiert und wann ein Mensch übernimmt.
+                BaseModul kann in einem abgestimmten WhatsApp-Business-Setup fehlende Angaben abfragen, Fotos einem Vorgang zuordnen und eine Übergabe vorbereiten. Datenschutz, Zuständigkeiten und zulässige Abläufe werden vor dem Go-live geklärt.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a

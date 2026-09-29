@@ -32,7 +32,7 @@ function MiniVorgang() {
       <div className="space-y-2">
         <Field label="Kontakt" value="Klaus M." />
         <Field label="Eingang" value="WhatsApp · 22:47" />
-        <Field label="Anliegen" value="Heizung ausgefallen" />
+        <Field label="Anliegen" value="Wartungsfrage zur Anlage" />
         <Field label="Nächster Schritt" value="Rückruf vorbereiten" />
       </div>
     </div>
@@ -49,7 +49,7 @@ const extensions: { Icon: typeof PhoneIncoming; name: string; hint: string; deta
   {
     Icon: MessageSquare,
     name: "WhatsApp / Chat",
-    hint: "Nachrichten vollständig machen",
+    hint: "Nachrichten verwertbar machen",
     details: ["stellt Rückfragen im Chat", "merkt, wenn Kontext fehlt", "schickt die fertige Anfrage weiter"],
   },
   {
@@ -73,8 +73,8 @@ const extensions: { Icon: typeof PhoneIncoming; name: string; hint: string; deta
   {
     Icon: AlertTriangle,
     name: "Priorität",
-    hint: "Kritische Fälle weitergeben",
-    details: ["wendet Ihre Betriebsregeln an", "macht Unsicherheit sichtbar", "übergibt an einen Menschen"],
+    hint: "Hinweise sichtbar machen",
+    details: ["wendet vereinbarte Signale an", "macht Unsicherheit sichtbar", "bereitet menschliche Prüfung vor"],
   },
 ];
 

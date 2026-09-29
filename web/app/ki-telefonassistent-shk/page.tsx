@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "KI-Telefonassistent für SHK-Betriebe | BaseModul",
   description:
-    "BaseModul nimmt SHK-Anfragen strukturiert auf, bereitet Rückrufe vor und übergibt kritische Fälle nach vereinbarten Regeln an Menschen.",
+    "BaseModul nimmt SHK-Anfragen strukturiert auf, bereitet Rückrufe vor und kennzeichnet Hinweise auf kritische Fälle zur menschlichen Prüfung.",
   alternates: {
     canonical: "/ki-telefonassistent-shk",
   },
@@ -50,8 +50,8 @@ const pilotSteps = [
 const scorecardRows = [
   ["Relevante Eingänge", "Wie viele Anfragen im ausgewählten Kanal tatsächlich beim Betrieb ankommen."],
   ["Nicht angenommene Anrufe", "Welche Anfragen Ihr Team ohne den Ablauf nicht oder nicht rechtzeitig erreicht hätte."],
-  ["Vollständige Übergaben", "Ob Kontakt, Ort, Anliegen und die vereinbarten Pflichtfelder vor dem Rückruf vorliegen."],
-  ["Zeit bis zur Übergabe", "Wie schnell eine relevante Anfrage bei der zuständigen Person liegt."],
+  ["Übergaben mit vereinbarten Pflichtfeldern", "Ob Kontakt, Ort, Anliegen und die vereinbarten Pflichtfelder vor dem Rückruf vorliegen."],
+  ["Gemessene Zeit bis zur Übergabe", "Wie lange es im Pilot dauert, bis eine relevante Anfrage bei der zuständigen Person vorliegt."],
   ["Rückruf- oder Terminquote", "Ob qualifizierte Anfragen einen nachvollziehbaren nächsten Schritt erhalten."],
   ["Menschliche Korrekturen", "Wo Ihr Team Daten, Priorität oder nächsten Schritt korrigieren musste."],
   ["Eskalationen / Fallbacks", "Welche Fälle bewusst an Menschen übergeben wurden, weil Regeln oder Kontext es erforderten."],
@@ -83,7 +83,7 @@ export default function ShkIntakePage() {
             <div>
               <p className="border-l-[3px] border-leaf pl-3 text-[11px] font-bold uppercase tracking-[0.1em] text-leaf">Für SHK-Betriebe in München & Umgebung</p>
               <h1 className="mt-5 max-w-[740px] text-[clamp(42px,6.5vw,73px)] font-extrabold leading-[1.03] tracking-[-0.05em] text-ink">KI-Telefonassistent für SHK-Betriebe, wenn Ihr Team gerade <span className="text-leaf">im Einsatz ist.</span></h1>
-              <p className="mt-6 max-w-[620px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">BaseModul macht aus Telefon-, WhatsApp- und Web-Anfragen vollständige Rückrufnotizen. Wir beginnen mit einem Eingangskanal und vereinbaren, welche Informationen, Zuständigkeiten und Fallbacks Ihr SHK-Team dafür wirklich braucht.</p>
+              <p className="mt-6 max-w-[620px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">BaseModul macht aus Telefon-, WhatsApp- und Web-Anfragen strukturierte Rückrufnotizen mit den vereinbarten Pflichtfeldern, soweit diese im jeweiligen Eingang erhoben werden können. Wir beginnen mit einem Eingangskanal und vereinbaren, welche Informationen, Zuständigkeiten und Fallbacks Ihr SHK-Team dafür wirklich braucht.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#check" className="group inline-flex items-center justify-center gap-2 rounded-lg bg-leafbtn px-7 py-3.5 text-[15px] font-bold text-white transition hover:-translate-y-px hover:bg-leafbtnhover">30-Minuten-Check buchen <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
                 <a href="#beispiel" className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#BFC7BB] bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition hover:border-leaf hover:bg-[#F8FAF6]">Beispiel-Vorgang ansehen</a>
@@ -100,12 +100,12 @@ export default function ShkIntakePage() {
                 <div className="mt-3 flex items-center justify-center">
                   <BaseModulFlow size="compact" orientation="horizontal" animated={false} className="origin-center scale-[0.9]" />
                 </div>
-                <p className="-mt-1 text-center text-[9px] font-medium text-white/62">Telefon · WhatsApp · Foto → vollständige Übergabe</p>
+                <p className="-mt-1 text-center text-[9px] font-medium text-white/62">Telefon · WhatsApp · Foto → Übergabe mit Pflichtfeldern</p>
               </div>
               <div id="beispiel" className="work-paper relative w-full rounded-[6px] p-4 sm:p-6">
               <div className="flex items-center justify-between gap-3 border-b border-[#D9D8CF] pb-4">
-                <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-leaf text-white"><PhoneIncoming size={19} /></span><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-faint">Neue Rückrufnotiz</p><p className="mt-0.5 text-[14px] font-bold text-ink">Heizung ausgefallen · Rückruf benötigt</p></div></div>
-                <span className="border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#A75420]">Dringend</span>
+                <div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-[4px] bg-leaf text-white"><PhoneIncoming size={19} /></span><div><p className="text-[10px] font-bold uppercase tracking-[0.12em] text-faint">Neue Rückrufnotiz</p><p className="mt-0.5 text-[14px] font-bold text-ink">Heizung kalt · Rückruf zur Prüfung benötigt</p></div></div>
+                <span className="border border-[#E5C8AB] bg-[#FCF0E5] px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.08em] text-[#A75420]">Menschliche Prüfung</span>
               </div>
               <div className="mt-2">
                 {([

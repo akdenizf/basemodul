@@ -18,7 +18,7 @@ const item: Variants = {
 const STEPS = [
   { Icon: Camera, text: "Foto kommt unvollständig rein" },
   { Icon: HelpCircle, text: "BaseModul fragt gezielt nach" },
-  { Icon: CheckCircle2, text: "Team bekommt vollständigen Vorgang" },
+  { Icon: CheckCircle2, text: "Team bekommt Übergabe mit Pflichtfeldern" },
 ];
 
 export function VisualContextSection() {

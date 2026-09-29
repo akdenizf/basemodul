@@ -10,9 +10,9 @@ export const faqs = [
       "Typische Angaben sind Name, Rückrufnummer, Einsatzort, Anliegen, Dringlichkeit, Fotos, Dokumente und der gewünschte nächste Schritt. Die Pflichtfelder werden je Betrieb und Gewerk festgelegt.",
   },
   {
-    question: "Kann BaseModul WhatsApp-Anfragen automatisch priorisieren?",
+    question: "Kann BaseModul Hinweise auf Dringlichkeit erfassen?",
     answer:
-      "BaseModul kann vereinbarte Signale erfassen und eine Übergabe vorbereiten. Kritische oder unklare Fälle sollten nach klaren Regeln an eine zuständige Person gehen.",
+      "BaseModul kann vereinbarte Signale erfassen und eine Übergabe vorbereiten. Unklare oder als kritisch markierte Fälle werden zur menschlichen Prüfung gekennzeichnet und nach vereinbarten Regeln übergeben.",
   },
   {
     question: "Ersetzt ein WhatsApp-Bot den persönlichen Kundenkontakt?",
@@ -22,7 +22,7 @@ export const faqs = [
   {
     question: "Wie startet ein Betrieb mit WhatsApp-Automatisierung?",
     answer:
-      "Sinnvoll ist ein Pilot mit einem konkreten Anfragefall: zum Beispiel Reparaturanfrage mit Foto. Danach werden Vollständigkeit, Rückrufzeit, Korrekturen und Fallbacks geprüft.",
+      "Sinnvoll ist ein Pilot mit einem konkreten Anfragefall: zum Beispiel Reparaturanfrage mit Foto. Danach werden Pflichtfelder, gemessene Rückrufzeit, Korrekturen und Fallbacks geprüft.",
   },
 ];
 

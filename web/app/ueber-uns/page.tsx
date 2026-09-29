@@ -22,7 +22,7 @@ export default function UeberUnsPage() {
                     <div className="mx-auto max-w-7xl px-6 lg:px-8">
                         <div className="mx-auto max-w-3xl text-center mb-16">
                             <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl text-balance mb-6">
-                                Wir bauen den <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500">Anfrage-Assistenten</span> für kleine Betriebe.
+                                Wir bauen den <span className="text-emerald-700">Anfrage-Assistenten</span> für kleine Betriebe.
                             </h1>
                             <p className="text-lg leading-relaxed text-slate-500 max-w-2xl mx-auto">
                                 AGENTEQ verbindet echte Branchen-Expertise mit moderner Künstlicher Intelligenz, um kleine Betriebe zukunftsfähig zu machen.
@@ -108,7 +108,7 @@ export default function UeberUnsPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">Deutsches Vertrauen</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    [Platzhalter: Server in Deutschland, DSGVO-konform von Tag 1 und ein Partner, auf den Sie sich verlassen können.]
+                                    Datenschutz, technische Zuständigkeiten und Betriebsregeln werden vor einem Go-live konkret geprüft und dokumentiert.
                                 </p>
                             </div>
                         </div>

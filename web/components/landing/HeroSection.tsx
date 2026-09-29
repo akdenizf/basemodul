@@ -79,7 +79,7 @@ export function HeroSection() {
               </span>
               <span className="font-mono text-[12px] text-faint">19:42</span>
             </div>
-            <p className="mt-2.5 font-mono text-[15px] text-faint">Heizung kaputt, bitte melden.</p>
+            <p className="mt-2.5 font-mono text-[15px] text-faint">Anlage macht Geräusche, bitte melden.</p>
             <p className="mt-3 border-t border-dashed border-line pt-3 text-[13px] text-faint">
               Keine Adresse. Keine Dringlichkeit. Kein klarer nächster Schritt.
             </p>
@@ -108,13 +108,13 @@ export function HeroSection() {
             </div>
 
             <p className="mt-3.5 text-[17px] font-bold leading-snug text-ink">
-              Heizung ausgefallen · Rückruf benötigt
+              Wartungsfrage · Rückruf zur Prüfung benötigt
             </p>
 
             <dl className="mt-3 space-y-2 text-[14px]">
               <div className="flex gap-2"><dt className="w-[86px] shrink-0 text-faint">Kontakt</dt><dd className="font-semibold text-ink">Klaus Bauer · 0176 24•• •••</dd></div>
               <div className="flex gap-2"><dt className="w-[86px] shrink-0 text-faint">Einsatzort</dt><dd className="font-semibold text-ink">Lindwurmstraße 84, München</dd></div>
-              <div className="flex gap-2"><dt className="w-[86px] shrink-0 text-faint">Dringlichkeit</dt><dd className="font-semibold text-priority">Hoch · nach Betriebsregel</dd></div>
+              <div className="flex gap-2"><dt className="w-[86px] shrink-0 text-faint">Status</dt><dd className="font-semibold text-priority">Hinweis markiert · Team prüft</dd></div>
             </dl>
 
             <div className="mt-4 flex items-center justify-between gap-3 rounded-[6px] border border-leafdimline bg-leafdim px-3.5 py-2.5">

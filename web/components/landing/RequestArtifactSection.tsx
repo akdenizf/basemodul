@@ -16,11 +16,11 @@ import {
 const FIELDS = [
   { Icon: User, label: "Wer ruft an", value: "Klaus M. · 0176 24 68 …" },
   { Icon: MapPin, label: "Wohin", value: "Bergstraße 12, 51063 Köln" },
-  { Icon: Wrench, label: "Was ist los", value: "Heizung ausgefallen, kein Warmwasser" },
-  { Icon: AlertTriangle, label: "Wie dringend", value: "Hoch · Notdienst", urgent: true },
+  { Icon: Wrench, label: "Was ist los", value: "Anlage macht Geräusche, Rückruf gewünscht" },
+  { Icon: AlertTriangle, label: "Wie dringend", value: "Hinweis markiert · Team prüft", urgent: true },
   { Icon: Paperclip, label: "Anhänge", value: "2 Fotos · per Upload-Link nachgereicht" },
-  { Icon: ArrowRight, label: "Was zu tun ist", value: "Rückruf durch Bereitschaft. Ihr Team entscheidet." },
-  { Icon: Send, label: "Schon rausgeschickt", value: "E-Mail + WhatsApp an die Bereitschaft", time: "22:49", ok: true },
+  { Icon: ArrowRight, label: "Was zu tun ist", value: "Rückruf zur Prüfung vorbereiten. Ihr Team entscheidet." },
+  { Icon: Send, label: "Übergabe vorbereitet", value: "E-Mail an die vereinbarte Kontaktstelle", time: "22:49", ok: true },
 ];
 
 export function RequestArtifactSection() {
@@ -30,11 +30,11 @@ export function RequestArtifactSection() {
         <div className="mx-auto max-w-[690px] text-center">
           <span className="border-l-[3px] border-leaf pl-3 text-[11px] font-bold uppercase tracking-[0.1em] text-leaf">01 — Beispiel aus dem Alltag</span>
           <h2 className="mt-5 text-[clamp(30px,3.6vw,47px)] font-bold leading-[1.08] tracking-[-0.035em] text-ink">
-            Ein Anruf um 22:47. Zwei Minuten später weiß die Bereitschaft alles.
+            Ein Anruf um 22:47. Kurz darauf liegt eine prüfbare Übergabe vor.
           </h2>
           <p className="mt-4 text-[16px] leading-[1.7] text-inksoft">
-            Niemand musste rangehen, nachfragen oder etwas notieren. Genau das lag um
-            22:49 bei der Bereitschaft.
+            Kontakt, Ort, Anliegen und nächster Schritt werden nach vereinbarten Pflichtfeldern vorbereitet.
+            Ihr Team prüft und entscheidet.
           </p>
         </div>
 
@@ -50,12 +50,12 @@ export function RequestArtifactSection() {
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#D9D8CF] px-5 py-4 sm:px-7">
               <div className="flex items-center gap-2.5">
                 <PhoneIncoming size={17} strokeWidth={2} className="text-leaf" />
-                <span className="text-[15px] font-bold text-ink">Anruf angenommen</span>
+                <span className="text-[15px] font-bold text-ink">Anruf im Ablauf aufgenommen</span>
                 <span className="font-mono text-[12px] text-faint">22:47</span>
               </div>
               <span className="inline-flex items-center gap-1.5 rounded-full border border-leafdimline bg-leafdim px-2.5 py-1 text-[11px] font-bold text-leaf">
                 <Check size={11} strokeWidth={2.6} />
-                Nichts fehlt
+                Pflichtfelder geprüft
               </span>
             </div>
 

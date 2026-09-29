@@ -2,7 +2,7 @@ export const faqs = [
   {
     question: "Was ist ein Telefonservice für Handwerksbetriebe?",
     answer:
-      "Ein Telefonservice nimmt Anrufe entgegen oder bereitet Rückrufe vor, wenn im Betrieb niemand direkt erreichbar ist. Bei BaseModul liegt der Fokus auf strukturierter Aufnahme: Kontakt, Einsatzort, Anliegen, Dringlichkeit und nächster Schritt.",
+      "Ein Telefonservice kann Anrufe entgegennehmen oder Rückrufe vorbereiten. Bei BaseModul wird der Pilot auf konkrete Anfragearten, Zeitfenster und Übergaberegeln begrenzt.",
   },
   {
     question: "Wie unterscheidet sich BaseModul von einem klassischen Sekretariatsservice?",
@@ -12,7 +12,7 @@ export const faqs = [
   {
     question: "Kann BaseModul jeden Anruf automatisch beantworten?",
     answer:
-      "Nein. Der Pilot wird auf konkrete Anfragearten und Regeln begrenzt. Unklare, sensible oder kritische Fälle werden nach vorher vereinbarten Regeln an Menschen übergeben.",
+      "Nein. Der Pilot wird auf konkrete Anfragearten und Regeln begrenzt. Unklare, sensible oder als kritisch markierte Fälle werden nach vereinbarten Regeln für eine zuständige Person gekennzeichnet und übergeben.",
   },
   {
     question: "Muss unsere bestehende Telefonnummer geändert werden?",

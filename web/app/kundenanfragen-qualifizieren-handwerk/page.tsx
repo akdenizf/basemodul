@@ -20,7 +20,7 @@ import { faqs, structuredData } from "./seo-data";
 export const metadata: Metadata = {
   title: "Kundenanfragen qualifizieren im Handwerk | BaseModul",
   description:
-    "Welche Pflichtinformationen Handwerksbetriebe brauchen, um Anfragen zu priorisieren, Rückrufe vorzubereiten und den nächsten Schritt sicher zu entscheiden.",
+    "Welche Pflichtinformationen Handwerksbetriebe brauchen, um Anfragen nachvollziehbar vorzubereiten, Rückrufe zu strukturieren und den nächsten Schritt im Team zu entscheiden.",
   alternates: {
     canonical: "/kundenanfragen-qualifizieren-handwerk",
   },
@@ -184,7 +184,7 @@ export default function QualifyCraftRequestsPage() {
                 Priorität ist kein Gefühl. Sie braucht sichtbare Signale.
               </h2>
               <p className="mt-5 max-w-[500px] text-[15px] leading-relaxed text-inksoft">
-                BaseModul hilft, Anfragen nach Vollständigkeit und vereinbarten Regeln vorzubereiten. Was fachlich kritisch ist, entscheidet nicht die Seite und nicht ein pauschaler Bot.
+                BaseModul hilft, Anfragen nach vereinbarten Pflichtfeldern und Regeln vorzubereiten. Was fachlich kritisch ist, entscheidet nicht die Seite und nicht ein pauschaler Bot.
               </p>
             </div>
             <div className="overflow-hidden rounded-[7px] border border-line bg-white">
