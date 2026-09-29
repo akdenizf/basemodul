@@ -13,6 +13,11 @@ import {
   faqs as whatsappFaqs,
   structuredData as whatsappStructuredData,
 } from "@/app/whatsapp-bot-handwerk/seo-data";
+import { metadata as phoneServiceMetadata } from "@/app/telefonservice-handwerk/page";
+import {
+  faqs as phoneServiceFaqs,
+  structuredData as phoneServiceStructuredData,
+} from "@/app/telefonservice-handwerk/seo-data";
 
 describe("public SEO metadata routes", () => {
   it("allows public crawling and advertises the canonical sitemap", () => {
@@ -36,6 +41,7 @@ describe("public SEO metadata routes", () => {
       "https://www.basemodul.de/ki-telefonassistent-shk",
       "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren",
       "https://www.basemodul.de/whatsapp-bot-handwerk",
+      "https://www.basemodul.de/telefonservice-handwerk",
       "https://www.basemodul.de/kontakt",
       "https://www.basemodul.de/ueber-uns",
       "https://www.basemodul.de/karriere",
@@ -113,5 +119,28 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(whatsappFaqs.length);
+  });
+
+  it("publishes the telefonservice handwerk page with schema support", () => {
+    expect(phoneServiceMetadata.title).toBe("Telefonservice für Handwerksbetriebe | BaseModul");
+    expect(phoneServiceMetadata.alternates?.canonical).toBe("/telefonservice-handwerk");
+
+    const breadcrumb = phoneServiceStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
+    const faqPage = phoneServiceStructuredData.find((entry) => entry["@type"] === "FAQPage");
+
+    expect(breadcrumb).toMatchObject({
+      itemListElement: [
+        { item: "https://www.basemodul.de" },
+        { item: "https://www.basemodul.de/telefonservice-handwerk" },
+      ],
+    });
+    expect(faqPage).toMatchObject({
+      mainEntity: expect.arrayContaining([
+        expect.objectContaining({
+          name: "Was ist ein Telefonservice für Handwerksbetriebe?",
+        }),
+      ]),
+    });
+    expect(faqPage?.mainEntity).toHaveLength(phoneServiceFaqs.length);
   });
 });

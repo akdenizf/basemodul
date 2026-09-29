@@ -7,6 +7,7 @@ const routes = [
   { path: "/ki-telefonassistent-shk", changeFrequency: "weekly", priority: 0.9 },
   { path: "/kundenanfragen-handwerk-automatisieren", changeFrequency: "weekly", priority: 0.85 },
   { path: "/whatsapp-bot-handwerk", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/telefonservice-handwerk", changeFrequency: "weekly", priority: 0.75 },
   { path: "/kontakt", changeFrequency: "monthly", priority: 0.6 },
   { path: "/ueber-uns", changeFrequency: "monthly", priority: 0.5 },
   { path: "/karriere", changeFrequency: "monthly", priority: 0.4 },
