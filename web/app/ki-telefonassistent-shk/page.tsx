@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BaseModulFlow } from "../../components/landing/BaseModulFlow";
+import { faqs, structuredData } from "./seo-data";
 import {
   AlertTriangle,
   ArrowUpRight,
@@ -17,9 +18,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Anfragen für SHK-Betriebe zuverlässig annehmen | BaseModul",
+  title: "KI-Telefonassistent für SHK-Betriebe | BaseModul",
   description:
-    "BaseModul macht aus verpassten oder unvollständigen SHK-Anfragen klare Rückrufe, vollständige Übergaben und nachvollziehbare nächste Schritte.",
+    "BaseModul nimmt SHK-Anfragen strukturiert auf, bereitet Rückrufe vor und übergibt kritische Fälle nach vereinbarten Regeln an Menschen.",
   alternates: {
     canonical: "/ki-telefonassistent-shk",
   },
@@ -56,16 +57,13 @@ const scorecardRows = [
   ["Eskalationen / Fallbacks", "Welche Fälle bewusst an Menschen übergeben wurden, weil Regeln oder Kontext es erforderten."],
 ];
 
-const faqs = [
-  { question: "Ersetzt BaseModul unsere Disposition oder Rezeption?", answer: "Nein. BaseModul sichert die erste Aufnahme der Anfragen, die heute durchfallen – etwa während Einsätzen oder außerhalb der Erreichbarkeit. Zuständigkeit und fachliche Entscheidung bleiben bei Ihrem Team." },
-  { question: "Müssen wir unsere bestehende Nummer ändern?", answer: "Nein. Ein Pilot kann mit einer Testnummer starten. Später lässt sich Ihre Nummer nach klaren Regeln weiterleiten, etwa außerhalb der Bürozeit oder nach einer vereinbarten Zahl an Klingelzeichen." },
-  { question: "Entscheidet BaseModul selbst, ob ein Notfall vorliegt?", answer: "Nein. Der Ablauf arbeitet nach Ihren vorab vereinbarten Signalen und fragt die benötigten Informationen ab. Kritische Fälle werden an eine menschliche Bereitschaft oder zuständige Person weitergeleitet." },
-  { question: "Was kostet der Einstieg?", answer: "Ein klar abgegrenzter Anfrage-Eingang startet ab 750 € Setup. Laufende Kosten für Telefonie, WhatsApp, Betreuung oder zusätzliche Infrastruktur legen wir vor dem Go-live transparent fest." },
-];
-
 export default function ShkIntakePage() {
   return (
     <div className="min-h-screen overflow-x-clip bg-paper text-ink">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-linesoft bg-paper/95 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6 lg:px-10">
           <Link href="/" className="text-[15px] font-extrabold tracking-[0.1em] text-ink">BASEMODUL</Link>
@@ -84,8 +82,8 @@ export default function ShkIntakePage() {
           <div className="relative mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-[0.98fr_1.02fr] lg:gap-16">
             <div>
               <p className="border-l-[3px] border-leaf pl-3 text-[11px] font-bold uppercase tracking-[0.1em] text-leaf">Für SHK-Betriebe in München & Umgebung</p>
-              <h1 className="mt-5 max-w-[740px] text-[clamp(42px,6.5vw,73px)] font-extrabold leading-[1.03] tracking-[-0.05em] text-ink">Wenn Ihr Team im Einsatz ist, darf keine Anfrage <span className="text-leaf">im Leeren landen.</span></h1>
-              <p className="mt-6 max-w-[620px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">BaseModul macht aus Telefon-, WhatsApp- und Web-Anfragen vollständige Rückrufnotizen. Wir beginnen mit einem Eingangskanal und vereinbaren, welche Informationen, Zuständigkeiten und Fallbacks Ihr Team dafür wirklich braucht.</p>
+              <h1 className="mt-5 max-w-[740px] text-[clamp(42px,6.5vw,73px)] font-extrabold leading-[1.03] tracking-[-0.05em] text-ink">KI-Telefonassistent für SHK-Betriebe, wenn Ihr Team gerade <span className="text-leaf">im Einsatz ist.</span></h1>
+              <p className="mt-6 max-w-[620px] text-[17px] leading-[1.7] text-inksoft sm:text-[19px]">BaseModul macht aus Telefon-, WhatsApp- und Web-Anfragen vollständige Rückrufnotizen. Wir beginnen mit einem Eingangskanal und vereinbaren, welche Informationen, Zuständigkeiten und Fallbacks Ihr SHK-Team dafür wirklich braucht.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
                 <a href="#check" className="group inline-flex items-center justify-center gap-2 rounded-lg bg-leafbtn px-7 py-3.5 text-[15px] font-bold text-white transition hover:-translate-y-px hover:bg-leafbtnhover">30-Minuten-Check buchen <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a>
                 <a href="#beispiel" className="inline-flex items-center justify-center gap-2 rounded-lg border border-[#BFC7BB] bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition hover:border-leaf hover:bg-[#F8FAF6]">Beispiel-Vorgang ansehen</a>
