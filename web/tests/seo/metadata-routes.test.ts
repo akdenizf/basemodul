@@ -18,6 +18,11 @@ import {
   faqs as phoneServiceFaqs,
   structuredData as phoneServiceStructuredData,
 } from "@/app/telefonservice-handwerk/seo-data";
+import { metadata as qualifyMetadata } from "@/app/kundenanfragen-qualifizieren-handwerk/page";
+import {
+  faqs as qualifyFaqs,
+  structuredData as qualifyStructuredData,
+} from "@/app/kundenanfragen-qualifizieren-handwerk/seo-data";
 
 describe("public SEO metadata routes", () => {
   it("allows public crawling and advertises the canonical sitemap", () => {
@@ -42,6 +47,7 @@ describe("public SEO metadata routes", () => {
       "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren",
       "https://www.basemodul.de/whatsapp-bot-handwerk",
       "https://www.basemodul.de/telefonservice-handwerk",
+      "https://www.basemodul.de/kundenanfragen-qualifizieren-handwerk",
       "https://www.basemodul.de/kontakt",
       "https://www.basemodul.de/ueber-uns",
       "https://www.basemodul.de/karriere",
@@ -142,5 +148,28 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(phoneServiceFaqs.length);
+  });
+
+  it("publishes the kundenanfragen qualifizieren page with schema support", () => {
+    expect(qualifyMetadata.title).toBe("Kundenanfragen qualifizieren im Handwerk | BaseModul");
+    expect(qualifyMetadata.alternates?.canonical).toBe("/kundenanfragen-qualifizieren-handwerk");
+
+    const breadcrumb = qualifyStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
+    const faqPage = qualifyStructuredData.find((entry) => entry["@type"] === "FAQPage");
+
+    expect(breadcrumb).toMatchObject({
+      itemListElement: [
+        { item: "https://www.basemodul.de" },
+        { item: "https://www.basemodul.de/kundenanfragen-qualifizieren-handwerk" },
+      ],
+    });
+    expect(faqPage).toMatchObject({
+      mainEntity: expect.arrayContaining([
+        expect.objectContaining({
+          name: "Was bedeutet Kundenanfragen qualifizieren?",
+        }),
+      ]),
+    });
+    expect(faqPage?.mainEntity).toHaveLength(qualifyFaqs.length);
   });
 });
