@@ -7,9 +7,9 @@ const publicSans = Public_Sans({ subsets: ["latin"], variable: "--font-public-sa
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "basemodul.de — Anfragen strukturieren. Übergaben automatisieren.",
+  title: "basemodul.de — Aus Anfragen werden klare nächste Schritte.",
   description:
-    "KI-Telefonassistent für Servicebetriebe: Anrufe entgegennehmen, fehlende Infos abfragen und Rückrufnotizen, Termine oder Notfälle sauber ans Team übergeben.",
+    "BaseModul bringt Telefon, WhatsApp, Web-Anfragen und Fotos in einen strukturierten Vorgang für lokale Servicebetriebe.",
   icons: {
     icon: "/icon.svg?v=3",
     shortcut: "/icon.svg?v=3",
