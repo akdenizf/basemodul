@@ -8,6 +8,11 @@ import {
   faqs as requestAutomationFaqs,
   structuredData as requestAutomationStructuredData,
 } from "@/app/kundenanfragen-handwerk-automatisieren/seo-data";
+import { metadata as whatsappMetadata } from "@/app/whatsapp-bot-handwerk/page";
+import {
+  faqs as whatsappFaqs,
+  structuredData as whatsappStructuredData,
+} from "@/app/whatsapp-bot-handwerk/seo-data";
 
 describe("public SEO metadata routes", () => {
   it("allows public crawling and advertises the canonical sitemap", () => {
@@ -30,6 +35,7 @@ describe("public SEO metadata routes", () => {
       "https://www.basemodul.de",
       "https://www.basemodul.de/ki-telefonassistent-shk",
       "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren",
+      "https://www.basemodul.de/whatsapp-bot-handwerk",
       "https://www.basemodul.de/kontakt",
       "https://www.basemodul.de/ueber-uns",
       "https://www.basemodul.de/karriere",
@@ -84,5 +90,28 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(requestAutomationFaqs.length);
+  });
+
+  it("publishes the WhatsApp bot handwerk page with schema support", () => {
+    expect(whatsappMetadata.title).toBe("WhatsApp-Bot für Handwerksbetriebe | BaseModul");
+    expect(whatsappMetadata.alternates?.canonical).toBe("/whatsapp-bot-handwerk");
+
+    const breadcrumb = whatsappStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
+    const faqPage = whatsappStructuredData.find((entry) => entry["@type"] === "FAQPage");
+
+    expect(breadcrumb).toMatchObject({
+      itemListElement: [
+        { item: "https://www.basemodul.de" },
+        { item: "https://www.basemodul.de/whatsapp-bot-handwerk" },
+      ],
+    });
+    expect(faqPage).toMatchObject({
+      mainEntity: expect.arrayContaining([
+        expect.objectContaining({
+          name: "Was macht ein WhatsApp-Bot für Handwerksbetriebe?",
+        }),
+      ]),
+    });
+    expect(faqPage?.mainEntity).toHaveLength(whatsappFaqs.length);
   });
 });
