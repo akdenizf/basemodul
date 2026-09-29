@@ -3,6 +3,11 @@ import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { metadata as shkMetadata } from "@/app/ki-telefonassistent-shk/page";
 import { faqs, structuredData } from "@/app/ki-telefonassistent-shk/seo-data";
+import { metadata as requestAutomationMetadata } from "@/app/kundenanfragen-handwerk-automatisieren/page";
+import {
+  faqs as requestAutomationFaqs,
+  structuredData as requestAutomationStructuredData,
+} from "@/app/kundenanfragen-handwerk-automatisieren/seo-data";
 
 describe("public SEO metadata routes", () => {
   it("allows public crawling and advertises the canonical sitemap", () => {
@@ -24,6 +29,7 @@ describe("public SEO metadata routes", () => {
     expect(urls).toEqual([
       "https://www.basemodul.de",
       "https://www.basemodul.de/ki-telefonassistent-shk",
+      "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren",
       "https://www.basemodul.de/kontakt",
       "https://www.basemodul.de/ueber-uns",
       "https://www.basemodul.de/karriere",
@@ -55,5 +61,28 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(faqs.length);
+  });
+
+  it("publishes the handwerk request automation pillar page with schema support", () => {
+    expect(requestAutomationMetadata.title).toBe("Kundenanfragen im Handwerk automatisieren | BaseModul");
+    expect(requestAutomationMetadata.alternates?.canonical).toBe("/kundenanfragen-handwerk-automatisieren");
+
+    const breadcrumb = requestAutomationStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
+    const faqPage = requestAutomationStructuredData.find((entry) => entry["@type"] === "FAQPage");
+
+    expect(breadcrumb).toMatchObject({
+      itemListElement: [
+        { item: "https://www.basemodul.de" },
+        { item: "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren" },
+      ],
+    });
+    expect(faqPage).toMatchObject({
+      mainEntity: expect.arrayContaining([
+        expect.objectContaining({
+          name: "Wie kann ein Handwerksbetrieb Kundenanfragen automatisieren?",
+        }),
+      ]),
+    });
+    expect(faqPage?.mainEntity).toHaveLength(requestAutomationFaqs.length);
   });
 });
