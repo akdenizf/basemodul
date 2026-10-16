@@ -29,6 +29,20 @@ export const faqs = [
 export const structuredData = [
   {
     "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.basemodul.de/telefonservice-handwerk#service",
+    name: "Telefonservice für Handwerksbetriebe",
+    description:
+      "Anrufe anhand vereinbarter Pflichtinformationen aufnehmen und einen Rückruf oder eine menschliche Prüfung vorbereiten.",
+    url: "https://www.basemodul.de/telefonservice-handwerk",
+    provider: { "@id": "https://www.basemodul.de/#organization" },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Handwerksbetriebe",
+    },
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

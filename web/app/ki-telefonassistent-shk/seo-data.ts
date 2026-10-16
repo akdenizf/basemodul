@@ -9,6 +9,20 @@ export const faqs = [
 export const structuredData = [
   {
     "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.basemodul.de/ki-telefonassistent-shk#service",
+    name: "KI-Telefonassistent für SHK-Betriebe",
+    description:
+      "Strukturierte Aufnahme von SHK-Anfragen mit vereinbarten Pflichtangaben und klarer menschlicher Übergabe.",
+    url: "https://www.basemodul.de/ki-telefonassistent-shk",
+    provider: { "@id": "https://www.basemodul.de/#organization" },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "SHK-Betriebe",
+    },
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

@@ -29,6 +29,20 @@ export const faqs = [
 export const structuredData = [
   {
     "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.basemodul.de/whatsapp-bot-handwerk#service",
+    name: "WhatsApp-Bot für Handwerksbetriebe",
+    description:
+      "WhatsApp-Nachrichten, Fotos und fehlende Angaben strukturiert erfassen und zur menschlichen Bearbeitung übergeben.",
+    url: "https://www.basemodul.de/whatsapp-bot-handwerk",
+    provider: { "@id": "https://www.basemodul.de/#organization" },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Handwerksbetriebe",
+    },
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

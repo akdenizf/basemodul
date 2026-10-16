@@ -29,6 +29,20 @@ export const faqs = [
 export const structuredData = [
   {
     "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren#service",
+    name: "Kundenanfragen im Handwerk automatisieren",
+    description:
+      "Kundenanfragen aus Telefon, WhatsApp, Web und Fotos mit Pflichtinformationen, Zuständigkeit und menschlicher Übergabe strukturieren.",
+    url: "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren",
+    provider: { "@id": "https://www.basemodul.de/#organization" },
+    audience: {
+      "@type": "BusinessAudience",
+      audienceType: "Handwerks- und Servicebetriebe",
+    },
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

@@ -104,6 +104,7 @@ describe("public SEO metadata routes", () => {
 
     const breadcrumb = structuredData.find((entry) => entry["@type"] === "BreadcrumbList");
     const faqPage = structuredData.find((entry) => entry["@type"] === "FAQPage");
+    const service = structuredData.find((entry) => entry["@type"] === "Service");
 
     expect(breadcrumb).toMatchObject({
       itemListElement: [
@@ -119,6 +120,10 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(faqs.length);
+    expect(service).toMatchObject({
+      url: "https://www.basemodul.de/ki-telefonassistent-shk",
+      provider: { "@id": "https://www.basemodul.de/#organization" },
+    });
   });
 
   it("publishes the handwerk request automation pillar page with schema support", () => {
@@ -127,6 +132,7 @@ describe("public SEO metadata routes", () => {
 
     const breadcrumb = requestAutomationStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
     const faqPage = requestAutomationStructuredData.find((entry) => entry["@type"] === "FAQPage");
+    const service = requestAutomationStructuredData.find((entry) => entry["@type"] === "Service");
 
     expect(breadcrumb).toMatchObject({
       itemListElement: [
@@ -142,6 +148,10 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(requestAutomationFaqs.length);
+    expect(service).toMatchObject({
+      url: "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren",
+      provider: { "@id": "https://www.basemodul.de/#organization" },
+    });
   });
 
   it("publishes the WhatsApp bot handwerk page with schema support", () => {
@@ -150,6 +160,7 @@ describe("public SEO metadata routes", () => {
 
     const breadcrumb = whatsappStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
     const faqPage = whatsappStructuredData.find((entry) => entry["@type"] === "FAQPage");
+    const service = whatsappStructuredData.find((entry) => entry["@type"] === "Service");
 
     expect(breadcrumb).toMatchObject({
       itemListElement: [
@@ -165,6 +176,10 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(whatsappFaqs.length);
+    expect(service).toMatchObject({
+      url: "https://www.basemodul.de/whatsapp-bot-handwerk",
+      provider: { "@id": "https://www.basemodul.de/#organization" },
+    });
   });
 
   it("publishes the telefonservice handwerk page with schema support", () => {
@@ -173,6 +188,7 @@ describe("public SEO metadata routes", () => {
 
     const breadcrumb = phoneServiceStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
     const faqPage = phoneServiceStructuredData.find((entry) => entry["@type"] === "FAQPage");
+    const service = phoneServiceStructuredData.find((entry) => entry["@type"] === "Service");
 
     expect(breadcrumb).toMatchObject({
       itemListElement: [
@@ -188,6 +204,10 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(phoneServiceFaqs.length);
+    expect(service).toMatchObject({
+      url: "https://www.basemodul.de/telefonservice-handwerk",
+      provider: { "@id": "https://www.basemodul.de/#organization" },
+    });
   });
 
   it("publishes the kundenanfragen qualifizieren page with schema support", () => {
