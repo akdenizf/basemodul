@@ -34,6 +34,28 @@ const structuredData = {
         "@type": "Person",
         name: "Fatih Mehmet Akdeniz",
       },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "BaseModul Lösungen für Kundenanfragen",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: { "@id": "https://www.basemodul.de/ki-telefonassistent-shk#service" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@id": "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren#service" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@id": "https://www.basemodul.de/whatsapp-bot-handwerk#service" },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: { "@id": "https://www.basemodul.de/telefonservice-handwerk#service" },
+          },
+        ],
+      },
     },
     {
       "@type": "WebSite",

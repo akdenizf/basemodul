@@ -35,6 +35,21 @@ describe("public SEO metadata routes", () => {
     expect(homepageSource).toContain("#webpage");
   });
 
+  it("connects the homepage organization to the four public services", () => {
+    const homepageSource = readFileSync(new URL("../../app/page.tsx", import.meta.url), "utf8");
+    const serviceIds = [
+      "/ki-telefonassistent-shk#service",
+      "/kundenanfragen-handwerk-automatisieren#service",
+      "/whatsapp-bot-handwerk#service",
+      "/telefonservice-handwerk#service",
+    ];
+
+    expect(homepageSource).toContain("hasOfferCatalog");
+    for (const serviceId of serviceIds) {
+      expect(homepageSource).toContain(serviceId);
+    }
+  });
+
   it("does not expose placeholder copy on the public about page", () => {
     const aboutSource = readFileSync(new URL("../../app/ueber-uns/page.tsx", import.meta.url), "utf8");
 
