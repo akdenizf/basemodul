@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { metadata as shkMetadata } from "@/app/ki-telefonassistent-shk/page";
@@ -25,6 +26,30 @@ import {
 } from "@/app/kundenanfragen-qualifizieren-handwerk/seo-data";
 
 describe("public SEO metadata routes", () => {
+  it("publishes a homepage entity graph for BaseModul", () => {
+    const homepageSource = readFileSync(new URL("../../app/page.tsx", import.meta.url), "utf8");
+
+    expect(homepageSource).toContain('type="application/ld+json"');
+    expect(homepageSource).toContain("#organization");
+    expect(homepageSource).toContain("#website");
+    expect(homepageSource).toContain("#webpage");
+  });
+
+  it("does not expose placeholder copy on the public about page", () => {
+    const aboutSource = readFileSync(new URL("../../app/ueber-uns/page.tsx", import.meta.url), "utf8");
+
+    expect(aboutSource).not.toContain("[Platzhalter:");
+  });
+
+  it("connects the about page to the canonical BaseModul entity", () => {
+    const aboutSource = readFileSync(new URL("../../app/ueber-uns/page.tsx", import.meta.url), "utf8");
+
+    expect(aboutSource).toContain('type="application/ld+json"');
+    expect(aboutSource).toContain('"@type": "AboutPage"');
+    expect(aboutSource).toContain("https://www.basemodul.de/#organization");
+    expect(aboutSource).toContain("https://www.basemodul.de/#website");
+  });
+
   it("allows public crawling and advertises the canonical sitemap", () => {
     expect(robots()).toEqual({
       rules: {

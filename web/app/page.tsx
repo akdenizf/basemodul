@@ -20,6 +20,43 @@ const LiveDemoSection = dynamic(
   { ssr: false, loading: () => <div className="py-16 bg-paper" /> }
 );
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.basemodul.de/#organization",
+      name: "BaseModul",
+      url: "https://www.basemodul.de",
+      description:
+        "BaseModul strukturiert Kundenanfragen aus Telefon, WhatsApp, Web und Fotos für lokale Service- und Handwerksbetriebe.",
+      founder: {
+        "@type": "Person",
+        name: "Fatih Mehmet Akdeniz",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.basemodul.de/#website",
+      url: "https://www.basemodul.de",
+      name: "BaseModul",
+      inLanguage: "de-DE",
+      publisher: { "@id": "https://www.basemodul.de/#organization" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.basemodul.de/#webpage",
+      url: "https://www.basemodul.de/",
+      name: "BaseModul | Kundenanfragen für Handwerksbetriebe strukturieren",
+      description:
+        "BaseModul bringt Telefon, WhatsApp, Web-Anfragen und Fotos in einen strukturierten Vorgang für lokale Servicebetriebe.",
+      inLanguage: "de-DE",
+      isPartOf: { "@id": "https://www.basemodul.de/#website" },
+      about: { "@id": "https://www.basemodul.de/#organization" },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   title: "BaseModul | Kundenanfragen für Handwerksbetriebe strukturieren",
   description:
@@ -49,6 +86,10 @@ export const metadata: Metadata = {
 export default function LandingPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col overflow-x-clip bg-paper text-ink">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       <main className="flex-1 pt-[60px]">
         <HeroSection />

@@ -11,9 +11,67 @@ export const metadata: Metadata = {
     alternates: { canonical: '/ueber-uns' },
 };
 
+const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "https://www.basemodul.de/#organization",
+            name: "BaseModul",
+            url: "https://www.basemodul.de",
+            description:
+                "BaseModul strukturiert Kundenanfragen aus Telefon, WhatsApp, Web und Fotos für lokale Service- und Handwerksbetriebe.",
+            founder: {
+                "@type": "Person",
+                name: "Fatih Mehmet Akdeniz",
+            },
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://www.basemodul.de/#website",
+            url: "https://www.basemodul.de",
+            name: "BaseModul",
+            publisher: { "@id": "https://www.basemodul.de/#organization" },
+            inLanguage: "de-DE",
+        },
+        {
+            "@type": "AboutPage",
+            "@id": "https://www.basemodul.de/ueber-uns#webpage",
+            url: "https://www.basemodul.de/ueber-uns",
+            name: "Über uns | BaseModul",
+            description: "Lernen Sie das Team hinter BaseModul und AGENTEQ kennen.",
+            isPartOf: { "@id": "https://www.basemodul.de/#website" },
+            about: { "@id": "https://www.basemodul.de/#organization" },
+            mainEntity: { "@id": "https://www.basemodul.de/#organization" },
+            inLanguage: "de-DE",
+        },
+        {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "BaseModul",
+                    item: "https://www.basemodul.de",
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Über uns",
+                    item: "https://www.basemodul.de/ueber-uns",
+                },
+            ],
+        },
+    ],
+};
+
 export default function UeberUnsPage() {
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col selection:bg-indigo-100 selection:text-indigo-900">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
             <Navbar />
 
             <main className="flex-1 pt-32 pb-24">
@@ -86,7 +144,7 @@ export default function UeberUnsPage() {
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">Aus der Praxis</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    [Platzhalter: Wir bauen Funktionen, die im echten Alltag eines Betriebs fehlen und einen messbaren Mehrwert bieten.]
+                                    Wir beginnen mit einem wiederkehrenden Anfragefluss und den Informationen, die das Team für den nächsten Schritt wirklich braucht.
                                 </p>
                             </div>
 
@@ -95,9 +153,9 @@ export default function UeberUnsPage() {
                                 <div className="h-14 w-14 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6">
                                     <Zap size={28} />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3">Maximale Einfachheit</h3>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Einfach starten</h3>
                                 <p className="text-sm text-slate-500 leading-relaxed">
-                                    [Platzhalter: Keine tagelangen Schulungen. Unsere Software muss sich wie von selbst bedienen lassen und Arbeit abnehmen.]
+                                    Ein klar abgegrenzter Pilot macht Übergaben, fehlende Angaben und notwendige Korrekturen sichtbar, bevor weitere Module dazukommen.
                                 </p>
                             </div>
 
