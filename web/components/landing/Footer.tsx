@@ -1,6 +1,13 @@
 import Link from "next/link";
 
 const footerLinks = {
+  Lösungen: [
+    { label: "Anfrageprozess automatisieren", href: "/kundenanfragen-handwerk-automatisieren" },
+    { label: "KI-Telefonassistent für SHK", href: "/ki-telefonassistent-shk" },
+    { label: "WhatsApp-Bot fürs Handwerk", href: "/whatsapp-bot-handwerk" },
+    { label: "Telefonservice fürs Handwerk", href: "/telefonservice-handwerk" },
+    { label: "Kundenanfragen qualifizieren", href: "/kundenanfragen-qualifizieren-handwerk" },
+  ],
   Produkt: [
     { label: "Beispiel", href: "/#beispiel" },
     { label: "Module", href: "/#modules" },
@@ -24,7 +31,7 @@ export function Footer() {
   return (
     <footer className="border-t border-linesoft bg-paperdeep pb-9 pt-16">
       <div className="mx-auto max-w-[1200px] px-6 lg:px-12">
-        <div className="grid gap-10 md:grid-cols-4 lg:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-[1.5fr_1.35fr_1fr_1fr_1fr]">
           {/* Brand */}
           <div>
             <Link href="/" className="text-[16px] font-bold tracking-[0.08em] text-ink">

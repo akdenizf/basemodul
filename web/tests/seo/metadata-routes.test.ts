@@ -50,6 +50,21 @@ describe("public SEO metadata routes", () => {
     expect(aboutSource).toContain("https://www.basemodul.de/#website");
   });
 
+  it("links every priority SEO route from the shared public footer", () => {
+    const footerSource = readFileSync(new URL("../../components/landing/Footer.tsx", import.meta.url), "utf8");
+    const priorityRoutes = [
+      "/kundenanfragen-handwerk-automatisieren",
+      "/ki-telefonassistent-shk",
+      "/whatsapp-bot-handwerk",
+      "/telefonservice-handwerk",
+      "/kundenanfragen-qualifizieren-handwerk",
+    ];
+
+    for (const route of priorityRoutes) {
+      expect(footerSource).toContain(`href: "${route}"`);
+    }
+  });
+
   it("allows public crawling and advertises the canonical sitemap", () => {
     expect(robots()).toEqual({
       rules: {
