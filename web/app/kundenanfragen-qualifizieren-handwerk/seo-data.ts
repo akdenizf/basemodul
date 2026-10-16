@@ -29,6 +29,18 @@ export const faqs = [
 export const structuredData = [
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.basemodul.de/kundenanfragen-qualifizieren-handwerk#webpage",
+    name: "Kundenanfragen qualifizieren im Handwerk",
+    description:
+      "Pflichtfelder, Priorisierung, Zuständigkeit und menschliche Übergabe für Kundenanfragen im Handwerk praktisch erklären.",
+    url: "https://www.basemodul.de/kundenanfragen-qualifizieren-handwerk",
+    isPartOf: { "@id": "https://www.basemodul.de/#website" },
+    about: { "@id": "https://www.basemodul.de/#organization" },
+    inLanguage: "de-DE",
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

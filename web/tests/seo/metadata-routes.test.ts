@@ -216,6 +216,7 @@ describe("public SEO metadata routes", () => {
 
     const breadcrumb = qualifyStructuredData.find((entry) => entry["@type"] === "BreadcrumbList");
     const faqPage = qualifyStructuredData.find((entry) => entry["@type"] === "FAQPage");
+    const webPage = qualifyStructuredData.find((entry) => entry["@type"] === "WebPage");
 
     expect(breadcrumb).toMatchObject({
       itemListElement: [
@@ -231,5 +232,10 @@ describe("public SEO metadata routes", () => {
       ]),
     });
     expect(faqPage?.mainEntity).toHaveLength(qualifyFaqs.length);
+    expect(webPage).toMatchObject({
+      url: "https://www.basemodul.de/kundenanfragen-qualifizieren-handwerk",
+      isPartOf: { "@id": "https://www.basemodul.de/#website" },
+      about: { "@id": "https://www.basemodul.de/#organization" },
+    });
   });
 });
