@@ -144,7 +144,7 @@ export default function ShkIntakePage() {
 
       <RelatedSolutions currentPath="/ki-telefonassistent-shk" />
 
-      <footer className="border-t border-linesoft bg-paperdeep px-6 py-8"><div className="mx-auto flex max-w-[1200px] flex-col gap-4 text-[12px] text-inksoft sm:flex-row sm:items-center sm:justify-between"><p><span className="font-bold tracking-[0.08em] text-ink">BASEMODUL</span> · Ein Produkt von AGENTEQ</p><div className="flex gap-5"><Link href="/impressum" className="hover:text-leaf">Impressum</Link><Link href="/datenschutz" className="hover:text-leaf">Datenschutz</Link><Link href="/" className="hover:text-leaf">Zur Startseite</Link></div></div></footer>
+      <footer className="border-t border-linesoft bg-paperdeep px-6 py-8"><div className="mx-auto flex max-w-[1200px] flex-col gap-4 text-[12px] text-inksoft sm:flex-row sm:items-center sm:justify-between"><p><span className="font-bold tracking-[0.08em] text-ink">BASEMODUL</span> · Ein Produkt von AGENTEQ</p><div className="flex flex-wrap gap-5"><Link href="/kontakt" className="hover:text-leaf">Kontakt</Link><Link href="/impressum" className="hover:text-leaf">Impressum</Link><Link href="/datenschutz" className="hover:text-leaf">Datenschutz</Link><Link href="/" className="hover:text-leaf">Zur Startseite</Link></div></div></footer>
     </div>
   );
 }

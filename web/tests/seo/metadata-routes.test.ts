@@ -96,6 +96,21 @@ describe("public SEO metadata routes", () => {
     }
   });
 
+  it("links the public contact page from every footer variant", () => {
+    const footerSource = readFileSync(new URL("../../components/landing/Footer.tsx", import.meta.url), "utf8");
+    expect(footerSource).toContain('{ label: "Kontakt", href: "/kontakt" }');
+
+    for (const page of [
+      "../../app/ki-telefonassistent-shk/page.tsx",
+      "../../app/kundenanfragen-handwerk-automatisieren/page.tsx",
+      "../../app/whatsapp-bot-handwerk/page.tsx",
+      "../../app/telefonservice-handwerk/page.tsx",
+      "../../app/kundenanfragen-qualifizieren-handwerk/page.tsx",
+    ]) {
+      expect(readFileSync(new URL(page, import.meta.url), "utf8")).toContain('<Link href="/kontakt"');
+    }
+  });
+
   it("routes shared navigation anchors back to homepage sections", () => {
     const navbarSource = readFileSync(new URL("../../components/landing/Navbar.tsx", import.meta.url), "utf8");
 

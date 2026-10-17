@@ -18,7 +18,7 @@ const footerLinks = {
   Unternehmen: [
     { label: "Über uns", href: "/ueber-uns" },
     { label: "Karriere", href: "/karriere" },
-    { label: "Kontakt", href: "/#cta" },
+    { label: "Kontakt", href: "/kontakt" },
   ],
   Rechtliches: [
     { label: "Impressum", href: "/impressum" },
