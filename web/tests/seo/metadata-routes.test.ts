@@ -39,6 +39,14 @@ describe("public SEO metadata routes", () => {
     expect(layoutSource).toContain("hasOfferCatalog");
   });
 
+  it("keeps page-level graphs free of duplicate organization definitions", () => {
+    for (const page of ["../../app/page.tsx", "../../app/ueber-uns/page.tsx", "../../app/kontakt/page.tsx"]) {
+      const source = readFileSync(new URL(page, import.meta.url), "utf8");
+      expect(source).not.toContain('"@type": "Organization"');
+      expect(source).not.toContain('"@type": "WebSite"');
+    }
+  });
+
   it("publishes a homepage entity graph for BaseModul", () => {
     const homepageSource = readFileSync(new URL("../../app/page.tsx", import.meta.url), "utf8");
 
@@ -49,7 +57,7 @@ describe("public SEO metadata routes", () => {
   });
 
   it("connects the homepage organization to the four public services", () => {
-    const homepageSource = readFileSync(new URL("../../app/page.tsx", import.meta.url), "utf8");
+    const layoutSource = readFileSync(new URL("../../app/layout.tsx", import.meta.url), "utf8");
     const serviceIds = [
       "/ki-telefonassistent-shk#service",
       "/kundenanfragen-handwerk-automatisieren#service",
@@ -57,25 +65,23 @@ describe("public SEO metadata routes", () => {
       "/telefonservice-handwerk#service",
     ];
 
-    expect(homepageSource).toContain("hasOfferCatalog");
+    expect(layoutSource).toContain("hasOfferCatalog");
     for (const serviceId of serviceIds) {
-      expect(homepageSource).toContain(serviceId);
+      expect(layoutSource).toContain(serviceId);
     }
   });
 
   it("publishes verified legal and contact details for the BaseModul entity", () => {
-    for (const page of ["../../app/page.tsx", "../../app/ueber-uns/page.tsx"]) {
-      const source = readFileSync(new URL(page, import.meta.url), "utf8");
-      expect(source).toContain('legalName: "AGENTEQ"');
-      expect(source).toContain('"@type": "ContactPoint"');
-      expect(source).toContain('email: "info@agenteq.de"');
-      expect(source).toContain('telephone: "+4915901662235"');
-      expect(source).toContain('"@type": "PostalAddress"');
-      expect(source).toContain('streetAddress: "Karl-Marx-Ring 17"');
-      expect(source).toContain('postalCode: "81735"');
-      expect(source).toContain('addressLocality: "München"');
-      expect(source).toContain('addressCountry: "DE"');
-    }
+    const source = readFileSync(new URL("../../app/layout.tsx", import.meta.url), "utf8");
+    expect(source).toContain('legalName: "AGENTEQ"');
+    expect(source).toContain('"@type": "ContactPoint"');
+    expect(source).toContain('email: "info@agenteq.de"');
+    expect(source).toContain('telephone: "+4915901662235"');
+    expect(source).toContain('"@type": "PostalAddress"');
+    expect(source).toContain('streetAddress: "Karl-Marx-Ring 17"');
+    expect(source).toContain('postalCode: "81735"');
+    expect(source).toContain('addressLocality: "München"');
+    expect(source).toContain('addressCountry: "DE"');
   });
 
   it("does not expose placeholder copy on the public about page", () => {
@@ -205,13 +211,6 @@ describe("public SEO metadata routes", () => {
     const contactSource = readFileSync(new URL("../../app/kontakt/page.tsx", import.meta.url), "utf8");
 
     expect(contactSource).toContain('type="application/ld+json"');
-    expect(contactSource).toContain('"@type": "Organization"');
-    expect(contactSource).toContain('legalName: "AGENTEQ"');
-    expect(contactSource).toContain('"@type": "ContactPoint"');
-    expect(contactSource).toContain('email: "info@agenteq.de"');
-    expect(contactSource).toContain('telephone: "+4915901662235"');
-    expect(contactSource).toContain('"@type": "PostalAddress"');
-    expect(contactSource).toContain('"@type": "WebSite"');
     expect(contactSource).toContain('"@type": "ContactPage"');
     expect(contactSource).toContain("https://www.basemodul.de/#organization");
     expect(contactSource).toContain("https://www.basemodul.de/#website");

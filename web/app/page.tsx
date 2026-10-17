@@ -24,63 +24,6 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
-      "@id": "https://www.basemodul.de/#organization",
-      name: "BaseModul",
-      legalName: "AGENTEQ",
-      url: "https://www.basemodul.de",
-      description:
-        "BaseModul strukturiert Kundenanfragen aus Telefon, WhatsApp, Web und Fotos für lokale Service- und Handwerksbetriebe.",
-      founder: {
-        "@type": "Person",
-        name: "Fatih Mehmet Akdeniz",
-      },
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer service",
-        email: "info@agenteq.de",
-        telephone: "+4915901662235",
-        availableLanguage: ["de"],
-      },
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "Karl-Marx-Ring 17",
-        postalCode: "81735",
-        addressLocality: "München",
-        addressCountry: "DE",
-      },
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: "BaseModul Lösungen für Kundenanfragen",
-        itemListElement: [
-          {
-            "@type": "Offer",
-            itemOffered: { "@id": "https://www.basemodul.de/ki-telefonassistent-shk#service" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@id": "https://www.basemodul.de/kundenanfragen-handwerk-automatisieren#service" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@id": "https://www.basemodul.de/whatsapp-bot-handwerk#service" },
-          },
-          {
-            "@type": "Offer",
-            itemOffered: { "@id": "https://www.basemodul.de/telefonservice-handwerk#service" },
-          },
-        ],
-      },
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.basemodul.de/#website",
-      url: "https://www.basemodul.de",
-      name: "BaseModul",
-      inLanguage: "de-DE",
-      publisher: { "@id": "https://www.basemodul.de/#organization" },
-    },
-    {
       "@type": "WebPage",
       "@id": "https://www.basemodul.de/#webpage",
       url: "https://www.basemodul.de/",
