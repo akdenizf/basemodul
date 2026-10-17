@@ -133,6 +133,16 @@ describe("public SEO metadata routes", () => {
     expect(new Set(urls).size).toBe(urls.length);
   });
 
+  it("reports route-specific sitemap modification dates", () => {
+    const entries = sitemap();
+    const byUrl = new Map(entries.map((entry) => [entry.url, entry]));
+
+    expect(byUrl.get("https://www.basemodul.de")?.lastModified).toEqual(new Date("2026-10-17"));
+    expect(byUrl.get("https://www.basemodul.de/kontakt")?.lastModified).toEqual(new Date("2026-10-17"));
+    expect(byUrl.get("https://www.basemodul.de/ueber-uns")?.lastModified).toEqual(new Date("2026-10-17"));
+    expect(byUrl.get("https://www.basemodul.de/impressum")?.lastModified).toEqual(new Date("2026-09-29"));
+  });
+
   it("keeps the SHK landing page aligned with the primary search intent", () => {
     expect(shkMetadata.title).toBe("KI-Telefonassistent für SHK-Betriebe | BaseModul");
     expect(shkMetadata.alternates?.canonical).toBe("/ki-telefonassistent-shk");
