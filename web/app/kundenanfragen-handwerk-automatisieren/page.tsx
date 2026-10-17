@@ -30,12 +30,14 @@ export const metadata: Metadata = {
     siteName: "BaseModul",
     locale: "de_DE",
     type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "BaseModul – Aus Anfragen werden klare nächste Schritte" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Kundenanfragen im Handwerk automatisieren | BaseModul",
     description:
       "Telefon, WhatsApp, Web und Fotos in einen strukturierten Vorgang überführen - mit klarer Übergabe an das Team.",
+    images: ["/twitter-image"],
   },
 };
 

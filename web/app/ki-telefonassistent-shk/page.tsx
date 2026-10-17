@@ -33,12 +33,14 @@ export const metadata: Metadata = {
     siteName: "BaseModul",
     locale: "de_DE",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "BaseModul – Aus Anfragen werden klare nächste Schritte" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "KI-Telefonassistent für SHK-Betriebe | BaseModul",
     description:
       "SHK-Anfragen strukturiert aufnehmen, für den Rückruf vorbereiten und mit klarer menschlicher Übergabe bearbeiten.",
+    images: ["/twitter-image"],
   },
 };
 

@@ -94,12 +94,14 @@ export const metadata: Metadata = {
     siteName: "BaseModul",
     locale: "de_DE",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "BaseModul – Aus Anfragen werden klare nächste Schritte" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "BaseModul | Aus Anfragen werden klare nächste Schritte",
     description:
       "Kundenanfragen aus Telefon, WhatsApp, Web und Fotos strukturiert aufnehmen, qualifizieren und an Ihr Team übergeben.",
+    images: ["/twitter-image"],
   },
 };
 

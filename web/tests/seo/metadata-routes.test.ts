@@ -108,6 +108,38 @@ describe("public SEO metadata routes", () => {
     }
   });
 
+  it("provides branded Open Graph and Twitter image routes", () => {
+    const socialImagePath = new URL("../../app/social-image.tsx", import.meta.url);
+    const openGraphPath = new URL("../../app/opengraph-image.tsx", import.meta.url);
+    const twitterPath = new URL("../../app/twitter-image.tsx", import.meta.url);
+
+    expect(existsSync(socialImagePath)).toBe(true);
+    expect(existsSync(openGraphPath)).toBe(true);
+    expect(existsSync(twitterPath)).toBe(true);
+
+    if (existsSync(socialImagePath)) {
+      const source = readFileSync(socialImagePath, "utf8");
+      expect(source).toContain("BASEMODUL");
+      expect(source).toContain("Aus Anfragen werden klare nächste Schritte.");
+      expect(source).toContain("width: 1200");
+      expect(source).toContain("height: 630");
+    }
+
+    for (const page of [
+      "../../app/page.tsx",
+      "../../app/ki-telefonassistent-shk/page.tsx",
+      "../../app/kundenanfragen-handwerk-automatisieren/page.tsx",
+      "../../app/whatsapp-bot-handwerk/page.tsx",
+      "../../app/telefonservice-handwerk/page.tsx",
+      "../../app/kundenanfragen-qualifizieren-handwerk/page.tsx",
+    ]) {
+      const source = readFileSync(new URL(page, import.meta.url), "utf8");
+      expect(source).toContain('card: "summary_large_image"');
+      expect(source).toContain('url: "/opengraph-image"');
+      expect(source).toContain('images: ["/twitter-image"]');
+    }
+  });
+
   it("keeps the contact page aligned with verified BaseModul contact language", () => {
     const contactSource = readFileSync(new URL("../../app/kontakt/page.tsx", import.meta.url), "utf8");
 

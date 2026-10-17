@@ -33,12 +33,14 @@ export const metadata: Metadata = {
     siteName: "BaseModul",
     locale: "de_DE",
     type: "article",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "BaseModul – Aus Anfragen werden klare nächste Schritte" }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Kundenanfragen qualifizieren im Handwerk | BaseModul",
     description:
       "Ein praktischer Prozess für Pflichtinformationen, Priorisierung und Übergabe von Kundenanfragen im Handwerk.",
+    images: ["/twitter-image"],
   },
 };
 
