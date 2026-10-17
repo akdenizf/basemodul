@@ -34,6 +34,10 @@ describe("public SEO metadata routes", () => {
     expect(layoutSource).toContain('"@type": "Organization"');
     expect(layoutSource).toContain('"@id": "https://www.basemodul.de/#organization"');
     expect(layoutSource).toContain('legalName: "AGENTEQ"');
+    expect(layoutSource).toContain('"@type": "ImageObject"');
+    expect(layoutSource).toContain('url: "https://www.basemodul.de/logo.png"');
+    expect(layoutSource).toContain("width: 500");
+    expect(layoutSource).toContain("height: 500");
     expect(layoutSource).toContain('"@type": "WebSite"');
     expect(layoutSource).toContain('"@id": "https://www.basemodul.de/#website"');
     expect(layoutSource).toContain("hasOfferCatalog");

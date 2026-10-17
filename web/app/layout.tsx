@@ -17,6 +17,12 @@ const sitewideStructuredData = {
       url: "https://www.basemodul.de",
       description:
         "BaseModul strukturiert Kundenanfragen aus Telefon, WhatsApp, Web und Fotos für lokale Service- und Handwerksbetriebe.",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.basemodul.de/logo.png",
+        width: 500,
+        height: 500,
+      },
       founder: {
         "@type": "Person",
         name: "Fatih Mehmet Akdeniz",
