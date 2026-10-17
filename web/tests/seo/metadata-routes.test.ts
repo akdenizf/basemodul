@@ -27,6 +27,18 @@ import {
 } from "@/app/kundenanfragen-qualifizieren-handwerk/seo-data";
 
 describe("public SEO metadata routes", () => {
+  it("publishes the canonical organization and website graph sitewide", () => {
+    const layoutSource = readFileSync(new URL("../../app/layout.tsx", import.meta.url), "utf8");
+
+    expect(layoutSource).toContain('type="application/ld+json"');
+    expect(layoutSource).toContain('"@type": "Organization"');
+    expect(layoutSource).toContain('"@id": "https://www.basemodul.de/#organization"');
+    expect(layoutSource).toContain('legalName: "AGENTEQ"');
+    expect(layoutSource).toContain('"@type": "WebSite"');
+    expect(layoutSource).toContain('"@id": "https://www.basemodul.de/#website"');
+    expect(layoutSource).toContain("hasOfferCatalog");
+  });
+
   it("publishes a homepage entity graph for BaseModul", () => {
     const homepageSource = readFileSync(new URL("../../app/page.tsx", import.meta.url), "utf8");
 
