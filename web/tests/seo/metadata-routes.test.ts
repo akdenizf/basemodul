@@ -90,6 +90,16 @@ describe("public SEO metadata routes", () => {
     expect(contactSource).not.toContain("Mo–Fr, 9–18 Uhr");
   });
 
+  it("connects the contact page to the BaseModul entity graph", () => {
+    const contactSource = readFileSync(new URL("../../app/kontakt/page.tsx", import.meta.url), "utf8");
+
+    expect(contactSource).toContain('type="application/ld+json"');
+    expect(contactSource).toContain('"@type": "ContactPage"');
+    expect(contactSource).toContain("https://www.basemodul.de/#organization");
+    expect(contactSource).toContain("https://www.basemodul.de/#website");
+    expect(contactSource).toContain('"@type": "BreadcrumbList"');
+  });
+
   it("allows public crawling and advertises the canonical sitemap", () => {
     expect(robots()).toEqual({
       rules: {

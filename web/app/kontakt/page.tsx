@@ -13,9 +13,47 @@ export const metadata: Metadata = {
 
 const CAL_LINK = 'https://app.cal.eu/agenteq/30min?user=agenteq&overlayCalendar=true';
 
+const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "ContactPage",
+            "@id": "https://www.basemodul.de/kontakt#webpage",
+            url: "https://www.basemodul.de/kontakt",
+            name: "Kontakt | BaseModul",
+            description: "Kontaktieren Sie BaseModul oder buchen Sie einen 30-Minuten-Check für Ihren Anfrageprozess.",
+            isPartOf: { "@id": "https://www.basemodul.de/#website" },
+            about: { "@id": "https://www.basemodul.de/#organization" },
+            mainEntity: { "@id": "https://www.basemodul.de/#organization" },
+            inLanguage: "de-DE",
+        },
+        {
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "BaseModul",
+                    item: "https://www.basemodul.de",
+                },
+                {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Kontakt",
+                    item: "https://www.basemodul.de/kontakt",
+                },
+            ],
+        },
+    ],
+};
+
 export default function KontaktPage() {
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
             <Navbar />
 
             <main className="flex-1 pt-28 pb-24">
