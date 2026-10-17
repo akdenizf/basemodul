@@ -20,6 +20,7 @@ import {
   structuredData as phoneServiceStructuredData,
 } from "@/app/telefonservice-handwerk/seo-data";
 import { metadata as qualifyMetadata } from "@/app/kundenanfragen-qualifizieren-handwerk/page";
+
 import {
   faqs as qualifyFaqs,
   structuredData as qualifyStructuredData,
@@ -165,11 +166,20 @@ describe("public SEO metadata routes", () => {
       rules: {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/design/", "/_next/"],
+        disallow: ["/api/"],
       },
       sitemap: "https://www.basemodul.de/sitemap.xml",
       host: "https://www.basemodul.de",
     });
+  });
+
+  it("lets crawlers render assets and discover the design preview noindex", () => {
+    expect(robots().rules).toMatchObject({
+      allow: "/",
+      disallow: ["/api/"],
+    });
+    const designPreviewSource = readFileSync(new URL("../../app/design/hero-v2/page.tsx", import.meta.url), "utf8");
+    expect(designPreviewSource).toContain("robots: { index: false, follow: false }");
   });
 
   it("lists every public route on the canonical host", () => {
