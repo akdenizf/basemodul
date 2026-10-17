@@ -193,6 +193,13 @@ describe("public SEO metadata routes", () => {
     const contactSource = readFileSync(new URL("../../app/kontakt/page.tsx", import.meta.url), "utf8");
 
     expect(contactSource).toContain('type="application/ld+json"');
+    expect(contactSource).toContain('"@type": "Organization"');
+    expect(contactSource).toContain('legalName: "AGENTEQ"');
+    expect(contactSource).toContain('"@type": "ContactPoint"');
+    expect(contactSource).toContain('email: "info@agenteq.de"');
+    expect(contactSource).toContain('telephone: "+4915901662235"');
+    expect(contactSource).toContain('"@type": "PostalAddress"');
+    expect(contactSource).toContain('"@type": "WebSite"');
     expect(contactSource).toContain('"@type": "ContactPage"');
     expect(contactSource).toContain("https://www.basemodul.de/#organization");
     expect(contactSource).toContain("https://www.basemodul.de/#website");
