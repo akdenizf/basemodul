@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import robots from "@/app/robots";
 import sitemap from "@/app/sitemap";
 import { metadata as shkMetadata } from "@/app/ki-telefonassistent-shk/page";
@@ -77,6 +77,34 @@ describe("public SEO metadata routes", () => {
 
     for (const route of priorityRoutes) {
       expect(footerSource).toContain(`href: "${route}"`);
+    }
+  });
+
+  it("cross-links the priority cluster from every SEO page", () => {
+    const relatedPath = new URL("../../components/seo/RelatedSolutions.tsx", import.meta.url);
+    expect(existsSync(relatedPath)).toBe(true);
+
+    const relatedSource = readFileSync(relatedPath, "utf8");
+    const pages = [
+      "../../app/ki-telefonassistent-shk/page.tsx",
+      "../../app/kundenanfragen-handwerk-automatisieren/page.tsx",
+      "../../app/whatsapp-bot-handwerk/page.tsx",
+      "../../app/telefonservice-handwerk/page.tsx",
+      "../../app/kundenanfragen-qualifizieren-handwerk/page.tsx",
+    ];
+
+    for (const route of [
+      "/ki-telefonassistent-shk",
+      "/kundenanfragen-handwerk-automatisieren",
+      "/whatsapp-bot-handwerk",
+      "/telefonservice-handwerk",
+      "/kundenanfragen-qualifizieren-handwerk",
+    ]) {
+      expect(relatedSource).toContain(route);
+    }
+
+    for (const page of pages) {
+      expect(readFileSync(new URL(page, import.meta.url), "utf8")).toContain("<RelatedSolutions");
     }
   });
 

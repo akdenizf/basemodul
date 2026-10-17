@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { RelatedSolutions } from "@/components/seo/RelatedSolutions";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -247,6 +248,8 @@ export default function TelefonserviceHandwerkPage() {
           </div>
         </section>
       </main>
+
+      <RelatedSolutions currentPath="/telefonservice-handwerk" />
 
       <footer className="border-t border-linesoft bg-paperdeep px-6 py-8">
         <div className="mx-auto flex max-w-[1200px] flex-col gap-4 text-[12px] text-inksoft sm:flex-row sm:items-center sm:justify-between">

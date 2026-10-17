@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BaseModulFlow } from "../../components/landing/BaseModulFlow";
+import { RelatedSolutions } from "@/components/seo/RelatedSolutions";
 import { faqs, structuredData } from "./seo-data";
 import {
   AlertTriangle,
@@ -138,6 +139,8 @@ export default function ShkIntakePage() {
 
         <section id="fragen" className="border-t border-linesoft bg-paper2 px-6 py-16 sm:py-24"><div className="mx-auto grid max-w-[1200px] gap-8 lg:grid-cols-[.65fr_1.35fr] lg:gap-16"><div><p className="border-l-[3px] border-leaf pl-3 text-[11px] font-bold uppercase tracking-[0.1em] text-leaf">Häufige Fragen</p><h2 className="mt-5 text-[34px] font-extrabold leading-[1.13] tracking-[-0.04em] text-ink">Klarheit vor dem Start.</h2></div><div className="divide-y divide-linesoft rounded-[8px] border border-line bg-white px-5 sm:px-7">{faqs.map((faq) => <div key={faq.question} className="py-5"><h3 className="text-[15px] font-bold text-ink">{faq.question}</h3><p className="mt-2 text-[14px] leading-relaxed text-inksoft">{faq.answer}</p></div>)}</div></div></section>
       </main>
+
+      <RelatedSolutions currentPath="/ki-telefonassistent-shk" />
 
       <footer className="border-t border-linesoft bg-paperdeep px-6 py-8"><div className="mx-auto flex max-w-[1200px] flex-col gap-4 text-[12px] text-inksoft sm:flex-row sm:items-center sm:justify-between"><p><span className="font-bold tracking-[0.08em] text-ink">BASEMODUL</span> · Ein Produkt von AGENTEQ</p><div className="flex gap-5"><Link href="/impressum" className="hover:text-leaf">Impressum</Link><Link href="/datenschutz" className="hover:text-leaf">Datenschutz</Link><Link href="/" className="hover:text-leaf">Zur Startseite</Link></div></div></footer>
     </div>
