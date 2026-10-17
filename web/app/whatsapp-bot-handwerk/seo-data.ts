@@ -43,6 +43,17 @@ export const structuredData = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.basemodul.de/whatsapp-bot-handwerk#webpage",
+    name: "WhatsApp-Bot für Handwerksbetriebe",
+    url: "https://www.basemodul.de/whatsapp-bot-handwerk",
+    isPartOf: { "@id": "https://www.basemodul.de/#website" },
+    about: { "@id": "https://www.basemodul.de/#organization" },
+    mainEntity: { "@id": "https://www.basemodul.de/whatsapp-bot-handwerk#service" },
+    inLanguage: "de-DE",
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

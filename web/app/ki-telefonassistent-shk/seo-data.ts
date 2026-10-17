@@ -23,6 +23,17 @@ export const structuredData = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.basemodul.de/ki-telefonassistent-shk#webpage",
+    name: "KI-Telefonassistent für SHK-Betriebe",
+    url: "https://www.basemodul.de/ki-telefonassistent-shk",
+    isPartOf: { "@id": "https://www.basemodul.de/#website" },
+    about: { "@id": "https://www.basemodul.de/#organization" },
+    mainEntity: { "@id": "https://www.basemodul.de/ki-telefonassistent-shk#service" },
+    inLanguage: "de-DE",
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {

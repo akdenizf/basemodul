@@ -43,6 +43,17 @@ export const structuredData = [
   },
   {
     "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.basemodul.de/telefonservice-handwerk#webpage",
+    name: "Telefonservice für Handwerksbetriebe",
+    url: "https://www.basemodul.de/telefonservice-handwerk",
+    isPartOf: { "@id": "https://www.basemodul.de/#website" },
+    about: { "@id": "https://www.basemodul.de/#organization" },
+    mainEntity: { "@id": "https://www.basemodul.de/telefonservice-handwerk#service" },
+    inLanguage: "de-DE",
+  },
+  {
+    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
       {
