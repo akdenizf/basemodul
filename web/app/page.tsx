@@ -27,12 +27,27 @@ const structuredData = {
       "@type": "Organization",
       "@id": "https://www.basemodul.de/#organization",
       name: "BaseModul",
+      legalName: "AGENTEQ",
       url: "https://www.basemodul.de",
       description:
         "BaseModul strukturiert Kundenanfragen aus Telefon, WhatsApp, Web und Fotos für lokale Service- und Handwerksbetriebe.",
       founder: {
         "@type": "Person",
         name: "Fatih Mehmet Akdeniz",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        email: "info@agenteq.de",
+        telephone: "+4915901662235",
+        availableLanguage: ["de"],
+      },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Karl-Marx-Ring 17",
+        postalCode: "81735",
+        addressLocality: "München",
+        addressCountry: "DE",
       },
       hasOfferCatalog: {
         "@type": "OfferCatalog",

@@ -51,6 +51,21 @@ describe("public SEO metadata routes", () => {
     }
   });
 
+  it("publishes verified legal and contact details for the BaseModul entity", () => {
+    for (const page of ["../../app/page.tsx", "../../app/ueber-uns/page.tsx"]) {
+      const source = readFileSync(new URL(page, import.meta.url), "utf8");
+      expect(source).toContain('legalName: "AGENTEQ"');
+      expect(source).toContain('"@type": "ContactPoint"');
+      expect(source).toContain('email: "info@agenteq.de"');
+      expect(source).toContain('telephone: "+4915901662235"');
+      expect(source).toContain('"@type": "PostalAddress"');
+      expect(source).toContain('streetAddress: "Karl-Marx-Ring 17"');
+      expect(source).toContain('postalCode: "81735"');
+      expect(source).toContain('addressLocality: "München"');
+      expect(source).toContain('addressCountry: "DE"');
+    }
+  });
+
   it("does not expose placeholder copy on the public about page", () => {
     const aboutSource = readFileSync(new URL("../../app/ueber-uns/page.tsx", import.meta.url), "utf8");
 
