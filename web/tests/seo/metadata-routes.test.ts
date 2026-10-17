@@ -96,6 +96,14 @@ describe("public SEO metadata routes", () => {
     }
   });
 
+  it("routes shared navigation anchors back to homepage sections", () => {
+    const navbarSource = readFileSync(new URL("../../components/landing/Navbar.tsx", import.meta.url), "utf8");
+
+    expect(navbarSource).toContain("usePathname");
+    expect(navbarSource).toContain('pathname === "/" ? hash : `/${hash}`');
+    expect(navbarSource).toContain('homeSectionHref("#cta")');
+  });
+
   it("cross-links the priority cluster from every SEO page", () => {
     const relatedPath = new URL("../../components/seo/RelatedSolutions.tsx", import.meta.url);
     expect(existsSync(relatedPath)).toBe(true);

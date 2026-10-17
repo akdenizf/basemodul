@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeId, setActiveId] = useState<string>("");
@@ -29,10 +31,13 @@ export function Navbar() {
       raf = requestAnimationFrame(() => {
         setScrolled(window.scrollY > 8);
         const line = window.innerHeight * 0.35;
-        let current = ids[0];
-        for (const id of ids) {
-          const el = document.getElementById(id);
-          if (el && el.getBoundingClientRect().top <= line) current = id;
+        let current = "";
+        if (pathname === "/") {
+          current = ids[0];
+          for (const id of ids) {
+            const el = document.getElementById(id);
+            if (el && el.getBoundingClientRect().top <= line) current = id;
+          }
         }
         setActiveId(current);
       });
@@ -43,7 +48,9 @@ export function Navbar() {
       window.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [pathname]);
+
+  const homeSectionHref = (hash: string) => pathname === "/" ? hash : `/${hash}`;
 
   return (
     <>
@@ -69,7 +76,7 @@ export function Navbar() {
               return (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={homeSectionHref(link.href)}
                   aria-current={active ? "true" : undefined}
                   className={`relative text-[14px] font-medium transition-colors ${
                     active ? "text-ink" : "text-label hover:text-ink"
@@ -86,7 +93,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-3.5">
             <a
-              href="#cta"
+              href={homeSectionHref("#cta")}
               className="hidden min-h-[44px] items-center rounded-md bg-leafbtn px-[18px] py-2 text-[14px] font-semibold text-white transition-colors hover:bg-leafbtnhover sm:inline-flex"
             >
               30-Minuten-Check buchen
@@ -116,7 +123,7 @@ export function Navbar() {
               {NAV_LINKS.map((link, i) => (
                 <a
                   key={link.href}
-                  href={link.href}
+                  href={homeSectionHref(link.href)}
                   onClick={() => setMobileOpen(false)}
                   className="flex items-baseline gap-3.5 border-b border-linesoft py-4"
                 >
@@ -125,7 +132,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="#cta"
+                href={homeSectionHref("#cta")}
                 onClick={() => setMobileOpen(false)}
                 className="mt-7 flex w-full items-center justify-center rounded-lg bg-leafbtn py-4 text-lg font-bold text-white"
               >
