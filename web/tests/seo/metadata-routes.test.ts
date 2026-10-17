@@ -80,6 +80,16 @@ describe("public SEO metadata routes", () => {
     }
   });
 
+  it("keeps the contact page aligned with verified BaseModul contact language", () => {
+    const contactSource = readFileSync(new URL("../../app/kontakt/page.tsx", import.meta.url), "utf8");
+
+    expect(contactSource).toContain("30-Minuten-Check buchen");
+    expect(contactSource).toContain('href="tel:+4915901662235"');
+    expect(contactSource).not.toContain("kostenlose Demo");
+    expect(contactSource).not.toContain("innerhalb von 24 Stunden");
+    expect(contactSource).not.toContain("Mo–Fr, 9–18 Uhr");
+  });
+
   it("allows public crawling and advertises the canonical sitemap", () => {
     expect(robots()).toEqual({
       rules: {

@@ -7,7 +7,7 @@ import { Mail, Phone, Calendar, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
     title: 'Kontakt | BaseModul',
-    description: 'Nehmen Sie Kontakt mit uns auf oder buchen Sie direkt eine kostenlose Demo.',
+    description: 'Kontaktieren Sie BaseModul oder buchen Sie einen 30-Minuten-Check für Ihren Anfrageprozess.',
     alternates: { canonical: '/kontakt' },
 };
 
@@ -30,14 +30,14 @@ export default function KontaktPage() {
                             Kontakt
                         </h1>
                         <p className="text-lg leading-relaxed text-slate-500">
-                            Buchen Sie direkt eine kostenlose Demo oder schreiben Sie uns –
+                            Buchen Sie einen 30-Minuten-Check oder schreiben Sie uns –
                             wir antworten persönlich.
                         </p>
                     </div>
 
                     <div className="mx-auto max-w-4xl grid gap-6 md:grid-cols-2">
 
-                        {/* Demo buchen – primary CTA */}
+                        {/* 30-Minuten-Check – primary CTA */}
                         <a
                             href={CAL_LINK}
                             target="_blank"
@@ -49,7 +49,7 @@ export default function KontaktPage() {
                             </div>
                             <div>
                                 <h2 className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors mb-1">
-                                    Kostenlose Demo buchen
+                                    30-Minuten-Check buchen
                                 </h2>
                                 <p className="text-sm text-slate-500 leading-relaxed">
                                     30 Minuten. Kein Verkaufsdruck. Wir schauen gemeinsam, wo Anfragen hängen bleiben und ob ein Pilot Sinn ergibt.
@@ -73,8 +73,8 @@ export default function KontaktPage() {
                                     E-Mail
                                 </h2>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
-                                    Allgemeine Anfragen, Partnerschaftsanfragen oder Feedback –
-                                    wir melden uns innerhalb von 24 Stunden.
+                                    Für allgemeine Anfragen, Partnerschaftsanfragen oder Feedback
+                                    können Sie uns direkt schreiben.
                                 </p>
                                 <span className="text-sm font-semibold text-slate-900">info@agenteq.de</span>
                             </div>
@@ -93,7 +93,7 @@ export default function KontaktPage() {
                                     Telefon
                                 </h2>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
-                                    Mo–Fr, 9–18 Uhr. Sprechen Sie direkt mit dem Gründerteam.
+                                    Rufen Sie uns an oder schreiben Sie uns, wenn Sie zunächst Ihren Anfrageprozess einordnen möchten.
                                 </p>
                                 <span className="text-sm font-semibold text-slate-900">+49 159 0166 2235</span>
                             </div>
@@ -105,9 +105,9 @@ export default function KontaktPage() {
                                 <MapPin size={22} strokeWidth={1.8} />
                             </div>
                             <div>
-                                <h2 className="text-lg font-bold text-slate-900 mb-1">Standort</h2>
+                                <h2 className="text-lg font-bold text-slate-900 mb-1">Anschrift</h2>
                                 <p className="text-sm text-slate-500 leading-relaxed mb-3">
-                                    Unser Büro befindet sich in München – besuchen Sie uns nach Vereinbarung.
+                                    Die Anbieteranschrift von AGENTEQ in München.
                                 </p>
                                 <address className="not-italic text-sm font-semibold text-slate-900 leading-relaxed">
                                     AGENTEQ<br />
