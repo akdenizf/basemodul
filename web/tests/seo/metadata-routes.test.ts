@@ -227,6 +227,17 @@ describe("public SEO metadata routes", () => {
     expect(designPreviewSource).toContain("robots: { index: false, follow: false }");
   });
 
+  it("marks the custom not-found response as noindex", () => {
+    const notFoundPath = new URL("../../app/not-found.tsx", import.meta.url);
+    expect(existsSync(notFoundPath)).toBe(true);
+
+    if (existsSync(notFoundPath)) {
+      const source = readFileSync(notFoundPath, "utf8");
+      expect(source).toContain("robots: { index: false, follow: false }");
+      expect(source).toContain('href="/"');
+    }
+  });
+
   it("lists every public route on the canonical host", () => {
     const entries = sitemap();
     const urls = entries.map((entry) => entry.url);
