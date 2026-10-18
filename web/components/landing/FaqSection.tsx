@@ -1,46 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { homepageFaqs } from "@/app/homepage-seo";
 
 const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 200, damping: 24 } },
 };
-
-const faqItems = [
-  {
-    question: "Ist das ein Callcenter mit echten Menschen?",
-    answer:
-      "Nein, ein KI-Programm nimmt ab. Es klingt wie ein Mensch am Telefon, entscheidet aber nichts selbst — es sammelt nur, was Ihr Team braucht.",
-  },
-  {
-    question: "Müssen wir gleich alles nutzen?",
-    answer:
-      "Nein. Sie starten mit einem Kanal, meistens dem Telefon. WhatsApp, Termine oder Fotos kommen erst dazu, wenn Sie das wollen.",
-  },
-  {
-    question: "Wo kommt die fertige Anfrage bei uns an?",
-    answer:
-      "Da, wo Sie heute schon arbeiten — E-Mail, WhatsApp oder eine Tabelle. Sie brauchen kein neues System.",
-  },
-  {
-    question: "Entscheidet die KI irgendwas selbst?",
-    answer:
-      "Nein. Sie sammelt Infos und gibt sie weiter. Zusagen, Angebote und Termine entscheidet immer Ihr Team.",
-  },
-  {
-    question: "Was passiert bei einem echten Notfall?",
-    answer:
-      "Die KI fragt das Nötigste ab und ruft sofort Ihre Bereitschaft an. Die Entscheidung, was zu tun ist, trifft Ihr Betrieb.",
-  },
-  {
-    question: "Was kostet der Einstieg?",
-    answer:
-      "Ab 750 € einmalig für einen Kanal, plus 30 Tage testen. Details unten bei den Preisen.",
-  },
-];
 
 export function FaqSection() {
   const [open, setOpen] = useState<number | null>(null);
@@ -56,7 +24,7 @@ export function FaqSection() {
         </div>
 
         <div className="mx-auto grid max-w-[980px] grid-cols-1 gap-4 md:grid-cols-2">
-          {faqItems.map((faq, i) => {
+          {homepageFaqs.map((faq, i) => {
             const isOpen = open === i;
             return (
               <motion.div
@@ -68,6 +36,9 @@ export function FaqSection() {
                 className="glass-surface h-fit overflow-hidden rounded-lg"
               >
                 <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-controls={`homepage-faq-answer-${i}`}
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="flex w-full items-center justify-between gap-4 p-5 text-left text-[16px] font-semibold text-ink"
                 >
@@ -77,19 +48,16 @@ export function FaqSection() {
                     className={`shrink-0 text-leafbright transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                   />
                 </button>
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <p className="px-5 pb-5 text-[14.5px] leading-[1.6] text-inksoft">{faq.answer}</p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <div
+                  id={`homepage-faq-answer-${i}`}
+                  className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                    isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="px-5 pb-5 text-[14.5px] leading-[1.6] text-inksoft">{faq.answer}</p>
+                  </div>
+                </div>
               </motion.div>
             );
           })}

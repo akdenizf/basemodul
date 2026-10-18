@@ -14,28 +14,12 @@ import { FaqSection } from "@/components/landing/FaqSection";
 import { LetsWorkTogether } from "@/components/landing/LetsWorkTogether";
 import { Footer } from "@/components/landing/Footer";
 import { FloatingCta } from "@/components/landing/FloatingCta";
+import { homepageStructuredData } from "./homepage-seo";
 
 const LiveDemoSection = dynamic(
   () => import("@/components/landing/LiveDemoSection").then((m) => ({ default: m.LiveDemoSection })),
   { ssr: false, loading: () => <div className="py-16 bg-paper" /> }
 );
-
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebPage",
-      "@id": "https://www.basemodul.de/#webpage",
-      url: "https://www.basemodul.de/",
-      name: "BaseModul | Kundenanfragen für Handwerksbetriebe strukturieren",
-      description:
-        "BaseModul bringt Telefon, WhatsApp, Web-Anfragen und Fotos in einen strukturierten Vorgang für lokale Servicebetriebe.",
-      inLanguage: "de-DE",
-      isPartOf: { "@id": "https://www.basemodul.de/#website" },
-      about: { "@id": "https://www.basemodul.de/#organization" },
-    },
-  ],
-};
 
 export const metadata: Metadata = {
   title: "BaseModul | Kundenanfragen für Handwerksbetriebe strukturieren",
@@ -70,7 +54,7 @@ export default function LandingPage() {
     <div className="flex min-h-[100dvh] flex-col overflow-x-clip bg-paper text-ink">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageStructuredData) }}
       />
       <Navbar />
       <main className="flex-1 pt-[60px]">

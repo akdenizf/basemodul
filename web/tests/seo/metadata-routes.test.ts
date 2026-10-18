@@ -20,6 +20,7 @@ import {
   structuredData as phoneServiceStructuredData,
 } from "@/app/telefonservice-handwerk/seo-data";
 import { metadata as qualifyMetadata } from "@/app/kundenanfragen-qualifizieren-handwerk/page";
+import { homepageFaqs, homepageStructuredData } from "@/app/homepage-seo";
 
 import {
   faqs as qualifyFaqs,
@@ -53,11 +54,36 @@ describe("public SEO metadata routes", () => {
 
   it("publishes a homepage entity graph for BaseModul", () => {
     const homepageSource = readFileSync(new URL("../../app/page.tsx", import.meta.url), "utf8");
+    const webPage = homepageStructuredData.find((entry) => entry["@type"] === "WebPage");
 
     expect(homepageSource).toContain('type="application/ld+json"');
-    expect(homepageSource).toContain("#organization");
-    expect(homepageSource).toContain("#website");
-    expect(homepageSource).toContain("#webpage");
+    expect(webPage).toMatchObject({
+      "@id": "https://www.basemodul.de/#webpage",
+      isPartOf: { "@id": "https://www.basemodul.de/#website" },
+      about: { "@id": "https://www.basemodul.de/#organization" },
+    });
+  });
+
+  it("publishes the visible homepage FAQ from one server-rendered source", () => {
+    const faqPage = homepageStructuredData.find((entry) => entry["@type"] === "FAQPage");
+    const faqSectionSource = readFileSync(new URL("../../components/landing/FaqSection.tsx", import.meta.url), "utf8");
+
+    expect(homepageStructuredData.filter((entry) => entry["@type"] === "FAQPage")).toHaveLength(1);
+    expect(homepageFaqs).toHaveLength(6);
+    expect(faqPage?.mainEntity).toEqual(
+      homepageFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    );
+    expect(faqSectionSource).toContain('import { homepageFaqs } from "@/app/homepage-seo"');
+    expect(faqSectionSource).not.toContain("{isOpen && (");
+    expect(faqSectionSource).not.toContain("klingt wie ein Mensch");
+    expect(faqSectionSource).not.toContain("ruft sofort Ihre Bereitschaft an");
   });
 
   it("connects the homepage organization to the four public services", () => {
